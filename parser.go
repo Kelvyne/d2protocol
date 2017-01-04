@@ -1,6 +1,7 @@
 package d2protocol
 
 import (
+	"bytes"
 	"fmt"
 	"reflect"
 )
@@ -30,7 +31,8 @@ func ParseMessage(id uint16, packet []byte) (Message, error) {
 	val := reflect.New(t.Elem())
 	m := val.Interface().(Message)
 
-	if err := m.Deserialize(nil); err != nil {
+	r := NewReader(bytes.NewReader(packet))
+	if err := m.Deserialize(r); err != nil {
 		return nil, err
 	}
 	return m, nil

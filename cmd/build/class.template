@@ -138,7 +138,7 @@ var {{MapName}} = map[uint16]reflect.Type{
 {{define "SerializeField"}}
 	{{if .IsVector }}
 		{{if .IsDynamicLength }}
-			w.{{ SerializeLengthMethod . }}(int16(len(m.{{ .Name | ToFieldName }})))
+			w.{{ SerializeLengthMethod . }}({{ CastType .WriteLengthMethod }}(len(m.{{ .Name | ToFieldName }})))
 		{{end}}
 		for i := range m.{{ .Name | ToFieldName}} {
 	{{end}}

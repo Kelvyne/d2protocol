@@ -64,9 +64,10 @@ func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) err
 		"SerializeMethod":         getSerializeMethod,
 		"DeserializeLengthMethod": getDeserializeLengthMethod,
 		"SerializeLengthMethod":   getSerializeLengthMethod,
+		"CastType":                getCastType,
 	}
 	const typesTemplateFile = "./class.template"
-	tem := template.Must(template.New("types.template").Funcs(funcMap).ParseFiles(typesTemplateFile))
+	tem := template.Must(template.New("class.template").Funcs(funcMap).ParseFiles(typesTemplateFile))
 	if err := tem.Execute(w, types); err != nil {
 		return err
 	}
@@ -78,7 +79,7 @@ func toGolangType(t string) string {
 }
 
 func typeHasParent(t d2protocolparser.Class) bool {
-	return t.Parent != ""
+	return t.Parent != "" && t.Parent != "NetworkMessage"
 }
 
 func getEffectiveType(t d2protocolparser.Field) string {
@@ -156,4 +157,18 @@ func getSerializeLengthMethod(t d2protocolparser.Field) string {
 		panic(fmt.Sprintf("%v length method is not valid", t.WriteMethod))
 	}
 	return "Write" + m
+}
+
+func getCastType(method string) string {
+	castMap := map[string]string{
+		"writeShort":    "int16",
+		"writeInt":      "int32",
+		"writeVarShort": "int16",
+		"writeVarInt":   "int32",
+	}
+	t, ok := castMap[method]
+	if !ok {
+		panic(fmt.Sprintf("cannot cast method %v", method))
+	}
+	return t
 }

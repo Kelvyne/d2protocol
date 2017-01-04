@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"text/template"
 
 	"strings"
 
-	"github.com/kelvyne/kaykin/d2protocolparser"
 	"math"
+
+	"github.com/kelvyne/kaykin/d2protocolparser"
 )
 
 func main() {
@@ -24,35 +26,36 @@ func main() {
 		os.Exit(2)
 	}
 
-	if err := exportMessages(p.Messages); err != nil {
-		fmt.Fprintf(os.Stderr, "messages: %v\n", err)
+	typesWriter, err := os.Create("../../types.gen.go")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "os.Create: %v", err)
 		os.Exit(3)
 	}
-	if err := exportTypes(p.Types); err != nil {
+
+	if err := exportClasses(typesWriter, "types", p.Types); err != nil {
 		fmt.Fprintf(os.Stderr, "types: %v\n", err)
-		os.Exit(3)
+		os.Exit(4)
 	}
 }
 
-func exportMessages(m []d2protocolparser.Class) error {
-	return nil
-}
-
-func exportTypes(types []d2protocolparser.Class) error {
-	const typesTemplateFile = "./types.template"
+func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) error {
 	funcMap := template.FuncMap{
-		"ToFieldName":   strings.Title,
-		"ToGolangType":  toGolangType,
-		"TypeHasParent": typeHasParent,
-		"EffectiveType": getEffectiveType,
-		"UseBooleanByteWrapper": useBooleanByteWrapper,
-		"BBWIterate": rangeBBW,
-		"IsNativeType": isNativeType,
-		"DeserializeMethod": getDeserializeMethod,
+		"MapName":                 func() string { return name },
+		"ToFieldName":             strings.Title,
+		"ToGolangType":            toGolangType,
+		"TypeHasParent":           typeHasParent,
+		"EffectiveType":           getEffectiveType,
+		"UseBooleanByteWrapper":   useBooleanByteWrapper,
+		"BBWIterate":              rangeBBW,
+		"IsNativeType":            isNativeType,
+		"DeserializeMethod":       getDeserializeMethod,
+		"SerializeMethod":         getSerializeMethod,
 		"DeserializeLengthMethod": getDeserializeLengthMethod,
+		"SerializeLengthMethod":   getSerializeLengthMethod,
 	}
+	const typesTemplateFile = "./types.template"
 	tem := template.Must(template.New("types.template").Funcs(funcMap).ParseFiles(typesTemplateFile))
-	if err := tem.Execute(os.Stdout, types); err != nil {
+	if err := tem.Execute(w, types); err != nil {
 		return err
 	}
 	return nil
@@ -75,7 +78,9 @@ func getEffectiveType(t d2protocolparser.Field) string {
 
 func useBooleanByteWrapper(t d2protocolparser.Class) bool {
 	for _, f := range t.Fields {
-		return f.UseBBW
+		if f.UseBBW {
+			return true
+		}
 	}
 	return false
 }
@@ -101,10 +106,10 @@ func isNativeType(t d2protocolparser.Field) bool {
 	if strings.HasPrefix(t.Type, "int") || strings.HasPrefix(t.Type, "uint") {
 		return true
 	} else if strings.HasPrefix(t.Type, "float") {
-		return true 
-	} else if (t.Type == "bool") {
 		return true
-	} else if (t.Type == "string") {
+	} else if t.Type == "bool" {
+		return true
+	} else if t.Type == "string" {
 		return true
 	}
 	return false
@@ -114,11 +119,15 @@ func getDeserializeMethod(t d2protocolparser.Field) string {
 	return "Read" + t.Method
 }
 
-var lengthTranslator = map[string]string {
-	"writeShort": "Int16",
-	"writeInt": "Int32",
+func getSerializeMethod(t d2protocolparser.Field) string {
+	return "Write" + t.Method
+}
+
+var lengthTranslator = map[string]string{
+	"writeShort":    "Int16",
+	"writeInt":      "Int32",
 	"writeVarShort": "VarInt16",
-	"writeVarInt": "VarInt32",
+	"writeVarInt":   "VarInt32",
 }
 
 func getDeserializeLengthMethod(t d2protocolparser.Field) string {
@@ -127,4 +136,12 @@ func getDeserializeLengthMethod(t d2protocolparser.Field) string {
 		panic(fmt.Sprintf("%v length method is not valid", t.WriteMethod))
 	}
 	return "Read" + m
+}
+
+func getSerializeLengthMethod(t d2protocolparser.Field) string {
+	m, ok := lengthTranslator[t.WriteLengthMethod]
+	if !ok {
+		panic(fmt.Sprintf("%v length method is not valid", t.WriteMethod))
+	}
+	return "Write" + m
 }

@@ -4,7 +4,7 @@ import (
 	"reflect"
 )
 
-var types = map[uint16]reflect.Type{
+var {{MapName}} = map[uint16]reflect.Type{
 	{{range .}}
 		{{ .ProtocolID -}} : reflect.TypeOf((*{{ .Name }})(nil)),
 	{{end}}
@@ -33,7 +33,7 @@ var types = map[uint16]reflect.Type{
 				{{$bbw := print "bbw" $index}}
 				var {{$bbw}} uint8
 				{{ range . }}
-					m.{{.Name | ToFieldName}} = setWrappedFlag({{$bbw}}, {{.BBWPosition}})
+					setWrappedFlag({{$bbw}}, {{.BBWPosition}}, m.{{.Name | ToFieldName}})
 				{{end}}
 				if err := w.WriteUInt8({{$bbw}}); err != nil {
 					return err
@@ -135,10 +135,28 @@ var types = map[uint16]reflect.Type{
 	{{end}}
 {{end}}
 
-{{define "SerializeField}}
+{{define "SerializeField"}}
+	{{if .IsVector }}
+		{{if .IsDynamicLength }}
+			w.{{ SerializeLengthMethod . }}(int16(len(m.{{ .Name | ToFieldName }})))
+		{{end}}
+		for i := range m.{{ .Name | ToFieldName}} {
+	{{end}}
 	{{if IsNativeType .}}
-		if err := w.{{ SerializeMethod . }}(m.{{ .Name | ToFieldName}}); err != nil {
+		if err := w.{{ SerializeMethod . }}(m.{{ .Name | ToFieldName}}{{if .IsVector}}[i]{{end}}); err != nil {
 			return err
 		}
+	{{else}}
+		{{if .UseTypeManager }}
+			if err := w.WriteUInt16(m.{{ .Name | ToFieldName}}{{if .IsVector}}[i]{{end}}.ID()); err != nil {
+				return err
+			}
+		{{end}}
+		if err := m.{{ .Name | ToFieldName }}{{if .IsVector}}[i]{{end}}.Serialize(w); err != nil {
+			return err
+		}
+	{{end}}
+	{{if .IsVector}}
+	}
 	{{end}}
 {{end}}

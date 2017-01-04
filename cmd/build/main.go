@@ -32,10 +32,22 @@ func main() {
 		os.Exit(3)
 	}
 
-	if err := exportClasses(typesWriter, "types", p.Types); err != nil {
+	if err = exportClasses(typesWriter, "types", p.Types); err != nil {
 		fmt.Fprintf(os.Stderr, "types: %v\n", err)
 		os.Exit(4)
 	}
+
+	messagesWriter, err := os.Create("../../messages.gen.go")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "os.Create: %v", err)
+		os.Exit(3)
+	}
+
+	if err = exportClasses(messagesWriter, "messages", p.Messages); err != nil {
+		fmt.Fprintf(os.Stderr, "messages: %v\n", err)
+		os.Exit(4)
+	}
+
 }
 
 func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) error {
@@ -53,7 +65,7 @@ func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) err
 		"DeserializeLengthMethod": getDeserializeLengthMethod,
 		"SerializeLengthMethod":   getSerializeLengthMethod,
 	}
-	const typesTemplateFile = "./types.template"
+	const typesTemplateFile = "./class.template"
 	tem := template.Must(template.New("types.template").Funcs(funcMap).ParseFiles(typesTemplateFile))
 	if err := tem.Execute(w, types); err != nil {
 		return err

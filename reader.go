@@ -18,12 +18,12 @@ type Reader interface {
 	ReadFloat() (float32, error)
 	ReadDouble() (float64, error)
 	ReadString() (string, error)
-	ReadVarShort() (int16, error)
-	ReadVarUhShort() (uint16, error)
-	ReadVarInt() (int32, error)
-	ReadVarUhInt() (uint32, error)
-	ReadVarLong() (int64, error)
-	ReadVarUhLong() (uint64, error)
+	ReadVarInt16() (int16, error)
+	ReadVarUInt16() (uint16, error)
+	ReadVarInt32() (int32, error)
+	ReadVarUInt32() (uint32, error)
+	ReadVarInt64() (int64, error)
+	ReadVarUInt64() (uint64, error)
 }
 
 type reader struct {
@@ -129,7 +129,7 @@ func (r *reader) ReadString() (string, error) {
 	return string(buf), nil
 }
 
-func (r *reader) ReadVarShort() (int16, error) {
+func (r *reader) ReadVarInt16() (int16, error) {
 	v, err := r.readVar(16)
 	if err != nil {
 		return 0, err
@@ -137,7 +137,7 @@ func (r *reader) ReadVarShort() (int16, error) {
 	return int16(v), err
 }
 
-func (r *reader) ReadVarUhShort() (uint16, error) {
+func (r *reader) ReadVarUInt16() (uint16, error) {
 	v, err := r.readVar(16)
 	if err != nil {
 		return 0, err
@@ -145,7 +145,7 @@ func (r *reader) ReadVarUhShort() (uint16, error) {
 	return uint16(v), err
 }
 
-func (r *reader) ReadVarInt() (int32, error) {
+func (r *reader) ReadVarInt32() (int32, error) {
 	v, err := r.readVar(32)
 	if err != nil {
 		return 0, err
@@ -153,7 +153,7 @@ func (r *reader) ReadVarInt() (int32, error) {
 	return int32(v), err
 }
 
-func (r *reader) ReadVarUhInt() (uint32, error) {
+func (r *reader) ReadVarUInt32() (uint32, error) {
 	v, err := r.readVar(32)
 	if err != nil {
 		return 0, err
@@ -161,7 +161,7 @@ func (r *reader) ReadVarUhInt() (uint32, error) {
 	return uint32(v), err
 }
 
-func (r *reader) ReadVarLong() (int64, error) {
+func (r *reader) ReadVarInt64() (int64, error) {
 	v, err := r.readVar(64)
 	if err != nil {
 		return 0, err
@@ -169,7 +169,7 @@ func (r *reader) ReadVarLong() (int64, error) {
 	return int64(v), err
 }
 
-func (r *reader) ReadVarUhLong() (uint64, error) {
+func (r *reader) ReadVarUInt64() (uint64, error) {
 	return r.readVar(64)
 }
 

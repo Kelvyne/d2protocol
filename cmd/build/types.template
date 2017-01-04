@@ -1,0 +1,144 @@
+package d2protocol
+
+import (
+	"reflect"
+)
+
+var types = map[uint16]reflect.Type{
+	{{range .}}
+		{{ .ProtocolID -}} : reflect.TypeOf((*{{ .Name }})(nil)),
+	{{end}}
+}
+
+{{range .}}
+	type {{.Name}} struct {
+		{{if TypeHasParent . }}
+			{{ .Parent }}
+		{{end}}
+		{{range .Fields}}
+			{{.Name | ToFieldName}} {{if .IsVector}}[]{{end}}{{ EffectiveType .}}
+		{{end}}
+	}
+
+	func (m *{{.Name}}) ID() uint16 {
+		return {{.ProtocolID}}
+	}
+
+	func (m *{{.Name}}) Serialize(w Writer) error {
+		{{ if TypeHasParent . }}
+			m.{{- .Parent -}}.Serialize(w)
+		{{end}}
+		{{if UseBooleanByteWrapper . }}
+			{{ range $index, $element := BBWIterate . }}
+				{{$bbw := print "bbw" $index}}
+				var {{$bbw}} uint8
+				{{ range . }}
+					m.{{.Name | ToFieldName}} = setWrappedFlag({{$bbw}}, {{.BBWPosition}})
+				{{end}}
+				if err := w.WriteUInt8({{$bbw}}); err != nil {
+					return err
+				}
+			{{end}}
+		{{end}}
+		{{range .Fields}}
+			 {{ if not .UseBBW }}
+			 	{{template "SerializeField" .}}
+			 {{end}}
+		{{end}}
+		return nil
+	}
+
+	func (m *{{.Name}}) Deserialize(r Reader) error {
+		{{ if TypeHasParent . }}
+			m.{{- .Parent -}}.Deserialize(r)
+		{{end}}
+		{{if UseBooleanByteWrapper . }}
+			{{ range $index, $element := BBWIterate . }}
+				{{$bbw := print "bbw" $index}}
+				{{$bbw}}, err := r.ReadUInt8()
+				if err != nil {
+					return err
+				}
+				{{ range . }}
+					m.{{.Name | ToFieldName}} = getWrappedFlag({{$bbw}}, {{.BBWPosition}})
+				{{end}}
+			{{end}}
+		{{end}}
+		{{range .Fields}}
+			 {{ if not .UseBBW }}
+			 	{{template "DeserializeField" .}}
+			 {{end}}
+		{{end}}
+		return nil
+	}
+{{end}}
+
+{{define "DeserializeField"}}
+	{{$name := print "l" .Name}}
+	{{if .IsVector}}
+		{{ if .IsDynamicLength }}
+			{{$lenName := print $name "Len" }}
+			{{$lenName}}, err := r.{{DeserializeLengthMethod .}}()
+			if err != nil {
+				return err
+			}
+			{{$lenValue := print $lenName}}
+			m.{{ .Name | ToFieldName }} = make([]{{EffectiveType .}}, {{$lenValue}})
+		{{else}}
+			{{$lenValue := print .Length }}
+			m.{{ .Name | ToFieldName }} = make([]{{EffectiveType .}}, {{$lenValue}})
+		{{end}}
+		for i := range m.{{.Name | ToFieldName}} {
+	{{end}}
+	{{ if IsNativeType . }}
+		{{$name}}, err := r.{{DeserializeMethod .}}()
+		if err != nil {
+			return err
+		}
+	{{ else }}
+		{{ if .UseTypeManager }}
+			{{ $typename := print "type" .Name "ID" }}
+			{{$typename}}, err := r.ReadUInt16()
+			if err != nil {
+				return err
+			}
+			{{$name}}, err := GetType({{$typename}})
+			if err != nil {
+				return err
+			}
+		{{else}}
+			var {{$name}} {{.Type}}
+		{{end}}
+		{{$name}}.Deserialize(r)
+	{{end}}
+	{{ if .IsVector }}
+		{{ if IsNativeType . }}
+			m.{{.Name | ToFieldName}}[i] = {{$name}}{{ if .UseTypeManager}}.(*{{.Type}}){{end}}
+		{{else}}
+		{{ if .UseTypeManager }}
+				m.{{.Name | ToFieldName}}[i] = {{$name}}.(*{{.Type}})
+			{{else}}
+				m.{{.Name | ToFieldName}}[i] = &{{$name}}
+			{{end}}
+		{{end}}
+		}
+	{{else}}
+		{{ if IsNativeType . }}
+			m.{{.Name | ToFieldName}} = {{$name}}
+		{{else}}
+			{{ if .UseTypeManager }}
+				m.{{.Name | ToFieldName}} = {{$name}}.(*{{.Type}})
+			{{else}}
+				m.{{.Name | ToFieldName}} = &{{$name}}
+			{{end}}
+		{{end}}
+	{{end}}
+{{end}}
+
+{{define "SerializeField}}
+	{{if IsNativeType .}}
+		if err := w.{{ SerializeMethod . }}(m.{{ .Name | ToFieldName}}); err != nil {
+			return err
+		}
+	{{end}}
+{{end}}

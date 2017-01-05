@@ -10,7 +10,7 @@ import (
 
 	"math"
 
-	"github.com/kelvyne/kaykin/d2protocolparser"
+	"github.com/kelvyne/d2protocolparser"
 )
 
 func openFile(name string) *os.File {

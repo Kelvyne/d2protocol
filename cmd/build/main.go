@@ -13,6 +13,15 @@ import (
 	"github.com/kelvyne/kaykin/d2protocolparser"
 )
 
+func openFile(name string) *os.File {
+	f, err := os.Create(name)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "os.Create: %v", err)
+		os.Exit(3)
+	}
+	return f
+}
+
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Fprintf(os.Stderr, "usage: %v path.swf\n", os.Args[0])
@@ -26,28 +35,32 @@ func main() {
 		os.Exit(2)
 	}
 
-	typesWriter, err := os.Create("../../types.gen.go")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "os.Create: %v", err)
-		os.Exit(3)
-	}
-
+	typesWriter := openFile("../../types.gen.go")
 	if err = exportClasses(typesWriter, "types", p.Types); err != nil {
 		fmt.Fprintf(os.Stderr, "types: %v\n", err)
 		os.Exit(4)
 	}
 
-	messagesWriter, err := os.Create("../../messages.gen.go")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "os.Create: %v", err)
-		os.Exit(3)
-	}
-
+	messagesWriter := openFile("../../messages.gen.go")
 	if err = exportClasses(messagesWriter, "messages", p.Messages); err != nil {
 		fmt.Fprintf(os.Stderr, "messages: %v\n", err)
 		os.Exit(4)
 	}
 
+	protocolWriter := openFile("../../protocol.gen.go")
+	if err = exportProtocol(protocolWriter, p); err != nil {
+		fmt.Fprintf(os.Stderr, "protocol: %v\n", err)
+		os.Exit(4)
+	}
+}
+
+func exportProtocol(w io.Writer, p *d2protocolparser.Protocol) error {
+	const templateFile = "./protocol.template"
+	tem := template.Must(template.ParseFiles(templateFile))
+	if err := tem.Execute(w, p); err != nil {
+		return err
+	}
+	return nil
 }
 
 func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) error {

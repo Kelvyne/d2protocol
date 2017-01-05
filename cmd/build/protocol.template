@@ -1,0 +1,14 @@
+package d2protocol
+
+type Version struct {
+    Major uint
+    Minor uint
+    Release uint
+    Revision uint
+    Patch uint
+}
+
+{{with .Version}}
+// Version is the current version of the Dofus 2 protocol
+var ProtocolVersion = Version{ {{- .Major}}, {{.Minor}}, {{.Release}}, {{.Revision}}, {{.Patch -}} }
+{{end}}

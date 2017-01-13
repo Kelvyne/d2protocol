@@ -2219,14 +2219,18 @@ func (m *AdminQuietCommandMessage) ID() uint16 {
 
 func (m *AdminQuietCommandMessage) Serialize(w Writer) error {
 
-	m.AdminCommandMessage.Serialize(w)
+	if err := m.AdminCommandMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AdminQuietCommandMessage) Deserialize(r Reader) error {
 
-	m.AdminCommandMessage.Deserialize(r)
+	if err := m.AdminCommandMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -2376,7 +2380,9 @@ func (m *IdentificationFailedForBadVersionMessage) ID() uint16 {
 
 func (m *IdentificationFailedForBadVersionMessage) Serialize(w Writer) error {
 
-	m.IdentificationFailedMessage.Serialize(w)
+	if err := m.IdentificationFailedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.RequiredVersion.Serialize(w); err != nil {
 		return err
@@ -2387,7 +2393,9 @@ func (m *IdentificationFailedForBadVersionMessage) Serialize(w Writer) error {
 
 func (m *IdentificationFailedForBadVersionMessage) Deserialize(r Reader) error {
 
-	m.IdentificationFailedMessage.Deserialize(r)
+	if err := m.IdentificationFailedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lrequiredVersion Version
 
@@ -2673,7 +2681,9 @@ func (m *IdentificationSuccessWithLoginTokenMessage) ID() uint16 {
 
 func (m *IdentificationSuccessWithLoginTokenMessage) Serialize(w Writer) error {
 
-	m.IdentificationSuccessMessage.Serialize(w)
+	if err := m.IdentificationSuccessMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.LoginToken); err != nil {
 		return err
@@ -2684,7 +2694,9 @@ func (m *IdentificationSuccessWithLoginTokenMessage) Serialize(w Writer) error {
 
 func (m *IdentificationSuccessWithLoginTokenMessage) Deserialize(r Reader) error {
 
-	m.IdentificationSuccessMessage.Deserialize(r)
+	if err := m.IdentificationSuccessMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lloginToken, err := r.ReadString()
 	if err != nil {
@@ -2868,7 +2880,9 @@ func (m *IdentificationFailedBannedMessage) ID() uint16 {
 
 func (m *IdentificationFailedBannedMessage) Serialize(w Writer) error {
 
-	m.IdentificationFailedMessage.Serialize(w)
+	if err := m.IdentificationFailedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.BanEndDate); err != nil {
 		return err
@@ -2879,7 +2893,9 @@ func (m *IdentificationFailedBannedMessage) Serialize(w Writer) error {
 
 func (m *IdentificationFailedBannedMessage) Deserialize(r Reader) error {
 
-	m.IdentificationFailedMessage.Deserialize(r)
+	if err := m.IdentificationFailedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lbanEndDate, err := r.ReadDouble()
 	if err != nil {
@@ -3090,7 +3106,9 @@ func (m *PartyFollowMemberRequestMessage) ID() uint16 {
 
 func (m *PartyFollowMemberRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -3101,7 +3119,9 @@ func (m *PartyFollowMemberRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyFollowMemberRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -3125,7 +3145,9 @@ func (m *PartyFollowThisMemberRequestMessage) ID() uint16 {
 
 func (m *PartyFollowThisMemberRequestMessage) Serialize(w Writer) error {
 
-	m.PartyFollowMemberRequestMessage.Serialize(w)
+	if err := m.PartyFollowMemberRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Enabled); err != nil {
 		return err
@@ -3136,7 +3158,9 @@ func (m *PartyFollowThisMemberRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyFollowThisMemberRequestMessage) Deserialize(r Reader) error {
 
-	m.PartyFollowMemberRequestMessage.Deserialize(r)
+	if err := m.PartyFollowMemberRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lenabled, err := r.ReadBoolean()
 	if err != nil {
@@ -3187,14 +3211,18 @@ func (m *PartyInvitationArenaRequestMessage) ID() uint16 {
 
 func (m *PartyInvitationArenaRequestMessage) Serialize(w Writer) error {
 
-	m.PartyInvitationRequestMessage.Serialize(w)
+	if err := m.PartyInvitationRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyInvitationArenaRequestMessage) Deserialize(r Reader) error {
 
-	m.PartyInvitationRequestMessage.Deserialize(r)
+	if err := m.PartyInvitationRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -3211,7 +3239,9 @@ func (m *PartyKickedByMessage) ID() uint16 {
 
 func (m *PartyKickedByMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.KickerId); err != nil {
 		return err
@@ -3222,7 +3252,9 @@ func (m *PartyKickedByMessage) Serialize(w Writer) error {
 
 func (m *PartyKickedByMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lkickerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -3246,7 +3278,9 @@ func (m *PartyLoyaltyStatusMessage) ID() uint16 {
 
 func (m *PartyLoyaltyStatusMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Loyal); err != nil {
 		return err
@@ -3257,7 +3291,9 @@ func (m *PartyLoyaltyStatusMessage) Serialize(w Writer) error {
 
 func (m *PartyLoyaltyStatusMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lloyal, err := r.ReadBoolean()
 	if err != nil {
@@ -3279,14 +3315,18 @@ func (m *PartyAcceptInvitationMessage) ID() uint16 {
 
 func (m *PartyAcceptInvitationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyAcceptInvitationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -3313,7 +3353,9 @@ func (m *PartyInvitationMessage) ID() uint16 {
 
 func (m *PartyInvitationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PartyType); err != nil {
 		return err
@@ -3344,7 +3386,9 @@ func (m *PartyInvitationMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyType, err := r.ReadUInt8()
 	if err != nil {
@@ -3477,7 +3521,9 @@ func (m *PartyStopFollowRequestMessage) ID() uint16 {
 
 func (m *PartyStopFollowRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -3488,7 +3534,9 @@ func (m *PartyStopFollowRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyStopFollowRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -3512,7 +3560,9 @@ func (m *PartyLocateMembersMessage) ID() uint16 {
 
 func (m *PartyLocateMembersMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Geopositions))); err != nil {
 		return err
@@ -3531,7 +3581,9 @@ func (m *PartyLocateMembersMessage) Serialize(w Writer) error {
 
 func (m *PartyLocateMembersMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lgeopositionsLen, err := r.ReadInt16()
 	if err != nil {
@@ -3563,14 +3615,18 @@ func (m *AbstractPartyEventMessage) ID() uint16 {
 
 func (m *AbstractPartyEventMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AbstractPartyEventMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -3595,7 +3651,9 @@ func (m *PartyUpdateLightMessage) ID() uint16 {
 
 func (m *PartyUpdateLightMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.Id); err != nil {
 		return err
@@ -3622,7 +3680,9 @@ func (m *PartyUpdateLightMessage) Serialize(w Writer) error {
 
 func (m *PartyUpdateLightMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lid, err := r.ReadVarInt64()
 	if err != nil {
@@ -3674,7 +3734,9 @@ func (m *PartyCompanionUpdateLightMessage) ID() uint16 {
 
 func (m *PartyCompanionUpdateLightMessage) Serialize(w Writer) error {
 
-	m.PartyUpdateLightMessage.Serialize(w)
+	if err := m.PartyUpdateLightMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.IndexId); err != nil {
 		return err
@@ -3685,7 +3747,9 @@ func (m *PartyCompanionUpdateLightMessage) Serialize(w Writer) error {
 
 func (m *PartyCompanionUpdateLightMessage) Deserialize(r Reader) error {
 
-	m.PartyUpdateLightMessage.Deserialize(r)
+	if err := m.PartyUpdateLightMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lindexId, err := r.ReadUInt8()
 	if err != nil {
@@ -3709,7 +3773,9 @@ func (m *PartyCannotJoinErrorMessage) ID() uint16 {
 
 func (m *PartyCannotJoinErrorMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Reason); err != nil {
 		return err
@@ -3720,7 +3786,9 @@ func (m *PartyCannotJoinErrorMessage) Serialize(w Writer) error {
 
 func (m *PartyCannotJoinErrorMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lreason, err := r.ReadUInt8()
 	if err != nil {
@@ -3748,7 +3816,9 @@ func (m *PartyFollowStatusUpdateMessage) ID() uint16 {
 
 func (m *PartyFollowStatusUpdateMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -3769,7 +3839,9 @@ func (m *PartyFollowStatusUpdateMessage) Serialize(w Writer) error {
 
 func (m *PartyFollowStatusUpdateMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -3800,14 +3872,18 @@ func (m *PartyInvitationDetailsRequestMessage) ID() uint16 {
 
 func (m *PartyInvitationDetailsRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyInvitationDetailsRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -3836,7 +3912,9 @@ func (m *PartyJoinMessage) ID() uint16 {
 
 func (m *PartyJoinMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PartyType); err != nil {
 		return err
@@ -3891,7 +3969,9 @@ func (m *PartyJoinMessage) Serialize(w Writer) error {
 
 func (m *PartyJoinMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyType, err := r.ReadUInt8()
 	if err != nil {
@@ -4067,7 +4147,9 @@ func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) ID() uint16 {
 
 func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) Serialize(w Writer) error {
 
-	m.GameRolePlayArenaUpdatePlayerInfosMessage.Serialize(w)
+	if err := m.GameRolePlayArenaUpdatePlayerInfosMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Team.Serialize(w); err != nil {
 		return err
@@ -4078,7 +4160,9 @@ func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) Serialize(w Writer) 
 
 func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) Deserialize(r Reader) error {
 
-	m.GameRolePlayArenaUpdatePlayerInfosMessage.Deserialize(r)
+	if err := m.GameRolePlayArenaUpdatePlayerInfosMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lteam ArenaRankInfos
 
@@ -4191,7 +4275,9 @@ func (m *PartyNameSetErrorMessage) ID() uint16 {
 
 func (m *PartyNameSetErrorMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Result); err != nil {
 		return err
@@ -4202,7 +4288,9 @@ func (m *PartyNameSetErrorMessage) Serialize(w Writer) error {
 
 func (m *PartyNameSetErrorMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lresult, err := r.ReadUInt8()
 	if err != nil {
@@ -4332,7 +4420,9 @@ func (m *GameFightSpectatorJoinMessage) ID() uint16 {
 
 func (m *GameFightSpectatorJoinMessage) Serialize(w Writer) error {
 
-	m.GameFightJoinMessage.Serialize(w)
+	if err := m.GameFightJoinMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.NamedPartyTeams))); err != nil {
 		return err
@@ -4351,7 +4441,9 @@ func (m *GameFightSpectatorJoinMessage) Serialize(w Writer) error {
 
 func (m *GameFightSpectatorJoinMessage) Deserialize(r Reader) error {
 
-	m.GameFightJoinMessage.Deserialize(r)
+	if err := m.GameFightJoinMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnamedPartyTeamsLen, err := r.ReadInt16()
 	if err != nil {
@@ -4520,7 +4612,9 @@ func (m *PartyInvitationDetailsMessage) ID() uint16 {
 
 func (m *PartyInvitationDetailsMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PartyType); err != nil {
 		return err
@@ -4571,7 +4665,9 @@ func (m *PartyInvitationDetailsMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyType, err := r.ReadUInt8()
 	if err != nil {
@@ -4657,7 +4753,9 @@ func (m *PartyNewGuestMessage) ID() uint16 {
 
 func (m *PartyNewGuestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Guest.Serialize(w); err != nil {
 		return err
@@ -4668,7 +4766,9 @@ func (m *PartyNewGuestMessage) Serialize(w Writer) error {
 
 func (m *PartyNewGuestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguest PartyGuestInformations
 
@@ -4689,14 +4789,18 @@ func (m *PartyLeaveRequestMessage) ID() uint16 {
 
 func (m *PartyLeaveRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyLeaveRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -4778,7 +4882,9 @@ func (m *PartyRestrictedMessage) ID() uint16 {
 
 func (m *PartyRestrictedMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Restricted); err != nil {
 		return err
@@ -4789,7 +4895,9 @@ func (m *PartyRestrictedMessage) Serialize(w Writer) error {
 
 func (m *PartyRestrictedMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lrestricted, err := r.ReadBoolean()
 	if err != nil {
@@ -4813,7 +4921,9 @@ func (m *PartyLeaderUpdateMessage) ID() uint16 {
 
 func (m *PartyLeaderUpdateMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PartyLeaderId); err != nil {
 		return err
@@ -4824,7 +4934,9 @@ func (m *PartyLeaderUpdateMessage) Serialize(w Writer) error {
 
 func (m *PartyLeaderUpdateMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyLeaderId, err := r.ReadVarInt64()
 	if err != nil {
@@ -4848,7 +4960,9 @@ func (m *PartyInvitationCancelledForGuestMessage) ID() uint16 {
 
 func (m *PartyInvitationCancelledForGuestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.CancelerId); err != nil {
 		return err
@@ -4859,7 +4973,9 @@ func (m *PartyInvitationCancelledForGuestMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationCancelledForGuestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcancelerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -4883,7 +4999,9 @@ func (m *PartyCancelInvitationMessage) ID() uint16 {
 
 func (m *PartyCancelInvitationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.GuestId); err != nil {
 		return err
@@ -4894,7 +5012,9 @@ func (m *PartyCancelInvitationMessage) Serialize(w Writer) error {
 
 func (m *PartyCancelInvitationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lguestId, err := r.ReadVarInt64()
 	if err != nil {
@@ -4918,7 +5038,9 @@ func (m *PartyKickRequestMessage) ID() uint16 {
 
 func (m *PartyKickRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -4929,7 +5051,9 @@ func (m *PartyKickRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyKickRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -4965,7 +5089,9 @@ func (m *PartyMemberInFightMessage) ID() uint16 {
 
 func (m *PartyMemberInFightMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Reason); err != nil {
 		return err
@@ -5000,7 +5126,9 @@ func (m *PartyMemberInFightMessage) Serialize(w Writer) error {
 
 func (m *PartyMemberInFightMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lreason, err := r.ReadUInt8()
 	if err != nil {
@@ -5065,7 +5193,9 @@ func (m *PartyAbdicateThroneMessage) ID() uint16 {
 
 func (m *PartyAbdicateThroneMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -5076,7 +5206,9 @@ func (m *PartyAbdicateThroneMessage) Serialize(w Writer) error {
 
 func (m *PartyAbdicateThroneMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -5234,7 +5366,9 @@ func (m *PartyRefuseInvitationNotificationMessage) ID() uint16 {
 
 func (m *PartyRefuseInvitationNotificationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.GuestId); err != nil {
 		return err
@@ -5245,7 +5379,9 @@ func (m *PartyRefuseInvitationNotificationMessage) Serialize(w Writer) error {
 
 func (m *PartyRefuseInvitationNotificationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lguestId, err := r.ReadVarInt64()
 	if err != nil {
@@ -5269,7 +5405,9 @@ func (m *PartyNameSetRequestMessage) ID() uint16 {
 
 func (m *PartyNameSetRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.PartyName); err != nil {
 		return err
@@ -5280,7 +5418,9 @@ func (m *PartyNameSetRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyNameSetRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyName, err := r.ReadString()
 	if err != nil {
@@ -5352,7 +5492,9 @@ func (m *PartyMemberRemoveMessage) ID() uint16 {
 
 func (m *PartyMemberRemoveMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.LeavingPlayerId); err != nil {
 		return err
@@ -5363,7 +5505,9 @@ func (m *PartyMemberRemoveMessage) Serialize(w Writer) error {
 
 func (m *PartyMemberRemoveMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lleavingPlayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -5385,14 +5529,18 @@ func (m *PartyDeletedMessage) ID() uint16 {
 
 func (m *PartyDeletedMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyDeletedMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -5493,7 +5641,9 @@ func (m *PartyNameUpdateMessage) ID() uint16 {
 
 func (m *PartyNameUpdateMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.PartyName); err != nil {
 		return err
@@ -5504,7 +5654,9 @@ func (m *PartyNameUpdateMessage) Serialize(w Writer) error {
 
 func (m *PartyNameUpdateMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpartyName, err := r.ReadString()
 	if err != nil {
@@ -5557,7 +5709,9 @@ func (m *PartyInvitationDungeonMessage) ID() uint16 {
 
 func (m *PartyInvitationDungeonMessage) Serialize(w Writer) error {
 
-	m.PartyInvitationMessage.Serialize(w)
+	if err := m.PartyInvitationMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.DungeonId); err != nil {
 		return err
@@ -5568,7 +5722,9 @@ func (m *PartyInvitationDungeonMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationDungeonMessage) Deserialize(r Reader) error {
 
-	m.PartyInvitationMessage.Deserialize(r)
+	if err := m.PartyInvitationMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldungeonId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5590,14 +5746,18 @@ func (m *PartyLeaveMessage) ID() uint16 {
 
 func (m *PartyLeaveMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyLeaveMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -5616,7 +5776,9 @@ func (m *PartyInvitationDungeonDetailsMessage) ID() uint16 {
 
 func (m *PartyInvitationDungeonDetailsMessage) Serialize(w Writer) error {
 
-	m.PartyInvitationDetailsMessage.Serialize(w)
+	if err := m.PartyInvitationDetailsMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.DungeonId); err != nil {
 		return err
@@ -5639,7 +5801,9 @@ func (m *PartyInvitationDungeonDetailsMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationDungeonDetailsMessage) Deserialize(r Reader) error {
 
-	m.PartyInvitationDetailsMessage.Deserialize(r)
+	if err := m.PartyInvitationDetailsMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldungeonId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5681,7 +5845,9 @@ func (m *PartyUpdateMessage) ID() uint16 {
 
 func (m *PartyUpdateMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.MemberInformations.ID()); err != nil {
 		return err
@@ -5696,7 +5862,9 @@ func (m *PartyUpdateMessage) Serialize(w Writer) error {
 
 func (m *PartyUpdateMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	typememberInformationsID, err := r.ReadUInt16()
 	if err != nil {
@@ -5726,7 +5894,9 @@ func (m *PartyInvitationDungeonRequestMessage) ID() uint16 {
 
 func (m *PartyInvitationDungeonRequestMessage) Serialize(w Writer) error {
 
-	m.PartyInvitationRequestMessage.Serialize(w)
+	if err := m.PartyInvitationRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.DungeonId); err != nil {
 		return err
@@ -5737,7 +5907,9 @@ func (m *PartyInvitationDungeonRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyInvitationDungeonRequestMessage) Deserialize(r Reader) error {
 
-	m.PartyInvitationRequestMessage.Deserialize(r)
+	if err := m.PartyInvitationRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldungeonId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5792,7 +5964,9 @@ func (m *PartyCancelInvitationNotificationMessage) ID() uint16 {
 
 func (m *PartyCancelInvitationNotificationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyEventMessage.Serialize(w)
+	if err := m.AbstractPartyEventMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.CancelerId); err != nil {
 		return err
@@ -5807,7 +5981,9 @@ func (m *PartyCancelInvitationNotificationMessage) Serialize(w Writer) error {
 
 func (m *PartyCancelInvitationNotificationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyEventMessage.Deserialize(r)
+	if err := m.AbstractPartyEventMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcancelerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -6256,14 +6432,18 @@ func (m *PartyRefuseInvitationMessage) ID() uint16 {
 
 func (m *PartyRefuseInvitationMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyRefuseInvitationMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -6280,7 +6460,9 @@ func (m *PartyPledgeLoyaltyRequestMessage) ID() uint16 {
 
 func (m *PartyPledgeLoyaltyRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Loyal); err != nil {
 		return err
@@ -6291,7 +6473,9 @@ func (m *PartyPledgeLoyaltyRequestMessage) Serialize(w Writer) error {
 
 func (m *PartyPledgeLoyaltyRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lloyal, err := r.ReadBoolean()
 	if err != nil {
@@ -6368,14 +6552,18 @@ func (m *PartyNewMemberMessage) ID() uint16 {
 
 func (m *PartyNewMemberMessage) Serialize(w Writer) error {
 
-	m.PartyUpdateMessage.Serialize(w)
+	if err := m.PartyUpdateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyNewMemberMessage) Deserialize(r Reader) error {
 
-	m.PartyUpdateMessage.Deserialize(r)
+	if err := m.PartyUpdateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -6450,7 +6638,9 @@ func (m *GuildBulletinSetRequestMessage) ID() uint16 {
 
 func (m *GuildBulletinSetRequestMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetRequestMessage.Serialize(w)
+	if err := m.SocialNoticeSetRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Content); err != nil {
 		return err
@@ -6465,7 +6655,9 @@ func (m *GuildBulletinSetRequestMessage) Serialize(w Writer) error {
 
 func (m *GuildBulletinSetRequestMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetRequestMessage.Deserialize(r)
+	if err := m.SocialNoticeSetRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcontent, err := r.ReadString()
 	if err != nil {
@@ -6886,7 +7078,9 @@ func (m *TaxCollectorDialogQuestionExtendedMessage) ID() uint16 {
 
 func (m *TaxCollectorDialogQuestionExtendedMessage) Serialize(w Writer) error {
 
-	m.TaxCollectorDialogQuestionBasicMessage.Serialize(w)
+	if err := m.TaxCollectorDialogQuestionBasicMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.MaxPods); err != nil {
 		return err
@@ -6929,7 +7123,9 @@ func (m *TaxCollectorDialogQuestionExtendedMessage) Serialize(w Writer) error {
 
 func (m *TaxCollectorDialogQuestionExtendedMessage) Deserialize(r Reader) error {
 
-	m.TaxCollectorDialogQuestionBasicMessage.Deserialize(r)
+	if err := m.TaxCollectorDialogQuestionBasicMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmaxPods, err := r.ReadVarUInt16()
 	if err != nil {
@@ -7221,7 +7417,9 @@ func (m *ContactLookRequestByIdMessage) ID() uint16 {
 
 func (m *ContactLookRequestByIdMessage) Serialize(w Writer) error {
 
-	m.ContactLookRequestMessage.Serialize(w)
+	if err := m.ContactLookRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -7232,7 +7430,9 @@ func (m *ContactLookRequestByIdMessage) Serialize(w Writer) error {
 
 func (m *ContactLookRequestByIdMessage) Deserialize(r Reader) error {
 
-	m.ContactLookRequestMessage.Deserialize(r)
+	if err := m.ContactLookRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -7314,7 +7514,9 @@ func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) ID() uint16 {
 
 func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) Serialize(w Writer) error {
 
-	m.TaxCollectorDialogQuestionExtendedMessage.Serialize(w)
+	if err := m.TaxCollectorDialogQuestionExtendedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Alliance.Serialize(w); err != nil {
 		return err
@@ -7325,7 +7527,9 @@ func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) Serialize(w Writer) 
 
 func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) Deserialize(r Reader) error {
 
-	m.TaxCollectorDialogQuestionExtendedMessage.Deserialize(r)
+	if err := m.TaxCollectorDialogQuestionExtendedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lalliance BasicNamedAllianceInformations
 
@@ -7348,7 +7552,9 @@ func (m *GuildMotdSetRequestMessage) ID() uint16 {
 
 func (m *GuildMotdSetRequestMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetRequestMessage.Serialize(w)
+	if err := m.SocialNoticeSetRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Content); err != nil {
 		return err
@@ -7359,7 +7565,9 @@ func (m *GuildMotdSetRequestMessage) Serialize(w Writer) error {
 
 func (m *GuildMotdSetRequestMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetRequestMessage.Deserialize(r)
+	if err := m.SocialNoticeSetRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcontent, err := r.ReadString()
 	if err != nil {
@@ -9450,7 +9658,9 @@ func (m *GuildInAllianceFactsMessage) ID() uint16 {
 
 func (m *GuildInAllianceFactsMessage) Serialize(w Writer) error {
 
-	m.GuildFactsMessage.Serialize(w)
+	if err := m.GuildFactsMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceInfos.Serialize(w); err != nil {
 		return err
@@ -9461,7 +9671,9 @@ func (m *GuildInAllianceFactsMessage) Serialize(w Writer) error {
 
 func (m *GuildInAllianceFactsMessage) Deserialize(r Reader) error {
 
-	m.GuildFactsMessage.Deserialize(r)
+	if err := m.GuildFactsMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceInfos BasicNamedAllianceInformations
 
@@ -9550,14 +9762,18 @@ func (m *GuildMotdMessage) ID() uint16 {
 
 func (m *GuildMotdMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeMessage.Serialize(w)
+	if err := m.SocialNoticeMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GuildMotdMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeMessage.Deserialize(r)
+	if err := m.SocialNoticeMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -10047,14 +10263,18 @@ func (m *GuildMotdSetErrorMessage) ID() uint16 {
 
 func (m *GuildMotdSetErrorMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetErrorMessage.Serialize(w)
+	if err := m.SocialNoticeSetErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GuildMotdSetErrorMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetErrorMessage.Deserialize(r)
+	if err := m.SocialNoticeSetErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -10098,14 +10318,18 @@ func (m *GuildMembershipMessage) ID() uint16 {
 
 func (m *GuildMembershipMessage) Serialize(w Writer) error {
 
-	m.GuildJoinedMessage.Serialize(w)
+	if err := m.GuildJoinedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GuildMembershipMessage) Deserialize(r Reader) error {
 
-	m.GuildJoinedMessage.Deserialize(r)
+	if err := m.GuildJoinedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -10251,7 +10475,9 @@ func (m *BulletinMessage) ID() uint16 {
 
 func (m *BulletinMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeMessage.Serialize(w)
+	if err := m.SocialNoticeMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.LastNotifiedTimestamp); err != nil {
 		return err
@@ -10262,7 +10488,9 @@ func (m *BulletinMessage) Serialize(w Writer) error {
 
 func (m *BulletinMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeMessage.Deserialize(r)
+	if err := m.SocialNoticeMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	llastNotifiedTimestamp, err := r.ReadUInt32()
 	if err != nil {
@@ -10284,14 +10512,18 @@ func (m *GuildBulletinMessage) ID() uint16 {
 
 func (m *GuildBulletinMessage) Serialize(w Writer) error {
 
-	m.BulletinMessage.Serialize(w)
+	if err := m.BulletinMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GuildBulletinMessage) Deserialize(r Reader) error {
 
-	m.BulletinMessage.Deserialize(r)
+	if err := m.BulletinMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -10337,7 +10569,9 @@ func (m *GuildFightTakePlaceRequestMessage) ID() uint16 {
 
 func (m *GuildFightTakePlaceRequestMessage) Serialize(w Writer) error {
 
-	m.GuildFightJoinRequestMessage.Serialize(w)
+	if err := m.GuildFightJoinRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.ReplacedCharacterId); err != nil {
 		return err
@@ -10348,7 +10582,9 @@ func (m *GuildFightTakePlaceRequestMessage) Serialize(w Writer) error {
 
 func (m *GuildFightTakePlaceRequestMessage) Deserialize(r Reader) error {
 
-	m.GuildFightJoinRequestMessage.Deserialize(r)
+	if err := m.GuildFightJoinRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lreplacedCharacterId, err := r.ReadInt32()
 	if err != nil {
@@ -10589,7 +10825,9 @@ func (m *TaxCollectorListMessage) ID() uint16 {
 
 func (m *TaxCollectorListMessage) Serialize(w Writer) error {
 
-	m.AbstractTaxCollectorListMessage.Serialize(w)
+	if err := m.AbstractTaxCollectorListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.NbcollectorMax); err != nil {
 		return err
@@ -10612,7 +10850,9 @@ func (m *TaxCollectorListMessage) Serialize(w Writer) error {
 
 func (m *TaxCollectorListMessage) Deserialize(r Reader) error {
 
-	m.AbstractTaxCollectorListMessage.Deserialize(r)
+	if err := m.AbstractTaxCollectorListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnbcollectorMax, err := r.ReadUInt8()
 	if err != nil {
@@ -10653,7 +10893,9 @@ func (m *TopTaxCollectorListMessage) ID() uint16 {
 
 func (m *TopTaxCollectorListMessage) Serialize(w Writer) error {
 
-	m.AbstractTaxCollectorListMessage.Serialize(w)
+	if err := m.AbstractTaxCollectorListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.IsDungeon); err != nil {
 		return err
@@ -10664,7 +10906,9 @@ func (m *TopTaxCollectorListMessage) Serialize(w Writer) error {
 
 func (m *TopTaxCollectorListMessage) Deserialize(r Reader) error {
 
-	m.AbstractTaxCollectorListMessage.Deserialize(r)
+	if err := m.AbstractTaxCollectorListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lisDungeon, err := r.ReadBoolean()
 	if err != nil {
@@ -10870,14 +11114,18 @@ func (m *GuildBulletinSetErrorMessage) ID() uint16 {
 
 func (m *GuildBulletinSetErrorMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetErrorMessage.Serialize(w)
+	if err := m.SocialNoticeSetErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GuildBulletinSetErrorMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetErrorMessage.Deserialize(r)
+	if err := m.SocialNoticeSetErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -11292,14 +11540,18 @@ func (m *AllianceBulletinSetErrorMessage) ID() uint16 {
 
 func (m *AllianceBulletinSetErrorMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetErrorMessage.Serialize(w)
+	if err := m.SocialNoticeSetErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AllianceBulletinSetErrorMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetErrorMessage.Deserialize(r)
+	if err := m.SocialNoticeSetErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -11316,7 +11568,9 @@ func (m *AllianceMotdSetRequestMessage) ID() uint16 {
 
 func (m *AllianceMotdSetRequestMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetRequestMessage.Serialize(w)
+	if err := m.SocialNoticeSetRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Content); err != nil {
 		return err
@@ -11327,7 +11581,9 @@ func (m *AllianceMotdSetRequestMessage) Serialize(w Writer) error {
 
 func (m *AllianceMotdSetRequestMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetRequestMessage.Deserialize(r)
+	if err := m.SocialNoticeSetRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcontent, err := r.ReadString()
 	if err != nil {
@@ -11838,14 +12094,18 @@ func (m *PrismsListUpdateMessage) ID() uint16 {
 
 func (m *PrismsListUpdateMessage) Serialize(w Writer) error {
 
-	m.PrismsListMessage.Serialize(w)
+	if err := m.PrismsListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PrismsListUpdateMessage) Deserialize(r Reader) error {
 
-	m.PrismsListMessage.Deserialize(r)
+	if err := m.PrismsListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12118,14 +12378,18 @@ func (m *AllianceMotdMessage) ID() uint16 {
 
 func (m *AllianceMotdMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeMessage.Serialize(w)
+	if err := m.SocialNoticeMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AllianceMotdMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeMessage.Deserialize(r)
+	if err := m.SocialNoticeMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12169,14 +12433,18 @@ func (m *AllianceMotdSetErrorMessage) ID() uint16 {
 
 func (m *AllianceMotdSetErrorMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetErrorMessage.Serialize(w)
+	if err := m.SocialNoticeSetErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AllianceMotdSetErrorMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetErrorMessage.Deserialize(r)
+	if err := m.SocialNoticeSetErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12208,14 +12476,18 @@ func (m *AllianceMembershipMessage) ID() uint16 {
 
 func (m *AllianceMembershipMessage) Serialize(w Writer) error {
 
-	m.AllianceJoinedMessage.Serialize(w)
+	if err := m.AllianceJoinedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AllianceMembershipMessage) Deserialize(r Reader) error {
 
-	m.AllianceJoinedMessage.Deserialize(r)
+	if err := m.AllianceJoinedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12230,14 +12502,18 @@ func (m *AllianceBulletinMessage) ID() uint16 {
 
 func (m *AllianceBulletinMessage) Serialize(w Writer) error {
 
-	m.BulletinMessage.Serialize(w)
+	if err := m.BulletinMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AllianceBulletinMessage) Deserialize(r Reader) error {
 
-	m.BulletinMessage.Deserialize(r)
+	if err := m.BulletinMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12815,7 +13091,9 @@ func (m *AllianceBulletinSetRequestMessage) ID() uint16 {
 
 func (m *AllianceBulletinSetRequestMessage) Serialize(w Writer) error {
 
-	m.SocialNoticeSetRequestMessage.Serialize(w)
+	if err := m.SocialNoticeSetRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Content); err != nil {
 		return err
@@ -12830,7 +13108,9 @@ func (m *AllianceBulletinSetRequestMessage) Serialize(w Writer) error {
 
 func (m *AllianceBulletinSetRequestMessage) Deserialize(r Reader) error {
 
-	m.SocialNoticeSetRequestMessage.Deserialize(r)
+	if err := m.SocialNoticeSetRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcontent, err := r.ReadString()
 	if err != nil {
@@ -13083,7 +13363,9 @@ func (m *ChatClientMultiMessage) ID() uint16 {
 
 func (m *ChatClientMultiMessage) Serialize(w Writer) error {
 
-	m.ChatAbstractClientMessage.Serialize(w)
+	if err := m.ChatAbstractClientMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Channel); err != nil {
 		return err
@@ -13094,7 +13376,9 @@ func (m *ChatClientMultiMessage) Serialize(w Writer) error {
 
 func (m *ChatClientMultiMessage) Deserialize(r Reader) error {
 
-	m.ChatAbstractClientMessage.Deserialize(r)
+	if err := m.ChatAbstractClientMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lchannel, err := r.ReadUInt8()
 	if err != nil {
@@ -13257,7 +13541,9 @@ func (m *ChatClientPrivateMessage) ID() uint16 {
 
 func (m *ChatClientPrivateMessage) Serialize(w Writer) error {
 
-	m.ChatAbstractClientMessage.Serialize(w)
+	if err := m.ChatAbstractClientMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Receiver); err != nil {
 		return err
@@ -13268,7 +13554,9 @@ func (m *ChatClientPrivateMessage) Serialize(w Writer) error {
 
 func (m *ChatClientPrivateMessage) Deserialize(r Reader) error {
 
-	m.ChatAbstractClientMessage.Deserialize(r)
+	if err := m.ChatAbstractClientMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lreceiver, err := r.ReadString()
 	if err != nil {
@@ -13292,7 +13580,9 @@ func (m *ChatClientPrivateWithObjectMessage) ID() uint16 {
 
 func (m *ChatClientPrivateWithObjectMessage) Serialize(w Writer) error {
 
-	m.ChatClientPrivateMessage.Serialize(w)
+	if err := m.ChatClientPrivateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Objects))); err != nil {
 		return err
@@ -13311,7 +13601,9 @@ func (m *ChatClientPrivateWithObjectMessage) Serialize(w Writer) error {
 
 func (m *ChatClientPrivateWithObjectMessage) Deserialize(r Reader) error {
 
-	m.ChatClientPrivateMessage.Deserialize(r)
+	if err := m.ChatClientPrivateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectsLen, err := r.ReadInt16()
 	if err != nil {
@@ -13457,7 +13749,9 @@ func (m *ChatServerCopyMessage) ID() uint16 {
 
 func (m *ChatServerCopyMessage) Serialize(w Writer) error {
 
-	m.ChatAbstractServerMessage.Serialize(w)
+	if err := m.ChatAbstractServerMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.ReceiverId); err != nil {
 		return err
@@ -13472,7 +13766,9 @@ func (m *ChatServerCopyMessage) Serialize(w Writer) error {
 
 func (m *ChatServerCopyMessage) Deserialize(r Reader) error {
 
-	m.ChatAbstractServerMessage.Deserialize(r)
+	if err := m.ChatAbstractServerMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lreceiverId, err := r.ReadVarInt64()
 	if err != nil {
@@ -13718,7 +14014,9 @@ func (m *ChatClientMultiWithObjectMessage) ID() uint16 {
 
 func (m *ChatClientMultiWithObjectMessage) Serialize(w Writer) error {
 
-	m.ChatClientMultiMessage.Serialize(w)
+	if err := m.ChatClientMultiMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Objects))); err != nil {
 		return err
@@ -13737,7 +14035,9 @@ func (m *ChatClientMultiWithObjectMessage) Serialize(w Writer) error {
 
 func (m *ChatClientMultiWithObjectMessage) Deserialize(r Reader) error {
 
-	m.ChatClientMultiMessage.Deserialize(r)
+	if err := m.ChatClientMultiMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectsLen, err := r.ReadInt16()
 	if err != nil {
@@ -13804,7 +14104,9 @@ func (m *ChatServerMessage) ID() uint16 {
 
 func (m *ChatServerMessage) Serialize(w Writer) error {
 
-	m.ChatAbstractServerMessage.Serialize(w)
+	if err := m.ChatAbstractServerMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.SenderId); err != nil {
 		return err
@@ -13823,7 +14125,9 @@ func (m *ChatServerMessage) Serialize(w Writer) error {
 
 func (m *ChatServerMessage) Deserialize(r Reader) error {
 
-	m.ChatAbstractServerMessage.Deserialize(r)
+	if err := m.ChatAbstractServerMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsenderId, err := r.ReadDouble()
 	if err != nil {
@@ -14262,7 +14566,9 @@ func (m *NewMailMessage) ID() uint16 {
 
 func (m *NewMailMessage) Serialize(w Writer) error {
 
-	m.MailStatusMessage.Serialize(w)
+	if err := m.MailStatusMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.SendersAccountId))); err != nil {
 		return err
@@ -14281,7 +14587,9 @@ func (m *NewMailMessage) Serialize(w Writer) error {
 
 func (m *NewMailMessage) Deserialize(r Reader) error {
 
-	m.MailStatusMessage.Deserialize(r)
+	if err := m.MailStatusMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsendersAccountIdLen, err := r.ReadInt16()
 	if err != nil {
@@ -14461,7 +14769,9 @@ func (m *ChatServerCopyWithObjectMessage) ID() uint16 {
 
 func (m *ChatServerCopyWithObjectMessage) Serialize(w Writer) error {
 
-	m.ChatServerCopyMessage.Serialize(w)
+	if err := m.ChatServerCopyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Objects))); err != nil {
 		return err
@@ -14480,7 +14790,9 @@ func (m *ChatServerCopyWithObjectMessage) Serialize(w Writer) error {
 
 func (m *ChatServerCopyWithObjectMessage) Deserialize(r Reader) error {
 
-	m.ChatServerCopyMessage.Deserialize(r)
+	if err := m.ChatServerCopyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectsLen, err := r.ReadInt16()
 	if err != nil {
@@ -14585,7 +14897,9 @@ func (m *ChatServerWithObjectMessage) ID() uint16 {
 
 func (m *ChatServerWithObjectMessage) Serialize(w Writer) error {
 
-	m.ChatServerMessage.Serialize(w)
+	if err := m.ChatServerMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Objects))); err != nil {
 		return err
@@ -14604,7 +14918,9 @@ func (m *ChatServerWithObjectMessage) Serialize(w Writer) error {
 
 func (m *ChatServerWithObjectMessage) Deserialize(r Reader) error {
 
-	m.ChatServerMessage.Deserialize(r)
+	if err := m.ChatServerMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectsLen, err := r.ReadInt16()
 	if err != nil {
@@ -14638,7 +14954,9 @@ func (m *LocalizedChatSmileyMessage) ID() uint16 {
 
 func (m *LocalizedChatSmileyMessage) Serialize(w Writer) error {
 
-	m.ChatSmileyMessage.Serialize(w)
+	if err := m.ChatSmileyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.CellId); err != nil {
 		return err
@@ -14649,7 +14967,9 @@ func (m *LocalizedChatSmileyMessage) Serialize(w Writer) error {
 
 func (m *LocalizedChatSmileyMessage) Deserialize(r Reader) error {
 
-	m.ChatSmileyMessage.Deserialize(r)
+	if err := m.ChatSmileyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcellId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -14671,14 +14991,18 @@ func (m *ChatAdminServerMessage) ID() uint16 {
 
 func (m *ChatAdminServerMessage) Serialize(w Writer) error {
 
-	m.ChatServerMessage.Serialize(w)
+	if err := m.ChatServerMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ChatAdminServerMessage) Deserialize(r Reader) error {
 
-	m.ChatServerMessage.Deserialize(r)
+	if err := m.ChatServerMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -15030,7 +15354,9 @@ func (m *GameActionFightDeathMessage) ID() uint16 {
 
 func (m *GameActionFightDeathMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -15041,7 +15367,9 @@ func (m *GameActionFightDeathMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDeathMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -15107,7 +15435,9 @@ func (m *GameFightTurnResumeMessage) ID() uint16 {
 
 func (m *GameFightTurnResumeMessage) Serialize(w Writer) error {
 
-	m.GameFightTurnStartMessage.Serialize(w)
+	if err := m.GameFightTurnStartMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.RemainingTime); err != nil {
 		return err
@@ -15118,7 +15448,9 @@ func (m *GameFightTurnResumeMessage) Serialize(w Writer) error {
 
 func (m *GameFightTurnResumeMessage) Deserialize(r Reader) error {
 
-	m.GameFightTurnStartMessage.Deserialize(r)
+	if err := m.GameFightTurnStartMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lremainingTime, err := r.ReadVarUInt32()
 	if err != nil {
@@ -15921,14 +16253,18 @@ func (m *GameFightShowFighterRandomStaticPoseMessage) ID() uint16 {
 
 func (m *GameFightShowFighterRandomStaticPoseMessage) Serialize(w Writer) error {
 
-	m.GameFightShowFighterMessage.Serialize(w)
+	if err := m.GameFightShowFighterMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameFightShowFighterRandomStaticPoseMessage) Deserialize(r Reader) error {
 
-	m.GameFightShowFighterMessage.Deserialize(r)
+	if err := m.GameFightShowFighterMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -16115,7 +16451,9 @@ func (m *GameActionFightDropCharacterMessage) ID() uint16 {
 
 func (m *GameActionFightDropCharacterMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -16130,7 +16468,9 @@ func (m *GameActionFightDropCharacterMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDropCharacterMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -16163,7 +16503,9 @@ func (m *GameActionFightCarryCharacterMessage) ID() uint16 {
 
 func (m *GameActionFightCarryCharacterMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -16178,7 +16520,9 @@ func (m *GameActionFightCarryCharacterMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightCarryCharacterMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -16239,7 +16583,9 @@ func (m *MapComplementaryInformationsWithCoordsMessage) ID() uint16 {
 
 func (m *MapComplementaryInformationsWithCoordsMessage) Serialize(w Writer) error {
 
-	m.MapComplementaryInformationsDataMessage.Serialize(w)
+	if err := m.MapComplementaryInformationsDataMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.WorldX); err != nil {
 		return err
@@ -16254,7 +16600,9 @@ func (m *MapComplementaryInformationsWithCoordsMessage) Serialize(w Writer) erro
 
 func (m *MapComplementaryInformationsWithCoordsMessage) Deserialize(r Reader) error {
 
-	m.MapComplementaryInformationsDataMessage.Deserialize(r)
+	if err := m.MapComplementaryInformationsDataMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
@@ -16287,7 +16635,9 @@ func (m *GameActionFightThrowCharacterMessage) ID() uint16 {
 
 func (m *GameActionFightThrowCharacterMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -16302,7 +16652,9 @@ func (m *GameActionFightThrowCharacterMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightThrowCharacterMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -16333,7 +16685,9 @@ func (m *MapComplementaryInformationsDataInHouseMessage) ID() uint16 {
 
 func (m *MapComplementaryInformationsDataInHouseMessage) Serialize(w Writer) error {
 
-	m.MapComplementaryInformationsDataMessage.Serialize(w)
+	if err := m.MapComplementaryInformationsDataMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.CurrentHouse.Serialize(w); err != nil {
 		return err
@@ -16344,7 +16698,9 @@ func (m *MapComplementaryInformationsDataInHouseMessage) Serialize(w Writer) err
 
 func (m *MapComplementaryInformationsDataInHouseMessage) Deserialize(r Reader) error {
 
-	m.MapComplementaryInformationsDataMessage.Deserialize(r)
+	if err := m.MapComplementaryInformationsDataMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lcurrentHouse HouseInformationsInside
 
@@ -16367,7 +16723,9 @@ func (m *ShowCellSpectatorMessage) ID() uint16 {
 
 func (m *ShowCellSpectatorMessage) Serialize(w Writer) error {
 
-	m.ShowCellMessage.Serialize(w)
+	if err := m.ShowCellMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.PlayerName); err != nil {
 		return err
@@ -16378,7 +16736,9 @@ func (m *ShowCellSpectatorMessage) Serialize(w Writer) error {
 
 func (m *ShowCellSpectatorMessage) Deserialize(r Reader) error {
 
-	m.ShowCellMessage.Deserialize(r)
+	if err := m.ShowCellMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerName, err := r.ReadString()
 	if err != nil {
@@ -16907,7 +17267,9 @@ func (m *MapComplementaryInformationsDataInHavenBagMessage) ID() uint16 {
 
 func (m *MapComplementaryInformationsDataInHavenBagMessage) Serialize(w Writer) error {
 
-	m.MapComplementaryInformationsDataMessage.Serialize(w)
+	if err := m.MapComplementaryInformationsDataMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.OwnerInformations.Serialize(w); err != nil {
 		return err
@@ -16930,7 +17292,9 @@ func (m *MapComplementaryInformationsDataInHavenBagMessage) Serialize(w Writer) 
 
 func (m *MapComplementaryInformationsDataInHavenBagMessage) Deserialize(r Reader) error {
 
-	m.MapComplementaryInformationsDataMessage.Deserialize(r)
+	if err := m.MapComplementaryInformationsDataMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lownerInformations CharacterMinimalInformations
 
@@ -18243,7 +18607,9 @@ func (m *IdentificationAccountForceMessage) ID() uint16 {
 
 func (m *IdentificationAccountForceMessage) Serialize(w Writer) error {
 
-	m.IdentificationMessage.Serialize(w)
+	if err := m.IdentificationMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.ForcedAccountLogin); err != nil {
 		return err
@@ -18254,7 +18620,9 @@ func (m *IdentificationAccountForceMessage) Serialize(w Writer) error {
 
 func (m *IdentificationAccountForceMessage) Deserialize(r Reader) error {
 
-	m.IdentificationMessage.Deserialize(r)
+	if err := m.IdentificationMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lforcedAccountLogin, err := r.ReadString()
 	if err != nil {
@@ -18590,7 +18958,9 @@ func (m *AbstractGameActionFightTargetedAbilityMessage) ID() uint16 {
 
 func (m *AbstractGameActionFightTargetedAbilityMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -18619,7 +18989,9 @@ func (m *AbstractGameActionFightTargetedAbilityMessage) Serialize(w Writer) erro
 
 func (m *AbstractGameActionFightTargetedAbilityMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -18670,7 +19042,9 @@ func (m *GameActionFightSpellCastMessage) ID() uint16 {
 
 func (m *GameActionFightSpellCastMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionFightTargetedAbilityMessage.Serialize(w)
+	if err := m.AbstractGameActionFightTargetedAbilityMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.SpellId); err != nil {
 		return err
@@ -18697,7 +19071,9 @@ func (m *GameActionFightSpellCastMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightSpellCastMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionFightTargetedAbilityMessage.Deserialize(r)
+	if err := m.AbstractGameActionFightTargetedAbilityMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspellId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -18750,7 +19126,9 @@ func (m *GameActionFightLifePointsLostMessage) ID() uint16 {
 
 func (m *GameActionFightLifePointsLostMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -18769,7 +19147,9 @@ func (m *GameActionFightLifePointsLostMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightLifePointsLostMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -18807,7 +19187,9 @@ func (m *GameActionFightLifeAndShieldPointsLostMessage) ID() uint16 {
 
 func (m *GameActionFightLifeAndShieldPointsLostMessage) Serialize(w Writer) error {
 
-	m.GameActionFightLifePointsLostMessage.Serialize(w)
+	if err := m.GameActionFightLifePointsLostMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ShieldLoss); err != nil {
 		return err
@@ -18818,7 +19200,9 @@ func (m *GameActionFightLifeAndShieldPointsLostMessage) Serialize(w Writer) erro
 
 func (m *GameActionFightLifeAndShieldPointsLostMessage) Deserialize(r Reader) error {
 
-	m.GameActionFightLifePointsLostMessage.Deserialize(r)
+	if err := m.GameActionFightLifePointsLostMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lshieldLoss, err := r.ReadVarUInt16()
 	if err != nil {
@@ -18844,7 +19228,9 @@ func (m *GameActionFightModifyEffectsDurationMessage) ID() uint16 {
 
 func (m *GameActionFightModifyEffectsDurationMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -18859,7 +19245,9 @@ func (m *GameActionFightModifyEffectsDurationMessage) Serialize(w Writer) error 
 
 func (m *GameActionFightModifyEffectsDurationMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -18892,7 +19280,9 @@ func (m *GameActionFightReduceDamagesMessage) ID() uint16 {
 
 func (m *GameActionFightReduceDamagesMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -18907,7 +19297,9 @@ func (m *GameActionFightReduceDamagesMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightReduceDamagesMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -18942,7 +19334,9 @@ func (m *GameActionFightSpellCooldownVariationMessage) ID() uint16 {
 
 func (m *GameActionFightSpellCooldownVariationMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -18961,7 +19355,9 @@ func (m *GameActionFightSpellCooldownVariationMessage) Serialize(w Writer) error
 
 func (m *GameActionFightSpellCooldownVariationMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -18999,7 +19395,9 @@ func (m *GameActionFightTackledMessage) ID() uint16 {
 
 func (m *GameActionFightTackledMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.TacklersIds))); err != nil {
 		return err
@@ -19018,7 +19416,9 @@ func (m *GameActionFightTackledMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightTackledMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltacklersIdsLen, err := r.ReadInt16()
 	if err != nil {
@@ -19057,7 +19457,9 @@ func (m *GameActionFightExchangePositionsMessage) ID() uint16 {
 
 func (m *GameActionFightExchangePositionsMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19076,7 +19478,9 @@ func (m *GameActionFightExchangePositionsMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightExchangePositionsMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19114,7 +19518,9 @@ func (m *GameActionFightKillMessage) ID() uint16 {
 
 func (m *GameActionFightKillMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19125,7 +19531,9 @@ func (m *GameActionFightKillMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightKillMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19149,7 +19557,9 @@ func (m *GameActionFightReflectSpellMessage) ID() uint16 {
 
 func (m *GameActionFightReflectSpellMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19160,7 +19570,9 @@ func (m *GameActionFightReflectSpellMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightReflectSpellMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19186,7 +19598,9 @@ func (m *GameActionFightSpellImmunityMessage) ID() uint16 {
 
 func (m *GameActionFightSpellImmunityMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19201,7 +19615,9 @@ func (m *GameActionFightSpellImmunityMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightSpellImmunityMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19232,7 +19648,9 @@ func (m *GameActionFightDispellMessage) ID() uint16 {
 
 func (m *GameActionFightDispellMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19243,7 +19661,9 @@ func (m *GameActionFightDispellMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDispellMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19271,7 +19691,9 @@ func (m *GameActionFightTriggerGlyphTrapMessage) ID() uint16 {
 
 func (m *GameActionFightTriggerGlyphTrapMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.MarkId); err != nil {
 		return err
@@ -19290,7 +19712,9 @@ func (m *GameActionFightTriggerGlyphTrapMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightTriggerGlyphTrapMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmarkId, err := r.ReadInt16()
 	if err != nil {
@@ -19330,7 +19754,9 @@ func (m *GameActionFightLifePointsGainMessage) ID() uint16 {
 
 func (m *GameActionFightLifePointsGainMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19345,7 +19771,9 @@ func (m *GameActionFightLifePointsGainMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightLifePointsGainMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19376,7 +19804,9 @@ func (m *GameActionFightReflectDamagesMessage) ID() uint16 {
 
 func (m *GameActionFightReflectDamagesMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19387,7 +19817,9 @@ func (m *GameActionFightReflectDamagesMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightReflectDamagesMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19411,7 +19843,9 @@ func (m *GameActionFightVanishMessage) ID() uint16 {
 
 func (m *GameActionFightVanishMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19422,7 +19856,9 @@ func (m *GameActionFightVanishMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightVanishMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19446,7 +19882,9 @@ func (m *GameActionFightDispellSpellMessage) ID() uint16 {
 
 func (m *GameActionFightDispellSpellMessage) Serialize(w Writer) error {
 
-	m.GameActionFightDispellMessage.Serialize(w)
+	if err := m.GameActionFightDispellMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.SpellId); err != nil {
 		return err
@@ -19457,7 +19895,9 @@ func (m *GameActionFightDispellSpellMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDispellSpellMessage) Deserialize(r Reader) error {
 
-	m.GameActionFightDispellMessage.Deserialize(r)
+	if err := m.GameActionFightDispellMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspellId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -19481,7 +19921,9 @@ func (m *GameActionFightMarkCellsMessage) ID() uint16 {
 
 func (m *GameActionFightMarkCellsMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Mark.Serialize(w); err != nil {
 		return err
@@ -19492,7 +19934,9 @@ func (m *GameActionFightMarkCellsMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightMarkCellsMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lmark GameActionMark
 
@@ -19515,7 +19959,9 @@ func (m *GameActionFightDispellEffectMessage) ID() uint16 {
 
 func (m *GameActionFightDispellEffectMessage) Serialize(w Writer) error {
 
-	m.GameActionFightDispellMessage.Serialize(w)
+	if err := m.GameActionFightDispellMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.BoostUID); err != nil {
 		return err
@@ -19526,7 +19972,9 @@ func (m *GameActionFightDispellEffectMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDispellEffectMessage) Deserialize(r Reader) error {
 
-	m.GameActionFightDispellMessage.Deserialize(r)
+	if err := m.GameActionFightDispellMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lboostUID, err := r.ReadUInt32()
 	if err != nil {
@@ -19548,14 +19996,18 @@ func (m *GameActionFightTriggerEffectMessage) ID() uint16 {
 
 func (m *GameActionFightTriggerEffectMessage) Serialize(w Writer) error {
 
-	m.GameActionFightDispellEffectMessage.Serialize(w)
+	if err := m.GameActionFightDispellEffectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameActionFightTriggerEffectMessage) Deserialize(r Reader) error {
 
-	m.GameActionFightDispellEffectMessage.Deserialize(r)
+	if err := m.GameActionFightDispellEffectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -19574,7 +20026,9 @@ func (m *GameActionFightDodgePointLossMessage) ID() uint16 {
 
 func (m *GameActionFightDodgePointLossMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19589,7 +20043,9 @@ func (m *GameActionFightDodgePointLossMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDodgePointLossMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19622,7 +20078,9 @@ func (m *GameActionFightTeleportOnSameMapMessage) ID() uint16 {
 
 func (m *GameActionFightTeleportOnSameMapMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19637,7 +20095,9 @@ func (m *GameActionFightTeleportOnSameMapMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightTeleportOnSameMapMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19672,7 +20132,9 @@ func (m *GameActionFightSlideMessage) ID() uint16 {
 
 func (m *GameActionFightSlideMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19691,7 +20153,9 @@ func (m *GameActionFightSlideMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightSlideMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19729,7 +20193,9 @@ func (m *GameActionFightCloseCombatMessage) ID() uint16 {
 
 func (m *GameActionFightCloseCombatMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionFightTargetedAbilityMessage.Serialize(w)
+	if err := m.AbstractGameActionFightTargetedAbilityMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.WeaponGenericId); err != nil {
 		return err
@@ -19740,7 +20206,9 @@ func (m *GameActionFightCloseCombatMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightCloseCombatMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionFightTargetedAbilityMessage.Deserialize(r)
+	if err := m.AbstractGameActionFightTargetedAbilityMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lweaponGenericId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -19764,7 +20232,9 @@ func (m *GameActionFightUnmarkCellsMessage) ID() uint16 {
 
 func (m *GameActionFightUnmarkCellsMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.MarkId); err != nil {
 		return err
@@ -19775,7 +20245,9 @@ func (m *GameActionFightUnmarkCellsMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightUnmarkCellsMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmarkId, err := r.ReadInt16()
 	if err != nil {
@@ -19799,7 +20271,9 @@ func (m *GameActionFightSummonMessage) ID() uint16 {
 
 func (m *GameActionFightSummonMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Summons))); err != nil {
 		return err
@@ -19822,7 +20296,9 @@ func (m *GameActionFightSummonMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightSummonMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsummonsLen, err := r.ReadInt16()
 	if err != nil {
@@ -19865,7 +20341,9 @@ func (m *GameActionFightPointsVariationMessage) ID() uint16 {
 
 func (m *GameActionFightPointsVariationMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19880,7 +20358,9 @@ func (m *GameActionFightPointsVariationMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightPointsVariationMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -19913,7 +20393,9 @@ func (m *GameActionFightInvisibleDetectedMessage) ID() uint16 {
 
 func (m *GameActionFightInvisibleDetectedMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -19928,7 +20410,9 @@ func (m *GameActionFightInvisibleDetectedMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightInvisibleDetectedMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -20022,7 +20506,9 @@ func (m *GameActionFightChangeLookMessage) ID() uint16 {
 
 func (m *GameActionFightChangeLookMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -20037,7 +20523,9 @@ func (m *GameActionFightChangeLookMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightChangeLookMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -20069,7 +20557,9 @@ func (m *GameActionFightActivateGlyphTrapMessage) ID() uint16 {
 
 func (m *GameActionFightActivateGlyphTrapMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.MarkId); err != nil {
 		return err
@@ -20084,7 +20574,9 @@ func (m *GameActionFightActivateGlyphTrapMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightActivateGlyphTrapMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmarkId, err := r.ReadInt16()
 	if err != nil {
@@ -20115,7 +20607,9 @@ func (m *GameActionFightDispellableEffectMessage) ID() uint16 {
 
 func (m *GameActionFightDispellableEffectMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.Effect.ID()); err != nil {
 		return err
@@ -20130,7 +20624,9 @@ func (m *GameActionFightDispellableEffectMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightDispellableEffectMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	typeeffectID, err := r.ReadUInt16()
 	if err != nil {
@@ -20162,7 +20658,9 @@ func (m *GameActionFightStealKamaMessage) ID() uint16 {
 
 func (m *GameActionFightStealKamaMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -20177,7 +20675,9 @@ func (m *GameActionFightStealKamaMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightStealKamaMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -20210,7 +20710,9 @@ func (m *GameActionFightInvisibilityMessage) ID() uint16 {
 
 func (m *GameActionFightInvisibilityMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.TargetId); err != nil {
 		return err
@@ -20225,7 +20727,9 @@ func (m *GameActionFightInvisibilityMessage) Serialize(w Writer) error {
 
 func (m *GameActionFightInvisibilityMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltargetId, err := r.ReadDouble()
 	if err != nil {
@@ -20395,7 +20899,9 @@ func (m *GameFightResumeMessage) ID() uint16 {
 
 func (m *GameFightResumeMessage) Serialize(w Writer) error {
 
-	m.GameFightSpectateMessage.Serialize(w)
+	if err := m.GameFightSpectateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.SpellCooldowns))); err != nil {
 		return err
@@ -20422,7 +20928,9 @@ func (m *GameFightResumeMessage) Serialize(w Writer) error {
 
 func (m *GameFightResumeMessage) Deserialize(r Reader) error {
 
-	m.GameFightSpectateMessage.Deserialize(r)
+	if err := m.GameFightSpectateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspellCooldownsLen, err := r.ReadInt16()
 	if err != nil {
@@ -20707,7 +21215,9 @@ func (m *GameFightResumeWithSlavesMessage) ID() uint16 {
 
 func (m *GameFightResumeWithSlavesMessage) Serialize(w Writer) error {
 
-	m.GameFightResumeMessage.Serialize(w)
+	if err := m.GameFightResumeMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.SlavesInfo))); err != nil {
 		return err
@@ -20726,7 +21236,9 @@ func (m *GameFightResumeWithSlavesMessage) Serialize(w Writer) error {
 
 func (m *GameFightResumeWithSlavesMessage) Deserialize(r Reader) error {
 
-	m.GameFightResumeMessage.Deserialize(r)
+	if err := m.GameFightResumeMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lslavesInfoLen, err := r.ReadInt16()
 	if err != nil {
@@ -21006,7 +21518,9 @@ func (m *ExchangeObjectMovePricedMessage) ID() uint16 {
 
 func (m *ExchangeObjectMovePricedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMoveMessage.Serialize(w)
+	if err := m.ExchangeObjectMoveMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Price); err != nil {
 		return err
@@ -21017,7 +21531,9 @@ func (m *ExchangeObjectMovePricedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectMovePricedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMoveMessage.Deserialize(r)
+	if err := m.ExchangeObjectMoveMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lprice, err := r.ReadVarUInt32()
 	if err != nil {
@@ -22020,7 +22536,9 @@ func (m *ExchangeStartOkCraftWithInformationMessage) ID() uint16 {
 
 func (m *ExchangeStartOkCraftWithInformationMessage) Serialize(w Writer) error {
 
-	m.ExchangeStartOkCraftMessage.Serialize(w)
+	if err := m.ExchangeStartOkCraftMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.SkillId); err != nil {
 		return err
@@ -22031,7 +22549,9 @@ func (m *ExchangeStartOkCraftWithInformationMessage) Serialize(w Writer) error {
 
 func (m *ExchangeStartOkCraftWithInformationMessage) Deserialize(r Reader) error {
 
-	m.ExchangeStartOkCraftMessage.Deserialize(r)
+	if err := m.ExchangeStartOkCraftMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lskillId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -22314,7 +22834,9 @@ func (m *ObtainedItemWithBonusMessage) ID() uint16 {
 
 func (m *ObtainedItemWithBonusMessage) Serialize(w Writer) error {
 
-	m.ObtainedItemMessage.Serialize(w)
+	if err := m.ObtainedItemMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.BonusQuantity); err != nil {
 		return err
@@ -22325,7 +22847,9 @@ func (m *ObtainedItemWithBonusMessage) Serialize(w Writer) error {
 
 func (m *ObtainedItemWithBonusMessage) Deserialize(r Reader) error {
 
-	m.ObtainedItemMessage.Deserialize(r)
+	if err := m.ObtainedItemMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lbonusQuantity, err := r.ReadVarUInt32()
 	if err != nil {
@@ -22677,7 +23201,9 @@ func (m *ExchangeCraftResultWithObjectIdMessage) ID() uint16 {
 
 func (m *ExchangeCraftResultWithObjectIdMessage) Serialize(w Writer) error {
 
-	m.ExchangeCraftResultMessage.Serialize(w)
+	if err := m.ExchangeCraftResultMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGenericId); err != nil {
 		return err
@@ -22688,7 +23214,9 @@ func (m *ExchangeCraftResultWithObjectIdMessage) Serialize(w Writer) error {
 
 func (m *ExchangeCraftResultWithObjectIdMessage) Deserialize(r Reader) error {
 
-	m.ExchangeCraftResultMessage.Deserialize(r)
+	if err := m.ExchangeCraftResultMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGenericId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -22712,7 +23240,9 @@ func (m *ExchangeCraftInformationObjectMessage) ID() uint16 {
 
 func (m *ExchangeCraftInformationObjectMessage) Serialize(w Writer) error {
 
-	m.ExchangeCraftResultWithObjectIdMessage.Serialize(w)
+	if err := m.ExchangeCraftResultWithObjectIdMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -22723,7 +23253,9 @@ func (m *ExchangeCraftInformationObjectMessage) Serialize(w Writer) error {
 
 func (m *ExchangeCraftInformationObjectMessage) Deserialize(r Reader) error {
 
-	m.ExchangeCraftResultWithObjectIdMessage.Deserialize(r)
+	if err := m.ExchangeCraftResultWithObjectIdMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -23148,7 +23680,9 @@ func (m *ZaapListMessage) ID() uint16 {
 
 func (m *ZaapListMessage) Serialize(w Writer) error {
 
-	m.TeleportDestinationsListMessage.Serialize(w)
+	if err := m.TeleportDestinationsListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.SpawnMapId); err != nil {
 		return err
@@ -23159,7 +23693,9 @@ func (m *ZaapListMessage) Serialize(w Writer) error {
 
 func (m *ZaapListMessage) Deserialize(r Reader) error {
 
-	m.TeleportDestinationsListMessage.Deserialize(r)
+	if err := m.TeleportDestinationsListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspawnMapId, err := r.ReadUInt32()
 	if err != nil {
@@ -23273,7 +23809,9 @@ func (m *JobMultiCraftAvailableSkillsMessage) ID() uint16 {
 
 func (m *JobMultiCraftAvailableSkillsMessage) Serialize(w Writer) error {
 
-	m.JobAllowMultiCraftRequestMessage.Serialize(w)
+	if err := m.JobAllowMultiCraftRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -23296,7 +23834,9 @@ func (m *JobMultiCraftAvailableSkillsMessage) Serialize(w Writer) error {
 
 func (m *JobMultiCraftAvailableSkillsMessage) Deserialize(r Reader) error {
 
-	m.JobAllowMultiCraftRequestMessage.Deserialize(r)
+	if err := m.JobAllowMultiCraftRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -23369,7 +23909,9 @@ func (m *ExchangePlayerMultiCraftRequestMessage) ID() uint16 {
 
 func (m *ExchangePlayerMultiCraftRequestMessage) Serialize(w Writer) error {
 
-	m.ExchangeRequestMessage.Serialize(w)
+	if err := m.ExchangeRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.Target); err != nil {
 		return err
@@ -23384,7 +23926,9 @@ func (m *ExchangePlayerMultiCraftRequestMessage) Serialize(w Writer) error {
 
 func (m *ExchangePlayerMultiCraftRequestMessage) Deserialize(r Reader) error {
 
-	m.ExchangeRequestMessage.Deserialize(r)
+	if err := m.ExchangeRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltarget, err := r.ReadVarInt64()
 	if err != nil {
@@ -23585,7 +24129,9 @@ func (m *ExchangeRequestedTradeMessage) ID() uint16 {
 
 func (m *ExchangeRequestedTradeMessage) Serialize(w Writer) error {
 
-	m.ExchangeRequestedMessage.Serialize(w)
+	if err := m.ExchangeRequestedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.Source); err != nil {
 		return err
@@ -23600,7 +24146,9 @@ func (m *ExchangeRequestedTradeMessage) Serialize(w Writer) error {
 
 func (m *ExchangeRequestedTradeMessage) Deserialize(r Reader) error {
 
-	m.ExchangeRequestedMessage.Deserialize(r)
+	if err := m.ExchangeRequestedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsource, err := r.ReadVarInt64()
 	if err != nil {
@@ -23773,7 +24321,9 @@ func (m *ExchangePlayerRequestMessage) ID() uint16 {
 
 func (m *ExchangePlayerRequestMessage) Serialize(w Writer) error {
 
-	m.ExchangeRequestMessage.Serialize(w)
+	if err := m.ExchangeRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.Target); err != nil {
 		return err
@@ -23784,7 +24334,9 @@ func (m *ExchangePlayerRequestMessage) Serialize(w Writer) error {
 
 func (m *ExchangePlayerRequestMessage) Deserialize(r Reader) error {
 
-	m.ExchangeRequestMessage.Deserialize(r)
+	if err := m.ExchangeRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltarget, err := r.ReadVarInt64()
 	if err != nil {
@@ -23852,7 +24404,9 @@ func (m *EmotePlayMessage) ID() uint16 {
 
 func (m *EmotePlayMessage) Serialize(w Writer) error {
 
-	m.EmotePlayAbstractMessage.Serialize(w)
+	if err := m.EmotePlayAbstractMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.ActorId); err != nil {
 		return err
@@ -23867,7 +24421,9 @@ func (m *EmotePlayMessage) Serialize(w Writer) error {
 
 func (m *EmotePlayMessage) Deserialize(r Reader) error {
 
-	m.EmotePlayAbstractMessage.Deserialize(r)
+	if err := m.EmotePlayAbstractMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lactorId, err := r.ReadDouble()
 	if err != nil {
@@ -24506,7 +25062,9 @@ func (m *GameFightPlacementSwapPositionsRequestMessage) ID() uint16 {
 
 func (m *GameFightPlacementSwapPositionsRequestMessage) Serialize(w Writer) error {
 
-	m.GameFightPlacementPositionRequestMessage.Serialize(w)
+	if err := m.GameFightPlacementPositionRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.RequestedId); err != nil {
 		return err
@@ -24517,7 +25075,9 @@ func (m *GameFightPlacementSwapPositionsRequestMessage) Serialize(w Writer) erro
 
 func (m *GameFightPlacementSwapPositionsRequestMessage) Deserialize(r Reader) error {
 
-	m.GameFightPlacementPositionRequestMessage.Deserialize(r)
+	if err := m.GameFightPlacementPositionRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lrequestedId, err := r.ReadDouble()
 	if err != nil {
@@ -25211,7 +25771,9 @@ func (m *CompassUpdatePartyMemberMessage) ID() uint16 {
 
 func (m *CompassUpdatePartyMemberMessage) Serialize(w Writer) error {
 
-	m.CompassUpdateMessage.Serialize(w)
+	if err := m.CompassUpdateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.MemberId); err != nil {
 		return err
@@ -25226,7 +25788,9 @@ func (m *CompassUpdatePartyMemberMessage) Serialize(w Writer) error {
 
 func (m *CompassUpdatePartyMemberMessage) Deserialize(r Reader) error {
 
-	m.CompassUpdateMessage.Deserialize(r)
+	if err := m.CompassUpdateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmemberId, err := r.ReadVarInt64()
 	if err != nil {
@@ -25314,7 +25878,9 @@ func (m *CompassUpdatePvpSeekMessage) ID() uint16 {
 
 func (m *CompassUpdatePvpSeekMessage) Serialize(w Writer) error {
 
-	m.CompassUpdateMessage.Serialize(w)
+	if err := m.CompassUpdateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.MemberId); err != nil {
 		return err
@@ -25329,7 +25895,9 @@ func (m *CompassUpdatePvpSeekMessage) Serialize(w Writer) error {
 
 func (m *CompassUpdatePvpSeekMessage) Deserialize(r Reader) error {
 
-	m.CompassUpdateMessage.Deserialize(r)
+	if err := m.CompassUpdateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmemberId, err := r.ReadVarInt64()
 	if err != nil {
@@ -25590,7 +26158,9 @@ func (m *CharacterLevelUpInformationMessage) ID() uint16 {
 
 func (m *CharacterLevelUpInformationMessage) Serialize(w Writer) error {
 
-	m.CharacterLevelUpMessage.Serialize(w)
+	if err := m.CharacterLevelUpMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -25605,7 +26175,9 @@ func (m *CharacterLevelUpInformationMessage) Serialize(w Writer) error {
 
 func (m *CharacterLevelUpInformationMessage) Deserialize(r Reader) error {
 
-	m.CharacterLevelUpMessage.Deserialize(r)
+	if err := m.CharacterLevelUpMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -27111,7 +27683,9 @@ func (m *ObjectUseOnCellMessage) ID() uint16 {
 
 func (m *ObjectUseOnCellMessage) Serialize(w Writer) error {
 
-	m.ObjectUseMessage.Serialize(w)
+	if err := m.ObjectUseMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Cells); err != nil {
 		return err
@@ -27122,7 +27696,9 @@ func (m *ObjectUseOnCellMessage) Serialize(w Writer) error {
 
 func (m *ObjectUseOnCellMessage) Deserialize(r Reader) error {
 
-	m.ObjectUseMessage.Deserialize(r)
+	if err := m.ObjectUseMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcells, err := r.ReadVarUInt16()
 	if err != nil {
@@ -27584,7 +28160,9 @@ func (m *ObjectUseOnCharacterMessage) ID() uint16 {
 
 func (m *ObjectUseOnCharacterMessage) Serialize(w Writer) error {
 
-	m.ObjectUseMessage.Serialize(w)
+	if err := m.ObjectUseMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.CharacterId); err != nil {
 		return err
@@ -27595,7 +28173,9 @@ func (m *ObjectUseOnCharacterMessage) Serialize(w Writer) error {
 
 func (m *ObjectUseOnCharacterMessage) Deserialize(r Reader) error {
 
-	m.ObjectUseMessage.Deserialize(r)
+	if err := m.ObjectUseMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcharacterId, err := r.ReadVarInt64()
 	if err != nil {
@@ -28050,7 +28630,9 @@ func (m *InventoryContentAndPresetMessage) ID() uint16 {
 
 func (m *InventoryContentAndPresetMessage) Serialize(w Writer) error {
 
-	m.InventoryContentMessage.Serialize(w)
+	if err := m.InventoryContentMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Presets))); err != nil {
 		return err
@@ -28081,7 +28663,9 @@ func (m *InventoryContentAndPresetMessage) Serialize(w Writer) error {
 
 func (m *InventoryContentAndPresetMessage) Deserialize(r Reader) error {
 
-	m.InventoryContentMessage.Deserialize(r)
+	if err := m.InventoryContentMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpresetsLen, err := r.ReadInt16()
 	if err != nil {
@@ -28718,7 +29302,9 @@ func (m *ObjectUseMultipleMessage) ID() uint16 {
 
 func (m *ObjectUseMultipleMessage) Serialize(w Writer) error {
 
-	m.ObjectUseMessage.Serialize(w)
+	if err := m.ObjectUseMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Quantity); err != nil {
 		return err
@@ -28729,7 +29315,9 @@ func (m *ObjectUseMultipleMessage) Serialize(w Writer) error {
 
 func (m *ObjectUseMultipleMessage) Deserialize(r Reader) error {
 
-	m.ObjectUseMessage.Deserialize(r)
+	if err := m.ObjectUseMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lquantity, err := r.ReadVarUInt32()
 	if err != nil {
@@ -29070,7 +29658,9 @@ func (m *ExchangeStartOkMountMessage) ID() uint16 {
 
 func (m *ExchangeStartOkMountMessage) Serialize(w Writer) error {
 
-	m.ExchangeStartOkMountWithOutPaddockMessage.Serialize(w)
+	if err := m.ExchangeStartOkMountWithOutPaddockMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.PaddockedMountsDescription))); err != nil {
 		return err
@@ -29089,7 +29679,9 @@ func (m *ExchangeStartOkMountMessage) Serialize(w Writer) error {
 
 func (m *ExchangeStartOkMountMessage) Deserialize(r Reader) error {
 
-	m.ExchangeStartOkMountWithOutPaddockMessage.Deserialize(r)
+	if err := m.ExchangeStartOkMountWithOutPaddockMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpaddockedMountsDescriptionLen, err := r.ReadInt16()
 	if err != nil {
@@ -29569,14 +30161,18 @@ func (m *ExchangeMountsStableBornAddMessage) ID() uint16 {
 
 func (m *ExchangeMountsStableBornAddMessage) Serialize(w Writer) error {
 
-	m.ExchangeMountsStableAddMessage.Serialize(w)
+	if err := m.ExchangeMountsStableAddMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ExchangeMountsStableBornAddMessage) Deserialize(r Reader) error {
 
-	m.ExchangeMountsStableAddMessage.Deserialize(r)
+	if err := m.ExchangeMountsStableAddMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -30046,7 +30642,9 @@ func (m *TreasureHuntDigRequestAnswerFailedMessage) ID() uint16 {
 
 func (m *TreasureHuntDigRequestAnswerFailedMessage) Serialize(w Writer) error {
 
-	m.TreasureHuntDigRequestAnswerMessage.Serialize(w)
+	if err := m.TreasureHuntDigRequestAnswerMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.WrongFlagCount); err != nil {
 		return err
@@ -30057,7 +30655,9 @@ func (m *TreasureHuntDigRequestAnswerFailedMessage) Serialize(w Writer) error {
 
 func (m *TreasureHuntDigRequestAnswerFailedMessage) Deserialize(r Reader) error {
 
-	m.TreasureHuntDigRequestAnswerMessage.Deserialize(r)
+	if err := m.TreasureHuntDigRequestAnswerMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lwrongFlagCount, err := r.ReadUInt8()
 	if err != nil {
@@ -30200,7 +30800,9 @@ func (m *AchievementFinishedInformationMessage) ID() uint16 {
 
 func (m *AchievementFinishedInformationMessage) Serialize(w Writer) error {
 
-	m.AchievementFinishedMessage.Serialize(w)
+	if err := m.AchievementFinishedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -30215,7 +30817,9 @@ func (m *AchievementFinishedInformationMessage) Serialize(w Writer) error {
 
 func (m *AchievementFinishedInformationMessage) Deserialize(r Reader) error {
 
-	m.AchievementFinishedMessage.Deserialize(r)
+	if err := m.AchievementFinishedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -32146,7 +32750,9 @@ func (m *JobExperienceOtherPlayerUpdateMessage) ID() uint16 {
 
 func (m *JobExperienceOtherPlayerUpdateMessage) Serialize(w Writer) error {
 
-	m.JobExperienceUpdateMessage.Serialize(w)
+	if err := m.JobExperienceUpdateMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -32157,7 +32763,9 @@ func (m *JobExperienceOtherPlayerUpdateMessage) Serialize(w Writer) error {
 
 func (m *JobExperienceOtherPlayerUpdateMessage) Deserialize(r Reader) error {
 
-	m.JobExperienceUpdateMessage.Deserialize(r)
+	if err := m.JobExperienceUpdateMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -33190,7 +33798,9 @@ func (m *CharacterReplayWithRemodelRequestMessage) ID() uint16 {
 
 func (m *CharacterReplayWithRemodelRequestMessage) Serialize(w Writer) error {
 
-	m.CharacterReplayRequestMessage.Serialize(w)
+	if err := m.CharacterReplayRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Remodel.Serialize(w); err != nil {
 		return err
@@ -33201,7 +33811,9 @@ func (m *CharacterReplayWithRemodelRequestMessage) Serialize(w Writer) error {
 
 func (m *CharacterReplayWithRemodelRequestMessage) Deserialize(r Reader) error {
 
-	m.CharacterReplayRequestMessage.Deserialize(r)
+	if err := m.CharacterReplayRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lremodel RemodelingInformation
 
@@ -33475,7 +34087,9 @@ func (m *CharactersListMessage) ID() uint16 {
 
 func (m *CharactersListMessage) Serialize(w Writer) error {
 
-	m.BasicCharactersListMessage.Serialize(w)
+	if err := m.BasicCharactersListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.HasStartupActions); err != nil {
 		return err
@@ -33486,7 +34100,9 @@ func (m *CharactersListMessage) Serialize(w Writer) error {
 
 func (m *CharactersListMessage) Deserialize(r Reader) error {
 
-	m.BasicCharactersListMessage.Deserialize(r)
+	if err := m.BasicCharactersListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lhasStartupActions, err := r.ReadBoolean()
 	if err != nil {
@@ -33510,7 +34126,9 @@ func (m *CharactersListWithRemodelingMessage) ID() uint16 {
 
 func (m *CharactersListWithRemodelingMessage) Serialize(w Writer) error {
 
-	m.CharactersListMessage.Serialize(w)
+	if err := m.CharactersListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.CharactersToRemodel))); err != nil {
 		return err
@@ -33529,7 +34147,9 @@ func (m *CharactersListWithRemodelingMessage) Serialize(w Writer) error {
 
 func (m *CharactersListWithRemodelingMessage) Deserialize(r Reader) error {
 
-	m.CharactersListMessage.Deserialize(r)
+	if err := m.CharactersListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcharactersToRemodelLen, err := r.ReadInt16()
 	if err != nil {
@@ -33683,7 +34303,9 @@ func (m *CharacterFirstSelectionMessage) ID() uint16 {
 
 func (m *CharacterFirstSelectionMessage) Serialize(w Writer) error {
 
-	m.CharacterSelectionMessage.Serialize(w)
+	if err := m.CharacterSelectionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.DoTutorial); err != nil {
 		return err
@@ -33694,7 +34316,9 @@ func (m *CharacterFirstSelectionMessage) Serialize(w Writer) error {
 
 func (m *CharacterFirstSelectionMessage) Deserialize(r Reader) error {
 
-	m.CharacterSelectionMessage.Deserialize(r)
+	if err := m.CharacterSelectionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldoTutorial, err := r.ReadBoolean()
 	if err != nil {
@@ -33718,7 +34342,9 @@ func (m *CharacterSelectionWithRemodelMessage) ID() uint16 {
 
 func (m *CharacterSelectionWithRemodelMessage) Serialize(w Writer) error {
 
-	m.CharacterSelectionMessage.Serialize(w)
+	if err := m.CharacterSelectionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Remodel.Serialize(w); err != nil {
 		return err
@@ -33729,7 +34355,9 @@ func (m *CharacterSelectionWithRemodelMessage) Serialize(w Writer) error {
 
 func (m *CharacterSelectionWithRemodelMessage) Deserialize(r Reader) error {
 
-	m.CharacterSelectionMessage.Deserialize(r)
+	if err := m.CharacterSelectionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lremodel RemodelingInformation
 
@@ -34201,7 +34829,9 @@ func (m *SelectedServerDataExtendedMessage) ID() uint16 {
 
 func (m *SelectedServerDataExtendedMessage) Serialize(w Writer) error {
 
-	m.SelectedServerDataMessage.Serialize(w)
+	if err := m.SelectedServerDataMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.ServerIds))); err != nil {
 		return err
@@ -34220,7 +34850,9 @@ func (m *SelectedServerDataExtendedMessage) Serialize(w Writer) error {
 
 func (m *SelectedServerDataExtendedMessage) Deserialize(r Reader) error {
 
-	m.SelectedServerDataMessage.Deserialize(r)
+	if err := m.SelectedServerDataMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lserverIdsLen, err := r.ReadInt16()
 	if err != nil {
@@ -35295,7 +35927,9 @@ func (m *EmotePlayMassiveMessage) ID() uint16 {
 
 func (m *EmotePlayMassiveMessage) Serialize(w Writer) error {
 
-	m.EmotePlayAbstractMessage.Serialize(w)
+	if err := m.EmotePlayAbstractMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.ActorIds))); err != nil {
 		return err
@@ -35314,7 +35948,9 @@ func (m *EmotePlayMassiveMessage) Serialize(w Writer) error {
 
 func (m *EmotePlayMassiveMessage) Deserialize(r Reader) error {
 
-	m.EmotePlayAbstractMessage.Deserialize(r)
+	if err := m.EmotePlayAbstractMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lactorIdsLen, err := r.ReadInt16()
 	if err != nil {
@@ -35391,7 +36027,9 @@ func (m *LifePointsRegenEndMessage) ID() uint16 {
 
 func (m *LifePointsRegenEndMessage) Serialize(w Writer) error {
 
-	m.UpdateLifePointsMessage.Serialize(w)
+	if err := m.UpdateLifePointsMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.LifePointsGained); err != nil {
 		return err
@@ -35402,7 +36040,9 @@ func (m *LifePointsRegenEndMessage) Serialize(w Writer) error {
 
 func (m *LifePointsRegenEndMessage) Deserialize(r Reader) error {
 
-	m.UpdateLifePointsMessage.Deserialize(r)
+	if err := m.UpdateLifePointsMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	llifePointsGained, err := r.ReadVarUInt32()
 	if err != nil {
@@ -37314,7 +37954,9 @@ func (m *MapRunningFightDetailsExtendedMessage) ID() uint16 {
 
 func (m *MapRunningFightDetailsExtendedMessage) Serialize(w Writer) error {
 
-	m.MapRunningFightDetailsMessage.Serialize(w)
+	if err := m.MapRunningFightDetailsMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.NamedPartyTeams))); err != nil {
 		return err
@@ -37333,7 +37975,9 @@ func (m *MapRunningFightDetailsExtendedMessage) Serialize(w Writer) error {
 
 func (m *MapRunningFightDetailsExtendedMessage) Deserialize(r Reader) error {
 
-	m.MapRunningFightDetailsMessage.Deserialize(r)
+	if err := m.MapRunningFightDetailsMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnamedPartyTeamsLen, err := r.ReadInt16()
 	if err != nil {
@@ -37469,7 +38113,9 @@ func (m *LockableStateUpdateStorageMessage) ID() uint16 {
 
 func (m *LockableStateUpdateStorageMessage) Serialize(w Writer) error {
 
-	m.LockableStateUpdateAbstractMessage.Serialize(w)
+	if err := m.LockableStateUpdateAbstractMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.MapId); err != nil {
 		return err
@@ -37484,7 +38130,9 @@ func (m *LockableStateUpdateStorageMessage) Serialize(w Writer) error {
 
 func (m *LockableStateUpdateStorageMessage) Deserialize(r Reader) error {
 
-	m.LockableStateUpdateAbstractMessage.Deserialize(r)
+	if err := m.LockableStateUpdateAbstractMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmapId, err := r.ReadInt32()
 	if err != nil {
@@ -37879,7 +38527,9 @@ func (m *ClientUIOpenedByObjectMessage) ID() uint16 {
 
 func (m *ClientUIOpenedByObjectMessage) Serialize(w Writer) error {
 
-	m.ClientUIOpenedMessage.Serialize(w)
+	if err := m.ClientUIOpenedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Uid); err != nil {
 		return err
@@ -37890,7 +38540,9 @@ func (m *ClientUIOpenedByObjectMessage) Serialize(w Writer) error {
 
 func (m *ClientUIOpenedByObjectMessage) Deserialize(r Reader) error {
 
-	m.ClientUIOpenedMessage.Deserialize(r)
+	if err := m.ClientUIOpenedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	luid, err := r.ReadVarUInt32()
 	if err != nil {
@@ -38152,7 +38804,9 @@ func (m *ExchangeObjectRemovedMessage) ID() uint16 {
 
 func (m *ExchangeObjectRemovedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ObjectUID); err != nil {
 		return err
@@ -38163,7 +38817,9 @@ func (m *ExchangeObjectRemovedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectRemovedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectUID, err := r.ReadVarUInt32()
 	if err != nil {
@@ -38187,7 +38843,9 @@ func (m *ExchangeObjectsModifiedMessage) ID() uint16 {
 
 func (m *ExchangeObjectsModifiedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Object))); err != nil {
 		return err
@@ -38206,7 +38864,9 @@ func (m *ExchangeObjectsModifiedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectsModifiedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectLen, err := r.ReadInt16()
 	if err != nil {
@@ -38240,7 +38900,9 @@ func (m *ExchangeObjectPutInBagMessage) ID() uint16 {
 
 func (m *ExchangeObjectPutInBagMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Object.Serialize(w); err != nil {
 		return err
@@ -38251,7 +38913,9 @@ func (m *ExchangeObjectPutInBagMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectPutInBagMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lobject ObjectItem
 
@@ -38303,7 +38967,9 @@ func (m *ExchangeCraftResultWithObjectDescMessage) ID() uint16 {
 
 func (m *ExchangeCraftResultWithObjectDescMessage) Serialize(w Writer) error {
 
-	m.ExchangeCraftResultMessage.Serialize(w)
+	if err := m.ExchangeCraftResultMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.ObjectInfo.Serialize(w); err != nil {
 		return err
@@ -38314,7 +38980,9 @@ func (m *ExchangeCraftResultWithObjectDescMessage) Serialize(w Writer) error {
 
 func (m *ExchangeCraftResultWithObjectDescMessage) Deserialize(r Reader) error {
 
-	m.ExchangeCraftResultMessage.Deserialize(r)
+	if err := m.ExchangeCraftResultMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lobjectInfo ObjectItemNotInContainer
 
@@ -38466,14 +39134,18 @@ func (m *StorageInventoryContentMessage) ID() uint16 {
 
 func (m *StorageInventoryContentMessage) Serialize(w Writer) error {
 
-	m.InventoryContentMessage.Serialize(w)
+	if err := m.InventoryContentMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *StorageInventoryContentMessage) Deserialize(r Reader) error {
 
-	m.InventoryContentMessage.Deserialize(r)
+	if err := m.InventoryContentMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -38490,7 +39162,9 @@ func (m *ExchangeObjectRemovedFromBagMessage) ID() uint16 {
 
 func (m *ExchangeObjectRemovedFromBagMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ObjectUID); err != nil {
 		return err
@@ -38501,7 +39175,9 @@ func (m *ExchangeObjectRemovedFromBagMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectRemovedFromBagMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectUID, err := r.ReadVarUInt32()
 	if err != nil {
@@ -38704,14 +39380,18 @@ func (m *WrapperObjectAssociatedMessage) ID() uint16 {
 
 func (m *WrapperObjectAssociatedMessage) Serialize(w Writer) error {
 
-	m.SymbioticObjectAssociatedMessage.Serialize(w)
+	if err := m.SymbioticObjectAssociatedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *WrapperObjectAssociatedMessage) Deserialize(r Reader) error {
 
-	m.SymbioticObjectAssociatedMessage.Deserialize(r)
+	if err := m.SymbioticObjectAssociatedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -38787,7 +39467,9 @@ func (m *LockableStateUpdateHouseDoorMessage) ID() uint16 {
 
 func (m *LockableStateUpdateHouseDoorMessage) Serialize(w Writer) error {
 
-	m.LockableStateUpdateAbstractMessage.Serialize(w)
+	if err := m.LockableStateUpdateAbstractMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.HouseId); err != nil {
 		return err
@@ -38798,7 +39480,9 @@ func (m *LockableStateUpdateHouseDoorMessage) Serialize(w Writer) error {
 
 func (m *LockableStateUpdateHouseDoorMessage) Deserialize(r Reader) error {
 
-	m.LockableStateUpdateAbstractMessage.Deserialize(r)
+	if err := m.LockableStateUpdateAbstractMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lhouseId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -38931,7 +39615,9 @@ func (m *GameContextRemoveElementWithEventMessage) ID() uint16 {
 
 func (m *GameContextRemoveElementWithEventMessage) Serialize(w Writer) error {
 
-	m.GameContextRemoveElementMessage.Serialize(w)
+	if err := m.GameContextRemoveElementMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.ElementEventId); err != nil {
 		return err
@@ -38942,7 +39628,9 @@ func (m *GameContextRemoveElementWithEventMessage) Serialize(w Writer) error {
 
 func (m *GameContextRemoveElementWithEventMessage) Deserialize(r Reader) error {
 
-	m.GameContextRemoveElementMessage.Deserialize(r)
+	if err := m.GameContextRemoveElementMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lelementEventId, err := r.ReadUInt8()
 	if err != nil {
@@ -38964,14 +39652,18 @@ func (m *ClientYouAreDrunkMessage) ID() uint16 {
 
 func (m *ClientYouAreDrunkMessage) Serialize(w Writer) error {
 
-	m.DebugInClientMessage.Serialize(w)
+	if err := m.DebugInClientMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ClientYouAreDrunkMessage) Deserialize(r Reader) error {
 
-	m.DebugInClientMessage.Deserialize(r)
+	if err := m.DebugInClientMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -39045,7 +39737,9 @@ func (m *ExchangeObjectsAddedMessage) ID() uint16 {
 
 func (m *ExchangeObjectsAddedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Object))); err != nil {
 		return err
@@ -39064,7 +39758,9 @@ func (m *ExchangeObjectsAddedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectsAddedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectLen, err := r.ReadInt16()
 	if err != nil {
@@ -39570,14 +40266,18 @@ func (m *ExchangeBidHouseInListUpdatedMessage) ID() uint16 {
 
 func (m *ExchangeBidHouseInListUpdatedMessage) Serialize(w Writer) error {
 
-	m.ExchangeBidHouseInListAddedMessage.Serialize(w)
+	if err := m.ExchangeBidHouseInListAddedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ExchangeBidHouseInListUpdatedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeBidHouseInListAddedMessage.Deserialize(r)
+	if err := m.ExchangeBidHouseInListAddedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -39638,7 +40338,9 @@ func (m *ExchangeBidPriceForSellerMessage) ID() uint16 {
 
 func (m *ExchangeBidPriceForSellerMessage) Serialize(w Writer) error {
 
-	m.ExchangeBidPriceMessage.Serialize(w)
+	if err := m.ExchangeBidPriceMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.AllIdentical); err != nil {
 		return err
@@ -39661,7 +40363,9 @@ func (m *ExchangeBidPriceForSellerMessage) Serialize(w Writer) error {
 
 func (m *ExchangeBidPriceForSellerMessage) Deserialize(r Reader) error {
 
-	m.ExchangeBidPriceMessage.Deserialize(r)
+	if err := m.ExchangeBidPriceMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lallIdentical, err := r.ReadBoolean()
 	if err != nil {
@@ -39901,7 +40605,9 @@ func (m *GameContextRemoveMultipleElementsWithEventsMessage) ID() uint16 {
 
 func (m *GameContextRemoveMultipleElementsWithEventsMessage) Serialize(w Writer) error {
 
-	m.GameContextRemoveMultipleElementsMessage.Serialize(w)
+	if err := m.GameContextRemoveMultipleElementsMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.ElementEventIds))); err != nil {
 		return err
@@ -39920,7 +40626,9 @@ func (m *GameContextRemoveMultipleElementsWithEventsMessage) Serialize(w Writer)
 
 func (m *GameContextRemoveMultipleElementsWithEventsMessage) Deserialize(r Reader) error {
 
-	m.GameContextRemoveMultipleElementsMessage.Deserialize(r)
+	if err := m.GameContextRemoveMultipleElementsMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lelementEventIdsLen, err := r.ReadInt16()
 	if err != nil {
@@ -39982,14 +40690,18 @@ func (m *GameCautiousMapMovementMessage) ID() uint16 {
 
 func (m *GameCautiousMapMovementMessage) Serialize(w Writer) error {
 
-	m.GameMapMovementMessage.Serialize(w)
+	if err := m.GameMapMovementMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameCautiousMapMovementMessage) Deserialize(r Reader) error {
 
-	m.GameMapMovementMessage.Deserialize(r)
+	if err := m.GameMapMovementMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -40065,7 +40777,9 @@ func (m *SymbioticObjectErrorMessage) ID() uint16 {
 
 func (m *SymbioticObjectErrorMessage) Serialize(w Writer) error {
 
-	m.ObjectErrorMessage.Serialize(w)
+	if err := m.ObjectErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt8(m.ErrorCode); err != nil {
 		return err
@@ -40076,7 +40790,9 @@ func (m *SymbioticObjectErrorMessage) Serialize(w Writer) error {
 
 func (m *SymbioticObjectErrorMessage) Deserialize(r Reader) error {
 
-	m.ObjectErrorMessage.Deserialize(r)
+	if err := m.ObjectErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lerrorCode, err := r.ReadInt8()
 	if err != nil {
@@ -40098,14 +40814,18 @@ func (m *WrapperObjectErrorMessage) ID() uint16 {
 
 func (m *WrapperObjectErrorMessage) Serialize(w Writer) error {
 
-	m.SymbioticObjectErrorMessage.Serialize(w)
+	if err := m.SymbioticObjectErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *WrapperObjectErrorMessage) Deserialize(r Reader) error {
 
-	m.SymbioticObjectErrorMessage.Deserialize(r)
+	if err := m.SymbioticObjectErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -40171,7 +40891,9 @@ func (m *ExchangePodsModifiedMessage) ID() uint16 {
 
 func (m *ExchangePodsModifiedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.CurrentWeight); err != nil {
 		return err
@@ -40186,7 +40908,9 @@ func (m *ExchangePodsModifiedMessage) Serialize(w Writer) error {
 
 func (m *ExchangePodsModifiedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcurrentWeight, err := r.ReadVarUInt32()
 	if err != nil {
@@ -40265,7 +40989,9 @@ func (m *ExchangeKamaModifiedMessage) ID() uint16 {
 
 func (m *ExchangeKamaModifiedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Quantity); err != nil {
 		return err
@@ -40276,7 +41002,9 @@ func (m *ExchangeKamaModifiedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeKamaModifiedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lquantity, err := r.ReadVarUInt32()
 	if err != nil {
@@ -40419,7 +41147,9 @@ func (m *ExchangeLeaveMessage) ID() uint16 {
 
 func (m *ExchangeLeaveMessage) Serialize(w Writer) error {
 
-	m.LeaveDialogMessage.Serialize(w)
+	if err := m.LeaveDialogMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Success); err != nil {
 		return err
@@ -40430,7 +41160,9 @@ func (m *ExchangeLeaveMessage) Serialize(w Writer) error {
 
 func (m *ExchangeLeaveMessage) Deserialize(r Reader) error {
 
-	m.LeaveDialogMessage.Deserialize(r)
+	if err := m.LeaveDialogMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsuccess, err := r.ReadBoolean()
 	if err != nil {
@@ -40464,7 +41196,9 @@ func (m *ExchangeStartedWithPodsMessage) ID() uint16 {
 
 func (m *ExchangeStartedWithPodsMessage) Serialize(w Writer) error {
 
-	m.ExchangeStartedMessage.Serialize(w)
+	if err := m.ExchangeStartedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.FirstCharacterId); err != nil {
 		return err
@@ -40495,7 +41229,9 @@ func (m *ExchangeStartedWithPodsMessage) Serialize(w Writer) error {
 
 func (m *ExchangeStartedWithPodsMessage) Deserialize(r Reader) error {
 
-	m.ExchangeStartedMessage.Deserialize(r)
+	if err := m.ExchangeStartedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfirstCharacterId, err := r.ReadDouble()
 	if err != nil {
@@ -40726,14 +41462,18 @@ func (m *AlliancePartialListMessage) ID() uint16 {
 
 func (m *AlliancePartialListMessage) Serialize(w Writer) error {
 
-	m.AllianceListMessage.Serialize(w)
+	if err := m.AllianceListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *AlliancePartialListMessage) Deserialize(r Reader) error {
 
-	m.AllianceListMessage.Deserialize(r)
+	if err := m.AllianceListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -40926,7 +41666,9 @@ func (m *ExchangeObjectsRemovedMessage) ID() uint16 {
 
 func (m *ExchangeObjectsRemovedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.ObjectUID))); err != nil {
 		return err
@@ -40945,7 +41687,9 @@ func (m *ExchangeObjectsRemovedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectsRemovedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectUIDLen, err := r.ReadInt16()
 	if err != nil {
@@ -40980,7 +41724,9 @@ func (m *ExchangeObjectModifiedInBagMessage) ID() uint16 {
 
 func (m *ExchangeObjectModifiedInBagMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Object.Serialize(w); err != nil {
 		return err
@@ -40991,7 +41737,9 @@ func (m *ExchangeObjectModifiedInBagMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectModifiedInBagMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lobject ObjectItem
 
@@ -41084,7 +41832,9 @@ func (m *ExchangeObjectModifiedMessage) ID() uint16 {
 
 func (m *ExchangeObjectModifiedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Object.Serialize(w); err != nil {
 		return err
@@ -41095,7 +41845,9 @@ func (m *ExchangeObjectModifiedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectModifiedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lobject ObjectItem
 
@@ -41118,7 +41870,9 @@ func (m *PartyMemberEjectedMessage) ID() uint16 {
 
 func (m *PartyMemberEjectedMessage) Serialize(w Writer) error {
 
-	m.PartyMemberRemoveMessage.Serialize(w)
+	if err := m.PartyMemberRemoveMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.KickerId); err != nil {
 		return err
@@ -41129,7 +41883,9 @@ func (m *PartyMemberEjectedMessage) Serialize(w Writer) error {
 
 func (m *PartyMemberEjectedMessage) Deserialize(r Reader) error {
 
-	m.PartyMemberRemoveMessage.Deserialize(r)
+	if err := m.PartyMemberRemoveMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lkickerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -41248,7 +42004,9 @@ func (m *MimicryObjectErrorMessage) ID() uint16 {
 
 func (m *MimicryObjectErrorMessage) Serialize(w Writer) error {
 
-	m.SymbioticObjectErrorMessage.Serialize(w)
+	if err := m.SymbioticObjectErrorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Preview); err != nil {
 		return err
@@ -41259,7 +42017,9 @@ func (m *MimicryObjectErrorMessage) Serialize(w Writer) error {
 
 func (m *MimicryObjectErrorMessage) Deserialize(r Reader) error {
 
-	m.SymbioticObjectErrorMessage.Deserialize(r)
+	if err := m.SymbioticObjectErrorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpreview, err := r.ReadBoolean()
 	if err != nil {
@@ -41414,7 +42174,9 @@ func (m *PartyModifiableStatusMessage) ID() uint16 {
 
 func (m *PartyModifiableStatusMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Enabled); err != nil {
 		return err
@@ -41425,7 +42187,9 @@ func (m *PartyModifiableStatusMessage) Serialize(w Writer) error {
 
 func (m *PartyModifiableStatusMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lenabled, err := r.ReadBoolean()
 	if err != nil {
@@ -41449,7 +42213,9 @@ func (m *GameRolePlayShowActorWithEventMessage) ID() uint16 {
 
 func (m *GameRolePlayShowActorWithEventMessage) Serialize(w Writer) error {
 
-	m.GameRolePlayShowActorMessage.Serialize(w)
+	if err := m.GameRolePlayShowActorMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.ActorEventId); err != nil {
 		return err
@@ -41460,7 +42226,9 @@ func (m *GameRolePlayShowActorWithEventMessage) Serialize(w Writer) error {
 
 func (m *GameRolePlayShowActorWithEventMessage) Deserialize(r Reader) error {
 
-	m.GameRolePlayShowActorMessage.Deserialize(r)
+	if err := m.GameRolePlayShowActorMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lactorEventId, err := r.ReadUInt8()
 	if err != nil {
@@ -41555,7 +42323,9 @@ func (m *ExchangeCraftResultMagicWithObjectDescMessage) ID() uint16 {
 
 func (m *ExchangeCraftResultMagicWithObjectDescMessage) Serialize(w Writer) error {
 
-	m.ExchangeCraftResultWithObjectDescMessage.Serialize(w)
+	if err := m.ExchangeCraftResultWithObjectDescMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt8(m.MagicPoolStatus); err != nil {
 		return err
@@ -41566,7 +42336,9 @@ func (m *ExchangeCraftResultMagicWithObjectDescMessage) Serialize(w Writer) erro
 
 func (m *ExchangeCraftResultMagicWithObjectDescMessage) Deserialize(r Reader) error {
 
-	m.ExchangeCraftResultWithObjectDescMessage.Deserialize(r)
+	if err := m.ExchangeCraftResultWithObjectDescMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmagicPoolStatus, err := r.ReadInt8()
 	if err != nil {
@@ -41647,14 +42419,18 @@ func (m *MimicryObjectAssociatedMessage) ID() uint16 {
 
 func (m *MimicryObjectAssociatedMessage) Serialize(w Writer) error {
 
-	m.SymbioticObjectAssociatedMessage.Serialize(w)
+	if err := m.SymbioticObjectAssociatedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *MimicryObjectAssociatedMessage) Deserialize(r Reader) error {
 
-	m.SymbioticObjectAssociatedMessage.Deserialize(r)
+	if err := m.SymbioticObjectAssociatedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -41717,7 +42493,9 @@ func (m *AbstractGameActionWithAckMessage) ID() uint16 {
 
 func (m *AbstractGameActionWithAckMessage) Serialize(w Writer) error {
 
-	m.AbstractGameActionMessage.Serialize(w)
+	if err := m.AbstractGameActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.WaitAckId); err != nil {
 		return err
@@ -41728,7 +42506,9 @@ func (m *AbstractGameActionWithAckMessage) Serialize(w Writer) error {
 
 func (m *AbstractGameActionWithAckMessage) Deserialize(r Reader) error {
 
-	m.AbstractGameActionMessage.Deserialize(r)
+	if err := m.AbstractGameActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lwaitAckId, err := r.ReadInt16()
 	if err != nil {
@@ -41758,7 +42538,9 @@ func (m *CharactersListWithModificationsMessage) ID() uint16 {
 
 func (m *CharactersListWithModificationsMessage) Serialize(w Writer) error {
 
-	m.CharactersListMessage.Serialize(w)
+	if err := m.CharactersListMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.CharactersToRecolor))); err != nil {
 		return err
@@ -41813,7 +42595,9 @@ func (m *CharactersListWithModificationsMessage) Serialize(w Writer) error {
 
 func (m *CharactersListWithModificationsMessage) Deserialize(r Reader) error {
 
-	m.CharactersListMessage.Deserialize(r)
+	if err := m.CharactersListMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcharactersToRecolorLen, err := r.ReadInt16()
 	if err != nil {
@@ -41942,7 +42726,9 @@ func (m *GameRolePlayDelayedObjectUseMessage) ID() uint16 {
 
 func (m *GameRolePlayDelayedObjectUseMessage) Serialize(w Writer) error {
 
-	m.GameRolePlayDelayedActionMessage.Serialize(w)
+	if err := m.GameRolePlayDelayedActionMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -41953,7 +42739,9 @@ func (m *GameRolePlayDelayedObjectUseMessage) Serialize(w Writer) error {
 
 func (m *GameRolePlayDelayedObjectUseMessage) Deserialize(r Reader) error {
 
-	m.GameRolePlayDelayedActionMessage.Deserialize(r)
+	if err := m.GameRolePlayDelayedActionMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -42175,7 +42963,9 @@ func (m *ExchangeObjectAddedMessage) ID() uint16 {
 
 func (m *ExchangeObjectAddedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMessage.Serialize(w)
+	if err := m.ExchangeObjectMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Object.Serialize(w); err != nil {
 		return err
@@ -42186,7 +42976,9 @@ func (m *ExchangeObjectAddedMessage) Serialize(w Writer) error {
 
 func (m *ExchangeObjectAddedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMessage.Deserialize(r)
+	if err := m.ExchangeObjectMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lobject ObjectItem
 
@@ -42283,7 +43075,9 @@ func (m *ExchangeStartedWithStorageMessage) ID() uint16 {
 
 func (m *ExchangeStartedWithStorageMessage) Serialize(w Writer) error {
 
-	m.ExchangeStartedMessage.Serialize(w)
+	if err := m.ExchangeStartedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.StorageMaxSlot); err != nil {
 		return err
@@ -42294,7 +43088,9 @@ func (m *ExchangeStartedWithStorageMessage) Serialize(w Writer) error {
 
 func (m *ExchangeStartedWithStorageMessage) Deserialize(r Reader) error {
 
-	m.ExchangeStartedMessage.Deserialize(r)
+	if err := m.ExchangeStartedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lstorageMaxSlot, err := r.ReadVarUInt32()
 	if err != nil {
@@ -42838,7 +43634,9 @@ func (m *BasicStatWithDataMessage) ID() uint16 {
 
 func (m *BasicStatWithDataMessage) Serialize(w Writer) error {
 
-	m.BasicStatMessage.Serialize(w)
+	if err := m.BasicStatMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Datas))); err != nil {
 		return err
@@ -42861,7 +43659,9 @@ func (m *BasicStatWithDataMessage) Serialize(w Writer) error {
 
 func (m *BasicStatWithDataMessage) Deserialize(r Reader) error {
 
-	m.BasicStatMessage.Deserialize(r)
+	if err := m.BasicStatMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldatasLen, err := r.ReadInt16()
 	if err != nil {
@@ -42931,7 +43731,9 @@ func (m *AggregateStatWithDataMessage) ID() uint16 {
 
 func (m *AggregateStatWithDataMessage) Serialize(w Writer) error {
 
-	m.AggregateStatMessage.Serialize(w)
+	if err := m.AggregateStatMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Datas))); err != nil {
 		return err
@@ -42954,7 +43756,9 @@ func (m *AggregateStatWithDataMessage) Serialize(w Writer) error {
 
 func (m *AggregateStatWithDataMessage) Deserialize(r Reader) error {
 
-	m.AggregateStatMessage.Deserialize(r)
+	if err := m.AggregateStatMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldatasLen, err := r.ReadInt16()
 	if err != nil {
@@ -43064,14 +43868,18 @@ func (m *ExchangeObjectModifyPricedMessage) ID() uint16 {
 
 func (m *ExchangeObjectModifyPricedMessage) Serialize(w Writer) error {
 
-	m.ExchangeObjectMovePricedMessage.Serialize(w)
+	if err := m.ExchangeObjectMovePricedMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ExchangeObjectModifyPricedMessage) Deserialize(r Reader) error {
 
-	m.ExchangeObjectMovePricedMessage.Deserialize(r)
+	if err := m.ExchangeObjectMovePricedMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -43399,14 +44207,18 @@ func (m *GameCautiousMapMovementRequestMessage) ID() uint16 {
 
 func (m *GameCautiousMapMovementRequestMessage) Serialize(w Writer) error {
 
-	m.GameMapMovementRequestMessage.Serialize(w)
+	if err := m.GameMapMovementRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameCautiousMapMovementRequestMessage) Deserialize(r Reader) error {
 
-	m.GameMapMovementRequestMessage.Deserialize(r)
+	if err := m.GameMapMovementRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -43591,7 +44403,9 @@ func (m *FocusedExchangeReadyMessage) ID() uint16 {
 
 func (m *FocusedExchangeReadyMessage) Serialize(w Writer) error {
 
-	m.ExchangeReadyMessage.Serialize(w)
+	if err := m.ExchangeReadyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.FocusActionId); err != nil {
 		return err
@@ -43602,7 +44416,9 @@ func (m *FocusedExchangeReadyMessage) Serialize(w Writer) error {
 
 func (m *FocusedExchangeReadyMessage) Deserialize(r Reader) error {
 
-	m.ExchangeReadyMessage.Deserialize(r)
+	if err := m.ExchangeReadyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfocusActionId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -44482,7 +45298,9 @@ func (m *MimicryObjectFeedAndAssociateRequestMessage) ID() uint16 {
 
 func (m *MimicryObjectFeedAndAssociateRequestMessage) Serialize(w Writer) error {
 
-	m.SymbioticObjectAssociateRequestMessage.Serialize(w)
+	if err := m.SymbioticObjectAssociateRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.FoodUID); err != nil {
 		return err
@@ -44501,7 +45319,9 @@ func (m *MimicryObjectFeedAndAssociateRequestMessage) Serialize(w Writer) error 
 
 func (m *MimicryObjectFeedAndAssociateRequestMessage) Deserialize(r Reader) error {
 
-	m.SymbioticObjectAssociateRequestMessage.Deserialize(r)
+	if err := m.SymbioticObjectAssociateRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfoodUID, err := r.ReadVarUInt32()
 	if err != nil {
@@ -44773,14 +45593,18 @@ func (m *HouseSellFromInsideRequestMessage) ID() uint16 {
 
 func (m *HouseSellFromInsideRequestMessage) Serialize(w Writer) error {
 
-	m.HouseSellRequestMessage.Serialize(w)
+	if err := m.HouseSellRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *HouseSellFromInsideRequestMessage) Deserialize(r Reader) error {
 
-	m.HouseSellRequestMessage.Deserialize(r)
+	if err := m.HouseSellRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -44824,14 +45648,18 @@ func (m *HouseLockFromInsideRequestMessage) ID() uint16 {
 
 func (m *HouseLockFromInsideRequestMessage) Serialize(w Writer) error {
 
-	m.LockableChangeCodeMessage.Serialize(w)
+	if err := m.LockableChangeCodeMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *HouseLockFromInsideRequestMessage) Deserialize(r Reader) error {
 
-	m.LockableChangeCodeMessage.Deserialize(r)
+	if err := m.LockableChangeCodeMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -45023,7 +45851,9 @@ func (m *ContactLookRequestByNameMessage) ID() uint16 {
 
 func (m *ContactLookRequestByNameMessage) Serialize(w Writer) error {
 
-	m.ContactLookRequestMessage.Serialize(w)
+	if err := m.ContactLookRequestMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.PlayerName); err != nil {
 		return err
@@ -45034,7 +45864,9 @@ func (m *ContactLookRequestByNameMessage) Serialize(w Writer) error {
 
 func (m *ContactLookRequestByNameMessage) Deserialize(r Reader) error {
 
-	m.ContactLookRequestMessage.Deserialize(r)
+	if err := m.ContactLookRequestMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerName, err := r.ReadString()
 	if err != nil {
@@ -45056,14 +45888,18 @@ func (m *PartyLocateMembersRequestMessage) ID() uint16 {
 
 func (m *PartyLocateMembersRequestMessage) Serialize(w Writer) error {
 
-	m.AbstractPartyMessage.Serialize(w)
+	if err := m.AbstractPartyMessage.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *PartyLocateMembersRequestMessage) Deserialize(r Reader) error {
 
-	m.AbstractPartyMessage.Deserialize(r)
+	if err := m.AbstractPartyMessage.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }

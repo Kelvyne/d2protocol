@@ -703,7 +703,9 @@ func (m *GameFightFighterInformations) ID() uint16 {
 
 func (m *GameFightFighterInformations) Serialize(w Writer) error {
 
-	m.GameContextActorInformations.Serialize(w)
+	if err := m.GameContextActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.TeamId); err != nil {
 		return err
@@ -742,7 +744,9 @@ func (m *GameFightFighterInformations) Serialize(w Writer) error {
 
 func (m *GameFightFighterInformations) Deserialize(r Reader) error {
 
-	m.GameContextActorInformations.Deserialize(r)
+	if err := m.GameContextActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lteamId, err := r.ReadUInt8()
 	if err != nil {
@@ -809,14 +813,18 @@ func (m *GameFightAIInformations) ID() uint16 {
 
 func (m *GameFightAIInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterInformations.Serialize(w)
+	if err := m.GameFightFighterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameFightAIInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterInformations.Deserialize(r)
+	if err := m.GameFightFighterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -835,7 +843,9 @@ func (m *GameFightMonsterInformations) ID() uint16 {
 
 func (m *GameFightMonsterInformations) Serialize(w Writer) error {
 
-	m.GameFightAIInformations.Serialize(w)
+	if err := m.GameFightAIInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.CreatureGenericId); err != nil {
 		return err
@@ -850,7 +860,9 @@ func (m *GameFightMonsterInformations) Serialize(w Writer) error {
 
 func (m *GameFightMonsterInformations) Deserialize(r Reader) error {
 
-	m.GameFightAIInformations.Deserialize(r)
+	if err := m.GameFightAIInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcreatureGenericId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -879,14 +891,18 @@ func (m *GameRolePlayActorInformations) ID() uint16 {
 
 func (m *GameRolePlayActorInformations) Serialize(w Writer) error {
 
-	m.GameContextActorInformations.Serialize(w)
+	if err := m.GameContextActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *GameRolePlayActorInformations) Deserialize(r Reader) error {
 
-	m.GameContextActorInformations.Deserialize(r)
+	if err := m.GameContextActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -903,7 +919,9 @@ func (m *GameRolePlayNamedActorInformations) ID() uint16 {
 
 func (m *GameRolePlayNamedActorInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -914,7 +932,9 @@ func (m *GameRolePlayNamedActorInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayNamedActorInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -940,7 +960,9 @@ func (m *GameRolePlayMountInformations) ID() uint16 {
 
 func (m *GameRolePlayMountInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayNamedActorInformations.Serialize(w)
+	if err := m.GameRolePlayNamedActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.OwnerName); err != nil {
 		return err
@@ -955,7 +977,9 @@ func (m *GameRolePlayMountInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayMountInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayNamedActorInformations.Deserialize(r)
+	if err := m.GameRolePlayNamedActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lownerName, err := r.ReadString()
 	if err != nil {
@@ -1125,7 +1149,9 @@ func (m *GameRolePlayPortalInformations) ID() uint16 {
 
 func (m *GameRolePlayPortalInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.Portal.ID()); err != nil {
 		return err
@@ -1140,7 +1166,9 @@ func (m *GameRolePlayPortalInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayPortalInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	typeportalID, err := r.ReadUInt16()
 	if err != nil {
@@ -1184,7 +1212,9 @@ func (m *GameRolePlayGroupMonsterInformations) ID() uint16 {
 
 func (m *GameRolePlayGroupMonsterInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -1227,7 +1257,9 @@ func (m *GameRolePlayGroupMonsterInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayGroupMonsterInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -1298,7 +1330,9 @@ func (m *GameRolePlayGroupMonsterWaveInformations) ID() uint16 {
 
 func (m *GameRolePlayGroupMonsterWaveInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayGroupMonsterInformations.Serialize(w)
+	if err := m.GameRolePlayGroupMonsterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.NbWaves); err != nil {
 		return err
@@ -1325,7 +1359,9 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayGroupMonsterInformations.Deserialize(r)
+	if err := m.GameRolePlayGroupMonsterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnbWaves, err := r.ReadUInt8()
 	if err != nil {
@@ -1373,7 +1409,9 @@ func (m *GameRolePlayPrismInformations) ID() uint16 {
 
 func (m *GameRolePlayPrismInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.Prism.ID()); err != nil {
 		return err
@@ -1388,7 +1426,9 @@ func (m *GameRolePlayPrismInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayPrismInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	typeprismID, err := r.ReadUInt16()
 	if err != nil {
@@ -1422,7 +1462,9 @@ func (m *GameFightTaxCollectorInformations) ID() uint16 {
 
 func (m *GameFightTaxCollectorInformations) Serialize(w Writer) error {
 
-	m.GameFightAIInformations.Serialize(w)
+	if err := m.GameFightAIInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.FirstNameId); err != nil {
 		return err
@@ -1441,7 +1483,9 @@ func (m *GameFightTaxCollectorInformations) Serialize(w Writer) error {
 
 func (m *GameFightTaxCollectorInformations) Deserialize(r Reader) error {
 
-	m.GameFightAIInformations.Deserialize(r)
+	if err := m.GameFightAIInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfirstNameId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -1483,7 +1527,9 @@ func (m *GameRolePlayNpcInformations) ID() uint16 {
 
 func (m *GameRolePlayNpcInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.NpcId); err != nil {
 		return err
@@ -1502,7 +1548,9 @@ func (m *GameRolePlayNpcInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayNpcInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnpcId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -1544,7 +1592,9 @@ func (m *GameRolePlayTaxCollectorInformations) ID() uint16 {
 
 func (m *GameRolePlayTaxCollectorInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.Identification.ID()); err != nil {
 		return err
@@ -1567,7 +1617,9 @@ func (m *GameRolePlayTaxCollectorInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayTaxCollectorInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	typeidentificationID, err := r.ReadUInt16()
 	if err != nil {
@@ -1613,7 +1665,9 @@ func (m *GameFightFighterNamedInformations) ID() uint16 {
 
 func (m *GameFightFighterNamedInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterInformations.Serialize(w)
+	if err := m.GameFightFighterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -1628,7 +1682,9 @@ func (m *GameFightFighterNamedInformations) Serialize(w Writer) error {
 
 func (m *GameFightFighterNamedInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterInformations.Deserialize(r)
+	if err := m.GameFightFighterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -1664,7 +1720,9 @@ func (m *GameFightCharacterInformations) ID() uint16 {
 
 func (m *GameFightCharacterInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterNamedInformations.Serialize(w)
+	if err := m.GameFightFighterNamedInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Level); err != nil {
 		return err
@@ -1687,7 +1745,9 @@ func (m *GameFightCharacterInformations) Serialize(w Writer) error {
 
 func (m *GameFightCharacterInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterNamedInformations.Deserialize(r)
+	if err := m.GameFightFighterNamedInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	llevel, err := r.ReadUInt8()
 	if err != nil {
@@ -1735,7 +1795,9 @@ func (m *GameFightCompanionInformations) ID() uint16 {
 
 func (m *GameFightCompanionInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterInformations.Serialize(w)
+	if err := m.GameFightFighterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.CompanionGenericId); err != nil {
 		return err
@@ -1754,7 +1816,9 @@ func (m *GameFightCompanionInformations) Serialize(w Writer) error {
 
 func (m *GameFightCompanionInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterInformations.Deserialize(r)
+	if err := m.GameFightFighterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcompanionGenericId, err := r.ReadUInt8()
 	if err != nil {
@@ -1794,7 +1858,9 @@ func (m *GameRolePlayHumanoidInformations) ID() uint16 {
 
 func (m *GameRolePlayHumanoidInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayNamedActorInformations.Serialize(w)
+	if err := m.GameRolePlayNamedActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt16(m.HumanoidInfo.ID()); err != nil {
 		return err
@@ -1813,7 +1879,9 @@ func (m *GameRolePlayHumanoidInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayHumanoidInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayNamedActorInformations.Deserialize(r)
+	if err := m.GameRolePlayNamedActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	typehumanoidInfoID, err := r.ReadUInt16()
 	if err != nil {
@@ -1850,7 +1918,9 @@ func (m *GameRolePlayCharacterInformations) ID() uint16 {
 
 func (m *GameRolePlayCharacterInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayHumanoidInformations.Serialize(w)
+	if err := m.GameRolePlayHumanoidInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AlignmentInfos.Serialize(w); err != nil {
 		return err
@@ -1861,7 +1931,9 @@ func (m *GameRolePlayCharacterInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayCharacterInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayHumanoidInformations.Deserialize(r)
+	if err := m.GameRolePlayHumanoidInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lalignmentInfos ActorAlignmentInformations
 
@@ -1884,7 +1956,9 @@ func (m *GameRolePlayNpcWithQuestInformations) ID() uint16 {
 
 func (m *GameRolePlayNpcWithQuestInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayNpcInformations.Serialize(w)
+	if err := m.GameRolePlayNpcInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.QuestFlag.Serialize(w); err != nil {
 		return err
@@ -1895,7 +1969,9 @@ func (m *GameRolePlayNpcWithQuestInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayNpcWithQuestInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayNpcInformations.Deserialize(r)
+	if err := m.GameRolePlayNpcInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lquestFlag GameRolePlayNpcQuestFlag
 
@@ -1920,7 +1996,9 @@ func (m *GameRolePlayMerchantInformations) ID() uint16 {
 
 func (m *GameRolePlayMerchantInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayNamedActorInformations.Serialize(w)
+	if err := m.GameRolePlayNamedActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.SellType); err != nil {
 		return err
@@ -1947,7 +2025,9 @@ func (m *GameRolePlayMerchantInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayMerchantInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayNamedActorInformations.Deserialize(r)
+	if err := m.GameRolePlayNamedActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsellType, err := r.ReadUInt8()
 	if err != nil {
@@ -1997,7 +2077,9 @@ func (m *GameRolePlayMutantInformations) ID() uint16 {
 
 func (m *GameRolePlayMutantInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayHumanoidInformations.Serialize(w)
+	if err := m.GameRolePlayHumanoidInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.MonsterId); err != nil {
 		return err
@@ -2012,7 +2094,9 @@ func (m *GameRolePlayMutantInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayMutantInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayHumanoidInformations.Deserialize(r)
+	if err := m.GameRolePlayHumanoidInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmonsterId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -3309,7 +3393,9 @@ func (m *AlliancePrismInformation) ID() uint16 {
 
 func (m *AlliancePrismInformation) Serialize(w Writer) error {
 
-	m.PrismInformation.Serialize(w)
+	if err := m.PrismInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Alliance.Serialize(w); err != nil {
 		return err
@@ -3320,7 +3406,9 @@ func (m *AlliancePrismInformation) Serialize(w Writer) error {
 
 func (m *AlliancePrismInformation) Deserialize(r Reader) error {
 
-	m.PrismInformation.Deserialize(r)
+	if err := m.PrismInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lalliance AllianceInformations
 
@@ -3419,7 +3507,9 @@ func (m *AllianceInsiderPrismInformation) ID() uint16 {
 
 func (m *AllianceInsiderPrismInformation) Serialize(w Writer) error {
 
-	m.PrismInformation.Serialize(w)
+	if err := m.PrismInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.LastTimeSlotModificationDate); err != nil {
 		return err
@@ -3454,7 +3544,9 @@ func (m *AllianceInsiderPrismInformation) Serialize(w Writer) error {
 
 func (m *AllianceInsiderPrismInformation) Deserialize(r Reader) error {
 
-	m.PrismInformation.Deserialize(r)
+	if err := m.PrismInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	llastTimeSlotModificationDate, err := r.ReadUInt32()
 	if err != nil {
@@ -3545,7 +3637,9 @@ func (m *CharacterBasicMinimalInformations) ID() uint16 {
 
 func (m *CharacterBasicMinimalInformations) Serialize(w Writer) error {
 
-	m.AbstractCharacterInformation.Serialize(w)
+	if err := m.AbstractCharacterInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -3556,7 +3650,9 @@ func (m *CharacterBasicMinimalInformations) Serialize(w Writer) error {
 
 func (m *CharacterBasicMinimalInformations) Deserialize(r Reader) error {
 
-	m.AbstractCharacterInformation.Deserialize(r)
+	if err := m.AbstractCharacterInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -3580,7 +3676,9 @@ func (m *CharacterMinimalInformations) ID() uint16 {
 
 func (m *CharacterMinimalInformations) Serialize(w Writer) error {
 
-	m.CharacterBasicMinimalInformations.Serialize(w)
+	if err := m.CharacterBasicMinimalInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Level); err != nil {
 		return err
@@ -3591,7 +3689,9 @@ func (m *CharacterMinimalInformations) Serialize(w Writer) error {
 
 func (m *CharacterMinimalInformations) Deserialize(r Reader) error {
 
-	m.CharacterBasicMinimalInformations.Deserialize(r)
+	if err := m.CharacterBasicMinimalInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	llevel, err := r.ReadUInt8()
 	if err != nil {
@@ -3639,7 +3739,9 @@ func (m *GuildMember) ID() uint16 {
 
 func (m *GuildMember) Serialize(w Writer) error {
 
-	m.CharacterMinimalInformations.Serialize(w)
+	if err := m.CharacterMinimalInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt8(m.Breed); err != nil {
 		return err
@@ -3702,7 +3804,9 @@ func (m *GuildMember) Serialize(w Writer) error {
 
 func (m *GuildMember) Deserialize(r Reader) error {
 
-	m.CharacterMinimalInformations.Deserialize(r)
+	if err := m.CharacterMinimalInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lbreed, err := r.ReadInt8()
 	if err != nil {
@@ -4452,7 +4556,9 @@ func (m *ObjectEffectInteger) ID() uint16 {
 
 func (m *ObjectEffectInteger) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Value); err != nil {
 		return err
@@ -4463,7 +4569,9 @@ func (m *ObjectEffectInteger) Serialize(w Writer) error {
 
 func (m *ObjectEffectInteger) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadVarUInt16()
 	if err != nil {
@@ -4759,7 +4867,9 @@ func (m *SkillActionDescriptionCraft) ID() uint16 {
 
 func (m *SkillActionDescriptionCraft) Serialize(w Writer) error {
 
-	m.SkillActionDescription.Serialize(w)
+	if err := m.SkillActionDescription.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Probability); err != nil {
 		return err
@@ -4770,7 +4880,9 @@ func (m *SkillActionDescriptionCraft) Serialize(w Writer) error {
 
 func (m *SkillActionDescriptionCraft) Deserialize(r Reader) error {
 
-	m.SkillActionDescription.Deserialize(r)
+	if err := m.SkillActionDescription.Deserialize(r); err != nil {
+		return err
+	}
 
 	lprobability, err := r.ReadUInt8()
 	if err != nil {
@@ -4794,7 +4906,9 @@ func (m *SkillActionDescriptionTimed) ID() uint16 {
 
 func (m *SkillActionDescriptionTimed) Serialize(w Writer) error {
 
-	m.SkillActionDescription.Serialize(w)
+	if err := m.SkillActionDescription.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Time); err != nil {
 		return err
@@ -4805,7 +4919,9 @@ func (m *SkillActionDescriptionTimed) Serialize(w Writer) error {
 
 func (m *SkillActionDescriptionTimed) Deserialize(r Reader) error {
 
-	m.SkillActionDescription.Deserialize(r)
+	if err := m.SkillActionDescription.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltime, err := r.ReadUInt8()
 	if err != nil {
@@ -4831,7 +4947,9 @@ func (m *SkillActionDescriptionCollect) ID() uint16 {
 
 func (m *SkillActionDescriptionCollect) Serialize(w Writer) error {
 
-	m.SkillActionDescriptionTimed.Serialize(w)
+	if err := m.SkillActionDescriptionTimed.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Min); err != nil {
 		return err
@@ -4846,7 +4964,9 @@ func (m *SkillActionDescriptionCollect) Serialize(w Writer) error {
 
 func (m *SkillActionDescriptionCollect) Deserialize(r Reader) error {
 
-	m.SkillActionDescriptionTimed.Deserialize(r)
+	if err := m.SkillActionDescriptionTimed.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmin, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5071,7 +5191,9 @@ func (m *HumanOptionTitle) ID() uint16 {
 
 func (m *HumanOptionTitle) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.TitleId); err != nil {
 		return err
@@ -5086,7 +5208,9 @@ func (m *HumanOptionTitle) Serialize(w Writer) error {
 
 func (m *HumanOptionTitle) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	ltitleId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5117,7 +5241,9 @@ func (m *CharacterMinimalPlusLookInformations) ID() uint16 {
 
 func (m *CharacterMinimalPlusLookInformations) Serialize(w Writer) error {
 
-	m.CharacterMinimalInformations.Serialize(w)
+	if err := m.CharacterMinimalInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.EntityLook.Serialize(w); err != nil {
 		return err
@@ -5128,7 +5254,9 @@ func (m *CharacterMinimalPlusLookInformations) Serialize(w Writer) error {
 
 func (m *CharacterMinimalPlusLookInformations) Deserialize(r Reader) error {
 
-	m.CharacterMinimalInformations.Deserialize(r)
+	if err := m.CharacterMinimalInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lentityLook EntityLook
 
@@ -5153,7 +5281,9 @@ func (m *CharacterBaseInformations) ID() uint16 {
 
 func (m *CharacterBaseInformations) Serialize(w Writer) error {
 
-	m.CharacterMinimalPlusLookInformations.Serialize(w)
+	if err := m.CharacterMinimalPlusLookInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt8(m.Breed); err != nil {
 		return err
@@ -5168,7 +5298,9 @@ func (m *CharacterBaseInformations) Serialize(w Writer) error {
 
 func (m *CharacterBaseInformations) Deserialize(r Reader) error {
 
-	m.CharacterMinimalPlusLookInformations.Deserialize(r)
+	if err := m.CharacterMinimalPlusLookInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lbreed, err := r.ReadInt8()
 	if err != nil {
@@ -5699,7 +5831,9 @@ func (m *HumanOptionOrnament) ID() uint16 {
 
 func (m *HumanOptionOrnament) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.OrnamentId); err != nil {
 		return err
@@ -5710,7 +5844,9 @@ func (m *HumanOptionOrnament) Serialize(w Writer) error {
 
 func (m *HumanOptionOrnament) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	lornamentId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5901,7 +6037,9 @@ func (m *GroupMonsterStaticInformationsWithAlternatives) ID() uint16 {
 
 func (m *GroupMonsterStaticInformationsWithAlternatives) Serialize(w Writer) error {
 
-	m.GroupMonsterStaticInformations.Serialize(w)
+	if err := m.GroupMonsterStaticInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Alternatives))); err != nil {
 		return err
@@ -5920,7 +6058,9 @@ func (m *GroupMonsterStaticInformationsWithAlternatives) Serialize(w Writer) err
 
 func (m *GroupMonsterStaticInformationsWithAlternatives) Deserialize(r Reader) error {
 
-	m.GroupMonsterStaticInformations.Deserialize(r)
+	if err := m.GroupMonsterStaticInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lalternativesLen, err := r.ReadInt16()
 	if err != nil {
@@ -5954,7 +6094,9 @@ func (m *MonsterInGroupInformations) ID() uint16 {
 
 func (m *MonsterInGroupInformations) Serialize(w Writer) error {
 
-	m.MonsterInGroupLightInformations.Serialize(w)
+	if err := m.MonsterInGroupLightInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Look.Serialize(w); err != nil {
 		return err
@@ -5965,7 +6107,9 @@ func (m *MonsterInGroupInformations) Serialize(w Writer) error {
 
 func (m *MonsterInGroupInformations) Deserialize(r Reader) error {
 
-	m.MonsterInGroupLightInformations.Deserialize(r)
+	if err := m.MonsterInGroupLightInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var llook EntityLook
 
@@ -6092,7 +6236,9 @@ func (m *PaddockBuyableInformations) ID() uint16 {
 
 func (m *PaddockBuyableInformations) Serialize(w Writer) error {
 
-	m.PaddockInformations.Serialize(w)
+	if err := m.PaddockInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Price); err != nil {
 		return err
@@ -6107,7 +6253,9 @@ func (m *PaddockBuyableInformations) Serialize(w Writer) error {
 
 func (m *PaddockBuyableInformations) Deserialize(r Reader) error {
 
-	m.PaddockInformations.Deserialize(r)
+	if err := m.PaddockInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lprice, err := r.ReadVarUInt32()
 	if err != nil {
@@ -6138,7 +6286,9 @@ func (m *PaddockAbandonnedInformations) ID() uint16 {
 
 func (m *PaddockAbandonnedInformations) Serialize(w Writer) error {
 
-	m.PaddockBuyableInformations.Serialize(w)
+	if err := m.PaddockBuyableInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.GuildId); err != nil {
 		return err
@@ -6149,7 +6299,9 @@ func (m *PaddockAbandonnedInformations) Serialize(w Writer) error {
 
 func (m *PaddockAbandonnedInformations) Deserialize(r Reader) error {
 
-	m.PaddockBuyableInformations.Deserialize(r)
+	if err := m.PaddockBuyableInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lguildId, err := r.ReadInt32()
 	if err != nil {
@@ -6173,7 +6325,9 @@ func (m *PaddockPrivateInformations) ID() uint16 {
 
 func (m *PaddockPrivateInformations) Serialize(w Writer) error {
 
-	m.PaddockAbandonnedInformations.Serialize(w)
+	if err := m.PaddockAbandonnedInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.GuildInfo.Serialize(w); err != nil {
 		return err
@@ -6184,7 +6338,9 @@ func (m *PaddockPrivateInformations) Serialize(w Writer) error {
 
 func (m *PaddockPrivateInformations) Deserialize(r Reader) error {
 
-	m.PaddockAbandonnedInformations.Deserialize(r)
+	if err := m.PaddockAbandonnedInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguildInfo GuildInformations
 
@@ -6317,7 +6473,9 @@ func (m *HouseInformationsExtended) ID() uint16 {
 
 func (m *HouseInformationsExtended) Serialize(w Writer) error {
 
-	m.HouseInformations.Serialize(w)
+	if err := m.HouseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.GuildInfo.Serialize(w); err != nil {
 		return err
@@ -6328,7 +6486,9 @@ func (m *HouseInformationsExtended) Serialize(w Writer) error {
 
 func (m *HouseInformationsExtended) Deserialize(r Reader) error {
 
-	m.HouseInformations.Deserialize(r)
+	if err := m.HouseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguildInfo GuildInformations
 
@@ -6593,7 +6753,9 @@ func (m *FightTeamInformations) ID() uint16 {
 
 func (m *FightTeamInformations) Serialize(w Writer) error {
 
-	m.AbstractFightTeamInformations.Serialize(w)
+	if err := m.AbstractFightTeamInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.TeamMembers))); err != nil {
 		return err
@@ -6616,7 +6778,9 @@ func (m *FightTeamInformations) Serialize(w Writer) error {
 
 func (m *FightTeamInformations) Deserialize(r Reader) error {
 
-	m.AbstractFightTeamInformations.Deserialize(r)
+	if err := m.AbstractFightTeamInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lteamMembersLen, err := r.ReadInt16()
 	if err != nil {
@@ -6665,7 +6829,9 @@ func (m *PartyInvitationMemberInformations) ID() uint16 {
 
 func (m *PartyInvitationMemberInformations) Serialize(w Writer) error {
 
-	m.CharacterBaseInformations.Serialize(w)
+	if err := m.CharacterBaseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.WorldX); err != nil {
 		return err
@@ -6700,7 +6866,9 @@ func (m *PartyInvitationMemberInformations) Serialize(w Writer) error {
 
 func (m *PartyInvitationMemberInformations) Deserialize(r Reader) error {
 
-	m.CharacterBaseInformations.Deserialize(r)
+	if err := m.CharacterBaseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
@@ -6784,7 +6952,9 @@ func (m *PartyMemberInformations) ID() uint16 {
 
 func (m *PartyMemberInformations) Serialize(w Writer) error {
 
-	m.CharacterBaseInformations.Serialize(w)
+	if err := m.CharacterBaseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.LifePoints); err != nil {
 		return err
@@ -6851,7 +7021,9 @@ func (m *PartyMemberInformations) Serialize(w Writer) error {
 
 func (m *PartyMemberInformations) Deserialize(r Reader) error {
 
-	m.CharacterBaseInformations.Deserialize(r)
+	if err := m.CharacterBaseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	llifePoints, err := r.ReadVarUInt32()
 	if err != nil {
@@ -7206,7 +7378,9 @@ func (m *PartyCompanionMemberInformations) ID() uint16 {
 
 func (m *PartyCompanionMemberInformations) Serialize(w Writer) error {
 
-	m.PartyCompanionBaseInformations.Serialize(w)
+	if err := m.PartyCompanionBaseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Initiative); err != nil {
 		return err
@@ -7233,7 +7407,9 @@ func (m *PartyCompanionMemberInformations) Serialize(w Writer) error {
 
 func (m *PartyCompanionMemberInformations) Deserialize(r Reader) error {
 
-	m.PartyCompanionBaseInformations.Deserialize(r)
+	if err := m.PartyCompanionBaseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	linitiative, err := r.ReadVarUInt16()
 	if err != nil {
@@ -7432,7 +7608,9 @@ func (m *PartyMemberArenaInformations) ID() uint16 {
 
 func (m *PartyMemberArenaInformations) Serialize(w Writer) error {
 
-	m.PartyMemberInformations.Serialize(w)
+	if err := m.PartyMemberInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Rank); err != nil {
 		return err
@@ -7443,7 +7621,9 @@ func (m *PartyMemberArenaInformations) Serialize(w Writer) error {
 
 func (m *PartyMemberArenaInformations) Deserialize(r Reader) error {
 
-	m.PartyMemberInformations.Deserialize(r)
+	if err := m.PartyMemberInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lrank, err := r.ReadVarUInt16()
 	if err != nil {
@@ -7638,7 +7818,9 @@ func (m *ObjectItemGenericQuantity) ID() uint16 {
 
 func (m *ObjectItemGenericQuantity) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -7653,7 +7835,9 @@ func (m *ObjectItemGenericQuantity) Serialize(w Writer) error {
 
 func (m *ObjectItemGenericQuantity) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -7724,14 +7908,18 @@ func (m *IgnoredInformations) ID() uint16 {
 
 func (m *IgnoredInformations) Serialize(w Writer) error {
 
-	m.AbstractContactInformations.Serialize(w)
+	if err := m.AbstractContactInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *IgnoredInformations) Deserialize(r Reader) error {
 
-	m.AbstractContactInformations.Deserialize(r)
+	if err := m.AbstractContactInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -7754,7 +7942,9 @@ func (m *IgnoredOnlineInformations) ID() uint16 {
 
 func (m *IgnoredOnlineInformations) Serialize(w Writer) error {
 
-	m.IgnoredInformations.Serialize(w)
+	if err := m.IgnoredInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -7777,7 +7967,9 @@ func (m *IgnoredOnlineInformations) Serialize(w Writer) error {
 
 func (m *IgnoredOnlineInformations) Deserialize(r Reader) error {
 
-	m.IgnoredInformations.Deserialize(r)
+	if err := m.IgnoredInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -7826,7 +8018,9 @@ func (m *FriendInformations) ID() uint16 {
 
 func (m *FriendInformations) Serialize(w Writer) error {
 
-	m.AbstractContactInformations.Serialize(w)
+	if err := m.AbstractContactInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PlayerState); err != nil {
 		return err
@@ -7845,7 +8039,9 @@ func (m *FriendInformations) Serialize(w Writer) error {
 
 func (m *FriendInformations) Deserialize(r Reader) error {
 
-	m.AbstractContactInformations.Deserialize(r)
+	if err := m.AbstractContactInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerState, err := r.ReadUInt8()
 	if err != nil {
@@ -7899,7 +8095,9 @@ func (m *FriendOnlineInformations) ID() uint16 {
 
 func (m *FriendOnlineInformations) Serialize(w Writer) error {
 
-	m.FriendInformations.Serialize(w)
+	if err := m.FriendInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.PlayerId); err != nil {
 		return err
@@ -7946,7 +8144,9 @@ func (m *FriendOnlineInformations) Serialize(w Writer) error {
 
 func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 
-	m.FriendInformations.Deserialize(r)
+	if err := m.FriendInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -8043,7 +8243,9 @@ func (m *PaddockContentInformations) ID() uint16 {
 
 func (m *PaddockContentInformations) Serialize(w Writer) error {
 
-	m.PaddockInformations.Serialize(w)
+	if err := m.PaddockInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.PaddockId); err != nil {
 		return err
@@ -8086,7 +8288,9 @@ func (m *PaddockContentInformations) Serialize(w Writer) error {
 
 func (m *PaddockContentInformations) Deserialize(r Reader) error {
 
-	m.PaddockInformations.Deserialize(r)
+	if err := m.PaddockInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpaddockId, err := r.ReadInt32()
 	if err != nil {
@@ -8402,7 +8606,9 @@ func (m *PlayerStatusExtended) ID() uint16 {
 
 func (m *PlayerStatusExtended) Serialize(w Writer) error {
 
-	m.PlayerStatus.Serialize(w)
+	if err := m.PlayerStatus.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Message); err != nil {
 		return err
@@ -8413,7 +8619,9 @@ func (m *PlayerStatusExtended) Serialize(w Writer) error {
 
 func (m *PlayerStatusExtended) Deserialize(r Reader) error {
 
-	m.PlayerStatus.Deserialize(r)
+	if err := m.PlayerStatus.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmessage, err := r.ReadString()
 	if err != nil {
@@ -8458,7 +8666,9 @@ func (m *BasicGuildInformations) ID() uint16 {
 
 func (m *BasicGuildInformations) Serialize(w Writer) error {
 
-	m.AbstractSocialGroupInfos.Serialize(w)
+	if err := m.AbstractSocialGroupInfos.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.GuildId); err != nil {
 		return err
@@ -8477,7 +8687,9 @@ func (m *BasicGuildInformations) Serialize(w Writer) error {
 
 func (m *BasicGuildInformations) Deserialize(r Reader) error {
 
-	m.AbstractSocialGroupInfos.Deserialize(r)
+	if err := m.AbstractSocialGroupInfos.Deserialize(r); err != nil {
+		return err
+	}
 
 	lguildId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -8515,7 +8727,9 @@ func (m *GuildInformations) ID() uint16 {
 
 func (m *GuildInformations) Serialize(w Writer) error {
 
-	m.BasicGuildInformations.Serialize(w)
+	if err := m.BasicGuildInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.GuildEmblem.Serialize(w); err != nil {
 		return err
@@ -8526,7 +8740,9 @@ func (m *GuildInformations) Serialize(w Writer) error {
 
 func (m *GuildInformations) Deserialize(r Reader) error {
 
-	m.BasicGuildInformations.Deserialize(r)
+	if err := m.BasicGuildInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguildEmblem GuildEmblem
 
@@ -8551,7 +8767,9 @@ func (m *GuildFactSheetInformations) ID() uint16 {
 
 func (m *GuildFactSheetInformations) Serialize(w Writer) error {
 
-	m.GuildInformations.Serialize(w)
+	if err := m.GuildInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarInt64(m.LeaderId); err != nil {
 		return err
@@ -8566,7 +8784,9 @@ func (m *GuildFactSheetInformations) Serialize(w Writer) error {
 
 func (m *GuildFactSheetInformations) Deserialize(r Reader) error {
 
-	m.GuildInformations.Deserialize(r)
+	if err := m.GuildInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lleaderId, err := r.ReadVarInt64()
 	if err != nil {
@@ -8603,7 +8823,9 @@ func (m *GuildInsiderFactSheetInformations) ID() uint16 {
 
 func (m *GuildInsiderFactSheetInformations) Serialize(w Writer) error {
 
-	m.GuildFactSheetInformations.Serialize(w)
+	if err := m.GuildFactSheetInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.LeaderName); err != nil {
 		return err
@@ -8626,7 +8848,9 @@ func (m *GuildInsiderFactSheetInformations) Serialize(w Writer) error {
 
 func (m *GuildInsiderFactSheetInformations) Deserialize(r Reader) error {
 
-	m.GuildFactSheetInformations.Deserialize(r)
+	if err := m.GuildFactSheetInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lleaderName, err := r.ReadString()
 	if err != nil {
@@ -8719,7 +8943,9 @@ func (m *PrismGeolocalizedInformation) ID() uint16 {
 
 func (m *PrismGeolocalizedInformation) Serialize(w Writer) error {
 
-	m.PrismSubareaEmptyInfo.Serialize(w)
+	if err := m.PrismSubareaEmptyInfo.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.WorldX); err != nil {
 		return err
@@ -8746,7 +8972,9 @@ func (m *PrismGeolocalizedInformation) Serialize(w Writer) error {
 
 func (m *PrismGeolocalizedInformation) Deserialize(r Reader) error {
 
-	m.PrismSubareaEmptyInfo.Deserialize(r)
+	if err := m.PrismSubareaEmptyInfo.Deserialize(r); err != nil {
+		return err
+	}
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
@@ -8797,7 +9025,9 @@ func (m *GuildInAllianceInformations) ID() uint16 {
 
 func (m *GuildInAllianceInformations) Serialize(w Writer) error {
 
-	m.GuildInformations.Serialize(w)
+	if err := m.GuildInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.NbMembers); err != nil {
 		return err
@@ -8808,7 +9038,9 @@ func (m *GuildInAllianceInformations) Serialize(w Writer) error {
 
 func (m *GuildInAllianceInformations) Deserialize(r Reader) error {
 
-	m.GuildInformations.Deserialize(r)
+	if err := m.GuildInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnbMembers, err := r.ReadUInt8()
 	if err != nil {
@@ -8832,7 +9064,9 @@ func (m *ObjectItemGenericQuantityPrice) ID() uint16 {
 
 func (m *ObjectItemGenericQuantityPrice) Serialize(w Writer) error {
 
-	m.ObjectItemGenericQuantity.Serialize(w)
+	if err := m.ObjectItemGenericQuantity.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Price); err != nil {
 		return err
@@ -8843,7 +9077,9 @@ func (m *ObjectItemGenericQuantityPrice) Serialize(w Writer) error {
 
 func (m *ObjectItemGenericQuantityPrice) Deserialize(r Reader) error {
 
-	m.ObjectItemGenericQuantity.Deserialize(r)
+	if err := m.ObjectItemGenericQuantity.Deserialize(r); err != nil {
+		return err
+	}
 
 	lprice, err := r.ReadVarUInt32()
 	if err != nil {
@@ -8875,7 +9111,9 @@ func (m *ObjectItem) ID() uint16 {
 
 func (m *ObjectItem) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Position); err != nil {
 		return err
@@ -8914,7 +9152,9 @@ func (m *ObjectItem) Serialize(w Writer) error {
 
 func (m *ObjectItem) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lposition, err := r.ReadUInt8()
 	if err != nil {
@@ -8985,7 +9225,9 @@ func (m *BasicAllianceInformations) ID() uint16 {
 
 func (m *BasicAllianceInformations) Serialize(w Writer) error {
 
-	m.AbstractSocialGroupInfos.Serialize(w)
+	if err := m.AbstractSocialGroupInfos.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.AllianceId); err != nil {
 		return err
@@ -9000,7 +9242,9 @@ func (m *BasicAllianceInformations) Serialize(w Writer) error {
 
 func (m *BasicAllianceInformations) Deserialize(r Reader) error {
 
-	m.AbstractSocialGroupInfos.Deserialize(r)
+	if err := m.AbstractSocialGroupInfos.Deserialize(r); err != nil {
+		return err
+	}
 
 	lallianceId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -9031,7 +9275,9 @@ func (m *FightEntityDispositionInformations) ID() uint16 {
 
 func (m *FightEntityDispositionInformations) Serialize(w Writer) error {
 
-	m.EntityDispositionInformations.Serialize(w)
+	if err := m.EntityDispositionInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.CarryingCharacterId); err != nil {
 		return err
@@ -9042,7 +9288,9 @@ func (m *FightEntityDispositionInformations) Serialize(w Writer) error {
 
 func (m *FightEntityDispositionInformations) Deserialize(r Reader) error {
 
-	m.EntityDispositionInformations.Deserialize(r)
+	if err := m.EntityDispositionInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcarryingCharacterId, err := r.ReadDouble()
 	if err != nil {
@@ -9134,7 +9382,9 @@ func (m *GameFightMinimalStatsPreparation) ID() uint16 {
 
 func (m *GameFightMinimalStatsPreparation) Serialize(w Writer) error {
 
-	m.GameFightMinimalStats.Serialize(w)
+	if err := m.GameFightMinimalStats.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Initiative); err != nil {
 		return err
@@ -9145,7 +9395,9 @@ func (m *GameFightMinimalStatsPreparation) Serialize(w Writer) error {
 
 func (m *GameFightMinimalStatsPreparation) Deserialize(r Reader) error {
 
-	m.GameFightMinimalStats.Deserialize(r)
+	if err := m.GameFightMinimalStats.Deserialize(r); err != nil {
+		return err
+	}
 
 	linitiative, err := r.ReadVarUInt32()
 	if err != nil {
@@ -9211,7 +9463,9 @@ func (m *IdentifiedEntityDispositionInformations) ID() uint16 {
 
 func (m *IdentifiedEntityDispositionInformations) Serialize(w Writer) error {
 
-	m.EntityDispositionInformations.Serialize(w)
+	if err := m.EntityDispositionInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.Id); err != nil {
 		return err
@@ -9222,7 +9476,9 @@ func (m *IdentifiedEntityDispositionInformations) Serialize(w Writer) error {
 
 func (m *IdentifiedEntityDispositionInformations) Deserialize(r Reader) error {
 
-	m.EntityDispositionInformations.Deserialize(r)
+	if err := m.EntityDispositionInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lid, err := r.ReadDouble()
 	if err != nil {
@@ -9288,7 +9544,9 @@ func (m *PaddockItem) ID() uint16 {
 
 func (m *PaddockItem) Serialize(w Writer) error {
 
-	m.ObjectItemInRolePlay.Serialize(w)
+	if err := m.ObjectItemInRolePlay.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Durability.Serialize(w); err != nil {
 		return err
@@ -9299,7 +9557,9 @@ func (m *PaddockItem) Serialize(w Writer) error {
 
 func (m *PaddockItem) Deserialize(r Reader) error {
 
-	m.ObjectItemInRolePlay.Deserialize(r)
+	if err := m.ObjectItemInRolePlay.Deserialize(r); err != nil {
+		return err
+	}
 
 	var ldurability ItemDurability
 
@@ -9324,7 +9584,9 @@ func (m *HumanOptionAlliance) ID() uint16 {
 
 func (m *HumanOptionAlliance) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceInformations.Serialize(w); err != nil {
 		return err
@@ -9339,7 +9601,9 @@ func (m *HumanOptionAlliance) Serialize(w Writer) error {
 
 func (m *HumanOptionAlliance) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceInformations AllianceInformations
 
@@ -9414,7 +9678,9 @@ func (m *HumanOptionSkillUse) ID() uint16 {
 
 func (m *HumanOptionSkillUse) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ElementId); err != nil {
 		return err
@@ -9433,7 +9699,9 @@ func (m *HumanOptionSkillUse) Serialize(w Writer) error {
 
 func (m *HumanOptionSkillUse) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	lelementId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -9473,7 +9741,9 @@ func (m *HumanOptionEmote) ID() uint16 {
 
 func (m *HumanOptionEmote) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.EmoteId); err != nil {
 		return err
@@ -9488,7 +9758,9 @@ func (m *HumanOptionEmote) Serialize(w Writer) error {
 
 func (m *HumanOptionEmote) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	lemoteId, err := r.ReadUInt8()
 	if err != nil {
@@ -9519,7 +9791,9 @@ func (m *HumanOptionFollowers) ID() uint16 {
 
 func (m *HumanOptionFollowers) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.FollowingCharactersLook))); err != nil {
 		return err
@@ -9538,7 +9812,9 @@ func (m *HumanOptionFollowers) Serialize(w Writer) error {
 
 func (m *HumanOptionFollowers) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfollowingCharactersLookLen, err := r.ReadInt16()
 	if err != nil {
@@ -9618,7 +9894,9 @@ func (m *HumanOptionObjectUse) ID() uint16 {
 
 func (m *HumanOptionObjectUse) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.DelayTypeId); err != nil {
 		return err
@@ -9637,7 +9915,9 @@ func (m *HumanOptionObjectUse) Serialize(w Writer) error {
 
 func (m *HumanOptionObjectUse) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldelayTypeId, err := r.ReadUInt8()
 	if err != nil {
@@ -9824,7 +10104,9 @@ func (m *FightTemporaryBoostEffect) ID() uint16 {
 
 func (m *FightTemporaryBoostEffect) Serialize(w Writer) error {
 
-	m.AbstractFightDispellableEffect.Serialize(w)
+	if err := m.AbstractFightDispellableEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.Delta); err != nil {
 		return err
@@ -9835,7 +10117,9 @@ func (m *FightTemporaryBoostEffect) Serialize(w Writer) error {
 
 func (m *FightTemporaryBoostEffect) Deserialize(r Reader) error {
 
-	m.AbstractFightDispellableEffect.Deserialize(r)
+	if err := m.AbstractFightDispellableEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldelta, err := r.ReadInt16()
 	if err != nil {
@@ -10025,7 +10309,9 @@ func (m *FightResultFighterListEntry) ID() uint16 {
 
 func (m *FightResultFighterListEntry) Serialize(w Writer) error {
 
-	m.FightResultListEntry.Serialize(w)
+	if err := m.FightResultListEntry.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.Id); err != nil {
 		return err
@@ -10040,7 +10326,9 @@ func (m *FightResultFighterListEntry) Serialize(w Writer) error {
 
 func (m *FightResultFighterListEntry) Deserialize(r Reader) error {
 
-	m.FightResultListEntry.Deserialize(r)
+	if err := m.FightResultListEntry.Deserialize(r); err != nil {
+		return err
+	}
 
 	lid, err := r.ReadDouble()
 	if err != nil {
@@ -10138,7 +10426,9 @@ func (m *FightResultPlayerListEntry) ID() uint16 {
 
 func (m *FightResultPlayerListEntry) Serialize(w Writer) error {
 
-	m.FightResultFighterListEntry.Serialize(w)
+	if err := m.FightResultFighterListEntry.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Level); err != nil {
 		return err
@@ -10165,7 +10455,9 @@ func (m *FightResultPlayerListEntry) Serialize(w Writer) error {
 
 func (m *FightResultPlayerListEntry) Deserialize(r Reader) error {
 
-	m.FightResultFighterListEntry.Deserialize(r)
+	if err := m.FightResultFighterListEntry.Deserialize(r); err != nil {
+		return err
+	}
 
 	llevel, err := r.ReadUInt8()
 	if err != nil {
@@ -10502,7 +10794,9 @@ func (m *GameFightMutantInformations) ID() uint16 {
 
 func (m *GameFightMutantInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterNamedInformations.Serialize(w)
+	if err := m.GameFightFighterNamedInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PowerLevel); err != nil {
 		return err
@@ -10513,7 +10807,9 @@ func (m *GameFightMutantInformations) Serialize(w Writer) error {
 
 func (m *GameFightMutantInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterNamedInformations.Deserialize(r)
+	if err := m.GameFightFighterNamedInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpowerLevel, err := r.ReadUInt8()
 	if err != nil {
@@ -10627,7 +10923,9 @@ func (m *FightResultTaxCollectorListEntry) ID() uint16 {
 
 func (m *FightResultTaxCollectorListEntry) Serialize(w Writer) error {
 
-	m.FightResultFighterListEntry.Serialize(w)
+	if err := m.FightResultFighterListEntry.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Level); err != nil {
 		return err
@@ -10646,7 +10944,9 @@ func (m *FightResultTaxCollectorListEntry) Serialize(w Writer) error {
 
 func (m *FightResultTaxCollectorListEntry) Deserialize(r Reader) error {
 
-	m.FightResultFighterListEntry.Deserialize(r)
+	if err := m.FightResultFighterListEntry.Deserialize(r); err != nil {
+		return err
+	}
 
 	llevel, err := r.ReadUInt8()
 	if err != nil {
@@ -10968,7 +11268,9 @@ func (m *FightTemporaryBoostWeaponDamagesEffect) ID() uint16 {
 
 func (m *FightTemporaryBoostWeaponDamagesEffect) Serialize(w Writer) error {
 
-	m.FightTemporaryBoostEffect.Serialize(w)
+	if err := m.FightTemporaryBoostEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.WeaponTypeId); err != nil {
 		return err
@@ -10979,7 +11281,9 @@ func (m *FightTemporaryBoostWeaponDamagesEffect) Serialize(w Writer) error {
 
 func (m *FightTemporaryBoostWeaponDamagesEffect) Deserialize(r Reader) error {
 
-	m.FightTemporaryBoostEffect.Deserialize(r)
+	if err := m.FightTemporaryBoostEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lweaponTypeId, err := r.ReadInt16()
 	if err != nil {
@@ -11003,7 +11307,9 @@ func (m *FightTemporarySpellBoostEffect) ID() uint16 {
 
 func (m *FightTemporarySpellBoostEffect) Serialize(w Writer) error {
 
-	m.FightTemporaryBoostEffect.Serialize(w)
+	if err := m.FightTemporaryBoostEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.BoostedSpellId); err != nil {
 		return err
@@ -11014,7 +11320,9 @@ func (m *FightTemporarySpellBoostEffect) Serialize(w Writer) error {
 
 func (m *FightTemporarySpellBoostEffect) Deserialize(r Reader) error {
 
-	m.FightTemporaryBoostEffect.Deserialize(r)
+	if err := m.FightTemporaryBoostEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lboostedSpellId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -11038,7 +11346,9 @@ func (m *FightTemporaryBoostStateEffect) ID() uint16 {
 
 func (m *FightTemporaryBoostStateEffect) Serialize(w Writer) error {
 
-	m.FightTemporaryBoostEffect.Serialize(w)
+	if err := m.FightTemporaryBoostEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.StateId); err != nil {
 		return err
@@ -11049,7 +11359,9 @@ func (m *FightTemporaryBoostStateEffect) Serialize(w Writer) error {
 
 func (m *FightTemporaryBoostStateEffect) Deserialize(r Reader) error {
 
-	m.FightTemporaryBoostEffect.Deserialize(r)
+	if err := m.FightTemporaryBoostEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lstateId, err := r.ReadInt16()
 	if err != nil {
@@ -11079,7 +11391,9 @@ func (m *FightTriggeredEffect) ID() uint16 {
 
 func (m *FightTriggeredEffect) Serialize(w Writer) error {
 
-	m.AbstractFightDispellableEffect.Serialize(w)
+	if err := m.AbstractFightDispellableEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.Param1); err != nil {
 		return err
@@ -11102,7 +11416,9 @@ func (m *FightTriggeredEffect) Serialize(w Writer) error {
 
 func (m *FightTriggeredEffect) Deserialize(r Reader) error {
 
-	m.AbstractFightDispellableEffect.Deserialize(r)
+	if err := m.AbstractFightDispellableEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lparam1, err := r.ReadInt32()
 	if err != nil {
@@ -11147,7 +11463,9 @@ func (m *FightTemporarySpellImmunityEffect) ID() uint16 {
 
 func (m *FightTemporarySpellImmunityEffect) Serialize(w Writer) error {
 
-	m.AbstractFightDispellableEffect.Serialize(w)
+	if err := m.AbstractFightDispellableEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.ImmuneSpellId); err != nil {
 		return err
@@ -11158,7 +11476,9 @@ func (m *FightTemporarySpellImmunityEffect) Serialize(w Writer) error {
 
 func (m *FightTemporarySpellImmunityEffect) Deserialize(r Reader) error {
 
-	m.AbstractFightDispellableEffect.Deserialize(r)
+	if err := m.AbstractFightDispellableEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	limmuneSpellId, err := r.ReadInt32()
 	if err != nil {
@@ -11188,7 +11508,9 @@ func (m *ActorExtendedAlignmentInformations) ID() uint16 {
 
 func (m *ActorExtendedAlignmentInformations) Serialize(w Writer) error {
 
-	m.ActorAlignmentInformations.Serialize(w)
+	if err := m.ActorAlignmentInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Honor); err != nil {
 		return err
@@ -11211,7 +11533,9 @@ func (m *ActorExtendedAlignmentInformations) Serialize(w Writer) error {
 
 func (m *ActorExtendedAlignmentInformations) Deserialize(r Reader) error {
 
-	m.ActorAlignmentInformations.Deserialize(r)
+	if err := m.ActorAlignmentInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lhonor, err := r.ReadVarUInt16()
 	if err != nil {
@@ -11496,7 +11820,9 @@ func (m *ObjectItemMinimalInformation) ID() uint16 {
 
 func (m *ObjectItemMinimalInformation) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -11523,7 +11849,9 @@ func (m *ObjectItemMinimalInformation) Serialize(w Writer) error {
 
 func (m *ObjectItemMinimalInformation) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -11571,7 +11899,9 @@ func (m *ObjectItemInformationWithQuantity) ID() uint16 {
 
 func (m *ObjectItemInformationWithQuantity) Serialize(w Writer) error {
 
-	m.ObjectItemMinimalInformation.Serialize(w)
+	if err := m.ObjectItemMinimalInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Quantity); err != nil {
 		return err
@@ -11582,7 +11912,9 @@ func (m *ObjectItemInformationWithQuantity) Serialize(w Writer) error {
 
 func (m *ObjectItemInformationWithQuantity) Deserialize(r Reader) error {
 
-	m.ObjectItemMinimalInformation.Deserialize(r)
+	if err := m.ObjectItemMinimalInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lquantity, err := r.ReadVarUInt32()
 	if err != nil {
@@ -12078,7 +12410,9 @@ func (m *AlliancedGuildFactSheetInformations) ID() uint16 {
 
 func (m *AlliancedGuildFactSheetInformations) Serialize(w Writer) error {
 
-	m.GuildInformations.Serialize(w)
+	if err := m.GuildInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceInfos.Serialize(w); err != nil {
 		return err
@@ -12089,7 +12423,9 @@ func (m *AlliancedGuildFactSheetInformations) Serialize(w Writer) error {
 
 func (m *AlliancedGuildFactSheetInformations) Deserialize(r Reader) error {
 
-	m.GuildInformations.Deserialize(r)
+	if err := m.GuildInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceInfos BasicNamedAllianceInformations
 
@@ -12248,7 +12584,9 @@ func (m *BasicNamedAllianceInformations) ID() uint16 {
 
 func (m *BasicNamedAllianceInformations) Serialize(w Writer) error {
 
-	m.BasicAllianceInformations.Serialize(w)
+	if err := m.BasicAllianceInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.AllianceName); err != nil {
 		return err
@@ -12259,7 +12597,9 @@ func (m *BasicNamedAllianceInformations) Serialize(w Writer) error {
 
 func (m *BasicNamedAllianceInformations) Deserialize(r Reader) error {
 
-	m.BasicAllianceInformations.Deserialize(r)
+	if err := m.BasicAllianceInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lallianceName, err := r.ReadString()
 	if err != nil {
@@ -12283,7 +12623,9 @@ func (m *AllianceInformations) ID() uint16 {
 
 func (m *AllianceInformations) Serialize(w Writer) error {
 
-	m.BasicNamedAllianceInformations.Serialize(w)
+	if err := m.BasicNamedAllianceInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceEmblem.Serialize(w); err != nil {
 		return err
@@ -12294,7 +12636,9 @@ func (m *AllianceInformations) Serialize(w Writer) error {
 
 func (m *AllianceInformations) Deserialize(r Reader) error {
 
-	m.BasicNamedAllianceInformations.Deserialize(r)
+	if err := m.BasicNamedAllianceInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceEmblem GuildEmblem
 
@@ -12317,7 +12661,9 @@ func (m *AllianceFactSheetInformations) ID() uint16 {
 
 func (m *AllianceFactSheetInformations) Serialize(w Writer) error {
 
-	m.AllianceInformations.Serialize(w)
+	if err := m.AllianceInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.CreationDate); err != nil {
 		return err
@@ -12328,7 +12674,9 @@ func (m *AllianceFactSheetInformations) Serialize(w Writer) error {
 
 func (m *AllianceFactSheetInformations) Deserialize(r Reader) error {
 
-	m.AllianceInformations.Deserialize(r)
+	if err := m.AllianceInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcreationDate, err := r.ReadUInt32()
 	if err != nil {
@@ -12369,7 +12717,9 @@ func (m *TaxCollectorGuildInformations) ID() uint16 {
 
 func (m *TaxCollectorGuildInformations) Serialize(w Writer) error {
 
-	m.TaxCollectorComplementaryInformations.Serialize(w)
+	if err := m.TaxCollectorComplementaryInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Guild.Serialize(w); err != nil {
 		return err
@@ -12380,7 +12730,9 @@ func (m *TaxCollectorGuildInformations) Serialize(w Writer) error {
 
 func (m *TaxCollectorGuildInformations) Deserialize(r Reader) error {
 
-	m.TaxCollectorComplementaryInformations.Deserialize(r)
+	if err := m.TaxCollectorComplementaryInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguild BasicGuildInformations
 
@@ -12451,7 +12803,9 @@ func (m *TaxCollectorLootInformations) ID() uint16 {
 
 func (m *TaxCollectorLootInformations) Serialize(w Writer) error {
 
-	m.TaxCollectorComplementaryInformations.Serialize(w)
+	if err := m.TaxCollectorComplementaryInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Kamas); err != nil {
 		return err
@@ -12474,7 +12828,9 @@ func (m *TaxCollectorLootInformations) Serialize(w Writer) error {
 
 func (m *TaxCollectorLootInformations) Deserialize(r Reader) error {
 
-	m.TaxCollectorComplementaryInformations.Deserialize(r)
+	if err := m.TaxCollectorComplementaryInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lkamas, err := r.ReadVarUInt32()
 	if err != nil {
@@ -12519,7 +12875,9 @@ func (m *TaxCollectorWaitingForHelpInformations) ID() uint16 {
 
 func (m *TaxCollectorWaitingForHelpInformations) Serialize(w Writer) error {
 
-	m.TaxCollectorComplementaryInformations.Serialize(w)
+	if err := m.TaxCollectorComplementaryInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.WaitingForHelpInfo.Serialize(w); err != nil {
 		return err
@@ -12530,7 +12888,9 @@ func (m *TaxCollectorWaitingForHelpInformations) Serialize(w Writer) error {
 
 func (m *TaxCollectorWaitingForHelpInformations) Deserialize(r Reader) error {
 
-	m.TaxCollectorComplementaryInformations.Deserialize(r)
+	if err := m.TaxCollectorComplementaryInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lwaitingForHelpInfo ProtectedEntityWaitingForHelpInfo
 
@@ -12690,7 +13050,9 @@ func (m *FriendSpouseOnlineInformations) ID() uint16 {
 
 func (m *FriendSpouseOnlineInformations) Serialize(w Writer) error {
 
-	m.FriendSpouseInformations.Serialize(w)
+	if err := m.FriendSpouseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -12715,7 +13077,9 @@ func (m *FriendSpouseOnlineInformations) Serialize(w Writer) error {
 
 func (m *FriendSpouseOnlineInformations) Deserialize(r Reader) error {
 
-	m.FriendSpouseInformations.Deserialize(r)
+	if err := m.FriendSpouseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -12757,7 +13121,9 @@ func (m *ObjectItemQuantity) ID() uint16 {
 
 func (m *ObjectItemQuantity) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ObjectUID); err != nil {
 		return err
@@ -12772,7 +13138,9 @@ func (m *ObjectItemQuantity) Serialize(w Writer) error {
 
 func (m *ObjectItemQuantity) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectUID, err := r.ReadVarUInt32()
 	if err != nil {
@@ -12830,14 +13198,18 @@ func (m *ShortcutObject) ID() uint16 {
 
 func (m *ShortcutObject) Serialize(w Writer) error {
 
-	m.Shortcut.Serialize(w)
+	if err := m.Shortcut.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *ShortcutObject) Deserialize(r Reader) error {
 
-	m.Shortcut.Deserialize(r)
+	if err := m.Shortcut.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -12854,7 +13226,9 @@ func (m *ShortcutObjectIdolsPreset) ID() uint16 {
 
 func (m *ShortcutObjectIdolsPreset) Serialize(w Writer) error {
 
-	m.ShortcutObject.Serialize(w)
+	if err := m.ShortcutObject.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PresetId); err != nil {
 		return err
@@ -12865,7 +13239,9 @@ func (m *ShortcutObjectIdolsPreset) Serialize(w Writer) error {
 
 func (m *ShortcutObjectIdolsPreset) Deserialize(r Reader) error {
 
-	m.ShortcutObject.Deserialize(r)
+	if err := m.ShortcutObject.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpresetId, err := r.ReadUInt8()
 	if err != nil {
@@ -12975,7 +13351,9 @@ func (m *ShortcutSmiley) ID() uint16 {
 
 func (m *ShortcutSmiley) Serialize(w Writer) error {
 
-	m.Shortcut.Serialize(w)
+	if err := m.Shortcut.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.SmileyId); err != nil {
 		return err
@@ -12986,7 +13364,9 @@ func (m *ShortcutSmiley) Serialize(w Writer) error {
 
 func (m *ShortcutSmiley) Deserialize(r Reader) error {
 
-	m.Shortcut.Deserialize(r)
+	if err := m.Shortcut.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsmileyId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -13084,7 +13464,9 @@ func (m *ShortcutEmote) ID() uint16 {
 
 func (m *ShortcutEmote) Serialize(w Writer) error {
 
-	m.Shortcut.Serialize(w)
+	if err := m.Shortcut.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.EmoteId); err != nil {
 		return err
@@ -13095,7 +13477,9 @@ func (m *ShortcutEmote) Serialize(w Writer) error {
 
 func (m *ShortcutEmote) Deserialize(r Reader) error {
 
-	m.Shortcut.Deserialize(r)
+	if err := m.Shortcut.Deserialize(r); err != nil {
+		return err
+	}
 
 	lemoteId, err := r.ReadUInt8()
 	if err != nil {
@@ -13119,7 +13503,9 @@ func (m *ShortcutObjectPreset) ID() uint16 {
 
 func (m *ShortcutObjectPreset) Serialize(w Writer) error {
 
-	m.ShortcutObject.Serialize(w)
+	if err := m.ShortcutObject.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PresetId); err != nil {
 		return err
@@ -13130,7 +13516,9 @@ func (m *ShortcutObjectPreset) Serialize(w Writer) error {
 
 func (m *ShortcutObjectPreset) Deserialize(r Reader) error {
 
-	m.ShortcutObject.Deserialize(r)
+	if err := m.ShortcutObject.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpresetId, err := r.ReadUInt8()
 	if err != nil {
@@ -13156,7 +13544,9 @@ func (m *ShortcutObjectItem) ID() uint16 {
 
 func (m *ShortcutObjectItem) Serialize(w Writer) error {
 
-	m.ShortcutObject.Serialize(w)
+	if err := m.ShortcutObject.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.ItemUID); err != nil {
 		return err
@@ -13171,7 +13561,9 @@ func (m *ShortcutObjectItem) Serialize(w Writer) error {
 
 func (m *ShortcutObjectItem) Deserialize(r Reader) error {
 
-	m.ShortcutObject.Deserialize(r)
+	if err := m.ShortcutObject.Deserialize(r); err != nil {
+		return err
+	}
 
 	litemUID, err := r.ReadInt32()
 	if err != nil {
@@ -13202,7 +13594,9 @@ func (m *ShortcutSpell) ID() uint16 {
 
 func (m *ShortcutSpell) Serialize(w Writer) error {
 
-	m.Shortcut.Serialize(w)
+	if err := m.Shortcut.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.SpellId); err != nil {
 		return err
@@ -13213,7 +13607,9 @@ func (m *ShortcutSpell) Serialize(w Writer) error {
 
 func (m *ShortcutSpell) Deserialize(r Reader) error {
 
-	m.Shortcut.Deserialize(r)
+	if err := m.Shortcut.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspellId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -13756,7 +14152,9 @@ func (m *UpdateMountIntBoost) ID() uint16 {
 
 func (m *UpdateMountIntBoost) Serialize(w Writer) error {
 
-	m.UpdateMountBoost.Serialize(w)
+	if err := m.UpdateMountBoost.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.Value); err != nil {
 		return err
@@ -13767,7 +14165,9 @@ func (m *UpdateMountIntBoost) Serialize(w Writer) error {
 
 func (m *UpdateMountIntBoost) Deserialize(r Reader) error {
 
-	m.UpdateMountBoost.Deserialize(r)
+	if err := m.UpdateMountBoost.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadInt32()
 	if err != nil {
@@ -13808,7 +14208,9 @@ func (m *StatisticDataInt) ID() uint16 {
 
 func (m *StatisticDataInt) Serialize(w Writer) error {
 
-	m.StatisticData.Serialize(w)
+	if err := m.StatisticData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.Value); err != nil {
 		return err
@@ -13819,7 +14221,9 @@ func (m *StatisticDataInt) Serialize(w Writer) error {
 
 func (m *StatisticDataInt) Deserialize(r Reader) error {
 
-	m.StatisticData.Deserialize(r)
+	if err := m.StatisticData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadInt32()
 	if err != nil {
@@ -13843,7 +14247,9 @@ func (m *CharacterMinimalGuildInformations) ID() uint16 {
 
 func (m *CharacterMinimalGuildInformations) Serialize(w Writer) error {
 
-	m.CharacterMinimalPlusLookInformations.Serialize(w)
+	if err := m.CharacterMinimalPlusLookInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Guild.Serialize(w); err != nil {
 		return err
@@ -13854,7 +14260,9 @@ func (m *CharacterMinimalGuildInformations) Serialize(w Writer) error {
 
 func (m *CharacterMinimalGuildInformations) Deserialize(r Reader) error {
 
-	m.CharacterMinimalPlusLookInformations.Deserialize(r)
+	if err := m.CharacterMinimalPlusLookInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguild BasicGuildInformations
 
@@ -13877,7 +14285,9 @@ func (m *StatisticDataByte) ID() uint16 {
 
 func (m *StatisticDataByte) Serialize(w Writer) error {
 
-	m.StatisticData.Serialize(w)
+	if err := m.StatisticData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt8(m.Value); err != nil {
 		return err
@@ -13888,7 +14298,9 @@ func (m *StatisticDataByte) Serialize(w Writer) error {
 
 func (m *StatisticDataByte) Deserialize(r Reader) error {
 
-	m.StatisticData.Deserialize(r)
+	if err := m.StatisticData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadInt8()
 	if err != nil {
@@ -13920,7 +14332,9 @@ func (m *FightTeamMemberTaxCollectorInformations) ID() uint16 {
 
 func (m *FightTeamMemberTaxCollectorInformations) Serialize(w Writer) error {
 
-	m.FightTeamMemberInformations.Serialize(w)
+	if err := m.FightTeamMemberInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.FirstNameId); err != nil {
 		return err
@@ -13947,7 +14361,9 @@ func (m *FightTeamMemberTaxCollectorInformations) Serialize(w Writer) error {
 
 func (m *FightTeamMemberTaxCollectorInformations) Deserialize(r Reader) error {
 
-	m.FightTeamMemberInformations.Deserialize(r)
+	if err := m.FightTeamMemberInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfirstNameId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -14102,7 +14518,9 @@ func (m *ServerSessionConstantString) ID() uint16 {
 
 func (m *ServerSessionConstantString) Serialize(w Writer) error {
 
-	m.ServerSessionConstant.Serialize(w)
+	if err := m.ServerSessionConstant.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Value); err != nil {
 		return err
@@ -14113,7 +14531,9 @@ func (m *ServerSessionConstantString) Serialize(w Writer) error {
 
 func (m *ServerSessionConstantString) Deserialize(r Reader) error {
 
-	m.ServerSessionConstant.Deserialize(r)
+	if err := m.ServerSessionConstant.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadString()
 	if err != nil {
@@ -14179,7 +14599,9 @@ func (m *MapCoordinatesAndId) ID() uint16 {
 
 func (m *MapCoordinatesAndId) Serialize(w Writer) error {
 
-	m.MapCoordinates.Serialize(w)
+	if err := m.MapCoordinates.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.MapId); err != nil {
 		return err
@@ -14190,7 +14612,9 @@ func (m *MapCoordinatesAndId) Serialize(w Writer) error {
 
 func (m *MapCoordinatesAndId) Deserialize(r Reader) error {
 
-	m.MapCoordinates.Deserialize(r)
+	if err := m.MapCoordinates.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmapId, err := r.ReadInt32()
 	if err != nil {
@@ -14214,7 +14638,9 @@ func (m *MapCoordinatesExtended) ID() uint16 {
 
 func (m *MapCoordinatesExtended) Serialize(w Writer) error {
 
-	m.MapCoordinatesAndId.Serialize(w)
+	if err := m.MapCoordinatesAndId.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.SubAreaId); err != nil {
 		return err
@@ -14225,7 +14651,9 @@ func (m *MapCoordinatesExtended) Serialize(w Writer) error {
 
 func (m *MapCoordinatesExtended) Deserialize(r Reader) error {
 
-	m.MapCoordinatesAndId.Deserialize(r)
+	if err := m.MapCoordinatesAndId.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsubAreaId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -14264,14 +14692,18 @@ func (m *TreasureHuntStepFight) ID() uint16 {
 
 func (m *TreasureHuntStepFight) Serialize(w Writer) error {
 
-	m.TreasureHuntStep.Serialize(w)
+	if err := m.TreasureHuntStep.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *TreasureHuntStepFight) Deserialize(r Reader) error {
 
-	m.TreasureHuntStep.Deserialize(r)
+	if err := m.TreasureHuntStep.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -14290,7 +14722,9 @@ func (m *QuestActiveDetailedInformations) ID() uint16 {
 
 func (m *QuestActiveDetailedInformations) Serialize(w Writer) error {
 
-	m.QuestActiveInformations.Serialize(w)
+	if err := m.QuestActiveInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.StepId); err != nil {
 		return err
@@ -14317,7 +14751,9 @@ func (m *QuestActiveDetailedInformations) Serialize(w Writer) error {
 
 func (m *QuestActiveDetailedInformations) Deserialize(r Reader) error {
 
-	m.QuestActiveInformations.Deserialize(r)
+	if err := m.QuestActiveInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lstepId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -14365,7 +14801,9 @@ func (m *ObjectEffectCreature) ID() uint16 {
 
 func (m *ObjectEffectCreature) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.MonsterFamilyId); err != nil {
 		return err
@@ -14376,7 +14814,9 @@ func (m *ObjectEffectCreature) Serialize(w Writer) error {
 
 func (m *ObjectEffectCreature) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmonsterFamilyId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -14400,7 +14840,9 @@ func (m *ObjectEffectString) ID() uint16 {
 
 func (m *ObjectEffectString) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Value); err != nil {
 		return err
@@ -14411,7 +14853,9 @@ func (m *ObjectEffectString) Serialize(w Writer) error {
 
 func (m *ObjectEffectString) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadString()
 	if err != nil {
@@ -14435,7 +14879,9 @@ func (m *StatisticDataBoolean) ID() uint16 {
 
 func (m *StatisticDataBoolean) Serialize(w Writer) error {
 
-	m.StatisticData.Serialize(w)
+	if err := m.StatisticData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteBoolean(m.Value); err != nil {
 		return err
@@ -14446,7 +14892,9 @@ func (m *StatisticDataBoolean) Serialize(w Writer) error {
 
 func (m *StatisticDataBoolean) Deserialize(r Reader) error {
 
-	m.StatisticData.Deserialize(r)
+	if err := m.StatisticData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadBoolean()
 	if err != nil {
@@ -14470,7 +14918,9 @@ func (m *TaxCollectorStaticExtendedInformations) ID() uint16 {
 
 func (m *TaxCollectorStaticExtendedInformations) Serialize(w Writer) error {
 
-	m.TaxCollectorStaticInformations.Serialize(w)
+	if err := m.TaxCollectorStaticInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceIdentity.Serialize(w); err != nil {
 		return err
@@ -14481,7 +14931,9 @@ func (m *TaxCollectorStaticExtendedInformations) Serialize(w Writer) error {
 
 func (m *TaxCollectorStaticExtendedInformations) Deserialize(r Reader) error {
 
-	m.TaxCollectorStaticInformations.Deserialize(r)
+	if err := m.TaxCollectorStaticInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceIdentity AllianceInformations
 
@@ -14529,7 +14981,9 @@ func (m *FightResultPvpData) ID() uint16 {
 
 func (m *FightResultPvpData) Serialize(w Writer) error {
 
-	m.FightResultAdditionalData.Serialize(w)
+	if err := m.FightResultAdditionalData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Grade); err != nil {
 		return err
@@ -14556,7 +15010,9 @@ func (m *FightResultPvpData) Serialize(w Writer) error {
 
 func (m *FightResultPvpData) Deserialize(r Reader) error {
 
-	m.FightResultAdditionalData.Deserialize(r)
+	if err := m.FightResultAdditionalData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lgrade, err := r.ReadUInt8()
 	if err != nil {
@@ -14608,7 +15064,9 @@ func (m *CharacterMinimalAllianceInformations) ID() uint16 {
 
 func (m *CharacterMinimalAllianceInformations) Serialize(w Writer) error {
 
-	m.CharacterMinimalGuildInformations.Serialize(w)
+	if err := m.CharacterMinimalGuildInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.Alliance.Serialize(w); err != nil {
 		return err
@@ -14619,7 +15077,9 @@ func (m *CharacterMinimalAllianceInformations) Serialize(w Writer) error {
 
 func (m *CharacterMinimalAllianceInformations) Deserialize(r Reader) error {
 
-	m.CharacterMinimalGuildInformations.Deserialize(r)
+	if err := m.CharacterMinimalGuildInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lalliance BasicAllianceInformations
 
@@ -14644,7 +15104,9 @@ func (m *FightTeamMemberMonsterInformations) ID() uint16 {
 
 func (m *FightTeamMemberMonsterInformations) Serialize(w Writer) error {
 
-	m.FightTeamMemberInformations.Serialize(w)
+	if err := m.FightTeamMemberInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.MonsterId); err != nil {
 		return err
@@ -14659,7 +15121,9 @@ func (m *FightTeamMemberMonsterInformations) Serialize(w Writer) error {
 
 func (m *FightTeamMemberMonsterInformations) Deserialize(r Reader) error {
 
-	m.FightTeamMemberInformations.Deserialize(r)
+	if err := m.FightTeamMemberInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmonsterId, err := r.ReadInt32()
 	if err != nil {
@@ -14692,7 +15156,9 @@ func (m *ObjectEffectMinMax) ID() uint16 {
 
 func (m *ObjectEffectMinMax) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Min); err != nil {
 		return err
@@ -14707,7 +15173,9 @@ func (m *ObjectEffectMinMax) Serialize(w Writer) error {
 
 func (m *ObjectEffectMinMax) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmin, err := r.ReadVarUInt32()
 	if err != nil {
@@ -14738,7 +15206,9 @@ func (m *FightAllianceTeamInformations) ID() uint16 {
 
 func (m *FightAllianceTeamInformations) Serialize(w Writer) error {
 
-	m.FightTeamInformations.Serialize(w)
+	if err := m.FightTeamInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Relation); err != nil {
 		return err
@@ -14749,7 +15219,9 @@ func (m *FightAllianceTeamInformations) Serialize(w Writer) error {
 
 func (m *FightAllianceTeamInformations) Deserialize(r Reader) error {
 
-	m.FightTeamInformations.Deserialize(r)
+	if err := m.FightTeamInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lrelation, err := r.ReadUInt8()
 	if err != nil {
@@ -14773,7 +15245,9 @@ func (m *PartyIdol) ID() uint16 {
 
 func (m *PartyIdol) Serialize(w Writer) error {
 
-	m.Idol.Serialize(w)
+	if err := m.Idol.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.OwnersIds))); err != nil {
 		return err
@@ -14792,7 +15266,9 @@ func (m *PartyIdol) Serialize(w Writer) error {
 
 func (m *PartyIdol) Deserialize(r Reader) error {
 
-	m.Idol.Deserialize(r)
+	if err := m.Idol.Deserialize(r); err != nil {
+		return err
+	}
 
 	lownersIdsLen, err := r.ReadInt16()
 	if err != nil {
@@ -14827,7 +15303,9 @@ func (m *GameFightMonsterWithAlignmentInformations) ID() uint16 {
 
 func (m *GameFightMonsterWithAlignmentInformations) Serialize(w Writer) error {
 
-	m.GameFightMonsterInformations.Serialize(w)
+	if err := m.GameFightMonsterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AlignmentInfos.Serialize(w); err != nil {
 		return err
@@ -14838,7 +15316,9 @@ func (m *GameFightMonsterWithAlignmentInformations) Serialize(w Writer) error {
 
 func (m *GameFightMonsterWithAlignmentInformations) Deserialize(r Reader) error {
 
-	m.GameFightMonsterInformations.Deserialize(r)
+	if err := m.GameFightMonsterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lalignmentInfos ActorAlignmentInformations
 
@@ -14861,7 +15341,9 @@ func (m *InteractiveElementWithAgeBonus) ID() uint16 {
 
 func (m *InteractiveElementWithAgeBonus) Serialize(w Writer) error {
 
-	m.InteractiveElement.Serialize(w)
+	if err := m.InteractiveElement.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.AgeBonus); err != nil {
 		return err
@@ -14872,7 +15354,9 @@ func (m *InteractiveElementWithAgeBonus) Serialize(w Writer) error {
 
 func (m *InteractiveElementWithAgeBonus) Deserialize(r Reader) error {
 
-	m.InteractiveElement.Deserialize(r)
+	if err := m.InteractiveElement.Deserialize(r); err != nil {
+		return err
+	}
 
 	lageBonus, err := r.ReadInt16()
 	if err != nil {
@@ -14989,7 +15473,9 @@ func (m *FightTeamMemberCharacterInformations) ID() uint16 {
 
 func (m *FightTeamMemberCharacterInformations) Serialize(w Writer) error {
 
-	m.FightTeamMemberInformations.Serialize(w)
+	if err := m.FightTeamMemberInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -15004,7 +15490,9 @@ func (m *FightTeamMemberCharacterInformations) Serialize(w Writer) error {
 
 func (m *FightTeamMemberCharacterInformations) Deserialize(r Reader) error {
 
-	m.FightTeamMemberInformations.Deserialize(r)
+	if err := m.FightTeamMemberInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -15039,7 +15527,9 @@ func (m *ObjectEffectMount) ID() uint16 {
 
 func (m *ObjectEffectMount) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.MountId); err != nil {
 		return err
@@ -15058,7 +15548,9 @@ func (m *ObjectEffectMount) Serialize(w Writer) error {
 
 func (m *ObjectEffectMount) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmountId, err := r.ReadUInt32()
 	if err != nil {
@@ -15096,7 +15588,9 @@ func (m *StatisticDataString) ID() uint16 {
 
 func (m *StatisticDataString) Serialize(w Writer) error {
 
-	m.StatisticData.Serialize(w)
+	if err := m.StatisticData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Value); err != nil {
 		return err
@@ -15107,7 +15601,9 @@ func (m *StatisticDataString) Serialize(w Writer) error {
 
 func (m *StatisticDataString) Deserialize(r Reader) error {
 
-	m.StatisticData.Deserialize(r)
+	if err := m.StatisticData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadString()
 	if err != nil {
@@ -15131,7 +15627,9 @@ func (m *ServerSessionConstantLong) ID() uint16 {
 
 func (m *ServerSessionConstantLong) Serialize(w Writer) error {
 
-	m.ServerSessionConstant.Serialize(w)
+	if err := m.ServerSessionConstant.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteDouble(m.Value); err != nil {
 		return err
@@ -15142,7 +15640,9 @@ func (m *ServerSessionConstantLong) Serialize(w Writer) error {
 
 func (m *ServerSessionConstantLong) Deserialize(r Reader) error {
 
-	m.ServerSessionConstant.Deserialize(r)
+	if err := m.ServerSessionConstant.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadDouble()
 	if err != nil {
@@ -15168,7 +15668,9 @@ func (m *GameFightFighterTaxCollectorLightInformations) ID() uint16 {
 
 func (m *GameFightFighterTaxCollectorLightInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterLightInformations.Serialize(w)
+	if err := m.GameFightFighterLightInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.FirstNameId); err != nil {
 		return err
@@ -15183,7 +15685,9 @@ func (m *GameFightFighterTaxCollectorLightInformations) Serialize(w Writer) erro
 
 func (m *GameFightFighterTaxCollectorLightInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterLightInformations.Deserialize(r)
+	if err := m.GameFightFighterLightInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lfirstNameId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15214,7 +15718,9 @@ func (m *FightTeamMemberWithAllianceCharacterInformations) ID() uint16 {
 
 func (m *FightTeamMemberWithAllianceCharacterInformations) Serialize(w Writer) error {
 
-	m.FightTeamMemberCharacterInformations.Serialize(w)
+	if err := m.FightTeamMemberCharacterInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.AllianceInfos.Serialize(w); err != nil {
 		return err
@@ -15225,7 +15731,9 @@ func (m *FightTeamMemberWithAllianceCharacterInformations) Serialize(w Writer) e
 
 func (m *FightTeamMemberWithAllianceCharacterInformations) Deserialize(r Reader) error {
 
-	m.FightTeamMemberCharacterInformations.Deserialize(r)
+	if err := m.FightTeamMemberCharacterInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lallianceInfos BasicAllianceInformations
 
@@ -15252,7 +15760,9 @@ func (m *CharacterHardcoreOrEpicInformations) ID() uint16 {
 
 func (m *CharacterHardcoreOrEpicInformations) Serialize(w Writer) error {
 
-	m.CharacterBaseInformations.Serialize(w)
+	if err := m.CharacterBaseInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.DeathState); err != nil {
 		return err
@@ -15271,7 +15781,9 @@ func (m *CharacterHardcoreOrEpicInformations) Serialize(w Writer) error {
 
 func (m *CharacterHardcoreOrEpicInformations) Deserialize(r Reader) error {
 
-	m.CharacterBaseInformations.Deserialize(r)
+	if err := m.CharacterBaseInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldeathState, err := r.ReadUInt8()
 	if err != nil {
@@ -15309,7 +15821,9 @@ func (m *GameRolePlayTreasureHintInformations) ID() uint16 {
 
 func (m *GameRolePlayTreasureHintInformations) Serialize(w Writer) error {
 
-	m.GameRolePlayActorInformations.Serialize(w)
+	if err := m.GameRolePlayActorInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.NpcId); err != nil {
 		return err
@@ -15320,7 +15834,9 @@ func (m *GameRolePlayTreasureHintInformations) Serialize(w Writer) error {
 
 func (m *GameRolePlayTreasureHintInformations) Deserialize(r Reader) error {
 
-	m.GameRolePlayActorInformations.Deserialize(r)
+	if err := m.GameRolePlayActorInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnpcId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15348,7 +15864,9 @@ func (m *ObjectEffectDuration) ID() uint16 {
 
 func (m *ObjectEffectDuration) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Days); err != nil {
 		return err
@@ -15367,7 +15885,9 @@ func (m *ObjectEffectDuration) Serialize(w Writer) error {
 
 func (m *ObjectEffectDuration) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldays, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15405,7 +15925,9 @@ func (m *GameFightFighterMonsterLightInformations) ID() uint16 {
 
 func (m *GameFightFighterMonsterLightInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterLightInformations.Serialize(w)
+	if err := m.GameFightFighterLightInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.CreatureGenericId); err != nil {
 		return err
@@ -15416,7 +15938,9 @@ func (m *GameFightFighterMonsterLightInformations) Serialize(w Writer) error {
 
 func (m *GameFightFighterMonsterLightInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterLightInformations.Deserialize(r)
+	if err := m.GameFightFighterLightInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcreatureGenericId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15440,7 +15964,9 @@ func (m *HumanOptionGuild) ID() uint16 {
 
 func (m *HumanOptionGuild) Serialize(w Writer) error {
 
-	m.HumanOption.Serialize(w)
+	if err := m.HumanOption.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := m.GuildInformations.Serialize(w); err != nil {
 		return err
@@ -15451,7 +15977,9 @@ func (m *HumanOptionGuild) Serialize(w Writer) error {
 
 func (m *HumanOptionGuild) Deserialize(r Reader) error {
 
-	m.HumanOption.Deserialize(r)
+	if err := m.HumanOption.Deserialize(r); err != nil {
+		return err
+	}
 
 	var lguildInformations GuildInformations
 
@@ -15482,7 +16010,9 @@ func (m *ObjectEffectDate) ID() uint16 {
 
 func (m *ObjectEffectDate) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Year); err != nil {
 		return err
@@ -15509,7 +16039,9 @@ func (m *ObjectEffectDate) Serialize(w Writer) error {
 
 func (m *ObjectEffectDate) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	lyear, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15561,7 +16093,9 @@ func (m *ObjectEffectLadder) ID() uint16 {
 
 func (m *ObjectEffectLadder) Serialize(w Writer) error {
 
-	m.ObjectEffectCreature.Serialize(w)
+	if err := m.ObjectEffectCreature.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.MonsterCount); err != nil {
 		return err
@@ -15572,7 +16106,9 @@ func (m *ObjectEffectLadder) Serialize(w Writer) error {
 
 func (m *ObjectEffectLadder) Deserialize(r Reader) error {
 
-	m.ObjectEffectCreature.Deserialize(r)
+	if err := m.ObjectEffectCreature.Deserialize(r); err != nil {
+		return err
+	}
 
 	lmonsterCount, err := r.ReadVarUInt32()
 	if err != nil {
@@ -15598,7 +16134,9 @@ func (m *GameFightFighterCompanionLightInformations) ID() uint16 {
 
 func (m *GameFightFighterCompanionLightInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterLightInformations.Serialize(w)
+	if err := m.GameFightFighterLightInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.CompanionId); err != nil {
 		return err
@@ -15613,7 +16151,9 @@ func (m *GameFightFighterCompanionLightInformations) Serialize(w Writer) error {
 
 func (m *GameFightFighterCompanionLightInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterLightInformations.Deserialize(r)
+	if err := m.GameFightFighterLightInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcompanionId, err := r.ReadUInt8()
 	if err != nil {
@@ -15648,7 +16188,9 @@ func (m *ObjectEffectDice) ID() uint16 {
 
 func (m *ObjectEffectDice) Serialize(w Writer) error {
 
-	m.ObjectEffect.Serialize(w)
+	if err := m.ObjectEffect.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.DiceNum); err != nil {
 		return err
@@ -15667,7 +16209,9 @@ func (m *ObjectEffectDice) Serialize(w Writer) error {
 
 func (m *ObjectEffectDice) Deserialize(r Reader) error {
 
-	m.ObjectEffect.Deserialize(r)
+	if err := m.ObjectEffect.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldiceNum, err := r.ReadVarUInt16()
 	if err != nil {
@@ -15703,14 +16247,18 @@ func (m *TreasureHuntStepDig) ID() uint16 {
 
 func (m *TreasureHuntStepDig) Serialize(w Writer) error {
 
-	m.TreasureHuntStep.Serialize(w)
+	if err := m.TreasureHuntStep.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *TreasureHuntStepDig) Deserialize(r Reader) error {
 
-	m.TreasureHuntStep.Deserialize(r)
+	if err := m.TreasureHuntStep.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -15729,7 +16277,9 @@ func (m *TreasureHuntStepFollowDirection) ID() uint16 {
 
 func (m *TreasureHuntStepFollowDirection) Serialize(w Writer) error {
 
-	m.TreasureHuntStep.Serialize(w)
+	if err := m.TreasureHuntStep.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Direction); err != nil {
 		return err
@@ -15744,7 +16294,9 @@ func (m *TreasureHuntStepFollowDirection) Serialize(w Writer) error {
 
 func (m *TreasureHuntStepFollowDirection) Deserialize(r Reader) error {
 
-	m.TreasureHuntStep.Deserialize(r)
+	if err := m.TreasureHuntStep.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldirection, err := r.ReadUInt8()
 	if err != nil {
@@ -15775,7 +16327,9 @@ func (m *GuildInAllianceVersatileInformations) ID() uint16 {
 
 func (m *GuildInAllianceVersatileInformations) Serialize(w Writer) error {
 
-	m.GuildVersatileInformations.Serialize(w)
+	if err := m.GuildVersatileInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.AllianceId); err != nil {
 		return err
@@ -15786,7 +16340,9 @@ func (m *GuildInAllianceVersatileInformations) Serialize(w Writer) error {
 
 func (m *GuildInAllianceVersatileInformations) Deserialize(r Reader) error {
 
-	m.GuildVersatileInformations.Deserialize(r)
+	if err := m.GuildVersatileInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lallianceId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -15810,7 +16366,9 @@ func (m *GameFightFighterNamedLightInformations) ID() uint16 {
 
 func (m *GameFightFighterNamedLightInformations) Serialize(w Writer) error {
 
-	m.GameFightFighterLightInformations.Serialize(w)
+	if err := m.GameFightFighterLightInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -15821,7 +16379,9 @@ func (m *GameFightFighterNamedLightInformations) Serialize(w Writer) error {
 
 func (m *GameFightFighterNamedLightInformations) Deserialize(r Reader) error {
 
-	m.GameFightFighterLightInformations.Deserialize(r)
+	if err := m.GameFightFighterLightInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -15871,7 +16431,9 @@ func (m *FightResultExperienceData) ID() uint16 {
 
 func (m *FightResultExperienceData) Serialize(w Writer) error {
 
-	m.FightResultAdditionalData.Serialize(w)
+	if err := m.FightResultAdditionalData.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -15926,7 +16488,9 @@ func (m *FightResultExperienceData) Serialize(w Writer) error {
 
 func (m *FightResultExperienceData) Deserialize(r Reader) error {
 
-	m.FightResultAdditionalData.Deserialize(r)
+	if err := m.FightResultAdditionalData.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -16015,7 +16579,9 @@ func (m *FightTeamMemberCompanionInformations) ID() uint16 {
 
 func (m *FightTeamMemberCompanionInformations) Serialize(w Writer) error {
 
-	m.FightTeamMemberInformations.Serialize(w)
+	if err := m.FightTeamMemberInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.CompanionId); err != nil {
 		return err
@@ -16034,7 +16600,9 @@ func (m *FightTeamMemberCompanionInformations) Serialize(w Writer) error {
 
 func (m *FightTeamMemberCompanionInformations) Deserialize(r Reader) error {
 
-	m.FightTeamMemberInformations.Deserialize(r)
+	if err := m.FightTeamMemberInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcompanionId, err := r.ReadUInt8()
 	if err != nil {
@@ -16072,7 +16640,9 @@ func (m *InteractiveElementNamedSkill) ID() uint16 {
 
 func (m *InteractiveElementNamedSkill) Serialize(w Writer) error {
 
-	m.InteractiveElementSkill.Serialize(w)
+	if err := m.InteractiveElementSkill.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.NameId); err != nil {
 		return err
@@ -16083,7 +16653,9 @@ func (m *InteractiveElementNamedSkill) Serialize(w Writer) error {
 
 func (m *InteractiveElementNamedSkill) Deserialize(r Reader) error {
 
-	m.InteractiveElementSkill.Deserialize(r)
+	if err := m.InteractiveElementSkill.Deserialize(r); err != nil {
+		return err
+	}
 
 	lnameId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -16107,7 +16679,9 @@ func (m *StatisticDataShort) ID() uint16 {
 
 func (m *StatisticDataShort) Serialize(w Writer) error {
 
-	m.StatisticData.Serialize(w)
+	if err := m.StatisticData.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(m.Value); err != nil {
 		return err
@@ -16118,7 +16692,9 @@ func (m *StatisticDataShort) Serialize(w Writer) error {
 
 func (m *StatisticDataShort) Deserialize(r Reader) error {
 
-	m.StatisticData.Deserialize(r)
+	if err := m.StatisticData.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadInt16()
 	if err != nil {
@@ -16142,7 +16718,9 @@ func (m *FightResultMutantListEntry) ID() uint16 {
 
 func (m *FightResultMutantListEntry) Serialize(w Writer) error {
 
-	m.FightResultFighterListEntry.Serialize(w)
+	if err := m.FightResultFighterListEntry.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Level); err != nil {
 		return err
@@ -16153,7 +16731,9 @@ func (m *FightResultMutantListEntry) Serialize(w Writer) error {
 
 func (m *FightResultMutantListEntry) Deserialize(r Reader) error {
 
-	m.FightResultFighterListEntry.Deserialize(r)
+	if err := m.FightResultFighterListEntry.Deserialize(r); err != nil {
+		return err
+	}
 
 	llevel, err := r.ReadVarUInt16()
 	if err != nil {
@@ -16177,7 +16757,9 @@ func (m *ServerSessionConstantInteger) ID() uint16 {
 
 func (m *ServerSessionConstantInteger) Serialize(w Writer) error {
 
-	m.ServerSessionConstant.Serialize(w)
+	if err := m.ServerSessionConstant.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.Value); err != nil {
 		return err
@@ -16188,7 +16770,9 @@ func (m *ServerSessionConstantInteger) Serialize(w Writer) error {
 
 func (m *ServerSessionConstantInteger) Deserialize(r Reader) error {
 
-	m.ServerSessionConstant.Deserialize(r)
+	if err := m.ServerSessionConstant.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadInt32()
 	if err != nil {
@@ -16214,7 +16798,9 @@ func (m *TreasureHuntStepFollowDirectionToPOI) ID() uint16 {
 
 func (m *TreasureHuntStepFollowDirectionToPOI) Serialize(w Writer) error {
 
-	m.TreasureHuntStep.Serialize(w)
+	if err := m.TreasureHuntStep.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Direction); err != nil {
 		return err
@@ -16229,7 +16815,9 @@ func (m *TreasureHuntStepFollowDirectionToPOI) Serialize(w Writer) error {
 
 func (m *TreasureHuntStepFollowDirectionToPOI) Deserialize(r Reader) error {
 
-	m.TreasureHuntStep.Deserialize(r)
+	if err := m.TreasureHuntStep.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldirection, err := r.ReadUInt8()
 	if err != nil {
@@ -16260,7 +16848,9 @@ func (m *CharacterMinimalPlusLookAndGradeInformations) ID() uint16 {
 
 func (m *CharacterMinimalPlusLookAndGradeInformations) Serialize(w Writer) error {
 
-	m.CharacterMinimalPlusLookInformations.Serialize(w)
+	if err := m.CharacterMinimalPlusLookInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Grade); err != nil {
 		return err
@@ -16271,7 +16861,9 @@ func (m *CharacterMinimalPlusLookAndGradeInformations) Serialize(w Writer) error
 
 func (m *CharacterMinimalPlusLookAndGradeInformations) Deserialize(r Reader) error {
 
-	m.CharacterMinimalPlusLookInformations.Deserialize(r)
+	if err := m.CharacterMinimalPlusLookInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lgrade, err := r.ReadVarUInt32()
 	if err != nil {
@@ -16297,7 +16889,9 @@ func (m *TreasureHuntStepFollowDirectionToHint) ID() uint16 {
 
 func (m *TreasureHuntStepFollowDirectionToHint) Serialize(w Writer) error {
 
-	m.TreasureHuntStep.Serialize(w)
+	if err := m.TreasureHuntStep.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Direction); err != nil {
 		return err
@@ -16312,7 +16906,9 @@ func (m *TreasureHuntStepFollowDirectionToHint) Serialize(w Writer) error {
 
 func (m *TreasureHuntStepFollowDirectionToHint) Deserialize(r Reader) error {
 
-	m.TreasureHuntStep.Deserialize(r)
+	if err := m.TreasureHuntStep.Deserialize(r); err != nil {
+		return err
+	}
 
 	ldirection, err := r.ReadUInt8()
 	if err != nil {
@@ -16345,7 +16941,9 @@ func (m *QuestObjectiveInformationsWithCompletion) ID() uint16 {
 
 func (m *QuestObjectiveInformationsWithCompletion) Serialize(w Writer) error {
 
-	m.QuestObjectiveInformations.Serialize(w)
+	if err := m.QuestObjectiveInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.CurCompletion); err != nil {
 		return err
@@ -16360,7 +16958,9 @@ func (m *QuestObjectiveInformationsWithCompletion) Serialize(w Writer) error {
 
 func (m *QuestObjectiveInformationsWithCompletion) Deserialize(r Reader) error {
 
-	m.QuestObjectiveInformations.Deserialize(r)
+	if err := m.QuestObjectiveInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcurCompletion, err := r.ReadVarUInt16()
 	if err != nil {
@@ -16674,7 +17274,9 @@ func (m *CharacterRemodelingInformation) ID() uint16 {
 
 func (m *CharacterRemodelingInformation) Serialize(w Writer) error {
 
-	m.AbstractCharacterInformation.Serialize(w)
+	if err := m.AbstractCharacterInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteString(m.Name); err != nil {
 		return err
@@ -16709,7 +17311,9 @@ func (m *CharacterRemodelingInformation) Serialize(w Writer) error {
 
 func (m *CharacterRemodelingInformation) Deserialize(r Reader) error {
 
-	m.AbstractCharacterInformation.Deserialize(r)
+	if err := m.AbstractCharacterInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lname, err := r.ReadString()
 	if err != nil {
@@ -16774,7 +17378,9 @@ func (m *CharacterToRemodelInformations) ID() uint16 {
 
 func (m *CharacterToRemodelInformations) Serialize(w Writer) error {
 
-	m.CharacterRemodelingInformation.Serialize(w)
+	if err := m.CharacterRemodelingInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.PossibleChangeMask); err != nil {
 		return err
@@ -16789,7 +17395,9 @@ func (m *CharacterToRemodelInformations) Serialize(w Writer) error {
 
 func (m *CharacterToRemodelInformations) Deserialize(r Reader) error {
 
-	m.CharacterRemodelingInformation.Deserialize(r)
+	if err := m.CharacterRemodelingInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lpossibleChangeMask, err := r.ReadUInt8()
 	if err != nil {
@@ -17016,7 +17624,9 @@ func (m *VersionExtended) ID() uint16 {
 
 func (m *VersionExtended) Serialize(w Writer) error {
 
-	m.Version.Serialize(w)
+	if err := m.Version.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt8(m.Install); err != nil {
 		return err
@@ -17031,7 +17641,9 @@ func (m *VersionExtended) Serialize(w Writer) error {
 
 func (m *VersionExtended) Deserialize(r Reader) error {
 
-	m.Version.Deserialize(r)
+	if err := m.Version.Deserialize(r); err != nil {
+		return err
+	}
 
 	linstall, err := r.ReadUInt8()
 	if err != nil {
@@ -17161,7 +17773,9 @@ func (m *SpellItem) ID() uint16 {
 
 func (m *SpellItem) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt32(m.SpellId); err != nil {
 		return err
@@ -17176,7 +17790,9 @@ func (m *SpellItem) Serialize(w Writer) error {
 
 func (m *SpellItem) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lspellId, err := r.ReadInt32()
 	if err != nil {
@@ -17745,7 +18361,9 @@ func (m *ObjectItemToSell) ID() uint16 {
 
 func (m *ObjectItemToSell) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -17784,7 +18402,9 @@ func (m *ObjectItemToSell) Serialize(w Writer) error {
 
 func (m *ObjectItemToSell) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -17863,7 +18483,9 @@ func (m *ObjectItemToSellInHumanVendorShop) ID() uint16 {
 
 func (m *ObjectItemToSellInHumanVendorShop) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -17906,7 +18528,9 @@ func (m *ObjectItemToSellInHumanVendorShop) Serialize(w Writer) error {
 
 func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -17982,7 +18606,9 @@ func (m *ObjectItemToSellInBid) ID() uint16 {
 
 func (m *ObjectItemToSellInBid) Serialize(w Writer) error {
 
-	m.ObjectItemToSell.Serialize(w)
+	if err := m.ObjectItemToSell.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteUInt32(m.UnsoldDelay); err != nil {
 		return err
@@ -17993,7 +18619,9 @@ func (m *ObjectItemToSellInBid) Serialize(w Writer) error {
 
 func (m *ObjectItemToSellInBid) Deserialize(r Reader) error {
 
-	m.ObjectItemToSell.Deserialize(r)
+	if err := m.ObjectItemToSell.Deserialize(r); err != nil {
+		return err
+	}
 
 	lunsoldDelay, err := r.ReadUInt32()
 	if err != nil {
@@ -18392,7 +19020,9 @@ func (m *ObjectItemToSellInNpcShop) ID() uint16 {
 
 func (m *ObjectItemToSellInNpcShop) Serialize(w Writer) error {
 
-	m.ObjectItemMinimalInformation.Serialize(w)
+	if err := m.ObjectItemMinimalInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ObjectPrice); err != nil {
 		return err
@@ -18407,7 +19037,9 @@ func (m *ObjectItemToSellInNpcShop) Serialize(w Writer) error {
 
 func (m *ObjectItemToSellInNpcShop) Deserialize(r Reader) error {
 
-	m.ObjectItemMinimalInformation.Deserialize(r)
+	if err := m.ObjectItemMinimalInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectPrice, err := r.ReadVarUInt32()
 	if err != nil {
@@ -18878,7 +19510,9 @@ func (m *ObjectItemNotInContainer) ID() uint16 {
 
 func (m *ObjectItemNotInContainer) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.ObjectGID); err != nil {
 		return err
@@ -18913,7 +19547,9 @@ func (m *ObjectItemNotInContainer) Serialize(w Writer) error {
 
 func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lobjectGID, err := r.ReadVarUInt16()
 	if err != nil {
@@ -19030,7 +19666,9 @@ func (m *GoldItem) ID() uint16 {
 
 func (m *GoldItem) Serialize(w Writer) error {
 
-	m.Item.Serialize(w)
+	if err := m.Item.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.Sum); err != nil {
 		return err
@@ -19041,7 +19679,9 @@ func (m *GoldItem) Serialize(w Writer) error {
 
 func (m *GoldItem) Deserialize(r Reader) error {
 
-	m.Item.Deserialize(r)
+	if err := m.Item.Deserialize(r); err != nil {
+		return err
+	}
 
 	lsum, err := r.ReadVarUInt32()
 	if err != nil {
@@ -19067,7 +19707,9 @@ func (m *AbstractCharacterToRefurbishInformation) ID() uint16 {
 
 func (m *AbstractCharacterToRefurbishInformation) Serialize(w Writer) error {
 
-	m.AbstractCharacterInformation.Serialize(w)
+	if err := m.AbstractCharacterInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteInt16(int16(len(m.Colors))); err != nil {
 		return err
@@ -19090,7 +19732,9 @@ func (m *AbstractCharacterToRefurbishInformation) Serialize(w Writer) error {
 
 func (m *AbstractCharacterToRefurbishInformation) Deserialize(r Reader) error {
 
-	m.AbstractCharacterInformation.Deserialize(r)
+	if err := m.AbstractCharacterInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	lcolorsLen, err := r.ReadInt16()
 	if err != nil {
@@ -19130,14 +19774,18 @@ func (m *CharacterToRecolorInformation) ID() uint16 {
 
 func (m *CharacterToRecolorInformation) Serialize(w Writer) error {
 
-	m.AbstractCharacterToRefurbishInformation.Serialize(w)
+	if err := m.AbstractCharacterToRefurbishInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *CharacterToRecolorInformation) Deserialize(r Reader) error {
 
-	m.AbstractCharacterToRefurbishInformation.Deserialize(r)
+	if err := m.AbstractCharacterToRefurbishInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -19152,14 +19800,18 @@ func (m *CharacterToRelookInformation) ID() uint16 {
 
 func (m *CharacterToRelookInformation) Serialize(w Writer) error {
 
-	m.AbstractCharacterToRefurbishInformation.Serialize(w)
+	if err := m.AbstractCharacterToRefurbishInformation.Serialize(w); err != nil {
+		return err
+	}
 
 	return nil
 }
 
 func (m *CharacterToRelookInformation) Deserialize(r Reader) error {
 
-	m.AbstractCharacterToRefurbishInformation.Deserialize(r)
+	if err := m.AbstractCharacterToRefurbishInformation.Deserialize(r); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -19485,7 +20137,9 @@ func (m *FightTeamLightInformations) ID() uint16 {
 
 func (m *FightTeamLightInformations) Serialize(w Writer) error {
 
-	m.AbstractFightTeamInformations.Serialize(w)
+	if err := m.AbstractFightTeamInformations.Serialize(w); err != nil {
+		return err
+	}
 
 	var bbw0 uint8
 
@@ -19516,7 +20170,9 @@ func (m *FightTeamLightInformations) Serialize(w Writer) error {
 
 func (m *FightTeamLightInformations) Deserialize(r Reader) error {
 
-	m.AbstractFightTeamInformations.Deserialize(r)
+	if err := m.AbstractFightTeamInformations.Deserialize(r); err != nil {
+		return err
+	}
 
 	bbw0, err := r.ReadUInt8()
 	if err != nil {
@@ -19604,7 +20260,9 @@ func (m *AchievementStartedObjective) ID() uint16 {
 
 func (m *AchievementStartedObjective) Serialize(w Writer) error {
 
-	m.AchievementObjective.Serialize(w)
+	if err := m.AchievementObjective.Serialize(w); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt16(m.Value); err != nil {
 		return err
@@ -19615,7 +20273,9 @@ func (m *AchievementStartedObjective) Serialize(w Writer) error {
 
 func (m *AchievementStartedObjective) Deserialize(r Reader) error {
 
-	m.AchievementObjective.Deserialize(r)
+	if err := m.AchievementObjective.Deserialize(r); err != nil {
+		return err
+	}
 
 	lvalue, err := r.ReadVarUInt16()
 	if err != nil {

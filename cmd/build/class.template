@@ -26,7 +26,9 @@ var {{MapName}} = map[uint16]reflect.Type{
 
 	func (m *{{.Name}}) Serialize(w Writer) error {
 		{{ if TypeHasParent . }}
-			m.{{- .Parent -}}.Serialize(w)
+			if err := m.{{- .Parent -}}.Serialize(w); err != nil {
+				return err
+			}
 		{{end}}
 		{{if UseBooleanByteWrapper . }}
 			{{ range $index, $element := BBWIterate . }}
@@ -50,7 +52,9 @@ var {{MapName}} = map[uint16]reflect.Type{
 
 	func (m *{{.Name}}) Deserialize(r Reader) error {
 		{{ if TypeHasParent . }}
-			m.{{- .Parent -}}.Deserialize(r)
+			if err := m.{{- .Parent -}}.Deserialize(r); err != nil {
+				return err
+			}
 		{{end}}
 		{{if UseBooleanByteWrapper . }}
 			{{ range $index, $element := BBWIterate . }}

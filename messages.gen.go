@@ -12,7 +12,7 @@ var messages = map[uint16]reflect.Type{
 
 	6205: reflect.TypeOf((*AchievementListMessage)(nil)),
 
-	65484: reflect.TypeOf((*AdminCommandMessage)(nil)),
+	76: reflect.TypeOf((*AdminCommandMessage)(nil)),
 
 	5662: reflect.TypeOf((*AdminQuietCommandMessage)(nil)),
 
@@ -724,7 +724,7 @@ var messages = map[uint16]reflect.Type{
 
 	5663: reflect.TypeOf((*BasicLatencyStatsMessage)(nil)),
 
-	65483: reflect.TypeOf((*ConsoleMessage)(nil)),
+	75: reflect.TypeOf((*ConsoleMessage)(nil)),
 
 	6372: reflect.TypeOf((*CheckIntegrityMessage)(nil)),
 
@@ -1392,9 +1392,9 @@ var messages = map[uint16]reflect.Type{
 
 	6305: reflect.TypeOf((*ServerOptionalFeaturesMessage)(nil)),
 
-	6371: reflect.TypeOf((*TitleLostMessage)(nil)),
-
 	6364: reflect.TypeOf((*TitleGainedMessage)(nil)),
+
+	6371: reflect.TypeOf((*TitleLostMessage)(nil)),
 
 	6373: reflect.TypeOf((*TitleSelectErrorMessage)(nil)),
 
@@ -1424,15 +1424,15 @@ var messages = map[uint16]reflect.Type{
 
 	162: reflect.TypeOf((*CharacterNameSuggestionRequestMessage)(nil)),
 
-	65519: reflect.TypeOf((*AuthenticationTicketAcceptedMessage)(nil)),
+	111: reflect.TypeOf((*AuthenticationTicketAcceptedMessage)(nil)),
 
 	167: reflect.TypeOf((*CharacterReplayRequestMessage)(nil)),
 
 	6551: reflect.TypeOf((*CharacterReplayWithRemodelRequestMessage)(nil)),
 
-	65517: reflect.TypeOf((*AlreadyConnectedMessage)(nil)),
+	109: reflect.TypeOf((*AlreadyConnectedMessage)(nil)),
 
-	65518: reflect.TypeOf((*AuthenticationTicketMessage)(nil)),
+	110: reflect.TypeOf((*AuthenticationTicketMessage)(nil)),
 
 	6072: reflect.TypeOf((*CharacterSelectedForceReadyMessage)(nil)),
 
@@ -1464,7 +1464,7 @@ var messages = map[uint16]reflect.Type{
 
 	1302: reflect.TypeOf((*StartupActionsExecuteMessage)(nil)),
 
-	65520: reflect.TypeOf((*AuthenticationTicketRefusedMessage)(nil)),
+	112: reflect.TypeOf((*AuthenticationTicketRefusedMessage)(nil)),
 
 	161: reflect.TypeOf((*CharacterCreationResultMessage)(nil)),
 
@@ -1472,7 +1472,7 @@ var messages = map[uint16]reflect.Type{
 
 	6575: reflect.TypeOf((*GameRolePlayArenaSwitchToFightServerMessage)(nil)),
 
-	65509: reflect.TypeOf((*HelloGameMessage)(nil)),
+	101: reflect.TypeOf((*HelloGameMessage)(nil)),
 
 	164: reflect.TypeOf((*CharacterNameSuggestionFailureMessage)(nil)),
 
@@ -2185,7 +2185,7 @@ type AdminCommandMessage struct {
 }
 
 func (m *AdminCommandMessage) ID() uint16 {
-	return 65484
+	return 76
 }
 
 func (m *AdminCommandMessage) Serialize(w Writer) error {
@@ -18148,7 +18148,7 @@ type ConsoleMessage struct {
 }
 
 func (m *ConsoleMessage) ID() uint16 {
-	return 65483
+	return 75
 }
 
 func (m *ConsoleMessage) Serialize(w Writer) error {
@@ -32544,35 +32544,6 @@ func (m *ServerOptionalFeaturesMessage) Deserialize(r Reader) error {
 	return nil
 }
 
-type TitleLostMessage struct {
-	TitleId uint16
-}
-
-func (m *TitleLostMessage) ID() uint16 {
-	return 6371
-}
-
-func (m *TitleLostMessage) Serialize(w Writer) error {
-
-	if err := w.WriteVarUInt16(m.TitleId); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *TitleLostMessage) Deserialize(r Reader) error {
-
-	ltitleId, err := r.ReadVarUInt16()
-	if err != nil {
-		return err
-	}
-
-	m.TitleId = ltitleId
-
-	return nil
-}
-
 type TitleGainedMessage struct {
 	TitleId uint16
 }
@@ -32591,6 +32562,35 @@ func (m *TitleGainedMessage) Serialize(w Writer) error {
 }
 
 func (m *TitleGainedMessage) Deserialize(r Reader) error {
+
+	ltitleId, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.TitleId = ltitleId
+
+	return nil
+}
+
+type TitleLostMessage struct {
+	TitleId uint16
+}
+
+func (m *TitleLostMessage) ID() uint16 {
+	return 6371
+}
+
+func (m *TitleLostMessage) Serialize(w Writer) error {
+
+	if err := w.WriteVarUInt16(m.TitleId); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *TitleLostMessage) Deserialize(r Reader) error {
 
 	ltitleId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -33136,7 +33136,7 @@ type AuthenticationTicketAcceptedMessage struct {
 }
 
 func (m *AuthenticationTicketAcceptedMessage) ID() uint16 {
-	return 65519
+	return 111
 }
 
 func (m *AuthenticationTicketAcceptedMessage) Serialize(w Writer) error {
@@ -33216,7 +33216,7 @@ type AlreadyConnectedMessage struct {
 }
 
 func (m *AlreadyConnectedMessage) ID() uint16 {
-	return 65517
+	return 109
 }
 
 func (m *AlreadyConnectedMessage) Serialize(w Writer) error {
@@ -33236,7 +33236,7 @@ type AuthenticationTicketMessage struct {
 }
 
 func (m *AuthenticationTicketMessage) ID() uint16 {
-	return 65518
+	return 110
 }
 
 func (m *AuthenticationTicketMessage) Serialize(w Writer) error {
@@ -33819,7 +33819,7 @@ type AuthenticationTicketRefusedMessage struct {
 }
 
 func (m *AuthenticationTicketRefusedMessage) ID() uint16 {
-	return 65520
+	return 112
 }
 
 func (m *AuthenticationTicketRefusedMessage) Serialize(w Writer) error {
@@ -34030,7 +34030,7 @@ type HelloGameMessage struct {
 }
 
 func (m *HelloGameMessage) ID() uint16 {
-	return 65509
+	return 101
 }
 
 func (m *HelloGameMessage) Serialize(w Writer) error {

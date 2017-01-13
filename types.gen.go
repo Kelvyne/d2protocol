@@ -22,7 +22,7 @@ var types = map[uint16]reflect.Type{
 
 	180: reflect.TypeOf((*GameRolePlayMountInformations)(nil)),
 
-	65488: reflect.TypeOf((*InteractiveElement)(nil)),
+	80: reflect.TypeOf((*InteractiveElement)(nil)),
 
 	467: reflect.TypeOf((*GameRolePlayPortalInformations)(nil)),
 
@@ -72,9 +72,9 @@ var types = map[uint16]reflect.Type{
 
 	503: reflect.TypeOf((*CharacterBasicMinimalInformations)(nil)),
 
-	65518: reflect.TypeOf((*CharacterMinimalInformations)(nil)),
+	110: reflect.TypeOf((*CharacterMinimalInformations)(nil)),
 
-	65496: reflect.TypeOf((*GuildMember)(nil)),
+	88: reflect.TypeOf((*GuildMember)(nil)),
 
 	60: reflect.TypeOf((*EntityDispositionInformations)(nil)),
 
@@ -82,9 +82,9 @@ var types = map[uint16]reflect.Type{
 
 	219: reflect.TypeOf((*InteractiveElementSkill)(nil)),
 
-	65484: reflect.TypeOf((*ObjectEffect)(nil)),
+	76: reflect.TypeOf((*ObjectEffect)(nil)),
 
-	65478: reflect.TypeOf((*ObjectEffectInteger)(nil)),
+	70: reflect.TypeOf((*ObjectEffectInteger)(nil)),
 
 	466: reflect.TypeOf((*PortalInformation)(nil)),
 
@@ -94,15 +94,15 @@ var types = map[uint16]reflect.Type{
 
 	381: reflect.TypeOf((*QuestActiveInformations)(nil)),
 
-	65509: reflect.TypeOf((*JobDescription)(nil)),
+	101: reflect.TypeOf((*JobDescription)(nil)),
 
-	65510: reflect.TypeOf((*SkillActionDescription)(nil)),
+	102: reflect.TypeOf((*SkillActionDescription)(nil)),
 
-	65508: reflect.TypeOf((*SkillActionDescriptionCraft)(nil)),
+	100: reflect.TypeOf((*SkillActionDescriptionCraft)(nil)),
 
-	65511: reflect.TypeOf((*SkillActionDescriptionTimed)(nil)),
+	103: reflect.TypeOf((*SkillActionDescriptionTimed)(nil)),
 
-	65507: reflect.TypeOf((*SkillActionDescriptionCollect)(nil)),
+	99: reflect.TypeOf((*SkillActionDescriptionCollect)(nil)),
 
 	204: reflect.TypeOf((*ActorRestrictionsInformations)(nil)),
 
@@ -150,21 +150,21 @@ var types = map[uint16]reflect.Type{
 
 	131: reflect.TypeOf((*PaddockPrivateInformations)(nil)),
 
-	65519: reflect.TypeOf((*HouseInformations)(nil)),
+	111: reflect.TypeOf((*HouseInformations)(nil)),
 
-	65520: reflect.TypeOf((*HouseInformationsExtended)(nil)),
+	112: reflect.TypeOf((*HouseInformationsExtended)(nil)),
 
 	384: reflect.TypeOf((*GameRolePlayNpcQuestFlag)(nil)),
 
 	373: reflect.TypeOf((*DungeonPartyFinderPlayer)(nil)),
 
-	65524: reflect.TypeOf((*AbstractFightTeamInformations)(nil)),
+	116: reflect.TypeOf((*AbstractFightTeamInformations)(nil)),
 
 	33: reflect.TypeOf((*FightTeamInformations)(nil)),
 
 	376: reflect.TypeOf((*PartyInvitationMemberInformations)(nil)),
 
-	65498: reflect.TypeOf((*PartyMemberInformations)(nil)),
+	90: reflect.TypeOf((*PartyMemberInformations)(nil)),
 
 	453: reflect.TypeOf((*PartyCompanionBaseInformations)(nil)),
 
@@ -186,13 +186,13 @@ var types = map[uint16]reflect.Type{
 
 	380: reflect.TypeOf((*AbstractContactInformations)(nil)),
 
-	65514: reflect.TypeOf((*IgnoredInformations)(nil)),
+	106: reflect.TypeOf((*IgnoredInformations)(nil)),
 
-	65513: reflect.TypeOf((*IgnoredOnlineInformations)(nil)),
+	105: reflect.TypeOf((*IgnoredOnlineInformations)(nil)),
 
-	65486: reflect.TypeOf((*FriendInformations)(nil)),
+	78: reflect.TypeOf((*FriendInformations)(nil)),
 
-	65500: reflect.TypeOf((*FriendOnlineInformations)(nil)),
+	92: reflect.TypeOf((*FriendOnlineInformations)(nil)),
 
 	183: reflect.TypeOf((*PaddockContentInformations)(nil)),
 
@@ -206,7 +206,7 @@ var types = map[uint16]reflect.Type{
 
 	365: reflect.TypeOf((*BasicGuildInformations)(nil)),
 
-	65535: reflect.TypeOf((*GuildInformations)(nil)),
+	127: reflect.TypeOf((*GuildInformations)(nil)),
 
 	424: reflect.TypeOf((*GuildFactSheetInformations)(nil)),
 
@@ -226,13 +226,13 @@ var types = map[uint16]reflect.Type{
 
 	217: reflect.TypeOf((*FightEntityDispositionInformations)(nil)),
 
-	65516: reflect.TypeOf((*StatedElement)(nil)),
+	108: reflect.TypeOf((*StatedElement)(nil)),
 
 	360: reflect.TypeOf((*GameFightMinimalStatsPreparation)(nil)),
 
 	200: reflect.TypeOf((*MapObstacle)(nil)),
 
-	65515: reflect.TypeOf((*IdentifiedEntityDispositionInformations)(nil)),
+	107: reflect.TypeOf((*IdentifiedEntityDispositionInformations)(nil)),
 
 	198: reflect.TypeOf((*ObjectItemInRolePlay)(nil)),
 
@@ -260,7 +260,7 @@ var types = map[uint16]reflect.Type{
 
 	205: reflect.TypeOf((*GameFightSpellCooldown)(nil)),
 
-	65493: reflect.TypeOf((*GameActionMarkedCell)(nil)),
+	85: reflect.TypeOf((*GameActionMarkedCell)(nil)),
 
 	16: reflect.TypeOf((*FightResultListEntry)(nil)),
 
@@ -282,7 +282,7 @@ var types = map[uint16]reflect.Type{
 
 	364: reflect.TypeOf((*GameFightResumeSlaveInfo)(nil)),
 
-	65492: reflect.TypeOf((*FightResultTaxCollectorListEntry)(nil)),
+	84: reflect.TypeOf((*FightResultTaxCollectorListEntry)(nil)),
 
 	222: reflect.TypeOf((*PaddockInformationsForSell)(nil)),
 
@@ -304,7 +304,7 @@ var types = map[uint16]reflect.Type{
 
 	169: reflect.TypeOf((*TaxCollectorFightersInformation)(nil)),
 
-	65532: reflect.TypeOf((*ObjectItemMinimalInformation)(nil)),
+	124: reflect.TypeOf((*ObjectItemMinimalInformation)(nil)),
 
 	387: reflect.TypeOf((*ObjectItemInformationWithQuantity)(nil)),
 
@@ -316,7 +316,7 @@ var types = map[uint16]reflect.Type{
 
 	501: reflect.TypeOf((*DareCriteria)(nil)),
 
-	65495: reflect.TypeOf((*GuildEmblem)(nil)),
+	87: reflect.TypeOf((*GuildEmblem)(nil)),
 
 	422: reflect.TypeOf((*AlliancedGuildFactSheetInformations)(nil)),
 
@@ -340,11 +340,11 @@ var types = map[uint16]reflect.Type{
 
 	447: reflect.TypeOf((*TaxCollectorWaitingForHelpInformations)(nil)),
 
-	65485: reflect.TypeOf((*FriendSpouseInformations)(nil)),
+	77: reflect.TypeOf((*FriendSpouseInformations)(nil)),
 
-	65501: reflect.TypeOf((*FriendSpouseOnlineInformations)(nil)),
+	93: reflect.TypeOf((*FriendSpouseOnlineInformations)(nil)),
 
-	65527: reflect.TypeOf((*ObjectItemQuantity)(nil)),
+	119: reflect.TypeOf((*ObjectItemQuantity)(nil)),
 
 	369: reflect.TypeOf((*Shortcut)(nil)),
 
@@ -400,9 +400,9 @@ var types = map[uint16]reflect.Type{
 
 	382: reflect.TypeOf((*QuestActiveDetailedInformations)(nil)),
 
-	65479: reflect.TypeOf((*ObjectEffectCreature)(nil)),
+	71: reflect.TypeOf((*ObjectEffectCreature)(nil)),
 
-	65482: reflect.TypeOf((*ObjectEffectString)(nil)),
+	74: reflect.TypeOf((*ObjectEffectString)(nil)),
 
 	482: reflect.TypeOf((*StatisticDataBoolean)(nil)),
 
@@ -416,7 +416,7 @@ var types = map[uint16]reflect.Type{
 
 	6: reflect.TypeOf((*FightTeamMemberMonsterInformations)(nil)),
 
-	65490: reflect.TypeOf((*ObjectEffectMinMax)(nil)),
+	82: reflect.TypeOf((*ObjectEffectMinMax)(nil)),
 
 	439: reflect.TypeOf((*FightAllianceTeamInformations)(nil)),
 
@@ -444,19 +444,19 @@ var types = map[uint16]reflect.Type{
 
 	471: reflect.TypeOf((*GameRolePlayTreasureHintInformations)(nil)),
 
-	65483: reflect.TypeOf((*ObjectEffectDuration)(nil)),
+	75: reflect.TypeOf((*ObjectEffectDuration)(nil)),
 
 	455: reflect.TypeOf((*GameFightFighterMonsterLightInformations)(nil)),
 
 	409: reflect.TypeOf((*HumanOptionGuild)(nil)),
 
-	65480: reflect.TypeOf((*ObjectEffectDate)(nil)),
+	72: reflect.TypeOf((*ObjectEffectDate)(nil)),
 
-	65489: reflect.TypeOf((*ObjectEffectLadder)(nil)),
+	81: reflect.TypeOf((*ObjectEffectLadder)(nil)),
 
 	454: reflect.TypeOf((*GameFightFighterCompanionLightInformations)(nil)),
 
-	65481: reflect.TypeOf((*ObjectEffectDice)(nil)),
+	73: reflect.TypeOf((*ObjectEffectDice)(nil)),
 
 	465: reflect.TypeOf((*TreasureHuntStepDig)(nil)),
 
@@ -488,11 +488,11 @@ var types = map[uint16]reflect.Type{
 
 	473: reflect.TypeOf((*TreasureHuntFlag)(nil)),
 
-	65506: reflect.TypeOf((*JobExperience)(nil)),
+	98: reflect.TypeOf((*JobExperience)(nil)),
 
 	500: reflect.TypeOf((*JobBookSubscription)(nil)),
 
-	65505: reflect.TypeOf((*JobCrafterDirectorySettings)(nil)),
+	97: reflect.TypeOf((*JobCrafterDirectorySettings)(nil)),
 
 	354: reflect.TypeOf((*PresetItem)(nil)),
 
@@ -518,7 +518,7 @@ var types = map[uint16]reflect.Type{
 
 	20: reflect.TypeOf((*FightOptionsInformations)(nil)),
 
-	65504: reflect.TypeOf((*TaxCollectorBasicInformations)(nil)),
+	96: reflect.TypeOf((*TaxCollectorBasicInformations)(nil)),
 
 	184: reflect.TypeOf((*MountInformationsForPaddock)(nil)),
 
@@ -526,17 +526,17 @@ var types = map[uint16]reflect.Type{
 
 	41: reflect.TypeOf((*FightLoot)(nil)),
 
-	65528: reflect.TypeOf((*ObjectItemToSell)(nil)),
+	120: reflect.TypeOf((*ObjectItemToSell)(nil)),
 
 	359: reflect.TypeOf((*ObjectItemToSellInHumanVendorShop)(nil)),
 
 	164: reflect.TypeOf((*ObjectItemToSellInBid)(nil)),
 
-	65530: reflect.TypeOf((*BidExchangerObjectInfo)(nil)),
+	122: reflect.TypeOf((*BidExchangerObjectInfo)(nil)),
 
-	65529: reflect.TypeOf((*SellerBuyerDescriptor)(nil)),
+	121: reflect.TypeOf((*SellerBuyerDescriptor)(nil)),
 
-	65525: reflect.TypeOf((*FightExternalInformations)(nil)),
+	117: reflect.TypeOf((*FightExternalInformations)(nil)),
 
 	352: reflect.TypeOf((*ObjectItemToSellInNpcShop)(nil)),
 
@@ -556,7 +556,7 @@ var types = map[uint16]reflect.Type{
 
 	498: reflect.TypeOf((*HavenBagFurnitureInformation)(nil)),
 
-	65531: reflect.TypeOf((*GoldItem)(nil)),
+	123: reflect.TypeOf((*GoldItem)(nil)),
 
 	475: reflect.TypeOf((*AbstractCharacterToRefurbishInformation)(nil)),
 
@@ -570,7 +570,7 @@ var types = map[uint16]reflect.Type{
 
 	175: reflect.TypeOf((*AtlasPointsInformations)(nil)),
 
-	65523: reflect.TypeOf((*FightTeamLightInformations)(nil)),
+	115: reflect.TypeOf((*FightTeamLightInformations)(nil)),
 
 	404: reflect.TypeOf((*AchievementObjective)(nil)),
 
@@ -987,7 +987,7 @@ type InteractiveElement struct {
 }
 
 func (m *InteractiveElement) ID() uint16 {
-	return 65488
+	return 80
 }
 
 func (m *InteractiveElement) Serialize(w Writer) error {
@@ -3575,7 +3575,7 @@ type CharacterMinimalInformations struct {
 }
 
 func (m *CharacterMinimalInformations) ID() uint16 {
-	return 65518
+	return 110
 }
 
 func (m *CharacterMinimalInformations) Serialize(w Writer) error {
@@ -3634,7 +3634,7 @@ type GuildMember struct {
 }
 
 func (m *GuildMember) ID() uint16 {
-	return 65496
+	return 88
 }
 
 func (m *GuildMember) Serialize(w Writer) error {
@@ -4416,7 +4416,7 @@ type ObjectEffect struct {
 }
 
 func (m *ObjectEffect) ID() uint16 {
-	return 65484
+	return 76
 }
 
 func (m *ObjectEffect) Serialize(w Writer) error {
@@ -4447,7 +4447,7 @@ type ObjectEffectInteger struct {
 }
 
 func (m *ObjectEffectInteger) ID() uint16 {
-	return 65478
+	return 70
 }
 
 func (m *ObjectEffectInteger) Serialize(w Writer) error {
@@ -4654,7 +4654,7 @@ type JobDescription struct {
 }
 
 func (m *JobDescription) ID() uint16 {
-	return 65509
+	return 101
 }
 
 func (m *JobDescription) Serialize(w Writer) error {
@@ -4723,7 +4723,7 @@ type SkillActionDescription struct {
 }
 
 func (m *SkillActionDescription) ID() uint16 {
-	return 65510
+	return 102
 }
 
 func (m *SkillActionDescription) Serialize(w Writer) error {
@@ -4754,7 +4754,7 @@ type SkillActionDescriptionCraft struct {
 }
 
 func (m *SkillActionDescriptionCraft) ID() uint16 {
-	return 65508
+	return 100
 }
 
 func (m *SkillActionDescriptionCraft) Serialize(w Writer) error {
@@ -4789,7 +4789,7 @@ type SkillActionDescriptionTimed struct {
 }
 
 func (m *SkillActionDescriptionTimed) ID() uint16 {
-	return 65511
+	return 103
 }
 
 func (m *SkillActionDescriptionTimed) Serialize(w Writer) error {
@@ -4826,7 +4826,7 @@ type SkillActionDescriptionCollect struct {
 }
 
 func (m *SkillActionDescriptionCollect) ID() uint16 {
-	return 65507
+	return 99
 }
 
 func (m *SkillActionDescriptionCollect) Serialize(w Writer) error {
@@ -6210,7 +6210,7 @@ type HouseInformations struct {
 }
 
 func (m *HouseInformations) ID() uint16 {
-	return 65519
+	return 111
 }
 
 func (m *HouseInformations) Serialize(w Writer) error {
@@ -6312,7 +6312,7 @@ type HouseInformationsExtended struct {
 }
 
 func (m *HouseInformationsExtended) ID() uint16 {
-	return 65520
+	return 112
 }
 
 func (m *HouseInformationsExtended) Serialize(w Writer) error {
@@ -6513,7 +6513,7 @@ type AbstractFightTeamInformations struct {
 }
 
 func (m *AbstractFightTeamInformations) ID() uint16 {
-	return 65524
+	return 116
 }
 
 func (m *AbstractFightTeamInformations) Serialize(w Writer) error {
@@ -6779,7 +6779,7 @@ type PartyMemberInformations struct {
 }
 
 func (m *PartyMemberInformations) ID() uint16 {
-	return 65498
+	return 90
 }
 
 func (m *PartyMemberInformations) Serialize(w Writer) error {
@@ -7719,7 +7719,7 @@ type IgnoredInformations struct {
 }
 
 func (m *IgnoredInformations) ID() uint16 {
-	return 65514
+	return 106
 }
 
 func (m *IgnoredInformations) Serialize(w Writer) error {
@@ -7749,7 +7749,7 @@ type IgnoredOnlineInformations struct {
 }
 
 func (m *IgnoredOnlineInformations) ID() uint16 {
-	return 65513
+	return 105
 }
 
 func (m *IgnoredOnlineInformations) Serialize(w Writer) error {
@@ -7821,7 +7821,7 @@ type FriendInformations struct {
 }
 
 func (m *FriendInformations) ID() uint16 {
-	return 65486
+	return 78
 }
 
 func (m *FriendInformations) Serialize(w Writer) error {
@@ -7894,7 +7894,7 @@ type FriendOnlineInformations struct {
 }
 
 func (m *FriendOnlineInformations) ID() uint16 {
-	return 65500
+	return 92
 }
 
 func (m *FriendOnlineInformations) Serialize(w Writer) error {
@@ -8510,7 +8510,7 @@ type GuildInformations struct {
 }
 
 func (m *GuildInformations) ID() uint16 {
-	return 65535
+	return 127
 }
 
 func (m *GuildInformations) Serialize(w Writer) error {
@@ -9065,7 +9065,7 @@ type StatedElement struct {
 }
 
 func (m *StatedElement) ID() uint16 {
-	return 65516
+	return 108
 }
 
 func (m *StatedElement) Serialize(w Writer) error {
@@ -9206,7 +9206,7 @@ type IdentifiedEntityDispositionInformations struct {
 }
 
 func (m *IdentifiedEntityDispositionInformations) ID() uint16 {
-	return 65515
+	return 107
 }
 
 func (m *IdentifiedEntityDispositionInformations) Serialize(w Writer) error {
@@ -9900,7 +9900,7 @@ type GameActionMarkedCell struct {
 }
 
 func (m *GameActionMarkedCell) ID() uint16 {
-	return 65493
+	return 85
 }
 
 func (m *GameActionMarkedCell) Serialize(w Writer) error {
@@ -10622,7 +10622,7 @@ type FightResultTaxCollectorListEntry struct {
 }
 
 func (m *FightResultTaxCollectorListEntry) ID() uint16 {
-	return 65492
+	return 84
 }
 
 func (m *FightResultTaxCollectorListEntry) Serialize(w Writer) error {
@@ -11491,7 +11491,7 @@ type ObjectItemMinimalInformation struct {
 }
 
 func (m *ObjectItemMinimalInformation) ID() uint16 {
-	return 65532
+	return 124
 }
 
 func (m *ObjectItemMinimalInformation) Serialize(w Writer) error {
@@ -12009,7 +12009,7 @@ type GuildEmblem struct {
 }
 
 func (m *GuildEmblem) ID() uint16 {
-	return 65495
+	return 87
 }
 
 func (m *GuildEmblem) Serialize(w Writer) error {
@@ -12562,7 +12562,7 @@ type FriendSpouseInformations struct {
 }
 
 func (m *FriendSpouseInformations) ID() uint16 {
-	return 65485
+	return 77
 }
 
 func (m *FriendSpouseInformations) Serialize(w Writer) error {
@@ -12685,7 +12685,7 @@ type FriendSpouseOnlineInformations struct {
 }
 
 func (m *FriendSpouseOnlineInformations) ID() uint16 {
-	return 65501
+	return 93
 }
 
 func (m *FriendSpouseOnlineInformations) Serialize(w Writer) error {
@@ -12752,7 +12752,7 @@ type ObjectItemQuantity struct {
 }
 
 func (m *ObjectItemQuantity) ID() uint16 {
-	return 65527
+	return 119
 }
 
 func (m *ObjectItemQuantity) Serialize(w Writer) error {
@@ -14360,7 +14360,7 @@ type ObjectEffectCreature struct {
 }
 
 func (m *ObjectEffectCreature) ID() uint16 {
-	return 65479
+	return 71
 }
 
 func (m *ObjectEffectCreature) Serialize(w Writer) error {
@@ -14395,7 +14395,7 @@ type ObjectEffectString struct {
 }
 
 func (m *ObjectEffectString) ID() uint16 {
-	return 65482
+	return 74
 }
 
 func (m *ObjectEffectString) Serialize(w Writer) error {
@@ -14687,7 +14687,7 @@ type ObjectEffectMinMax struct {
 }
 
 func (m *ObjectEffectMinMax) ID() uint16 {
-	return 65490
+	return 82
 }
 
 func (m *ObjectEffectMinMax) Serialize(w Writer) error {
@@ -15343,7 +15343,7 @@ type ObjectEffectDuration struct {
 }
 
 func (m *ObjectEffectDuration) ID() uint16 {
-	return 65483
+	return 75
 }
 
 func (m *ObjectEffectDuration) Serialize(w Writer) error {
@@ -15477,7 +15477,7 @@ type ObjectEffectDate struct {
 }
 
 func (m *ObjectEffectDate) ID() uint16 {
-	return 65480
+	return 72
 }
 
 func (m *ObjectEffectDate) Serialize(w Writer) error {
@@ -15556,7 +15556,7 @@ type ObjectEffectLadder struct {
 }
 
 func (m *ObjectEffectLadder) ID() uint16 {
-	return 65489
+	return 81
 }
 
 func (m *ObjectEffectLadder) Serialize(w Writer) error {
@@ -15643,7 +15643,7 @@ type ObjectEffectDice struct {
 }
 
 func (m *ObjectEffectDice) ID() uint16 {
-	return 65481
+	return 73
 }
 
 func (m *ObjectEffectDice) Serialize(w Writer) error {
@@ -16434,7 +16434,7 @@ type JobExperience struct {
 }
 
 func (m *JobExperience) ID() uint16 {
-	return 65506
+	return 98
 }
 
 func (m *JobExperience) Serialize(w Writer) error {
@@ -16553,7 +16553,7 @@ type JobCrafterDirectorySettings struct {
 }
 
 func (m *JobCrafterDirectorySettings) ID() uint16 {
-	return 65505
+	return 97
 }
 
 func (m *JobCrafterDirectorySettings) Serialize(w Writer) error {
@@ -17410,7 +17410,7 @@ type TaxCollectorBasicInformations struct {
 }
 
 func (m *TaxCollectorBasicInformations) ID() uint16 {
-	return 65504
+	return 96
 }
 
 func (m *TaxCollectorBasicInformations) Serialize(w Writer) error {
@@ -17740,7 +17740,7 @@ type ObjectItemToSell struct {
 }
 
 func (m *ObjectItemToSell) ID() uint16 {
-	return 65528
+	return 120
 }
 
 func (m *ObjectItemToSell) Serialize(w Writer) error {
@@ -18014,7 +18014,7 @@ type BidExchangerObjectInfo struct {
 }
 
 func (m *BidExchangerObjectInfo) ID() uint16 {
-	return 65530
+	return 122
 }
 
 func (m *BidExchangerObjectInfo) Serialize(w Writer) error {
@@ -18127,7 +18127,7 @@ type SellerBuyerDescriptor struct {
 }
 
 func (m *SellerBuyerDescriptor) ID() uint16 {
-	return 65529
+	return 121
 }
 
 func (m *SellerBuyerDescriptor) Serialize(w Writer) error {
@@ -18281,7 +18281,7 @@ type FightExternalInformations struct {
 }
 
 func (m *FightExternalInformations) ID() uint16 {
-	return 65525
+	return 117
 }
 
 func (m *FightExternalInformations) Serialize(w Writer) error {
@@ -19025,7 +19025,7 @@ type GoldItem struct {
 }
 
 func (m *GoldItem) ID() uint16 {
-	return 65531
+	return 123
 }
 
 func (m *GoldItem) Serialize(w Writer) error {
@@ -19480,7 +19480,7 @@ type FightTeamLightInformations struct {
 }
 
 func (m *FightTeamLightInformations) ID() uint16 {
-	return 65523
+	return 115
 }
 
 func (m *FightTeamLightInformations) Serialize(w Writer) error {

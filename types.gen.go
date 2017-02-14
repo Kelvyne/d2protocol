@@ -116,6 +116,8 @@ var types = map[uint16]reflect.Type{
 
 	215: reflect.TypeOf((*CharacterSpellModification)(nil)),
 
+	111: reflect.TypeOf((*HouseInformations)(nil)),
+
 	390: reflect.TypeOf((*AccountHouseInformations)(nil)),
 
 	147: reflect.TypeOf((*TaxCollectorStaticInformations)(nil)),
@@ -144,15 +146,15 @@ var types = map[uint16]reflect.Type{
 
 	132: reflect.TypeOf((*PaddockInformations)(nil)),
 
+	509: reflect.TypeOf((*PaddockInstancesInformations)(nil)),
+
 	130: reflect.TypeOf((*PaddockBuyableInformations)(nil)),
 
-	133: reflect.TypeOf((*PaddockAbandonnedInformations)(nil)),
+	218: reflect.TypeOf((*HouseInformationsInside)(nil)),
 
-	131: reflect.TypeOf((*PaddockPrivateInformations)(nil)),
+	510: reflect.TypeOf((*HouseOnMapInformations)(nil)),
 
-	111: reflect.TypeOf((*HouseInformations)(nil)),
-
-	112: reflect.TypeOf((*HouseInformationsExtended)(nil)),
+	511: reflect.TypeOf((*HouseInstanceInformations)(nil)),
 
 	384: reflect.TypeOf((*GameRolePlayNpcQuestFlag)(nil)),
 
@@ -380,9 +382,9 @@ var types = map[uint16]reflect.Type{
 
 	486: reflect.TypeOf((*StatisticDataByte)(nil)),
 
-	177: reflect.TypeOf((*FightTeamMemberTaxCollectorInformations)(nil)),
-
 	385: reflect.TypeOf((*QuestObjectiveInformations)(nil)),
+
+	177: reflect.TypeOf((*FightTeamMemberTaxCollectorInformations)(nil)),
 
 	430: reflect.TypeOf((*ServerSessionConstant)(nil)),
 
@@ -450,6 +452,8 @@ var types = map[uint16]reflect.Type{
 
 	409: reflect.TypeOf((*HumanOptionGuild)(nil)),
 
+	512: reflect.TypeOf((*HouseGuildedInformations)(nil)),
+
 	72: reflect.TypeOf((*ObjectEffectDate)(nil)),
 
 	81: reflect.TypeOf((*ObjectEffectLadder)(nil)),
@@ -461,6 +465,8 @@ var types = map[uint16]reflect.Type{
 	465: reflect.TypeOf((*TreasureHuntStepDig)(nil)),
 
 	468: reflect.TypeOf((*TreasureHuntStepFollowDirection)(nil)),
+
+	508: reflect.TypeOf((*PaddockGuildedInformations)(nil)),
 
 	437: reflect.TypeOf((*GuildInAllianceVersatileInformations)(nil)),
 
@@ -518,11 +524,11 @@ var types = map[uint16]reflect.Type{
 
 	20: reflect.TypeOf((*FightOptionsInformations)(nil)),
 
+	513: reflect.TypeOf((*FightStartingPositions)(nil)),
+
 	96: reflect.TypeOf((*TaxCollectorBasicInformations)(nil)),
 
 	184: reflect.TypeOf((*MountInformationsForPaddock)(nil)),
-
-	218: reflect.TypeOf((*HouseInformationsInside)(nil)),
 
 	41: reflect.TypeOf((*FightLoot)(nil)),
 
@@ -548,13 +554,13 @@ var types = map[uint16]reflect.Type{
 
 	196: reflect.TypeOf((*JobCrafterDirectoryListEntry)(nil)),
 
+	498: reflect.TypeOf((*HavenBagFurnitureInformation)(nil)),
+
 	397: reflect.TypeOf((*KrosmasterFigure)(nil)),
 
 	63: reflect.TypeOf((*EntityMovementInformations)(nil)),
 
 	134: reflect.TypeOf((*ObjectItemNotInContainer)(nil)),
-
-	498: reflect.TypeOf((*HavenBagFurnitureInformation)(nil)),
 
 	123: reflect.TypeOf((*GoldItem)(nil)),
 
@@ -2334,7 +2340,7 @@ type CharacterCharacteristicsInformations struct {
 
 	ExperienceBonusLimit int64
 
-	Kamas uint32
+	Kamas int64
 
 	StatsPoints uint16
 
@@ -2503,7 +2509,7 @@ func (m *CharacterCharacteristicsInformations) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteUInt32(m.Kamas); err != nil {
+	if err := w.WriteVarInt64(m.Kamas); err != nil {
 		return err
 	}
 
@@ -2836,7 +2842,7 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 
 	m.ExperienceBonusLimit = lexperienceBonusLimit
 
-	lkamas, err := r.ReadUInt32()
+	lkamas, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -3424,7 +3430,7 @@ type DareReward struct {
 
 	MonsterId uint16
 
-	Kamas uint32
+	Kamas int64
 
 	DareId float64
 }
@@ -3443,7 +3449,7 @@ func (m *DareReward) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteUInt32(m.Kamas); err != nil {
+	if err := w.WriteVarInt64(m.Kamas); err != nil {
 		return err
 	}
 
@@ -3470,7 +3476,7 @@ func (m *DareReward) Deserialize(r Reader) error {
 
 	m.MonsterId = lmonsterId
 
-	lkamas, err := r.ReadUInt32()
+	lkamas, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -3731,6 +3737,8 @@ type GuildMember struct {
 	AchievementPoints int32
 
 	Status *PlayerStatus
+
+	HavenBagShared bool
 }
 
 func (m *GuildMember) ID() uint16 {
@@ -3743,11 +3751,17 @@ func (m *GuildMember) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteInt8(m.Breed); err != nil {
+	var bbw0 uint8
+
+	setWrappedFlag(bbw0, 0, m.Sex)
+
+	setWrappedFlag(bbw0, 1, m.HavenBagShared)
+
+	if err := w.WriteUInt8(bbw0); err != nil {
 		return err
 	}
 
-	if err := w.WriteBoolean(m.Sex); err != nil {
+	if err := w.WriteInt8(m.Breed); err != nil {
 		return err
 	}
 
@@ -3808,19 +3822,21 @@ func (m *GuildMember) Deserialize(r Reader) error {
 		return err
 	}
 
+	bbw0, err := r.ReadUInt8()
+	if err != nil {
+		return err
+	}
+
+	m.Sex = getWrappedFlag(bbw0, 0)
+
+	m.HavenBagShared = getWrappedFlag(bbw0, 1)
+
 	lbreed, err := r.ReadInt8()
 	if err != nil {
 		return err
 	}
 
 	m.Breed = lbreed
-
-	lsex, err := r.ReadBoolean()
-	if err != nil {
-		return err
-	}
-
-	m.Sex = lsex
 
 	lrank, err := r.ReadVarUInt16()
 	if err != nil {
@@ -5373,10 +5389,54 @@ func (m *CharacterSpellModification) Deserialize(r Reader) error {
 	return nil
 }
 
-type AccountHouseInformations struct {
+type HouseInformations struct {
 	HouseId uint32
 
 	ModelId uint16
+}
+
+func (m *HouseInformations) ID() uint16 {
+	return 111
+}
+
+func (m *HouseInformations) Serialize(w Writer) error {
+
+	if err := w.WriteVarUInt32(m.HouseId); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarUInt16(m.ModelId); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HouseInformations) Deserialize(r Reader) error {
+
+	lhouseId, err := r.ReadVarUInt32()
+	if err != nil {
+		return err
+	}
+
+	m.HouseId = lhouseId
+
+	lmodelId, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.ModelId = lmodelId
+
+	return nil
+}
+
+type AccountHouseInformations struct {
+	HouseInformations
+
+	InstanceId uint32
+
+	SecondHand bool
 
 	WorldX int16
 
@@ -5393,11 +5453,15 @@ func (m *AccountHouseInformations) ID() uint16 {
 
 func (m *AccountHouseInformations) Serialize(w Writer) error {
 
-	if err := w.WriteVarUInt32(m.HouseId); err != nil {
+	if err := m.HouseInformations.Serialize(w); err != nil {
 		return err
 	}
 
-	if err := w.WriteVarUInt16(m.ModelId); err != nil {
+	if err := w.WriteUInt32(m.InstanceId); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.SecondHand); err != nil {
 		return err
 	}
 
@@ -5422,19 +5486,23 @@ func (m *AccountHouseInformations) Serialize(w Writer) error {
 
 func (m *AccountHouseInformations) Deserialize(r Reader) error {
 
-	lhouseId, err := r.ReadVarUInt32()
+	if err := m.HouseInformations.Deserialize(r); err != nil {
+		return err
+	}
+
+	linstanceId, err := r.ReadUInt32()
 	if err != nil {
 		return err
 	}
 
-	m.HouseId = lhouseId
+	m.InstanceId = linstanceId
 
-	lmodelId, err := r.ReadVarUInt16()
+	lsecondHand, err := r.ReadBoolean()
 	if err != nil {
 		return err
 	}
 
-	m.ModelId = lmodelId
+	m.SecondHand = lsecondHand
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
@@ -6222,10 +6290,76 @@ func (m *PaddockInformations) Deserialize(r Reader) error {
 	return nil
 }
 
-type PaddockBuyableInformations struct {
+type PaddockInstancesInformations struct {
 	PaddockInformations
 
-	Price uint32
+	Paddocks []*PaddockBuyableInformations
+}
+
+func (m *PaddockInstancesInformations) ID() uint16 {
+	return 509
+}
+
+func (m *PaddockInstancesInformations) Serialize(w Writer) error {
+
+	if err := m.PaddockInformations.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(int16(len(m.Paddocks))); err != nil {
+		return err
+	}
+
+	for i := range m.Paddocks {
+
+		if err := w.WriteUInt16(m.Paddocks[i].ID()); err != nil {
+			return err
+		}
+
+		if err := m.Paddocks[i].Serialize(w); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PaddockInstancesInformations) Deserialize(r Reader) error {
+
+	if err := m.PaddockInformations.Deserialize(r); err != nil {
+		return err
+	}
+
+	lpaddocksLen, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.Paddocks = make([]*PaddockBuyableInformations, lpaddocksLen)
+
+	for i := range m.Paddocks {
+
+		typepaddocksID, err := r.ReadUInt16()
+		if err != nil {
+			return err
+		}
+		lpaddocks, err := GetType(typepaddocksID)
+		if err != nil {
+			return err
+		}
+
+		lpaddocks.Deserialize(r)
+
+		m.Paddocks[i] = lpaddocks.(*PaddockBuyableInformations)
+
+	}
+
+	return nil
+}
+
+type PaddockBuyableInformations struct {
+	Price int64
 
 	Locked bool
 }
@@ -6236,11 +6370,7 @@ func (m *PaddockBuyableInformations) ID() uint16 {
 
 func (m *PaddockBuyableInformations) Serialize(w Writer) error {
 
-	if err := m.PaddockInformations.Serialize(w); err != nil {
-		return err
-	}
-
-	if err := w.WriteVarUInt32(m.Price); err != nil {
+	if err := w.WriteVarInt64(m.Price); err != nil {
 		return err
 	}
 
@@ -6253,11 +6383,7 @@ func (m *PaddockBuyableInformations) Serialize(w Writer) error {
 
 func (m *PaddockBuyableInformations) Deserialize(r Reader) error {
 
-	if err := m.PaddockInformations.Deserialize(r); err != nil {
-		return err
-	}
-
-	lprice, err := r.ReadVarUInt32()
+	lprice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -6274,114 +6400,151 @@ func (m *PaddockBuyableInformations) Deserialize(r Reader) error {
 	return nil
 }
 
-type PaddockAbandonnedInformations struct {
-	PaddockBuyableInformations
+type HouseInformationsInside struct {
+	HouseInformations
 
-	GuildId int32
+	InstanceId uint32
+
+	SecondHand bool
+
+	OwnerId int32
+
+	OwnerName string
+
+	WorldX int16
+
+	WorldY int16
+
+	Price int64
+
+	IsLocked bool
 }
 
-func (m *PaddockAbandonnedInformations) ID() uint16 {
-	return 133
+func (m *HouseInformationsInside) ID() uint16 {
+	return 218
 }
 
-func (m *PaddockAbandonnedInformations) Serialize(w Writer) error {
+func (m *HouseInformationsInside) Serialize(w Writer) error {
 
-	if err := m.PaddockBuyableInformations.Serialize(w); err != nil {
+	if err := m.HouseInformations.Serialize(w); err != nil {
 		return err
 	}
 
-	if err := w.WriteInt32(m.GuildId); err != nil {
+	if err := w.WriteUInt32(m.InstanceId); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.SecondHand); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt32(m.OwnerId); err != nil {
+		return err
+	}
+
+	if err := w.WriteString(m.OwnerName); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(m.WorldX); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(m.WorldY); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarInt64(m.Price); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.IsLocked); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *PaddockAbandonnedInformations) Deserialize(r Reader) error {
+func (m *HouseInformationsInside) Deserialize(r Reader) error {
 
-	if err := m.PaddockBuyableInformations.Deserialize(r); err != nil {
+	if err := m.HouseInformations.Deserialize(r); err != nil {
 		return err
 	}
 
-	lguildId, err := r.ReadInt32()
+	linstanceId, err := r.ReadUInt32()
 	if err != nil {
 		return err
 	}
 
-	m.GuildId = lguildId
+	m.InstanceId = linstanceId
+
+	lsecondHand, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.SecondHand = lsecondHand
+
+	lownerId, err := r.ReadInt32()
+	if err != nil {
+		return err
+	}
+
+	m.OwnerId = lownerId
+
+	lownerName, err := r.ReadString()
+	if err != nil {
+		return err
+	}
+
+	m.OwnerName = lownerName
+
+	lworldX, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.WorldX = lworldX
+
+	lworldY, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.WorldY = lworldY
+
+	lprice, err := r.ReadVarInt64()
+	if err != nil {
+		return err
+	}
+
+	m.Price = lprice
+
+	lisLocked, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.IsLocked = lisLocked
 
 	return nil
 }
 
-type PaddockPrivateInformations struct {
-	PaddockAbandonnedInformations
-
-	GuildInfo *GuildInformations
-}
-
-func (m *PaddockPrivateInformations) ID() uint16 {
-	return 131
-}
-
-func (m *PaddockPrivateInformations) Serialize(w Writer) error {
-
-	if err := m.PaddockAbandonnedInformations.Serialize(w); err != nil {
-		return err
-	}
-
-	if err := m.GuildInfo.Serialize(w); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PaddockPrivateInformations) Deserialize(r Reader) error {
-
-	if err := m.PaddockAbandonnedInformations.Deserialize(r); err != nil {
-		return err
-	}
-
-	var lguildInfo GuildInformations
-
-	lguildInfo.Deserialize(r)
-
-	m.GuildInfo = &lguildInfo
-
-	return nil
-}
-
-type HouseInformations struct {
-	HouseId uint32
+type HouseOnMapInformations struct {
+	HouseInformations
 
 	DoorsOnMap []uint32
 
-	OwnerName string
-
-	IsOnSale bool
-
-	IsSaleLocked bool
-
-	ModelId uint16
+	HouseInstances []*HouseInstanceInformations
 }
 
-func (m *HouseInformations) ID() uint16 {
-	return 111
+func (m *HouseOnMapInformations) ID() uint16 {
+	return 510
 }
 
-func (m *HouseInformations) Serialize(w Writer) error {
+func (m *HouseOnMapInformations) Serialize(w Writer) error {
 
-	var bbw0 uint8
-
-	setWrappedFlag(bbw0, 0, m.IsOnSale)
-
-	setWrappedFlag(bbw0, 1, m.IsSaleLocked)
-
-	if err := w.WriteUInt8(bbw0); err != nil {
-		return err
-	}
-
-	if err := w.WriteVarUInt32(m.HouseId); err != nil {
+	if err := m.HouseInformations.Serialize(w); err != nil {
 		return err
 	}
 
@@ -6397,34 +6560,26 @@ func (m *HouseInformations) Serialize(w Writer) error {
 
 	}
 
-	if err := w.WriteString(m.OwnerName); err != nil {
+	if err := w.WriteInt16(int16(len(m.HouseInstances))); err != nil {
 		return err
 	}
 
-	if err := w.WriteVarUInt16(m.ModelId); err != nil {
-		return err
+	for i := range m.HouseInstances {
+
+		if err := m.HouseInstances[i].Serialize(w); err != nil {
+			return err
+		}
+
 	}
 
 	return nil
 }
 
-func (m *HouseInformations) Deserialize(r Reader) error {
+func (m *HouseOnMapInformations) Deserialize(r Reader) error {
 
-	bbw0, err := r.ReadUInt8()
-	if err != nil {
+	if err := m.HouseInformations.Deserialize(r); err != nil {
 		return err
 	}
-
-	m.IsOnSale = getWrappedFlag(bbw0, 0)
-
-	m.IsSaleLocked = getWrappedFlag(bbw0, 1)
-
-	lhouseId, err := r.ReadVarUInt32()
-	if err != nil {
-		return err
-	}
-
-	m.HouseId = lhouseId
 
 	ldoorsOnMapLen, err := r.ReadInt16()
 	if err != nil {
@@ -6444,57 +6599,93 @@ func (m *HouseInformations) Deserialize(r Reader) error {
 
 	}
 
+	lhouseInstancesLen, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.HouseInstances = make([]*HouseInstanceInformations, lhouseInstancesLen)
+
+	for i := range m.HouseInstances {
+
+		var lhouseInstances HouseInstanceInformations
+
+		lhouseInstances.Deserialize(r)
+
+		m.HouseInstances[i] = &lhouseInstances
+
+	}
+
+	return nil
+}
+
+type HouseInstanceInformations struct {
+	InstanceId uint32
+
+	SecondHand bool
+
+	OwnerName string
+
+	IsOnSale bool
+
+	IsSaleLocked bool
+}
+
+func (m *HouseInstanceInformations) ID() uint16 {
+	return 511
+}
+
+func (m *HouseInstanceInformations) Serialize(w Writer) error {
+
+	var bbw0 uint8
+
+	setWrappedFlag(bbw0, 0, m.SecondHand)
+
+	setWrappedFlag(bbw0, 1, m.IsOnSale)
+
+	setWrappedFlag(bbw0, 2, m.IsSaleLocked)
+
+	if err := w.WriteUInt8(bbw0); err != nil {
+		return err
+	}
+
+	if err := w.WriteUInt32(m.InstanceId); err != nil {
+		return err
+	}
+
+	if err := w.WriteString(m.OwnerName); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HouseInstanceInformations) Deserialize(r Reader) error {
+
+	bbw0, err := r.ReadUInt8()
+	if err != nil {
+		return err
+	}
+
+	m.SecondHand = getWrappedFlag(bbw0, 0)
+
+	m.IsOnSale = getWrappedFlag(bbw0, 1)
+
+	m.IsSaleLocked = getWrappedFlag(bbw0, 2)
+
+	linstanceId, err := r.ReadUInt32()
+	if err != nil {
+		return err
+	}
+
+	m.InstanceId = linstanceId
+
 	lownerName, err := r.ReadString()
 	if err != nil {
 		return err
 	}
 
 	m.OwnerName = lownerName
-
-	lmodelId, err := r.ReadVarUInt16()
-	if err != nil {
-		return err
-	}
-
-	m.ModelId = lmodelId
-
-	return nil
-}
-
-type HouseInformationsExtended struct {
-	HouseInformations
-
-	GuildInfo *GuildInformations
-}
-
-func (m *HouseInformationsExtended) ID() uint16 {
-	return 112
-}
-
-func (m *HouseInformationsExtended) Serialize(w Writer) error {
-
-	if err := m.HouseInformations.Serialize(w); err != nil {
-		return err
-	}
-
-	if err := m.GuildInfo.Serialize(w); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *HouseInformationsExtended) Deserialize(r Reader) error {
-
-	if err := m.HouseInformations.Deserialize(r); err != nil {
-		return err
-	}
-
-	var lguildInfo GuildInformations
-
-	lguildInfo.Deserialize(r)
-
-	m.GuildInfo = &lguildInfo
 
 	return nil
 }
@@ -7636,9 +7827,11 @@ func (m *PartyMemberArenaInformations) Deserialize(r Reader) error {
 }
 
 type HouseInformationsForGuild struct {
-	HouseId uint32
+	HouseInformations
 
-	ModelId uint32
+	InstanceId uint32
+
+	SecondHand bool
 
 	OwnerName string
 
@@ -7661,11 +7854,15 @@ func (m *HouseInformationsForGuild) ID() uint16 {
 
 func (m *HouseInformationsForGuild) Serialize(w Writer) error {
 
-	if err := w.WriteVarUInt32(m.HouseId); err != nil {
+	if err := m.HouseInformations.Serialize(w); err != nil {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.ModelId); err != nil {
+	if err := w.WriteUInt32(m.InstanceId); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.SecondHand); err != nil {
 		return err
 	}
 
@@ -7710,19 +7907,23 @@ func (m *HouseInformationsForGuild) Serialize(w Writer) error {
 
 func (m *HouseInformationsForGuild) Deserialize(r Reader) error {
 
-	lhouseId, err := r.ReadVarUInt32()
+	if err := m.HouseInformations.Deserialize(r); err != nil {
+		return err
+	}
+
+	linstanceId, err := r.ReadUInt32()
 	if err != nil {
 		return err
 	}
 
-	m.HouseId = lhouseId
+	m.InstanceId = linstanceId
 
-	lmodelId, err := r.ReadVarUInt32()
+	lsecondHand, err := r.ReadBoolean()
 	if err != nil {
 		return err
 	}
 
-	m.ModelId = lmodelId
+	m.SecondHand = lsecondHand
 
 	lownerName, err := r.ReadString()
 	if err != nil {
@@ -8087,6 +8288,8 @@ type FriendOnlineInformations struct {
 	MoodSmileyId uint16
 
 	Status *PlayerStatus
+
+	HavenBagShared bool
 }
 
 func (m *FriendOnlineInformations) ID() uint16 {
@@ -8096,6 +8299,16 @@ func (m *FriendOnlineInformations) ID() uint16 {
 func (m *FriendOnlineInformations) Serialize(w Writer) error {
 
 	if err := m.FriendInformations.Serialize(w); err != nil {
+		return err
+	}
+
+	var bbw0 uint8
+
+	setWrappedFlag(bbw0, 0, m.Sex)
+
+	setWrappedFlag(bbw0, 1, m.HavenBagShared)
+
+	if err := w.WriteUInt8(bbw0); err != nil {
 		return err
 	}
 
@@ -8116,10 +8329,6 @@ func (m *FriendOnlineInformations) Serialize(w Writer) error {
 	}
 
 	if err := w.WriteInt8(m.Breed); err != nil {
-		return err
-	}
-
-	if err := w.WriteBoolean(m.Sex); err != nil {
 		return err
 	}
 
@@ -8147,6 +8356,15 @@ func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 	if err := m.FriendInformations.Deserialize(r); err != nil {
 		return err
 	}
+
+	bbw0, err := r.ReadUInt8()
+	if err != nil {
+		return err
+	}
+
+	m.Sex = getWrappedFlag(bbw0, 0)
+
+	m.HavenBagShared = getWrappedFlag(bbw0, 1)
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -8182,13 +8400,6 @@ func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 	}
 
 	m.Breed = lbreed
-
-	lsex, err := r.ReadBoolean()
-	if err != nil {
-		return err
-	}
-
-	m.Sex = lsex
 
 	var lguildInfo GuildInformations
 
@@ -9055,7 +9266,7 @@ func (m *GuildInAllianceInformations) Deserialize(r Reader) error {
 type ObjectItemGenericQuantityPrice struct {
 	ObjectItemGenericQuantity
 
-	Price uint32
+	Price int64
 }
 
 func (m *ObjectItemGenericQuantityPrice) ID() uint16 {
@@ -9068,7 +9279,7 @@ func (m *ObjectItemGenericQuantityPrice) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.Price); err != nil {
+	if err := w.WriteVarInt64(m.Price); err != nil {
 		return err
 	}
 
@@ -9081,7 +9292,7 @@ func (m *ObjectItemGenericQuantityPrice) Deserialize(r Reader) error {
 		return err
 	}
 
-	lprice, err := r.ReadVarUInt32()
+	lprice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -10984,7 +11195,7 @@ type PaddockInformationsForSell struct {
 
 	NbObject int8
 
-	Price uint32
+	Price int64
 }
 
 func (m *PaddockInformationsForSell) ID() uint16 {
@@ -11017,7 +11228,7 @@ func (m *PaddockInformationsForSell) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.Price); err != nil {
+	if err := w.WriteVarInt64(m.Price); err != nil {
 		return err
 	}
 
@@ -11068,7 +11279,7 @@ func (m *PaddockInformationsForSell) Deserialize(r Reader) error {
 
 	m.NbObject = lnbObject
 
-	lprice, err := r.ReadVarUInt32()
+	lprice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -11079,6 +11290,10 @@ func (m *PaddockInformationsForSell) Deserialize(r Reader) error {
 }
 
 type HouseInformationsForSell struct {
+	InstanceId uint32
+
+	SecondHand bool
+
 	ModelId uint32
 
 	OwnerName string
@@ -11099,7 +11314,7 @@ type HouseInformationsForSell struct {
 
 	IsLocked bool
 
-	Price uint32
+	Price int64
 }
 
 func (m *HouseInformationsForSell) ID() uint16 {
@@ -11107,6 +11322,14 @@ func (m *HouseInformationsForSell) ID() uint16 {
 }
 
 func (m *HouseInformationsForSell) Serialize(w Writer) error {
+
+	if err := w.WriteUInt32(m.InstanceId); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.SecondHand); err != nil {
+		return err
+	}
 
 	if err := w.WriteVarUInt32(m.ModelId); err != nil {
 		return err
@@ -11156,7 +11379,7 @@ func (m *HouseInformationsForSell) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.Price); err != nil {
+	if err := w.WriteVarInt64(m.Price); err != nil {
 		return err
 	}
 
@@ -11164,6 +11387,20 @@ func (m *HouseInformationsForSell) Serialize(w Writer) error {
 }
 
 func (m *HouseInformationsForSell) Deserialize(r Reader) error {
+
+	linstanceId, err := r.ReadUInt32()
+	if err != nil {
+		return err
+	}
+
+	m.InstanceId = linstanceId
+
+	lsecondHand, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.SecondHand = lsecondHand
 
 	lmodelId, err := r.ReadVarUInt32()
 	if err != nil {
@@ -11246,7 +11483,7 @@ func (m *HouseInformationsForSell) Deserialize(r Reader) error {
 
 	m.IsLocked = lisLocked
 
-	lprice, err := r.ReadVarUInt32()
+	lprice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -12043,9 +12280,9 @@ type DareInformations struct {
 
 	Creator *CharacterBasicMinimalInformations
 
-	SubscriptionFee uint32
+	SubscriptionFee int64
 
-	Jackpot uint32
+	Jackpot int64
 
 	MaxCountWinners uint16
 
@@ -12076,11 +12313,11 @@ func (m *DareInformations) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteUInt32(m.SubscriptionFee); err != nil {
+	if err := w.WriteVarInt64(m.SubscriptionFee); err != nil {
 		return err
 	}
 
-	if err := w.WriteUInt32(m.Jackpot); err != nil {
+	if err := w.WriteVarInt64(m.Jackpot); err != nil {
 		return err
 	}
 
@@ -12138,14 +12375,14 @@ func (m *DareInformations) Deserialize(r Reader) error {
 
 	m.Creator = &lcreator
 
-	lsubscriptionFee, err := r.ReadUInt32()
+	lsubscriptionFee, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
 
 	m.SubscriptionFee = lsubscriptionFee
 
-	ljackpot, err := r.ReadUInt32()
+	ljackpot, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -12788,13 +13025,13 @@ func (m *AdditionalTaxCollectorInformations) Deserialize(r Reader) error {
 type TaxCollectorLootInformations struct {
 	TaxCollectorComplementaryInformations
 
-	Kamas uint32
+	Kamas int64
 
 	Experience int64
 
 	Pods uint32
 
-	ItemsValue uint32
+	ItemsValue int64
 }
 
 func (m *TaxCollectorLootInformations) ID() uint16 {
@@ -12807,7 +13044,7 @@ func (m *TaxCollectorLootInformations) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.Kamas); err != nil {
+	if err := w.WriteVarInt64(m.Kamas); err != nil {
 		return err
 	}
 
@@ -12819,7 +13056,7 @@ func (m *TaxCollectorLootInformations) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.ItemsValue); err != nil {
+	if err := w.WriteVarInt64(m.ItemsValue); err != nil {
 		return err
 	}
 
@@ -12832,7 +13069,7 @@ func (m *TaxCollectorLootInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	lkamas, err := r.ReadVarUInt32()
+	lkamas, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -12853,7 +13090,7 @@ func (m *TaxCollectorLootInformations) Deserialize(r Reader) error {
 
 	m.Pods = lpods
 
-	litemsValue, err := r.ReadVarUInt32()
+	litemsValue, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -14312,6 +14549,80 @@ func (m *StatisticDataByte) Deserialize(r Reader) error {
 	return nil
 }
 
+type QuestObjectiveInformations struct {
+	ObjectiveId uint16
+
+	ObjectiveStatus bool
+
+	DialogParams []string
+}
+
+func (m *QuestObjectiveInformations) ID() uint16 {
+	return 385
+}
+
+func (m *QuestObjectiveInformations) Serialize(w Writer) error {
+
+	if err := w.WriteVarUInt16(m.ObjectiveId); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.ObjectiveStatus); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(int16(len(m.DialogParams))); err != nil {
+		return err
+	}
+
+	for i := range m.DialogParams {
+
+		if err := w.WriteString(m.DialogParams[i]); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
+func (m *QuestObjectiveInformations) Deserialize(r Reader) error {
+
+	lobjectiveId, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.ObjectiveId = lobjectiveId
+
+	lobjectiveStatus, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.ObjectiveStatus = lobjectiveStatus
+
+	ldialogParamsLen, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.DialogParams = make([]string, ldialogParamsLen)
+
+	for i := range m.DialogParams {
+
+		ldialogParams, err := r.ReadString()
+		if err != nil {
+			return err
+		}
+
+		m.DialogParams[i] = ldialogParams
+
+	}
+
+	return nil
+}
+
 type FightTeamMemberTaxCollectorInformations struct {
 	FightTeamMemberInformations
 
@@ -14399,80 +14710,6 @@ func (m *FightTeamMemberTaxCollectorInformations) Deserialize(r Reader) error {
 	}
 
 	m.Uid = luid
-
-	return nil
-}
-
-type QuestObjectiveInformations struct {
-	ObjectiveId uint16
-
-	ObjectiveStatus bool
-
-	DialogParams []string
-}
-
-func (m *QuestObjectiveInformations) ID() uint16 {
-	return 385
-}
-
-func (m *QuestObjectiveInformations) Serialize(w Writer) error {
-
-	if err := w.WriteVarUInt16(m.ObjectiveId); err != nil {
-		return err
-	}
-
-	if err := w.WriteBoolean(m.ObjectiveStatus); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt16(int16(len(m.DialogParams))); err != nil {
-		return err
-	}
-
-	for i := range m.DialogParams {
-
-		if err := w.WriteString(m.DialogParams[i]); err != nil {
-			return err
-		}
-
-	}
-
-	return nil
-}
-
-func (m *QuestObjectiveInformations) Deserialize(r Reader) error {
-
-	lobjectiveId, err := r.ReadVarUInt16()
-	if err != nil {
-		return err
-	}
-
-	m.ObjectiveId = lobjectiveId
-
-	lobjectiveStatus, err := r.ReadBoolean()
-	if err != nil {
-		return err
-	}
-
-	m.ObjectiveStatus = lobjectiveStatus
-
-	ldialogParamsLen, err := r.ReadInt16()
-	if err != nil {
-		return err
-	}
-
-	m.DialogParams = make([]string, ldialogParamsLen)
-
-	for i := range m.DialogParams {
-
-		ldialogParams, err := r.ReadString()
-		if err != nil {
-			return err
-		}
-
-		m.DialogParams[i] = ldialogParams
-
-	}
 
 	return nil
 }
@@ -15990,6 +16227,44 @@ func (m *HumanOptionGuild) Deserialize(r Reader) error {
 	return nil
 }
 
+type HouseGuildedInformations struct {
+	HouseInstanceInformations
+
+	GuildInfo *GuildInformations
+}
+
+func (m *HouseGuildedInformations) ID() uint16 {
+	return 512
+}
+
+func (m *HouseGuildedInformations) Serialize(w Writer) error {
+
+	if err := m.HouseInstanceInformations.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.GuildInfo.Serialize(w); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HouseGuildedInformations) Deserialize(r Reader) error {
+
+	if err := m.HouseInstanceInformations.Deserialize(r); err != nil {
+		return err
+	}
+
+	var lguildInfo GuildInformations
+
+	lguildInfo.Deserialize(r)
+
+	m.GuildInfo = &lguildInfo
+
+	return nil
+}
+
 type ObjectEffectDate struct {
 	ObjectEffect
 
@@ -16311,6 +16586,57 @@ func (m *TreasureHuntStepFollowDirection) Deserialize(r Reader) error {
 	}
 
 	m.MapCount = lmapCount
+
+	return nil
+}
+
+type PaddockGuildedInformations struct {
+	PaddockBuyableInformations
+
+	Deserted bool
+
+	GuildInfo *GuildInformations
+}
+
+func (m *PaddockGuildedInformations) ID() uint16 {
+	return 508
+}
+
+func (m *PaddockGuildedInformations) Serialize(w Writer) error {
+
+	if err := m.PaddockBuyableInformations.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.Deserted); err != nil {
+		return err
+	}
+
+	if err := m.GuildInfo.Serialize(w); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PaddockGuildedInformations) Deserialize(r Reader) error {
+
+	if err := m.PaddockBuyableInformations.Deserialize(r); err != nil {
+		return err
+	}
+
+	ldeserted, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.Deserted = ldeserted
+
+	var lguildInfo GuildInformations
+
+	lguildInfo.Deserialize(r)
+
+	m.GuildInfo = &lguildInfo
 
 	return nil
 }
@@ -18011,6 +18337,86 @@ func (m *FightOptionsInformations) Deserialize(r Reader) error {
 	return nil
 }
 
+type FightStartingPositions struct {
+	PositionsForChallengers []uint16
+
+	PositionsForDefenders []uint16
+}
+
+func (m *FightStartingPositions) ID() uint16 {
+	return 513
+}
+
+func (m *FightStartingPositions) Serialize(w Writer) error {
+
+	if err := w.WriteInt16(int16(len(m.PositionsForChallengers))); err != nil {
+		return err
+	}
+
+	for i := range m.PositionsForChallengers {
+
+		if err := w.WriteVarUInt16(m.PositionsForChallengers[i]); err != nil {
+			return err
+		}
+
+	}
+
+	if err := w.WriteInt16(int16(len(m.PositionsForDefenders))); err != nil {
+		return err
+	}
+
+	for i := range m.PositionsForDefenders {
+
+		if err := w.WriteVarUInt16(m.PositionsForDefenders[i]); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
+func (m *FightStartingPositions) Deserialize(r Reader) error {
+
+	lpositionsForChallengersLen, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.PositionsForChallengers = make([]uint16, lpositionsForChallengersLen)
+
+	for i := range m.PositionsForChallengers {
+
+		lpositionsForChallengers, err := r.ReadVarUInt16()
+		if err != nil {
+			return err
+		}
+
+		m.PositionsForChallengers[i] = lpositionsForChallengers
+
+	}
+
+	lpositionsForDefendersLen, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.PositionsForDefenders = make([]uint16, lpositionsForDefendersLen)
+
+	for i := range m.PositionsForDefenders {
+
+		lpositionsForDefenders, err := r.ReadVarUInt16()
+		if err != nil {
+			return err
+		}
+
+		m.PositionsForDefenders[i] = lpositionsForDefenders
+
+	}
+
+	return nil
+}
+
 type TaxCollectorBasicInformations struct {
 	FirstNameId uint16
 
@@ -18160,130 +18566,10 @@ func (m *MountInformationsForPaddock) Deserialize(r Reader) error {
 	return nil
 }
 
-type HouseInformationsInside struct {
-	HouseId uint32
-
-	ModelId uint16
-
-	OwnerId int32
-
-	OwnerName string
-
-	WorldX int16
-
-	WorldY int16
-
-	Price uint32
-
-	IsLocked bool
-}
-
-func (m *HouseInformationsInside) ID() uint16 {
-	return 218
-}
-
-func (m *HouseInformationsInside) Serialize(w Writer) error {
-
-	if err := w.WriteVarUInt32(m.HouseId); err != nil {
-		return err
-	}
-
-	if err := w.WriteVarUInt16(m.ModelId); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt32(m.OwnerId); err != nil {
-		return err
-	}
-
-	if err := w.WriteString(m.OwnerName); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt16(m.WorldX); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt16(m.WorldY); err != nil {
-		return err
-	}
-
-	if err := w.WriteUInt32(m.Price); err != nil {
-		return err
-	}
-
-	if err := w.WriteBoolean(m.IsLocked); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *HouseInformationsInside) Deserialize(r Reader) error {
-
-	lhouseId, err := r.ReadVarUInt32()
-	if err != nil {
-		return err
-	}
-
-	m.HouseId = lhouseId
-
-	lmodelId, err := r.ReadVarUInt16()
-	if err != nil {
-		return err
-	}
-
-	m.ModelId = lmodelId
-
-	lownerId, err := r.ReadInt32()
-	if err != nil {
-		return err
-	}
-
-	m.OwnerId = lownerId
-
-	lownerName, err := r.ReadString()
-	if err != nil {
-		return err
-	}
-
-	m.OwnerName = lownerName
-
-	lworldX, err := r.ReadInt16()
-	if err != nil {
-		return err
-	}
-
-	m.WorldX = lworldX
-
-	lworldY, err := r.ReadInt16()
-	if err != nil {
-		return err
-	}
-
-	m.WorldY = lworldY
-
-	lprice, err := r.ReadUInt32()
-	if err != nil {
-		return err
-	}
-
-	m.Price = lprice
-
-	lisLocked, err := r.ReadBoolean()
-	if err != nil {
-		return err
-	}
-
-	m.IsLocked = lisLocked
-
-	return nil
-}
-
 type FightLoot struct {
 	Objects []uint16
 
-	Kamas uint32
+	Kamas int64
 }
 
 func (m *FightLoot) ID() uint16 {
@@ -18304,7 +18590,7 @@ func (m *FightLoot) Serialize(w Writer) error {
 
 	}
 
-	if err := w.WriteVarUInt32(m.Kamas); err != nil {
+	if err := w.WriteVarInt64(m.Kamas); err != nil {
 		return err
 	}
 
@@ -18331,7 +18617,7 @@ func (m *FightLoot) Deserialize(r Reader) error {
 
 	}
 
-	lkamas, err := r.ReadVarUInt32()
+	lkamas, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -18352,7 +18638,7 @@ type ObjectItemToSell struct {
 
 	Quantity uint32
 
-	ObjectPrice uint32
+	ObjectPrice int64
 }
 
 func (m *ObjectItemToSell) ID() uint16 {
@@ -18393,7 +18679,7 @@ func (m *ObjectItemToSell) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.ObjectPrice); err != nil {
+	if err := w.WriteVarInt64(m.ObjectPrice); err != nil {
 		return err
 	}
 
@@ -18451,7 +18737,7 @@ func (m *ObjectItemToSell) Deserialize(r Reader) error {
 
 	m.Quantity = lquantity
 
-	lobjectPrice, err := r.ReadVarUInt32()
+	lobjectPrice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -18472,9 +18758,9 @@ type ObjectItemToSellInHumanVendorShop struct {
 
 	Quantity uint32
 
-	ObjectPrice uint32
+	ObjectPrice int64
 
-	PublicPrice uint32
+	PublicPrice int64
 }
 
 func (m *ObjectItemToSellInHumanVendorShop) ID() uint16 {
@@ -18515,11 +18801,11 @@ func (m *ObjectItemToSellInHumanVendorShop) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.ObjectPrice); err != nil {
+	if err := w.WriteVarInt64(m.ObjectPrice); err != nil {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.PublicPrice); err != nil {
+	if err := w.WriteVarInt64(m.PublicPrice); err != nil {
 		return err
 	}
 
@@ -18577,14 +18863,14 @@ func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 
 	m.Quantity = lquantity
 
-	lobjectPrice, err := r.ReadVarUInt32()
+	lobjectPrice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
 
 	m.ObjectPrice = lobjectPrice
 
-	lpublicPrice, err := r.ReadVarUInt32()
+	lpublicPrice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -18638,7 +18924,7 @@ type BidExchangerObjectInfo struct {
 
 	Effects []*ObjectEffect
 
-	Prices []uint32
+	Prices []int64
 }
 
 func (m *BidExchangerObjectInfo) ID() uint16 {
@@ -18673,7 +18959,7 @@ func (m *BidExchangerObjectInfo) Serialize(w Writer) error {
 
 	for i := range m.Prices {
 
-		if err := w.WriteUInt32(m.Prices[i]); err != nil {
+		if err := w.WriteVarInt64(m.Prices[i]); err != nil {
 			return err
 		}
 
@@ -18720,11 +19006,11 @@ func (m *BidExchangerObjectInfo) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Prices = make([]uint32, lpricesLen)
+	m.Prices = make([]int64, lpricesLen)
 
 	for i := range m.Prices {
 
-		lprices, err := r.ReadUInt32()
+		lprices, err := r.ReadVarInt64()
 		if err != nil {
 			return err
 		}
@@ -19009,7 +19295,7 @@ func (m *FightExternalInformations) Deserialize(r Reader) error {
 type ObjectItemToSellInNpcShop struct {
 	ObjectItemMinimalInformation
 
-	ObjectPrice uint32
+	ObjectPrice int64
 
 	BuyCriterion string
 }
@@ -19024,7 +19310,7 @@ func (m *ObjectItemToSellInNpcShop) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.ObjectPrice); err != nil {
+	if err := w.WriteVarInt64(m.ObjectPrice); err != nil {
 		return err
 	}
 
@@ -19041,7 +19327,7 @@ func (m *ObjectItemToSellInNpcShop) Deserialize(r Reader) error {
 		return err
 	}
 
-	lobjectPrice, err := r.ReadVarUInt32()
+	lobjectPrice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
@@ -19363,6 +19649,61 @@ func (m *JobCrafterDirectoryListEntry) Deserialize(r Reader) error {
 	return nil
 }
 
+type HavenBagFurnitureInformation struct {
+	CellId uint16
+
+	FunitureId int32
+
+	Orientation uint8
+}
+
+func (m *HavenBagFurnitureInformation) ID() uint16 {
+	return 498
+}
+
+func (m *HavenBagFurnitureInformation) Serialize(w Writer) error {
+
+	if err := w.WriteVarUInt16(m.CellId); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt32(m.FunitureId); err != nil {
+		return err
+	}
+
+	if err := w.WriteUInt8(m.Orientation); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HavenBagFurnitureInformation) Deserialize(r Reader) error {
+
+	lcellId, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.CellId = lcellId
+
+	lfunitureId, err := r.ReadInt32()
+	if err != nil {
+		return err
+	}
+
+	m.FunitureId = lfunitureId
+
+	lorientation, err := r.ReadUInt8()
+	if err != nil {
+		return err
+	}
+
+	m.Orientation = lorientation
+
+	return nil
+}
+
 type KrosmasterFigure struct {
 	Uid string
 
@@ -19599,65 +19940,10 @@ func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 	return nil
 }
 
-type HavenBagFurnitureInformation struct {
-	CellId uint16
-
-	FunitureId int32
-
-	Orientation uint8
-}
-
-func (m *HavenBagFurnitureInformation) ID() uint16 {
-	return 498
-}
-
-func (m *HavenBagFurnitureInformation) Serialize(w Writer) error {
-
-	if err := w.WriteVarUInt16(m.CellId); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt32(m.FunitureId); err != nil {
-		return err
-	}
-
-	if err := w.WriteUInt8(m.Orientation); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *HavenBagFurnitureInformation) Deserialize(r Reader) error {
-
-	lcellId, err := r.ReadVarUInt16()
-	if err != nil {
-		return err
-	}
-
-	m.CellId = lcellId
-
-	lfunitureId, err := r.ReadInt32()
-	if err != nil {
-		return err
-	}
-
-	m.FunitureId = lfunitureId
-
-	lorientation, err := r.ReadUInt8()
-	if err != nil {
-		return err
-	}
-
-	m.Orientation = lorientation
-
-	return nil
-}
-
 type GoldItem struct {
 	Item
 
-	Sum uint32
+	Sum int64
 }
 
 func (m *GoldItem) ID() uint16 {
@@ -19670,7 +19956,7 @@ func (m *GoldItem) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteVarUInt32(m.Sum); err != nil {
+	if err := w.WriteVarInt64(m.Sum); err != nil {
 		return err
 	}
 
@@ -19683,7 +19969,7 @@ func (m *GoldItem) Deserialize(r Reader) error {
 		return err
 	}
 
-	lsum, err := r.ReadVarUInt32()
+	lsum, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}

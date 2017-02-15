@@ -40,7 +40,7 @@ func ParseMessage(id uint16, packet []byte) (Message, error) {
 
 // GetType returns a new Type corresponding to the given id
 func GetType(id uint16) (Type, error) {
-	t, ok := messages[id]
+	t, ok := types[id]
 	if !ok {
 		return nil, fmt.Errorf("unknown type %v", id)
 	}

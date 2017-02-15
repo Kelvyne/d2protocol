@@ -10,6 +10,8 @@ import (
 
 	"math"
 
+	"sort"
+
 	"github.com/kelvyne/d2protocolparser"
 )
 
@@ -107,6 +109,12 @@ func exportProtocol(w io.Writer, p *d2protocolparser.Protocol) error {
 	return nil
 }
 
+type byId []d2protocolparser.Class
+
+func (a byId) Len() int           { return len(a) }
+func (a byId) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byId) Less(i, j int) bool { return a[i].ProtocolID < a[j].ProtocolID }
+
 func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) error {
 	funcMap := template.FuncMap{
 		"MapName":                 func() string { return name },
@@ -125,6 +133,7 @@ func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) err
 	}
 	const typesTemplateFile = "./class.template"
 	tem := template.Must(template.New("class.template").Funcs(funcMap).ParseFiles(typesTemplateFile))
+	sort.Sort(byId(types))
 	if err := tem.Execute(w, types); err != nil {
 		return err
 	}

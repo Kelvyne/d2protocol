@@ -1,159 +1,25 @@
 package d2protocol
 
-type GameContextActorInformationsIntrf interface {
+type FightResultListEntryIntrf interface {
 	Type
 
-	GetContextualId() float64
-
-	GetLook() EntityLook
-
-	GetDisposition() EntityDispositionInformationsIntrf
-}
-
-func (m *GameContextActorInformations) GetContextualId() float64 {
-	return m.ContextualId
-}
-
-func (m *GameContextActorInformations) GetLook() EntityLook {
-	return m.Look
-}
-
-func (m *GameContextActorInformations) GetDisposition() EntityDispositionInformationsIntrf {
-	return m.Disposition
-}
-
-type GameFightFighterInformationsIntrf interface {
-	Type
-
-	GetGameContextActorInformations() GameContextActorInformations
-
-	GetTeamId() uint8
+	GetOutcome() uint16
 
 	GetWave() uint8
 
-	GetAlive() bool
-
-	GetStats() GameFightMinimalStatsIntrf
-
-	GetPreviousPositions() []uint16
+	GetRewards() FightLoot
 }
 
-func (m *GameFightFighterInformations) GetGameContextActorInformations() GameContextActorInformations {
-	return m.GameContextActorInformations
+func (m *FightResultListEntry) GetOutcome() uint16 {
+	return m.Outcome
 }
 
-func (m *GameFightFighterInformations) GetTeamId() uint8 {
-	return m.TeamId
-}
-
-func (m *GameFightFighterInformations) GetWave() uint8 {
+func (m *FightResultListEntry) GetWave() uint8 {
 	return m.Wave
 }
 
-func (m *GameFightFighterInformations) GetAlive() bool {
-	return m.Alive
-}
-
-func (m *GameFightFighterInformations) GetStats() GameFightMinimalStatsIntrf {
-	return m.Stats
-}
-
-func (m *GameFightFighterInformations) GetPreviousPositions() []uint16 {
-	return m.PreviousPositions
-}
-
-type GameRolePlayActorInformationsIntrf interface {
-	Type
-
-	GetGameContextActorInformations() GameContextActorInformations
-}
-
-func (m *GameRolePlayActorInformations) GetGameContextActorInformations() GameContextActorInformations {
-	return m.GameContextActorInformations
-}
-
-type InteractiveElementIntrf interface {
-	Type
-
-	GetElementId() uint32
-
-	GetElementTypeId() int32
-
-	GetEnabledSkills() []InteractiveElementSkillIntrf
-
-	GetDisabledSkills() []InteractiveElementSkillIntrf
-
-	GetOnCurrentMap() bool
-}
-
-func (m *InteractiveElement) GetElementId() uint32 {
-	return m.ElementId
-}
-
-func (m *InteractiveElement) GetElementTypeId() int32 {
-	return m.ElementTypeId
-}
-
-func (m *InteractiveElement) GetEnabledSkills() []InteractiveElementSkillIntrf {
-	return m.EnabledSkills
-}
-
-func (m *InteractiveElement) GetDisabledSkills() []InteractiveElementSkillIntrf {
-	return m.DisabledSkills
-}
-
-func (m *InteractiveElement) GetOnCurrentMap() bool {
-	return m.OnCurrentMap
-}
-
-type PrismInformationIntrf interface {
-	Type
-
-	GetTypeId() uint8
-
-	GetState() uint8
-
-	GetNextVulnerabilityDate() uint32
-
-	GetPlacementDate() uint32
-
-	GetRewardTokenCount() uint32
-}
-
-func (m *PrismInformation) GetTypeId() uint8 {
-	return m.TypeId
-}
-
-func (m *PrismInformation) GetState() uint8 {
-	return m.State
-}
-
-func (m *PrismInformation) GetNextVulnerabilityDate() uint32 {
-	return m.NextVulnerabilityDate
-}
-
-func (m *PrismInformation) GetPlacementDate() uint32 {
-	return m.PlacementDate
-}
-
-func (m *PrismInformation) GetRewardTokenCount() uint32 {
-	return m.RewardTokenCount
-}
-
-type EntityDispositionInformationsIntrf interface {
-	Type
-
-	GetCellId() int16
-
-	GetDirection() uint8
-}
-
-func (m *EntityDispositionInformations) GetCellId() int16 {
-	return m.CellId
-}
-
-func (m *EntityDispositionInformations) GetDirection() uint8 {
-	return m.Direction
+func (m *FightResultListEntry) GetRewards() FightLoot {
+	return m.Rewards
 }
 
 type GameFightMinimalStatsIntrf interface {
@@ -394,102 +260,30 @@ func (m *GameFightMinimalStats) GetInvisibilityState() uint8 {
 	return m.InvisibilityState
 }
 
-type InteractiveElementSkillIntrf interface {
+type FightTeamInformationsIntrf interface {
 	Type
 
-	GetSkillId() uint32
+	GetAbstractFightTeamInformations() AbstractFightTeamInformations
 
-	GetSkillInstanceUid() uint32
+	GetTeamMembers() []FightTeamMemberInformationsIntrf
 }
 
-func (m *InteractiveElementSkill) GetSkillId() uint32 {
-	return m.SkillId
+func (m *FightTeamInformations) GetAbstractFightTeamInformations() AbstractFightTeamInformations {
+	return m.AbstractFightTeamInformations
 }
 
-func (m *InteractiveElementSkill) GetSkillInstanceUid() uint32 {
-	return m.SkillInstanceUid
+func (m *FightTeamInformations) GetTeamMembers() []FightTeamMemberInformationsIntrf {
+	return m.TeamMembers
 }
 
-type ObjectEffectIntrf interface {
+type FightTeamMemberInformationsIntrf interface {
 	Type
 
-	GetActionId() uint16
+	GetId() float64
 }
 
-func (m *ObjectEffect) GetActionId() uint16 {
-	return m.ActionId
-}
-
-type PortalInformationIntrf interface {
-	Type
-
-	GetPortalId() int32
-
-	GetAreaId() int16
-}
-
-func (m *PortalInformation) GetPortalId() int32 {
-	return m.PortalId
-}
-
-func (m *PortalInformation) GetAreaId() int16 {
-	return m.AreaId
-}
-
-type GroupMonsterStaticInformationsIntrf interface {
-	Type
-
-	GetMainCreatureLightInfos() MonsterInGroupLightInformations
-
-	GetUnderlings() []MonsterInGroupInformations
-}
-
-func (m *GroupMonsterStaticInformations) GetMainCreatureLightInfos() MonsterInGroupLightInformations {
-	return m.MainCreatureLightInfos
-}
-
-func (m *GroupMonsterStaticInformations) GetUnderlings() []MonsterInGroupInformations {
-	return m.Underlings
-}
-
-type QuestActiveInformationsIntrf interface {
-	Type
-
-	GetQuestId() uint16
-}
-
-func (m *QuestActiveInformations) GetQuestId() uint16 {
-	return m.QuestId
-}
-
-type SkillActionDescriptionIntrf interface {
-	Type
-
-	GetSkillId() uint16
-}
-
-func (m *SkillActionDescription) GetSkillId() uint16 {
-	return m.SkillId
-}
-
-type HumanOptionIntrf interface {
-	Type
-}
-
-type CharacterMinimalPlusLookInformationsIntrf interface {
-	Type
-
-	GetCharacterMinimalInformations() CharacterMinimalInformations
-
-	GetEntityLook() EntityLook
-}
-
-func (m *CharacterMinimalPlusLookInformations) GetCharacterMinimalInformations() CharacterMinimalInformations {
-	return m.CharacterMinimalInformations
-}
-
-func (m *CharacterMinimalPlusLookInformations) GetEntityLook() EntityLook {
-	return m.EntityLook
+func (m *FightTeamMemberInformations) GetId() float64 {
+	return m.Id
 }
 
 type CharacterBaseInformationsIntrf interface {
@@ -514,140 +308,150 @@ func (m *CharacterBaseInformations) GetSex() bool {
 	return m.Sex
 }
 
-type HouseInformationsIntrf interface {
+type EntityDispositionInformationsIntrf interface {
 	Type
 
-	GetHouseId() uint32
+	GetCellId() int16
 
-	GetModelId() uint16
+	GetDirection() uint8
 }
 
-func (m *HouseInformations) GetHouseId() uint32 {
-	return m.HouseId
+func (m *EntityDispositionInformations) GetCellId() int16 {
+	return m.CellId
 }
 
-func (m *HouseInformations) GetModelId() uint16 {
-	return m.ModelId
+func (m *EntityDispositionInformations) GetDirection() uint8 {
+	return m.Direction
 }
 
-type TaxCollectorStaticInformationsIntrf interface {
+type ObjectEffectIntrf interface {
 	Type
 
-	GetFirstNameId() uint16
-
-	GetLastNameId() uint16
-
-	GetGuildIdentity() GuildInformations
+	GetActionId() uint16
 }
 
-func (m *TaxCollectorStaticInformations) GetFirstNameId() uint16 {
-	return m.FirstNameId
+func (m *ObjectEffect) GetActionId() uint16 {
+	return m.ActionId
 }
 
-func (m *TaxCollectorStaticInformations) GetLastNameId() uint16 {
-	return m.LastNameId
-}
-
-func (m *TaxCollectorStaticInformations) GetGuildIdentity() GuildInformations {
-	return m.GuildIdentity
-}
-
-type PlayerStatusIntrf interface {
+type FriendSpouseInformationsIntrf interface {
 	Type
 
-	GetStatusId() uint8
+	GetSpouseAccountId() uint32
+
+	GetSpouseId() int64
+
+	GetSpouseName() string
+
+	GetSpouseLevel() uint8
+
+	GetBreed() int8
+
+	GetSex() int8
+
+	GetSpouseEntityLook() EntityLook
+
+	GetGuildInfo() GuildInformations
+
+	GetAlignmentSide() int8
 }
 
-func (m *PlayerStatus) GetStatusId() uint8 {
-	return m.StatusId
+func (m *FriendSpouseInformations) GetSpouseAccountId() uint32 {
+	return m.SpouseAccountId
 }
 
-type HumanInformationsIntrf interface {
-	Type
-
-	GetRestrictions() ActorRestrictionsInformations
-
-	GetSex() bool
-
-	GetOptions() []HumanOptionIntrf
+func (m *FriendSpouseInformations) GetSpouseId() int64 {
+	return m.SpouseId
 }
 
-func (m *HumanInformations) GetRestrictions() ActorRestrictionsInformations {
-	return m.Restrictions
+func (m *FriendSpouseInformations) GetSpouseName() string {
+	return m.SpouseName
 }
 
-func (m *HumanInformations) GetSex() bool {
+func (m *FriendSpouseInformations) GetSpouseLevel() uint8 {
+	return m.SpouseLevel
+}
+
+func (m *FriendSpouseInformations) GetBreed() int8 {
+	return m.Breed
+}
+
+func (m *FriendSpouseInformations) GetSex() int8 {
 	return m.Sex
 }
 
-func (m *HumanInformations) GetOptions() []HumanOptionIntrf {
-	return m.Options
+func (m *FriendSpouseInformations) GetSpouseEntityLook() EntityLook {
+	return m.SpouseEntityLook
 }
 
-type PaddockBuyableInformationsIntrf interface {
+func (m *FriendSpouseInformations) GetGuildInfo() GuildInformations {
+	return m.GuildInfo
+}
+
+func (m *FriendSpouseInformations) GetAlignmentSide() int8 {
+	return m.AlignmentSide
+}
+
+type FriendInformationsIntrf interface {
 	Type
 
-	GetPrice() int64
+	GetAbstractContactInformations() AbstractContactInformations
 
-	GetLocked() bool
+	GetPlayerState() uint8
+
+	GetLastConnection() uint16
+
+	GetAchievementPoints() int32
 }
 
-func (m *PaddockBuyableInformations) GetPrice() int64 {
-	return m.Price
+func (m *FriendInformations) GetAbstractContactInformations() AbstractContactInformations {
+	return m.AbstractContactInformations
 }
 
-func (m *PaddockBuyableInformations) GetLocked() bool {
-	return m.Locked
+func (m *FriendInformations) GetPlayerState() uint8 {
+	return m.PlayerState
 }
 
-type HouseInstanceInformationsIntrf interface {
+func (m *FriendInformations) GetLastConnection() uint16 {
+	return m.LastConnection
+}
+
+func (m *FriendInformations) GetAchievementPoints() int32 {
+	return m.AchievementPoints
+}
+
+type InteractiveElementIntrf interface {
 	Type
 
-	GetInstanceId() uint32
+	GetElementId() uint32
 
-	GetSecondHand() bool
+	GetElementTypeId() int32
 
-	GetOwnerName() string
+	GetEnabledSkills() []InteractiveElementSkillIntrf
 
-	GetIsOnSale() bool
+	GetDisabledSkills() []InteractiveElementSkillIntrf
 
-	GetIsSaleLocked() bool
+	GetOnCurrentMap() bool
 }
 
-func (m *HouseInstanceInformations) GetInstanceId() uint32 {
-	return m.InstanceId
+func (m *InteractiveElement) GetElementId() uint32 {
+	return m.ElementId
 }
 
-func (m *HouseInstanceInformations) GetSecondHand() bool {
-	return m.SecondHand
+func (m *InteractiveElement) GetElementTypeId() int32 {
+	return m.ElementTypeId
 }
 
-func (m *HouseInstanceInformations) GetOwnerName() string {
-	return m.OwnerName
+func (m *InteractiveElement) GetEnabledSkills() []InteractiveElementSkillIntrf {
+	return m.EnabledSkills
 }
 
-func (m *HouseInstanceInformations) GetIsOnSale() bool {
-	return m.IsOnSale
+func (m *InteractiveElement) GetDisabledSkills() []InteractiveElementSkillIntrf {
+	return m.DisabledSkills
 }
 
-func (m *HouseInstanceInformations) GetIsSaleLocked() bool {
-	return m.IsSaleLocked
-}
-
-type FightTeamInformationsIntrf interface {
-	Type
-
-	GetAbstractFightTeamInformations() AbstractFightTeamInformations
-
-	GetTeamMembers() []FightTeamMemberInformationsIntrf
-}
-
-func (m *FightTeamInformations) GetAbstractFightTeamInformations() AbstractFightTeamInformations {
-	return m.AbstractFightTeamInformations
-}
-
-func (m *FightTeamInformations) GetTeamMembers() []FightTeamMemberInformationsIntrf {
-	return m.TeamMembers
+func (m *InteractiveElement) GetOnCurrentMap() bool {
+	return m.OnCurrentMap
 }
 
 type PartyMemberInformationsIntrf interface {
@@ -732,14 +536,14 @@ func (m *PartyMemberInformations) GetCompanions() []PartyCompanionMemberInformat
 	return m.Companions
 }
 
-type FightTeamMemberInformationsIntrf interface {
+type SkillActionDescriptionIntrf interface {
 	Type
 
-	GetId() float64
+	GetSkillId() uint16
 }
 
-func (m *FightTeamMemberInformations) GetId() float64 {
-	return m.Id
+func (m *SkillActionDescription) GetSkillId() uint16 {
+	return m.SkillId
 }
 
 type IgnoredInformationsIntrf interface {
@@ -752,32 +556,184 @@ func (m *IgnoredInformations) GetAbstractContactInformations() AbstractContactIn
 	return m.AbstractContactInformations
 }
 
-type FriendInformationsIntrf interface {
+type HouseInformationsIntrf interface {
 	Type
 
-	GetAbstractContactInformations() AbstractContactInformations
+	GetHouseId() uint32
 
-	GetPlayerState() uint8
-
-	GetLastConnection() uint16
-
-	GetAchievementPoints() int32
+	GetModelId() uint16
 }
 
-func (m *FriendInformations) GetAbstractContactInformations() AbstractContactInformations {
-	return m.AbstractContactInformations
+func (m *HouseInformations) GetHouseId() uint32 {
+	return m.HouseId
 }
 
-func (m *FriendInformations) GetPlayerState() uint8 {
-	return m.PlayerState
+func (m *HouseInformations) GetModelId() uint16 {
+	return m.ModelId
 }
 
-func (m *FriendInformations) GetLastConnection() uint16 {
-	return m.LastConnection
+type PaddockBuyableInformationsIntrf interface {
+	Type
+
+	GetPrice() int64
+
+	GetLocked() bool
 }
 
-func (m *FriendInformations) GetAchievementPoints() int32 {
-	return m.AchievementPoints
+func (m *PaddockBuyableInformations) GetPrice() int64 {
+	return m.Price
+}
+
+func (m *PaddockBuyableInformations) GetLocked() bool {
+	return m.Locked
+}
+
+type GroupMonsterStaticInformationsIntrf interface {
+	Type
+
+	GetMainCreatureLightInfos() MonsterInGroupLightInformations
+
+	GetUnderlings() []MonsterInGroupInformations
+}
+
+func (m *GroupMonsterStaticInformations) GetMainCreatureLightInfos() MonsterInGroupLightInformations {
+	return m.MainCreatureLightInfos
+}
+
+func (m *GroupMonsterStaticInformations) GetUnderlings() []MonsterInGroupInformations {
+	return m.Underlings
+}
+
+type GameRolePlayActorInformationsIntrf interface {
+	Type
+
+	GetGameContextActorInformations() GameContextActorInformations
+}
+
+func (m *GameRolePlayActorInformations) GetGameContextActorInformations() GameContextActorInformations {
+	return m.GameContextActorInformations
+}
+
+type GameFightFighterInformationsIntrf interface {
+	Type
+
+	GetGameContextActorInformations() GameContextActorInformations
+
+	GetTeamId() uint8
+
+	GetWave() uint8
+
+	GetAlive() bool
+
+	GetStats() GameFightMinimalStatsIntrf
+
+	GetPreviousPositions() []uint16
+}
+
+func (m *GameFightFighterInformations) GetGameContextActorInformations() GameContextActorInformations {
+	return m.GameContextActorInformations
+}
+
+func (m *GameFightFighterInformations) GetTeamId() uint8 {
+	return m.TeamId
+}
+
+func (m *GameFightFighterInformations) GetWave() uint8 {
+	return m.Wave
+}
+
+func (m *GameFightFighterInformations) GetAlive() bool {
+	return m.Alive
+}
+
+func (m *GameFightFighterInformations) GetStats() GameFightMinimalStatsIntrf {
+	return m.Stats
+}
+
+func (m *GameFightFighterInformations) GetPreviousPositions() []uint16 {
+	return m.PreviousPositions
+}
+
+type TaxCollectorStaticInformationsIntrf interface {
+	Type
+
+	GetFirstNameId() uint16
+
+	GetLastNameId() uint16
+
+	GetGuildIdentity() GuildInformations
+}
+
+func (m *TaxCollectorStaticInformations) GetFirstNameId() uint16 {
+	return m.FirstNameId
+}
+
+func (m *TaxCollectorStaticInformations) GetLastNameId() uint16 {
+	return m.LastNameId
+}
+
+func (m *TaxCollectorStaticInformations) GetGuildIdentity() GuildInformations {
+	return m.GuildIdentity
+}
+
+type GameContextActorInformationsIntrf interface {
+	Type
+
+	GetContextualId() float64
+
+	GetLook() EntityLook
+
+	GetDisposition() EntityDispositionInformationsIntrf
+}
+
+func (m *GameContextActorInformations) GetContextualId() float64 {
+	return m.ContextualId
+}
+
+func (m *GameContextActorInformations) GetLook() EntityLook {
+	return m.Look
+}
+
+func (m *GameContextActorInformations) GetDisposition() EntityDispositionInformationsIntrf {
+	return m.Disposition
+}
+
+type HumanInformationsIntrf interface {
+	Type
+
+	GetRestrictions() ActorRestrictionsInformations
+
+	GetSex() bool
+
+	GetOptions() []HumanOptionIntrf
+}
+
+func (m *HumanInformations) GetRestrictions() ActorRestrictionsInformations {
+	return m.Restrictions
+}
+
+func (m *HumanInformations) GetSex() bool {
+	return m.Sex
+}
+
+func (m *HumanInformations) GetOptions() []HumanOptionIntrf {
+	return m.Options
+}
+
+type CharacterMinimalPlusLookInformationsIntrf interface {
+	Type
+
+	GetCharacterMinimalInformations() CharacterMinimalInformations
+
+	GetEntityLook() EntityLook
+}
+
+func (m *CharacterMinimalPlusLookInformations) GetCharacterMinimalInformations() CharacterMinimalInformations {
+	return m.CharacterMinimalInformations
+}
+
+func (m *CharacterMinimalPlusLookInformations) GetEntityLook() EntityLook {
+	return m.EntityLook
 }
 
 type TaxCollectorInformationsIntrf interface {
@@ -844,46 +800,24 @@ func (m *TaxCollectorInformations) GetComplements() []TaxCollectorComplementaryI
 	return m.Complements
 }
 
-type AbstractSocialGroupInfosIntrf interface {
-	Type
-}
-
-type GuildFactSheetInformationsIntrf interface {
+type MapCoordinatesIntrf interface {
 	Type
 
-	GetGuildInformations() GuildInformations
+	GetWorldX() int16
 
-	GetLeaderId() int64
-
-	GetNbMembers() uint16
+	GetWorldY() int16
 }
 
-func (m *GuildFactSheetInformations) GetGuildInformations() GuildInformations {
-	return m.GuildInformations
+func (m *MapCoordinates) GetWorldX() int16 {
+	return m.WorldX
 }
 
-func (m *GuildFactSheetInformations) GetLeaderId() int64 {
-	return m.LeaderId
+func (m *MapCoordinates) GetWorldY() int16 {
+	return m.WorldY
 }
 
-func (m *GuildFactSheetInformations) GetNbMembers() uint16 {
-	return m.NbMembers
-}
-
-type PrismSubareaEmptyInfoIntrf interface {
+type FightResultAdditionalDataIntrf interface {
 	Type
-
-	GetSubAreaId() uint16
-
-	GetAllianceId() uint32
-}
-
-func (m *PrismSubareaEmptyInfo) GetSubAreaId() uint16 {
-	return m.SubAreaId
-}
-
-func (m *PrismSubareaEmptyInfo) GetAllianceId() uint32 {
-	return m.AllianceId
 }
 
 type AbstractFightDispellableEffectIntrf interface {
@@ -932,164 +866,20 @@ func (m *AbstractFightDispellableEffect) GetParentBoostUid() uint32 {
 	return m.ParentBoostUid
 }
 
-type FightResultListEntryIntrf interface {
+type InteractiveElementSkillIntrf interface {
 	Type
 
-	GetOutcome() uint16
+	GetSkillId() uint32
 
-	GetWave() uint8
-
-	GetRewards() FightLoot
+	GetSkillInstanceUid() uint32
 }
 
-func (m *FightResultListEntry) GetOutcome() uint16 {
-	return m.Outcome
+func (m *InteractiveElementSkill) GetSkillId() uint32 {
+	return m.SkillId
 }
 
-func (m *FightResultListEntry) GetWave() uint8 {
-	return m.Wave
-}
-
-func (m *FightResultListEntry) GetRewards() FightLoot {
-	return m.Rewards
-}
-
-type IdolIntrf interface {
-	Type
-
-	GetId() uint16
-
-	GetXpBonusPercent() uint16
-
-	GetDropBonusPercent() uint16
-}
-
-func (m *Idol) GetId() uint16 {
-	return m.Id
-}
-
-func (m *Idol) GetXpBonusPercent() uint16 {
-	return m.XpBonusPercent
-}
-
-func (m *Idol) GetDropBonusPercent() uint16 {
-	return m.DropBonusPercent
-}
-
-type GuildVersatileInformationsIntrf interface {
-	Type
-
-	GetGuildId() uint32
-
-	GetLeaderId() int64
-
-	GetGuildLevel() uint8
-
-	GetNbMembers() uint8
-}
-
-func (m *GuildVersatileInformations) GetGuildId() uint32 {
-	return m.GuildId
-}
-
-func (m *GuildVersatileInformations) GetLeaderId() int64 {
-	return m.LeaderId
-}
-
-func (m *GuildVersatileInformations) GetGuildLevel() uint8 {
-	return m.GuildLevel
-}
-
-func (m *GuildVersatileInformations) GetNbMembers() uint8 {
-	return m.NbMembers
-}
-
-type AllianceFactSheetInformationsIntrf interface {
-	Type
-
-	GetAllianceInformations() AllianceInformations
-
-	GetCreationDate() uint32
-}
-
-func (m *AllianceFactSheetInformations) GetAllianceInformations() AllianceInformations {
-	return m.AllianceInformations
-}
-
-func (m *AllianceFactSheetInformations) GetCreationDate() uint32 {
-	return m.CreationDate
-}
-
-type TaxCollectorComplementaryInformationsIntrf interface {
-	Type
-}
-
-type FriendSpouseInformationsIntrf interface {
-	Type
-
-	GetSpouseAccountId() uint32
-
-	GetSpouseId() int64
-
-	GetSpouseName() string
-
-	GetSpouseLevel() uint8
-
-	GetBreed() int8
-
-	GetSex() int8
-
-	GetSpouseEntityLook() EntityLook
-
-	GetGuildInfo() GuildInformations
-
-	GetAlignmentSide() int8
-}
-
-func (m *FriendSpouseInformations) GetSpouseAccountId() uint32 {
-	return m.SpouseAccountId
-}
-
-func (m *FriendSpouseInformations) GetSpouseId() int64 {
-	return m.SpouseId
-}
-
-func (m *FriendSpouseInformations) GetSpouseName() string {
-	return m.SpouseName
-}
-
-func (m *FriendSpouseInformations) GetSpouseLevel() uint8 {
-	return m.SpouseLevel
-}
-
-func (m *FriendSpouseInformations) GetBreed() int8 {
-	return m.Breed
-}
-
-func (m *FriendSpouseInformations) GetSex() int8 {
-	return m.Sex
-}
-
-func (m *FriendSpouseInformations) GetSpouseEntityLook() EntityLook {
-	return m.SpouseEntityLook
-}
-
-func (m *FriendSpouseInformations) GetGuildInfo() GuildInformations {
-	return m.GuildInfo
-}
-
-func (m *FriendSpouseInformations) GetAlignmentSide() int8 {
-	return m.AlignmentSide
-}
-
-type ShortcutIntrf interface {
-	Type
-
-	GetSlot() uint8
-}
-
-func (m *Shortcut) GetSlot() uint8 {
-	return m.Slot
+func (m *InteractiveElementSkill) GetSkillInstanceUid() uint32 {
+	return m.SkillInstanceUid
 }
 
 type UpdateMountBoostIntrf interface {
@@ -1102,8 +892,24 @@ func (m *UpdateMountBoost) GetType() uint8 {
 	return m.Type
 }
 
-type StatisticDataIntrf interface {
+type ShortcutIntrf interface {
 	Type
+
+	GetSlot() uint8
+}
+
+func (m *Shortcut) GetSlot() uint8 {
+	return m.Slot
+}
+
+type QuestActiveInformationsIntrf interface {
+	Type
+
+	GetQuestId() uint16
+}
+
+func (m *QuestActiveInformations) GetQuestId() uint16 {
+	return m.QuestId
 }
 
 type QuestObjectiveInformationsIntrf interface {
@@ -1128,54 +934,8 @@ func (m *QuestObjectiveInformations) GetDialogParams() []string {
 	return m.DialogParams
 }
 
-type ServerSessionConstantIntrf interface {
+type HumanOptionIntrf interface {
 	Type
-
-	GetId() uint16
-}
-
-func (m *ServerSessionConstant) GetId() uint16 {
-	return m.Id
-}
-
-type MapCoordinatesIntrf interface {
-	Type
-
-	GetWorldX() int16
-
-	GetWorldY() int16
-}
-
-func (m *MapCoordinates) GetWorldX() int16 {
-	return m.WorldX
-}
-
-func (m *MapCoordinates) GetWorldY() int16 {
-	return m.WorldY
-}
-
-type TreasureHuntStepIntrf interface {
-	Type
-}
-
-type FightResultAdditionalDataIntrf interface {
-	Type
-}
-
-type PartyIdolIntrf interface {
-	Type
-
-	GetIdol() Idol
-
-	GetOwnersIds() []int64
-}
-
-func (m *PartyIdol) GetIdol() Idol {
-	return m.Idol
-}
-
-func (m *PartyIdol) GetOwnersIds() []int64 {
-	return m.OwnersIds
 }
 
 type GameFightFighterLightInformationsIntrf interface {
@@ -1216,4 +976,244 @@ func (m *GameFightFighterLightInformations) GetSex() bool {
 
 func (m *GameFightFighterLightInformations) GetAlive() bool {
 	return m.Alive
+}
+
+type PlayerStatusIntrf interface {
+	Type
+
+	GetStatusId() uint8
+}
+
+func (m *PlayerStatus) GetStatusId() uint8 {
+	return m.StatusId
+}
+
+type AbstractSocialGroupInfosIntrf interface {
+	Type
+}
+
+type AllianceFactSheetInformationsIntrf interface {
+	Type
+
+	GetAllianceInformations() AllianceInformations
+
+	GetCreationDate() uint32
+}
+
+func (m *AllianceFactSheetInformations) GetAllianceInformations() AllianceInformations {
+	return m.AllianceInformations
+}
+
+func (m *AllianceFactSheetInformations) GetCreationDate() uint32 {
+	return m.CreationDate
+}
+
+type GuildFactSheetInformationsIntrf interface {
+	Type
+
+	GetGuildInformations() GuildInformations
+
+	GetLeaderId() int64
+
+	GetNbMembers() uint16
+}
+
+func (m *GuildFactSheetInformations) GetGuildInformations() GuildInformations {
+	return m.GuildInformations
+}
+
+func (m *GuildFactSheetInformations) GetLeaderId() int64 {
+	return m.LeaderId
+}
+
+func (m *GuildFactSheetInformations) GetNbMembers() uint16 {
+	return m.NbMembers
+}
+
+type PrismInformationIntrf interface {
+	Type
+
+	GetTypeId() uint8
+
+	GetState() uint8
+
+	GetNextVulnerabilityDate() uint32
+
+	GetPlacementDate() uint32
+
+	GetRewardTokenCount() uint32
+}
+
+func (m *PrismInformation) GetTypeId() uint8 {
+	return m.TypeId
+}
+
+func (m *PrismInformation) GetState() uint8 {
+	return m.State
+}
+
+func (m *PrismInformation) GetNextVulnerabilityDate() uint32 {
+	return m.NextVulnerabilityDate
+}
+
+func (m *PrismInformation) GetPlacementDate() uint32 {
+	return m.PlacementDate
+}
+
+func (m *PrismInformation) GetRewardTokenCount() uint32 {
+	return m.RewardTokenCount
+}
+
+type ServerSessionConstantIntrf interface {
+	Type
+
+	GetId() uint16
+}
+
+func (m *ServerSessionConstant) GetId() uint16 {
+	return m.Id
+}
+
+type GuildVersatileInformationsIntrf interface {
+	Type
+
+	GetGuildId() uint32
+
+	GetLeaderId() int64
+
+	GetGuildLevel() uint8
+
+	GetNbMembers() uint8
+}
+
+func (m *GuildVersatileInformations) GetGuildId() uint32 {
+	return m.GuildId
+}
+
+func (m *GuildVersatileInformations) GetLeaderId() int64 {
+	return m.LeaderId
+}
+
+func (m *GuildVersatileInformations) GetGuildLevel() uint8 {
+	return m.GuildLevel
+}
+
+func (m *GuildVersatileInformations) GetNbMembers() uint8 {
+	return m.NbMembers
+}
+
+type PrismSubareaEmptyInfoIntrf interface {
+	Type
+
+	GetSubAreaId() uint16
+
+	GetAllianceId() uint32
+}
+
+func (m *PrismSubareaEmptyInfo) GetSubAreaId() uint16 {
+	return m.SubAreaId
+}
+
+func (m *PrismSubareaEmptyInfo) GetAllianceId() uint32 {
+	return m.AllianceId
+}
+
+type TaxCollectorComplementaryInformationsIntrf interface {
+	Type
+}
+
+type TreasureHuntStepIntrf interface {
+	Type
+}
+
+type PortalInformationIntrf interface {
+	Type
+
+	GetPortalId() int32
+
+	GetAreaId() int16
+}
+
+func (m *PortalInformation) GetPortalId() int32 {
+	return m.PortalId
+}
+
+func (m *PortalInformation) GetAreaId() int16 {
+	return m.AreaId
+}
+
+type StatisticDataIntrf interface {
+	Type
+}
+
+type IdolIntrf interface {
+	Type
+
+	GetId() uint16
+
+	GetXpBonusPercent() uint16
+
+	GetDropBonusPercent() uint16
+}
+
+func (m *Idol) GetId() uint16 {
+	return m.Id
+}
+
+func (m *Idol) GetXpBonusPercent() uint16 {
+	return m.XpBonusPercent
+}
+
+func (m *Idol) GetDropBonusPercent() uint16 {
+	return m.DropBonusPercent
+}
+
+type PartyIdolIntrf interface {
+	Type
+
+	GetIdol() Idol
+
+	GetOwnersIds() []int64
+}
+
+func (m *PartyIdol) GetIdol() Idol {
+	return m.Idol
+}
+
+func (m *PartyIdol) GetOwnersIds() []int64 {
+	return m.OwnersIds
+}
+
+type HouseInstanceInformationsIntrf interface {
+	Type
+
+	GetInstanceId() uint32
+
+	GetSecondHand() bool
+
+	GetOwnerName() string
+
+	GetIsOnSale() bool
+
+	GetIsSaleLocked() bool
+}
+
+func (m *HouseInstanceInformations) GetInstanceId() uint32 {
+	return m.InstanceId
+}
+
+func (m *HouseInstanceInformations) GetSecondHand() bool {
+	return m.SecondHand
+}
+
+func (m *HouseInstanceInformations) GetOwnerName() string {
+	return m.OwnerName
+}
+
+func (m *HouseInstanceInformations) GetIsOnSale() bool {
+	return m.IsOnSale
+}
+
+func (m *HouseInstanceInformations) GetIsSaleLocked() bool {
+	return m.IsSaleLocked
 }

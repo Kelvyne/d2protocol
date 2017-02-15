@@ -88,6 +88,7 @@ func exportInterfaces(w io.Writer, types []d2protocolparser.Class, messages []d2
 		"ToInterfaceName": toInterfaceName,
 		"ToGetterName":    toGetterName,
 		"EffectiveType":   getEffectiveType,
+		"TypeHasParent":   typeHasParent,
 	}
 	const interfacesTemplateFile = "./interfaces.template"
 	tem := template.Must(template.New("interfaces.template").Funcs(funcMap).ParseFiles(interfacesTemplateFile))

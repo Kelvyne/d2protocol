@@ -25,6 +25,8 @@ func (m *GameContextActorInformations) GetDisposition() EntityDispositionInforma
 type GameFightFighterInformationsIntrf interface {
 	Type
 
+	GetGameContextActorInformations() GameContextActorInformations
+
 	GetTeamId() uint8
 
 	GetWave() uint8
@@ -34,6 +36,10 @@ type GameFightFighterInformationsIntrf interface {
 	GetStats() GameFightMinimalStatsIntrf
 
 	GetPreviousPositions() []uint16
+}
+
+func (m *GameFightFighterInformations) GetGameContextActorInformations() GameContextActorInformations {
+	return m.GameContextActorInformations
 }
 
 func (m *GameFightFighterInformations) GetTeamId() uint8 {
@@ -58,6 +64,12 @@ func (m *GameFightFighterInformations) GetPreviousPositions() []uint16 {
 
 type GameRolePlayActorInformationsIntrf interface {
 	Type
+
+	GetGameContextActorInformations() GameContextActorInformations
+}
+
+func (m *GameRolePlayActorInformations) GetGameContextActorInformations() GameContextActorInformations {
+	return m.GameContextActorInformations
 }
 
 type InteractiveElementIntrf interface {
@@ -467,7 +479,13 @@ type HumanOptionIntrf interface {
 type CharacterMinimalPlusLookInformationsIntrf interface {
 	Type
 
+	GetCharacterMinimalInformations() CharacterMinimalInformations
+
 	GetEntityLook() EntityLook
+}
+
+func (m *CharacterMinimalPlusLookInformations) GetCharacterMinimalInformations() CharacterMinimalInformations {
+	return m.CharacterMinimalInformations
 }
 
 func (m *CharacterMinimalPlusLookInformations) GetEntityLook() EntityLook {
@@ -477,9 +495,15 @@ func (m *CharacterMinimalPlusLookInformations) GetEntityLook() EntityLook {
 type CharacterBaseInformationsIntrf interface {
 	Type
 
+	GetCharacterMinimalPlusLookInformations() CharacterMinimalPlusLookInformations
+
 	GetBreed() int8
 
 	GetSex() bool
+}
+
+func (m *CharacterBaseInformations) GetCharacterMinimalPlusLookInformations() CharacterMinimalPlusLookInformations {
+	return m.CharacterMinimalPlusLookInformations
 }
 
 func (m *CharacterBaseInformations) GetBreed() int8 {
@@ -613,7 +637,13 @@ func (m *HouseInstanceInformations) GetIsSaleLocked() bool {
 type FightTeamInformationsIntrf interface {
 	Type
 
+	GetAbstractFightTeamInformations() AbstractFightTeamInformations
+
 	GetTeamMembers() []FightTeamMemberInformationsIntrf
+}
+
+func (m *FightTeamInformations) GetAbstractFightTeamInformations() AbstractFightTeamInformations {
+	return m.AbstractFightTeamInformations
 }
 
 func (m *FightTeamInformations) GetTeamMembers() []FightTeamMemberInformationsIntrf {
@@ -622,6 +652,8 @@ func (m *FightTeamInformations) GetTeamMembers() []FightTeamMemberInformationsIn
 
 type PartyMemberInformationsIntrf interface {
 	Type
+
+	GetCharacterBaseInformations() CharacterBaseInformations
 
 	GetLifePoints() uint32
 
@@ -646,6 +678,10 @@ type PartyMemberInformationsIntrf interface {
 	GetStatus() PlayerStatusIntrf
 
 	GetCompanions() []PartyCompanionMemberInformations
+}
+
+func (m *PartyMemberInformations) GetCharacterBaseInformations() CharacterBaseInformations {
+	return m.CharacterBaseInformations
 }
 
 func (m *PartyMemberInformations) GetLifePoints() uint32 {
@@ -708,16 +744,28 @@ func (m *FightTeamMemberInformations) GetId() float64 {
 
 type IgnoredInformationsIntrf interface {
 	Type
+
+	GetAbstractContactInformations() AbstractContactInformations
+}
+
+func (m *IgnoredInformations) GetAbstractContactInformations() AbstractContactInformations {
+	return m.AbstractContactInformations
 }
 
 type FriendInformationsIntrf interface {
 	Type
+
+	GetAbstractContactInformations() AbstractContactInformations
 
 	GetPlayerState() uint8
 
 	GetLastConnection() uint16
 
 	GetAchievementPoints() int32
+}
+
+func (m *FriendInformations) GetAbstractContactInformations() AbstractContactInformations {
+	return m.AbstractContactInformations
 }
 
 func (m *FriendInformations) GetPlayerState() uint8 {
@@ -803,9 +851,15 @@ type AbstractSocialGroupInfosIntrf interface {
 type GuildFactSheetInformationsIntrf interface {
 	Type
 
+	GetGuildInformations() GuildInformations
+
 	GetLeaderId() int64
 
 	GetNbMembers() uint16
+}
+
+func (m *GuildFactSheetInformations) GetGuildInformations() GuildInformations {
+	return m.GuildInformations
 }
 
 func (m *GuildFactSheetInformations) GetLeaderId() int64 {
@@ -953,7 +1007,13 @@ func (m *GuildVersatileInformations) GetNbMembers() uint8 {
 type AllianceFactSheetInformationsIntrf interface {
 	Type
 
+	GetAllianceInformations() AllianceInformations
+
 	GetCreationDate() uint32
+}
+
+func (m *AllianceFactSheetInformations) GetAllianceInformations() AllianceInformations {
+	return m.AllianceInformations
 }
 
 func (m *AllianceFactSheetInformations) GetCreationDate() uint32 {
@@ -1105,7 +1165,13 @@ type FightResultAdditionalDataIntrf interface {
 type PartyIdolIntrf interface {
 	Type
 
+	GetIdol() Idol
+
 	GetOwnersIds() []int64
+}
+
+func (m *PartyIdol) GetIdol() Idol {
+	return m.Idol
 }
 
 func (m *PartyIdol) GetOwnersIds() []int64 {

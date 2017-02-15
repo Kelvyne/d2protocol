@@ -5,12 +5,25 @@ package d2protocol
 type {{.Name | ToInterfaceName}} interface {
     Type
 
+
+    {{ if TypeHasParent . }}
+        {{ .Parent | ToGetterName }}() {{ .Parent }}
+    {{ end }}
     {{ range .Fields }}
         {{.Name | ToFieldName | ToGetterName }}() {{if .IsVector}}[]{{end}}{{ EffectiveType .}}
     {{ end }}
 }
 
 {{ $name := .Name }}
+
+{{ if TypeHasParent . }}
+    
+func (m *{{$name}}) {{.Parent | ToGetterName}}() {{ .Parent }} {
+    return m.{{ .Parent }}
+}
+
+{{ end }}
+
 {{ range .Fields }}
 
 func (m *{{$name}}) {{.Name | ToFieldName | ToGetterName}}() {{if .IsVector}}[]{{end}}{{ EffectiveType .}} {

@@ -6,7 +6,7 @@ import (
 
 var {{MapName}} = map[uint16]reflect.Type{
 	{{range .}}
-		{{ .ProtocolID -}} : reflect.TypeOf((*{{ .Name }})(nil)),
+		{{ .ProtocolID -}} : reflect.TypeOf(({{ .Name }})({{ .Name }}{})),
 	{{end}}
 }
 
@@ -19,6 +19,7 @@ var {{MapName}} = map[uint16]reflect.Type{
 			{{.Name | ToFieldName}} {{if .IsVector}}[]{{end}}{{ EffectiveType .}}
 		{{end}}
 	}
+
 
 	func (m *{{.Name}}) ID() uint16 {
 		return {{.ProtocolID}}
@@ -117,12 +118,12 @@ var {{MapName}} = map[uint16]reflect.Type{
 	{{end}}
 	{{ if .IsVector }}
 		{{ if IsNativeType . }}
-			m.{{.Name | ToFieldName}}[i] = {{$name}}{{ if .UseTypeManager}}.(*{{.Type}}){{end}}
+			m.{{.Name | ToFieldName}}[i] = {{$name}}{{ if .UseTypeManager}}.({{.Type}}){{end}}
 		{{else}}
 		{{ if .UseTypeManager }}
-				m.{{.Name | ToFieldName}}[i] = {{$name}}.(*{{.Type}})
+				m.{{.Name | ToFieldName}}[i] = *{{$name}}.(*{{.Type}})
 			{{else}}
-				m.{{.Name | ToFieldName}}[i] = &{{$name}}
+				m.{{.Name | ToFieldName}}[i] = {{$name}}
 			{{end}}
 		{{end}}
 		}
@@ -131,9 +132,9 @@ var {{MapName}} = map[uint16]reflect.Type{
 			m.{{.Name | ToFieldName}} = {{$name}}
 		{{else}}
 			{{ if .UseTypeManager }}
-				m.{{.Name | ToFieldName}} = {{$name}}.(*{{.Type}})
+				m.{{.Name | ToFieldName}} = *{{$name}}.(*{{.Type}})
 			{{else}}
-				m.{{.Name | ToFieldName}} = &{{$name}}
+				m.{{.Name | ToFieldName}} = {{$name}}
 			{{end}}
 		{{end}}
 	{{end}}

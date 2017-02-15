@@ -28,7 +28,7 @@ func ParseMessage(id uint16, packet []byte) (Message, error) {
 	}
 
 	//  This can be done safely because we built the array ourselves ???
-	val := reflect.New(t.Elem())
+	val := reflect.New(t)
 	m := val.Interface().(Message)
 
 	r := NewReader(bytes.NewReader(packet))
@@ -45,7 +45,7 @@ func GetType(id uint16) (Type, error) {
 		return nil, fmt.Errorf("unknown type %v", id)
 	}
 
-	val := reflect.New(t.Elem())
+	val := reflect.New(t)
 	m := val.Interface().(Type)
 	return m, nil
 }

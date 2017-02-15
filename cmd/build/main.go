@@ -99,7 +99,7 @@ func getEffectiveType(t d2protocolparser.Field) string {
 	if isNativeType(t) {
 		return t.Type
 	}
-	return "*" + t.Type
+	return t.Type
 }
 
 func useBooleanByteWrapper(t d2protocolparser.Class) bool {

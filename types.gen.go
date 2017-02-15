@@ -6,581 +6,581 @@ import (
 
 var types = map[uint16]reflect.Type{
 
-	350: reflect.TypeOf((*ContentPart)(nil)),
+	350: reflect.TypeOf((ContentPart)(ContentPart{})),
 
-	150: reflect.TypeOf((*GameContextActorInformations)(nil)),
+	150: reflect.TypeOf((GameContextActorInformations)(GameContextActorInformations{})),
 
-	143: reflect.TypeOf((*GameFightFighterInformations)(nil)),
+	143: reflect.TypeOf((GameFightFighterInformations)(GameFightFighterInformations{})),
 
-	151: reflect.TypeOf((*GameFightAIInformations)(nil)),
+	151: reflect.TypeOf((GameFightAIInformations)(GameFightAIInformations{})),
 
-	29: reflect.TypeOf((*GameFightMonsterInformations)(nil)),
+	29: reflect.TypeOf((GameFightMonsterInformations)(GameFightMonsterInformations{})),
 
-	141: reflect.TypeOf((*GameRolePlayActorInformations)(nil)),
+	141: reflect.TypeOf((GameRolePlayActorInformations)(GameRolePlayActorInformations{})),
 
-	154: reflect.TypeOf((*GameRolePlayNamedActorInformations)(nil)),
+	154: reflect.TypeOf((GameRolePlayNamedActorInformations)(GameRolePlayNamedActorInformations{})),
 
-	180: reflect.TypeOf((*GameRolePlayMountInformations)(nil)),
+	180: reflect.TypeOf((GameRolePlayMountInformations)(GameRolePlayMountInformations{})),
 
-	80: reflect.TypeOf((*InteractiveElement)(nil)),
+	80: reflect.TypeOf((InteractiveElement)(InteractiveElement{})),
 
-	467: reflect.TypeOf((*GameRolePlayPortalInformations)(nil)),
+	467: reflect.TypeOf((GameRolePlayPortalInformations)(GameRolePlayPortalInformations{})),
 
-	160: reflect.TypeOf((*GameRolePlayGroupMonsterInformations)(nil)),
+	160: reflect.TypeOf((GameRolePlayGroupMonsterInformations)(GameRolePlayGroupMonsterInformations{})),
 
-	464: reflect.TypeOf((*GameRolePlayGroupMonsterWaveInformations)(nil)),
+	464: reflect.TypeOf((GameRolePlayGroupMonsterWaveInformations)(GameRolePlayGroupMonsterWaveInformations{})),
 
-	161: reflect.TypeOf((*GameRolePlayPrismInformations)(nil)),
+	161: reflect.TypeOf((GameRolePlayPrismInformations)(GameRolePlayPrismInformations{})),
 
-	48: reflect.TypeOf((*GameFightTaxCollectorInformations)(nil)),
+	48: reflect.TypeOf((GameFightTaxCollectorInformations)(GameFightTaxCollectorInformations{})),
 
-	156: reflect.TypeOf((*GameRolePlayNpcInformations)(nil)),
+	156: reflect.TypeOf((GameRolePlayNpcInformations)(GameRolePlayNpcInformations{})),
 
-	148: reflect.TypeOf((*GameRolePlayTaxCollectorInformations)(nil)),
+	148: reflect.TypeOf((GameRolePlayTaxCollectorInformations)(GameRolePlayTaxCollectorInformations{})),
 
-	158: reflect.TypeOf((*GameFightFighterNamedInformations)(nil)),
+	158: reflect.TypeOf((GameFightFighterNamedInformations)(GameFightFighterNamedInformations{})),
 
-	46: reflect.TypeOf((*GameFightCharacterInformations)(nil)),
+	46: reflect.TypeOf((GameFightCharacterInformations)(GameFightCharacterInformations{})),
 
-	450: reflect.TypeOf((*GameFightCompanionInformations)(nil)),
+	450: reflect.TypeOf((GameFightCompanionInformations)(GameFightCompanionInformations{})),
 
-	159: reflect.TypeOf((*GameRolePlayHumanoidInformations)(nil)),
+	159: reflect.TypeOf((GameRolePlayHumanoidInformations)(GameRolePlayHumanoidInformations{})),
 
-	36: reflect.TypeOf((*GameRolePlayCharacterInformations)(nil)),
+	36: reflect.TypeOf((GameRolePlayCharacterInformations)(GameRolePlayCharacterInformations{})),
 
-	383: reflect.TypeOf((*GameRolePlayNpcWithQuestInformations)(nil)),
+	383: reflect.TypeOf((GameRolePlayNpcWithQuestInformations)(GameRolePlayNpcWithQuestInformations{})),
 
-	129: reflect.TypeOf((*GameRolePlayMerchantInformations)(nil)),
+	129: reflect.TypeOf((GameRolePlayMerchantInformations)(GameRolePlayMerchantInformations{})),
 
-	3: reflect.TypeOf((*GameRolePlayMutantInformations)(nil)),
+	3: reflect.TypeOf((GameRolePlayMutantInformations)(GameRolePlayMutantInformations{})),
 
-	54: reflect.TypeOf((*SubEntity)(nil)),
+	54: reflect.TypeOf((SubEntity)(SubEntity{})),
 
-	55: reflect.TypeOf((*EntityLook)(nil)),
+	55: reflect.TypeOf((EntityLook)(EntityLook{})),
 
-	8: reflect.TypeOf((*CharacterCharacteristicsInformations)(nil)),
+	8: reflect.TypeOf((CharacterCharacteristicsInformations)(CharacterCharacteristicsInformations{})),
 
-	428: reflect.TypeOf((*PrismInformation)(nil)),
+	428: reflect.TypeOf((PrismInformation)(PrismInformation{})),
 
-	427: reflect.TypeOf((*AlliancePrismInformation)(nil)),
+	427: reflect.TypeOf((AlliancePrismInformation)(AlliancePrismInformation{})),
 
-	505: reflect.TypeOf((*DareReward)(nil)),
+	505: reflect.TypeOf((DareReward)(DareReward{})),
 
-	431: reflect.TypeOf((*AllianceInsiderPrismInformation)(nil)),
+	431: reflect.TypeOf((AllianceInsiderPrismInformation)(AllianceInsiderPrismInformation{})),
 
-	400: reflect.TypeOf((*AbstractCharacterInformation)(nil)),
+	400: reflect.TypeOf((AbstractCharacterInformation)(AbstractCharacterInformation{})),
 
-	503: reflect.TypeOf((*CharacterBasicMinimalInformations)(nil)),
+	503: reflect.TypeOf((CharacterBasicMinimalInformations)(CharacterBasicMinimalInformations{})),
 
-	110: reflect.TypeOf((*CharacterMinimalInformations)(nil)),
+	110: reflect.TypeOf((CharacterMinimalInformations)(CharacterMinimalInformations{})),
 
-	88: reflect.TypeOf((*GuildMember)(nil)),
+	88: reflect.TypeOf((GuildMember)(GuildMember{})),
 
-	60: reflect.TypeOf((*EntityDispositionInformations)(nil)),
+	60: reflect.TypeOf((EntityDispositionInformations)(EntityDispositionInformations{})),
 
-	31: reflect.TypeOf((*GameFightMinimalStats)(nil)),
+	31: reflect.TypeOf((GameFightMinimalStats)(GameFightMinimalStats{})),
 
-	219: reflect.TypeOf((*InteractiveElementSkill)(nil)),
+	219: reflect.TypeOf((InteractiveElementSkill)(InteractiveElementSkill{})),
 
-	76: reflect.TypeOf((*ObjectEffect)(nil)),
+	76: reflect.TypeOf((ObjectEffect)(ObjectEffect{})),
 
-	70: reflect.TypeOf((*ObjectEffectInteger)(nil)),
+	70: reflect.TypeOf((ObjectEffectInteger)(ObjectEffectInteger{})),
 
-	466: reflect.TypeOf((*PortalInformation)(nil)),
+	466: reflect.TypeOf((PortalInformation)(PortalInformation{})),
 
-	140: reflect.TypeOf((*GroupMonsterStaticInformations)(nil)),
+	140: reflect.TypeOf((GroupMonsterStaticInformations)(GroupMonsterStaticInformations{})),
 
-	412: reflect.TypeOf((*AchievementRewardable)(nil)),
+	412: reflect.TypeOf((AchievementRewardable)(AchievementRewardable{})),
 
-	381: reflect.TypeOf((*QuestActiveInformations)(nil)),
+	381: reflect.TypeOf((QuestActiveInformations)(QuestActiveInformations{})),
 
-	101: reflect.TypeOf((*JobDescription)(nil)),
+	101: reflect.TypeOf((JobDescription)(JobDescription{})),
 
-	102: reflect.TypeOf((*SkillActionDescription)(nil)),
+	102: reflect.TypeOf((SkillActionDescription)(SkillActionDescription{})),
 
-	100: reflect.TypeOf((*SkillActionDescriptionCraft)(nil)),
+	100: reflect.TypeOf((SkillActionDescriptionCraft)(SkillActionDescriptionCraft{})),
 
-	103: reflect.TypeOf((*SkillActionDescriptionTimed)(nil)),
+	103: reflect.TypeOf((SkillActionDescriptionTimed)(SkillActionDescriptionTimed{})),
 
-	99: reflect.TypeOf((*SkillActionDescriptionCollect)(nil)),
+	99: reflect.TypeOf((SkillActionDescriptionCollect)(SkillActionDescriptionCollect{})),
 
-	204: reflect.TypeOf((*ActorRestrictionsInformations)(nil)),
+	204: reflect.TypeOf((ActorRestrictionsInformations)(ActorRestrictionsInformations{})),
 
-	406: reflect.TypeOf((*HumanOption)(nil)),
+	406: reflect.TypeOf((HumanOption)(HumanOption{})),
 
-	408: reflect.TypeOf((*HumanOptionTitle)(nil)),
+	408: reflect.TypeOf((HumanOptionTitle)(HumanOptionTitle{})),
 
-	163: reflect.TypeOf((*CharacterMinimalPlusLookInformations)(nil)),
+	163: reflect.TypeOf((CharacterMinimalPlusLookInformations)(CharacterMinimalPlusLookInformations{})),
 
-	45: reflect.TypeOf((*CharacterBaseInformations)(nil)),
+	45: reflect.TypeOf((CharacterBaseInformations)(CharacterBaseInformations{})),
 
-	215: reflect.TypeOf((*CharacterSpellModification)(nil)),
+	215: reflect.TypeOf((CharacterSpellModification)(CharacterSpellModification{})),
 
-	111: reflect.TypeOf((*HouseInformations)(nil)),
+	111: reflect.TypeOf((HouseInformations)(HouseInformations{})),
 
-	390: reflect.TypeOf((*AccountHouseInformations)(nil)),
+	390: reflect.TypeOf((AccountHouseInformations)(AccountHouseInformations{})),
 
-	147: reflect.TypeOf((*TaxCollectorStaticInformations)(nil)),
+	147: reflect.TypeOf((TaxCollectorStaticInformations)(TaxCollectorStaticInformations{})),
 
-	4: reflect.TypeOf((*CharacterBaseCharacteristic)(nil)),
+	4: reflect.TypeOf((CharacterBaseCharacteristic)(CharacterBaseCharacteristic{})),
 
-	25: reflect.TypeOf((*GameServerInformations)(nil)),
+	25: reflect.TypeOf((GameServerInformations)(GameServerInformations{})),
 
-	415: reflect.TypeOf((*PlayerStatus)(nil)),
+	415: reflect.TypeOf((PlayerStatus)(PlayerStatus{})),
 
-	201: reflect.TypeOf((*ActorAlignmentInformations)(nil)),
+	201: reflect.TypeOf((ActorAlignmentInformations)(ActorAlignmentInformations{})),
 
-	411: reflect.TypeOf((*HumanOptionOrnament)(nil)),
+	411: reflect.TypeOf((HumanOptionOrnament)(HumanOptionOrnament{})),
 
-	168: reflect.TypeOf((*ItemDurability)(nil)),
+	168: reflect.TypeOf((ItemDurability)(ItemDurability{})),
 
-	157: reflect.TypeOf((*HumanInformations)(nil)),
+	157: reflect.TypeOf((HumanInformations)(HumanInformations{})),
 
-	395: reflect.TypeOf((*MonsterInGroupLightInformations)(nil)),
+	395: reflect.TypeOf((MonsterInGroupLightInformations)(MonsterInGroupLightInformations{})),
 
-	396: reflect.TypeOf((*GroupMonsterStaticInformationsWithAlternatives)(nil)),
+	396: reflect.TypeOf((GroupMonsterStaticInformationsWithAlternatives)(GroupMonsterStaticInformationsWithAlternatives{})),
 
-	144: reflect.TypeOf((*MonsterInGroupInformations)(nil)),
+	144: reflect.TypeOf((MonsterInGroupInformations)(MonsterInGroupInformations{})),
 
-	394: reflect.TypeOf((*AlternativeMonstersInGroupLightInformations)(nil)),
+	394: reflect.TypeOf((AlternativeMonstersInGroupLightInformations)(AlternativeMonstersInGroupLightInformations{})),
 
-	132: reflect.TypeOf((*PaddockInformations)(nil)),
+	132: reflect.TypeOf((PaddockInformations)(PaddockInformations{})),
 
-	509: reflect.TypeOf((*PaddockInstancesInformations)(nil)),
+	509: reflect.TypeOf((PaddockInstancesInformations)(PaddockInstancesInformations{})),
 
-	130: reflect.TypeOf((*PaddockBuyableInformations)(nil)),
+	130: reflect.TypeOf((PaddockBuyableInformations)(PaddockBuyableInformations{})),
 
-	218: reflect.TypeOf((*HouseInformationsInside)(nil)),
+	218: reflect.TypeOf((HouseInformationsInside)(HouseInformationsInside{})),
 
-	510: reflect.TypeOf((*HouseOnMapInformations)(nil)),
+	510: reflect.TypeOf((HouseOnMapInformations)(HouseOnMapInformations{})),
 
-	511: reflect.TypeOf((*HouseInstanceInformations)(nil)),
+	511: reflect.TypeOf((HouseInstanceInformations)(HouseInstanceInformations{})),
 
-	384: reflect.TypeOf((*GameRolePlayNpcQuestFlag)(nil)),
+	384: reflect.TypeOf((GameRolePlayNpcQuestFlag)(GameRolePlayNpcQuestFlag{})),
 
-	373: reflect.TypeOf((*DungeonPartyFinderPlayer)(nil)),
+	373: reflect.TypeOf((DungeonPartyFinderPlayer)(DungeonPartyFinderPlayer{})),
 
-	116: reflect.TypeOf((*AbstractFightTeamInformations)(nil)),
+	116: reflect.TypeOf((AbstractFightTeamInformations)(AbstractFightTeamInformations{})),
 
-	33: reflect.TypeOf((*FightTeamInformations)(nil)),
+	33: reflect.TypeOf((FightTeamInformations)(FightTeamInformations{})),
 
-	376: reflect.TypeOf((*PartyInvitationMemberInformations)(nil)),
+	376: reflect.TypeOf((PartyInvitationMemberInformations)(PartyInvitationMemberInformations{})),
 
-	90: reflect.TypeOf((*PartyMemberInformations)(nil)),
+	90: reflect.TypeOf((PartyMemberInformations)(PartyMemberInformations{})),
 
-	453: reflect.TypeOf((*PartyCompanionBaseInformations)(nil)),
+	453: reflect.TypeOf((PartyCompanionBaseInformations)(PartyCompanionBaseInformations{})),
 
-	44: reflect.TypeOf((*FightTeamMemberInformations)(nil)),
+	44: reflect.TypeOf((FightTeamMemberInformations)(FightTeamMemberInformations{})),
 
-	374: reflect.TypeOf((*PartyGuestInformations)(nil)),
+	374: reflect.TypeOf((PartyGuestInformations)(PartyGuestInformations{})),
 
-	452: reflect.TypeOf((*PartyCompanionMemberInformations)(nil)),
+	452: reflect.TypeOf((PartyCompanionMemberInformations)(PartyCompanionMemberInformations{})),
 
-	43: reflect.TypeOf((*FightCommonInformations)(nil)),
+	43: reflect.TypeOf((FightCommonInformations)(FightCommonInformations{})),
 
-	391: reflect.TypeOf((*PartyMemberArenaInformations)(nil)),
+	391: reflect.TypeOf((PartyMemberArenaInformations)(PartyMemberArenaInformations{})),
 
-	170: reflect.TypeOf((*HouseInformationsForGuild)(nil)),
+	170: reflect.TypeOf((HouseInformationsForGuild)(HouseInformationsForGuild{})),
 
-	7: reflect.TypeOf((*Item)(nil)),
+	7: reflect.TypeOf((Item)(Item{})),
 
-	483: reflect.TypeOf((*ObjectItemGenericQuantity)(nil)),
+	483: reflect.TypeOf((ObjectItemGenericQuantity)(ObjectItemGenericQuantity{})),
 
-	380: reflect.TypeOf((*AbstractContactInformations)(nil)),
+	380: reflect.TypeOf((AbstractContactInformations)(AbstractContactInformations{})),
 
-	106: reflect.TypeOf((*IgnoredInformations)(nil)),
+	106: reflect.TypeOf((IgnoredInformations)(IgnoredInformations{})),
 
-	105: reflect.TypeOf((*IgnoredOnlineInformations)(nil)),
+	105: reflect.TypeOf((IgnoredOnlineInformations)(IgnoredOnlineInformations{})),
 
-	78: reflect.TypeOf((*FriendInformations)(nil)),
+	78: reflect.TypeOf((FriendInformations)(FriendInformations{})),
 
-	92: reflect.TypeOf((*FriendOnlineInformations)(nil)),
+	92: reflect.TypeOf((FriendOnlineInformations)(FriendOnlineInformations{})),
 
-	183: reflect.TypeOf((*PaddockContentInformations)(nil)),
+	183: reflect.TypeOf((PaddockContentInformations)(PaddockContentInformations{})),
 
-	493: reflect.TypeOf((*TaxCollectorMovement)(nil)),
+	493: reflect.TypeOf((TaxCollectorMovement)(TaxCollectorMovement{})),
 
-	167: reflect.TypeOf((*TaxCollectorInformations)(nil)),
+	167: reflect.TypeOf((TaxCollectorInformations)(TaxCollectorInformations{})),
 
-	414: reflect.TypeOf((*PlayerStatusExtended)(nil)),
+	414: reflect.TypeOf((PlayerStatusExtended)(PlayerStatusExtended{})),
 
-	416: reflect.TypeOf((*AbstractSocialGroupInfos)(nil)),
+	416: reflect.TypeOf((AbstractSocialGroupInfos)(AbstractSocialGroupInfos{})),
 
-	365: reflect.TypeOf((*BasicGuildInformations)(nil)),
+	365: reflect.TypeOf((BasicGuildInformations)(BasicGuildInformations{})),
 
-	127: reflect.TypeOf((*GuildInformations)(nil)),
+	127: reflect.TypeOf((GuildInformations)(GuildInformations{})),
 
-	424: reflect.TypeOf((*GuildFactSheetInformations)(nil)),
+	424: reflect.TypeOf((GuildFactSheetInformations)(GuildFactSheetInformations{})),
 
-	423: reflect.TypeOf((*GuildInsiderFactSheetInformations)(nil)),
+	423: reflect.TypeOf((GuildInsiderFactSheetInformations)(GuildInsiderFactSheetInformations{})),
 
-	438: reflect.TypeOf((*PrismSubareaEmptyInfo)(nil)),
+	438: reflect.TypeOf((PrismSubareaEmptyInfo)(PrismSubareaEmptyInfo{})),
 
-	434: reflect.TypeOf((*PrismGeolocalizedInformation)(nil)),
+	434: reflect.TypeOf((PrismGeolocalizedInformation)(PrismGeolocalizedInformation{})),
 
-	420: reflect.TypeOf((*GuildInAllianceInformations)(nil)),
+	420: reflect.TypeOf((GuildInAllianceInformations)(GuildInAllianceInformations{})),
 
-	494: reflect.TypeOf((*ObjectItemGenericQuantityPrice)(nil)),
+	494: reflect.TypeOf((ObjectItemGenericQuantityPrice)(ObjectItemGenericQuantityPrice{})),
 
-	37: reflect.TypeOf((*ObjectItem)(nil)),
+	37: reflect.TypeOf((ObjectItem)(ObjectItem{})),
 
-	419: reflect.TypeOf((*BasicAllianceInformations)(nil)),
+	419: reflect.TypeOf((BasicAllianceInformations)(BasicAllianceInformations{})),
 
-	217: reflect.TypeOf((*FightEntityDispositionInformations)(nil)),
+	217: reflect.TypeOf((FightEntityDispositionInformations)(FightEntityDispositionInformations{})),
 
-	108: reflect.TypeOf((*StatedElement)(nil)),
+	108: reflect.TypeOf((StatedElement)(StatedElement{})),
 
-	360: reflect.TypeOf((*GameFightMinimalStatsPreparation)(nil)),
+	360: reflect.TypeOf((GameFightMinimalStatsPreparation)(GameFightMinimalStatsPreparation{})),
 
-	200: reflect.TypeOf((*MapObstacle)(nil)),
+	200: reflect.TypeOf((MapObstacle)(MapObstacle{})),
 
-	107: reflect.TypeOf((*IdentifiedEntityDispositionInformations)(nil)),
+	107: reflect.TypeOf((IdentifiedEntityDispositionInformations)(IdentifiedEntityDispositionInformations{})),
 
-	198: reflect.TypeOf((*ObjectItemInRolePlay)(nil)),
+	198: reflect.TypeOf((ObjectItemInRolePlay)(ObjectItemInRolePlay{})),
 
-	185: reflect.TypeOf((*PaddockItem)(nil)),
+	185: reflect.TypeOf((PaddockItem)(PaddockItem{})),
 
-	425: reflect.TypeOf((*HumanOptionAlliance)(nil)),
+	425: reflect.TypeOf((HumanOptionAlliance)(HumanOptionAlliance{})),
 
-	405: reflect.TypeOf((*IndexedEntityLook)(nil)),
+	405: reflect.TypeOf((IndexedEntityLook)(IndexedEntityLook{})),
 
-	495: reflect.TypeOf((*HumanOptionSkillUse)(nil)),
+	495: reflect.TypeOf((HumanOptionSkillUse)(HumanOptionSkillUse{})),
 
-	407: reflect.TypeOf((*HumanOptionEmote)(nil)),
+	407: reflect.TypeOf((HumanOptionEmote)(HumanOptionEmote{})),
 
-	410: reflect.TypeOf((*HumanOptionFollowers)(nil)),
+	410: reflect.TypeOf((HumanOptionFollowers)(HumanOptionFollowers{})),
 
-	353: reflect.TypeOf((*ActorOrientation)(nil)),
+	353: reflect.TypeOf((ActorOrientation)(ActorOrientation{})),
 
-	449: reflect.TypeOf((*HumanOptionObjectUse)(nil)),
+	449: reflect.TypeOf((HumanOptionObjectUse)(HumanOptionObjectUse{})),
 
-	377: reflect.TypeOf((*TrustCertificate)(nil)),
+	377: reflect.TypeOf((TrustCertificate)(TrustCertificate{})),
 
-	206: reflect.TypeOf((*AbstractFightDispellableEffect)(nil)),
+	206: reflect.TypeOf((AbstractFightDispellableEffect)(AbstractFightDispellableEffect{})),
 
-	209: reflect.TypeOf((*FightTemporaryBoostEffect)(nil)),
+	209: reflect.TypeOf((FightTemporaryBoostEffect)(FightTemporaryBoostEffect{})),
 
-	205: reflect.TypeOf((*GameFightSpellCooldown)(nil)),
+	205: reflect.TypeOf((GameFightSpellCooldown)(GameFightSpellCooldown{})),
 
-	85: reflect.TypeOf((*GameActionMarkedCell)(nil)),
+	85: reflect.TypeOf((GameActionMarkedCell)(GameActionMarkedCell{})),
 
-	16: reflect.TypeOf((*FightResultListEntry)(nil)),
+	16: reflect.TypeOf((FightResultListEntry)(FightResultListEntry{})),
 
-	189: reflect.TypeOf((*FightResultFighterListEntry)(nil)),
+	189: reflect.TypeOf((FightResultFighterListEntry)(FightResultFighterListEntry{})),
 
-	208: reflect.TypeOf((*FightDispellableEffectExtendedInformations)(nil)),
+	208: reflect.TypeOf((FightDispellableEffectExtendedInformations)(FightDispellableEffectExtendedInformations{})),
 
-	24: reflect.TypeOf((*FightResultPlayerListEntry)(nil)),
+	24: reflect.TypeOf((FightResultPlayerListEntry)(FightResultPlayerListEntry{})),
 
-	469: reflect.TypeOf((*NamedPartyTeam)(nil)),
+	469: reflect.TypeOf((NamedPartyTeam)(NamedPartyTeam{})),
 
-	489: reflect.TypeOf((*Idol)(nil)),
+	489: reflect.TypeOf((Idol)(Idol{})),
 
-	351: reflect.TypeOf((*GameActionMark)(nil)),
+	351: reflect.TypeOf((GameActionMark)(GameActionMark{})),
 
-	470: reflect.TypeOf((*NamedPartyTeamWithOutcome)(nil)),
+	470: reflect.TypeOf((NamedPartyTeamWithOutcome)(NamedPartyTeamWithOutcome{})),
 
-	50: reflect.TypeOf((*GameFightMutantInformations)(nil)),
+	50: reflect.TypeOf((GameFightMutantInformations)(GameFightMutantInformations{})),
 
-	364: reflect.TypeOf((*GameFightResumeSlaveInfo)(nil)),
+	364: reflect.TypeOf((GameFightResumeSlaveInfo)(GameFightResumeSlaveInfo{})),
 
-	84: reflect.TypeOf((*FightResultTaxCollectorListEntry)(nil)),
+	84: reflect.TypeOf((FightResultTaxCollectorListEntry)(FightResultTaxCollectorListEntry{})),
 
-	222: reflect.TypeOf((*PaddockInformationsForSell)(nil)),
+	222: reflect.TypeOf((PaddockInformationsForSell)(PaddockInformationsForSell{})),
 
-	221: reflect.TypeOf((*HouseInformationsForSell)(nil)),
+	221: reflect.TypeOf((HouseInformationsForSell)(HouseInformationsForSell{})),
 
-	211: reflect.TypeOf((*FightTemporaryBoostWeaponDamagesEffect)(nil)),
+	211: reflect.TypeOf((FightTemporaryBoostWeaponDamagesEffect)(FightTemporaryBoostWeaponDamagesEffect{})),
 
-	207: reflect.TypeOf((*FightTemporarySpellBoostEffect)(nil)),
+	207: reflect.TypeOf((FightTemporarySpellBoostEffect)(FightTemporarySpellBoostEffect{})),
 
-	214: reflect.TypeOf((*FightTemporaryBoostStateEffect)(nil)),
+	214: reflect.TypeOf((FightTemporaryBoostStateEffect)(FightTemporaryBoostStateEffect{})),
 
-	210: reflect.TypeOf((*FightTriggeredEffect)(nil)),
+	210: reflect.TypeOf((FightTriggeredEffect)(FightTriggeredEffect{})),
 
-	366: reflect.TypeOf((*FightTemporarySpellImmunityEffect)(nil)),
+	366: reflect.TypeOf((FightTemporarySpellImmunityEffect)(FightTemporarySpellImmunityEffect{})),
 
-	202: reflect.TypeOf((*ActorExtendedAlignmentInformations)(nil)),
+	202: reflect.TypeOf((ActorExtendedAlignmentInformations)(ActorExtendedAlignmentInformations{})),
 
-	443: reflect.TypeOf((*PrismFightersInformation)(nil)),
+	443: reflect.TypeOf((PrismFightersInformation)(PrismFightersInformation{})),
 
-	169: reflect.TypeOf((*TaxCollectorFightersInformation)(nil)),
+	169: reflect.TypeOf((TaxCollectorFightersInformation)(TaxCollectorFightersInformation{})),
 
-	124: reflect.TypeOf((*ObjectItemMinimalInformation)(nil)),
+	124: reflect.TypeOf((ObjectItemMinimalInformation)(ObjectItemMinimalInformation{})),
 
-	387: reflect.TypeOf((*ObjectItemInformationWithQuantity)(nil)),
+	387: reflect.TypeOf((ObjectItemInformationWithQuantity)(ObjectItemInformationWithQuantity{})),
 
-	52: reflect.TypeOf((*StartupActionAddObject)(nil)),
+	52: reflect.TypeOf((StartupActionAddObject)(StartupActionAddObject{})),
 
-	502: reflect.TypeOf((*DareInformations)(nil)),
+	502: reflect.TypeOf((DareInformations)(DareInformations{})),
 
-	504: reflect.TypeOf((*DareVersatileInformations)(nil)),
+	504: reflect.TypeOf((DareVersatileInformations)(DareVersatileInformations{})),
 
-	501: reflect.TypeOf((*DareCriteria)(nil)),
+	501: reflect.TypeOf((DareCriteria)(DareCriteria{})),
 
-	87: reflect.TypeOf((*GuildEmblem)(nil)),
+	87: reflect.TypeOf((GuildEmblem)(GuildEmblem{})),
 
-	422: reflect.TypeOf((*AlliancedGuildFactSheetInformations)(nil)),
+	422: reflect.TypeOf((AlliancedGuildFactSheetInformations)(AlliancedGuildFactSheetInformations{})),
 
-	435: reflect.TypeOf((*GuildVersatileInformations)(nil)),
+	435: reflect.TypeOf((GuildVersatileInformations)(GuildVersatileInformations{})),
 
-	432: reflect.TypeOf((*AllianceVersatileInformations)(nil)),
+	432: reflect.TypeOf((AllianceVersatileInformations)(AllianceVersatileInformations{})),
 
-	418: reflect.TypeOf((*BasicNamedAllianceInformations)(nil)),
+	418: reflect.TypeOf((BasicNamedAllianceInformations)(BasicNamedAllianceInformations{})),
 
-	417: reflect.TypeOf((*AllianceInformations)(nil)),
+	417: reflect.TypeOf((AllianceInformations)(AllianceInformations{})),
 
-	421: reflect.TypeOf((*AllianceFactSheetInformations)(nil)),
+	421: reflect.TypeOf((AllianceFactSheetInformations)(AllianceFactSheetInformations{})),
 
-	448: reflect.TypeOf((*TaxCollectorComplementaryInformations)(nil)),
+	448: reflect.TypeOf((TaxCollectorComplementaryInformations)(TaxCollectorComplementaryInformations{})),
 
-	446: reflect.TypeOf((*TaxCollectorGuildInformations)(nil)),
+	446: reflect.TypeOf((TaxCollectorGuildInformations)(TaxCollectorGuildInformations{})),
 
-	165: reflect.TypeOf((*AdditionalTaxCollectorInformations)(nil)),
+	165: reflect.TypeOf((AdditionalTaxCollectorInformations)(AdditionalTaxCollectorInformations{})),
 
-	372: reflect.TypeOf((*TaxCollectorLootInformations)(nil)),
+	372: reflect.TypeOf((TaxCollectorLootInformations)(TaxCollectorLootInformations{})),
 
-	447: reflect.TypeOf((*TaxCollectorWaitingForHelpInformations)(nil)),
+	447: reflect.TypeOf((TaxCollectorWaitingForHelpInformations)(TaxCollectorWaitingForHelpInformations{})),
 
-	77: reflect.TypeOf((*FriendSpouseInformations)(nil)),
+	77: reflect.TypeOf((FriendSpouseInformations)(FriendSpouseInformations{})),
 
-	93: reflect.TypeOf((*FriendSpouseOnlineInformations)(nil)),
+	93: reflect.TypeOf((FriendSpouseOnlineInformations)(FriendSpouseOnlineInformations{})),
 
-	119: reflect.TypeOf((*ObjectItemQuantity)(nil)),
+	119: reflect.TypeOf((ObjectItemQuantity)(ObjectItemQuantity{})),
 
-	369: reflect.TypeOf((*Shortcut)(nil)),
+	369: reflect.TypeOf((Shortcut)(Shortcut{})),
 
-	367: reflect.TypeOf((*ShortcutObject)(nil)),
+	367: reflect.TypeOf((ShortcutObject)(ShortcutObject{})),
 
-	492: reflect.TypeOf((*ShortcutObjectIdolsPreset)(nil)),
+	492: reflect.TypeOf((ShortcutObjectIdolsPreset)(ShortcutObjectIdolsPreset{})),
 
-	355: reflect.TypeOf((*Preset)(nil)),
+	355: reflect.TypeOf((Preset)(Preset{})),
 
-	388: reflect.TypeOf((*ShortcutSmiley)(nil)),
+	388: reflect.TypeOf((ShortcutSmiley)(ShortcutSmiley{})),
 
-	491: reflect.TypeOf((*IdolsPreset)(nil)),
+	491: reflect.TypeOf((IdolsPreset)(IdolsPreset{})),
 
-	389: reflect.TypeOf((*ShortcutEmote)(nil)),
+	389: reflect.TypeOf((ShortcutEmote)(ShortcutEmote{})),
 
-	370: reflect.TypeOf((*ShortcutObjectPreset)(nil)),
+	370: reflect.TypeOf((ShortcutObjectPreset)(ShortcutObjectPreset{})),
 
-	371: reflect.TypeOf((*ShortcutObjectItem)(nil)),
+	371: reflect.TypeOf((ShortcutObjectItem)(ShortcutObjectItem{})),
 
-	368: reflect.TypeOf((*ShortcutSpell)(nil)),
+	368: reflect.TypeOf((ShortcutSpell)(ShortcutSpell{})),
 
-	178: reflect.TypeOf((*MountClientData)(nil)),
+	178: reflect.TypeOf((MountClientData)(MountClientData{})),
 
-	356: reflect.TypeOf((*UpdateMountBoost)(nil)),
+	356: reflect.TypeOf((UpdateMountBoost)(UpdateMountBoost{})),
 
-	357: reflect.TypeOf((*UpdateMountIntBoost)(nil)),
+	357: reflect.TypeOf((UpdateMountIntBoost)(UpdateMountIntBoost{})),
 
-	484: reflect.TypeOf((*StatisticData)(nil)),
+	484: reflect.TypeOf((StatisticData)(StatisticData{})),
 
-	485: reflect.TypeOf((*StatisticDataInt)(nil)),
+	485: reflect.TypeOf((StatisticDataInt)(StatisticDataInt{})),
 
-	445: reflect.TypeOf((*CharacterMinimalGuildInformations)(nil)),
+	445: reflect.TypeOf((CharacterMinimalGuildInformations)(CharacterMinimalGuildInformations{})),
 
-	486: reflect.TypeOf((*StatisticDataByte)(nil)),
+	486: reflect.TypeOf((StatisticDataByte)(StatisticDataByte{})),
 
-	385: reflect.TypeOf((*QuestObjectiveInformations)(nil)),
+	385: reflect.TypeOf((QuestObjectiveInformations)(QuestObjectiveInformations{})),
 
-	177: reflect.TypeOf((*FightTeamMemberTaxCollectorInformations)(nil)),
+	177: reflect.TypeOf((FightTeamMemberTaxCollectorInformations)(FightTeamMemberTaxCollectorInformations{})),
 
-	430: reflect.TypeOf((*ServerSessionConstant)(nil)),
+	430: reflect.TypeOf((ServerSessionConstant)(ServerSessionConstant{})),
 
-	436: reflect.TypeOf((*ServerSessionConstantString)(nil)),
+	436: reflect.TypeOf((ServerSessionConstantString)(ServerSessionConstantString{})),
 
-	174: reflect.TypeOf((*MapCoordinates)(nil)),
+	174: reflect.TypeOf((MapCoordinates)(MapCoordinates{})),
 
-	392: reflect.TypeOf((*MapCoordinatesAndId)(nil)),
+	392: reflect.TypeOf((MapCoordinatesAndId)(MapCoordinatesAndId{})),
 
-	176: reflect.TypeOf((*MapCoordinatesExtended)(nil)),
+	176: reflect.TypeOf((MapCoordinatesExtended)(MapCoordinatesExtended{})),
 
-	463: reflect.TypeOf((*TreasureHuntStep)(nil)),
+	463: reflect.TypeOf((TreasureHuntStep)(TreasureHuntStep{})),
 
-	462: reflect.TypeOf((*TreasureHuntStepFight)(nil)),
+	462: reflect.TypeOf((TreasureHuntStepFight)(TreasureHuntStepFight{})),
 
-	382: reflect.TypeOf((*QuestActiveDetailedInformations)(nil)),
+	382: reflect.TypeOf((QuestActiveDetailedInformations)(QuestActiveDetailedInformations{})),
 
-	71: reflect.TypeOf((*ObjectEffectCreature)(nil)),
+	71: reflect.TypeOf((ObjectEffectCreature)(ObjectEffectCreature{})),
 
-	74: reflect.TypeOf((*ObjectEffectString)(nil)),
+	74: reflect.TypeOf((ObjectEffectString)(ObjectEffectString{})),
 
-	482: reflect.TypeOf((*StatisticDataBoolean)(nil)),
+	482: reflect.TypeOf((StatisticDataBoolean)(StatisticDataBoolean{})),
 
-	440: reflect.TypeOf((*TaxCollectorStaticExtendedInformations)(nil)),
+	440: reflect.TypeOf((TaxCollectorStaticExtendedInformations)(TaxCollectorStaticExtendedInformations{})),
 
-	191: reflect.TypeOf((*FightResultAdditionalData)(nil)),
+	191: reflect.TypeOf((FightResultAdditionalData)(FightResultAdditionalData{})),
 
-	190: reflect.TypeOf((*FightResultPvpData)(nil)),
+	190: reflect.TypeOf((FightResultPvpData)(FightResultPvpData{})),
 
-	444: reflect.TypeOf((*CharacterMinimalAllianceInformations)(nil)),
+	444: reflect.TypeOf((CharacterMinimalAllianceInformations)(CharacterMinimalAllianceInformations{})),
 
-	6: reflect.TypeOf((*FightTeamMemberMonsterInformations)(nil)),
+	6: reflect.TypeOf((FightTeamMemberMonsterInformations)(FightTeamMemberMonsterInformations{})),
 
-	82: reflect.TypeOf((*ObjectEffectMinMax)(nil)),
+	82: reflect.TypeOf((ObjectEffectMinMax)(ObjectEffectMinMax{})),
 
-	439: reflect.TypeOf((*FightAllianceTeamInformations)(nil)),
+	439: reflect.TypeOf((FightAllianceTeamInformations)(FightAllianceTeamInformations{})),
 
-	490: reflect.TypeOf((*PartyIdol)(nil)),
+	490: reflect.TypeOf((PartyIdol)(PartyIdol{})),
 
-	203: reflect.TypeOf((*GameFightMonsterWithAlignmentInformations)(nil)),
+	203: reflect.TypeOf((GameFightMonsterWithAlignmentInformations)(GameFightMonsterWithAlignmentInformations{})),
 
-	398: reflect.TypeOf((*InteractiveElementWithAgeBonus)(nil)),
+	398: reflect.TypeOf((InteractiveElementWithAgeBonus)(InteractiveElementWithAgeBonus{})),
 
-	413: reflect.TypeOf((*GameFightFighterLightInformations)(nil)),
+	413: reflect.TypeOf((GameFightFighterLightInformations)(GameFightFighterLightInformations{})),
 
-	13: reflect.TypeOf((*FightTeamMemberCharacterInformations)(nil)),
+	13: reflect.TypeOf((FightTeamMemberCharacterInformations)(FightTeamMemberCharacterInformations{})),
 
-	179: reflect.TypeOf((*ObjectEffectMount)(nil)),
+	179: reflect.TypeOf((ObjectEffectMount)(ObjectEffectMount{})),
 
-	487: reflect.TypeOf((*StatisticDataString)(nil)),
+	487: reflect.TypeOf((StatisticDataString)(StatisticDataString{})),
 
-	429: reflect.TypeOf((*ServerSessionConstantLong)(nil)),
+	429: reflect.TypeOf((ServerSessionConstantLong)(ServerSessionConstantLong{})),
 
-	457: reflect.TypeOf((*GameFightFighterTaxCollectorLightInformations)(nil)),
+	457: reflect.TypeOf((GameFightFighterTaxCollectorLightInformations)(GameFightFighterTaxCollectorLightInformations{})),
 
-	426: reflect.TypeOf((*FightTeamMemberWithAllianceCharacterInformations)(nil)),
+	426: reflect.TypeOf((FightTeamMemberWithAllianceCharacterInformations)(FightTeamMemberWithAllianceCharacterInformations{})),
 
-	474: reflect.TypeOf((*CharacterHardcoreOrEpicInformations)(nil)),
+	474: reflect.TypeOf((CharacterHardcoreOrEpicInformations)(CharacterHardcoreOrEpicInformations{})),
 
-	471: reflect.TypeOf((*GameRolePlayTreasureHintInformations)(nil)),
+	471: reflect.TypeOf((GameRolePlayTreasureHintInformations)(GameRolePlayTreasureHintInformations{})),
 
-	75: reflect.TypeOf((*ObjectEffectDuration)(nil)),
+	75: reflect.TypeOf((ObjectEffectDuration)(ObjectEffectDuration{})),
 
-	455: reflect.TypeOf((*GameFightFighterMonsterLightInformations)(nil)),
+	455: reflect.TypeOf((GameFightFighterMonsterLightInformations)(GameFightFighterMonsterLightInformations{})),
 
-	409: reflect.TypeOf((*HumanOptionGuild)(nil)),
+	409: reflect.TypeOf((HumanOptionGuild)(HumanOptionGuild{})),
 
-	512: reflect.TypeOf((*HouseGuildedInformations)(nil)),
+	512: reflect.TypeOf((HouseGuildedInformations)(HouseGuildedInformations{})),
 
-	72: reflect.TypeOf((*ObjectEffectDate)(nil)),
+	72: reflect.TypeOf((ObjectEffectDate)(ObjectEffectDate{})),
 
-	81: reflect.TypeOf((*ObjectEffectLadder)(nil)),
+	81: reflect.TypeOf((ObjectEffectLadder)(ObjectEffectLadder{})),
 
-	454: reflect.TypeOf((*GameFightFighterCompanionLightInformations)(nil)),
+	454: reflect.TypeOf((GameFightFighterCompanionLightInformations)(GameFightFighterCompanionLightInformations{})),
 
-	73: reflect.TypeOf((*ObjectEffectDice)(nil)),
+	73: reflect.TypeOf((ObjectEffectDice)(ObjectEffectDice{})),
 
-	465: reflect.TypeOf((*TreasureHuntStepDig)(nil)),
+	465: reflect.TypeOf((TreasureHuntStepDig)(TreasureHuntStepDig{})),
 
-	468: reflect.TypeOf((*TreasureHuntStepFollowDirection)(nil)),
+	468: reflect.TypeOf((TreasureHuntStepFollowDirection)(TreasureHuntStepFollowDirection{})),
 
-	508: reflect.TypeOf((*PaddockGuildedInformations)(nil)),
+	508: reflect.TypeOf((PaddockGuildedInformations)(PaddockGuildedInformations{})),
 
-	437: reflect.TypeOf((*GuildInAllianceVersatileInformations)(nil)),
+	437: reflect.TypeOf((GuildInAllianceVersatileInformations)(GuildInAllianceVersatileInformations{})),
 
-	456: reflect.TypeOf((*GameFightFighterNamedLightInformations)(nil)),
+	456: reflect.TypeOf((GameFightFighterNamedLightInformations)(GameFightFighterNamedLightInformations{})),
 
-	192: reflect.TypeOf((*FightResultExperienceData)(nil)),
+	192: reflect.TypeOf((FightResultExperienceData)(FightResultExperienceData{})),
 
-	451: reflect.TypeOf((*FightTeamMemberCompanionInformations)(nil)),
+	451: reflect.TypeOf((FightTeamMemberCompanionInformations)(FightTeamMemberCompanionInformations{})),
 
-	220: reflect.TypeOf((*InteractiveElementNamedSkill)(nil)),
+	220: reflect.TypeOf((InteractiveElementNamedSkill)(InteractiveElementNamedSkill{})),
 
-	488: reflect.TypeOf((*StatisticDataShort)(nil)),
+	488: reflect.TypeOf((StatisticDataShort)(StatisticDataShort{})),
 
-	216: reflect.TypeOf((*FightResultMutantListEntry)(nil)),
+	216: reflect.TypeOf((FightResultMutantListEntry)(FightResultMutantListEntry{})),
 
-	433: reflect.TypeOf((*ServerSessionConstantInteger)(nil)),
+	433: reflect.TypeOf((ServerSessionConstantInteger)(ServerSessionConstantInteger{})),
 
-	461: reflect.TypeOf((*TreasureHuntStepFollowDirectionToPOI)(nil)),
+	461: reflect.TypeOf((TreasureHuntStepFollowDirectionToPOI)(TreasureHuntStepFollowDirectionToPOI{})),
 
-	193: reflect.TypeOf((*CharacterMinimalPlusLookAndGradeInformations)(nil)),
+	193: reflect.TypeOf((CharacterMinimalPlusLookAndGradeInformations)(CharacterMinimalPlusLookAndGradeInformations{})),
 
-	472: reflect.TypeOf((*TreasureHuntStepFollowDirectionToHint)(nil)),
+	472: reflect.TypeOf((TreasureHuntStepFollowDirectionToHint)(TreasureHuntStepFollowDirectionToHint{})),
 
-	386: reflect.TypeOf((*QuestObjectiveInformationsWithCompletion)(nil)),
+	386: reflect.TypeOf((QuestObjectiveInformationsWithCompletion)(QuestObjectiveInformationsWithCompletion{})),
 
-	473: reflect.TypeOf((*TreasureHuntFlag)(nil)),
+	473: reflect.TypeOf((TreasureHuntFlag)(TreasureHuntFlag{})),
 
-	98: reflect.TypeOf((*JobExperience)(nil)),
+	98: reflect.TypeOf((JobExperience)(JobExperience{})),
 
-	500: reflect.TypeOf((*JobBookSubscription)(nil)),
+	500: reflect.TypeOf((JobBookSubscription)(JobBookSubscription{})),
 
-	97: reflect.TypeOf((*JobCrafterDirectorySettings)(nil)),
+	97: reflect.TypeOf((JobCrafterDirectorySettings)(JobCrafterDirectorySettings{})),
 
-	354: reflect.TypeOf((*PresetItem)(nil)),
+	354: reflect.TypeOf((PresetItem)(PresetItem{})),
 
-	479: reflect.TypeOf((*CharacterRemodelingInformation)(nil)),
+	479: reflect.TypeOf((CharacterRemodelingInformation)(CharacterRemodelingInformation{})),
 
-	477: reflect.TypeOf((*CharacterToRemodelInformations)(nil)),
+	477: reflect.TypeOf((CharacterToRemodelInformations)(CharacterToRemodelInformations{})),
 
-	480: reflect.TypeOf((*RemodelingInformation)(nil)),
+	480: reflect.TypeOf((RemodelingInformation)(RemodelingInformation{})),
 
-	11: reflect.TypeOf((*Version)(nil)),
+	11: reflect.TypeOf((Version)(Version{})),
 
-	393: reflect.TypeOf((*VersionExtended)(nil)),
+	393: reflect.TypeOf((VersionExtended)(VersionExtended{})),
 
-	497: reflect.TypeOf((*MonsterBoosts)(nil)),
+	497: reflect.TypeOf((MonsterBoosts)(MonsterBoosts{})),
 
-	506: reflect.TypeOf((*FinishMoveInformations)(nil)),
+	506: reflect.TypeOf((FinishMoveInformations)(FinishMoveInformations{})),
 
-	49: reflect.TypeOf((*SpellItem)(nil)),
+	49: reflect.TypeOf((SpellItem)(SpellItem{})),
 
-	499: reflect.TypeOf((*ArenaRankInfos)(nil)),
+	499: reflect.TypeOf((ArenaRankInfos)(ArenaRankInfos{})),
 
-	378: reflect.TypeOf((*PartyMemberGeoPosition)(nil)),
+	378: reflect.TypeOf((PartyMemberGeoPosition)(PartyMemberGeoPosition{})),
 
-	20: reflect.TypeOf((*FightOptionsInformations)(nil)),
+	20: reflect.TypeOf((FightOptionsInformations)(FightOptionsInformations{})),
 
-	513: reflect.TypeOf((*FightStartingPositions)(nil)),
+	513: reflect.TypeOf((FightStartingPositions)(FightStartingPositions{})),
 
-	96: reflect.TypeOf((*TaxCollectorBasicInformations)(nil)),
+	96: reflect.TypeOf((TaxCollectorBasicInformations)(TaxCollectorBasicInformations{})),
 
-	184: reflect.TypeOf((*MountInformationsForPaddock)(nil)),
+	184: reflect.TypeOf((MountInformationsForPaddock)(MountInformationsForPaddock{})),
 
-	41: reflect.TypeOf((*FightLoot)(nil)),
+	41: reflect.TypeOf((FightLoot)(FightLoot{})),
 
-	120: reflect.TypeOf((*ObjectItemToSell)(nil)),
+	120: reflect.TypeOf((ObjectItemToSell)(ObjectItemToSell{})),
 
-	359: reflect.TypeOf((*ObjectItemToSellInHumanVendorShop)(nil)),
+	359: reflect.TypeOf((ObjectItemToSellInHumanVendorShop)(ObjectItemToSellInHumanVendorShop{})),
 
-	164: reflect.TypeOf((*ObjectItemToSellInBid)(nil)),
+	164: reflect.TypeOf((ObjectItemToSellInBid)(ObjectItemToSellInBid{})),
 
-	122: reflect.TypeOf((*BidExchangerObjectInfo)(nil)),
+	122: reflect.TypeOf((BidExchangerObjectInfo)(BidExchangerObjectInfo{})),
 
-	121: reflect.TypeOf((*SellerBuyerDescriptor)(nil)),
+	121: reflect.TypeOf((SellerBuyerDescriptor)(SellerBuyerDescriptor{})),
 
-	117: reflect.TypeOf((*FightExternalInformations)(nil)),
+	117: reflect.TypeOf((FightExternalInformations)(FightExternalInformations{})),
 
-	352: reflect.TypeOf((*ObjectItemToSellInNpcShop)(nil)),
+	352: reflect.TypeOf((ObjectItemToSellInNpcShop)(ObjectItemToSellInNpcShop{})),
 
-	186: reflect.TypeOf((*ProtectedEntityWaitingForHelpInfo)(nil)),
+	186: reflect.TypeOf((ProtectedEntityWaitingForHelpInfo)(ProtectedEntityWaitingForHelpInfo{})),
 
-	481: reflect.TypeOf((*DecraftedItemStackInfo)(nil)),
+	481: reflect.TypeOf((DecraftedItemStackInfo)(DecraftedItemStackInfo{})),
 
-	363: reflect.TypeOf((*Achievement)(nil)),
+	363: reflect.TypeOf((Achievement)(Achievement{})),
 
-	196: reflect.TypeOf((*JobCrafterDirectoryListEntry)(nil)),
+	196: reflect.TypeOf((JobCrafterDirectoryListEntry)(JobCrafterDirectoryListEntry{})),
 
-	498: reflect.TypeOf((*HavenBagFurnitureInformation)(nil)),
+	498: reflect.TypeOf((HavenBagFurnitureInformation)(HavenBagFurnitureInformation{})),
 
-	397: reflect.TypeOf((*KrosmasterFigure)(nil)),
+	397: reflect.TypeOf((KrosmasterFigure)(KrosmasterFigure{})),
 
-	63: reflect.TypeOf((*EntityMovementInformations)(nil)),
+	63: reflect.TypeOf((EntityMovementInformations)(EntityMovementInformations{})),
 
-	134: reflect.TypeOf((*ObjectItemNotInContainer)(nil)),
+	134: reflect.TypeOf((ObjectItemNotInContainer)(ObjectItemNotInContainer{})),
 
-	123: reflect.TypeOf((*GoldItem)(nil)),
+	123: reflect.TypeOf((GoldItem)(GoldItem{})),
 
-	475: reflect.TypeOf((*AbstractCharacterToRefurbishInformation)(nil)),
+	475: reflect.TypeOf((AbstractCharacterToRefurbishInformation)(AbstractCharacterToRefurbishInformation{})),
 
-	212: reflect.TypeOf((*CharacterToRecolorInformation)(nil)),
+	212: reflect.TypeOf((CharacterToRecolorInformation)(CharacterToRecolorInformation{})),
 
-	399: reflect.TypeOf((*CharacterToRelookInformation)(nil)),
+	399: reflect.TypeOf((CharacterToRelookInformation)(CharacterToRelookInformation{})),
 
-	195: reflect.TypeOf((*JobCrafterDirectoryEntryJobInfo)(nil)),
+	195: reflect.TypeOf((JobCrafterDirectoryEntryJobInfo)(JobCrafterDirectoryEntryJobInfo{})),
 
-	194: reflect.TypeOf((*JobCrafterDirectoryEntryPlayerInfo)(nil)),
+	194: reflect.TypeOf((JobCrafterDirectoryEntryPlayerInfo)(JobCrafterDirectoryEntryPlayerInfo{})),
 
-	175: reflect.TypeOf((*AtlasPointsInformations)(nil)),
+	175: reflect.TypeOf((AtlasPointsInformations)(AtlasPointsInformations{})),
 
-	115: reflect.TypeOf((*FightTeamLightInformations)(nil)),
+	115: reflect.TypeOf((FightTeamLightInformations)(FightTeamLightInformations{})),
 
-	404: reflect.TypeOf((*AchievementObjective)(nil)),
+	404: reflect.TypeOf((AchievementObjective)(AchievementObjective{})),
 
-	402: reflect.TypeOf((*AchievementStartedObjective)(nil)),
+	402: reflect.TypeOf((AchievementStartedObjective)(AchievementStartedObjective{})),
 }
 
 type ContentPart struct {
@@ -628,9 +628,9 @@ func (m *ContentPart) Deserialize(r Reader) error {
 type GameContextActorInformations struct {
 	ContextualId float64
 
-	Look *EntityLook
+	Look EntityLook
 
-	Disposition *EntityDispositionInformations
+	Disposition EntityDispositionInformations
 }
 
 func (m *GameContextActorInformations) ID() uint16 {
@@ -671,7 +671,7 @@ func (m *GameContextActorInformations) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	typedispositionID, err := r.ReadUInt16()
 	if err != nil {
@@ -684,7 +684,7 @@ func (m *GameContextActorInformations) Deserialize(r Reader) error {
 
 	ldisposition.Deserialize(r)
 
-	m.Disposition = ldisposition.(*EntityDispositionInformations)
+	m.Disposition = *ldisposition.(*EntityDispositionInformations)
 
 	return nil
 }
@@ -698,7 +698,7 @@ type GameFightFighterInformations struct {
 
 	Alive bool
 
-	Stats *GameFightMinimalStats
+	Stats GameFightMinimalStats
 
 	PreviousPositions []uint16
 }
@@ -786,7 +786,7 @@ func (m *GameFightFighterInformations) Deserialize(r Reader) error {
 
 	lstats.Deserialize(r)
 
-	m.Stats = lstats.(*GameFightMinimalStats)
+	m.Stats = *lstats.(*GameFightMinimalStats)
 
 	lpreviousPositionsLen, err := r.ReadInt16()
 	if err != nil {
@@ -1009,9 +1009,9 @@ type InteractiveElement struct {
 
 	ElementTypeId int32
 
-	EnabledSkills []*InteractiveElementSkill
+	EnabledSkills []InteractiveElementSkill
 
-	DisabledSkills []*InteractiveElementSkill
+	DisabledSkills []InteractiveElementSkill
 
 	OnCurrentMap bool
 }
@@ -1090,7 +1090,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnabledSkills = make([]*InteractiveElementSkill, lenabledSkillsLen)
+	m.EnabledSkills = make([]InteractiveElementSkill, lenabledSkillsLen)
 
 	for i := range m.EnabledSkills {
 
@@ -1105,7 +1105,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 
 		lenabledSkills.Deserialize(r)
 
-		m.EnabledSkills[i] = lenabledSkills.(*InteractiveElementSkill)
+		m.EnabledSkills[i] = *lenabledSkills.(*InteractiveElementSkill)
 
 	}
 
@@ -1114,7 +1114,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DisabledSkills = make([]*InteractiveElementSkill, ldisabledSkillsLen)
+	m.DisabledSkills = make([]InteractiveElementSkill, ldisabledSkillsLen)
 
 	for i := range m.DisabledSkills {
 
@@ -1129,7 +1129,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 
 		ldisabledSkills.Deserialize(r)
 
-		m.DisabledSkills[i] = ldisabledSkills.(*InteractiveElementSkill)
+		m.DisabledSkills[i] = *ldisabledSkills.(*InteractiveElementSkill)
 
 	}
 
@@ -1146,7 +1146,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 type GameRolePlayPortalInformations struct {
 	GameRolePlayActorInformations
 
-	Portal *PortalInformation
+	Portal PortalInformation
 }
 
 func (m *GameRolePlayPortalInformations) ID() uint16 {
@@ -1187,7 +1187,7 @@ func (m *GameRolePlayPortalInformations) Deserialize(r Reader) error {
 
 	lportal.Deserialize(r)
 
-	m.Portal = lportal.(*PortalInformation)
+	m.Portal = *lportal.(*PortalInformation)
 
 	return nil
 }
@@ -1195,7 +1195,7 @@ func (m *GameRolePlayPortalInformations) Deserialize(r Reader) error {
 type GameRolePlayGroupMonsterInformations struct {
 	GameRolePlayActorInformations
 
-	StaticInfos *GroupMonsterStaticInformations
+	StaticInfos GroupMonsterStaticInformations
 
 	CreationTime float64
 
@@ -1289,7 +1289,7 @@ func (m *GameRolePlayGroupMonsterInformations) Deserialize(r Reader) error {
 
 	lstaticInfos.Deserialize(r)
 
-	m.StaticInfos = lstaticInfos.(*GroupMonsterStaticInformations)
+	m.StaticInfos = *lstaticInfos.(*GroupMonsterStaticInformations)
 
 	lcreationTime, err := r.ReadDouble()
 	if err != nil {
@@ -1327,7 +1327,7 @@ type GameRolePlayGroupMonsterWaveInformations struct {
 
 	NbWaves uint8
 
-	Alternatives []*GroupMonsterStaticInformations
+	Alternatives []GroupMonsterStaticInformations
 }
 
 func (m *GameRolePlayGroupMonsterWaveInformations) ID() uint16 {
@@ -1381,7 +1381,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Alternatives = make([]*GroupMonsterStaticInformations, lalternativesLen)
+	m.Alternatives = make([]GroupMonsterStaticInformations, lalternativesLen)
 
 	for i := range m.Alternatives {
 
@@ -1396,7 +1396,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 
 		lalternatives.Deserialize(r)
 
-		m.Alternatives[i] = lalternatives.(*GroupMonsterStaticInformations)
+		m.Alternatives[i] = *lalternatives.(*GroupMonsterStaticInformations)
 
 	}
 
@@ -1406,7 +1406,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 type GameRolePlayPrismInformations struct {
 	GameRolePlayActorInformations
 
-	Prism *PrismInformation
+	Prism PrismInformation
 }
 
 func (m *GameRolePlayPrismInformations) ID() uint16 {
@@ -1447,7 +1447,7 @@ func (m *GameRolePlayPrismInformations) Deserialize(r Reader) error {
 
 	lprism.Deserialize(r)
 
-	m.Prism = lprism.(*PrismInformation)
+	m.Prism = *lprism.(*PrismInformation)
 
 	return nil
 }
@@ -1585,7 +1585,7 @@ func (m *GameRolePlayNpcInformations) Deserialize(r Reader) error {
 type GameRolePlayTaxCollectorInformations struct {
 	GameRolePlayActorInformations
 
-	Identification *TaxCollectorStaticInformations
+	Identification TaxCollectorStaticInformations
 
 	GuildLevel uint8
 
@@ -1638,7 +1638,7 @@ func (m *GameRolePlayTaxCollectorInformations) Deserialize(r Reader) error {
 
 	lidentification.Deserialize(r)
 
-	m.Identification = lidentification.(*TaxCollectorStaticInformations)
+	m.Identification = *lidentification.(*TaxCollectorStaticInformations)
 
 	lguildLevel, err := r.ReadUInt8()
 	if err != nil {
@@ -1662,7 +1662,7 @@ type GameFightFighterNamedInformations struct {
 
 	Name string
 
-	Status *PlayerStatus
+	Status PlayerStatus
 }
 
 func (m *GameFightFighterNamedInformations) ID() uint16 {
@@ -1703,7 +1703,7 @@ func (m *GameFightFighterNamedInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = &lstatus
+	m.Status = lstatus
 
 	return nil
 }
@@ -1713,7 +1713,7 @@ type GameFightCharacterInformations struct {
 
 	Level uint8
 
-	AlignmentInfos *ActorAlignmentInformations
+	AlignmentInfos ActorAlignmentInformations
 
 	Breed int8
 
@@ -1766,7 +1766,7 @@ func (m *GameFightCharacterInformations) Deserialize(r Reader) error {
 
 	lalignmentInfos.Deserialize(r)
 
-	m.AlignmentInfos = &lalignmentInfos
+	m.AlignmentInfos = lalignmentInfos
 
 	lbreed, err := r.ReadInt8()
 	if err != nil {
@@ -1853,7 +1853,7 @@ func (m *GameFightCompanionInformations) Deserialize(r Reader) error {
 type GameRolePlayHumanoidInformations struct {
 	GameRolePlayNamedActorInformations
 
-	HumanoidInfo *HumanInformations
+	HumanoidInfo HumanInformations
 
 	AccountId uint32
 }
@@ -1900,7 +1900,7 @@ func (m *GameRolePlayHumanoidInformations) Deserialize(r Reader) error {
 
 	lhumanoidInfo.Deserialize(r)
 
-	m.HumanoidInfo = lhumanoidInfo.(*HumanInformations)
+	m.HumanoidInfo = *lhumanoidInfo.(*HumanInformations)
 
 	laccountId, err := r.ReadUInt32()
 	if err != nil {
@@ -1915,7 +1915,7 @@ func (m *GameRolePlayHumanoidInformations) Deserialize(r Reader) error {
 type GameRolePlayCharacterInformations struct {
 	GameRolePlayHumanoidInformations
 
-	AlignmentInfos *ActorAlignmentInformations
+	AlignmentInfos ActorAlignmentInformations
 }
 
 func (m *GameRolePlayCharacterInformations) ID() uint16 {
@@ -1945,7 +1945,7 @@ func (m *GameRolePlayCharacterInformations) Deserialize(r Reader) error {
 
 	lalignmentInfos.Deserialize(r)
 
-	m.AlignmentInfos = &lalignmentInfos
+	m.AlignmentInfos = lalignmentInfos
 
 	return nil
 }
@@ -1953,7 +1953,7 @@ func (m *GameRolePlayCharacterInformations) Deserialize(r Reader) error {
 type GameRolePlayNpcWithQuestInformations struct {
 	GameRolePlayNpcInformations
 
-	QuestFlag *GameRolePlayNpcQuestFlag
+	QuestFlag GameRolePlayNpcQuestFlag
 }
 
 func (m *GameRolePlayNpcWithQuestInformations) ID() uint16 {
@@ -1983,7 +1983,7 @@ func (m *GameRolePlayNpcWithQuestInformations) Deserialize(r Reader) error {
 
 	lquestFlag.Deserialize(r)
 
-	m.QuestFlag = &lquestFlag
+	m.QuestFlag = lquestFlag
 
 	return nil
 }
@@ -1993,7 +1993,7 @@ type GameRolePlayMerchantInformations struct {
 
 	SellType uint8
 
-	Options []*HumanOption
+	Options []HumanOption
 }
 
 func (m *GameRolePlayMerchantInformations) ID() uint16 {
@@ -2047,7 +2047,7 @@ func (m *GameRolePlayMerchantInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Options = make([]*HumanOption, loptionsLen)
+	m.Options = make([]HumanOption, loptionsLen)
 
 	for i := range m.Options {
 
@@ -2062,7 +2062,7 @@ func (m *GameRolePlayMerchantInformations) Deserialize(r Reader) error {
 
 		loptions.Deserialize(r)
 
-		m.Options[i] = loptions.(*HumanOption)
+		m.Options[i] = *loptions.(*HumanOption)
 
 	}
 
@@ -2126,7 +2126,7 @@ type SubEntity struct {
 
 	BindingPointIndex uint8
 
-	SubEntityLook *EntityLook
+	SubEntityLook EntityLook
 }
 
 func (m *SubEntity) ID() uint16 {
@@ -2170,7 +2170,7 @@ func (m *SubEntity) Deserialize(r Reader) error {
 
 	lsubEntityLook.Deserialize(r)
 
-	m.SubEntityLook = &lsubEntityLook
+	m.SubEntityLook = lsubEntityLook
 
 	return nil
 }
@@ -2184,7 +2184,7 @@ type EntityLook struct {
 
 	Scales []int16
 
-	Subentities []*SubEntity
+	Subentities []SubEntity
 }
 
 func (m *EntityLook) ID() uint16 {
@@ -2316,7 +2316,7 @@ func (m *EntityLook) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Subentities = make([]*SubEntity, lsubentitiesLen)
+	m.Subentities = make([]SubEntity, lsubentitiesLen)
 
 	for i := range m.Subentities {
 
@@ -2324,7 +2324,7 @@ func (m *EntityLook) Deserialize(r Reader) error {
 
 		lsubentities.Deserialize(r)
 
-		m.Subentities[i] = &lsubentities
+		m.Subentities[i] = lsubentities
 
 	}
 
@@ -2348,7 +2348,7 @@ type CharacterCharacteristicsInformations struct {
 
 	SpellsPoints uint16
 
-	AlignmentInfos *ActorExtendedAlignmentInformations
+	AlignmentInfos ActorExtendedAlignmentInformations
 
 	LifePoints uint32
 
@@ -2362,127 +2362,127 @@ type CharacterCharacteristicsInformations struct {
 
 	MovementPointsCurrent int16
 
-	Initiative *CharacterBaseCharacteristic
+	Initiative CharacterBaseCharacteristic
 
-	Prospecting *CharacterBaseCharacteristic
+	Prospecting CharacterBaseCharacteristic
 
-	ActionPoints *CharacterBaseCharacteristic
+	ActionPoints CharacterBaseCharacteristic
 
-	MovementPoints *CharacterBaseCharacteristic
+	MovementPoints CharacterBaseCharacteristic
 
-	Strength *CharacterBaseCharacteristic
+	Strength CharacterBaseCharacteristic
 
-	Vitality *CharacterBaseCharacteristic
+	Vitality CharacterBaseCharacteristic
 
-	Wisdom *CharacterBaseCharacteristic
+	Wisdom CharacterBaseCharacteristic
 
-	Chance *CharacterBaseCharacteristic
+	Chance CharacterBaseCharacteristic
 
-	Agility *CharacterBaseCharacteristic
+	Agility CharacterBaseCharacteristic
 
-	Intelligence *CharacterBaseCharacteristic
+	Intelligence CharacterBaseCharacteristic
 
-	Range *CharacterBaseCharacteristic
+	Range CharacterBaseCharacteristic
 
-	SummonableCreaturesBoost *CharacterBaseCharacteristic
+	SummonableCreaturesBoost CharacterBaseCharacteristic
 
-	Reflect *CharacterBaseCharacteristic
+	Reflect CharacterBaseCharacteristic
 
-	CriticalHit *CharacterBaseCharacteristic
+	CriticalHit CharacterBaseCharacteristic
 
 	CriticalHitWeapon uint16
 
-	CriticalMiss *CharacterBaseCharacteristic
+	CriticalMiss CharacterBaseCharacteristic
 
-	HealBonus *CharacterBaseCharacteristic
+	HealBonus CharacterBaseCharacteristic
 
-	AllDamagesBonus *CharacterBaseCharacteristic
+	AllDamagesBonus CharacterBaseCharacteristic
 
-	WeaponDamagesBonusPercent *CharacterBaseCharacteristic
+	WeaponDamagesBonusPercent CharacterBaseCharacteristic
 
-	DamagesBonusPercent *CharacterBaseCharacteristic
+	DamagesBonusPercent CharacterBaseCharacteristic
 
-	TrapBonus *CharacterBaseCharacteristic
+	TrapBonus CharacterBaseCharacteristic
 
-	TrapBonusPercent *CharacterBaseCharacteristic
+	TrapBonusPercent CharacterBaseCharacteristic
 
-	GlyphBonusPercent *CharacterBaseCharacteristic
+	GlyphBonusPercent CharacterBaseCharacteristic
 
-	RuneBonusPercent *CharacterBaseCharacteristic
+	RuneBonusPercent CharacterBaseCharacteristic
 
-	PermanentDamagePercent *CharacterBaseCharacteristic
+	PermanentDamagePercent CharacterBaseCharacteristic
 
-	TackleBlock *CharacterBaseCharacteristic
+	TackleBlock CharacterBaseCharacteristic
 
-	TackleEvade *CharacterBaseCharacteristic
+	TackleEvade CharacterBaseCharacteristic
 
-	PAAttack *CharacterBaseCharacteristic
+	PAAttack CharacterBaseCharacteristic
 
-	PMAttack *CharacterBaseCharacteristic
+	PMAttack CharacterBaseCharacteristic
 
-	PushDamageBonus *CharacterBaseCharacteristic
+	PushDamageBonus CharacterBaseCharacteristic
 
-	CriticalDamageBonus *CharacterBaseCharacteristic
+	CriticalDamageBonus CharacterBaseCharacteristic
 
-	NeutralDamageBonus *CharacterBaseCharacteristic
+	NeutralDamageBonus CharacterBaseCharacteristic
 
-	EarthDamageBonus *CharacterBaseCharacteristic
+	EarthDamageBonus CharacterBaseCharacteristic
 
-	WaterDamageBonus *CharacterBaseCharacteristic
+	WaterDamageBonus CharacterBaseCharacteristic
 
-	AirDamageBonus *CharacterBaseCharacteristic
+	AirDamageBonus CharacterBaseCharacteristic
 
-	FireDamageBonus *CharacterBaseCharacteristic
+	FireDamageBonus CharacterBaseCharacteristic
 
-	DodgePALostProbability *CharacterBaseCharacteristic
+	DodgePALostProbability CharacterBaseCharacteristic
 
-	DodgePMLostProbability *CharacterBaseCharacteristic
+	DodgePMLostProbability CharacterBaseCharacteristic
 
-	NeutralElementResistPercent *CharacterBaseCharacteristic
+	NeutralElementResistPercent CharacterBaseCharacteristic
 
-	EarthElementResistPercent *CharacterBaseCharacteristic
+	EarthElementResistPercent CharacterBaseCharacteristic
 
-	WaterElementResistPercent *CharacterBaseCharacteristic
+	WaterElementResistPercent CharacterBaseCharacteristic
 
-	AirElementResistPercent *CharacterBaseCharacteristic
+	AirElementResistPercent CharacterBaseCharacteristic
 
-	FireElementResistPercent *CharacterBaseCharacteristic
+	FireElementResistPercent CharacterBaseCharacteristic
 
-	NeutralElementReduction *CharacterBaseCharacteristic
+	NeutralElementReduction CharacterBaseCharacteristic
 
-	EarthElementReduction *CharacterBaseCharacteristic
+	EarthElementReduction CharacterBaseCharacteristic
 
-	WaterElementReduction *CharacterBaseCharacteristic
+	WaterElementReduction CharacterBaseCharacteristic
 
-	AirElementReduction *CharacterBaseCharacteristic
+	AirElementReduction CharacterBaseCharacteristic
 
-	FireElementReduction *CharacterBaseCharacteristic
+	FireElementReduction CharacterBaseCharacteristic
 
-	PushDamageReduction *CharacterBaseCharacteristic
+	PushDamageReduction CharacterBaseCharacteristic
 
-	CriticalDamageReduction *CharacterBaseCharacteristic
+	CriticalDamageReduction CharacterBaseCharacteristic
 
-	PvpNeutralElementResistPercent *CharacterBaseCharacteristic
+	PvpNeutralElementResistPercent CharacterBaseCharacteristic
 
-	PvpEarthElementResistPercent *CharacterBaseCharacteristic
+	PvpEarthElementResistPercent CharacterBaseCharacteristic
 
-	PvpWaterElementResistPercent *CharacterBaseCharacteristic
+	PvpWaterElementResistPercent CharacterBaseCharacteristic
 
-	PvpAirElementResistPercent *CharacterBaseCharacteristic
+	PvpAirElementResistPercent CharacterBaseCharacteristic
 
-	PvpFireElementResistPercent *CharacterBaseCharacteristic
+	PvpFireElementResistPercent CharacterBaseCharacteristic
 
-	PvpNeutralElementReduction *CharacterBaseCharacteristic
+	PvpNeutralElementReduction CharacterBaseCharacteristic
 
-	PvpEarthElementReduction *CharacterBaseCharacteristic
+	PvpEarthElementReduction CharacterBaseCharacteristic
 
-	PvpWaterElementReduction *CharacterBaseCharacteristic
+	PvpWaterElementReduction CharacterBaseCharacteristic
 
-	PvpAirElementReduction *CharacterBaseCharacteristic
+	PvpAirElementReduction CharacterBaseCharacteristic
 
-	PvpFireElementReduction *CharacterBaseCharacteristic
+	PvpFireElementReduction CharacterBaseCharacteristic
 
-	SpellModifications []*CharacterSpellModification
+	SpellModifications []CharacterSpellModification
 
 	ProbationTime uint32
 }
@@ -2874,7 +2874,7 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 
 	lalignmentInfos.Deserialize(r)
 
-	m.AlignmentInfos = &lalignmentInfos
+	m.AlignmentInfos = lalignmentInfos
 
 	llifePoints, err := r.ReadVarUInt32()
 	if err != nil {
@@ -2922,85 +2922,85 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 
 	linitiative.Deserialize(r)
 
-	m.Initiative = &linitiative
+	m.Initiative = linitiative
 
 	var lprospecting CharacterBaseCharacteristic
 
 	lprospecting.Deserialize(r)
 
-	m.Prospecting = &lprospecting
+	m.Prospecting = lprospecting
 
 	var lactionPoints CharacterBaseCharacteristic
 
 	lactionPoints.Deserialize(r)
 
-	m.ActionPoints = &lactionPoints
+	m.ActionPoints = lactionPoints
 
 	var lmovementPoints CharacterBaseCharacteristic
 
 	lmovementPoints.Deserialize(r)
 
-	m.MovementPoints = &lmovementPoints
+	m.MovementPoints = lmovementPoints
 
 	var lstrength CharacterBaseCharacteristic
 
 	lstrength.Deserialize(r)
 
-	m.Strength = &lstrength
+	m.Strength = lstrength
 
 	var lvitality CharacterBaseCharacteristic
 
 	lvitality.Deserialize(r)
 
-	m.Vitality = &lvitality
+	m.Vitality = lvitality
 
 	var lwisdom CharacterBaseCharacteristic
 
 	lwisdom.Deserialize(r)
 
-	m.Wisdom = &lwisdom
+	m.Wisdom = lwisdom
 
 	var lchance CharacterBaseCharacteristic
 
 	lchance.Deserialize(r)
 
-	m.Chance = &lchance
+	m.Chance = lchance
 
 	var lagility CharacterBaseCharacteristic
 
 	lagility.Deserialize(r)
 
-	m.Agility = &lagility
+	m.Agility = lagility
 
 	var lintelligence CharacterBaseCharacteristic
 
 	lintelligence.Deserialize(r)
 
-	m.Intelligence = &lintelligence
+	m.Intelligence = lintelligence
 
 	var lrange CharacterBaseCharacteristic
 
 	lrange.Deserialize(r)
 
-	m.Range = &lrange
+	m.Range = lrange
 
 	var lsummonableCreaturesBoost CharacterBaseCharacteristic
 
 	lsummonableCreaturesBoost.Deserialize(r)
 
-	m.SummonableCreaturesBoost = &lsummonableCreaturesBoost
+	m.SummonableCreaturesBoost = lsummonableCreaturesBoost
 
 	var lreflect CharacterBaseCharacteristic
 
 	lreflect.Deserialize(r)
 
-	m.Reflect = &lreflect
+	m.Reflect = lreflect
 
 	var lcriticalHit CharacterBaseCharacteristic
 
 	lcriticalHit.Deserialize(r)
 
-	m.CriticalHit = &lcriticalHit
+	m.CriticalHit = lcriticalHit
 
 	lcriticalHitWeapon, err := r.ReadVarUInt16()
 	if err != nil {
@@ -3013,278 +3013,278 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 
 	lcriticalMiss.Deserialize(r)
 
-	m.CriticalMiss = &lcriticalMiss
+	m.CriticalMiss = lcriticalMiss
 
 	var lhealBonus CharacterBaseCharacteristic
 
 	lhealBonus.Deserialize(r)
 
-	m.HealBonus = &lhealBonus
+	m.HealBonus = lhealBonus
 
 	var lallDamagesBonus CharacterBaseCharacteristic
 
 	lallDamagesBonus.Deserialize(r)
 
-	m.AllDamagesBonus = &lallDamagesBonus
+	m.AllDamagesBonus = lallDamagesBonus
 
 	var lweaponDamagesBonusPercent CharacterBaseCharacteristic
 
 	lweaponDamagesBonusPercent.Deserialize(r)
 
-	m.WeaponDamagesBonusPercent = &lweaponDamagesBonusPercent
+	m.WeaponDamagesBonusPercent = lweaponDamagesBonusPercent
 
 	var ldamagesBonusPercent CharacterBaseCharacteristic
 
 	ldamagesBonusPercent.Deserialize(r)
 
-	m.DamagesBonusPercent = &ldamagesBonusPercent
+	m.DamagesBonusPercent = ldamagesBonusPercent
 
 	var ltrapBonus CharacterBaseCharacteristic
 
 	ltrapBonus.Deserialize(r)
 
-	m.TrapBonus = &ltrapBonus
+	m.TrapBonus = ltrapBonus
 
 	var ltrapBonusPercent CharacterBaseCharacteristic
 
 	ltrapBonusPercent.Deserialize(r)
 
-	m.TrapBonusPercent = &ltrapBonusPercent
+	m.TrapBonusPercent = ltrapBonusPercent
 
 	var lglyphBonusPercent CharacterBaseCharacteristic
 
 	lglyphBonusPercent.Deserialize(r)
 
-	m.GlyphBonusPercent = &lglyphBonusPercent
+	m.GlyphBonusPercent = lglyphBonusPercent
 
 	var lruneBonusPercent CharacterBaseCharacteristic
 
 	lruneBonusPercent.Deserialize(r)
 
-	m.RuneBonusPercent = &lruneBonusPercent
+	m.RuneBonusPercent = lruneBonusPercent
 
 	var lpermanentDamagePercent CharacterBaseCharacteristic
 
 	lpermanentDamagePercent.Deserialize(r)
 
-	m.PermanentDamagePercent = &lpermanentDamagePercent
+	m.PermanentDamagePercent = lpermanentDamagePercent
 
 	var ltackleBlock CharacterBaseCharacteristic
 
 	ltackleBlock.Deserialize(r)
 
-	m.TackleBlock = &ltackleBlock
+	m.TackleBlock = ltackleBlock
 
 	var ltackleEvade CharacterBaseCharacteristic
 
 	ltackleEvade.Deserialize(r)
 
-	m.TackleEvade = &ltackleEvade
+	m.TackleEvade = ltackleEvade
 
 	var lPAAttack CharacterBaseCharacteristic
 
 	lPAAttack.Deserialize(r)
 
-	m.PAAttack = &lPAAttack
+	m.PAAttack = lPAAttack
 
 	var lPMAttack CharacterBaseCharacteristic
 
 	lPMAttack.Deserialize(r)
 
-	m.PMAttack = &lPMAttack
+	m.PMAttack = lPMAttack
 
 	var lpushDamageBonus CharacterBaseCharacteristic
 
 	lpushDamageBonus.Deserialize(r)
 
-	m.PushDamageBonus = &lpushDamageBonus
+	m.PushDamageBonus = lpushDamageBonus
 
 	var lcriticalDamageBonus CharacterBaseCharacteristic
 
 	lcriticalDamageBonus.Deserialize(r)
 
-	m.CriticalDamageBonus = &lcriticalDamageBonus
+	m.CriticalDamageBonus = lcriticalDamageBonus
 
 	var lneutralDamageBonus CharacterBaseCharacteristic
 
 	lneutralDamageBonus.Deserialize(r)
 
-	m.NeutralDamageBonus = &lneutralDamageBonus
+	m.NeutralDamageBonus = lneutralDamageBonus
 
 	var learthDamageBonus CharacterBaseCharacteristic
 
 	learthDamageBonus.Deserialize(r)
 
-	m.EarthDamageBonus = &learthDamageBonus
+	m.EarthDamageBonus = learthDamageBonus
 
 	var lwaterDamageBonus CharacterBaseCharacteristic
 
 	lwaterDamageBonus.Deserialize(r)
 
-	m.WaterDamageBonus = &lwaterDamageBonus
+	m.WaterDamageBonus = lwaterDamageBonus
 
 	var lairDamageBonus CharacterBaseCharacteristic
 
 	lairDamageBonus.Deserialize(r)
 
-	m.AirDamageBonus = &lairDamageBonus
+	m.AirDamageBonus = lairDamageBonus
 
 	var lfireDamageBonus CharacterBaseCharacteristic
 
 	lfireDamageBonus.Deserialize(r)
 
-	m.FireDamageBonus = &lfireDamageBonus
+	m.FireDamageBonus = lfireDamageBonus
 
 	var ldodgePALostProbability CharacterBaseCharacteristic
 
 	ldodgePALostProbability.Deserialize(r)
 
-	m.DodgePALostProbability = &ldodgePALostProbability
+	m.DodgePALostProbability = ldodgePALostProbability
 
 	var ldodgePMLostProbability CharacterBaseCharacteristic
 
 	ldodgePMLostProbability.Deserialize(r)
 
-	m.DodgePMLostProbability = &ldodgePMLostProbability
+	m.DodgePMLostProbability = ldodgePMLostProbability
 
 	var lneutralElementResistPercent CharacterBaseCharacteristic
 
 	lneutralElementResistPercent.Deserialize(r)
 
-	m.NeutralElementResistPercent = &lneutralElementResistPercent
+	m.NeutralElementResistPercent = lneutralElementResistPercent
 
 	var learthElementResistPercent CharacterBaseCharacteristic
 
 	learthElementResistPercent.Deserialize(r)
 
-	m.EarthElementResistPercent = &learthElementResistPercent
+	m.EarthElementResistPercent = learthElementResistPercent
 
 	var lwaterElementResistPercent CharacterBaseCharacteristic
 
 	lwaterElementResistPercent.Deserialize(r)
 
-	m.WaterElementResistPercent = &lwaterElementResistPercent
+	m.WaterElementResistPercent = lwaterElementResistPercent
 
 	var lairElementResistPercent CharacterBaseCharacteristic
 
 	lairElementResistPercent.Deserialize(r)
 
-	m.AirElementResistPercent = &lairElementResistPercent
+	m.AirElementResistPercent = lairElementResistPercent
 
 	var lfireElementResistPercent CharacterBaseCharacteristic
 
 	lfireElementResistPercent.Deserialize(r)
 
-	m.FireElementResistPercent = &lfireElementResistPercent
+	m.FireElementResistPercent = lfireElementResistPercent
 
 	var lneutralElementReduction CharacterBaseCharacteristic
 
 	lneutralElementReduction.Deserialize(r)
 
-	m.NeutralElementReduction = &lneutralElementReduction
+	m.NeutralElementReduction = lneutralElementReduction
 
 	var learthElementReduction CharacterBaseCharacteristic
 
 	learthElementReduction.Deserialize(r)
 
-	m.EarthElementReduction = &learthElementReduction
+	m.EarthElementReduction = learthElementReduction
 
 	var lwaterElementReduction CharacterBaseCharacteristic
 
 	lwaterElementReduction.Deserialize(r)
 
-	m.WaterElementReduction = &lwaterElementReduction
+	m.WaterElementReduction = lwaterElementReduction
 
 	var lairElementReduction CharacterBaseCharacteristic
 
 	lairElementReduction.Deserialize(r)
 
-	m.AirElementReduction = &lairElementReduction
+	m.AirElementReduction = lairElementReduction
 
 	var lfireElementReduction CharacterBaseCharacteristic
 
 	lfireElementReduction.Deserialize(r)
 
-	m.FireElementReduction = &lfireElementReduction
+	m.FireElementReduction = lfireElementReduction
 
 	var lpushDamageReduction CharacterBaseCharacteristic
 
 	lpushDamageReduction.Deserialize(r)
 
-	m.PushDamageReduction = &lpushDamageReduction
+	m.PushDamageReduction = lpushDamageReduction
 
 	var lcriticalDamageReduction CharacterBaseCharacteristic
 
 	lcriticalDamageReduction.Deserialize(r)
 
-	m.CriticalDamageReduction = &lcriticalDamageReduction
+	m.CriticalDamageReduction = lcriticalDamageReduction
 
 	var lpvpNeutralElementResistPercent CharacterBaseCharacteristic
 
 	lpvpNeutralElementResistPercent.Deserialize(r)
 
-	m.PvpNeutralElementResistPercent = &lpvpNeutralElementResistPercent
+	m.PvpNeutralElementResistPercent = lpvpNeutralElementResistPercent
 
 	var lpvpEarthElementResistPercent CharacterBaseCharacteristic
 
 	lpvpEarthElementResistPercent.Deserialize(r)
 
-	m.PvpEarthElementResistPercent = &lpvpEarthElementResistPercent
+	m.PvpEarthElementResistPercent = lpvpEarthElementResistPercent
 
 	var lpvpWaterElementResistPercent CharacterBaseCharacteristic
 
 	lpvpWaterElementResistPercent.Deserialize(r)
 
-	m.PvpWaterElementResistPercent = &lpvpWaterElementResistPercent
+	m.PvpWaterElementResistPercent = lpvpWaterElementResistPercent
 
 	var lpvpAirElementResistPercent CharacterBaseCharacteristic
 
 	lpvpAirElementResistPercent.Deserialize(r)
 
-	m.PvpAirElementResistPercent = &lpvpAirElementResistPercent
+	m.PvpAirElementResistPercent = lpvpAirElementResistPercent
 
 	var lpvpFireElementResistPercent CharacterBaseCharacteristic
 
 	lpvpFireElementResistPercent.Deserialize(r)
 
-	m.PvpFireElementResistPercent = &lpvpFireElementResistPercent
+	m.PvpFireElementResistPercent = lpvpFireElementResistPercent
 
 	var lpvpNeutralElementReduction CharacterBaseCharacteristic
 
 	lpvpNeutralElementReduction.Deserialize(r)
 
-	m.PvpNeutralElementReduction = &lpvpNeutralElementReduction
+	m.PvpNeutralElementReduction = lpvpNeutralElementReduction
 
 	var lpvpEarthElementReduction CharacterBaseCharacteristic
 
 	lpvpEarthElementReduction.Deserialize(r)
 
-	m.PvpEarthElementReduction = &lpvpEarthElementReduction
+	m.PvpEarthElementReduction = lpvpEarthElementReduction
 
 	var lpvpWaterElementReduction CharacterBaseCharacteristic
 
 	lpvpWaterElementReduction.Deserialize(r)
 
-	m.PvpWaterElementReduction = &lpvpWaterElementReduction
+	m.PvpWaterElementReduction = lpvpWaterElementReduction
 
 	var lpvpAirElementReduction CharacterBaseCharacteristic
 
 	lpvpAirElementReduction.Deserialize(r)
 
-	m.PvpAirElementReduction = &lpvpAirElementReduction
+	m.PvpAirElementReduction = lpvpAirElementReduction
 
 	var lpvpFireElementReduction CharacterBaseCharacteristic
 
 	lpvpFireElementReduction.Deserialize(r)
 
-	m.PvpFireElementReduction = &lpvpFireElementReduction
+	m.PvpFireElementReduction = lpvpFireElementReduction
 
 	lspellModificationsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.SpellModifications = make([]*CharacterSpellModification, lspellModificationsLen)
+	m.SpellModifications = make([]CharacterSpellModification, lspellModificationsLen)
 
 	for i := range m.SpellModifications {
 
@@ -3292,7 +3292,7 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 
 		lspellModifications.Deserialize(r)
 
-		m.SpellModifications[i] = &lspellModifications
+		m.SpellModifications[i] = lspellModifications
 
 	}
 
@@ -3390,7 +3390,7 @@ func (m *PrismInformation) Deserialize(r Reader) error {
 type AlliancePrismInformation struct {
 	PrismInformation
 
-	Alliance *AllianceInformations
+	Alliance AllianceInformations
 }
 
 func (m *AlliancePrismInformation) ID() uint16 {
@@ -3420,7 +3420,7 @@ func (m *AlliancePrismInformation) Deserialize(r Reader) error {
 
 	lalliance.Deserialize(r)
 
-	m.Alliance = &lalliance
+	m.Alliance = lalliance
 
 	return nil
 }
@@ -3504,7 +3504,7 @@ type AllianceInsiderPrismInformation struct {
 
 	LastTimeSlotModificationAuthorName string
 
-	ModulesObjects []*ObjectItem
+	ModulesObjects []ObjectItem
 }
 
 func (m *AllianceInsiderPrismInformation) ID() uint16 {
@@ -3587,7 +3587,7 @@ func (m *AllianceInsiderPrismInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ModulesObjects = make([]*ObjectItem, lmodulesObjectsLen)
+	m.ModulesObjects = make([]ObjectItem, lmodulesObjectsLen)
 
 	for i := range m.ModulesObjects {
 
@@ -3595,7 +3595,7 @@ func (m *AllianceInsiderPrismInformation) Deserialize(r Reader) error {
 
 		lmodulesObjects.Deserialize(r)
 
-		m.ModulesObjects[i] = &lmodulesObjects
+		m.ModulesObjects[i] = lmodulesObjects
 
 	}
 
@@ -3736,7 +3736,7 @@ type GuildMember struct {
 
 	AchievementPoints int32
 
-	Status *PlayerStatus
+	Status PlayerStatus
 
 	HavenBagShared bool
 }
@@ -3919,7 +3919,7 @@ func (m *GuildMember) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	return nil
 }
@@ -4642,9 +4642,9 @@ func (m *PortalInformation) Deserialize(r Reader) error {
 }
 
 type GroupMonsterStaticInformations struct {
-	MainCreatureLightInfos *MonsterInGroupLightInformations
+	MainCreatureLightInfos MonsterInGroupLightInformations
 
-	Underlings []*MonsterInGroupInformations
+	Underlings []MonsterInGroupInformations
 }
 
 func (m *GroupMonsterStaticInformations) ID() uint16 {
@@ -4678,14 +4678,14 @@ func (m *GroupMonsterStaticInformations) Deserialize(r Reader) error {
 
 	lmainCreatureLightInfos.Deserialize(r)
 
-	m.MainCreatureLightInfos = &lmainCreatureLightInfos
+	m.MainCreatureLightInfos = lmainCreatureLightInfos
 
 	lunderlingsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Underlings = make([]*MonsterInGroupInformations, lunderlingsLen)
+	m.Underlings = make([]MonsterInGroupInformations, lunderlingsLen)
 
 	for i := range m.Underlings {
 
@@ -4693,7 +4693,7 @@ func (m *GroupMonsterStaticInformations) Deserialize(r Reader) error {
 
 		lunderlings.Deserialize(r)
 
-		m.Underlings[i] = &lunderlings
+		m.Underlings[i] = lunderlings
 
 	}
 
@@ -4774,7 +4774,7 @@ func (m *QuestActiveInformations) Deserialize(r Reader) error {
 type JobDescription struct {
 	JobId uint8
 
-	Skills []*SkillActionDescription
+	Skills []SkillActionDescription
 }
 
 func (m *JobDescription) ID() uint16 {
@@ -4820,7 +4820,7 @@ func (m *JobDescription) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Skills = make([]*SkillActionDescription, lskillsLen)
+	m.Skills = make([]SkillActionDescription, lskillsLen)
 
 	for i := range m.Skills {
 
@@ -4835,7 +4835,7 @@ func (m *JobDescription) Deserialize(r Reader) error {
 
 		lskills.Deserialize(r)
 
-		m.Skills[i] = lskills.(*SkillActionDescription)
+		m.Skills[i] = *lskills.(*SkillActionDescription)
 
 	}
 
@@ -5248,7 +5248,7 @@ func (m *HumanOptionTitle) Deserialize(r Reader) error {
 type CharacterMinimalPlusLookInformations struct {
 	CharacterMinimalInformations
 
-	EntityLook *EntityLook
+	EntityLook EntityLook
 }
 
 func (m *CharacterMinimalPlusLookInformations) ID() uint16 {
@@ -5278,7 +5278,7 @@ func (m *CharacterMinimalPlusLookInformations) Deserialize(r Reader) error {
 
 	lentityLook.Deserialize(r)
 
-	m.EntityLook = &lentityLook
+	m.EntityLook = lentityLook
 
 	return nil
 }
@@ -5340,7 +5340,7 @@ type CharacterSpellModification struct {
 
 	SpellId uint16
 
-	Value *CharacterBaseCharacteristic
+	Value CharacterBaseCharacteristic
 }
 
 func (m *CharacterSpellModification) ID() uint16 {
@@ -5384,7 +5384,7 @@ func (m *CharacterSpellModification) Deserialize(r Reader) error {
 
 	lvalue.Deserialize(r)
 
-	m.Value = &lvalue
+	m.Value = lvalue
 
 	return nil
 }
@@ -5540,7 +5540,7 @@ type TaxCollectorStaticInformations struct {
 
 	LastNameId uint16
 
-	GuildIdentity *GuildInformations
+	GuildIdentity GuildInformations
 }
 
 func (m *TaxCollectorStaticInformations) ID() uint16 {
@@ -5584,7 +5584,7 @@ func (m *TaxCollectorStaticInformations) Deserialize(r Reader) error {
 
 	lguildIdentity.Deserialize(r)
 
-	m.GuildIdentity = &lguildIdentity
+	m.GuildIdentity = lguildIdentity
 
 	return nil
 }
@@ -5969,11 +5969,11 @@ func (m *ItemDurability) Deserialize(r Reader) error {
 }
 
 type HumanInformations struct {
-	Restrictions *ActorRestrictionsInformations
+	Restrictions ActorRestrictionsInformations
 
 	Sex bool
 
-	Options []*HumanOption
+	Options []HumanOption
 }
 
 func (m *HumanInformations) ID() uint16 {
@@ -6015,7 +6015,7 @@ func (m *HumanInformations) Deserialize(r Reader) error {
 
 	lrestrictions.Deserialize(r)
 
-	m.Restrictions = &lrestrictions
+	m.Restrictions = lrestrictions
 
 	lsex, err := r.ReadBoolean()
 	if err != nil {
@@ -6029,7 +6029,7 @@ func (m *HumanInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Options = make([]*HumanOption, loptionsLen)
+	m.Options = make([]HumanOption, loptionsLen)
 
 	for i := range m.Options {
 
@@ -6044,7 +6044,7 @@ func (m *HumanInformations) Deserialize(r Reader) error {
 
 		loptions.Deserialize(r)
 
-		m.Options[i] = loptions.(*HumanOption)
+		m.Options[i] = *loptions.(*HumanOption)
 
 	}
 
@@ -6096,7 +6096,7 @@ func (m *MonsterInGroupLightInformations) Deserialize(r Reader) error {
 type GroupMonsterStaticInformationsWithAlternatives struct {
 	GroupMonsterStaticInformations
 
-	Alternatives []*AlternativeMonstersInGroupLightInformations
+	Alternatives []AlternativeMonstersInGroupLightInformations
 }
 
 func (m *GroupMonsterStaticInformationsWithAlternatives) ID() uint16 {
@@ -6135,7 +6135,7 @@ func (m *GroupMonsterStaticInformationsWithAlternatives) Deserialize(r Reader) e
 		return err
 	}
 
-	m.Alternatives = make([]*AlternativeMonstersInGroupLightInformations, lalternativesLen)
+	m.Alternatives = make([]AlternativeMonstersInGroupLightInformations, lalternativesLen)
 
 	for i := range m.Alternatives {
 
@@ -6143,7 +6143,7 @@ func (m *GroupMonsterStaticInformationsWithAlternatives) Deserialize(r Reader) e
 
 		lalternatives.Deserialize(r)
 
-		m.Alternatives[i] = &lalternatives
+		m.Alternatives[i] = lalternatives
 
 	}
 
@@ -6153,7 +6153,7 @@ func (m *GroupMonsterStaticInformationsWithAlternatives) Deserialize(r Reader) e
 type MonsterInGroupInformations struct {
 	MonsterInGroupLightInformations
 
-	Look *EntityLook
+	Look EntityLook
 }
 
 func (m *MonsterInGroupInformations) ID() uint16 {
@@ -6183,7 +6183,7 @@ func (m *MonsterInGroupInformations) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	return nil
 }
@@ -6191,7 +6191,7 @@ func (m *MonsterInGroupInformations) Deserialize(r Reader) error {
 type AlternativeMonstersInGroupLightInformations struct {
 	PlayerCount int32
 
-	Monsters []*MonsterInGroupLightInformations
+	Monsters []MonsterInGroupLightInformations
 }
 
 func (m *AlternativeMonstersInGroupLightInformations) ID() uint16 {
@@ -6233,7 +6233,7 @@ func (m *AlternativeMonstersInGroupLightInformations) Deserialize(r Reader) erro
 		return err
 	}
 
-	m.Monsters = make([]*MonsterInGroupLightInformations, lmonstersLen)
+	m.Monsters = make([]MonsterInGroupLightInformations, lmonstersLen)
 
 	for i := range m.Monsters {
 
@@ -6241,7 +6241,7 @@ func (m *AlternativeMonstersInGroupLightInformations) Deserialize(r Reader) erro
 
 		lmonsters.Deserialize(r)
 
-		m.Monsters[i] = &lmonsters
+		m.Monsters[i] = lmonsters
 
 	}
 
@@ -6293,7 +6293,7 @@ func (m *PaddockInformations) Deserialize(r Reader) error {
 type PaddockInstancesInformations struct {
 	PaddockInformations
 
-	Paddocks []*PaddockBuyableInformations
+	Paddocks []PaddockBuyableInformations
 }
 
 func (m *PaddockInstancesInformations) ID() uint16 {
@@ -6336,7 +6336,7 @@ func (m *PaddockInstancesInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Paddocks = make([]*PaddockBuyableInformations, lpaddocksLen)
+	m.Paddocks = make([]PaddockBuyableInformations, lpaddocksLen)
 
 	for i := range m.Paddocks {
 
@@ -6351,7 +6351,7 @@ func (m *PaddockInstancesInformations) Deserialize(r Reader) error {
 
 		lpaddocks.Deserialize(r)
 
-		m.Paddocks[i] = lpaddocks.(*PaddockBuyableInformations)
+		m.Paddocks[i] = *lpaddocks.(*PaddockBuyableInformations)
 
 	}
 
@@ -6535,7 +6535,7 @@ type HouseOnMapInformations struct {
 
 	DoorsOnMap []uint32
 
-	HouseInstances []*HouseInstanceInformations
+	HouseInstances []HouseInstanceInformations
 }
 
 func (m *HouseOnMapInformations) ID() uint16 {
@@ -6604,7 +6604,7 @@ func (m *HouseOnMapInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.HouseInstances = make([]*HouseInstanceInformations, lhouseInstancesLen)
+	m.HouseInstances = make([]HouseInstanceInformations, lhouseInstancesLen)
 
 	for i := range m.HouseInstances {
 
@@ -6612,7 +6612,7 @@ func (m *HouseOnMapInformations) Deserialize(r Reader) error {
 
 		lhouseInstances.Deserialize(r)
 
-		m.HouseInstances[i] = &lhouseInstances
+		m.HouseInstances[i] = lhouseInstances
 
 	}
 
@@ -6935,7 +6935,7 @@ func (m *AbstractFightTeamInformations) Deserialize(r Reader) error {
 type FightTeamInformations struct {
 	AbstractFightTeamInformations
 
-	TeamMembers []*FightTeamMemberInformations
+	TeamMembers []FightTeamMemberInformations
 }
 
 func (m *FightTeamInformations) ID() uint16 {
@@ -6978,7 +6978,7 @@ func (m *FightTeamInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.TeamMembers = make([]*FightTeamMemberInformations, lteamMembersLen)
+	m.TeamMembers = make([]FightTeamMemberInformations, lteamMembersLen)
 
 	for i := range m.TeamMembers {
 
@@ -6993,7 +6993,7 @@ func (m *FightTeamInformations) Deserialize(r Reader) error {
 
 		lteamMembers.Deserialize(r)
 
-		m.TeamMembers[i] = lteamMembers.(*FightTeamMemberInformations)
+		m.TeamMembers[i] = *lteamMembers.(*FightTeamMemberInformations)
 
 	}
 
@@ -7011,7 +7011,7 @@ type PartyInvitationMemberInformations struct {
 
 	SubAreaId uint16
 
-	Companions []*PartyCompanionBaseInformations
+	Companions []PartyCompanionBaseInformations
 }
 
 func (m *PartyInvitationMemberInformations) ID() uint16 {
@@ -7094,7 +7094,7 @@ func (m *PartyInvitationMemberInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Companions = make([]*PartyCompanionBaseInformations, lcompanionsLen)
+	m.Companions = make([]PartyCompanionBaseInformations, lcompanionsLen)
 
 	for i := range m.Companions {
 
@@ -7102,7 +7102,7 @@ func (m *PartyInvitationMemberInformations) Deserialize(r Reader) error {
 
 		lcompanions.Deserialize(r)
 
-		m.Companions[i] = &lcompanions
+		m.Companions[i] = lcompanions
 
 	}
 
@@ -7132,9 +7132,9 @@ type PartyMemberInformations struct {
 
 	SubAreaId uint16
 
-	Status *PlayerStatus
+	Status PlayerStatus
 
-	Companions []*PartyCompanionMemberInformations
+	Companions []PartyCompanionMemberInformations
 }
 
 func (m *PartyMemberInformations) ID() uint16 {
@@ -7297,14 +7297,14 @@ func (m *PartyMemberInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	lcompanionsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Companions = make([]*PartyCompanionMemberInformations, lcompanionsLen)
+	m.Companions = make([]PartyCompanionMemberInformations, lcompanionsLen)
 
 	for i := range m.Companions {
 
@@ -7312,7 +7312,7 @@ func (m *PartyMemberInformations) Deserialize(r Reader) error {
 
 		lcompanions.Deserialize(r)
 
-		m.Companions[i] = &lcompanions
+		m.Companions[i] = lcompanions
 
 	}
 
@@ -7324,7 +7324,7 @@ type PartyCompanionBaseInformations struct {
 
 	CompanionGenericId uint8
 
-	EntityLook *EntityLook
+	EntityLook EntityLook
 }
 
 func (m *PartyCompanionBaseInformations) ID() uint16 {
@@ -7368,7 +7368,7 @@ func (m *PartyCompanionBaseInformations) Deserialize(r Reader) error {
 
 	lentityLook.Deserialize(r)
 
-	m.EntityLook = &lentityLook
+	m.EntityLook = lentityLook
 
 	return nil
 }
@@ -7409,15 +7409,15 @@ type PartyGuestInformations struct {
 
 	Name string
 
-	GuestLook *EntityLook
+	GuestLook EntityLook
 
 	Breed int8
 
 	Sex bool
 
-	Status *PlayerStatus
+	Status PlayerStatus
 
-	Companions []*PartyCompanionBaseInformations
+	Companions []PartyCompanionBaseInformations
 }
 
 func (m *PartyGuestInformations) ID() uint16 {
@@ -7500,7 +7500,7 @@ func (m *PartyGuestInformations) Deserialize(r Reader) error {
 
 	lguestLook.Deserialize(r)
 
-	m.GuestLook = &lguestLook
+	m.GuestLook = lguestLook
 
 	lbreed, err := r.ReadInt8()
 	if err != nil {
@@ -7527,14 +7527,14 @@ func (m *PartyGuestInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	lcompanionsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Companions = make([]*PartyCompanionBaseInformations, lcompanionsLen)
+	m.Companions = make([]PartyCompanionBaseInformations, lcompanionsLen)
 
 	for i := range m.Companions {
 
@@ -7542,7 +7542,7 @@ func (m *PartyGuestInformations) Deserialize(r Reader) error {
 
 		lcompanions.Deserialize(r)
 
-		m.Companions[i] = &lcompanions
+		m.Companions[i] = lcompanions
 
 	}
 
@@ -7645,11 +7645,11 @@ type FightCommonInformations struct {
 
 	FightType uint8
 
-	FightTeams []*FightTeamInformations
+	FightTeams []FightTeamInformations
 
 	FightTeamsPositions []uint16
 
-	FightTeamsOptions []*FightOptionsInformations
+	FightTeamsOptions []FightOptionsInformations
 }
 
 func (m *FightCommonInformations) ID() uint16 {
@@ -7730,7 +7730,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FightTeams = make([]*FightTeamInformations, lfightTeamsLen)
+	m.FightTeams = make([]FightTeamInformations, lfightTeamsLen)
 
 	for i := range m.FightTeams {
 
@@ -7745,7 +7745,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 
 		lfightTeams.Deserialize(r)
 
-		m.FightTeams[i] = lfightTeams.(*FightTeamInformations)
+		m.FightTeams[i] = *lfightTeams.(*FightTeamInformations)
 
 	}
 
@@ -7772,7 +7772,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FightTeamsOptions = make([]*FightOptionsInformations, lfightTeamsOptionsLen)
+	m.FightTeamsOptions = make([]FightOptionsInformations, lfightTeamsOptionsLen)
 
 	for i := range m.FightTeamsOptions {
 
@@ -7780,7 +7780,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 
 		lfightTeamsOptions.Deserialize(r)
 
-		m.FightTeamsOptions[i] = &lfightTeamsOptions
+		m.FightTeamsOptions[i] = lfightTeamsOptions
 
 	}
 
@@ -8283,11 +8283,11 @@ type FriendOnlineInformations struct {
 
 	Sex bool
 
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 
 	MoodSmileyId uint16
 
-	Status *PlayerStatus
+	Status PlayerStatus
 
 	HavenBagShared bool
 }
@@ -8405,7 +8405,7 @@ func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	lmoodSmileyId, err := r.ReadVarUInt16()
 	if err != nil {
@@ -8425,7 +8425,7 @@ func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	return nil
 }
@@ -8445,7 +8445,7 @@ type PaddockContentInformations struct {
 
 	Abandonned bool
 
-	MountsInformations []*MountInformationsForPaddock
+	MountsInformations []MountInformationsForPaddock
 }
 
 func (m *PaddockContentInformations) ID() uint16 {
@@ -8550,7 +8550,7 @@ func (m *PaddockContentInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.MountsInformations = make([]*MountInformationsForPaddock, lmountsInformationsLen)
+	m.MountsInformations = make([]MountInformationsForPaddock, lmountsInformationsLen)
 
 	for i := range m.MountsInformations {
 
@@ -8558,7 +8558,7 @@ func (m *PaddockContentInformations) Deserialize(r Reader) error {
 
 		lmountsInformations.Deserialize(r)
 
-		m.MountsInformations[i] = &lmountsInformations
+		m.MountsInformations[i] = lmountsInformations
 
 	}
 
@@ -8568,7 +8568,7 @@ func (m *PaddockContentInformations) Deserialize(r Reader) error {
 type TaxCollectorMovement struct {
 	MovementType uint8
 
-	BasicInfos *TaxCollectorBasicInformations
+	BasicInfos TaxCollectorBasicInformations
 
 	PlayerId int64
 
@@ -8613,7 +8613,7 @@ func (m *TaxCollectorMovement) Deserialize(r Reader) error {
 
 	lbasicInfos.Deserialize(r)
 
-	m.BasicInfos = &lbasicInfos
+	m.BasicInfos = lbasicInfos
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -8639,7 +8639,7 @@ type TaxCollectorInformations struct {
 
 	LastNameId uint16
 
-	AdditionalInfos *AdditionalTaxCollectorInformations
+	AdditionalInfos AdditionalTaxCollectorInformations
 
 	WorldX int16
 
@@ -8649,9 +8649,9 @@ type TaxCollectorInformations struct {
 
 	State uint8
 
-	Look *EntityLook
+	Look EntityLook
 
-	Complements []*TaxCollectorComplementaryInformations
+	Complements []TaxCollectorComplementaryInformations
 }
 
 func (m *TaxCollectorInformations) ID() uint16 {
@@ -8742,7 +8742,7 @@ func (m *TaxCollectorInformations) Deserialize(r Reader) error {
 
 	ladditionalInfos.Deserialize(r)
 
-	m.AdditionalInfos = &ladditionalInfos
+	m.AdditionalInfos = ladditionalInfos
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
@@ -8776,14 +8776,14 @@ func (m *TaxCollectorInformations) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	lcomplementsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Complements = make([]*TaxCollectorComplementaryInformations, lcomplementsLen)
+	m.Complements = make([]TaxCollectorComplementaryInformations, lcomplementsLen)
 
 	for i := range m.Complements {
 
@@ -8798,7 +8798,7 @@ func (m *TaxCollectorInformations) Deserialize(r Reader) error {
 
 		lcomplements.Deserialize(r)
 
-		m.Complements[i] = lcomplements.(*TaxCollectorComplementaryInformations)
+		m.Complements[i] = *lcomplements.(*TaxCollectorComplementaryInformations)
 
 	}
 
@@ -8929,7 +8929,7 @@ func (m *BasicGuildInformations) Deserialize(r Reader) error {
 type GuildInformations struct {
 	BasicGuildInformations
 
-	GuildEmblem *GuildEmblem
+	GuildEmblem GuildEmblem
 }
 
 func (m *GuildInformations) ID() uint16 {
@@ -8959,7 +8959,7 @@ func (m *GuildInformations) Deserialize(r Reader) error {
 
 	lguildEmblem.Deserialize(r)
 
-	m.GuildEmblem = &lguildEmblem
+	m.GuildEmblem = lguildEmblem
 
 	return nil
 }
@@ -9145,7 +9145,7 @@ type PrismGeolocalizedInformation struct {
 
 	MapId int32
 
-	Prism *PrismInformation
+	Prism PrismInformation
 }
 
 func (m *PrismGeolocalizedInformation) ID() uint16 {
@@ -9219,7 +9219,7 @@ func (m *PrismGeolocalizedInformation) Deserialize(r Reader) error {
 
 	lprism.Deserialize(r)
 
-	m.Prism = lprism.(*PrismInformation)
+	m.Prism = *lprism.(*PrismInformation)
 
 	return nil
 }
@@ -9309,7 +9309,7 @@ type ObjectItem struct {
 
 	ObjectGID uint16
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	ObjectUID uint32
 
@@ -9386,7 +9386,7 @@ func (m *ObjectItem) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -9401,7 +9401,7 @@ func (m *ObjectItem) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -9746,7 +9746,7 @@ func (m *ObjectItemInRolePlay) Deserialize(r Reader) error {
 type PaddockItem struct {
 	ObjectItemInRolePlay
 
-	Durability *ItemDurability
+	Durability ItemDurability
 }
 
 func (m *PaddockItem) ID() uint16 {
@@ -9776,7 +9776,7 @@ func (m *PaddockItem) Deserialize(r Reader) error {
 
 	ldurability.Deserialize(r)
 
-	m.Durability = &ldurability
+	m.Durability = ldurability
 
 	return nil
 }
@@ -9784,7 +9784,7 @@ func (m *PaddockItem) Deserialize(r Reader) error {
 type HumanOptionAlliance struct {
 	HumanOption
 
-	AllianceInformations *AllianceInformations
+	AllianceInformations AllianceInformations
 
 	Aggressable uint8
 }
@@ -9820,7 +9820,7 @@ func (m *HumanOptionAlliance) Deserialize(r Reader) error {
 
 	lallianceInformations.Deserialize(r)
 
-	m.AllianceInformations = &lallianceInformations
+	m.AllianceInformations = lallianceInformations
 
 	laggressable, err := r.ReadUInt8()
 	if err != nil {
@@ -9833,7 +9833,7 @@ func (m *HumanOptionAlliance) Deserialize(r Reader) error {
 }
 
 type IndexedEntityLook struct {
-	Look *EntityLook
+	Look EntityLook
 
 	Index uint8
 }
@@ -9861,7 +9861,7 @@ func (m *IndexedEntityLook) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	lindex, err := r.ReadUInt8()
 	if err != nil {
@@ -9993,7 +9993,7 @@ func (m *HumanOptionEmote) Deserialize(r Reader) error {
 type HumanOptionFollowers struct {
 	HumanOption
 
-	FollowingCharactersLook []*IndexedEntityLook
+	FollowingCharactersLook []IndexedEntityLook
 }
 
 func (m *HumanOptionFollowers) ID() uint16 {
@@ -10032,7 +10032,7 @@ func (m *HumanOptionFollowers) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FollowingCharactersLook = make([]*IndexedEntityLook, lfollowingCharactersLookLen)
+	m.FollowingCharactersLook = make([]IndexedEntityLook, lfollowingCharactersLookLen)
 
 	for i := range m.FollowingCharactersLook {
 
@@ -10040,7 +10040,7 @@ func (m *HumanOptionFollowers) Deserialize(r Reader) error {
 
 		lfollowingCharactersLook.Deserialize(r)
 
-		m.FollowingCharactersLook[i] = &lfollowingCharactersLook
+		m.FollowingCharactersLook[i] = lfollowingCharactersLook
 
 	}
 
@@ -10457,7 +10457,7 @@ type FightResultListEntry struct {
 
 	Wave uint8
 
-	Rewards *FightLoot
+	Rewards FightLoot
 }
 
 func (m *FightResultListEntry) ID() uint16 {
@@ -10501,7 +10501,7 @@ func (m *FightResultListEntry) Deserialize(r Reader) error {
 
 	lrewards.Deserialize(r)
 
-	m.Rewards = &lrewards
+	m.Rewards = lrewards
 
 	return nil
 }
@@ -10563,7 +10563,7 @@ type FightDispellableEffectExtendedInformations struct {
 
 	SourceId float64
 
-	Effect *AbstractFightDispellableEffect
+	Effect AbstractFightDispellableEffect
 }
 
 func (m *FightDispellableEffectExtendedInformations) ID() uint16 {
@@ -10618,7 +10618,7 @@ func (m *FightDispellableEffectExtendedInformations) Deserialize(r Reader) error
 
 	leffect.Deserialize(r)
 
-	m.Effect = leffect.(*AbstractFightDispellableEffect)
+	m.Effect = *leffect.(*AbstractFightDispellableEffect)
 
 	return nil
 }
@@ -10628,7 +10628,7 @@ type FightResultPlayerListEntry struct {
 
 	Level uint8
 
-	Additional []*FightResultAdditionalData
+	Additional []FightResultAdditionalData
 }
 
 func (m *FightResultPlayerListEntry) ID() uint16 {
@@ -10682,7 +10682,7 @@ func (m *FightResultPlayerListEntry) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Additional = make([]*FightResultAdditionalData, ladditionalLen)
+	m.Additional = make([]FightResultAdditionalData, ladditionalLen)
 
 	for i := range m.Additional {
 
@@ -10697,7 +10697,7 @@ func (m *FightResultPlayerListEntry) Deserialize(r Reader) error {
 
 		ladditional.Deserialize(r)
 
-		m.Additional[i] = ladditional.(*FightResultAdditionalData)
+		m.Additional[i] = *ladditional.(*FightResultAdditionalData)
 
 	}
 
@@ -10816,7 +10816,7 @@ type GameActionMark struct {
 
 	MarkimpactCell int16
 
-	Cells []*GameActionMarkedCell
+	Cells []GameActionMarkedCell
 
 	Active bool
 }
@@ -10930,7 +10930,7 @@ func (m *GameActionMark) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Cells = make([]*GameActionMarkedCell, lcellsLen)
+	m.Cells = make([]GameActionMarkedCell, lcellsLen)
 
 	for i := range m.Cells {
 
@@ -10938,7 +10938,7 @@ func (m *GameActionMark) Deserialize(r Reader) error {
 
 		lcells.Deserialize(r)
 
-		m.Cells[i] = &lcells
+		m.Cells[i] = lcells
 
 	}
 
@@ -10953,7 +10953,7 @@ func (m *GameActionMark) Deserialize(r Reader) error {
 }
 
 type NamedPartyTeamWithOutcome struct {
-	Team *NamedPartyTeam
+	Team NamedPartyTeam
 
 	Outcome uint16
 }
@@ -10981,7 +10981,7 @@ func (m *NamedPartyTeamWithOutcome) Deserialize(r Reader) error {
 
 	lteam.Deserialize(r)
 
-	m.Team = &lteam
+	m.Team = lteam
 
 	loutcome, err := r.ReadVarUInt16()
 	if err != nil {
@@ -11035,7 +11035,7 @@ func (m *GameFightMutantInformations) Deserialize(r Reader) error {
 type GameFightResumeSlaveInfo struct {
 	SlaveId float64
 
-	SpellCooldowns []*GameFightSpellCooldown
+	SpellCooldowns []GameFightSpellCooldown
 
 	SummonCount uint8
 
@@ -11089,7 +11089,7 @@ func (m *GameFightResumeSlaveInfo) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SpellCooldowns = make([]*GameFightSpellCooldown, lspellCooldownsLen)
+	m.SpellCooldowns = make([]GameFightSpellCooldown, lspellCooldownsLen)
 
 	for i := range m.SpellCooldowns {
 
@@ -11097,7 +11097,7 @@ func (m *GameFightResumeSlaveInfo) Deserialize(r Reader) error {
 
 		lspellCooldowns.Deserialize(r)
 
-		m.SpellCooldowns[i] = &lspellCooldowns
+		m.SpellCooldowns[i] = lspellCooldowns
 
 	}
 
@@ -11123,7 +11123,7 @@ type FightResultTaxCollectorListEntry struct {
 
 	Level uint8
 
-	GuildInfo *BasicGuildInformations
+	GuildInfo BasicGuildInformations
 
 	ExperienceForGuild int32
 }
@@ -11170,7 +11170,7 @@ func (m *FightResultTaxCollectorListEntry) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	lexperienceForGuild, err := r.ReadInt32()
 	if err != nil {
@@ -11808,11 +11808,11 @@ func (m *ActorExtendedAlignmentInformations) Deserialize(r Reader) error {
 type PrismFightersInformation struct {
 	SubAreaId uint16
 
-	WaitingForHelpInfo *ProtectedEntityWaitingForHelpInfo
+	WaitingForHelpInfo ProtectedEntityWaitingForHelpInfo
 
-	AllyCharactersInformations []*CharacterMinimalPlusLookInformations
+	AllyCharactersInformations []CharacterMinimalPlusLookInformations
 
-	EnemyCharactersInformations []*CharacterMinimalPlusLookInformations
+	EnemyCharactersInformations []CharacterMinimalPlusLookInformations
 }
 
 func (m *PrismFightersInformation) ID() uint16 {
@@ -11877,14 +11877,14 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 
 	lwaitingForHelpInfo.Deserialize(r)
 
-	m.WaitingForHelpInfo = &lwaitingForHelpInfo
+	m.WaitingForHelpInfo = lwaitingForHelpInfo
 
 	lallyCharactersInformationsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.AllyCharactersInformations = make([]*CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
+	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
 
 	for i := range m.AllyCharactersInformations {
 
@@ -11899,7 +11899,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 
 		lallyCharactersInformations.Deserialize(r)
 
-		m.AllyCharactersInformations[i] = lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.AllyCharactersInformations[i] = *lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
 
 	}
 
@@ -11908,7 +11908,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnemyCharactersInformations = make([]*CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
+	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
 
 	for i := range m.EnemyCharactersInformations {
 
@@ -11923,7 +11923,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 
 		lenemyCharactersInformations.Deserialize(r)
 
-		m.EnemyCharactersInformations[i] = lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.EnemyCharactersInformations[i] = *lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
 
 	}
 
@@ -11933,9 +11933,9 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 type TaxCollectorFightersInformation struct {
 	CollectorId int32
 
-	AllyCharactersInformations []*CharacterMinimalPlusLookInformations
+	AllyCharactersInformations []CharacterMinimalPlusLookInformations
 
-	EnemyCharactersInformations []*CharacterMinimalPlusLookInformations
+	EnemyCharactersInformations []CharacterMinimalPlusLookInformations
 }
 
 func (m *TaxCollectorFightersInformation) ID() uint16 {
@@ -11997,7 +11997,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.AllyCharactersInformations = make([]*CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
+	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
 
 	for i := range m.AllyCharactersInformations {
 
@@ -12012,7 +12012,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 
 		lallyCharactersInformations.Deserialize(r)
 
-		m.AllyCharactersInformations[i] = lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.AllyCharactersInformations[i] = *lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
 
 	}
 
@@ -12021,7 +12021,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnemyCharactersInformations = make([]*CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
+	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
 
 	for i := range m.EnemyCharactersInformations {
 
@@ -12036,7 +12036,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 
 		lenemyCharactersInformations.Deserialize(r)
 
-		m.EnemyCharactersInformations[i] = lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.EnemyCharactersInformations[i] = *lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
 
 	}
 
@@ -12048,7 +12048,7 @@ type ObjectItemMinimalInformation struct {
 
 	ObjectGID uint16
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 }
 
 func (m *ObjectItemMinimalInformation) ID() uint16 {
@@ -12102,7 +12102,7 @@ func (m *ObjectItemMinimalInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -12117,7 +12117,7 @@ func (m *ObjectItemMinimalInformation) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -12174,7 +12174,7 @@ type StartupActionAddObject struct {
 
 	PictureUrl string
 
-	Items []*ObjectItemInformationWithQuantity
+	Items []ObjectItemInformationWithQuantity
 }
 
 func (m *StartupActionAddObject) ID() uint16 {
@@ -12260,7 +12260,7 @@ func (m *StartupActionAddObject) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Items = make([]*ObjectItemInformationWithQuantity, litemsLen)
+	m.Items = make([]ObjectItemInformationWithQuantity, litemsLen)
 
 	for i := range m.Items {
 
@@ -12268,7 +12268,7 @@ func (m *StartupActionAddObject) Deserialize(r Reader) error {
 
 		litems.Deserialize(r)
 
-		m.Items[i] = &litems
+		m.Items[i] = litems
 
 	}
 
@@ -12278,7 +12278,7 @@ func (m *StartupActionAddObject) Deserialize(r Reader) error {
 type DareInformations struct {
 	DareId float64
 
-	Creator *CharacterBasicMinimalInformations
+	Creator CharacterBasicMinimalInformations
 
 	SubscriptionFee int64
 
@@ -12294,7 +12294,7 @@ type DareInformations struct {
 
 	AllianceId uint32
 
-	Criterions []*DareCriteria
+	Criterions []DareCriteria
 
 	StartDate float64
 }
@@ -12373,7 +12373,7 @@ func (m *DareInformations) Deserialize(r Reader) error {
 
 	lcreator.Deserialize(r)
 
-	m.Creator = &lcreator
+	m.Creator = lcreator
 
 	lsubscriptionFee, err := r.ReadVarInt64()
 	if err != nil {
@@ -12429,7 +12429,7 @@ func (m *DareInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Criterions = make([]*DareCriteria, lcriterionsLen)
+	m.Criterions = make([]DareCriteria, lcriterionsLen)
 
 	for i := range m.Criterions {
 
@@ -12437,7 +12437,7 @@ func (m *DareInformations) Deserialize(r Reader) error {
 
 		lcriterions.Deserialize(r)
 
-		m.Criterions[i] = &lcriterions
+		m.Criterions[i] = lcriterions
 
 	}
 
@@ -12638,7 +12638,7 @@ func (m *GuildEmblem) Deserialize(r Reader) error {
 type AlliancedGuildFactSheetInformations struct {
 	GuildInformations
 
-	AllianceInfos *BasicNamedAllianceInformations
+	AllianceInfos BasicNamedAllianceInformations
 }
 
 func (m *AlliancedGuildFactSheetInformations) ID() uint16 {
@@ -12668,7 +12668,7 @@ func (m *AlliancedGuildFactSheetInformations) Deserialize(r Reader) error {
 
 	lallianceInfos.Deserialize(r)
 
-	m.AllianceInfos = &lallianceInfos
+	m.AllianceInfos = lallianceInfos
 
 	return nil
 }
@@ -12851,7 +12851,7 @@ func (m *BasicNamedAllianceInformations) Deserialize(r Reader) error {
 type AllianceInformations struct {
 	BasicNamedAllianceInformations
 
-	AllianceEmblem *GuildEmblem
+	AllianceEmblem GuildEmblem
 }
 
 func (m *AllianceInformations) ID() uint16 {
@@ -12881,7 +12881,7 @@ func (m *AllianceInformations) Deserialize(r Reader) error {
 
 	lallianceEmblem.Deserialize(r)
 
-	m.AllianceEmblem = &lallianceEmblem
+	m.AllianceEmblem = lallianceEmblem
 
 	return nil
 }
@@ -12945,7 +12945,7 @@ func (m *TaxCollectorComplementaryInformations) Deserialize(r Reader) error {
 type TaxCollectorGuildInformations struct {
 	TaxCollectorComplementaryInformations
 
-	Guild *BasicGuildInformations
+	Guild BasicGuildInformations
 }
 
 func (m *TaxCollectorGuildInformations) ID() uint16 {
@@ -12975,7 +12975,7 @@ func (m *TaxCollectorGuildInformations) Deserialize(r Reader) error {
 
 	lguild.Deserialize(r)
 
-	m.Guild = &lguild
+	m.Guild = lguild
 
 	return nil
 }
@@ -13103,7 +13103,7 @@ func (m *TaxCollectorLootInformations) Deserialize(r Reader) error {
 type TaxCollectorWaitingForHelpInformations struct {
 	TaxCollectorComplementaryInformations
 
-	WaitingForHelpInfo *ProtectedEntityWaitingForHelpInfo
+	WaitingForHelpInfo ProtectedEntityWaitingForHelpInfo
 }
 
 func (m *TaxCollectorWaitingForHelpInformations) ID() uint16 {
@@ -13133,7 +13133,7 @@ func (m *TaxCollectorWaitingForHelpInformations) Deserialize(r Reader) error {
 
 	lwaitingForHelpInfo.Deserialize(r)
 
-	m.WaitingForHelpInfo = &lwaitingForHelpInfo
+	m.WaitingForHelpInfo = lwaitingForHelpInfo
 
 	return nil
 }
@@ -13151,9 +13151,9 @@ type FriendSpouseInformations struct {
 
 	Sex int8
 
-	SpouseEntityLook *EntityLook
+	SpouseEntityLook EntityLook
 
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 
 	AlignmentSide int8
 }
@@ -13251,13 +13251,13 @@ func (m *FriendSpouseInformations) Deserialize(r Reader) error {
 
 	lspouseEntityLook.Deserialize(r)
 
-	m.SpouseEntityLook = &lspouseEntityLook
+	m.SpouseEntityLook = lspouseEntityLook
 
 	var lguildInfo GuildInformations
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	lalignmentSide, err := r.ReadInt8()
 	if err != nil {
@@ -13497,7 +13497,7 @@ type Preset struct {
 
 	Mount bool
 
-	Objects []*PresetItem
+	Objects []PresetItem
 }
 
 func (m *Preset) ID() uint16 {
@@ -13561,7 +13561,7 @@ func (m *Preset) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*PresetItem, lobjectsLen)
+	m.Objects = make([]PresetItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -13569,7 +13569,7 @@ func (m *Preset) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -13925,7 +13925,7 @@ type MountClientData struct {
 
 	UseHarnessColors bool
 
-	EffectList []*ObjectEffectInteger
+	EffectList []ObjectEffectInteger
 }
 
 func (m *MountClientData) ID() uint16 {
@@ -14333,7 +14333,7 @@ func (m *MountClientData) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EffectList = make([]*ObjectEffectInteger, leffectListLen)
+	m.EffectList = make([]ObjectEffectInteger, leffectListLen)
 
 	for i := range m.EffectList {
 
@@ -14341,7 +14341,7 @@ func (m *MountClientData) Deserialize(r Reader) error {
 
 		leffectList.Deserialize(r)
 
-		m.EffectList[i] = &leffectList
+		m.EffectList[i] = leffectList
 
 	}
 
@@ -14475,7 +14475,7 @@ func (m *StatisticDataInt) Deserialize(r Reader) error {
 type CharacterMinimalGuildInformations struct {
 	CharacterMinimalPlusLookInformations
 
-	Guild *BasicGuildInformations
+	Guild BasicGuildInformations
 }
 
 func (m *CharacterMinimalGuildInformations) ID() uint16 {
@@ -14505,7 +14505,7 @@ func (m *CharacterMinimalGuildInformations) Deserialize(r Reader) error {
 
 	lguild.Deserialize(r)
 
-	m.Guild = &lguild
+	m.Guild = lguild
 
 	return nil
 }
@@ -14950,7 +14950,7 @@ type QuestActiveDetailedInformations struct {
 
 	StepId uint16
 
-	Objectives []*QuestObjectiveInformations
+	Objectives []QuestObjectiveInformations
 }
 
 func (m *QuestActiveDetailedInformations) ID() uint16 {
@@ -15004,7 +15004,7 @@ func (m *QuestActiveDetailedInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objectives = make([]*QuestObjectiveInformations, lobjectivesLen)
+	m.Objectives = make([]QuestObjectiveInformations, lobjectivesLen)
 
 	for i := range m.Objectives {
 
@@ -15019,7 +15019,7 @@ func (m *QuestActiveDetailedInformations) Deserialize(r Reader) error {
 
 		lobjectives.Deserialize(r)
 
-		m.Objectives[i] = lobjectives.(*QuestObjectiveInformations)
+		m.Objectives[i] = *lobjectives.(*QuestObjectiveInformations)
 
 	}
 
@@ -15146,7 +15146,7 @@ func (m *StatisticDataBoolean) Deserialize(r Reader) error {
 type TaxCollectorStaticExtendedInformations struct {
 	TaxCollectorStaticInformations
 
-	AllianceIdentity *AllianceInformations
+	AllianceIdentity AllianceInformations
 }
 
 func (m *TaxCollectorStaticExtendedInformations) ID() uint16 {
@@ -15176,7 +15176,7 @@ func (m *TaxCollectorStaticExtendedInformations) Deserialize(r Reader) error {
 
 	lallianceIdentity.Deserialize(r)
 
-	m.AllianceIdentity = &lallianceIdentity
+	m.AllianceIdentity = lallianceIdentity
 
 	return nil
 }
@@ -15292,7 +15292,7 @@ func (m *FightResultPvpData) Deserialize(r Reader) error {
 type CharacterMinimalAllianceInformations struct {
 	CharacterMinimalGuildInformations
 
-	Alliance *BasicAllianceInformations
+	Alliance BasicAllianceInformations
 }
 
 func (m *CharacterMinimalAllianceInformations) ID() uint16 {
@@ -15322,7 +15322,7 @@ func (m *CharacterMinimalAllianceInformations) Deserialize(r Reader) error {
 
 	lalliance.Deserialize(r)
 
-	m.Alliance = &lalliance
+	m.Alliance = lalliance
 
 	return nil
 }
@@ -15531,7 +15531,7 @@ func (m *PartyIdol) Deserialize(r Reader) error {
 type GameFightMonsterWithAlignmentInformations struct {
 	GameFightMonsterInformations
 
-	AlignmentInfos *ActorAlignmentInformations
+	AlignmentInfos ActorAlignmentInformations
 }
 
 func (m *GameFightMonsterWithAlignmentInformations) ID() uint16 {
@@ -15561,7 +15561,7 @@ func (m *GameFightMonsterWithAlignmentInformations) Deserialize(r Reader) error 
 
 	lalignmentInfos.Deserialize(r)
 
-	m.AlignmentInfos = &lalignmentInfos
+	m.AlignmentInfos = lalignmentInfos
 
 	return nil
 }
@@ -15946,7 +15946,7 @@ func (m *GameFightFighterTaxCollectorLightInformations) Deserialize(r Reader) er
 type FightTeamMemberWithAllianceCharacterInformations struct {
 	FightTeamMemberCharacterInformations
 
-	AllianceInfos *BasicAllianceInformations
+	AllianceInfos BasicAllianceInformations
 }
 
 func (m *FightTeamMemberWithAllianceCharacterInformations) ID() uint16 {
@@ -15976,7 +15976,7 @@ func (m *FightTeamMemberWithAllianceCharacterInformations) Deserialize(r Reader)
 
 	lallianceInfos.Deserialize(r)
 
-	m.AllianceInfos = &lallianceInfos
+	m.AllianceInfos = lallianceInfos
 
 	return nil
 }
@@ -16192,7 +16192,7 @@ func (m *GameFightFighterMonsterLightInformations) Deserialize(r Reader) error {
 type HumanOptionGuild struct {
 	HumanOption
 
-	GuildInformations *GuildInformations
+	GuildInformations GuildInformations
 }
 
 func (m *HumanOptionGuild) ID() uint16 {
@@ -16222,7 +16222,7 @@ func (m *HumanOptionGuild) Deserialize(r Reader) error {
 
 	lguildInformations.Deserialize(r)
 
-	m.GuildInformations = &lguildInformations
+	m.GuildInformations = lguildInformations
 
 	return nil
 }
@@ -16230,7 +16230,7 @@ func (m *HumanOptionGuild) Deserialize(r Reader) error {
 type HouseGuildedInformations struct {
 	HouseInstanceInformations
 
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 }
 
 func (m *HouseGuildedInformations) ID() uint16 {
@@ -16260,7 +16260,7 @@ func (m *HouseGuildedInformations) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	return nil
 }
@@ -16595,7 +16595,7 @@ type PaddockGuildedInformations struct {
 
 	Deserted bool
 
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 }
 
 func (m *PaddockGuildedInformations) ID() uint16 {
@@ -16636,7 +16636,7 @@ func (m *PaddockGuildedInformations) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	return nil
 }
@@ -18632,7 +18632,7 @@ type ObjectItemToSell struct {
 
 	ObjectGID uint16
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	ObjectUID uint32
 
@@ -18704,7 +18704,7 @@ func (m *ObjectItemToSell) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18719,7 +18719,7 @@ func (m *ObjectItemToSell) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -18752,7 +18752,7 @@ type ObjectItemToSellInHumanVendorShop struct {
 
 	ObjectGID uint16
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	ObjectUID uint32
 
@@ -18830,7 +18830,7 @@ func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18845,7 +18845,7 @@ func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -18922,7 +18922,7 @@ func (m *ObjectItemToSellInBid) Deserialize(r Reader) error {
 type BidExchangerObjectInfo struct {
 	ObjectUID uint32
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	Prices []int64
 }
@@ -18982,7 +18982,7 @@ func (m *BidExchangerObjectInfo) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18997,7 +18997,7 @@ func (m *BidExchangerObjectInfo) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -19189,9 +19189,9 @@ type FightExternalInformations struct {
 
 	FightSpectatorLocked bool
 
-	FightTeams []*FightTeamLightInformations
+	FightTeams []FightTeamLightInformations
 
-	FightTeamsOptions []*FightOptionsInformations
+	FightTeamsOptions []FightOptionsInformations
 }
 
 func (m *FightExternalInformations) ID() uint16 {
@@ -19265,7 +19265,7 @@ func (m *FightExternalInformations) Deserialize(r Reader) error {
 
 	m.FightSpectatorLocked = lfightSpectatorLocked
 
-	m.FightTeams = make([]*FightTeamLightInformations, 2)
+	m.FightTeams = make([]FightTeamLightInformations, 2)
 
 	for i := range m.FightTeams {
 
@@ -19273,11 +19273,11 @@ func (m *FightExternalInformations) Deserialize(r Reader) error {
 
 		lfightTeams.Deserialize(r)
 
-		m.FightTeams[i] = &lfightTeams
+		m.FightTeams[i] = lfightTeams
 
 	}
 
-	m.FightTeamsOptions = make([]*FightOptionsInformations, 2)
+	m.FightTeamsOptions = make([]FightOptionsInformations, 2)
 
 	for i := range m.FightTeamsOptions {
 
@@ -19285,7 +19285,7 @@ func (m *FightExternalInformations) Deserialize(r Reader) error {
 
 		lfightTeamsOptions.Deserialize(r)
 
-		m.FightTeamsOptions[i] = &lfightTeamsOptions
+		m.FightTeamsOptions[i] = lfightTeamsOptions
 
 	}
 
@@ -19521,9 +19521,9 @@ func (m *DecraftedItemStackInfo) Deserialize(r Reader) error {
 type Achievement struct {
 	Id uint16
 
-	FinishedObjective []*AchievementObjective
+	FinishedObjective []AchievementObjective
 
-	StartedObjectives []*AchievementStartedObjective
+	StartedObjectives []AchievementStartedObjective
 }
 
 func (m *Achievement) ID() uint16 {
@@ -19577,7 +19577,7 @@ func (m *Achievement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FinishedObjective = make([]*AchievementObjective, lfinishedObjectiveLen)
+	m.FinishedObjective = make([]AchievementObjective, lfinishedObjectiveLen)
 
 	for i := range m.FinishedObjective {
 
@@ -19585,7 +19585,7 @@ func (m *Achievement) Deserialize(r Reader) error {
 
 		lfinishedObjective.Deserialize(r)
 
-		m.FinishedObjective[i] = &lfinishedObjective
+		m.FinishedObjective[i] = lfinishedObjective
 
 	}
 
@@ -19594,7 +19594,7 @@ func (m *Achievement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.StartedObjectives = make([]*AchievementStartedObjective, lstartedObjectivesLen)
+	m.StartedObjectives = make([]AchievementStartedObjective, lstartedObjectivesLen)
 
 	for i := range m.StartedObjectives {
 
@@ -19602,7 +19602,7 @@ func (m *Achievement) Deserialize(r Reader) error {
 
 		lstartedObjectives.Deserialize(r)
 
-		m.StartedObjectives[i] = &lstartedObjectives
+		m.StartedObjectives[i] = lstartedObjectives
 
 	}
 
@@ -19610,9 +19610,9 @@ func (m *Achievement) Deserialize(r Reader) error {
 }
 
 type JobCrafterDirectoryListEntry struct {
-	PlayerInfo *JobCrafterDirectoryEntryPlayerInfo
+	PlayerInfo JobCrafterDirectoryEntryPlayerInfo
 
-	JobInfo *JobCrafterDirectoryEntryJobInfo
+	JobInfo JobCrafterDirectoryEntryJobInfo
 }
 
 func (m *JobCrafterDirectoryListEntry) ID() uint16 {
@@ -19638,13 +19638,13 @@ func (m *JobCrafterDirectoryListEntry) Deserialize(r Reader) error {
 
 	lplayerInfo.Deserialize(r)
 
-	m.PlayerInfo = &lplayerInfo
+	m.PlayerInfo = lplayerInfo
 
 	var ljobInfo JobCrafterDirectoryEntryJobInfo
 
 	ljobInfo.Deserialize(r)
 
-	m.JobInfo = &ljobInfo
+	m.JobInfo = ljobInfo
 
 	return nil
 }
@@ -19838,7 +19838,7 @@ type ObjectItemNotInContainer struct {
 
 	ObjectGID uint16
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	ObjectUID uint32
 
@@ -19904,7 +19904,7 @@ func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -19919,7 +19919,7 @@ func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -20191,7 +20191,7 @@ type JobCrafterDirectoryEntryPlayerInfo struct {
 
 	SubAreaId uint16
 
-	Status *PlayerStatus
+	Status PlayerStatus
 }
 
 func (m *JobCrafterDirectoryEntryPlayerInfo) ID() uint16 {
@@ -20334,7 +20334,7 @@ func (m *JobCrafterDirectoryEntryPlayerInfo) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	return nil
 }
@@ -20342,7 +20342,7 @@ func (m *JobCrafterDirectoryEntryPlayerInfo) Deserialize(r Reader) error {
 type AtlasPointsInformations struct {
 	Type uint8
 
-	Coords []*MapCoordinatesExtended
+	Coords []MapCoordinatesExtended
 }
 
 func (m *AtlasPointsInformations) ID() uint16 {
@@ -20384,7 +20384,7 @@ func (m *AtlasPointsInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Coords = make([]*MapCoordinatesExtended, lcoordsLen)
+	m.Coords = make([]MapCoordinatesExtended, lcoordsLen)
 
 	for i := range m.Coords {
 
@@ -20392,7 +20392,7 @@ func (m *AtlasPointsInformations) Deserialize(r Reader) error {
 
 		lcoords.Deserialize(r)
 
-		m.Coords[i] = &lcoords
+		m.Coords[i] = lcoords
 
 	}
 

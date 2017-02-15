@@ -6,2063 +6,2063 @@ import (
 
 var messages = map[uint16]reflect.Type{
 
-	1501: reflect.TypeOf((*GetPartsListMessage)(nil)),
+	1501: reflect.TypeOf((GetPartsListMessage)(GetPartsListMessage{})),
 
-	1503: reflect.TypeOf((*DownloadPartMessage)(nil)),
+	1503: reflect.TypeOf((DownloadPartMessage)(DownloadPartMessage{})),
 
-	6205: reflect.TypeOf((*AchievementListMessage)(nil)),
+	6205: reflect.TypeOf((AchievementListMessage)(AchievementListMessage{})),
 
-	76: reflect.TypeOf((*AdminCommandMessage)(nil)),
+	76: reflect.TypeOf((AdminCommandMessage)(AdminCommandMessage{})),
 
-	5662: reflect.TypeOf((*AdminQuietCommandMessage)(nil)),
+	5662: reflect.TypeOf((AdminQuietCommandMessage)(AdminQuietCommandMessage{})),
 
-	6404: reflect.TypeOf((*GuildFactsRequestMessage)(nil)),
+	6404: reflect.TypeOf((GuildFactsRequestMessage)(GuildFactsRequestMessage{})),
 
-	6409: reflect.TypeOf((*AllianceFactsRequestMessage)(nil)),
+	6409: reflect.TypeOf((AllianceFactsRequestMessage)(AllianceFactsRequestMessage{})),
 
-	5638: reflect.TypeOf((*NicknameRefusedMessage)(nil)),
+	5638: reflect.TypeOf((NicknameRefusedMessage)(NicknameRefusedMessage{})),
 
-	5640: reflect.TypeOf((*NicknameRegistrationMessage)(nil)),
+	5640: reflect.TypeOf((NicknameRegistrationMessage)(NicknameRegistrationMessage{})),
 
-	20: reflect.TypeOf((*IdentificationFailedMessage)(nil)),
+	20: reflect.TypeOf((IdentificationFailedMessage)(IdentificationFailedMessage{})),
 
-	21: reflect.TypeOf((*IdentificationFailedForBadVersionMessage)(nil)),
+	21: reflect.TypeOf((IdentificationFailedForBadVersionMessage)(IdentificationFailedForBadVersionMessage{})),
 
-	3: reflect.TypeOf((*HelloConnectMessage)(nil)),
+	3: reflect.TypeOf((HelloConnectMessage)(HelloConnectMessage{})),
 
-	5641: reflect.TypeOf((*NicknameAcceptedMessage)(nil)),
+	5641: reflect.TypeOf((NicknameAcceptedMessage)(NicknameAcceptedMessage{})),
 
-	5639: reflect.TypeOf((*NicknameChoiceRequestMessage)(nil)),
+	5639: reflect.TypeOf((NicknameChoiceRequestMessage)(NicknameChoiceRequestMessage{})),
 
-	22: reflect.TypeOf((*IdentificationSuccessMessage)(nil)),
+	22: reflect.TypeOf((IdentificationSuccessMessage)(IdentificationSuccessMessage{})),
 
-	6209: reflect.TypeOf((*IdentificationSuccessWithLoginTokenMessage)(nil)),
+	6209: reflect.TypeOf((IdentificationSuccessWithLoginTokenMessage)(IdentificationSuccessWithLoginTokenMessage{})),
 
-	4: reflect.TypeOf((*IdentificationMessage)(nil)),
+	4: reflect.TypeOf((IdentificationMessage)(IdentificationMessage{})),
 
-	6174: reflect.TypeOf((*IdentificationFailedBannedMessage)(nil)),
+	6174: reflect.TypeOf((IdentificationFailedBannedMessage)(IdentificationFailedBannedMessage{})),
 
-	189: reflect.TypeOf((*SystemMessageDisplayMessage)(nil)),
+	189: reflect.TypeOf((SystemMessageDisplayMessage)(SystemMessageDisplayMessage{})),
 
-	10: reflect.TypeOf((*LoginQueueStatusMessage)(nil)),
+	10: reflect.TypeOf((LoginQueueStatusMessage)(LoginQueueStatusMessage{})),
 
-	6100: reflect.TypeOf((*QueueStatusMessage)(nil)),
+	6100: reflect.TypeOf((QueueStatusMessage)(QueueStatusMessage{})),
 
-	6274: reflect.TypeOf((*AbstractPartyMessage)(nil)),
+	6274: reflect.TypeOf((AbstractPartyMessage)(AbstractPartyMessage{})),
 
-	5577: reflect.TypeOf((*PartyFollowMemberRequestMessage)(nil)),
+	5577: reflect.TypeOf((PartyFollowMemberRequestMessage)(PartyFollowMemberRequestMessage{})),
 
-	5588: reflect.TypeOf((*PartyFollowThisMemberRequestMessage)(nil)),
+	5588: reflect.TypeOf((PartyFollowThisMemberRequestMessage)(PartyFollowThisMemberRequestMessage{})),
 
-	5585: reflect.TypeOf((*PartyInvitationRequestMessage)(nil)),
+	5585: reflect.TypeOf((PartyInvitationRequestMessage)(PartyInvitationRequestMessage{})),
 
-	6283: reflect.TypeOf((*PartyInvitationArenaRequestMessage)(nil)),
+	6283: reflect.TypeOf((PartyInvitationArenaRequestMessage)(PartyInvitationArenaRequestMessage{})),
 
-	5590: reflect.TypeOf((*PartyKickedByMessage)(nil)),
+	5590: reflect.TypeOf((PartyKickedByMessage)(PartyKickedByMessage{})),
 
-	6270: reflect.TypeOf((*PartyLoyaltyStatusMessage)(nil)),
+	6270: reflect.TypeOf((PartyLoyaltyStatusMessage)(PartyLoyaltyStatusMessage{})),
 
-	5580: reflect.TypeOf((*PartyAcceptInvitationMessage)(nil)),
+	5580: reflect.TypeOf((PartyAcceptInvitationMessage)(PartyAcceptInvitationMessage{})),
 
-	5586: reflect.TypeOf((*PartyInvitationMessage)(nil)),
+	5586: reflect.TypeOf((PartyInvitationMessage)(PartyInvitationMessage{})),
 
-	6302: reflect.TypeOf((*TeleportBuddiesRequestedMessage)(nil)),
+	6302: reflect.TypeOf((TeleportBuddiesRequestedMessage)(TeleportBuddiesRequestedMessage{})),
 
-	5574: reflect.TypeOf((*PartyStopFollowRequestMessage)(nil)),
+	5574: reflect.TypeOf((PartyStopFollowRequestMessage)(PartyStopFollowRequestMessage{})),
 
-	5595: reflect.TypeOf((*PartyLocateMembersMessage)(nil)),
+	5595: reflect.TypeOf((PartyLocateMembersMessage)(PartyLocateMembersMessage{})),
 
-	6273: reflect.TypeOf((*AbstractPartyEventMessage)(nil)),
+	6273: reflect.TypeOf((AbstractPartyEventMessage)(AbstractPartyEventMessage{})),
 
-	6054: reflect.TypeOf((*PartyUpdateLightMessage)(nil)),
+	6054: reflect.TypeOf((PartyUpdateLightMessage)(PartyUpdateLightMessage{})),
 
-	6472: reflect.TypeOf((*PartyCompanionUpdateLightMessage)(nil)),
+	6472: reflect.TypeOf((PartyCompanionUpdateLightMessage)(PartyCompanionUpdateLightMessage{})),
 
-	5583: reflect.TypeOf((*PartyCannotJoinErrorMessage)(nil)),
+	5583: reflect.TypeOf((PartyCannotJoinErrorMessage)(PartyCannotJoinErrorMessage{})),
 
-	5581: reflect.TypeOf((*PartyFollowStatusUpdateMessage)(nil)),
+	5581: reflect.TypeOf((PartyFollowStatusUpdateMessage)(PartyFollowStatusUpdateMessage{})),
 
-	6264: reflect.TypeOf((*PartyInvitationDetailsRequestMessage)(nil)),
+	6264: reflect.TypeOf((PartyInvitationDetailsRequestMessage)(PartyInvitationDetailsRequestMessage{})),
 
-	5576: reflect.TypeOf((*PartyJoinMessage)(nil)),
+	5576: reflect.TypeOf((PartyJoinMessage)(PartyJoinMessage{})),
 
-	6301: reflect.TypeOf((*GameRolePlayArenaUpdatePlayerInfosMessage)(nil)),
+	6301: reflect.TypeOf((GameRolePlayArenaUpdatePlayerInfosMessage)(GameRolePlayArenaUpdatePlayerInfosMessage{})),
 
-	6287: reflect.TypeOf((*TeleportToBuddyOfferMessage)(nil)),
+	6287: reflect.TypeOf((TeleportToBuddyOfferMessage)(TeleportToBuddyOfferMessage{})),
 
-	6640: reflect.TypeOf((*GameRolePlayArenaUpdatePlayerInfosWithTeamMessage)(nil)),
+	6640: reflect.TypeOf((GameRolePlayArenaUpdatePlayerInfosWithTeamMessage)(GameRolePlayArenaUpdatePlayerInfosWithTeamMessage{})),
 
-	6279: reflect.TypeOf((*GameRolePlayArenaFightAnswerMessage)(nil)),
+	6279: reflect.TypeOf((GameRolePlayArenaFightAnswerMessage)(GameRolePlayArenaFightAnswerMessage{})),
 
-	6241: reflect.TypeOf((*DungeonPartyFinderRegisterSuccessMessage)(nil)),
+	6241: reflect.TypeOf((DungeonPartyFinderRegisterSuccessMessage)(DungeonPartyFinderRegisterSuccessMessage{})),
 
-	6501: reflect.TypeOf((*PartyNameSetErrorMessage)(nil)),
+	6501: reflect.TypeOf((PartyNameSetErrorMessage)(PartyNameSetErrorMessage{})),
 
-	6289: reflect.TypeOf((*TeleportBuddiesMessage)(nil)),
+	6289: reflect.TypeOf((TeleportBuddiesMessage)(TeleportBuddiesMessage{})),
 
-	702: reflect.TypeOf((*GameFightJoinMessage)(nil)),
+	702: reflect.TypeOf((GameFightJoinMessage)(GameFightJoinMessage{})),
 
-	6504: reflect.TypeOf((*GameFightSpectatorJoinMessage)(nil)),
+	6504: reflect.TypeOf((GameFightSpectatorJoinMessage)(GameFightSpectatorJoinMessage{})),
 
-	6240: reflect.TypeOf((*DungeonPartyFinderAvailableDungeonsRequestMessage)(nil)),
+	6240: reflect.TypeOf((DungeonPartyFinderAvailableDungeonsRequestMessage)(DungeonPartyFinderAvailableDungeonsRequestMessage{})),
 
-	6247: reflect.TypeOf((*DungeonPartyFinderRoomContentMessage)(nil)),
+	6247: reflect.TypeOf((DungeonPartyFinderRoomContentMessage)(DungeonPartyFinderRoomContentMessage{})),
 
-	5501: reflect.TypeOf((*LeaveDialogRequestMessage)(nil)),
+	5501: reflect.TypeOf((LeaveDialogRequestMessage)(LeaveDialogRequestMessage{})),
 
-	6246: reflect.TypeOf((*DungeonPartyFinderListenRequestMessage)(nil)),
+	6246: reflect.TypeOf((DungeonPartyFinderListenRequestMessage)(DungeonPartyFinderListenRequestMessage{})),
 
-	6263: reflect.TypeOf((*PartyInvitationDetailsMessage)(nil)),
+	6263: reflect.TypeOf((PartyInvitationDetailsMessage)(PartyInvitationDetailsMessage{})),
 
-	6260: reflect.TypeOf((*PartyNewGuestMessage)(nil)),
+	6260: reflect.TypeOf((PartyNewGuestMessage)(PartyNewGuestMessage{})),
 
-	5593: reflect.TypeOf((*PartyLeaveRequestMessage)(nil)),
+	5593: reflect.TypeOf((PartyLeaveRequestMessage)(PartyLeaveRequestMessage{})),
 
-	6282: reflect.TypeOf((*GameRolePlayArenaUnregisterMessage)(nil)),
+	6282: reflect.TypeOf((GameRolePlayArenaUnregisterMessage)(GameRolePlayArenaUnregisterMessage{})),
 
-	6249: reflect.TypeOf((*DungeonPartyFinderRegisterRequestMessage)(nil)),
+	6249: reflect.TypeOf((DungeonPartyFinderRegisterRequestMessage)(DungeonPartyFinderRegisterRequestMessage{})),
 
-	6175: reflect.TypeOf((*PartyRestrictedMessage)(nil)),
+	6175: reflect.TypeOf((PartyRestrictedMessage)(PartyRestrictedMessage{})),
 
-	5578: reflect.TypeOf((*PartyLeaderUpdateMessage)(nil)),
+	5578: reflect.TypeOf((PartyLeaderUpdateMessage)(PartyLeaderUpdateMessage{})),
 
-	6256: reflect.TypeOf((*PartyInvitationCancelledForGuestMessage)(nil)),
+	6256: reflect.TypeOf((PartyInvitationCancelledForGuestMessage)(PartyInvitationCancelledForGuestMessage{})),
 
-	6254: reflect.TypeOf((*PartyCancelInvitationMessage)(nil)),
+	6254: reflect.TypeOf((PartyCancelInvitationMessage)(PartyCancelInvitationMessage{})),
 
-	5592: reflect.TypeOf((*PartyKickRequestMessage)(nil)),
+	5592: reflect.TypeOf((PartyKickRequestMessage)(PartyKickRequestMessage{})),
 
-	6342: reflect.TypeOf((*PartyMemberInFightMessage)(nil)),
+	6342: reflect.TypeOf((PartyMemberInFightMessage)(PartyMemberInFightMessage{})),
 
-	6080: reflect.TypeOf((*PartyAbdicateThroneMessage)(nil)),
+	6080: reflect.TypeOf((PartyAbdicateThroneMessage)(PartyAbdicateThroneMessage{})),
 
-	6303: reflect.TypeOf((*TeleportToBuddyCloseMessage)(nil)),
+	6303: reflect.TypeOf((TeleportToBuddyCloseMessage)(TeleportToBuddyCloseMessage{})),
 
-	6250: reflect.TypeOf((*DungeonPartyFinderRoomContentUpdateMessage)(nil)),
+	6250: reflect.TypeOf((DungeonPartyFinderRoomContentUpdateMessage)(DungeonPartyFinderRoomContentUpdateMessage{})),
 
-	5596: reflect.TypeOf((*PartyRefuseInvitationNotificationMessage)(nil)),
+	5596: reflect.TypeOf((PartyRefuseInvitationNotificationMessage)(PartyRefuseInvitationNotificationMessage{})),
 
-	6503: reflect.TypeOf((*PartyNameSetRequestMessage)(nil)),
+	6503: reflect.TypeOf((PartyNameSetRequestMessage)(PartyNameSetRequestMessage{})),
 
-	6242: reflect.TypeOf((*DungeonPartyFinderAvailableDungeonsMessage)(nil)),
+	6242: reflect.TypeOf((DungeonPartyFinderAvailableDungeonsMessage)(DungeonPartyFinderAvailableDungeonsMessage{})),
 
-	5579: reflect.TypeOf((*PartyMemberRemoveMessage)(nil)),
+	5579: reflect.TypeOf((PartyMemberRemoveMessage)(PartyMemberRemoveMessage{})),
 
-	6261: reflect.TypeOf((*PartyDeletedMessage)(nil)),
+	6261: reflect.TypeOf((PartyDeletedMessage)(PartyDeletedMessage{})),
 
-	6281: reflect.TypeOf((*GameRolePlayArenaFighterStatusMessage)(nil)),
+	6281: reflect.TypeOf((GameRolePlayArenaFighterStatusMessage)(GameRolePlayArenaFighterStatusMessage{})),
 
-	6248: reflect.TypeOf((*DungeonPartyFinderListenErrorMessage)(nil)),
+	6248: reflect.TypeOf((DungeonPartyFinderListenErrorMessage)(DungeonPartyFinderListenErrorMessage{})),
 
-	6502: reflect.TypeOf((*PartyNameUpdateMessage)(nil)),
+	6502: reflect.TypeOf((PartyNameUpdateMessage)(PartyNameUpdateMessage{})),
 
-	6280: reflect.TypeOf((*GameRolePlayArenaRegisterMessage)(nil)),
+	6280: reflect.TypeOf((GameRolePlayArenaRegisterMessage)(GameRolePlayArenaRegisterMessage{})),
 
-	6244: reflect.TypeOf((*PartyInvitationDungeonMessage)(nil)),
+	6244: reflect.TypeOf((PartyInvitationDungeonMessage)(PartyInvitationDungeonMessage{})),
 
-	5594: reflect.TypeOf((*PartyLeaveMessage)(nil)),
+	5594: reflect.TypeOf((PartyLeaveMessage)(PartyLeaveMessage{})),
 
-	6262: reflect.TypeOf((*PartyInvitationDungeonDetailsMessage)(nil)),
+	6262: reflect.TypeOf((PartyInvitationDungeonDetailsMessage)(PartyInvitationDungeonDetailsMessage{})),
 
-	5575: reflect.TypeOf((*PartyUpdateMessage)(nil)),
+	5575: reflect.TypeOf((PartyUpdateMessage)(PartyUpdateMessage{})),
 
-	6245: reflect.TypeOf((*PartyInvitationDungeonRequestMessage)(nil)),
+	6245: reflect.TypeOf((PartyInvitationDungeonRequestMessage)(PartyInvitationDungeonRequestMessage{})),
 
-	300: reflect.TypeOf((*GameRolePlayRemoveChallengeMessage)(nil)),
+	300: reflect.TypeOf((GameRolePlayRemoveChallengeMessage)(GameRolePlayRemoveChallengeMessage{})),
 
-	6251: reflect.TypeOf((*PartyCancelInvitationNotificationMessage)(nil)),
+	6251: reflect.TypeOf((PartyCancelInvitationNotificationMessage)(PartyCancelInvitationNotificationMessage{})),
 
-	6293: reflect.TypeOf((*TeleportToBuddyAnswerMessage)(nil)),
+	6293: reflect.TypeOf((TeleportToBuddyAnswerMessage)(TeleportToBuddyAnswerMessage{})),
 
-	6243: reflect.TypeOf((*DungeonPartyFinderRegisterErrorMessage)(nil)),
+	6243: reflect.TypeOf((DungeonPartyFinderRegisterErrorMessage)(DungeonPartyFinderRegisterErrorMessage{})),
 
-	6276: reflect.TypeOf((*GameRolePlayArenaFightPropositionMessage)(nil)),
+	6276: reflect.TypeOf((GameRolePlayArenaFightPropositionMessage)(GameRolePlayArenaFightPropositionMessage{})),
 
-	226: reflect.TypeOf((*MapComplementaryInformationsDataMessage)(nil)),
+	226: reflect.TypeOf((MapComplementaryInformationsDataMessage)(MapComplementaryInformationsDataMessage{})),
 
-	5582: reflect.TypeOf((*PartyRefuseInvitationMessage)(nil)),
+	5582: reflect.TypeOf((PartyRefuseInvitationMessage)(PartyRefuseInvitationMessage{})),
 
-	6269: reflect.TypeOf((*PartyPledgeLoyaltyRequestMessage)(nil)),
+	6269: reflect.TypeOf((PartyPledgeLoyaltyRequestMessage)(PartyPledgeLoyaltyRequestMessage{})),
 
-	6284: reflect.TypeOf((*GameRolePlayArenaRegistrationStatusMessage)(nil)),
+	6284: reflect.TypeOf((GameRolePlayArenaRegistrationStatusMessage)(GameRolePlayArenaRegistrationStatusMessage{})),
 
-	6306: reflect.TypeOf((*PartyNewMemberMessage)(nil)),
+	6306: reflect.TypeOf((PartyNewMemberMessage)(PartyNewMemberMessage{})),
 
-	6356: reflect.TypeOf((*SpouseInformationsMessage)(nil)),
+	6356: reflect.TypeOf((SpouseInformationsMessage)(SpouseInformationsMessage{})),
 
-	6686: reflect.TypeOf((*SocialNoticeSetRequestMessage)(nil)),
+	6686: reflect.TypeOf((SocialNoticeSetRequestMessage)(SocialNoticeSetRequestMessage{})),
 
-	6694: reflect.TypeOf((*GuildBulletinSetRequestMessage)(nil)),
+	6694: reflect.TypeOf((GuildBulletinSetRequestMessage)(GuildBulletinSetRequestMessage{})),
 
-	5923: reflect.TypeOf((*GuildMemberLeavingMessage)(nil)),
+	5923: reflect.TypeOf((GuildMemberLeavingMessage)(GuildMemberLeavingMessage{})),
 
-	5601: reflect.TypeOf((*FriendDeleteResultMessage)(nil)),
+	5601: reflect.TypeOf((FriendDeleteResultMessage)(FriendDeleteResultMessage{})),
 
-	6265: reflect.TypeOf((*SpouseStatusMessage)(nil)),
+	6265: reflect.TypeOf((SpouseStatusMessage)(SpouseStatusMessage{})),
 
-	5934: reflect.TypeOf((*ContactLookMessage)(nil)),
+	5934: reflect.TypeOf((ContactLookMessage)(ContactLookMessage{})),
 
-	5557: reflect.TypeOf((*GuildInformationsGeneralMessage)(nil)),
+	5557: reflect.TypeOf((GuildInformationsGeneralMessage)(GuildInformationsGeneralMessage{})),
 
-	6385: reflect.TypeOf((*PlayerStatusUpdateErrorMessage)(nil)),
+	6385: reflect.TypeOf((PlayerStatusUpdateErrorMessage)(PlayerStatusUpdateErrorMessage{})),
 
-	6077: reflect.TypeOf((*FriendSetWarnOnLevelGainMessage)(nil)),
+	6077: reflect.TypeOf((FriendSetWarnOnLevelGainMessage)(FriendSetWarnOnLevelGainMessage{})),
 
-	5619: reflect.TypeOf((*TaxCollectorDialogQuestionBasicMessage)(nil)),
+	5619: reflect.TypeOf((TaxCollectorDialogQuestionBasicMessage)(TaxCollectorDialogQuestionBasicMessage{})),
 
-	5615: reflect.TypeOf((*TaxCollectorDialogQuestionExtendedMessage)(nil)),
+	5615: reflect.TypeOf((TaxCollectorDialogQuestionExtendedMessage)(TaxCollectorDialogQuestionExtendedMessage{})),
 
-	5959: reflect.TypeOf((*GuildInformationsPaddocksMessage)(nil)),
+	5959: reflect.TypeOf((GuildInformationsPaddocksMessage)(GuildInformationsPaddocksMessage{})),
 
-	6061: reflect.TypeOf((*GuildMemberOnlineStatusMessage)(nil)),
+	6061: reflect.TypeOf((GuildMemberOnlineStatusMessage)(GuildMemberOnlineStatusMessage{})),
 
-	5549: reflect.TypeOf((*GuildChangeMemberParametersMessage)(nil)),
+	5549: reflect.TypeOf((GuildChangeMemberParametersMessage)(GuildChangeMemberParametersMessage{})),
 
-	5932: reflect.TypeOf((*ContactLookRequestMessage)(nil)),
+	5932: reflect.TypeOf((ContactLookRequestMessage)(ContactLookRequestMessage{})),
 
-	5935: reflect.TypeOf((*ContactLookRequestByIdMessage)(nil)),
+	5935: reflect.TypeOf((ContactLookRequestByIdMessage)(ContactLookRequestByIdMessage{})),
 
-	5712: reflect.TypeOf((*GuildHouseTeleportRequestMessage)(nil)),
+	5712: reflect.TypeOf((GuildHouseTeleportRequestMessage)(GuildHouseTeleportRequestMessage{})),
 
-	5679: reflect.TypeOf((*IgnoredAddFailureMessage)(nil)),
+	5679: reflect.TypeOf((IgnoredAddFailureMessage)(IgnoredAddFailureMessage{})),
 
-	6445: reflect.TypeOf((*AllianceTaxCollectorDialogQuestionExtendedMessage)(nil)),
+	6445: reflect.TypeOf((AllianceTaxCollectorDialogQuestionExtendedMessage)(AllianceTaxCollectorDialogQuestionExtendedMessage{})),
 
-	6588: reflect.TypeOf((*GuildMotdSetRequestMessage)(nil)),
+	6588: reflect.TypeOf((GuildMotdSetRequestMessage)(GuildMotdSetRequestMessage{})),
 
-	5599: reflect.TypeOf((*FriendAddedMessage)(nil)),
+	5599: reflect.TypeOf((FriendAddedMessage)(FriendAddedMessage{})),
 
-	821: reflect.TypeOf((*ChatMessageReportMessage)(nil)),
+	821: reflect.TypeOf((ChatMessageReportMessage)(ChatMessageReportMessage{})),
 
-	6611: reflect.TypeOf((*TaxCollectorMovementsOfflineMessage)(nil)),
+	6611: reflect.TypeOf((TaxCollectorMovementsOfflineMessage)(TaxCollectorMovementsOfflineMessage{})),
 
-	6159: reflect.TypeOf((*GuildMemberSetWarnOnConnectionMessage)(nil)),
+	6159: reflect.TypeOf((GuildMemberSetWarnOnConnectionMessage)(GuildMemberSetWarnOnConnectionMessage{})),
 
-	6455: reflect.TypeOf((*TaxCollectorStateUpdateMessage)(nil)),
+	6455: reflect.TypeOf((TaxCollectorStateUpdateMessage)(TaxCollectorStateUpdateMessage{})),
 
-	4002: reflect.TypeOf((*FriendsListMessage)(nil)),
+	4002: reflect.TypeOf((FriendsListMessage)(FriendsListMessage{})),
 
-	5715: reflect.TypeOf((*GuildFightLeaveRequestMessage)(nil)),
+	5715: reflect.TypeOf((GuildFightLeaveRequestMessage)(GuildFightLeaveRequestMessage{})),
 
-	6181: reflect.TypeOf((*GuildHouseUpdateInformationMessage)(nil)),
+	6181: reflect.TypeOf((GuildHouseUpdateInformationMessage)(GuildHouseUpdateInformationMessage{})),
 
-	6078: reflect.TypeOf((*FriendWarnOnLevelGainStateMessage)(nil)),
+	6078: reflect.TypeOf((FriendWarnOnLevelGainStateMessage)(FriendWarnOnLevelGainStateMessage{})),
 
-	5550: reflect.TypeOf((*GuildGetInformationsMessage)(nil)),
+	5550: reflect.TypeOf((GuildGetInformationsMessage)(GuildGetInformationsMessage{})),
 
-	5918: reflect.TypeOf((*TaxCollectorAttackedMessage)(nil)),
+	5918: reflect.TypeOf((TaxCollectorAttackedMessage)(TaxCollectorAttackedMessage{})),
 
-	5928: reflect.TypeOf((*GuildFightPlayersEnemiesListMessage)(nil)),
+	5928: reflect.TypeOf((GuildFightPlayersEnemiesListMessage)(GuildFightPlayersEnemiesListMessage{})),
 
-	5605: reflect.TypeOf((*FriendJoinRequestMessage)(nil)),
+	5605: reflect.TypeOf((FriendJoinRequestMessage)(FriendJoinRequestMessage{})),
 
-	5635: reflect.TypeOf((*TaxCollectorAttackedResultMessage)(nil)),
+	5635: reflect.TypeOf((TaxCollectorAttackedResultMessage)(TaxCollectorAttackedResultMessage{})),
 
-	5603: reflect.TypeOf((*FriendDeleteRequestMessage)(nil)),
+	5603: reflect.TypeOf((FriendDeleteRequestMessage)(FriendDeleteRequestMessage{})),
 
-	5597: reflect.TypeOf((*GuildInformationsMemberUpdateMessage)(nil)),
+	5597: reflect.TypeOf((GuildInformationsMemberUpdateMessage)(GuildInformationsMemberUpdateMessage{})),
 
-	6382: reflect.TypeOf((*FriendGuildSetWarnOnAchievementCompleteMessage)(nil)),
+	6382: reflect.TypeOf((FriendGuildSetWarnOnAchievementCompleteMessage)(FriendGuildSetWarnOnAchievementCompleteMessage{})),
 
-	6045: reflect.TypeOf((*ContactLookErrorMessage)(nil)),
+	6045: reflect.TypeOf((ContactLookErrorMessage)(ContactLookErrorMessage{})),
 
-	5636: reflect.TypeOf((*GuildInfosUpgradeMessage)(nil)),
+	5636: reflect.TypeOf((GuildInfosUpgradeMessage)(GuildInfosUpgradeMessage{})),
 
-	6388: reflect.TypeOf((*MoodSmileyUpdateMessage)(nil)),
+	6388: reflect.TypeOf((MoodSmileyUpdateMessage)(MoodSmileyUpdateMessage{})),
 
-	5762: reflect.TypeOf((*ExchangeGuildTaxCollectorGetMessage)(nil)),
+	5762: reflect.TypeOf((ExchangeGuildTaxCollectorGetMessage)(ExchangeGuildTaxCollectorGetMessage{})),
 
-	5917: reflect.TypeOf((*TaxCollectorMovementAddMessage)(nil)),
+	5917: reflect.TypeOf((TaxCollectorMovementAddMessage)(TaxCollectorMovementAddMessage{})),
 
-	5952: reflect.TypeOf((*GuildPaddockBoughtMessage)(nil)),
+	5952: reflect.TypeOf((GuildPaddockBoughtMessage)(GuildPaddockBoughtMessage{})),
 
-	5706: reflect.TypeOf((*GuildCharacsUpgradeRequestMessage)(nil)),
+	5706: reflect.TypeOf((GuildCharacsUpgradeRequestMessage)(GuildCharacsUpgradeRequestMessage{})),
 
-	4001: reflect.TypeOf((*FriendsGetListMessage)(nil)),
+	4001: reflect.TypeOf((FriendsGetListMessage)(FriendsGetListMessage{})),
 
-	5674: reflect.TypeOf((*IgnoredListMessage)(nil)),
+	5674: reflect.TypeOf((IgnoredListMessage)(IgnoredListMessage{})),
 
-	5678: reflect.TypeOf((*IgnoredAddedMessage)(nil)),
+	5678: reflect.TypeOf((IgnoredAddedMessage)(IgnoredAddedMessage{})),
 
-	6115: reflect.TypeOf((*GuildInvitationByNameMessage)(nil)),
+	6115: reflect.TypeOf((GuildInvitationByNameMessage)(GuildInvitationByNameMessage{})),
 
-	4004: reflect.TypeOf((*FriendAddRequestMessage)(nil)),
+	4004: reflect.TypeOf((FriendAddRequestMessage)(FriendAddRequestMessage{})),
 
-	5699: reflect.TypeOf((*GuildSpellUpgradeRequestMessage)(nil)),
+	5699: reflect.TypeOf((GuildSpellUpgradeRequestMessage)(GuildSpellUpgradeRequestMessage{})),
 
-	5563: reflect.TypeOf((*GuildInvitationStateRecruterMessage)(nil)),
+	5563: reflect.TypeOf((GuildInvitationStateRecruterMessage)(GuildInvitationStateRecruterMessage{})),
 
-	6387: reflect.TypeOf((*PlayerStatusUpdateRequestMessage)(nil)),
+	6387: reflect.TypeOf((PlayerStatusUpdateRequestMessage)(PlayerStatusUpdateRequestMessage{})),
 
-	6180: reflect.TypeOf((*GuildHouseRemoveMessage)(nil)),
+	6180: reflect.TypeOf((GuildHouseRemoveMessage)(GuildHouseRemoveMessage{})),
 
-	6512: reflect.TypeOf((*WarnOnPermaDeathMessage)(nil)),
+	6512: reflect.TypeOf((WarnOnPermaDeathMessage)(WarnOnPermaDeathMessage{})),
 
-	5604: reflect.TypeOf((*FriendSpouseJoinRequestMessage)(nil)),
+	5604: reflect.TypeOf((FriendSpouseJoinRequestMessage)(FriendSpouseJoinRequestMessage{})),
 
-	5562: reflect.TypeOf((*GuildLeftMessage)(nil)),
+	5562: reflect.TypeOf((GuildLeftMessage)(GuildLeftMessage{})),
 
-	5720: reflect.TypeOf((*GuildFightPlayersHelpersJoinMessage)(nil)),
+	5720: reflect.TypeOf((GuildFightPlayersHelpersJoinMessage)(GuildFightPlayersHelpersJoinMessage{})),
 
-	5558: reflect.TypeOf((*GuildInformationsMembersMessage)(nil)),
+	5558: reflect.TypeOf((GuildInformationsMembersMessage)(GuildInformationsMembersMessage{})),
 
-	5634: reflect.TypeOf((*TaxCollectorErrorMessage)(nil)),
+	5634: reflect.TypeOf((TaxCollectorErrorMessage)(TaxCollectorErrorMessage{})),
 
-	5630: reflect.TypeOf((*FriendWarnOnConnectionStateMessage)(nil)),
+	5630: reflect.TypeOf((FriendWarnOnConnectionStateMessage)(FriendWarnOnConnectionStateMessage{})),
 
-	6513: reflect.TypeOf((*WarnOnPermaDeathStateMessage)(nil)),
+	6513: reflect.TypeOf((WarnOnPermaDeathStateMessage)(WarnOnPermaDeathStateMessage{})),
 
-	5606: reflect.TypeOf((*FriendSpouseFollowWithCompassRequestMessage)(nil)),
+	5606: reflect.TypeOf((FriendSpouseFollowWithCompassRequestMessage)(FriendSpouseFollowWithCompassRequestMessage{})),
 
-	5924: reflect.TypeOf((*FriendUpdateMessage)(nil)),
+	5924: reflect.TypeOf((FriendUpdateMessage)(FriendUpdateMessage{})),
 
-	5957: reflect.TypeOf((*GuildPaddockTeleportRequestMessage)(nil)),
+	5957: reflect.TypeOf((GuildPaddockTeleportRequestMessage)(GuildPaddockTeleportRequestMessage{})),
 
-	6415: reflect.TypeOf((*GuildFactsMessage)(nil)),
+	6415: reflect.TypeOf((GuildFactsMessage)(GuildFactsMessage{})),
 
-	6422: reflect.TypeOf((*GuildInAllianceFactsMessage)(nil)),
+	6422: reflect.TypeOf((GuildInAllianceFactsMessage)(GuildInAllianceFactsMessage{})),
 
-	6688: reflect.TypeOf((*SocialNoticeMessage)(nil)),
+	6688: reflect.TypeOf((SocialNoticeMessage)(SocialNoticeMessage{})),
 
-	6590: reflect.TypeOf((*GuildMotdMessage)(nil)),
+	6590: reflect.TypeOf((GuildMotdMessage)(GuildMotdMessage{})),
 
-	5548: reflect.TypeOf((*GuildInvitationStateRecrutedMessage)(nil)),
+	5548: reflect.TypeOf((GuildInvitationStateRecrutedMessage)(GuildInvitationStateRecrutedMessage{})),
 
-	5554: reflect.TypeOf((*GuildCreationResultMessage)(nil)),
+	5554: reflect.TypeOf((GuildCreationResultMessage)(GuildCreationResultMessage{})),
 
-	5673: reflect.TypeOf((*IgnoredAddRequestMessage)(nil)),
+	5673: reflect.TypeOf((IgnoredAddRequestMessage)(IgnoredAddRequestMessage{})),
 
-	5633: reflect.TypeOf((*TaxCollectorMovementMessage)(nil)),
+	5633: reflect.TypeOf((TaxCollectorMovementMessage)(TaxCollectorMovementMessage{})),
 
-	5551: reflect.TypeOf((*GuildInvitationMessage)(nil)),
+	5551: reflect.TypeOf((GuildInvitationMessage)(GuildInvitationMessage{})),
 
-	5919: reflect.TypeOf((*GuildHousesInformationMessage)(nil)),
+	5919: reflect.TypeOf((GuildHousesInformationMessage)(GuildHousesInformationMessage{})),
 
-	5564: reflect.TypeOf((*GuildJoinedMessage)(nil)),
+	5564: reflect.TypeOf((GuildJoinedMessage)(GuildJoinedMessage{})),
 
-	6324: reflect.TypeOf((*GuildModificationStartedMessage)(nil)),
+	6324: reflect.TypeOf((GuildModificationStartedMessage)(GuildModificationStartedMessage{})),
 
-	6160: reflect.TypeOf((*GuildMemberWarnOnConnectionStateMessage)(nil)),
+	6160: reflect.TypeOf((GuildMemberWarnOnConnectionStateMessage)(GuildMemberWarnOnConnectionStateMessage{})),
 
-	6383: reflect.TypeOf((*FriendGuildWarnOnAchievementCompleteStateMessage)(nil)),
+	6383: reflect.TypeOf((FriendGuildWarnOnAchievementCompleteStateMessage)(FriendGuildWarnOnAchievementCompleteStateMessage{})),
 
-	6386: reflect.TypeOf((*PlayerStatusUpdateMessage)(nil)),
+	6386: reflect.TypeOf((PlayerStatusUpdateMessage)(PlayerStatusUpdateMessage{})),
 
-	6684: reflect.TypeOf((*SocialNoticeSetErrorMessage)(nil)),
+	6684: reflect.TypeOf((SocialNoticeSetErrorMessage)(SocialNoticeSetErrorMessage{})),
 
-	6591: reflect.TypeOf((*GuildMotdSetErrorMessage)(nil)),
+	6591: reflect.TypeOf((GuildMotdSetErrorMessage)(GuildMotdSetErrorMessage{})),
 
-	5955: reflect.TypeOf((*GuildPaddockRemovedMessage)(nil)),
+	5955: reflect.TypeOf((GuildPaddockRemovedMessage)(GuildPaddockRemovedMessage{})),
 
-	5835: reflect.TypeOf((*GuildMembershipMessage)(nil)),
+	5835: reflect.TypeOf((GuildMembershipMessage)(GuildMembershipMessage{})),
 
-	5920: reflect.TypeOf((*GuildCreationStartedMessage)(nil)),
+	5920: reflect.TypeOf((GuildCreationStartedMessage)(GuildCreationStartedMessage{})),
 
-	5717: reflect.TypeOf((*GuildFightJoinRequestMessage)(nil)),
+	5717: reflect.TypeOf((GuildFightJoinRequestMessage)(GuildFightJoinRequestMessage{})),
 
-	5602: reflect.TypeOf((*FriendSetWarnOnConnectionMessage)(nil)),
+	5602: reflect.TypeOf((FriendSetWarnOnConnectionMessage)(FriendSetWarnOnConnectionMessage{})),
 
-	5552: reflect.TypeOf((*GuildInvitedMessage)(nil)),
+	5552: reflect.TypeOf((GuildInvitedMessage)(GuildInvitedMessage{})),
 
-	6695: reflect.TypeOf((*BulletinMessage)(nil)),
+	6695: reflect.TypeOf((BulletinMessage)(BulletinMessage{})),
 
-	6689: reflect.TypeOf((*GuildBulletinMessage)(nil)),
+	6689: reflect.TypeOf((GuildBulletinMessage)(GuildBulletinMessage{})),
 
-	6424: reflect.TypeOf((*GuildFactsErrorMessage)(nil)),
+	6424: reflect.TypeOf((GuildFactsErrorMessage)(GuildFactsErrorMessage{})),
 
-	6235: reflect.TypeOf((*GuildFightTakePlaceRequestMessage)(nil)),
+	6235: reflect.TypeOf((GuildFightTakePlaceRequestMessage)(GuildFightTakePlaceRequestMessage{})),
 
-	5676: reflect.TypeOf((*IgnoredGetListMessage)(nil)),
+	5676: reflect.TypeOf((IgnoredGetListMessage)(IgnoredGetListMessage{})),
 
-	5915: reflect.TypeOf((*TaxCollectorMovementRemoveMessage)(nil)),
+	5915: reflect.TypeOf((TaxCollectorMovementRemoveMessage)(TaxCollectorMovementRemoveMessage{})),
 
-	5719: reflect.TypeOf((*GuildFightPlayersHelpersLeaveMessage)(nil)),
+	5719: reflect.TypeOf((GuildFightPlayersHelpersLeaveMessage)(GuildFightPlayersHelpersLeaveMessage{})),
 
-	5677: reflect.TypeOf((*IgnoredDeleteResultMessage)(nil)),
+	5677: reflect.TypeOf((IgnoredDeleteResultMessage)(IgnoredDeleteResultMessage{})),
 
-	6355: reflect.TypeOf((*SpouseGetInformationsMessage)(nil)),
+	6355: reflect.TypeOf((SpouseGetInformationsMessage)(SpouseGetInformationsMessage{})),
 
-	6568: reflect.TypeOf((*AbstractTaxCollectorListMessage)(nil)),
+	6568: reflect.TypeOf((AbstractTaxCollectorListMessage)(AbstractTaxCollectorListMessage{})),
 
-	5930: reflect.TypeOf((*TaxCollectorListMessage)(nil)),
+	5930: reflect.TypeOf((TaxCollectorListMessage)(TaxCollectorListMessage{})),
 
-	6565: reflect.TypeOf((*TopTaxCollectorListMessage)(nil)),
+	6565: reflect.TypeOf((TopTaxCollectorListMessage)(TopTaxCollectorListMessage{})),
 
-	5929: reflect.TypeOf((*GuildFightPlayersEnemyRemoveMessage)(nil)),
+	5929: reflect.TypeOf((GuildFightPlayersEnemyRemoveMessage)(GuildFightPlayersEnemyRemoveMessage{})),
 
-	5680: reflect.TypeOf((*IgnoredDeleteRequestMessage)(nil)),
+	5680: reflect.TypeOf((IgnoredDeleteRequestMessage)(IgnoredDeleteRequestMessage{})),
 
-	5600: reflect.TypeOf((*FriendAddFailureMessage)(nil)),
+	5600: reflect.TypeOf((FriendAddFailureMessage)(FriendAddFailureMessage{})),
 
-	6079: reflect.TypeOf((*CharacterReportMessage)(nil)),
+	6079: reflect.TypeOf((CharacterReportMessage)(CharacterReportMessage{})),
 
-	5887: reflect.TypeOf((*GuildKickRequestMessage)(nil)),
+	5887: reflect.TypeOf((GuildKickRequestMessage)(GuildKickRequestMessage{})),
 
-	6691: reflect.TypeOf((*GuildBulletinSetErrorMessage)(nil)),
+	6691: reflect.TypeOf((GuildBulletinSetErrorMessage)(GuildBulletinSetErrorMessage{})),
 
-	6417: reflect.TypeOf((*AllianceInsiderInfoRequestMessage)(nil)),
+	6417: reflect.TypeOf((AllianceInsiderInfoRequestMessage)(AllianceInsiderInfoRequestMessage{})),
 
-	5893: reflect.TypeOf((*PrismFightAttackerAddMessage)(nil)),
+	5893: reflect.TypeOf((PrismFightAttackerAddMessage)(PrismFightAttackerAddMessage{})),
 
-	6426: reflect.TypeOf((*AllianceChangeGuildRightsMessage)(nil)),
+	6426: reflect.TypeOf((AllianceChangeGuildRightsMessage)(AllianceChangeGuildRightsMessage{})),
 
-	6398: reflect.TypeOf((*AllianceLeftMessage)(nil)),
+	6398: reflect.TypeOf((AllianceLeftMessage)(AllianceLeftMessage{})),
 
-	6444: reflect.TypeOf((*AllianceModificationStartedMessage)(nil)),
+	6444: reflect.TypeOf((AllianceModificationStartedMessage)(AllianceModificationStartedMessage{})),
 
-	5844: reflect.TypeOf((*PrismInfoJoinLeaveRequestMessage)(nil)),
+	5844: reflect.TypeOf((PrismInfoJoinLeaveRequestMessage)(PrismInfoJoinLeaveRequestMessage{})),
 
-	6423: reflect.TypeOf((*AllianceFactsErrorMessage)(nil)),
+	6423: reflect.TypeOf((AllianceFactsErrorMessage)(AllianceFactsErrorMessage{})),
 
-	5897: reflect.TypeOf((*PrismFightAttackerRemoveMessage)(nil)),
+	5897: reflect.TypeOf((PrismFightAttackerRemoveMessage)(PrismFightAttackerRemoveMessage{})),
 
-	6403: reflect.TypeOf((*AllianceInsiderInfoMessage)(nil)),
+	6403: reflect.TypeOf((AllianceInsiderInfoMessage)(AllianceInsiderInfoMessage{})),
 
-	6692: reflect.TypeOf((*AllianceBulletinSetErrorMessage)(nil)),
+	6692: reflect.TypeOf((AllianceBulletinSetErrorMessage)(AllianceBulletinSetErrorMessage{})),
 
-	6687: reflect.TypeOf((*AllianceMotdSetRequestMessage)(nil)),
+	6687: reflect.TypeOf((AllianceMotdSetRequestMessage)(AllianceMotdSetRequestMessage{})),
 
-	6042: reflect.TypeOf((*PrismAttackRequestMessage)(nil)),
+	6042: reflect.TypeOf((PrismAttackRequestMessage)(PrismAttackRequestMessage{})),
 
-	6453: reflect.TypeOf((*PrismFightRemovedMessage)(nil)),
+	6453: reflect.TypeOf((PrismFightRemovedMessage)(PrismFightRemovedMessage{})),
 
-	6452: reflect.TypeOf((*PrismFightAddedMessage)(nil)),
+	6452: reflect.TypeOf((PrismFightAddedMessage)(PrismFightAddedMessage{})),
 
-	6451: reflect.TypeOf((*PrismsInfoValidMessage)(nil)),
+	6451: reflect.TypeOf((PrismsInfoValidMessage)(PrismsInfoValidMessage{})),
 
-	6456: reflect.TypeOf((*UpdateSelfAgressableStatusMessage)(nil)),
+	6456: reflect.TypeOf((UpdateSelfAgressableStatusMessage)(UpdateSelfAgressableStatusMessage{})),
 
-	6394: reflect.TypeOf((*AllianceCreationStartedMessage)(nil)),
+	6394: reflect.TypeOf((AllianceCreationStartedMessage)(AllianceCreationStartedMessage{})),
 
-	6399: reflect.TypeOf((*AllianceGuildLeavingMessage)(nil)),
+	6399: reflect.TypeOf((AllianceGuildLeavingMessage)(AllianceGuildLeavingMessage{})),
 
-	6397: reflect.TypeOf((*AllianceInvitedMessage)(nil)),
+	6397: reflect.TypeOf((AllianceInvitedMessage)(AllianceInvitedMessage{})),
 
-	6402: reflect.TypeOf((*AllianceJoinedMessage)(nil)),
+	6402: reflect.TypeOf((AllianceJoinedMessage)(AllianceJoinedMessage{})),
 
-	5843: reflect.TypeOf((*PrismFightJoinLeaveRequestMessage)(nil)),
+	5843: reflect.TypeOf((PrismFightJoinLeaveRequestMessage)(PrismFightJoinLeaveRequestMessage{})),
 
-	6531: reflect.TypeOf((*PrismModuleExchangeRequestMessage)(nil)),
+	6531: reflect.TypeOf((PrismModuleExchangeRequestMessage)(PrismModuleExchangeRequestMessage{})),
 
-	5892: reflect.TypeOf((*PrismFightDefenderLeaveMessage)(nil)),
+	5892: reflect.TypeOf((PrismFightDefenderLeaveMessage)(PrismFightDefenderLeaveMessage{})),
 
-	6440: reflect.TypeOf((*PrismsListMessage)(nil)),
+	6440: reflect.TypeOf((PrismsListMessage)(PrismsListMessage{})),
 
-	6438: reflect.TypeOf((*PrismsListUpdateMessage)(nil)),
+	6438: reflect.TypeOf((PrismsListUpdateMessage)(PrismsListUpdateMessage{})),
 
-	6466: reflect.TypeOf((*PrismSetSabotagedRefusedMessage)(nil)),
+	6466: reflect.TypeOf((PrismSetSabotagedRefusedMessage)(PrismSetSabotagedRefusedMessage{})),
 
-	6448: reflect.TypeOf((*AlliancePrismDialogQuestionMessage)(nil)),
+	6448: reflect.TypeOf((AlliancePrismDialogQuestionMessage)(AlliancePrismDialogQuestionMessage{})),
 
-	6414: reflect.TypeOf((*AllianceFactsMessage)(nil)),
+	6414: reflect.TypeOf((AllianceFactsMessage)(AllianceFactsMessage{})),
 
-	6400: reflect.TypeOf((*AllianceKickRequestMessage)(nil)),
+	6400: reflect.TypeOf((AllianceKickRequestMessage)(AllianceKickRequestMessage{})),
 
-	6437: reflect.TypeOf((*PrismSettingsRequestMessage)(nil)),
+	6437: reflect.TypeOf((PrismSettingsRequestMessage)(PrismSettingsRequestMessage{})),
 
-	6685: reflect.TypeOf((*AllianceMotdMessage)(nil)),
+	6685: reflect.TypeOf((AllianceMotdMessage)(AllianceMotdMessage{})),
 
-	6441: reflect.TypeOf((*PrismsListRegisterMessage)(nil)),
+	6441: reflect.TypeOf((PrismsListRegisterMessage)(PrismsListRegisterMessage{})),
 
-	6683: reflect.TypeOf((*AllianceMotdSetErrorMessage)(nil)),
+	6683: reflect.TypeOf((AllianceMotdSetErrorMessage)(AllianceMotdSetErrorMessage{})),
 
-	6442: reflect.TypeOf((*PrismSettingsErrorMessage)(nil)),
+	6442: reflect.TypeOf((PrismSettingsErrorMessage)(PrismSettingsErrorMessage{})),
 
-	6390: reflect.TypeOf((*AllianceMembershipMessage)(nil)),
+	6390: reflect.TypeOf((AllianceMembershipMessage)(AllianceMembershipMessage{})),
 
-	6690: reflect.TypeOf((*AllianceBulletinMessage)(nil)),
+	6690: reflect.TypeOf((AllianceBulletinMessage)(AllianceBulletinMessage{})),
 
-	6468: reflect.TypeOf((*PrismSetSabotagedRequestMessage)(nil)),
+	6468: reflect.TypeOf((PrismSetSabotagedRequestMessage)(PrismSetSabotagedRequestMessage{})),
 
-	6396: reflect.TypeOf((*AllianceInvitationStateRecruterMessage)(nil)),
+	6396: reflect.TypeOf((AllianceInvitationStateRecruterMessage)(AllianceInvitationStateRecruterMessage{})),
 
-	6439: reflect.TypeOf((*KohUpdateMessage)(nil)),
+	6439: reflect.TypeOf((KohUpdateMessage)(KohUpdateMessage{})),
 
-	6041: reflect.TypeOf((*PrismUseRequestMessage)(nil)),
+	6041: reflect.TypeOf((PrismUseRequestMessage)(PrismUseRequestMessage{})),
 
-	6443: reflect.TypeOf((*SetEnableAVARequestMessage)(nil)),
+	6443: reflect.TypeOf((SetEnableAVARequestMessage)(SetEnableAVARequestMessage{})),
 
-	6395: reflect.TypeOf((*AllianceInvitationMessage)(nil)),
+	6395: reflect.TypeOf((AllianceInvitationMessage)(AllianceInvitationMessage{})),
 
-	220: reflect.TypeOf((*CurrentMapMessage)(nil)),
+	220: reflect.TypeOf((CurrentMapMessage)(CurrentMapMessage{})),
 
-	5901: reflect.TypeOf((*PrismFightSwapRequestMessage)(nil)),
+	5901: reflect.TypeOf((PrismFightSwapRequestMessage)(PrismFightSwapRequestMessage{})),
 
-	6392: reflect.TypeOf((*AllianceInvitationStateRecrutedMessage)(nil)),
+	6392: reflect.TypeOf((AllianceInvitationStateRecrutedMessage)(AllianceInvitationStateRecrutedMessage{})),
 
-	6391: reflect.TypeOf((*AllianceCreationResultMessage)(nil)),
+	6391: reflect.TypeOf((AllianceCreationResultMessage)(AllianceCreationResultMessage{})),
 
-	5895: reflect.TypeOf((*PrismFightDefenderAddMessage)(nil)),
+	5895: reflect.TypeOf((PrismFightDefenderAddMessage)(PrismFightDefenderAddMessage{})),
 
-	6693: reflect.TypeOf((*AllianceBulletinSetRequestMessage)(nil)),
+	6693: reflect.TypeOf((AllianceBulletinSetRequestMessage)(AllianceBulletinSetRequestMessage{})),
 
-	6275: reflect.TypeOf((*MailStatusMessage)(nil)),
+	6275: reflect.TypeOf((MailStatusMessage)(MailStatusMessage{})),
 
-	892: reflect.TypeOf((*EnabledChannelsMessage)(nil)),
+	892: reflect.TypeOf((EnabledChannelsMessage)(EnabledChannelsMessage{})),
 
-	3004: reflect.TypeOf((*ObjectErrorMessage)(nil)),
+	3004: reflect.TypeOf((ObjectErrorMessage)(ObjectErrorMessage{})),
 
-	891: reflect.TypeOf((*ChannelEnablingChangeMessage)(nil)),
+	891: reflect.TypeOf((ChannelEnablingChangeMessage)(ChannelEnablingChangeMessage{})),
 
-	850: reflect.TypeOf((*ChatAbstractClientMessage)(nil)),
+	850: reflect.TypeOf((ChatAbstractClientMessage)(ChatAbstractClientMessage{})),
 
-	861: reflect.TypeOf((*ChatClientMultiMessage)(nil)),
+	861: reflect.TypeOf((ChatClientMultiMessage)(ChatClientMultiMessage{})),
 
-	6298: reflect.TypeOf((*NumericWhoIsRequestMessage)(nil)),
+	6298: reflect.TypeOf((NumericWhoIsRequestMessage)(NumericWhoIsRequestMessage{})),
 
-	890: reflect.TypeOf((*ChannelEnablingMessage)(nil)),
+	890: reflect.TypeOf((ChannelEnablingMessage)(ChannelEnablingMessage{})),
 
-	6065: reflect.TypeOf((*LivingObjectMessageMessage)(nil)),
+	6065: reflect.TypeOf((LivingObjectMessageMessage)(LivingObjectMessageMessage{})),
 
-	851: reflect.TypeOf((*ChatClientPrivateMessage)(nil)),
+	851: reflect.TypeOf((ChatClientPrivateMessage)(ChatClientPrivateMessage{})),
 
-	852: reflect.TypeOf((*ChatClientPrivateWithObjectMessage)(nil)),
+	852: reflect.TypeOf((ChatClientPrivateWithObjectMessage)(ChatClientPrivateWithObjectMessage{})),
 
-	6196: reflect.TypeOf((*MoodSmileyResultMessage)(nil)),
+	6196: reflect.TypeOf((MoodSmileyResultMessage)(MoodSmileyResultMessage{})),
 
-	880: reflect.TypeOf((*ChatAbstractServerMessage)(nil)),
+	880: reflect.TypeOf((ChatAbstractServerMessage)(ChatAbstractServerMessage{})),
 
-	882: reflect.TypeOf((*ChatServerCopyMessage)(nil)),
+	882: reflect.TypeOf((ChatServerCopyMessage)(ChatServerCopyMessage{})),
 
-	6612: reflect.TypeOf((*ExchangeBidHouseUnsoldItemsMessage)(nil)),
+	6612: reflect.TypeOf((ExchangeBidHouseUnsoldItemsMessage)(ExchangeBidHouseUnsoldItemsMessage{})),
 
-	6596: reflect.TypeOf((*ChatSmileyExtraPackListMessage)(nil)),
+	6596: reflect.TypeOf((ChatSmileyExtraPackListMessage)(ChatSmileyExtraPackListMessage{})),
 
-	6613: reflect.TypeOf((*ExchangeOfflineSoldItemsMessage)(nil)),
+	6613: reflect.TypeOf((ExchangeOfflineSoldItemsMessage)(ExchangeOfflineSoldItemsMessage{})),
 
-	175: reflect.TypeOf((*BasicTimeMessage)(nil)),
+	175: reflect.TypeOf((BasicTimeMessage)(BasicTimeMessage{})),
 
-	862: reflect.TypeOf((*ChatClientMultiWithObjectMessage)(nil)),
+	862: reflect.TypeOf((ChatClientMultiWithObjectMessage)(ChatClientMultiWithObjectMessage{})),
 
-	6192: reflect.TypeOf((*MoodSmileyRequestMessage)(nil)),
+	6192: reflect.TypeOf((MoodSmileyRequestMessage)(MoodSmileyRequestMessage{})),
 
-	881: reflect.TypeOf((*ChatServerMessage)(nil)),
+	881: reflect.TypeOf((ChatServerMessage)(ChatServerMessage{})),
 
-	6103: reflect.TypeOf((*NotificationByServerMessage)(nil)),
+	6103: reflect.TypeOf((NotificationByServerMessage)(NotificationByServerMessage{})),
 
-	180: reflect.TypeOf((*BasicWhoIsMessage)(nil)),
+	180: reflect.TypeOf((BasicWhoIsMessage)(BasicWhoIsMessage{})),
 
-	801: reflect.TypeOf((*ChatSmileyMessage)(nil)),
+	801: reflect.TypeOf((ChatSmileyMessage)(ChatSmileyMessage{})),
 
-	6066: reflect.TypeOf((*LivingObjectMessageRequestMessage)(nil)),
+	6066: reflect.TypeOf((LivingObjectMessageRequestMessage)(LivingObjectMessageRequestMessage{})),
 
-	6292: reflect.TypeOf((*NewMailMessage)(nil)),
+	6292: reflect.TypeOf((NewMailMessage)(NewMailMessage{})),
 
-	181: reflect.TypeOf((*BasicWhoIsRequestMessage)(nil)),
+	181: reflect.TypeOf((BasicWhoIsRequestMessage)(BasicWhoIsRequestMessage{})),
 
-	179: reflect.TypeOf((*BasicWhoIsNoMatchMessage)(nil)),
+	179: reflect.TypeOf((BasicWhoIsNoMatchMessage)(BasicWhoIsNoMatchMessage{})),
 
-	780: reflect.TypeOf((*TextInformationMessage)(nil)),
+	780: reflect.TypeOf((TextInformationMessage)(TextInformationMessage{})),
 
-	884: reflect.TypeOf((*ChatServerCopyWithObjectMessage)(nil)),
+	884: reflect.TypeOf((ChatServerCopyWithObjectMessage)(ChatServerCopyWithObjectMessage{})),
 
-	870: reflect.TypeOf((*ChatErrorMessage)(nil)),
+	870: reflect.TypeOf((ChatErrorMessage)(ChatErrorMessage{})),
 
-	6297: reflect.TypeOf((*NumericWhoIsMessage)(nil)),
+	6297: reflect.TypeOf((NumericWhoIsMessage)(NumericWhoIsMessage{})),
 
-	883: reflect.TypeOf((*ChatServerWithObjectMessage)(nil)),
+	883: reflect.TypeOf((ChatServerWithObjectMessage)(ChatServerWithObjectMessage{})),
 
-	6185: reflect.TypeOf((*LocalizedChatSmileyMessage)(nil)),
+	6185: reflect.TypeOf((LocalizedChatSmileyMessage)(LocalizedChatSmileyMessage{})),
 
-	6135: reflect.TypeOf((*ChatAdminServerMessage)(nil)),
+	6135: reflect.TypeOf((ChatAdminServerMessage)(ChatAdminServerMessage{})),
 
-	800: reflect.TypeOf((*ChatSmileyRequestMessage)(nil)),
+	800: reflect.TypeOf((ChatSmileyRequestMessage)(ChatSmileyRequestMessage{})),
 
-	6134: reflect.TypeOf((*PopupWarningMessage)(nil)),
+	6134: reflect.TypeOf((PopupWarningMessage)(PopupWarningMessage{})),
 
-	1512: reflect.TypeOf((*DownloadSetSpeedRequestMessage)(nil)),
+	1512: reflect.TypeOf((DownloadSetSpeedRequestMessage)(DownloadSetSpeedRequestMessage{})),
 
-	1510: reflect.TypeOf((*DownloadGetCurrentSpeedRequestMessage)(nil)),
+	1510: reflect.TypeOf((DownloadGetCurrentSpeedRequestMessage)(DownloadGetCurrentSpeedRequestMessage{})),
 
-	6699: reflect.TypeOf((*RefreshCharacterStatsMessage)(nil)),
+	6699: reflect.TypeOf((RefreshCharacterStatsMessage)(RefreshCharacterStatsMessage{})),
 
-	957: reflect.TypeOf((*GameActionAcknowledgementMessage)(nil)),
+	957: reflect.TypeOf((GameActionAcknowledgementMessage)(GameActionAcknowledgementMessage{})),
 
-	713: reflect.TypeOf((*GameFightTurnListMessage)(nil)),
+	713: reflect.TypeOf((GameFightTurnListMessage)(GameFightTurnListMessage{})),
 
-	1000: reflect.TypeOf((*AbstractGameActionMessage)(nil)),
+	1000: reflect.TypeOf((AbstractGameActionMessage)(AbstractGameActionMessage{})),
 
-	1099: reflect.TypeOf((*GameActionFightDeathMessage)(nil)),
+	1099: reflect.TypeOf((GameActionFightDeathMessage)(GameActionFightDeathMessage{})),
 
-	714: reflect.TypeOf((*GameFightTurnStartMessage)(nil)),
+	714: reflect.TypeOf((GameFightTurnStartMessage)(GameFightTurnStartMessage{})),
 
-	6307: reflect.TypeOf((*GameFightTurnResumeMessage)(nil)),
+	6307: reflect.TypeOf((GameFightTurnResumeMessage)(GameFightTurnResumeMessage{})),
 
-	720: reflect.TypeOf((*GameFightEndMessage)(nil)),
+	720: reflect.TypeOf((GameFightEndMessage)(GameFightEndMessage{})),
 
-	6322: reflect.TypeOf((*FighterStatsListMessage)(nil)),
+	6322: reflect.TypeOf((FighterStatsListMessage)(FighterStatsListMessage{})),
 
-	721: reflect.TypeOf((*GameFightLeaveMessage)(nil)),
+	721: reflect.TypeOf((GameFightLeaveMessage)(GameFightLeaveMessage{})),
 
-	715: reflect.TypeOf((*GameFightTurnReadyRequestMessage)(nil)),
+	715: reflect.TypeOf((GameFightTurnReadyRequestMessage)(GameFightTurnReadyRequestMessage{})),
 
-	719: reflect.TypeOf((*GameFightTurnEndMessage)(nil)),
+	719: reflect.TypeOf((GameFightTurnEndMessage)(GameFightTurnEndMessage{})),
 
-	5921: reflect.TypeOf((*GameFightSynchronizeMessage)(nil)),
+	5921: reflect.TypeOf((GameFightSynchronizeMessage)(GameFightSynchronizeMessage{})),
 
-	201: reflect.TypeOf((*GameContextDestroyMessage)(nil)),
+	201: reflect.TypeOf((GameContextDestroyMessage)(GameContextDestroyMessage{})),
 
-	6239: reflect.TypeOf((*GameFightNewRoundMessage)(nil)),
+	6239: reflect.TypeOf((GameFightNewRoundMessage)(GameFightNewRoundMessage{})),
 
-	956: reflect.TypeOf((*SequenceEndMessage)(nil)),
+	956: reflect.TypeOf((SequenceEndMessage)(SequenceEndMessage{})),
 
-	6490: reflect.TypeOf((*GameFightNewWaveMessage)(nil)),
+	6490: reflect.TypeOf((GameFightNewWaveMessage)(GameFightNewWaveMessage{})),
 
-	716: reflect.TypeOf((*GameFightTurnReadyMessage)(nil)),
+	716: reflect.TypeOf((GameFightTurnReadyMessage)(GameFightTurnReadyMessage{})),
 
-	500: reflect.TypeOf((*CharacterStatsListMessage)(nil)),
+	500: reflect.TypeOf((CharacterStatsListMessage)(CharacterStatsListMessage{})),
 
-	955: reflect.TypeOf((*SequenceStartMessage)(nil)),
+	955: reflect.TypeOf((SequenceStartMessage)(SequenceStartMessage{})),
 
-	6465: reflect.TypeOf((*GameFightTurnStartPlayingMessage)(nil)),
+	6465: reflect.TypeOf((GameFightTurnStartPlayingMessage)(GameFightTurnStartPlayingMessage{})),
 
-	6214: reflect.TypeOf((*SlaveSwitchContextMessage)(nil)),
+	6214: reflect.TypeOf((SlaveSwitchContextMessage)(SlaveSwitchContextMessage{})),
 
-	740: reflect.TypeOf((*GameFightHumanReadyStateMessage)(nil)),
+	740: reflect.TypeOf((GameFightHumanReadyStateMessage)(GameFightHumanReadyStateMessage{})),
 
-	5864: reflect.TypeOf((*GameFightShowFighterMessage)(nil)),
+	5864: reflect.TypeOf((GameFightShowFighterMessage)(GameFightShowFighterMessage{})),
 
-	6218: reflect.TypeOf((*GameFightShowFighterRandomStaticPoseMessage)(nil)),
+	6218: reflect.TypeOf((GameFightShowFighterRandomStaticPoseMessage)(GameFightShowFighterRandomStaticPoseMessage{})),
 
-	5696: reflect.TypeOf((*GameEntitiesDispositionMessage)(nil)),
+	5696: reflect.TypeOf((GameEntitiesDispositionMessage)(GameEntitiesDispositionMessage{})),
 
-	6544: reflect.TypeOf((*GameFightPlacementSwapPositionsMessage)(nil)),
+	6544: reflect.TypeOf((GameFightPlacementSwapPositionsMessage)(GameFightPlacementSwapPositionsMessage{})),
 
-	5637: reflect.TypeOf((*GameContextRefreshEntityLookMessage)(nil)),
+	5637: reflect.TypeOf((GameContextRefreshEntityLookMessage)(GameContextRefreshEntityLookMessage{})),
 
-	5612: reflect.TypeOf((*ShowCellMessage)(nil)),
+	5612: reflect.TypeOf((ShowCellMessage)(ShowCellMessage{})),
 
-	5826: reflect.TypeOf((*GameActionFightDropCharacterMessage)(nil)),
+	5826: reflect.TypeOf((GameActionFightDropCharacterMessage)(GameActionFightDropCharacterMessage{})),
 
-	5830: reflect.TypeOf((*GameActionFightCarryCharacterMessage)(nil)),
+	5830: reflect.TypeOf((GameActionFightCarryCharacterMessage)(GameActionFightCarryCharacterMessage{})),
 
-	5693: reflect.TypeOf((*GameEntityDispositionMessage)(nil)),
+	5693: reflect.TypeOf((GameEntityDispositionMessage)(GameEntityDispositionMessage{})),
 
-	6268: reflect.TypeOf((*MapComplementaryInformationsWithCoordsMessage)(nil)),
+	6268: reflect.TypeOf((MapComplementaryInformationsWithCoordsMessage)(MapComplementaryInformationsWithCoordsMessage{})),
 
-	5829: reflect.TypeOf((*GameActionFightThrowCharacterMessage)(nil)),
+	5829: reflect.TypeOf((GameActionFightThrowCharacterMessage)(GameActionFightThrowCharacterMessage{})),
 
-	6130: reflect.TypeOf((*MapComplementaryInformationsDataInHouseMessage)(nil)),
+	6130: reflect.TypeOf((MapComplementaryInformationsDataInHouseMessage)(MapComplementaryInformationsDataInHouseMessage{})),
 
-	6158: reflect.TypeOf((*ShowCellSpectatorMessage)(nil)),
+	6158: reflect.TypeOf((ShowCellSpectatorMessage)(ShowCellSpectatorMessage{})),
 
-	6309: reflect.TypeOf((*GameFightRefreshFighterMessage)(nil)),
+	6309: reflect.TypeOf((GameFightRefreshFighterMessage)(GameFightRefreshFighterMessage{})),
 
-	252: reflect.TypeOf((*GameContextRemoveMultipleElementsMessage)(nil)),
+	252: reflect.TypeOf((GameContextRemoveMultipleElementsMessage)(GameContextRemoveMultipleElementsMessage{})),
 
-	5990: reflect.TypeOf((*GameDataPaddockObjectAddMessage)(nil)),
+	5990: reflect.TypeOf((GameDataPaddockObjectAddMessage)(GameDataPaddockObjectAddMessage{})),
 
-	210: reflect.TypeOf((*MapFightCountMessage)(nil)),
+	210: reflect.TypeOf((MapFightCountMessage)(MapFightCountMessage{})),
 
-	301: reflect.TypeOf((*GameRolePlayShowChallengeMessage)(nil)),
+	301: reflect.TypeOf((GameRolePlayShowChallengeMessage)(GameRolePlayShowChallengeMessage{})),
 
-	6712: reflect.TypeOf((*GameRolePlayShowMultipleActorsMessage)(nil)),
+	6712: reflect.TypeOf((GameRolePlayShowMultipleActorsMessage)(GameRolePlayShowMultipleActorsMessage{})),
 
-	946: reflect.TypeOf((*GameMapChangeOrientationMessage)(nil)),
+	946: reflect.TypeOf((GameMapChangeOrientationMessage)(GameMapChangeOrientationMessage{})),
 
-	5642: reflect.TypeOf((*MapNpcsQuestStatusUpdateMessage)(nil)),
+	5642: reflect.TypeOf((MapNpcsQuestStatusUpdateMessage)(MapNpcsQuestStatusUpdateMessage{})),
 
-	3017: reflect.TypeOf((*ObjectGroundAddedMessage)(nil)),
+	3017: reflect.TypeOf((ObjectGroundAddedMessage)(ObjectGroundAddedMessage{})),
 
-	5685: reflect.TypeOf((*EmotePlayRequestMessage)(nil)),
+	5685: reflect.TypeOf((EmotePlayRequestMessage)(EmotePlayRequestMessage{})),
 
-	6155: reflect.TypeOf((*GameMapChangeOrientationsMessage)(nil)),
+	6155: reflect.TypeOf((GameMapChangeOrientationsMessage)(GameMapChangeOrientationsMessage{})),
 
-	5958: reflect.TypeOf((*PaddockRemoveItemRequestMessage)(nil)),
+	5958: reflect.TypeOf((PaddockRemoveItemRequestMessage)(PaddockRemoveItemRequestMessage{})),
 
-	5716: reflect.TypeOf((*StatedMapUpdateMessage)(nil)),
+	5716: reflect.TypeOf((StatedMapUpdateMessage)(StatedMapUpdateMessage{})),
 
-	3014: reflect.TypeOf((*ObjectGroundRemovedMessage)(nil)),
+	3014: reflect.TypeOf((ObjectGroundRemovedMessage)(ObjectGroundRemovedMessage{})),
 
-	6622: reflect.TypeOf((*MapComplementaryInformationsDataInHavenBagMessage)(nil)),
+	6622: reflect.TypeOf((MapComplementaryInformationsDataInHavenBagMessage)(MapComplementaryInformationsDataInHavenBagMessage{})),
 
-	5925: reflect.TypeOf((*ObjectGroundListAddedMessage)(nil)),
+	5925: reflect.TypeOf((ObjectGroundListAddedMessage)(ObjectGroundListAddedMessage{})),
 
-	5572: reflect.TypeOf((*GameFightUpdateTeamMessage)(nil)),
+	5572: reflect.TypeOf((GameFightUpdateTeamMessage)(GameFightUpdateTeamMessage{})),
 
-	711: reflect.TypeOf((*GameFightRemoveTeamMemberMessage)(nil)),
+	711: reflect.TypeOf((GameFightRemoveTeamMemberMessage)(GameFightRemoveTeamMemberMessage{})),
 
-	5734: reflect.TypeOf((*HousePropertiesMessage)(nil)),
+	5734: reflect.TypeOf((HousePropertiesMessage)(HousePropertiesMessage{})),
 
-	5944: reflect.TypeOf((*ObjectGroundRemovedMultipleMessage)(nil)),
+	5944: reflect.TypeOf((ObjectGroundRemovedMultipleMessage)(ObjectGroundRemovedMultipleMessage{})),
 
-	251: reflect.TypeOf((*GameContextRemoveElementMessage)(nil)),
+	251: reflect.TypeOf((GameContextRemoveElementMessage)(GameContextRemoveElementMessage{})),
 
-	5927: reflect.TypeOf((*GameFightOptionStateUpdateMessage)(nil)),
+	5927: reflect.TypeOf((GameFightOptionStateUpdateMessage)(GameFightOptionStateUpdateMessage{})),
 
-	5002: reflect.TypeOf((*InteractiveMapUpdateMessage)(nil)),
+	5002: reflect.TypeOf((InteractiveMapUpdateMessage)(InteractiveMapUpdateMessage{})),
 
-	5992: reflect.TypeOf((*GameDataPaddockObjectListAddMessage)(nil)),
+	5992: reflect.TypeOf((GameDataPaddockObjectListAddMessage)(GameDataPaddockObjectListAddMessage{})),
 
-	6026: reflect.TypeOf((*GameDataPlayFarmObjectAnimationMessage)(nil)),
+	6026: reflect.TypeOf((GameDataPlayFarmObjectAnimationMessage)(GameDataPlayFarmObjectAnimationMessage{})),
 
-	6454: reflect.TypeOf((*UpdateMapPlayersAgressableStatusMessage)(nil)),
+	6454: reflect.TypeOf((UpdateMapPlayersAgressableStatusMessage)(UpdateMapPlayersAgressableStatusMessage{})),
 
-	225: reflect.TypeOf((*MapInformationsRequestMessage)(nil)),
+	225: reflect.TypeOf((MapInformationsRequestMessage)(MapInformationsRequestMessage{})),
 
-	5632: reflect.TypeOf((*GameRolePlayShowActorMessage)(nil)),
+	5632: reflect.TypeOf((GameRolePlayShowActorMessage)(GameRolePlayShowActorMessage{})),
 
-	5745: reflect.TypeOf((*InteractiveUsedMessage)(nil)),
+	5745: reflect.TypeOf((InteractiveUsedMessage)(InteractiveUsedMessage{})),
 
-	5993: reflect.TypeOf((*GameDataPaddockObjectRemoveMessage)(nil)),
+	5993: reflect.TypeOf((GameDataPaddockObjectRemoveMessage)(GameDataPaddockObjectRemoveMessage{})),
 
-	6052: reflect.TypeOf((*PaddockMoveItemRequestMessage)(nil)),
+	6052: reflect.TypeOf((PaddockMoveItemRequestMessage)(PaddockMoveItemRequestMessage{})),
 
-	2001: reflect.TypeOf((*DebugHighlightCellsMessage)(nil)),
+	2001: reflect.TypeOf((DebugHighlightCellsMessage)(DebugHighlightCellsMessage{})),
 
-	2002: reflect.TypeOf((*DebugClearHighlightCellsMessage)(nil)),
+	2002: reflect.TypeOf((DebugClearHighlightCellsMessage)(DebugClearHighlightCellsMessage{})),
 
-	6028: reflect.TypeOf((*DebugInClientMessage)(nil)),
+	6028: reflect.TypeOf((DebugInClientMessage)(DebugInClientMessage{})),
 
-	6253: reflect.TypeOf((*RawDataMessage)(nil)),
+	6253: reflect.TypeOf((RawDataMessage)(RawDataMessage{})),
 
-	6267: reflect.TypeOf((*TrustStatusMessage)(nil)),
+	6267: reflect.TypeOf((TrustStatusMessage)(TrustStatusMessage{})),
 
-	6266: reflect.TypeOf((*URLOpenMessage)(nil)),
+	6266: reflect.TypeOf((URLOpenMessage)(URLOpenMessage{})),
 
-	182: reflect.TypeOf((*BasicPingMessage)(nil)),
+	182: reflect.TypeOf((BasicPingMessage)(BasicPingMessage{})),
 
-	5816: reflect.TypeOf((*BasicLatencyStatsRequestMessage)(nil)),
+	5816: reflect.TypeOf((BasicLatencyStatsRequestMessage)(BasicLatencyStatsRequestMessage{})),
 
-	183: reflect.TypeOf((*BasicPongMessage)(nil)),
+	183: reflect.TypeOf((BasicPongMessage)(BasicPongMessage{})),
 
-	5663: reflect.TypeOf((*BasicLatencyStatsMessage)(nil)),
+	5663: reflect.TypeOf((BasicLatencyStatsMessage)(BasicLatencyStatsMessage{})),
 
-	75: reflect.TypeOf((*ConsoleMessage)(nil)),
+	75: reflect.TypeOf((ConsoleMessage)(ConsoleMessage{})),
 
-	6372: reflect.TypeOf((*CheckIntegrityMessage)(nil)),
+	6372: reflect.TypeOf((CheckIntegrityMessage)(CheckIntegrityMessage{})),
 
-	6119: reflect.TypeOf((*IdentificationAccountForceMessage)(nil)),
+	6119: reflect.TypeOf((IdentificationAccountForceMessage)(IdentificationAccountForceMessage{})),
 
-	700: reflect.TypeOf((*GameFightStartingMessage)(nil)),
+	700: reflect.TypeOf((GameFightStartingMessage)(GameFightStartingMessage{})),
 
-	176: reflect.TypeOf((*BasicNoOperationMessage)(nil)),
+	176: reflect.TypeOf((BasicNoOperationMessage)(BasicNoOperationMessage{})),
 
-	5726: reflect.TypeOf((*OnConnectionEventMessage)(nil)),
+	5726: reflect.TypeOf((OnConnectionEventMessage)(OnConnectionEventMessage{})),
 
-	6272: reflect.TypeOf((*ExchangeBidHouseBuyResultMessage)(nil)),
+	6272: reflect.TypeOf((ExchangeBidHouseBuyResultMessage)(ExchangeBidHouseBuyResultMessage{})),
 
-	6314: reflect.TypeOf((*CredentialsAcknowledgementMessage)(nil)),
+	6314: reflect.TypeOf((CredentialsAcknowledgementMessage)(CredentialsAcknowledgementMessage{})),
 
-	6014: reflect.TypeOf((*ObjectJobAddedMessage)(nil)),
+	6014: reflect.TypeOf((ObjectJobAddedMessage)(ObjectJobAddedMessage{})),
 
-	6362: reflect.TypeOf((*BasicAckMessage)(nil)),
+	6362: reflect.TypeOf((BasicAckMessage)(BasicAckMessage{})),
 
-	30: reflect.TypeOf((*ServersListMessage)(nil)),
+	30: reflect.TypeOf((ServersListMessage)(ServersListMessage{})),
 
-	6118: reflect.TypeOf((*AbstractGameActionFightTargetedAbilityMessage)(nil)),
+	6118: reflect.TypeOf((AbstractGameActionFightTargetedAbilityMessage)(AbstractGameActionFightTargetedAbilityMessage{})),
 
-	1010: reflect.TypeOf((*GameActionFightSpellCastMessage)(nil)),
+	1010: reflect.TypeOf((GameActionFightSpellCastMessage)(GameActionFightSpellCastMessage{})),
 
-	6312: reflect.TypeOf((*GameActionFightLifePointsLostMessage)(nil)),
+	6312: reflect.TypeOf((GameActionFightLifePointsLostMessage)(GameActionFightLifePointsLostMessage{})),
 
-	6310: reflect.TypeOf((*GameActionFightLifeAndShieldPointsLostMessage)(nil)),
+	6310: reflect.TypeOf((GameActionFightLifeAndShieldPointsLostMessage)(GameActionFightLifeAndShieldPointsLostMessage{})),
 
-	6304: reflect.TypeOf((*GameActionFightModifyEffectsDurationMessage)(nil)),
+	6304: reflect.TypeOf((GameActionFightModifyEffectsDurationMessage)(GameActionFightModifyEffectsDurationMessage{})),
 
-	5526: reflect.TypeOf((*GameActionFightReduceDamagesMessage)(nil)),
+	5526: reflect.TypeOf((GameActionFightReduceDamagesMessage)(GameActionFightReduceDamagesMessage{})),
 
-	6219: reflect.TypeOf((*GameActionFightSpellCooldownVariationMessage)(nil)),
+	6219: reflect.TypeOf((GameActionFightSpellCooldownVariationMessage)(GameActionFightSpellCooldownVariationMessage{})),
 
-	1004: reflect.TypeOf((*GameActionFightTackledMessage)(nil)),
+	1004: reflect.TypeOf((GameActionFightTackledMessage)(GameActionFightTackledMessage{})),
 
-	5527: reflect.TypeOf((*GameActionFightExchangePositionsMessage)(nil)),
+	5527: reflect.TypeOf((GameActionFightExchangePositionsMessage)(GameActionFightExchangePositionsMessage{})),
 
-	5571: reflect.TypeOf((*GameActionFightKillMessage)(nil)),
+	5571: reflect.TypeOf((GameActionFightKillMessage)(GameActionFightKillMessage{})),
 
-	5531: reflect.TypeOf((*GameActionFightReflectSpellMessage)(nil)),
+	5531: reflect.TypeOf((GameActionFightReflectSpellMessage)(GameActionFightReflectSpellMessage{})),
 
-	6221: reflect.TypeOf((*GameActionFightSpellImmunityMessage)(nil)),
+	6221: reflect.TypeOf((GameActionFightSpellImmunityMessage)(GameActionFightSpellImmunityMessage{})),
 
-	5533: reflect.TypeOf((*GameActionFightDispellMessage)(nil)),
+	5533: reflect.TypeOf((GameActionFightDispellMessage)(GameActionFightDispellMessage{})),
 
-	5741: reflect.TypeOf((*GameActionFightTriggerGlyphTrapMessage)(nil)),
+	5741: reflect.TypeOf((GameActionFightTriggerGlyphTrapMessage)(GameActionFightTriggerGlyphTrapMessage{})),
 
-	6311: reflect.TypeOf((*GameActionFightLifePointsGainMessage)(nil)),
+	6311: reflect.TypeOf((GameActionFightLifePointsGainMessage)(GameActionFightLifePointsGainMessage{})),
 
-	5530: reflect.TypeOf((*GameActionFightReflectDamagesMessage)(nil)),
+	5530: reflect.TypeOf((GameActionFightReflectDamagesMessage)(GameActionFightReflectDamagesMessage{})),
 
-	6217: reflect.TypeOf((*GameActionFightVanishMessage)(nil)),
+	6217: reflect.TypeOf((GameActionFightVanishMessage)(GameActionFightVanishMessage{})),
 
-	6176: reflect.TypeOf((*GameActionFightDispellSpellMessage)(nil)),
+	6176: reflect.TypeOf((GameActionFightDispellSpellMessage)(GameActionFightDispellSpellMessage{})),
 
-	5540: reflect.TypeOf((*GameActionFightMarkCellsMessage)(nil)),
+	5540: reflect.TypeOf((GameActionFightMarkCellsMessage)(GameActionFightMarkCellsMessage{})),
 
-	6113: reflect.TypeOf((*GameActionFightDispellEffectMessage)(nil)),
+	6113: reflect.TypeOf((GameActionFightDispellEffectMessage)(GameActionFightDispellEffectMessage{})),
 
-	6147: reflect.TypeOf((*GameActionFightTriggerEffectMessage)(nil)),
+	6147: reflect.TypeOf((GameActionFightTriggerEffectMessage)(GameActionFightTriggerEffectMessage{})),
 
-	5828: reflect.TypeOf((*GameActionFightDodgePointLossMessage)(nil)),
+	5828: reflect.TypeOf((GameActionFightDodgePointLossMessage)(GameActionFightDodgePointLossMessage{})),
 
-	5528: reflect.TypeOf((*GameActionFightTeleportOnSameMapMessage)(nil)),
+	5528: reflect.TypeOf((GameActionFightTeleportOnSameMapMessage)(GameActionFightTeleportOnSameMapMessage{})),
 
-	5525: reflect.TypeOf((*GameActionFightSlideMessage)(nil)),
+	5525: reflect.TypeOf((GameActionFightSlideMessage)(GameActionFightSlideMessage{})),
 
-	6116: reflect.TypeOf((*GameActionFightCloseCombatMessage)(nil)),
+	6116: reflect.TypeOf((GameActionFightCloseCombatMessage)(GameActionFightCloseCombatMessage{})),
 
-	5570: reflect.TypeOf((*GameActionFightUnmarkCellsMessage)(nil)),
+	5570: reflect.TypeOf((GameActionFightUnmarkCellsMessage)(GameActionFightUnmarkCellsMessage{})),
 
-	5825: reflect.TypeOf((*GameActionFightSummonMessage)(nil)),
+	5825: reflect.TypeOf((GameActionFightSummonMessage)(GameActionFightSummonMessage{})),
 
-	1030: reflect.TypeOf((*GameActionFightPointsVariationMessage)(nil)),
+	1030: reflect.TypeOf((GameActionFightPointsVariationMessage)(GameActionFightPointsVariationMessage{})),
 
-	6320: reflect.TypeOf((*GameActionFightInvisibleDetectedMessage)(nil)),
+	6320: reflect.TypeOf((GameActionFightInvisibleDetectedMessage)(GameActionFightInvisibleDetectedMessage{})),
 
-	951: reflect.TypeOf((*GameMapMovementMessage)(nil)),
+	951: reflect.TypeOf((GameMapMovementMessage)(GameMapMovementMessage{})),
 
-	5532: reflect.TypeOf((*GameActionFightChangeLookMessage)(nil)),
+	5532: reflect.TypeOf((GameActionFightChangeLookMessage)(GameActionFightChangeLookMessage{})),
 
-	6545: reflect.TypeOf((*GameActionFightActivateGlyphTrapMessage)(nil)),
+	6545: reflect.TypeOf((GameActionFightActivateGlyphTrapMessage)(GameActionFightActivateGlyphTrapMessage{})),
 
-	6070: reflect.TypeOf((*GameActionFightDispellableEffectMessage)(nil)),
+	6070: reflect.TypeOf((GameActionFightDispellableEffectMessage)(GameActionFightDispellableEffectMessage{})),
 
-	5535: reflect.TypeOf((*GameActionFightStealKamaMessage)(nil)),
+	5535: reflect.TypeOf((GameActionFightStealKamaMessage)(GameActionFightStealKamaMessage{})),
 
-	5821: reflect.TypeOf((*GameActionFightInvisibilityMessage)(nil)),
+	5821: reflect.TypeOf((GameActionFightInvisibilityMessage)(GameActionFightInvisibilityMessage{})),
 
-	6069: reflect.TypeOf((*GameFightSpectateMessage)(nil)),
+	6069: reflect.TypeOf((GameFightSpectateMessage)(GameFightSpectateMessage{})),
 
-	6067: reflect.TypeOf((*GameFightResumeMessage)(nil)),
+	6067: reflect.TypeOf((GameFightResumeMessage)(GameFightResumeMessage{})),
 
-	6051: reflect.TypeOf((*MapObstacleUpdateMessage)(nil)),
+	6051: reflect.TypeOf((MapObstacleUpdateMessage)(MapObstacleUpdateMessage{})),
 
-	5613: reflect.TypeOf((*ChallengeTargetsListMessage)(nil)),
+	5613: reflect.TypeOf((ChallengeTargetsListMessage)(ChallengeTargetsListMessage{})),
 
-	6022: reflect.TypeOf((*ChallengeInfoMessage)(nil)),
+	6022: reflect.TypeOf((ChallengeInfoMessage)(ChallengeInfoMessage{})),
 
-	6123: reflect.TypeOf((*ChallengeTargetUpdateMessage)(nil)),
+	6123: reflect.TypeOf((ChallengeTargetUpdateMessage)(ChallengeTargetUpdateMessage{})),
 
-	6215: reflect.TypeOf((*GameFightResumeWithSlavesMessage)(nil)),
+	6215: reflect.TypeOf((GameFightResumeWithSlavesMessage)(GameFightResumeWithSlavesMessage{})),
 
-	6132: reflect.TypeOf((*GameActionFightNoSpellCastMessage)(nil)),
+	6132: reflect.TypeOf((GameActionFightNoSpellCastMessage)(GameActionFightNoSpellCastMessage{})),
 
-	5614: reflect.TypeOf((*ChallengeTargetsListRequestMessage)(nil)),
+	5614: reflect.TypeOf((ChallengeTargetsListRequestMessage)(ChallengeTargetsListRequestMessage{})),
 
-	712: reflect.TypeOf((*GameFightStartMessage)(nil)),
+	712: reflect.TypeOf((GameFightStartMessage)(GameFightStartMessage{})),
 
-	6071: reflect.TypeOf((*GameContextReadyMessage)(nil)),
+	6071: reflect.TypeOf((GameContextReadyMessage)(GameContextReadyMessage{})),
 
-	6700: reflect.TypeOf((*ArenaFighterLeaveMessage)(nil)),
+	6700: reflect.TypeOf((ArenaFighterLeaveMessage)(ArenaFighterLeaveMessage{})),
 
-	6019: reflect.TypeOf((*ChallengeResultMessage)(nil)),
+	6019: reflect.TypeOf((ChallengeResultMessage)(ChallengeResultMessage{})),
 
-	5518: reflect.TypeOf((*ExchangeObjectMoveMessage)(nil)),
+	5518: reflect.TypeOf((ExchangeObjectMoveMessage)(ExchangeObjectMoveMessage{})),
 
-	5514: reflect.TypeOf((*ExchangeObjectMovePricedMessage)(nil)),
+	5514: reflect.TypeOf((ExchangeObjectMovePricedMessage)(ExchangeObjectMovePricedMessage{})),
 
-	6492: reflect.TypeOf((*PortalUseRequestMessage)(nil)),
+	6492: reflect.TypeOf((PortalUseRequestMessage)(PortalUseRequestMessage{})),
 
-	5790: reflect.TypeOf((*ExchangeCraftResultMessage)(nil)),
+	5790: reflect.TypeOf((ExchangeCraftResultMessage)(ExchangeCraftResultMessage{})),
 
-	6643: reflect.TypeOf((*InviteInHavenBagOfferMessage)(nil)),
+	6643: reflect.TypeOf((InviteInHavenBagOfferMessage)(InviteInHavenBagOfferMessage{})),
 
-	5513: reflect.TypeOf((*ExchangeErrorMessage)(nil)),
+	5513: reflect.TypeOf((ExchangeErrorMessage)(ExchangeErrorMessage{})),
 
-	6114: reflect.TypeOf((*GameRolePlaySpellAnimMessage)(nil)),
+	6114: reflect.TypeOf((GameRolePlaySpellAnimMessage)(GameRolePlaySpellAnimMessage{})),
 
-	5731: reflect.TypeOf((*GameRolePlayPlayerFightRequestMessage)(nil)),
+	5731: reflect.TypeOf((GameRolePlayPlayerFightRequestMessage)(GameRolePlayPlayerFightRequestMessage{})),
 
-	5960: reflect.TypeOf((*TeleportDestinationsListMessage)(nil)),
+	5960: reflect.TypeOf((TeleportDestinationsListMessage)(TeleportDestinationsListMessage{})),
 
-	745: reflect.TypeOf((*GameRolePlayFreeSoulRequestMessage)(nil)),
+	745: reflect.TypeOf((GameRolePlayFreeSoulRequestMessage)(GameRolePlayFreeSoulRequestMessage{})),
 
-	5900: reflect.TypeOf((*NpcGenericActionFailureMessage)(nil)),
+	5900: reflect.TypeOf((NpcGenericActionFailureMessage)(NpcGenericActionFailureMessage{})),
 
-	5792: reflect.TypeOf((*ExchangeSellOkMessage)(nil)),
+	5792: reflect.TypeOf((ExchangeSellOkMessage)(ExchangeSellOkMessage{})),
 
-	5905: reflect.TypeOf((*ExchangeStartedBidSellerMessage)(nil)),
+	5905: reflect.TypeOf((ExchangeStartedBidSellerMessage)(ExchangeStartedBidSellerMessage{})),
 
-	5785: reflect.TypeOf((*ExchangeStartOkNpcTradeMessage)(nil)),
+	5785: reflect.TypeOf((ExchangeStartOkNpcTradeMessage)(ExchangeStartOkNpcTradeMessage{})),
 
-	5767: reflect.TypeOf((*ExchangeStartOkHumanVendorMessage)(nil)),
+	5767: reflect.TypeOf((ExchangeStartOkHumanVendorMessage)(ExchangeStartOkHumanVendorMessage{})),
 
-	5908: reflect.TypeOf((*ChallengeFightJoinRefusedMessage)(nil)),
+	5908: reflect.TypeOf((ChallengeFightJoinRefusedMessage)(ChallengeFightJoinRefusedMessage{})),
 
-	5783: reflect.TypeOf((*ExchangeShowVendorTaxMessage)(nil)),
+	5783: reflect.TypeOf((ExchangeShowVendorTaxMessage)(ExchangeShowVendorTaxMessage{})),
 
-	5512: reflect.TypeOf((*ExchangeStartedMessage)(nil)),
+	5512: reflect.TypeOf((ExchangeStartedMessage)(ExchangeStartedMessage{})),
 
-	5984: reflect.TypeOf((*ExchangeStartedMountStockMessage)(nil)),
+	5984: reflect.TypeOf((ExchangeStartedMountStockMessage)(ExchangeStartedMountStockMessage{})),
 
-	5748: reflect.TypeOf((*JobAllowMultiCraftRequestMessage)(nil)),
+	5748: reflect.TypeOf((JobAllowMultiCraftRequestMessage)(JobAllowMultiCraftRequestMessage{})),
 
-	6664: reflect.TypeOf((*ExchangeStartedTaxCollectorShopMessage)(nil)),
+	6664: reflect.TypeOf((ExchangeStartedTaxCollectorShopMessage)(ExchangeStartedTaxCollectorShopMessage{})),
 
-	5753: reflect.TypeOf((*ExchangeRequestOnShopStockMessage)(nil)),
+	5753: reflect.TypeOf((ExchangeRequestOnShopStockMessage)(ExchangeRequestOnShopStockMessage{})),
 
-	6600: reflect.TypeOf((*ExchangeStartOkRecycleTradeMessage)(nil)),
+	6600: reflect.TypeOf((ExchangeStartOkRecycleTradeMessage)(ExchangeStartOkRecycleTradeMessage{})),
 
-	5775: reflect.TypeOf((*ExchangeStartAsVendorMessage)(nil)),
+	5775: reflect.TypeOf((ExchangeStartAsVendorMessage)(ExchangeStartAsVendorMessage{})),
 
-	5937: reflect.TypeOf((*GameRolePlayPlayerFightFriendlyRequestedMessage)(nil)),
+	5937: reflect.TypeOf((GameRolePlayPlayerFightFriendlyRequestedMessage)(GameRolePlayPlayerFightFriendlyRequestedMessage{})),
 
-	5813: reflect.TypeOf((*ExchangeStartOkCraftMessage)(nil)),
+	5813: reflect.TypeOf((ExchangeStartOkCraftMessage)(ExchangeStartOkCraftMessage{})),
 
-	5941: reflect.TypeOf((*ExchangeStartOkCraftWithInformationMessage)(nil)),
+	5941: reflect.TypeOf((ExchangeStartOkCraftWithInformationMessage)(ExchangeStartOkCraftWithInformationMessage{})),
 
-	5824: reflect.TypeOf((*PaddockPropertiesMessage)(nil)),
+	5824: reflect.TypeOf((PaddockPropertiesMessage)(PaddockPropertiesMessage{})),
 
-	5733: reflect.TypeOf((*GameRolePlayPlayerFightFriendlyAnsweredMessage)(nil)),
+	5733: reflect.TypeOf((GameRolePlayPlayerFightFriendlyAnsweredMessage)(GameRolePlayPlayerFightFriendlyAnsweredMessage{})),
 
-	5898: reflect.TypeOf((*NpcGenericActionRequestMessage)(nil)),
+	5898: reflect.TypeOf((NpcGenericActionRequestMessage)(NpcGenericActionRequestMessage{})),
 
-	6018: reflect.TypeOf((*PaddockSellBuyDialogMessage)(nil)),
+	6018: reflect.TypeOf((PaddockSellBuyDialogMessage)(PaddockSellBuyDialogMessage{})),
 
-	6519: reflect.TypeOf((*ObtainedItemMessage)(nil)),
+	6519: reflect.TypeOf((ObtainedItemMessage)(ObtainedItemMessage{})),
 
-	6520: reflect.TypeOf((*ObtainedItemWithBonusMessage)(nil)),
+	6520: reflect.TypeOf((ObtainedItemWithBonusMessage)(ObtainedItemWithBonusMessage{})),
 
-	5761: reflect.TypeOf((*ExchangeStartOkNpcShopMessage)(nil)),
+	5761: reflect.TypeOf((ExchangeStartOkNpcShopMessage)(ExchangeStartOkNpcShopMessage{})),
 
-	6652: reflect.TypeOf((*KickHavenBagRequestMessage)(nil)),
+	6652: reflect.TypeOf((KickHavenBagRequestMessage)(KickHavenBagRequestMessage{})),
 
-	5822: reflect.TypeOf((*GameRolePlayFightRequestCanceledMessage)(nil)),
+	5822: reflect.TypeOf((GameRolePlayFightRequestCanceledMessage)(GameRolePlayFightRequestCanceledMessage{})),
 
-	5904: reflect.TypeOf((*ExchangeStartedBidBuyerMessage)(nil)),
+	5904: reflect.TypeOf((ExchangeStartedBidBuyerMessage)(ExchangeStartedBidBuyerMessage{})),
 
-	6647: reflect.TypeOf((*TeleportHavenBagRequestMessage)(nil)),
+	6647: reflect.TypeOf((TeleportHavenBagRequestMessage)(TeleportHavenBagRequestMessage{})),
 
-	6073: reflect.TypeOf((*GameRolePlayAggressionMessage)(nil)),
+	6073: reflect.TypeOf((GameRolePlayAggressionMessage)(GameRolePlayAggressionMessage{})),
 
-	6567: reflect.TypeOf((*ExchangeStartOkRunesTradeMessage)(nil)),
+	6567: reflect.TypeOf((ExchangeStartOkRunesTradeMessage)(ExchangeStartOkRunesTradeMessage{})),
 
-	6000: reflect.TypeOf((*ExchangeCraftResultWithObjectIdMessage)(nil)),
+	6000: reflect.TypeOf((ExchangeCraftResultWithObjectIdMessage)(ExchangeCraftResultWithObjectIdMessage{})),
 
-	5794: reflect.TypeOf((*ExchangeCraftInformationObjectMessage)(nil)),
+	5794: reflect.TypeOf((ExchangeCraftInformationObjectMessage)(ExchangeCraftInformationObjectMessage{})),
 
-	5618: reflect.TypeOf((*NpcDialogCreationMessage)(nil)),
+	5618: reflect.TypeOf((NpcDialogCreationMessage)(NpcDialogCreationMessage{})),
 
-	5778: reflect.TypeOf((*ExchangeSellMessage)(nil)),
+	5778: reflect.TypeOf((ExchangeSellMessage)(ExchangeSellMessage{})),
 
-	5787: reflect.TypeOf((*ExchangeReplyTaxVendorMessage)(nil)),
+	5787: reflect.TypeOf((ExchangeReplyTaxVendorMessage)(ExchangeReplyTaxVendorMessage{})),
 
-	6536: reflect.TypeOf((*ComicReadingBeginMessage)(nil)),
+	6536: reflect.TypeOf((ComicReadingBeginMessage)(ComicReadingBeginMessage{})),
 
-	6197: reflect.TypeOf((*ErrorMapNotFoundMessage)(nil)),
+	6197: reflect.TypeOf((ErrorMapNotFoundMessage)(ErrorMapNotFoundMessage{})),
 
-	6646: reflect.TypeOf((*TeleportHavenBagAnswerMessage)(nil)),
+	6646: reflect.TypeOf((TeleportHavenBagAnswerMessage)(TeleportHavenBagAnswerMessage{})),
 
-	6636: reflect.TypeOf((*EnterHavenBagRequestMessage)(nil)),
+	6636: reflect.TypeOf((EnterHavenBagRequestMessage)(EnterHavenBagRequestMessage{})),
 
-	6642: reflect.TypeOf((*InviteInHavenBagMessage)(nil)),
+	6642: reflect.TypeOf((InviteInHavenBagMessage)(InviteInHavenBagMessage{})),
 
-	5910: reflect.TypeOf((*ExchangeShopStockStartedMessage)(nil)),
+	5910: reflect.TypeOf((ExchangeShopStockStartedMessage)(ExchangeShopStockStartedMessage{})),
 
-	6563: reflect.TypeOf((*DisplayNumericalValuePaddockMessage)(nil)),
+	6563: reflect.TypeOf((DisplayNumericalValuePaddockMessage)(DisplayNumericalValuePaddockMessage{})),
 
-	6645: reflect.TypeOf((*InviteInHavenBagClosedMessage)(nil)),
+	6645: reflect.TypeOf((InviteInHavenBagClosedMessage)(InviteInHavenBagClosedMessage{})),
 
-	1604: reflect.TypeOf((*ZaapListMessage)(nil)),
+	1604: reflect.TypeOf((ZaapListMessage)(ZaapListMessage{})),
 
-	5779: reflect.TypeOf((*ExchangeRequestOnTaxCollectorMessage)(nil)),
+	5779: reflect.TypeOf((ExchangeRequestOnTaxCollectorMessage)(ExchangeRequestOnTaxCollectorMessage{})),
 
-	5759: reflect.TypeOf((*ExchangeBuyOkMessage)(nil)),
+	5759: reflect.TypeOf((ExchangeBuyOkMessage)(ExchangeBuyOkMessage{})),
 
-	5772: reflect.TypeOf((*ExchangeOnHumanVendorRequestMessage)(nil)),
+	5772: reflect.TypeOf((ExchangeOnHumanVendorRequestMessage)(ExchangeOnHumanVendorRequestMessage{})),
 
-	5747: reflect.TypeOf((*JobMultiCraftAvailableSkillsMessage)(nil)),
+	5747: reflect.TypeOf((JobMultiCraftAvailableSkillsMessage)(JobMultiCraftAvailableSkillsMessage{})),
 
-	5505: reflect.TypeOf((*ExchangeRequestMessage)(nil)),
+	5505: reflect.TypeOf((ExchangeRequestMessage)(ExchangeRequestMessage{})),
 
-	5784: reflect.TypeOf((*ExchangePlayerMultiCraftRequestMessage)(nil)),
+	5784: reflect.TypeOf((ExchangePlayerMultiCraftRequestMessage)(ExchangePlayerMultiCraftRequestMessage{})),
 
-	5732: reflect.TypeOf((*GameRolePlayPlayerFightFriendlyAnswerMessage)(nil)),
+	5732: reflect.TypeOf((GameRolePlayPlayerFightFriendlyAnswerMessage)(GameRolePlayPlayerFightFriendlyAnswerMessage{})),
 
-	5774: reflect.TypeOf((*ExchangeBuyMessage)(nil)),
+	5774: reflect.TypeOf((ExchangeBuyMessage)(ExchangeBuyMessage{})),
 
-	6153: reflect.TypeOf((*GameRolePlayDelayedActionMessage)(nil)),
+	6153: reflect.TypeOf((GameRolePlayDelayedActionMessage)(GameRolePlayDelayedActionMessage{})),
 
-	5522: reflect.TypeOf((*ExchangeRequestedMessage)(nil)),
+	5522: reflect.TypeOf((ExchangeRequestedMessage)(ExchangeRequestedMessage{})),
 
-	5523: reflect.TypeOf((*ExchangeRequestedTradeMessage)(nil)),
+	5523: reflect.TypeOf((ExchangeRequestedTradeMessage)(ExchangeRequestedTradeMessage{})),
 
-	5768: reflect.TypeOf((*ExchangeOkMultiCraftMessage)(nil)),
+	5768: reflect.TypeOf((ExchangeOkMultiCraftMessage)(ExchangeOkMultiCraftMessage{})),
 
-	5675: reflect.TypeOf((*DocumentReadingBeginMessage)(nil)),
+	5675: reflect.TypeOf((DocumentReadingBeginMessage)(DocumentReadingBeginMessage{})),
 
-	5954: reflect.TypeOf((*GameRolePlayTaxCollectorFightRequestMessage)(nil)),
+	5954: reflect.TypeOf((GameRolePlayTaxCollectorFightRequestMessage)(GameRolePlayTaxCollectorFightRequestMessage{})),
 
-	945: reflect.TypeOf((*GameMapChangeOrientationRequestMessage)(nil)),
+	945: reflect.TypeOf((GameMapChangeOrientationRequestMessage)(GameMapChangeOrientationRequestMessage{})),
 
-	5773: reflect.TypeOf((*ExchangePlayerRequestMessage)(nil)),
+	5773: reflect.TypeOf((ExchangePlayerRequestMessage)(ExchangePlayerRequestMessage{})),
 
-	5690: reflect.TypeOf((*EmotePlayAbstractMessage)(nil)),
+	5690: reflect.TypeOf((EmotePlayAbstractMessage)(EmotePlayAbstractMessage{})),
 
-	5683: reflect.TypeOf((*EmotePlayMessage)(nil)),
+	5683: reflect.TypeOf((EmotePlayMessage)(EmotePlayMessage{})),
 
-	6112: reflect.TypeOf((*InteractiveUseEndedMessage)(nil)),
+	6112: reflect.TypeOf((InteractiveUseEndedMessage)(InteractiveUseEndedMessage{})),
 
-	6648: reflect.TypeOf((*HaapiApiKeyRequestMessage)(nil)),
+	6648: reflect.TypeOf((HaapiApiKeyRequestMessage)(HaapiApiKeyRequestMessage{})),
 
-	6161: reflect.TypeOf((*PaddockToSellFilterMessage)(nil)),
+	6161: reflect.TypeOf((PaddockToSellFilterMessage)(PaddockToSellFilterMessage{})),
 
-	6139: reflect.TypeOf((*HouseToSellListRequestMessage)(nil)),
+	6139: reflect.TypeOf((HouseToSellListRequestMessage)(HouseToSellListRequestMessage{})),
 
-	6140: reflect.TypeOf((*HouseToSellListMessage)(nil)),
+	6140: reflect.TypeOf((HouseToSellListMessage)(HouseToSellListMessage{})),
 
-	6137: reflect.TypeOf((*HouseToSellFilterMessage)(nil)),
+	6137: reflect.TypeOf((HouseToSellFilterMessage)(HouseToSellFilterMessage{})),
 
-	6138: reflect.TypeOf((*PaddockToSellListMessage)(nil)),
+	6138: reflect.TypeOf((PaddockToSellListMessage)(PaddockToSellListMessage{})),
 
-	6141: reflect.TypeOf((*PaddockToSellListRequestMessage)(nil)),
+	6141: reflect.TypeOf((PaddockToSellListRequestMessage)(PaddockToSellListRequestMessage{})),
 
-	6330: reflect.TypeOf((*GameActionFightCastOnTargetRequestMessage)(nil)),
+	6330: reflect.TypeOf((GameActionFightCastOnTargetRequestMessage)(GameActionFightCastOnTargetRequestMessage{})),
 
-	1005: reflect.TypeOf((*GameActionFightCastRequestMessage)(nil)),
+	1005: reflect.TypeOf((GameActionFightCastRequestMessage)(GameActionFightCastRequestMessage{})),
 
-	6586: reflect.TypeOf((*IdolFightPreparationUpdateMessage)(nil)),
+	6586: reflect.TypeOf((IdolFightPreparationUpdateMessage)(IdolFightPreparationUpdateMessage{})),
 
-	704: reflect.TypeOf((*GameFightPlacementPositionRequestMessage)(nil)),
+	704: reflect.TypeOf((GameFightPlacementPositionRequestMessage)(GameFightPlacementPositionRequestMessage{})),
 
-	6541: reflect.TypeOf((*GameFightPlacementSwapPositionsRequestMessage)(nil)),
+	6541: reflect.TypeOf((GameFightPlacementSwapPositionsRequestMessage)(GameFightPlacementSwapPositionsRequestMessage{})),
 
-	6546: reflect.TypeOf((*GameFightPlacementSwapPositionsCancelledMessage)(nil)),
+	6546: reflect.TypeOf((GameFightPlacementSwapPositionsCancelledMessage)(GameFightPlacementSwapPositionsCancelledMessage{})),
 
-	6542: reflect.TypeOf((*GameFightPlacementSwapPositionsOfferMessage)(nil)),
+	6542: reflect.TypeOf((GameFightPlacementSwapPositionsOfferMessage)(GameFightPlacementSwapPositionsOfferMessage{})),
 
-	6547: reflect.TypeOf((*GameFightPlacementSwapPositionsAcceptMessage)(nil)),
+	6547: reflect.TypeOf((GameFightPlacementSwapPositionsAcceptMessage)(GameFightPlacementSwapPositionsAcceptMessage{})),
 
-	6548: reflect.TypeOf((*GameFightPlacementSwapPositionsErrorMessage)(nil)),
+	6548: reflect.TypeOf((GameFightPlacementSwapPositionsErrorMessage)(GameFightPlacementSwapPositionsErrorMessage{})),
 
-	6543: reflect.TypeOf((*GameFightPlacementSwapPositionsCancelMessage)(nil)),
+	6543: reflect.TypeOf((GameFightPlacementSwapPositionsCancelMessage)(GameFightPlacementSwapPositionsCancelMessage{})),
 
-	5695: reflect.TypeOf((*GameEntityDispositionErrorMessage)(nil)),
+	5695: reflect.TypeOf((GameEntityDispositionErrorMessage)(GameEntityDispositionErrorMessage{})),
 
-	6081: reflect.TypeOf((*GameContextKickMessage)(nil)),
+	6081: reflect.TypeOf((GameContextKickMessage)(GameContextKickMessage{})),
 
-	708: reflect.TypeOf((*GameFightReadyMessage)(nil)),
+	708: reflect.TypeOf((GameFightReadyMessage)(GameFightReadyMessage{})),
 
-	703: reflect.TypeOf((*GameFightPlacementPossiblePositionsMessage)(nil)),
+	703: reflect.TypeOf((GameFightPlacementPossiblePositionsMessage)(GameFightPlacementPossiblePositionsMessage{})),
 
-	6237: reflect.TypeOf((*ServerExperienceModificatorMessage)(nil)),
+	6237: reflect.TypeOf((ServerExperienceModificatorMessage)(ServerExperienceModificatorMessage{})),
 
-	6341: reflect.TypeOf((*AlmanachCalendarDateMessage)(nil)),
+	6341: reflect.TypeOf((AlmanachCalendarDateMessage)(AlmanachCalendarDateMessage{})),
 
-	170: reflect.TypeOf((*SetCharacterRestrictionsMessage)(nil)),
+	170: reflect.TypeOf((SetCharacterRestrictionsMessage)(SetCharacterRestrictionsMessage{})),
 
-	1303: reflect.TypeOf((*StartupActionsObjetAttributionMessage)(nil)),
+	1303: reflect.TypeOf((StartupActionsObjetAttributionMessage)(StartupActionsObjetAttributionMessage{})),
 
-	6538: reflect.TypeOf((*StartupActionAddMessage)(nil)),
+	6538: reflect.TypeOf((StartupActionAddMessage)(StartupActionAddMessage{})),
 
-	1304: reflect.TypeOf((*StartupActionFinishedMessage)(nil)),
+	1304: reflect.TypeOf((StartupActionFinishedMessage)(StartupActionFinishedMessage{})),
 
-	6537: reflect.TypeOf((*StartupActionsAllAttributionMessage)(nil)),
+	6537: reflect.TypeOf((StartupActionsAllAttributionMessage)(StartupActionsAllAttributionMessage{})),
 
-	5591: reflect.TypeOf((*CompassUpdateMessage)(nil)),
+	5591: reflect.TypeOf((CompassUpdateMessage)(CompassUpdateMessage{})),
 
-	5589: reflect.TypeOf((*CompassUpdatePartyMemberMessage)(nil)),
+	5589: reflect.TypeOf((CompassUpdatePartyMemberMessage)(CompassUpdatePartyMemberMessage{})),
 
-	6649: reflect.TypeOf((*HaapiApiKeyMessage)(nil)),
+	6649: reflect.TypeOf((HaapiApiKeyMessage)(HaapiApiKeyMessage{})),
 
-	6013: reflect.TypeOf((*CompassUpdatePvpSeekMessage)(nil)),
+	6013: reflect.TypeOf((CompassUpdatePvpSeekMessage)(CompassUpdatePvpSeekMessage{})),
 
-	5609: reflect.TypeOf((*StatsUpgradeResultMessage)(nil)),
+	5609: reflect.TypeOf((StatsUpgradeResultMessage)(StatsUpgradeResultMessage{})),
 
-	6655: reflect.TypeOf((*SpellModifyRequestMessage)(nil)),
+	6655: reflect.TypeOf((SpellModifyRequestMessage)(SpellModifyRequestMessage{})),
 
-	1301: reflect.TypeOf((*StartupActionsListMessage)(nil)),
+	1301: reflect.TypeOf((StartupActionsListMessage)(StartupActionsListMessage{})),
 
-	6321: reflect.TypeOf((*CharacterExperienceGainMessage)(nil)),
+	6321: reflect.TypeOf((CharacterExperienceGainMessage)(CharacterExperienceGainMessage{})),
 
-	5670: reflect.TypeOf((*CharacterLevelUpMessage)(nil)),
+	5670: reflect.TypeOf((CharacterLevelUpMessage)(CharacterLevelUpMessage{})),
 
-	6076: reflect.TypeOf((*CharacterLevelUpInformationMessage)(nil)),
+	6076: reflect.TypeOf((CharacterLevelUpInformationMessage)(CharacterLevelUpInformationMessage{})),
 
-	6653: reflect.TypeOf((*SpellModifyFailureMessage)(nil)),
+	6653: reflect.TypeOf((SpellModifyFailureMessage)(SpellModifyFailureMessage{})),
 
-	746: reflect.TypeOf((*GameRolePlayGameOverMessage)(nil)),
+	746: reflect.TypeOf((GameRolePlayGameOverMessage)(GameRolePlayGameOverMessage{})),
 
-	5503: reflect.TypeOf((*SetUpdateMessage)(nil)),
+	5503: reflect.TypeOf((SetUpdateMessage)(SetUpdateMessage{})),
 
-	6654: reflect.TypeOf((*SpellModifySuccessMessage)(nil)),
+	6654: reflect.TypeOf((SpellModifySuccessMessage)(SpellModifySuccessMessage{})),
 
-	5610: reflect.TypeOf((*StatsUpgradeRequestMessage)(nil)),
+	5610: reflect.TypeOf((StatsUpgradeRequestMessage)(StatsUpgradeRequestMessage{})),
 
-	5584: reflect.TypeOf((*CompassResetMessage)(nil)),
+	5584: reflect.TypeOf((CompassResetMessage)(CompassResetMessage{})),
 
-	6339: reflect.TypeOf((*CharacterCapabilitiesMessage)(nil)),
+	6339: reflect.TypeOf((CharacterCapabilitiesMessage)(CharacterCapabilitiesMessage{})),
 
-	5996: reflect.TypeOf((*GameRolePlayPlayerLifeStatusMessage)(nil)),
+	5996: reflect.TypeOf((GameRolePlayPlayerLifeStatusMessage)(GameRolePlayPlayerLifeStatusMessage{})),
 
-	6668: reflect.TypeOf((*DareCreatedMessage)(nil)),
+	6668: reflect.TypeOf((DareCreatedMessage)(DareCreatedMessage{})),
 
-	6675: reflect.TypeOf((*DareRewardConsumeValidationMessage)(nil)),
+	6675: reflect.TypeOf((DareRewardConsumeValidationMessage)(DareRewardConsumeValidationMessage{})),
 
-	6680: reflect.TypeOf((*DareCancelRequestMessage)(nil)),
+	6680: reflect.TypeOf((DareCancelRequestMessage)(DareCancelRequestMessage{})),
 
-	6667: reflect.TypeOf((*DareErrorMessage)(nil)),
+	6667: reflect.TypeOf((DareErrorMessage)(DareErrorMessage{})),
 
-	6676: reflect.TypeOf((*DareRewardConsumeRequestMessage)(nil)),
+	6676: reflect.TypeOf((DareRewardConsumeRequestMessage)(DareRewardConsumeRequestMessage{})),
 
-	6656: reflect.TypeOf((*DareInformationsMessage)(nil)),
+	6656: reflect.TypeOf((DareInformationsMessage)(DareInformationsMessage{})),
 
-	6682: reflect.TypeOf((*DareWonListMessage)(nil)),
+	6682: reflect.TypeOf((DareWonListMessage)(DareWonListMessage{})),
 
-	6663: reflect.TypeOf((*DareCreatedListMessage)(nil)),
+	6663: reflect.TypeOf((DareCreatedListMessage)(DareCreatedListMessage{})),
 
-	6679: reflect.TypeOf((*DareCanceledMessage)(nil)),
+	6679: reflect.TypeOf((DareCanceledMessage)(DareCanceledMessage{})),
 
-	6677: reflect.TypeOf((*DareRewardsListMessage)(nil)),
+	6677: reflect.TypeOf((DareRewardsListMessage)(DareRewardsListMessage{})),
 
-	6678: reflect.TypeOf((*DareRewardWonMessage)(nil)),
+	6678: reflect.TypeOf((DareRewardWonMessage)(DareRewardWonMessage{})),
 
-	6665: reflect.TypeOf((*DareCreationRequestMessage)(nil)),
+	6665: reflect.TypeOf((DareCreationRequestMessage)(DareCreationRequestMessage{})),
 
-	6660: reflect.TypeOf((*DareSubscribedMessage)(nil)),
+	6660: reflect.TypeOf((DareSubscribedMessage)(DareSubscribedMessage{})),
 
-	6666: reflect.TypeOf((*DareSubscribeRequestMessage)(nil)),
+	6666: reflect.TypeOf((DareSubscribeRequestMessage)(DareSubscribeRequestMessage{})),
 
-	6681: reflect.TypeOf((*DareWonMessage)(nil)),
+	6681: reflect.TypeOf((DareWonMessage)(DareWonMessage{})),
 
-	6661: reflect.TypeOf((*DareListMessage)(nil)),
+	6661: reflect.TypeOf((DareListMessage)(DareListMessage{})),
 
-	6659: reflect.TypeOf((*DareInformationsRequestMessage)(nil)),
+	6659: reflect.TypeOf((DareInformationsRequestMessage)(DareInformationsRequestMessage{})),
 
-	6658: reflect.TypeOf((*DareSubscribedListMessage)(nil)),
+	6658: reflect.TypeOf((DareSubscribedListMessage)(DareSubscribedListMessage{})),
 
-	6657: reflect.TypeOf((*DareVersatileListMessage)(nil)),
+	6657: reflect.TypeOf((DareVersatileListMessage)(DareVersatileListMessage{})),
 
-	6224: reflect.TypeOf((*ShortcutBarRemovedMessage)(nil)),
+	6224: reflect.TypeOf((ShortcutBarRemovedMessage)(ShortcutBarRemovedMessage{})),
 
-	6521: reflect.TypeOf((*AccessoryPreviewErrorMessage)(nil)),
+	6521: reflect.TypeOf((AccessoryPreviewErrorMessage)(AccessoryPreviewErrorMessage{})),
 
-	6211: reflect.TypeOf((*InventoryPresetItemUpdateErrorMessage)(nil)),
+	6211: reflect.TypeOf((InventoryPresetItemUpdateErrorMessage)(InventoryPresetItemUpdateErrorMessage{})),
 
-	6171: reflect.TypeOf((*InventoryPresetUpdateMessage)(nil)),
+	6171: reflect.TypeOf((InventoryPresetUpdateMessage)(InventoryPresetUpdateMessage{})),
 
-	6034: reflect.TypeOf((*ObjectsDeletedMessage)(nil)),
+	6034: reflect.TypeOf((ObjectsDeletedMessage)(ObjectsDeletedMessage{})),
 
-	3019: reflect.TypeOf((*ObjectUseMessage)(nil)),
+	3019: reflect.TypeOf((ObjectUseMessage)(ObjectUseMessage{})),
 
-	3013: reflect.TypeOf((*ObjectUseOnCellMessage)(nil)),
+	3013: reflect.TypeOf((ObjectUseOnCellMessage)(ObjectUseOnCellMessage{})),
 
-	6206: reflect.TypeOf((*ObjectsQuantityMessage)(nil)),
+	6206: reflect.TypeOf((ObjectsQuantityMessage)(ObjectsQuantityMessage{})),
 
-	5537: reflect.TypeOf((*KamasUpdateMessage)(nil)),
+	5537: reflect.TypeOf((KamasUpdateMessage)(KamasUpdateMessage{})),
 
-	6165: reflect.TypeOf((*InventoryPresetSaveMessage)(nil)),
+	6165: reflect.TypeOf((InventoryPresetSaveMessage)(InventoryPresetSaveMessage{})),
 
-	6225: reflect.TypeOf((*ShortcutBarAddRequestMessage)(nil)),
+	6225: reflect.TypeOf((ShortcutBarAddRequestMessage)(ShortcutBarAddRequestMessage{})),
 
-	3029: reflect.TypeOf((*ObjectModifiedMessage)(nil)),
+	3029: reflect.TypeOf((ObjectModifiedMessage)(ObjectModifiedMessage{})),
 
-	6168: reflect.TypeOf((*InventoryPresetItemUpdateMessage)(nil)),
+	6168: reflect.TypeOf((InventoryPresetItemUpdateMessage)(InventoryPresetItemUpdateMessage{})),
 
-	6173: reflect.TypeOf((*InventoryPresetDeleteResultMessage)(nil)),
+	6173: reflect.TypeOf((InventoryPresetDeleteResultMessage)(InventoryPresetDeleteResultMessage{})),
 
-	3021: reflect.TypeOf((*ObjectSetPositionMessage)(nil)),
+	3021: reflect.TypeOf((ObjectSetPositionMessage)(ObjectSetPositionMessage{})),
 
-	3023: reflect.TypeOf((*ObjectQuantityMessage)(nil)),
+	3023: reflect.TypeOf((ObjectQuantityMessage)(ObjectQuantityMessage{})),
 
-	6033: reflect.TypeOf((*ObjectsAddedMessage)(nil)),
+	6033: reflect.TypeOf((ObjectsAddedMessage)(ObjectsAddedMessage{})),
 
-	3003: reflect.TypeOf((*ObjectUseOnCharacterMessage)(nil)),
+	3003: reflect.TypeOf((ObjectUseOnCharacterMessage)(ObjectUseOnCharacterMessage{})),
 
-	3005: reflect.TypeOf((*ObjectDropMessage)(nil)),
+	3005: reflect.TypeOf((ObjectDropMessage)(ObjectDropMessage{})),
 
-	6569: reflect.TypeOf((*DecraftResultMessage)(nil)),
+	6569: reflect.TypeOf((DecraftResultMessage)(DecraftResultMessage{})),
 
-	6518: reflect.TypeOf((*AccessoryPreviewRequestMessage)(nil)),
+	6518: reflect.TypeOf((AccessoryPreviewRequestMessage)(AccessoryPreviewRequestMessage{})),
 
-	6229: reflect.TypeOf((*ShortcutBarRefreshMessage)(nil)),
+	6229: reflect.TypeOf((ShortcutBarRefreshMessage)(ShortcutBarRefreshMessage{})),
 
-	6329: reflect.TypeOf((*InventoryPresetSaveCustomMessage)(nil)),
+	6329: reflect.TypeOf((InventoryPresetSaveCustomMessage)(InventoryPresetSaveCustomMessage{})),
 
-	6163: reflect.TypeOf((*InventoryPresetUseResultMessage)(nil)),
+	6163: reflect.TypeOf((InventoryPresetUseResultMessage)(InventoryPresetUseResultMessage{})),
 
-	3016: reflect.TypeOf((*InventoryContentMessage)(nil)),
+	3016: reflect.TypeOf((InventoryContentMessage)(InventoryContentMessage{})),
 
-	6162: reflect.TypeOf((*InventoryContentAndPresetMessage)(nil)),
+	6162: reflect.TypeOf((InventoryContentAndPresetMessage)(InventoryContentAndPresetMessage{})),
 
-	6169: reflect.TypeOf((*InventoryPresetDeleteMessage)(nil)),
+	6169: reflect.TypeOf((InventoryPresetDeleteMessage)(InventoryPresetDeleteMessage{})),
 
-	6230: reflect.TypeOf((*ShortcutBarSwapRequestMessage)(nil)),
+	6230: reflect.TypeOf((ShortcutBarSwapRequestMessage)(ShortcutBarSwapRequestMessage{})),
 
-	3009: reflect.TypeOf((*InventoryWeightMessage)(nil)),
+	3009: reflect.TypeOf((InventoryWeightMessage)(InventoryWeightMessage{})),
 
-	3024: reflect.TypeOf((*ObjectDeletedMessage)(nil)),
+	3024: reflect.TypeOf((ObjectDeletedMessage)(ObjectDeletedMessage{})),
 
-	3010: reflect.TypeOf((*ObjectMovementMessage)(nil)),
+	3010: reflect.TypeOf((ObjectMovementMessage)(ObjectMovementMessage{})),
 
-	6706: reflect.TypeOf((*ShortcutBarReplacedMessage)(nil)),
+	6706: reflect.TypeOf((ShortcutBarReplacedMessage)(ShortcutBarReplacedMessage{})),
 
-	6170: reflect.TypeOf((*InventoryPresetSaveResultMessage)(nil)),
+	6170: reflect.TypeOf((InventoryPresetSaveResultMessage)(InventoryPresetSaveResultMessage{})),
 
-	6210: reflect.TypeOf((*InventoryPresetItemUpdateRequestMessage)(nil)),
+	6210: reflect.TypeOf((InventoryPresetItemUpdateRequestMessage)(InventoryPresetItemUpdateRequestMessage{})),
 
-	3022: reflect.TypeOf((*ObjectDeleteMessage)(nil)),
+	3022: reflect.TypeOf((ObjectDeleteMessage)(ObjectDeleteMessage{})),
 
-	6167: reflect.TypeOf((*InventoryPresetUseMessage)(nil)),
+	6167: reflect.TypeOf((InventoryPresetUseMessage)(InventoryPresetUseMessage{})),
 
-	6517: reflect.TypeOf((*AccessoryPreviewMessage)(nil)),
+	6517: reflect.TypeOf((AccessoryPreviewMessage)(AccessoryPreviewMessage{})),
 
-	6228: reflect.TypeOf((*ShortcutBarRemoveRequestMessage)(nil)),
+	6228: reflect.TypeOf((ShortcutBarRemoveRequestMessage)(ShortcutBarRemoveRequestMessage{})),
 
-	3025: reflect.TypeOf((*ObjectAddedMessage)(nil)),
+	3025: reflect.TypeOf((ObjectAddedMessage)(ObjectAddedMessage{})),
 
-	6231: reflect.TypeOf((*ShortcutBarContentMessage)(nil)),
+	6231: reflect.TypeOf((ShortcutBarContentMessage)(ShortcutBarContentMessage{})),
 
-	6234: reflect.TypeOf((*ObjectUseMultipleMessage)(nil)),
+	6234: reflect.TypeOf((ObjectUseMultipleMessage)(ObjectUseMultipleMessage{})),
 
-	5967: reflect.TypeOf((*MountRidingMessage)(nil)),
+	5967: reflect.TypeOf((MountRidingMessage)(MountRidingMessage{})),
 
-	5982: reflect.TypeOf((*MountUnSetMessage)(nil)),
+	5982: reflect.TypeOf((MountUnSetMessage)(MountUnSetMessage{})),
 
-	5977: reflect.TypeOf((*MountSterilizedMessage)(nil)),
+	5977: reflect.TypeOf((MountSterilizedMessage)(MountSterilizedMessage{})),
 
-	6555: reflect.TypeOf((*ExchangeMountsStableAddMessage)(nil)),
+	6555: reflect.TypeOf((ExchangeMountsStableAddMessage)(ExchangeMountsStableAddMessage{})),
 
-	6561: reflect.TypeOf((*ExchangeMountsPaddockAddMessage)(nil)),
+	6561: reflect.TypeOf((ExchangeMountsPaddockAddMessage)(ExchangeMountsPaddockAddMessage{})),
 
-	5976: reflect.TypeOf((*MountToggleRidingRequestMessage)(nil)),
+	5976: reflect.TypeOf((MountToggleRidingRequestMessage)(MountToggleRidingRequestMessage{})),
 
-	5987: reflect.TypeOf((*MountRenameRequestMessage)(nil)),
+	5987: reflect.TypeOf((MountRenameRequestMessage)(MountRenameRequestMessage{})),
 
-	5978: reflect.TypeOf((*MountEmoteIconUsedOkMessage)(nil)),
+	5978: reflect.TypeOf((MountEmoteIconUsedOkMessage)(MountEmoteIconUsedOkMessage{})),
 
-	5991: reflect.TypeOf((*ExchangeStartOkMountWithOutPaddockMessage)(nil)),
+	5991: reflect.TypeOf((ExchangeStartOkMountWithOutPaddockMessage)(ExchangeStartOkMountWithOutPaddockMessage{})),
 
-	5979: reflect.TypeOf((*ExchangeStartOkMountMessage)(nil)),
+	5979: reflect.TypeOf((ExchangeStartOkMountMessage)(ExchangeStartOkMountMessage{})),
 
-	6189: reflect.TypeOf((*MountFeedRequestMessage)(nil)),
+	6189: reflect.TypeOf((MountFeedRequestMessage)(MountFeedRequestMessage{})),
 
-	6308: reflect.TypeOf((*MountReleasedMessage)(nil)),
+	6308: reflect.TypeOf((MountReleasedMessage)(MountReleasedMessage{})),
 
-	5963: reflect.TypeOf((*MountEquipedErrorMessage)(nil)),
+	5963: reflect.TypeOf((MountEquipedErrorMessage)(MountEquipedErrorMessage{})),
 
-	5972: reflect.TypeOf((*MountInformationRequestMessage)(nil)),
+	5972: reflect.TypeOf((MountInformationRequestMessage)(MountInformationRequestMessage{})),
 
-	5970: reflect.TypeOf((*MountXpRatioMessage)(nil)),
+	5970: reflect.TypeOf((MountXpRatioMessage)(MountXpRatioMessage{})),
 
-	5980: reflect.TypeOf((*MountReleaseRequestMessage)(nil)),
+	5980: reflect.TypeOf((MountReleaseRequestMessage)(MountReleaseRequestMessage{})),
 
-	5989: reflect.TypeOf((*MountSetXpRatioRequestMessage)(nil)),
+	5989: reflect.TypeOf((MountSetXpRatioRequestMessage)(MountSetXpRatioRequestMessage{})),
 
-	5962: reflect.TypeOf((*MountSterilizeRequestMessage)(nil)),
+	5962: reflect.TypeOf((MountSterilizeRequestMessage)(MountSterilizeRequestMessage{})),
 
-	6554: reflect.TypeOf((*ExchangeMountsTakenFromPaddockMessage)(nil)),
+	6554: reflect.TypeOf((ExchangeMountsTakenFromPaddockMessage)(ExchangeMountsTakenFromPaddockMessage{})),
 
-	6562: reflect.TypeOf((*ExchangeHandleMountsStableMessage)(nil)),
+	6562: reflect.TypeOf((ExchangeHandleMountsStableMessage)(ExchangeHandleMountsStableMessage{})),
 
-	6696: reflect.TypeOf((*MountHarnessDissociateRequestMessage)(nil)),
+	6696: reflect.TypeOf((MountHarnessDissociateRequestMessage)(MountHarnessDissociateRequestMessage{})),
 
-	5983: reflect.TypeOf((*MountRenamedMessage)(nil)),
+	5983: reflect.TypeOf((MountRenamedMessage)(MountRenamedMessage{})),
 
-	6557: reflect.TypeOf((*ExchangeMountsStableBornAddMessage)(nil)),
+	6557: reflect.TypeOf((ExchangeMountsStableBornAddMessage)(ExchangeMountsStableBornAddMessage{})),
 
-	5986: reflect.TypeOf((*ExchangeRequestOnMountStockMessage)(nil)),
+	5986: reflect.TypeOf((ExchangeRequestOnMountStockMessage)(ExchangeRequestOnMountStockMessage{})),
 
-	6559: reflect.TypeOf((*ExchangeMountsPaddockRemoveMessage)(nil)),
+	6559: reflect.TypeOf((ExchangeMountsPaddockRemoveMessage)(ExchangeMountsPaddockRemoveMessage{})),
 
-	5973: reflect.TypeOf((*MountDataMessage)(nil)),
+	5973: reflect.TypeOf((MountDataMessage)(MountDataMessage{})),
 
-	6556: reflect.TypeOf((*ExchangeMountsStableRemoveMessage)(nil)),
+	6556: reflect.TypeOf((ExchangeMountsStableRemoveMessage)(ExchangeMountsStableRemoveMessage{})),
 
-	5968: reflect.TypeOf((*MountSetMessage)(nil)),
+	5968: reflect.TypeOf((MountSetMessage)(MountSetMessage{})),
 
-	6179: reflect.TypeOf((*UpdateMountBoostMessage)(nil)),
+	6179: reflect.TypeOf((UpdateMountBoostMessage)(UpdateMountBoostMessage{})),
 
-	5793: reflect.TypeOf((*ExchangeWeightMessage)(nil)),
+	5793: reflect.TypeOf((ExchangeWeightMessage)(ExchangeWeightMessage{})),
 
-	5975: reflect.TypeOf((*MountInformationInPaddockRequestMessage)(nil)),
+	5975: reflect.TypeOf((MountInformationInPaddockRequestMessage)(MountInformationInPaddockRequestMessage{})),
 
-	6697: reflect.TypeOf((*MountHarnessColorsUpdateRequestMessage)(nil)),
+	6697: reflect.TypeOf((MountHarnessColorsUpdateRequestMessage)(MountHarnessColorsUpdateRequestMessage{})),
 
-	1810: reflect.TypeOf((*SetEnablePVPRequestMessage)(nil)),
+	1810: reflect.TypeOf((SetEnablePVPRequestMessage)(SetEnablePVPRequestMessage{})),
 
-	6058: reflect.TypeOf((*AlignmentRankUpdateMessage)(nil)),
+	6058: reflect.TypeOf((AlignmentRankUpdateMessage)(AlignmentRankUpdateMessage{})),
 
-	6484: reflect.TypeOf((*TreasureHuntDigRequestAnswerMessage)(nil)),
+	6484: reflect.TypeOf((TreasureHuntDigRequestAnswerMessage)(TreasureHuntDigRequestAnswerMessage{})),
 
-	6509: reflect.TypeOf((*TreasureHuntDigRequestAnswerFailedMessage)(nil)),
+	6509: reflect.TypeOf((TreasureHuntDigRequestAnswerFailedMessage)(TreasureHuntDigRequestAnswerFailedMessage{})),
 
-	6376: reflect.TypeOf((*AchievementRewardSuccessMessage)(nil)),
+	6376: reflect.TypeOf((AchievementRewardSuccessMessage)(AchievementRewardSuccessMessage{})),
 
-	6375: reflect.TypeOf((*AchievementRewardErrorMessage)(nil)),
+	6375: reflect.TypeOf((AchievementRewardErrorMessage)(AchievementRewardErrorMessage{})),
 
-	5623: reflect.TypeOf((*QuestListRequestMessage)(nil)),
+	5623: reflect.TypeOf((QuestListRequestMessage)(QuestListRequestMessage{})),
 
-	6208: reflect.TypeOf((*AchievementFinishedMessage)(nil)),
+	6208: reflect.TypeOf((AchievementFinishedMessage)(AchievementFinishedMessage{})),
 
-	6381: reflect.TypeOf((*AchievementFinishedInformationMessage)(nil)),
+	6381: reflect.TypeOf((AchievementFinishedInformationMessage)(AchievementFinishedInformationMessage{})),
 
-	6088: reflect.TypeOf((*GuidedModeReturnRequestMessage)(nil)),
+	6088: reflect.TypeOf((GuidedModeReturnRequestMessage)(GuidedModeReturnRequestMessage{})),
 
-	5643: reflect.TypeOf((*QuestStartRequestMessage)(nil)),
+	5643: reflect.TypeOf((QuestStartRequestMessage)(QuestStartRequestMessage{})),
 
-	6488: reflect.TypeOf((*TreasureHuntRequestMessage)(nil)),
+	6488: reflect.TypeOf((TreasureHuntRequestMessage)(TreasureHuntRequestMessage{})),
 
-	6099: reflect.TypeOf((*QuestStepValidatedMessage)(nil)),
+	6099: reflect.TypeOf((QuestStepValidatedMessage)(QuestStepValidatedMessage{})),
 
-	6378: reflect.TypeOf((*AchievementDetailsMessage)(nil)),
+	6378: reflect.TypeOf((AchievementDetailsMessage)(AchievementDetailsMessage{})),
 
-	6510: reflect.TypeOf((*TreasureHuntFlagRemoveRequestMessage)(nil)),
+	6510: reflect.TypeOf((TreasureHuntFlagRemoveRequestMessage)(TreasureHuntFlagRemoveRequestMessage{})),
 
-	5625: reflect.TypeOf((*QuestStepInfoMessage)(nil)),
+	5625: reflect.TypeOf((QuestStepInfoMessage)(QuestStepInfoMessage{})),
 
-	6508: reflect.TypeOf((*TreasureHuntFlagRequestMessage)(nil)),
+	6508: reflect.TypeOf((TreasureHuntFlagRequestMessage)(TreasureHuntFlagRequestMessage{})),
 
-	6092: reflect.TypeOf((*GuidedModeQuitRequestMessage)(nil)),
+	6092: reflect.TypeOf((GuidedModeQuitRequestMessage)(GuidedModeQuitRequestMessage{})),
 
-	6483: reflect.TypeOf((*TreasureHuntFinishedMessage)(nil)),
+	6483: reflect.TypeOf((TreasureHuntFinishedMessage)(TreasureHuntFinishedMessage{})),
 
-	6091: reflect.TypeOf((*QuestStartedMessage)(nil)),
+	6091: reflect.TypeOf((QuestStartedMessage)(QuestStartedMessage{})),
 
-	6498: reflect.TypeOf((*TreasureHuntShowLegendaryUIMessage)(nil)),
+	6498: reflect.TypeOf((TreasureHuntShowLegendaryUIMessage)(TreasureHuntShowLegendaryUIMessage{})),
 
-	6486: reflect.TypeOf((*TreasureHuntMessage)(nil)),
+	6486: reflect.TypeOf((TreasureHuntMessage)(TreasureHuntMessage{})),
 
-	6489: reflect.TypeOf((*TreasureHuntRequestAnswerMessage)(nil)),
+	6489: reflect.TypeOf((TreasureHuntRequestAnswerMessage)(TreasureHuntRequestAnswerMessage{})),
 
-	6357: reflect.TypeOf((*AchievementDetailedListRequestMessage)(nil)),
+	6357: reflect.TypeOf((AchievementDetailedListRequestMessage)(AchievementDetailedListRequestMessage{})),
 
-	6377: reflect.TypeOf((*AchievementRewardRequestMessage)(nil)),
+	6377: reflect.TypeOf((AchievementRewardRequestMessage)(AchievementRewardRequestMessage{})),
 
-	6085: reflect.TypeOf((*QuestObjectiveValidationMessage)(nil)),
+	6085: reflect.TypeOf((QuestObjectiveValidationMessage)(QuestObjectiveValidationMessage{})),
 
-	6485: reflect.TypeOf((*TreasureHuntDigRequestMessage)(nil)),
+	6485: reflect.TypeOf((TreasureHuntDigRequestMessage)(TreasureHuntDigRequestMessage{})),
 
-	6491: reflect.TypeOf((*TreasureHuntAvailableRetryCountUpdateMessage)(nil)),
+	6491: reflect.TypeOf((TreasureHuntAvailableRetryCountUpdateMessage)(TreasureHuntAvailableRetryCountUpdateMessage{})),
 
-	6358: reflect.TypeOf((*AchievementDetailedListMessage)(nil)),
+	6358: reflect.TypeOf((AchievementDetailedListMessage)(AchievementDetailedListMessage{})),
 
-	6096: reflect.TypeOf((*QuestStepStartedMessage)(nil)),
+	6096: reflect.TypeOf((QuestStepStartedMessage)(QuestStepStartedMessage{})),
 
-	6098: reflect.TypeOf((*QuestObjectiveValidatedMessage)(nil)),
+	6098: reflect.TypeOf((QuestObjectiveValidatedMessage)(QuestObjectiveValidatedMessage{})),
 
-	6487: reflect.TypeOf((*TreasureHuntGiveUpRequestMessage)(nil)),
+	6487: reflect.TypeOf((TreasureHuntGiveUpRequestMessage)(TreasureHuntGiveUpRequestMessage{})),
 
-	6507: reflect.TypeOf((*TreasureHuntFlagRequestAnswerMessage)(nil)),
+	6507: reflect.TypeOf((TreasureHuntFlagRequestAnswerMessage)(TreasureHuntFlagRequestAnswerMessage{})),
 
-	6097: reflect.TypeOf((*QuestValidatedMessage)(nil)),
+	6097: reflect.TypeOf((QuestValidatedMessage)(QuestValidatedMessage{})),
 
-	6499: reflect.TypeOf((*TreasureHuntLegendaryRequestMessage)(nil)),
+	6499: reflect.TypeOf((TreasureHuntLegendaryRequestMessage)(TreasureHuntLegendaryRequestMessage{})),
 
-	6090: reflect.TypeOf((*NotificationUpdateFlagMessage)(nil)),
+	6090: reflect.TypeOf((NotificationUpdateFlagMessage)(NotificationUpdateFlagMessage{})),
 
-	6089: reflect.TypeOf((*NotificationResetMessage)(nil)),
+	6089: reflect.TypeOf((NotificationResetMessage)(NotificationResetMessage{})),
 
-	5626: reflect.TypeOf((*QuestListMessage)(nil)),
+	5626: reflect.TypeOf((QuestListMessage)(QuestListMessage{})),
 
-	6380: reflect.TypeOf((*AchievementDetailsRequestMessage)(nil)),
+	6380: reflect.TypeOf((AchievementDetailsRequestMessage)(AchievementDetailsRequestMessage{})),
 
-	5622: reflect.TypeOf((*QuestStepInfoRequestMessage)(nil)),
+	5622: reflect.TypeOf((QuestStepInfoRequestMessage)(QuestStepInfoRequestMessage{})),
 
-	200: reflect.TypeOf((*GameContextCreateMessage)(nil)),
+	200: reflect.TypeOf((GameContextCreateMessage)(GameContextCreateMessage{})),
 
-	6334: reflect.TypeOf((*ObjectAveragePricesGetMessage)(nil)),
+	6334: reflect.TypeOf((ObjectAveragePricesGetMessage)(ObjectAveragePricesGetMessage{})),
 
-	6335: reflect.TypeOf((*ObjectAveragePricesMessage)(nil)),
+	6335: reflect.TypeOf((ObjectAveragePricesMessage)(ObjectAveragePricesMessage{})),
 
-	6336: reflect.TypeOf((*ObjectAveragePricesErrorMessage)(nil)),
+	6336: reflect.TypeOf((ObjectAveragePricesErrorMessage)(ObjectAveragePricesErrorMessage{})),
 
-	6592: reflect.TypeOf((*JobBookSubscribeRequestMessage)(nil)),
+	6592: reflect.TypeOf((JobBookSubscribeRequestMessage)(JobBookSubscribeRequestMessage{})),
 
-	5656: reflect.TypeOf((*JobLevelUpMessage)(nil)),
+	5656: reflect.TypeOf((JobLevelUpMessage)(JobLevelUpMessage{})),
 
-	6047: reflect.TypeOf((*JobCrafterDirectoryListRequestMessage)(nil)),
+	6047: reflect.TypeOf((JobCrafterDirectoryListRequestMessage)(JobCrafterDirectoryListRequestMessage{})),
 
-	5809: reflect.TypeOf((*JobExperienceMultiUpdateMessage)(nil)),
+	5809: reflect.TypeOf((JobExperienceMultiUpdateMessage)(JobExperienceMultiUpdateMessage{})),
 
-	6043: reflect.TypeOf((*JobCrafterDirectoryEntryRequestMessage)(nil)),
+	6043: reflect.TypeOf((JobCrafterDirectoryEntryRequestMessage)(JobCrafterDirectoryEntryRequestMessage{})),
 
-	6593: reflect.TypeOf((*JobBookSubscriptionMessage)(nil)),
+	6593: reflect.TypeOf((JobBookSubscriptionMessage)(JobBookSubscriptionMessage{})),
 
-	5819: reflect.TypeOf((*ExchangeStartOkJobIndexMessage)(nil)),
+	5819: reflect.TypeOf((ExchangeStartOkJobIndexMessage)(ExchangeStartOkJobIndexMessage{})),
 
-	5652: reflect.TypeOf((*JobCrafterDirectorySettingsMessage)(nil)),
+	5652: reflect.TypeOf((JobCrafterDirectorySettingsMessage)(JobCrafterDirectorySettingsMessage{})),
 
-	5655: reflect.TypeOf((*JobDescriptionMessage)(nil)),
+	5655: reflect.TypeOf((JobDescriptionMessage)(JobDescriptionMessage{})),
 
-	5654: reflect.TypeOf((*JobExperienceUpdateMessage)(nil)),
+	5654: reflect.TypeOf((JobExperienceUpdateMessage)(JobExperienceUpdateMessage{})),
 
-	6599: reflect.TypeOf((*JobExperienceOtherPlayerUpdateMessage)(nil)),
+	6599: reflect.TypeOf((JobExperienceOtherPlayerUpdateMessage)(JobExperienceOtherPlayerUpdateMessage{})),
 
-	5649: reflect.TypeOf((*JobCrafterDirectoryDefineSettingsMessage)(nil)),
+	5649: reflect.TypeOf((JobCrafterDirectoryDefineSettingsMessage)(JobCrafterDirectoryDefineSettingsMessage{})),
 
-	6154: reflect.TypeOf((*CheckFileRequestMessage)(nil)),
+	6154: reflect.TypeOf((CheckFileRequestMessage)(CheckFileRequestMessage{})),
 
-	6434: reflect.TypeOf((*ServerSessionConstantsMessage)(nil)),
+	6434: reflect.TypeOf((ServerSessionConstantsMessage)(ServerSessionConstantsMessage{})),
 
-	6340: reflect.TypeOf((*ServerSettingsMessage)(nil)),
+	6340: reflect.TypeOf((ServerSettingsMessage)(ServerSettingsMessage{})),
 
-	6525: reflect.TypeOf((*CurrentServerStatusUpdateMessage)(nil)),
+	6525: reflect.TypeOf((CurrentServerStatusUpdateMessage)(CurrentServerStatusUpdateMessage{})),
 
-	6156: reflect.TypeOf((*CheckFileMessage)(nil)),
+	6156: reflect.TypeOf((CheckFileMessage)(CheckFileMessage{})),
 
-	6315: reflect.TypeOf((*AccountHouseMessage)(nil)),
+	6315: reflect.TypeOf((AccountHouseMessage)(AccountHouseMessage{})),
 
-	6305: reflect.TypeOf((*ServerOptionalFeaturesMessage)(nil)),
+	6305: reflect.TypeOf((ServerOptionalFeaturesMessage)(ServerOptionalFeaturesMessage{})),
 
-	6364: reflect.TypeOf((*TitleGainedMessage)(nil)),
+	6364: reflect.TypeOf((TitleGainedMessage)(TitleGainedMessage{})),
 
-	6371: reflect.TypeOf((*TitleLostMessage)(nil)),
+	6371: reflect.TypeOf((TitleLostMessage)(TitleLostMessage{})),
 
-	6373: reflect.TypeOf((*TitleSelectErrorMessage)(nil)),
+	6373: reflect.TypeOf((TitleSelectErrorMessage)(TitleSelectErrorMessage{})),
 
-	6363: reflect.TypeOf((*TitlesAndOrnamentsListRequestMessage)(nil)),
+	6363: reflect.TypeOf((TitlesAndOrnamentsListRequestMessage)(TitlesAndOrnamentsListRequestMessage{})),
 
-	6367: reflect.TypeOf((*TitlesAndOrnamentsListMessage)(nil)),
+	6367: reflect.TypeOf((TitlesAndOrnamentsListMessage)(TitlesAndOrnamentsListMessage{})),
 
-	6368: reflect.TypeOf((*OrnamentGainedMessage)(nil)),
+	6368: reflect.TypeOf((OrnamentGainedMessage)(OrnamentGainedMessage{})),
 
-	6374: reflect.TypeOf((*OrnamentSelectRequestMessage)(nil)),
+	6374: reflect.TypeOf((OrnamentSelectRequestMessage)(OrnamentSelectRequestMessage{})),
 
-	6369: reflect.TypeOf((*OrnamentSelectedMessage)(nil)),
+	6369: reflect.TypeOf((OrnamentSelectedMessage)(OrnamentSelectedMessage{})),
 
-	6365: reflect.TypeOf((*TitleSelectRequestMessage)(nil)),
+	6365: reflect.TypeOf((TitleSelectRequestMessage)(TitleSelectRequestMessage{})),
 
-	6370: reflect.TypeOf((*OrnamentSelectErrorMessage)(nil)),
+	6370: reflect.TypeOf((OrnamentSelectErrorMessage)(OrnamentSelectErrorMessage{})),
 
-	6366: reflect.TypeOf((*TitleSelectedMessage)(nil)),
+	6366: reflect.TypeOf((TitleSelectedMessage)(TitleSelectedMessage{})),
 
-	6631: reflect.TypeOf((*ExitHavenBagRequestMessage)(nil)),
+	6631: reflect.TypeOf((ExitHavenBagRequestMessage)(ExitHavenBagRequestMessage{})),
 
-	6626: reflect.TypeOf((*EditHavenBagRequestMessage)(nil)),
+	6626: reflect.TypeOf((EditHavenBagRequestMessage)(EditHavenBagRequestMessage{})),
 
-	6644: reflect.TypeOf((*HavenBagDailyLoteryMessage)(nil)),
+	6644: reflect.TypeOf((HavenBagDailyLoteryMessage)(HavenBagDailyLoteryMessage{})),
 
-	6621: reflect.TypeOf((*CloseHavenBagFurnitureSequenceRequestMessage)(nil)),
+	6621: reflect.TypeOf((CloseHavenBagFurnitureSequenceRequestMessage)(CloseHavenBagFurnitureSequenceRequestMessage{})),
 
-	6713: reflect.TypeOf((*HavenBagPermissionsUpdateMessage)(nil)),
+	6713: reflect.TypeOf((HavenBagPermissionsUpdateMessage)(HavenBagPermissionsUpdateMessage{})),
 
-	6632: reflect.TypeOf((*EditHavenBagStartMessage)(nil)),
+	6632: reflect.TypeOf((EditHavenBagStartMessage)(EditHavenBagStartMessage{})),
 
-	6634: reflect.TypeOf((*HavenBagFurnituresMessage)(nil)),
+	6634: reflect.TypeOf((HavenBagFurnituresMessage)(HavenBagFurnituresMessage{})),
 
-	6628: reflect.TypeOf((*EditHavenBagFinishedMessage)(nil)),
+	6628: reflect.TypeOf((EditHavenBagFinishedMessage)(EditHavenBagFinishedMessage{})),
 
-	6639: reflect.TypeOf((*ChangeThemeRequestMessage)(nil)),
+	6639: reflect.TypeOf((ChangeThemeRequestMessage)(ChangeThemeRequestMessage{})),
 
-	6635: reflect.TypeOf((*OpenHavenBagFurnitureSequenceRequestMessage)(nil)),
+	6635: reflect.TypeOf((OpenHavenBagFurnitureSequenceRequestMessage)(OpenHavenBagFurnitureSequenceRequestMessage{})),
 
-	6619: reflect.TypeOf((*EditHavenBagCancelRequestMessage)(nil)),
+	6619: reflect.TypeOf((EditHavenBagCancelRequestMessage)(EditHavenBagCancelRequestMessage{})),
 
-	6714: reflect.TypeOf((*HavenBagPermissionsUpdateRequestMessage)(nil)),
+	6714: reflect.TypeOf((HavenBagPermissionsUpdateRequestMessage)(HavenBagPermissionsUpdateRequestMessage{})),
 
-	6637: reflect.TypeOf((*HavenBagFurnituresRequestMessage)(nil)),
+	6637: reflect.TypeOf((HavenBagFurnituresRequestMessage)(HavenBagFurnituresRequestMessage{})),
 
-	6638: reflect.TypeOf((*ChangeHavenBagRoomRequestMessage)(nil)),
+	6638: reflect.TypeOf((ChangeHavenBagRoomRequestMessage)(ChangeHavenBagRoomRequestMessage{})),
 
-	5545: reflect.TypeOf((*CharactersListErrorMessage)(nil)),
+	5545: reflect.TypeOf((CharactersListErrorMessage)(CharactersListErrorMessage{})),
 
-	5607: reflect.TypeOf((*ClientKeyMessage)(nil)),
+	5607: reflect.TypeOf((ClientKeyMessage)(ClientKeyMessage{})),
 
-	6127: reflect.TypeOf((*ConsoleCommandsListMessage)(nil)),
+	6127: reflect.TypeOf((ConsoleCommandsListMessage)(ConsoleCommandsListMessage{})),
 
-	166: reflect.TypeOf((*CharacterDeletionErrorMessage)(nil)),
+	166: reflect.TypeOf((CharacterDeletionErrorMessage)(CharacterDeletionErrorMessage{})),
 
-	162: reflect.TypeOf((*CharacterNameSuggestionRequestMessage)(nil)),
+	162: reflect.TypeOf((CharacterNameSuggestionRequestMessage)(CharacterNameSuggestionRequestMessage{})),
 
-	111: reflect.TypeOf((*AuthenticationTicketAcceptedMessage)(nil)),
+	111: reflect.TypeOf((AuthenticationTicketAcceptedMessage)(AuthenticationTicketAcceptedMessage{})),
 
-	167: reflect.TypeOf((*CharacterReplayRequestMessage)(nil)),
+	167: reflect.TypeOf((CharacterReplayRequestMessage)(CharacterReplayRequestMessage{})),
 
-	6551: reflect.TypeOf((*CharacterReplayWithRemodelRequestMessage)(nil)),
+	6551: reflect.TypeOf((CharacterReplayWithRemodelRequestMessage)(CharacterReplayWithRemodelRequestMessage{})),
 
-	109: reflect.TypeOf((*AlreadyConnectedMessage)(nil)),
+	109: reflect.TypeOf((AlreadyConnectedMessage)(AlreadyConnectedMessage{})),
 
-	110: reflect.TypeOf((*AuthenticationTicketMessage)(nil)),
+	110: reflect.TypeOf((AuthenticationTicketMessage)(AuthenticationTicketMessage{})),
 
-	6072: reflect.TypeOf((*CharacterSelectedForceReadyMessage)(nil)),
+	6072: reflect.TypeOf((CharacterSelectedForceReadyMessage)(CharacterSelectedForceReadyMessage{})),
 
-	165: reflect.TypeOf((*CharacterDeletionRequestMessage)(nil)),
+	165: reflect.TypeOf((CharacterDeletionRequestMessage)(CharacterDeletionRequestMessage{})),
 
-	150: reflect.TypeOf((*CharactersListRequestMessage)(nil)),
+	150: reflect.TypeOf((CharactersListRequestMessage)(CharactersListRequestMessage{})),
 
-	250: reflect.TypeOf((*GameContextCreateRequestMessage)(nil)),
+	250: reflect.TypeOf((GameContextCreateRequestMessage)(GameContextCreateRequestMessage{})),
 
-	153: reflect.TypeOf((*CharacterSelectedSuccessMessage)(nil)),
+	153: reflect.TypeOf((CharacterSelectedSuccessMessage)(CharacterSelectedSuccessMessage{})),
 
-	6475: reflect.TypeOf((*BasicCharactersListMessage)(nil)),
+	6475: reflect.TypeOf((BasicCharactersListMessage)(BasicCharactersListMessage{})),
 
-	151: reflect.TypeOf((*CharactersListMessage)(nil)),
+	151: reflect.TypeOf((CharactersListMessage)(CharactersListMessage{})),
 
-	6550: reflect.TypeOf((*CharactersListWithRemodelingMessage)(nil)),
+	6550: reflect.TypeOf((CharactersListWithRemodelingMessage)(CharactersListWithRemodelingMessage{})),
 
-	160: reflect.TypeOf((*CharacterCreationRequestMessage)(nil)),
+	160: reflect.TypeOf((CharacterCreationRequestMessage)(CharacterCreationRequestMessage{})),
 
-	152: reflect.TypeOf((*CharacterSelectionMessage)(nil)),
+	152: reflect.TypeOf((CharacterSelectionMessage)(CharacterSelectionMessage{})),
 
-	6084: reflect.TypeOf((*CharacterFirstSelectionMessage)(nil)),
+	6084: reflect.TypeOf((CharacterFirstSelectionMessage)(CharacterFirstSelectionMessage{})),
 
-	6549: reflect.TypeOf((*CharacterSelectionWithRemodelMessage)(nil)),
+	6549: reflect.TypeOf((CharacterSelectionWithRemodelMessage)(CharacterSelectionWithRemodelMessage{})),
 
-	6068: reflect.TypeOf((*CharacterSelectedForceMessage)(nil)),
+	6068: reflect.TypeOf((CharacterSelectedForceMessage)(CharacterSelectedForceMessage{})),
 
-	5544: reflect.TypeOf((*CharacterNameSuggestionSuccessMessage)(nil)),
+	5544: reflect.TypeOf((CharacterNameSuggestionSuccessMessage)(CharacterNameSuggestionSuccessMessage{})),
 
-	1302: reflect.TypeOf((*StartupActionsExecuteMessage)(nil)),
+	1302: reflect.TypeOf((StartupActionsExecuteMessage)(StartupActionsExecuteMessage{})),
 
-	112: reflect.TypeOf((*AuthenticationTicketRefusedMessage)(nil)),
+	112: reflect.TypeOf((AuthenticationTicketRefusedMessage)(AuthenticationTicketRefusedMessage{})),
 
-	161: reflect.TypeOf((*CharacterCreationResultMessage)(nil)),
+	161: reflect.TypeOf((CharacterCreationResultMessage)(CharacterCreationResultMessage{})),
 
-	6216: reflect.TypeOf((*AccountCapabilitiesMessage)(nil)),
+	6216: reflect.TypeOf((AccountCapabilitiesMessage)(AccountCapabilitiesMessage{})),
 
-	6575: reflect.TypeOf((*GameRolePlayArenaSwitchToFightServerMessage)(nil)),
+	6575: reflect.TypeOf((GameRolePlayArenaSwitchToFightServerMessage)(GameRolePlayArenaSwitchToFightServerMessage{})),
 
-	101: reflect.TypeOf((*HelloGameMessage)(nil)),
+	101: reflect.TypeOf((HelloGameMessage)(HelloGameMessage{})),
 
-	164: reflect.TypeOf((*CharacterNameSuggestionFailureMessage)(nil)),
+	164: reflect.TypeOf((CharacterNameSuggestionFailureMessage)(CharacterNameSuggestionFailureMessage{})),
 
-	5836: reflect.TypeOf((*CharacterSelectedErrorMessage)(nil)),
+	5836: reflect.TypeOf((CharacterSelectedErrorMessage)(CharacterSelectedErrorMessage{})),
 
-	42: reflect.TypeOf((*SelectedServerDataMessage)(nil)),
+	42: reflect.TypeOf((SelectedServerDataMessage)(SelectedServerDataMessage{})),
 
-	6469: reflect.TypeOf((*SelectedServerDataExtendedMessage)(nil)),
+	6469: reflect.TypeOf((SelectedServerDataExtendedMessage)(SelectedServerDataExtendedMessage{})),
 
-	41: reflect.TypeOf((*SelectedServerRefusedMessage)(nil)),
+	41: reflect.TypeOf((SelectedServerRefusedMessage)(SelectedServerRefusedMessage{})),
 
-	6143: reflect.TypeOf((*AcquaintanceSearchErrorMessage)(nil)),
+	6143: reflect.TypeOf((AcquaintanceSearchErrorMessage)(AcquaintanceSearchErrorMessage{})),
 
-	50: reflect.TypeOf((*ServerStatusUpdateMessage)(nil)),
+	50: reflect.TypeOf((ServerStatusUpdateMessage)(ServerStatusUpdateMessage{})),
 
-	6144: reflect.TypeOf((*AcquaintanceSearchMessage)(nil)),
+	6144: reflect.TypeOf((AcquaintanceSearchMessage)(AcquaintanceSearchMessage{})),
 
-	40: reflect.TypeOf((*ServerSelectionMessage)(nil)),
+	40: reflect.TypeOf((ServerSelectionMessage)(ServerSelectionMessage{})),
 
-	6142: reflect.TypeOf((*AcquaintanceServerListMessage)(nil)),
+	6142: reflect.TypeOf((AcquaintanceServerListMessage)(AcquaintanceServerListMessage{})),
 
-	6540: reflect.TypeOf((*ReloginTokenRequestMessage)(nil)),
+	6540: reflect.TypeOf((ReloginTokenRequestMessage)(ReloginTokenRequestMessage{})),
 
-	6616: reflect.TypeOf((*SubscriptionUpdateMessage)(nil)),
+	6616: reflect.TypeOf((SubscriptionUpdateMessage)(SubscriptionUpdateMessage{})),
 
-	6539: reflect.TypeOf((*ReloginTokenStatusMessage)(nil)),
+	6539: reflect.TypeOf((ReloginTokenStatusMessage)(ReloginTokenStatusMessage{})),
 
-	6087: reflect.TypeOf((*NotificationListMessage)(nil)),
+	6087: reflect.TypeOf((NotificationListMessage)(NotificationListMessage{})),
 
-	6346: reflect.TypeOf((*KrosmasterAuthTokenRequestMessage)(nil)),
+	6346: reflect.TypeOf((KrosmasterAuthTokenRequestMessage)(KrosmasterAuthTokenRequestMessage{})),
 
-	6349: reflect.TypeOf((*KrosmasterTransferRequestMessage)(nil)),
+	6349: reflect.TypeOf((KrosmasterTransferRequestMessage)(KrosmasterTransferRequestMessage{})),
 
-	6345: reflect.TypeOf((*KrosmasterAuthTokenErrorMessage)(nil)),
+	6345: reflect.TypeOf((KrosmasterAuthTokenErrorMessage)(KrosmasterAuthTokenErrorMessage{})),
 
-	6343: reflect.TypeOf((*KrosmasterInventoryErrorMessage)(nil)),
+	6343: reflect.TypeOf((KrosmasterInventoryErrorMessage)(KrosmasterInventoryErrorMessage{})),
 
-	6350: reflect.TypeOf((*KrosmasterInventoryMessage)(nil)),
+	6350: reflect.TypeOf((KrosmasterInventoryMessage)(KrosmasterInventoryMessage{})),
 
-	6344: reflect.TypeOf((*KrosmasterInventoryRequestMessage)(nil)),
+	6344: reflect.TypeOf((KrosmasterInventoryRequestMessage)(KrosmasterInventoryRequestMessage{})),
 
-	6348: reflect.TypeOf((*KrosmasterTransferMessage)(nil)),
+	6348: reflect.TypeOf((KrosmasterTransferMessage)(KrosmasterTransferMessage{})),
 
-	6347: reflect.TypeOf((*KrosmasterPlayingStatusMessage)(nil)),
+	6347: reflect.TypeOf((KrosmasterPlayingStatusMessage)(KrosmasterPlayingStatusMessage{})),
 
-	6620: reflect.TypeOf((*HavenBagPackListMessage)(nil)),
+	6620: reflect.TypeOf((HavenBagPackListMessage)(HavenBagPackListMessage{})),
 
-	6351: reflect.TypeOf((*KrosmasterAuthTokenMessage)(nil)),
+	6351: reflect.TypeOf((KrosmasterAuthTokenMessage)(KrosmasterAuthTokenMessage{})),
 
-	6630: reflect.TypeOf((*RoomAvailableUpdateMessage)(nil)),
+	6630: reflect.TypeOf((RoomAvailableUpdateMessage)(RoomAvailableUpdateMessage{})),
 
-	6384: reflect.TypeOf((*InteractiveUseErrorMessage)(nil)),
+	6384: reflect.TypeOf((InteractiveUseErrorMessage)(InteractiveUseErrorMessage{})),
 
-	5708: reflect.TypeOf((*InteractiveElementUpdatedMessage)(nil)),
+	5708: reflect.TypeOf((InteractiveElementUpdatedMessage)(InteractiveElementUpdatedMessage{})),
 
-	5709: reflect.TypeOf((*StatedElementUpdatedMessage)(nil)),
+	5709: reflect.TypeOf((StatedElementUpdatedMessage)(StatedElementUpdatedMessage{})),
 
-	6618: reflect.TypeOf((*GameRefreshMonsterBoostsMessage)(nil)),
+	6618: reflect.TypeOf((GameRefreshMonsterBoostsMessage)(GameRefreshMonsterBoostsMessage{})),
 
-	6493: reflect.TypeOf((*AreaFightModificatorUpdateMessage)(nil)),
+	6493: reflect.TypeOf((AreaFightModificatorUpdateMessage)(AreaFightModificatorUpdateMessage{})),
 
-	6571: reflect.TypeOf((*ZaapRespawnUpdatedMessage)(nil)),
+	6571: reflect.TypeOf((ZaapRespawnUpdatedMessage)(ZaapRespawnUpdatedMessage{})),
 
-	6572: reflect.TypeOf((*ZaapRespawnSaveRequestMessage)(nil)),
+	6572: reflect.TypeOf((ZaapRespawnSaveRequestMessage)(ZaapRespawnSaveRequestMessage{})),
 
-	5961: reflect.TypeOf((*TeleportRequestMessage)(nil)),
+	5961: reflect.TypeOf((TeleportRequestMessage)(TeleportRequestMessage{})),
 
-	5502: reflect.TypeOf((*LeaveDialogMessage)(nil)),
+	5502: reflect.TypeOf((LeaveDialogMessage)(LeaveDialogMessage{})),
 
-	5691: reflect.TypeOf((*EmotePlayMassiveMessage)(nil)),
+	5691: reflect.TypeOf((EmotePlayMassiveMessage)(EmotePlayMassiveMessage{})),
 
-	5658: reflect.TypeOf((*UpdateLifePointsMessage)(nil)),
+	5658: reflect.TypeOf((UpdateLifePointsMessage)(UpdateLifePointsMessage{})),
 
-	5686: reflect.TypeOf((*LifePointsRegenEndMessage)(nil)),
+	5686: reflect.TypeOf((LifePointsRegenEndMessage)(LifePointsRegenEndMessage{})),
 
-	5688: reflect.TypeOf((*EmotePlayErrorMessage)(nil)),
+	5688: reflect.TypeOf((EmotePlayErrorMessage)(EmotePlayErrorMessage{})),
 
-	5687: reflect.TypeOf((*EmoteRemoveMessage)(nil)),
+	5687: reflect.TypeOf((EmoteRemoveMessage)(EmoteRemoveMessage{})),
 
-	5644: reflect.TypeOf((*EmoteAddMessage)(nil)),
+	5644: reflect.TypeOf((EmoteAddMessage)(EmoteAddMessage{})),
 
-	5684: reflect.TypeOf((*LifePointsRegenBeginMessage)(nil)),
+	5684: reflect.TypeOf((LifePointsRegenBeginMessage)(LifePointsRegenBeginMessage{})),
 
-	5689: reflect.TypeOf((*EmoteListMessage)(nil)),
+	5689: reflect.TypeOf((EmoteListMessage)(EmoteListMessage{})),
 
-	6705: reflect.TypeOf((*SpellVariantActivationMessage)(nil)),
+	6705: reflect.TypeOf((SpellVariantActivationMessage)(SpellVariantActivationMessage{})),
 
-	6707: reflect.TypeOf((*SpellVariantActivationRequestMessage)(nil)),
+	6707: reflect.TypeOf((SpellVariantActivationRequestMessage)(SpellVariantActivationRequestMessage{})),
 
-	6702: reflect.TypeOf((*FinishMoveListRequestMessage)(nil)),
+	6702: reflect.TypeOf((FinishMoveListRequestMessage)(FinishMoveListRequestMessage{})),
 
-	1200: reflect.TypeOf((*SpellListMessage)(nil)),
+	1200: reflect.TypeOf((SpellListMessage)(SpellListMessage{})),
 
-	6704: reflect.TypeOf((*FinishMoveListMessage)(nil)),
+	6704: reflect.TypeOf((FinishMoveListMessage)(FinishMoveListMessage{})),
 
-	6703: reflect.TypeOf((*FinishMoveSetRequestMessage)(nil)),
+	6703: reflect.TypeOf((FinishMoveSetRequestMessage)(FinishMoveSetRequestMessage{})),
 
-	5617: reflect.TypeOf((*NpcDialogQuestionMessage)(nil)),
+	5617: reflect.TypeOf((NpcDialogQuestionMessage)(NpcDialogQuestionMessage{})),
 
-	5616: reflect.TypeOf((*NpcDialogReplyMessage)(nil)),
+	5616: reflect.TypeOf((NpcDialogReplyMessage)(NpcDialogReplyMessage{})),
 
-	6294: reflect.TypeOf((*TeleportBuddiesAnswerMessage)(nil)),
+	6294: reflect.TypeOf((TeleportBuddiesAnswerMessage)(TeleportBuddiesAnswerMessage{})),
 
-	5556: reflect.TypeOf((*GuildInvitationAnswerMessage)(nil)),
+	5556: reflect.TypeOf((GuildInvitationAnswerMessage)(GuildInvitationAnswerMessage{})),
 
-	6327: reflect.TypeOf((*GuildModificationNameValidMessage)(nil)),
+	6327: reflect.TypeOf((GuildModificationNameValidMessage)(GuildModificationNameValidMessage{})),
 
-	6323: reflect.TypeOf((*GuildModificationValidMessage)(nil)),
+	6323: reflect.TypeOf((GuildModificationValidMessage)(GuildModificationValidMessage{})),
 
-	6328: reflect.TypeOf((*GuildModificationEmblemValidMessage)(nil)),
+	6328: reflect.TypeOf((GuildModificationEmblemValidMessage)(GuildModificationEmblemValidMessage{})),
 
-	5546: reflect.TypeOf((*GuildCreationValidMessage)(nil)),
+	5546: reflect.TypeOf((GuildCreationValidMessage)(GuildCreationValidMessage{})),
 
-	6408: reflect.TypeOf((*AllianceListMessage)(nil)),
+	6408: reflect.TypeOf((AllianceListMessage)(AllianceListMessage{})),
 
-	6413: reflect.TypeOf((*GuildListMessage)(nil)),
+	6413: reflect.TypeOf((GuildListMessage)(GuildListMessage{})),
 
-	6435: reflect.TypeOf((*GuildVersatileInfoListMessage)(nil)),
+	6435: reflect.TypeOf((GuildVersatileInfoListMessage)(GuildVersatileInfoListMessage{})),
 
-	6436: reflect.TypeOf((*AllianceVersatileInfoListMessage)(nil)),
+	6436: reflect.TypeOf((AllianceVersatileInfoListMessage)(AllianceVersatileInfoListMessage{})),
 
-	6450: reflect.TypeOf((*AllianceModificationValidMessage)(nil)),
+	6450: reflect.TypeOf((AllianceModificationValidMessage)(AllianceModificationValidMessage{})),
 
-	6447: reflect.TypeOf((*AllianceModificationEmblemValidMessage)(nil)),
+	6447: reflect.TypeOf((AllianceModificationEmblemValidMessage)(AllianceModificationEmblemValidMessage{})),
 
-	6401: reflect.TypeOf((*AllianceInvitationAnswerMessage)(nil)),
+	6401: reflect.TypeOf((AllianceInvitationAnswerMessage)(AllianceInvitationAnswerMessage{})),
 
-	6449: reflect.TypeOf((*AllianceModificationNameAndTagValidMessage)(nil)),
+	6449: reflect.TypeOf((AllianceModificationNameAndTagValidMessage)(AllianceModificationNameAndTagValidMessage{})),
 
-	6393: reflect.TypeOf((*AllianceCreationValidMessage)(nil)),
+	6393: reflect.TypeOf((AllianceCreationValidMessage)(AllianceCreationValidMessage{})),
 
-	1506: reflect.TypeOf((*GetPartInfoMessage)(nil)),
+	1506: reflect.TypeOf((GetPartInfoMessage)(GetPartInfoMessage{})),
 
-	1513: reflect.TypeOf((*DownloadErrorMessage)(nil)),
+	1513: reflect.TypeOf((DownloadErrorMessage)(DownloadErrorMessage{})),
 
-	1502: reflect.TypeOf((*PartsListMessage)(nil)),
+	1502: reflect.TypeOf((PartsListMessage)(PartsListMessage{})),
 
-	1511: reflect.TypeOf((*DownloadCurrentSpeedMessage)(nil)),
+	1511: reflect.TypeOf((DownloadCurrentSpeedMessage)(DownloadCurrentSpeedMessage{})),
 
-	1508: reflect.TypeOf((*PartInfoMessage)(nil)),
+	1508: reflect.TypeOf((PartInfoMessage)(PartInfoMessage{})),
 
-	6585: reflect.TypeOf((*IdolListMessage)(nil)),
+	6585: reflect.TypeOf((IdolListMessage)(IdolListMessage{})),
 
-	5859: reflect.TypeOf((*PrismInfoInValidMessage)(nil)),
+	5859: reflect.TypeOf((PrismInfoInValidMessage)(PrismInfoInValidMessage{})),
 
-	6516: reflect.TypeOf((*PaddockBuyResultMessage)(nil)),
+	6516: reflect.TypeOf((PaddockBuyResultMessage)(PaddockBuyResultMessage{})),
 
-	6046: reflect.TypeOf((*JobCrafterDirectoryListMessage)(nil)),
+	6046: reflect.TypeOf((JobCrafterDirectoryListMessage)(JobCrafterDirectoryListMessage{})),
 
-	5740: reflect.TypeOf((*LockableShowCodeDialogMessage)(nil)),
+	5740: reflect.TypeOf((LockableShowCodeDialogMessage)(LockableShowCodeDialogMessage{})),
 
-	6607: reflect.TypeOf((*AccountLinkRequiredMessage)(nil)),
+	6607: reflect.TypeOf((AccountLinkRequiredMessage)(AccountLinkRequiredMessage{})),
 
-	5701: reflect.TypeOf((*HouseGuildNoneMessage)(nil)),
+	5701: reflect.TypeOf((HouseGuildNoneMessage)(HouseGuildNoneMessage{})),
 
-	6172: reflect.TypeOf((*MountDataErrorMessage)(nil)),
+	6172: reflect.TypeOf((MountDataErrorMessage)(MountDataErrorMessage{})),
 
-	5751: reflect.TypeOf((*MapRunningFightDetailsMessage)(nil)),
+	5751: reflect.TypeOf((MapRunningFightDetailsMessage)(MapRunningFightDetailsMessage{})),
 
-	6500: reflect.TypeOf((*MapRunningFightDetailsExtendedMessage)(nil)),
+	6500: reflect.TypeOf((MapRunningFightDetailsExtendedMessage)(MapRunningFightDetailsExtendedMessage{})),
 
-	6604: reflect.TypeOf((*IdolsPresetSaveResultMessage)(nil)),
+	6604: reflect.TypeOf((IdolsPresetSaveResultMessage)(IdolsPresetSaveResultMessage{})),
 
-	6505: reflect.TypeOf((*GuestModeMessage)(nil)),
+	6505: reflect.TypeOf((GuestModeMessage)(GuestModeMessage{})),
 
-	6717: reflect.TypeOf((*FollowedQuestsMessage)(nil)),
+	6717: reflect.TypeOf((FollowedQuestsMessage)(FollowedQuestsMessage{})),
 
-	5671: reflect.TypeOf((*LockableStateUpdateAbstractMessage)(nil)),
+	5671: reflect.TypeOf((LockableStateUpdateAbstractMessage)(LockableStateUpdateAbstractMessage{})),
 
-	5669: reflect.TypeOf((*LockableStateUpdateStorageMessage)(nil)),
+	5669: reflect.TypeOf((LockableStateUpdateStorageMessage)(LockableStateUpdateStorageMessage{})),
 
-	254: reflect.TypeOf((*GameContextMoveMultipleElementsMessage)(nil)),
+	254: reflect.TypeOf((GameContextMoveMultipleElementsMessage)(GameContextMoveMultipleElementsMessage{})),
 
-	6056: reflect.TypeOf((*ExchangeMountSterilizeFromPaddockMessage)(nil)),
+	6056: reflect.TypeOf((ExchangeMountSterilizeFromPaddockMessage)(ExchangeMountSterilizeFromPaddockMessage{})),
 
-	5802: reflect.TypeOf((*ExchangeBidSearchOkMessage)(nil)),
+	5802: reflect.TypeOf((ExchangeBidSearchOkMessage)(ExchangeBidSearchOkMessage{})),
 
-	6506: reflect.TypeOf((*GuestLimitationMessage)(nil)),
+	6506: reflect.TypeOf((GuestLimitationMessage)(GuestLimitationMessage{})),
 
-	6527: reflect.TypeOf((*SymbioticObjectAssociatedMessage)(nil)),
+	6527: reflect.TypeOf((SymbioticObjectAssociatedMessage)(SymbioticObjectAssociatedMessage{})),
 
-	6226: reflect.TypeOf((*ShortcutBarSwapErrorMessage)(nil)),
+	6226: reflect.TypeOf((ShortcutBarSwapErrorMessage)(ShortcutBarSwapErrorMessage{})),
 
-	6110: reflect.TypeOf((*EntityTalkMessage)(nil)),
+	6110: reflect.TypeOf((EntityTalkMessage)(EntityTalkMessage{})),
 
-	6048: reflect.TypeOf((*TeleportOnSameMapMessage)(nil)),
+	6048: reflect.TypeOf((TeleportOnSameMapMessage)(TeleportOnSameMapMessage{})),
 
-	6459: reflect.TypeOf((*ClientUIOpenedMessage)(nil)),
+	6459: reflect.TypeOf((ClientUIOpenedMessage)(ClientUIOpenedMessage{})),
 
-	6463: reflect.TypeOf((*ClientUIOpenedByObjectMessage)(nil)),
+	6463: reflect.TypeOf((ClientUIOpenedByObjectMessage)(ClientUIOpenedByObjectMessage{})),
 
-	6299: reflect.TypeOf((*DungeonKeyRingMessage)(nil)),
+	6299: reflect.TypeOf((DungeonKeyRingMessage)(DungeonKeyRingMessage{})),
 
-	5818: reflect.TypeOf((*ExchangeStartOkMulticraftCrafterMessage)(nil)),
+	5818: reflect.TypeOf((ExchangeStartOkMulticraftCrafterMessage)(ExchangeStartOkMulticraftCrafterMessage{})),
 
-	1: reflect.TypeOf((*ProtocolRequired)(nil)),
+	1: reflect.TypeOf((ProtocolRequired)(ProtocolRequired{})),
 
-	6227: reflect.TypeOf((*ShortcutBarAddErrorMessage)(nil)),
+	6227: reflect.TypeOf((ShortcutBarAddErrorMessage)(ShortcutBarAddErrorMessage{})),
 
-	6062: reflect.TypeOf((*GuildLevelUpMessage)(nil)),
+	6062: reflect.TypeOf((GuildLevelUpMessage)(GuildLevelUpMessage{})),
 
-	5515: reflect.TypeOf((*ExchangeObjectMessage)(nil)),
+	5515: reflect.TypeOf((ExchangeObjectMessage)(ExchangeObjectMessage{})),
 
-	5517: reflect.TypeOf((*ExchangeObjectRemovedMessage)(nil)),
+	5517: reflect.TypeOf((ExchangeObjectRemovedMessage)(ExchangeObjectRemovedMessage{})),
 
-	6533: reflect.TypeOf((*ExchangeObjectsModifiedMessage)(nil)),
+	6533: reflect.TypeOf((ExchangeObjectsModifiedMessage)(ExchangeObjectsModifiedMessage{})),
 
-	6009: reflect.TypeOf((*ExchangeObjectPutInBagMessage)(nil)),
+	6009: reflect.TypeOf((ExchangeObjectPutInBagMessage)(ExchangeObjectPutInBagMessage{})),
 
-	5946: reflect.TypeOf((*ExchangeBidHouseItemRemoveOkMessage)(nil)),
+	5946: reflect.TypeOf((ExchangeBidHouseItemRemoveOkMessage)(ExchangeBidHouseItemRemoveOkMessage{})),
 
-	5999: reflect.TypeOf((*ExchangeCraftResultWithObjectDescMessage)(nil)),
+	5999: reflect.TypeOf((ExchangeCraftResultWithObjectDescMessage)(ExchangeCraftResultWithObjectDescMessage{})),
 
-	5648: reflect.TypeOf((*StorageObjectRemoveMessage)(nil)),
+	5648: reflect.TypeOf((StorageObjectRemoveMessage)(StorageObjectRemoveMessage{})),
 
-	5651: reflect.TypeOf((*JobCrafterDirectoryAddMessage)(nil)),
+	5651: reflect.TypeOf((JobCrafterDirectoryAddMessage)(JobCrafterDirectoryAddMessage{})),
 
-	6574: reflect.TypeOf((*GameRolePlayArenaSwitchToGameServerMessage)(nil)),
+	6574: reflect.TypeOf((GameRolePlayArenaSwitchToGameServerMessage)(GameRolePlayArenaSwitchToGameServerMessage{})),
 
-	5646: reflect.TypeOf((*StorageInventoryContentMessage)(nil)),
+	5646: reflect.TypeOf((StorageInventoryContentMessage)(StorageInventoryContentMessage{})),
 
-	6010: reflect.TypeOf((*ExchangeObjectRemovedFromBagMessage)(nil)),
+	6010: reflect.TypeOf((ExchangeObjectRemovedFromBagMessage)(ExchangeObjectRemovedFromBagMessage{})),
 
-	5739: reflect.TypeOf((*PurchasableDialogMessage)(nil)),
+	5739: reflect.TypeOf((PurchasableDialogMessage)(PurchasableDialogMessage{})),
 
-	6020: reflect.TypeOf((*ExchangeMultiCraftCrafterCanUseHisRessourcesMessage)(nil)),
+	6020: reflect.TypeOf((ExchangeMultiCraftCrafterCanUseHisRessourcesMessage)(ExchangeMultiCraftCrafterCanUseHisRessourcesMessage{})),
 
-	177: reflect.TypeOf((*BasicDateMessage)(nil)),
+	177: reflect.TypeOf((BasicDateMessage)(BasicDateMessage{})),
 
-	954: reflect.TypeOf((*GameMapNoMovementMessage)(nil)),
+	954: reflect.TypeOf((GameMapNoMovementMessage)(GameMapNoMovementMessage{})),
 
-	6523: reflect.TypeOf((*WrapperObjectAssociatedMessage)(nil)),
+	6523: reflect.TypeOf((WrapperObjectAssociatedMessage)(WrapperObjectAssociatedMessage{})),
 
-	6150: reflect.TypeOf((*GameRolePlayDelayedActionFinishedMessage)(nil)),
+	6150: reflect.TypeOf((GameRolePlayDelayedActionFinishedMessage)(GameRolePlayDelayedActionFinishedMessage{})),
 
-	6024: reflect.TypeOf((*GameContextCreateErrorMessage)(nil)),
+	6024: reflect.TypeOf((GameContextCreateErrorMessage)(GameContextCreateErrorMessage{})),
 
-	5668: reflect.TypeOf((*LockableStateUpdateHouseDoorMessage)(nil)),
+	5668: reflect.TypeOf((LockableStateUpdateHouseDoorMessage)(LockableStateUpdateHouseDoorMessage{})),
 
-	5703: reflect.TypeOf((*HouseGuildRightsMessage)(nil)),
+	5703: reflect.TypeOf((HouseGuildRightsMessage)(HouseGuildRightsMessage{})),
 
-	6011: reflect.TypeOf((*SpellItemBoostMessage)(nil)),
+	6011: reflect.TypeOf((SpellItemBoostMessage)(SpellItemBoostMessage{})),
 
-	6412: reflect.TypeOf((*GameContextRemoveElementWithEventMessage)(nil)),
+	6412: reflect.TypeOf((GameContextRemoveElementWithEventMessage)(GameContextRemoveElementWithEventMessage{})),
 
-	6594: reflect.TypeOf((*ClientYouAreDrunkMessage)(nil)),
+	6594: reflect.TypeOf((ClientYouAreDrunkMessage)(ClientYouAreDrunkMessage{})),
 
-	5573: reflect.TypeOf((*SubscriptionZoneMessage)(nil)),
+	5573: reflect.TypeOf((SubscriptionZoneMessage)(SubscriptionZoneMessage{})),
 
-	5945: reflect.TypeOf((*ExchangeBidHouseItemAddOkMessage)(nil)),
+	5945: reflect.TypeOf((ExchangeBidHouseItemAddOkMessage)(ExchangeBidHouseItemAddOkMessage{})),
 
-	6535: reflect.TypeOf((*ExchangeObjectsAddedMessage)(nil)),
+	6535: reflect.TypeOf((ExchangeObjectsAddedMessage)(ExchangeObjectsAddedMessage{})),
 
-	5948: reflect.TypeOf((*ExchangeBidHouseGenericItemRemovedMessage)(nil)),
+	5948: reflect.TypeOf((ExchangeBidHouseGenericItemRemovedMessage)(ExchangeBidHouseGenericItemRemovedMessage{})),
 
-	6580: reflect.TypeOf((*IdolPartyLostMessage)(nil)),
+	6580: reflect.TypeOf((IdolPartyLostMessage)(IdolPartyLostMessage{})),
 
-	5737: reflect.TypeOf((*HouseSoldMessage)(nil)),
+	5737: reflect.TypeOf((HouseSoldMessage)(HouseSoldMessage{})),
 
-	5672: reflect.TypeOf((*LockableCodeResultMessage)(nil)),
+	5672: reflect.TypeOf((LockableCodeResultMessage)(LockableCodeResultMessage{})),
 
-	6036: reflect.TypeOf((*StorageObjectsUpdateMessage)(nil)),
+	6036: reflect.TypeOf((StorageObjectsUpdateMessage)(StorageObjectsUpdateMessage{})),
 
-	5765: reflect.TypeOf((*ExchangeTypesExchangerDescriptionForUserMessage)(nil)),
+	5765: reflect.TypeOf((ExchangeTypesExchangerDescriptionForUserMessage)(ExchangeTypesExchangerDescriptionForUserMessage{})),
 
-	6458: reflect.TypeOf((*MimicryObjectPreviewMessage)(nil)),
+	6458: reflect.TypeOf((MimicryObjectPreviewMessage)(MimicryObjectPreviewMessage{})),
 
-	5542: reflect.TypeOf((*SubscriptionLimitationMessage)(nil)),
+	5542: reflect.TypeOf((SubscriptionLimitationMessage)(SubscriptionLimitationMessage{})),
 
-	5949: reflect.TypeOf((*ExchangeBidHouseInListAddedMessage)(nil)),
+	5949: reflect.TypeOf((ExchangeBidHouseInListAddedMessage)(ExchangeBidHouseInListAddedMessage{})),
 
-	6337: reflect.TypeOf((*ExchangeBidHouseInListUpdatedMessage)(nil)),
+	6337: reflect.TypeOf((ExchangeBidHouseInListUpdatedMessage)(ExchangeBidHouseInListUpdatedMessage{})),
 
-	5755: reflect.TypeOf((*ExchangeBidPriceMessage)(nil)),
+	5755: reflect.TypeOf((ExchangeBidPriceMessage)(ExchangeBidPriceMessage{})),
 
-	6464: reflect.TypeOf((*ExchangeBidPriceForSellerMessage)(nil)),
+	6464: reflect.TypeOf((ExchangeBidPriceForSellerMessage)(ExchangeBidPriceForSellerMessage{})),
 
-	6055: reflect.TypeOf((*ExchangeMountFreeFromPaddockMessage)(nil)),
+	6055: reflect.TypeOf((ExchangeMountFreeFromPaddockMessage)(ExchangeMountFreeFromPaddockMessage{})),
 
-	6316: reflect.TypeOf((*SequenceNumberRequestMessage)(nil)),
+	6316: reflect.TypeOf((SequenceNumberRequestMessage)(SequenceNumberRequestMessage{})),
 
-	5735: reflect.TypeOf((*HouseBuyResultMessage)(nil)),
+	5735: reflect.TypeOf((HouseBuyResultMessage)(HouseBuyResultMessage{})),
 
-	5645: reflect.TypeOf((*StorageKamasUpdateMessage)(nil)),
+	5645: reflect.TypeOf((StorageKamasUpdateMessage)(StorageKamasUpdateMessage{})),
 
-	6040: reflect.TypeOf((*PrismFightStateUpdateMessage)(nil)),
+	6040: reflect.TypeOf((PrismFightStateUpdateMessage)(PrismFightStateUpdateMessage{})),
 
-	6416: reflect.TypeOf((*GameContextRemoveMultipleElementsWithEventsMessage)(nil)),
+	6416: reflect.TypeOf((GameContextRemoveMultipleElementsWithEventsMessage)(GameContextRemoveMultipleElementsWithEventsMessage{})),
 
-	6578: reflect.TypeOf((*ExchangeCraftPaymentModifiedMessage)(nil)),
+	6578: reflect.TypeOf((ExchangeCraftPaymentModifiedMessage)(ExchangeCraftPaymentModifiedMessage{})),
 
-	6497: reflect.TypeOf((*GameCautiousMapMovementMessage)(nil)),
+	6497: reflect.TypeOf((GameCautiousMapMovementMessage)(GameCautiousMapMovementMessage{})),
 
-	5981: reflect.TypeOf((*ExchangeMountStableErrorMessage)(nil)),
+	5981: reflect.TypeOf((ExchangeMountStableErrorMessage)(ExchangeMountStableErrorMessage{})),
 
-	5817: reflect.TypeOf((*ExchangeStartOkMulticraftCustomerMessage)(nil)),
+	5817: reflect.TypeOf((ExchangeStartOkMulticraftCustomerMessage)(ExchangeStartOkMulticraftCustomerMessage{})),
 
-	6526: reflect.TypeOf((*SymbioticObjectErrorMessage)(nil)),
+	6526: reflect.TypeOf((SymbioticObjectErrorMessage)(SymbioticObjectErrorMessage{})),
 
-	6529: reflect.TypeOf((*WrapperObjectErrorMessage)(nil)),
+	6529: reflect.TypeOf((WrapperObjectErrorMessage)(WrapperObjectErrorMessage{})),
 
-	5743: reflect.TypeOf((*MapRunningFightListMessage)(nil)),
+	5743: reflect.TypeOf((MapRunningFightListMessage)(MapRunningFightListMessage{})),
 
-	6670: reflect.TypeOf((*ExchangePodsModifiedMessage)(nil)),
+	6670: reflect.TypeOf((ExchangePodsModifiedMessage)(ExchangePodsModifiedMessage{})),
 
-	2: reflect.TypeOf((*NetworkDataContainerMessage)(nil)),
+	2: reflect.TypeOf((NetworkDataContainerMessage)(NetworkDataContainerMessage{})),
 
-	5521: reflect.TypeOf((*ExchangeKamaModifiedMessage)(nil)),
+	5521: reflect.TypeOf((ExchangeKamaModifiedMessage)(ExchangeKamaModifiedMessage{})),
 
-	6614: reflect.TypeOf((*IdolsPresetUseResultMessage)(nil)),
+	6614: reflect.TypeOf((IdolsPresetUseResultMessage)(IdolsPresetUseResultMessage{})),
 
-	6583: reflect.TypeOf((*IdolPartyRefreshMessage)(nil)),
+	6583: reflect.TypeOf((IdolPartyRefreshMessage)(IdolPartyRefreshMessage{})),
 
-	5769: reflect.TypeOf((*ItemNoMoreAvailableMessage)(nil)),
+	5769: reflect.TypeOf((ItemNoMoreAvailableMessage)(ItemNoMoreAvailableMessage{})),
 
-	5628: reflect.TypeOf((*ExchangeLeaveMessage)(nil)),
+	5628: reflect.TypeOf((ExchangeLeaveMessage)(ExchangeLeaveMessage{})),
 
-	6129: reflect.TypeOf((*ExchangeStartedWithPodsMessage)(nil)),
+	6129: reflect.TypeOf((ExchangeStartedWithPodsMessage)(ExchangeStartedWithPodsMessage{})),
 
-	6595: reflect.TypeOf((*ExchangeCraftCountModifiedMessage)(nil)),
+	6595: reflect.TypeOf((ExchangeCraftCountModifiedMessage)(ExchangeCraftCountModifiedMessage{})),
 
-	6584: reflect.TypeOf((*IdolSelectErrorMessage)(nil)),
+	6584: reflect.TypeOf((IdolSelectErrorMessage)(IdolSelectErrorMessage{})),
 
-	6581: reflect.TypeOf((*IdolSelectedMessage)(nil)),
+	6581: reflect.TypeOf((IdolSelectedMessage)(IdolSelectedMessage{})),
 
-	253: reflect.TypeOf((*GameContextMoveElementMessage)(nil)),
+	253: reflect.TypeOf((GameContextMoveElementMessage)(GameContextMoveElementMessage{})),
 
-	6427: reflect.TypeOf((*AlliancePartialListMessage)(nil)),
+	6427: reflect.TypeOf((AlliancePartialListMessage)(AlliancePartialListMessage{})),
 
-	6030: reflect.TypeOf((*GoldAddedMessage)(nil)),
+	6030: reflect.TypeOf((GoldAddedMessage)(GoldAddedMessage{})),
 
-	6605: reflect.TypeOf((*IdolsPresetDeleteResultMessage)(nil)),
+	6605: reflect.TypeOf((IdolsPresetDeleteResultMessage)(IdolsPresetDeleteResultMessage{})),
 
-	6716: reflect.TypeOf((*MapFightStartPositionsUpdateMessage)(nil)),
+	6716: reflect.TypeOf((MapFightStartPositionsUpdateMessage)(MapFightStartPositionsUpdateMessage{})),
 
-	6037: reflect.TypeOf((*ExchangeShopStockMultiMovementRemovedMessage)(nil)),
+	6037: reflect.TypeOf((ExchangeShopStockMultiMovementRemovedMessage)(ExchangeShopStockMultiMovementRemovedMessage{})),
 
-	5947: reflect.TypeOf((*ExchangeBidHouseGenericItemAddedMessage)(nil)),
+	5947: reflect.TypeOf((ExchangeBidHouseGenericItemAddedMessage)(ExchangeBidHouseGenericItemAddedMessage{})),
 
-	6222: reflect.TypeOf((*ShortcutBarRemoveErrorMessage)(nil)),
+	6222: reflect.TypeOf((ShortcutBarRemoveErrorMessage)(ShortcutBarRemoveErrorMessage{})),
 
-	6532: reflect.TypeOf((*ExchangeObjectsRemovedMessage)(nil)),
+	6532: reflect.TypeOf((ExchangeObjectsRemovedMessage)(ExchangeObjectsRemovedMessage{})),
 
-	6008: reflect.TypeOf((*ExchangeObjectModifiedInBagMessage)(nil)),
+	6008: reflect.TypeOf((ExchangeObjectModifiedInBagMessage)(ExchangeObjectModifiedInBagMessage{})),
 
-	5909: reflect.TypeOf((*ExchangeShopStockMovementUpdatedMessage)(nil)),
+	5909: reflect.TypeOf((ExchangeShopStockMovementUpdatedMessage)(ExchangeShopStockMovementUpdatedMessage{})),
 
-	5653: reflect.TypeOf((*JobCrafterDirectoryRemoveMessage)(nil)),
+	5653: reflect.TypeOf((JobCrafterDirectoryRemoveMessage)(JobCrafterDirectoryRemoveMessage{})),
 
-	5519: reflect.TypeOf((*ExchangeObjectModifiedMessage)(nil)),
+	5519: reflect.TypeOf((ExchangeObjectModifiedMessage)(ExchangeObjectModifiedMessage{})),
 
-	6252: reflect.TypeOf((*PartyMemberEjectedMessage)(nil)),
+	6252: reflect.TypeOf((PartyMemberEjectedMessage)(PartyMemberEjectedMessage{})),
 
-	6035: reflect.TypeOf((*StorageObjectsRemoveMessage)(nil)),
+	6035: reflect.TypeOf((StorageObjectsRemoveMessage)(StorageObjectsRemoveMessage{})),
 
-	6038: reflect.TypeOf((*ExchangeShopStockMultiMovementUpdatedMessage)(nil)),
+	6038: reflect.TypeOf((ExchangeShopStockMultiMovementUpdatedMessage)(ExchangeShopStockMultiMovementUpdatedMessage{})),
 
-	6461: reflect.TypeOf((*MimicryObjectErrorMessage)(nil)),
+	6461: reflect.TypeOf((MimicryObjectErrorMessage)(MimicryObjectErrorMessage{})),
 
-	5752: reflect.TypeOf((*ExchangeTypesItemsExchangerDescriptionForUserMessage)(nil)),
+	5752: reflect.TypeOf((ExchangeTypesItemsExchangerDescriptionForUserMessage)(ExchangeTypesItemsExchangerDescriptionForUserMessage{})),
 
-	6029: reflect.TypeOf((*AccountLoggingKickedMessage)(nil)),
+	6029: reflect.TypeOf((AccountLoggingKickedMessage)(AccountLoggingKickedMessage{})),
 
-	6598: reflect.TypeOf((*ExchangeCrafterJobLevelupMessage)(nil)),
+	6598: reflect.TypeOf((ExchangeCrafterJobLevelupMessage)(ExchangeCrafterJobLevelupMessage{})),
 
-	6277: reflect.TypeOf((*PartyModifiableStatusMessage)(nil)),
+	6277: reflect.TypeOf((PartyModifiableStatusMessage)(PartyModifiableStatusMessage{})),
 
-	6407: reflect.TypeOf((*GameRolePlayShowActorWithEventMessage)(nil)),
+	6407: reflect.TypeOf((GameRolePlayShowActorWithEventMessage)(GameRolePlayShowActorWithEventMessage{})),
 
-	6053: reflect.TypeOf((*CinematicMessage)(nil)),
+	6053: reflect.TypeOf((CinematicMessage)(CinematicMessage{})),
 
-	6188: reflect.TypeOf((*ExchangeCraftResultMagicWithObjectDescMessage)(nil)),
+	6188: reflect.TypeOf((ExchangeCraftResultMagicWithObjectDescMessage)(ExchangeCraftResultMagicWithObjectDescMessage{})),
 
-	1002: reflect.TypeOf((*GameActionNoopMessage)(nil)),
+	1002: reflect.TypeOf((GameActionNoopMessage)(GameActionNoopMessage{})),
 
-	6296: reflect.TypeOf((*DungeonKeyRingUpdateMessage)(nil)),
+	6296: reflect.TypeOf((DungeonKeyRingUpdateMessage)(DungeonKeyRingUpdateMessage{})),
 
-	6462: reflect.TypeOf((*MimicryObjectAssociatedMessage)(nil)),
+	6462: reflect.TypeOf((MimicryObjectAssociatedMessage)(MimicryObjectAssociatedMessage{})),
 
-	5907: reflect.TypeOf((*ExchangeShopStockMovementRemovedMessage)(nil)),
+	5907: reflect.TypeOf((ExchangeShopStockMovementRemovedMessage)(ExchangeShopStockMovementRemovedMessage{})),
 
-	5853: reflect.TypeOf((*PrismInfoCloseMessage)(nil)),
+	5853: reflect.TypeOf((PrismInfoCloseMessage)(PrismInfoCloseMessage{})),
 
-	1001: reflect.TypeOf((*AbstractGameActionWithAckMessage)(nil)),
+	1001: reflect.TypeOf((AbstractGameActionWithAckMessage)(AbstractGameActionWithAckMessage{})),
 
-	6120: reflect.TypeOf((*CharactersListWithModificationsMessage)(nil)),
+	6120: reflect.TypeOf((CharactersListWithModificationsMessage)(CharactersListWithModificationsMessage{})),
 
-	5509: reflect.TypeOf((*ExchangeIsReadyMessage)(nil)),
+	5509: reflect.TypeOf((ExchangeIsReadyMessage)(ExchangeIsReadyMessage{})),
 
-	6425: reflect.TypeOf((*GameRolePlayDelayedObjectUseMessage)(nil)),
+	6425: reflect.TypeOf((GameRolePlayDelayedObjectUseMessage)(GameRolePlayDelayedObjectUseMessage{})),
 
-	5647: reflect.TypeOf((*StorageObjectUpdateMessage)(nil)),
+	5647: reflect.TypeOf((StorageObjectUpdateMessage)(StorageObjectUpdateMessage{})),
 
-	6044: reflect.TypeOf((*JobCrafterDirectoryEntryMessage)(nil)),
+	6044: reflect.TypeOf((JobCrafterDirectoryEntryMessage)(JobCrafterDirectoryEntryMessage{})),
 
-	5810: reflect.TypeOf((*ExchangeItemAutoCraftStopedMessage)(nil)),
+	5810: reflect.TypeOf((ExchangeItemAutoCraftStopedMessage)(ExchangeItemAutoCraftStopedMessage{})),
 
-	6606: reflect.TypeOf((*IdolsPresetUpdateMessage)(nil)),
+	6606: reflect.TypeOf((IdolsPresetUpdateMessage)(IdolsPresetUpdateMessage{})),
 
-	6601: reflect.TypeOf((*RecycleResultMessage)(nil)),
+	6601: reflect.TypeOf((RecycleResultMessage)(RecycleResultMessage{})),
 
-	5516: reflect.TypeOf((*ExchangeObjectAddedMessage)(nil)),
+	5516: reflect.TypeOf((ExchangeObjectAddedMessage)(ExchangeObjectAddedMessage{})),
 
-	6471: reflect.TypeOf((*CharacterLoadingCompleteMessage)(nil)),
+	6471: reflect.TypeOf((CharacterLoadingCompleteMessage)(CharacterLoadingCompleteMessage{})),
 
-	5950: reflect.TypeOf((*ExchangeBidHouseInListRemovedMessage)(nil)),
+	5950: reflect.TypeOf((ExchangeBidHouseInListRemovedMessage)(ExchangeBidHouseInListRemovedMessage{})),
 
-	5956: reflect.TypeOf((*AtlasPointInformationsMessage)(nil)),
+	5956: reflect.TypeOf((AtlasPointInformationsMessage)(AtlasPointInformationsMessage{})),
 
-	6236: reflect.TypeOf((*ExchangeStartedWithStorageMessage)(nil)),
+	6236: reflect.TypeOf((ExchangeStartedWithStorageMessage)(ExchangeStartedWithStorageMessage{})),
 
-	6589: reflect.TypeOf((*ExchangeStoppedMessage)(nil)),
+	6589: reflect.TypeOf((ExchangeStoppedMessage)(ExchangeStoppedMessage{})),
 
-	5786: reflect.TypeOf((*ExchangeWaitingResultMessage)(nil)),
+	5786: reflect.TypeOf((ExchangeWaitingResultMessage)(ExchangeWaitingResultMessage{})),
 
-	6012: reflect.TypeOf((*PauseDialogMessage)(nil)),
+	6012: reflect.TypeOf((PauseDialogMessage)(PauseDialogMessage{})),
 
-	718: reflect.TypeOf((*GameFightTurnFinishMessage)(nil)),
+	718: reflect.TypeOf((GameFightTurnFinishMessage)(GameFightTurnFinishMessage{})),
 
-	950: reflect.TypeOf((*GameMapMovementRequestMessage)(nil)),
+	950: reflect.TypeOf((GameMapMovementRequestMessage)(GameMapMovementRequestMessage{})),
 
-	5611: reflect.TypeOf((*ShowCellRequestMessage)(nil)),
+	5611: reflect.TypeOf((ShowCellRequestMessage)(ShowCellRequestMessage{})),
 
-	255: reflect.TypeOf((*GameContextQuitMessage)(nil)),
+	255: reflect.TypeOf((GameContextQuitMessage)(GameContextQuitMessage{})),
 
-	6530: reflect.TypeOf((*BasicStatMessage)(nil)),
+	6530: reflect.TypeOf((BasicStatMessage)(BasicStatMessage{})),
 
-	6573: reflect.TypeOf((*BasicStatWithDataMessage)(nil)),
+	6573: reflect.TypeOf((BasicStatWithDataMessage)(BasicStatWithDataMessage{})),
 
-	6669: reflect.TypeOf((*AggregateStatMessage)(nil)),
+	6669: reflect.TypeOf((AggregateStatMessage)(AggregateStatMessage{})),
 
-	6662: reflect.TypeOf((*AggregateStatWithDataMessage)(nil)),
+	6662: reflect.TypeOf((AggregateStatWithDataMessage)(AggregateStatWithDataMessage{})),
 
-	701: reflect.TypeOf((*GameFightJoinRequestMessage)(nil)),
+	701: reflect.TypeOf((GameFightJoinRequestMessage)(GameFightJoinRequestMessage{})),
 
-	5661: reflect.TypeOf((*HouseKickIndoorMerchantRequestMessage)(nil)),
+	5661: reflect.TypeOf((HouseKickIndoorMerchantRequestMessage)(HouseKickIndoorMerchantRequestMessage{})),
 
-	6238: reflect.TypeOf((*ExchangeObjectModifyPricedMessage)(nil)),
+	6238: reflect.TypeOf((ExchangeObjectModifyPricedMessage)(ExchangeObjectModifyPricedMessage{})),
 
-	5804: reflect.TypeOf((*ExchangeBidHouseBuyMessage)(nil)),
+	5804: reflect.TypeOf((ExchangeBidHouseBuyMessage)(ExchangeBidHouseBuyMessage{})),
 
-	5806: reflect.TypeOf((*ExchangeBidHouseSearchMessage)(nil)),
+	5806: reflect.TypeOf((ExchangeBidHouseSearchMessage)(ExchangeBidHouseSearchMessage{})),
 
-	5805: reflect.TypeOf((*ExchangeBidHousePriceMessage)(nil)),
+	5805: reflect.TypeOf((ExchangeBidHousePriceMessage)(ExchangeBidHousePriceMessage{})),
 
-	5803: reflect.TypeOf((*ExchangeBidHouseTypeMessage)(nil)),
+	5803: reflect.TypeOf((ExchangeBidHouseTypeMessage)(ExchangeBidHouseTypeMessage{})),
 
-	5807: reflect.TypeOf((*ExchangeBidHouseListMessage)(nil)),
+	5807: reflect.TypeOf((ExchangeBidHouseListMessage)(ExchangeBidHouseListMessage{})),
 
-	953: reflect.TypeOf((*GameMapMovementCancelMessage)(nil)),
+	953: reflect.TypeOf((GameMapMovementCancelMessage)(GameMapMovementCancelMessage{})),
 
-	221: reflect.TypeOf((*ChangeMapMessage)(nil)),
+	221: reflect.TypeOf((ChangeMapMessage)(ChangeMapMessage{})),
 
-	5001: reflect.TypeOf((*InteractiveUseRequestMessage)(nil)),
+	5001: reflect.TypeOf((InteractiveUseRequestMessage)(InteractiveUseRequestMessage{})),
 
-	6715: reflect.TypeOf((*InteractiveUseWithParamRequestMessage)(nil)),
+	6715: reflect.TypeOf((InteractiveUseWithParamRequestMessage)(InteractiveUseWithParamRequestMessage{})),
 
-	6191: reflect.TypeOf((*GameRolePlayAttackMonsterRequestMessage)(nil)),
+	6191: reflect.TypeOf((GameRolePlayAttackMonsterRequestMessage)(GameRolePlayAttackMonsterRequestMessage{})),
 
-	6496: reflect.TypeOf((*GameCautiousMapMovementRequestMessage)(nil)),
+	6496: reflect.TypeOf((GameCautiousMapMovementRequestMessage)(GameCautiousMapMovementRequestMessage{})),
 
-	952: reflect.TypeOf((*GameMapMovementConfirmMessage)(nil)),
+	952: reflect.TypeOf((GameMapMovementConfirmMessage)(GameMapMovementConfirmMessage{})),
 
-	6124: reflect.TypeOf((*StopToListenRunningFightRequestMessage)(nil)),
+	6124: reflect.TypeOf((StopToListenRunningFightRequestMessage)(StopToListenRunningFightRequestMessage{})),
 
-	5750: reflect.TypeOf((*MapRunningFightDetailsRequestMessage)(nil)),
+	5750: reflect.TypeOf((MapRunningFightDetailsRequestMessage)(MapRunningFightDetailsRequestMessage{})),
 
-	6474: reflect.TypeOf((*GameFightSpectatePlayerRequestMessage)(nil)),
+	6474: reflect.TypeOf((GameFightSpectatePlayerRequestMessage)(GameFightSpectatePlayerRequestMessage{})),
 
-	5742: reflect.TypeOf((*MapRunningFightListRequestMessage)(nil)),
+	5742: reflect.TypeOf((MapRunningFightListRequestMessage)(MapRunningFightListRequestMessage{})),
 
-	5508: reflect.TypeOf((*ExchangeAcceptMessage)(nil)),
+	5508: reflect.TypeOf((ExchangeAcceptMessage)(ExchangeAcceptMessage{})),
 
-	5511: reflect.TypeOf((*ExchangeReadyMessage)(nil)),
+	5511: reflect.TypeOf((ExchangeReadyMessage)(ExchangeReadyMessage{})),
 
-	6701: reflect.TypeOf((*FocusedExchangeReadyMessage)(nil)),
+	6701: reflect.TypeOf((FocusedExchangeReadyMessage)(FocusedExchangeReadyMessage{})),
 
-	6001: reflect.TypeOf((*ExchangeReplayStopMessage)(nil)),
+	6001: reflect.TypeOf((ExchangeReplayStopMessage)(ExchangeReplayStopMessage{})),
 
-	6021: reflect.TypeOf((*ExchangeMultiCraftSetCrafterCanUseHisRessourcesMessage)(nil)),
+	6021: reflect.TypeOf((ExchangeMultiCraftSetCrafterCanUseHisRessourcesMessage)(ExchangeMultiCraftSetCrafterCanUseHisRessourcesMessage{})),
 
-	6579: reflect.TypeOf((*ExchangeCraftPaymentModificationRequestMessage)(nil)),
+	6579: reflect.TypeOf((ExchangeCraftPaymentModificationRequestMessage)(ExchangeCraftPaymentModificationRequestMessage{})),
 
-	6004: reflect.TypeOf((*ExchangeObjectUseInWorkshopMessage)(nil)),
+	6004: reflect.TypeOf((ExchangeObjectUseInWorkshopMessage)(ExchangeObjectUseInWorkshopMessage{})),
 
-	6389: reflect.TypeOf((*ExchangeSetCraftRecipeMessage)(nil)),
+	6389: reflect.TypeOf((ExchangeSetCraftRecipeMessage)(ExchangeSetCraftRecipeMessage{})),
 
-	6597: reflect.TypeOf((*ExchangeCraftCountRequestMessage)(nil)),
+	6597: reflect.TypeOf((ExchangeCraftCountRequestMessage)(ExchangeCraftCountRequestMessage{})),
 
-	5953: reflect.TypeOf((*PaddockSellRequestMessage)(nil)),
+	5953: reflect.TypeOf((PaddockSellRequestMessage)(PaddockSellRequestMessage{})),
 
-	5951: reflect.TypeOf((*PaddockBuyRequestMessage)(nil)),
+	5951: reflect.TypeOf((PaddockBuyRequestMessage)(PaddockBuyRequestMessage{})),
 
-	6325: reflect.TypeOf((*ExchangeObjectTransfertExistingFromInvMessage)(nil)),
+	6325: reflect.TypeOf((ExchangeObjectTransfertExistingFromInvMessage)(ExchangeObjectTransfertExistingFromInvMessage{})),
 
-	6184: reflect.TypeOf((*ExchangeObjectTransfertAllFromInvMessage)(nil)),
+	6184: reflect.TypeOf((ExchangeObjectTransfertAllFromInvMessage)(ExchangeObjectTransfertAllFromInvMessage{})),
 
-	6326: reflect.TypeOf((*ExchangeObjectTransfertExistingToInvMessage)(nil)),
+	6326: reflect.TypeOf((ExchangeObjectTransfertExistingToInvMessage)(ExchangeObjectTransfertExistingToInvMessage{})),
 
-	6183: reflect.TypeOf((*ExchangeObjectTransfertListFromInvMessage)(nil)),
+	6183: reflect.TypeOf((ExchangeObjectTransfertListFromInvMessage)(ExchangeObjectTransfertListFromInvMessage{})),
 
-	6470: reflect.TypeOf((*ExchangeObjectTransfertListWithQuantityToInvMessage)(nil)),
+	6470: reflect.TypeOf((ExchangeObjectTransfertListWithQuantityToInvMessage)(ExchangeObjectTransfertListWithQuantityToInvMessage{})),
 
-	6032: reflect.TypeOf((*ExchangeObjectTransfertAllToInvMessage)(nil)),
+	6032: reflect.TypeOf((ExchangeObjectTransfertAllToInvMessage)(ExchangeObjectTransfertAllToInvMessage{})),
 
-	6039: reflect.TypeOf((*ExchangeObjectTransfertListToInvMessage)(nil)),
+	6039: reflect.TypeOf((ExchangeObjectTransfertListToInvMessage)(ExchangeObjectTransfertListToInvMessage{})),
 
-	5520: reflect.TypeOf((*ExchangeObjectMoveKamaMessage)(nil)),
+	5520: reflect.TypeOf((ExchangeObjectMoveKamaMessage)(ExchangeObjectMoveKamaMessage{})),
 
-	707: reflect.TypeOf((*GameFightOptionToggleMessage)(nil)),
+	707: reflect.TypeOf((GameFightOptionToggleMessage)(GameFightOptionToggleMessage{})),
 
-	5725: reflect.TypeOf((*LivingObjectChangeSkinRequestMessage)(nil)),
+	5725: reflect.TypeOf((LivingObjectChangeSkinRequestMessage)(LivingObjectChangeSkinRequestMessage{})),
 
-	6290: reflect.TypeOf((*ObjectFeedMessage)(nil)),
+	6290: reflect.TypeOf((ObjectFeedMessage)(ObjectFeedMessage{})),
 
-	6524: reflect.TypeOf((*WrapperObjectDissociateRequestMessage)(nil)),
+	6524: reflect.TypeOf((WrapperObjectDissociateRequestMessage)(WrapperObjectDissociateRequestMessage{})),
 
-	6457: reflect.TypeOf((*MimicryObjectEraseRequestMessage)(nil)),
+	6457: reflect.TypeOf((MimicryObjectEraseRequestMessage)(MimicryObjectEraseRequestMessage{})),
 
-	5723: reflect.TypeOf((*LivingObjectDissociateMessage)(nil)),
+	5723: reflect.TypeOf((LivingObjectDissociateMessage)(LivingObjectDissociateMessage{})),
 
-	6522: reflect.TypeOf((*SymbioticObjectAssociateRequestMessage)(nil)),
+	6522: reflect.TypeOf((SymbioticObjectAssociateRequestMessage)(SymbioticObjectAssociateRequestMessage{})),
 
-	6460: reflect.TypeOf((*MimicryObjectFeedAndAssociateRequestMessage)(nil)),
+	6460: reflect.TypeOf((MimicryObjectFeedAndAssociateRequestMessage)(MimicryObjectFeedAndAssociateRequestMessage{})),
 
-	6615: reflect.TypeOf((*IdolsPresetUseMessage)(nil)),
+	6615: reflect.TypeOf((IdolsPresetUseMessage)(IdolsPresetUseMessage{})),
 
-	6602: reflect.TypeOf((*IdolsPresetDeleteMessage)(nil)),
+	6602: reflect.TypeOf((IdolsPresetDeleteMessage)(IdolsPresetDeleteMessage{})),
 
-	6582: reflect.TypeOf((*IdolPartyRegisterRequestMessage)(nil)),
+	6582: reflect.TypeOf((IdolPartyRegisterRequestMessage)(IdolPartyRegisterRequestMessage{})),
 
-	6587: reflect.TypeOf((*IdolSelectRequestMessage)(nil)),
+	6587: reflect.TypeOf((IdolSelectRequestMessage)(IdolSelectRequestMessage{})),
 
-	6603: reflect.TypeOf((*IdolsPresetSaveMessage)(nil)),
+	6603: reflect.TypeOf((IdolsPresetSaveMessage)(IdolsPresetSaveMessage{})),
 
-	5697: reflect.TypeOf((*HouseSellRequestMessage)(nil)),
+	5697: reflect.TypeOf((HouseSellRequestMessage)(HouseSellRequestMessage{})),
 
-	5884: reflect.TypeOf((*HouseSellFromInsideRequestMessage)(nil)),
+	5884: reflect.TypeOf((HouseSellFromInsideRequestMessage)(HouseSellFromInsideRequestMessage{})),
 
-	5666: reflect.TypeOf((*LockableChangeCodeMessage)(nil)),
+	5666: reflect.TypeOf((LockableChangeCodeMessage)(LockableChangeCodeMessage{})),
 
-	5885: reflect.TypeOf((*HouseLockFromInsideRequestMessage)(nil)),
+	5885: reflect.TypeOf((HouseLockFromInsideRequestMessage)(HouseLockFromInsideRequestMessage{})),
 
-	5704: reflect.TypeOf((*HouseGuildShareRequestMessage)(nil)),
+	5704: reflect.TypeOf((HouseGuildShareRequestMessage)(HouseGuildShareRequestMessage{})),
 
-	5698: reflect.TypeOf((*HouseKickRequestMessage)(nil)),
+	5698: reflect.TypeOf((HouseKickRequestMessage)(HouseKickRequestMessage{})),
 
-	5700: reflect.TypeOf((*HouseGuildRightsViewMessage)(nil)),
+	5700: reflect.TypeOf((HouseGuildRightsViewMessage)(HouseGuildRightsViewMessage{})),
 
-	5738: reflect.TypeOf((*HouseBuyRequestMessage)(nil)),
+	5738: reflect.TypeOf((HouseBuyRequestMessage)(HouseBuyRequestMessage{})),
 
-	6317: reflect.TypeOf((*SequenceNumberMessage)(nil)),
+	6317: reflect.TypeOf((SequenceNumberMessage)(SequenceNumberMessage{})),
 
-	5664: reflect.TypeOf((*BasicWhoAmIRequestMessage)(nil)),
+	5664: reflect.TypeOf((BasicWhoAmIRequestMessage)(BasicWhoAmIRequestMessage{})),
 
-	5933: reflect.TypeOf((*ContactLookRequestByNameMessage)(nil)),
+	5933: reflect.TypeOf((ContactLookRequestByNameMessage)(ContactLookRequestByNameMessage{})),
 
-	5587: reflect.TypeOf((*PartyLocateMembersRequestMessage)(nil)),
+	5587: reflect.TypeOf((PartyLocateMembersRequestMessage)(PartyLocateMembersRequestMessage{})),
 
-	5667: reflect.TypeOf((*LockableUseCodeMessage)(nil)),
+	5667: reflect.TypeOf((LockableUseCodeMessage)(LockableUseCodeMessage{})),
 }
 
 type GetPartsListMessage struct {
@@ -2114,7 +2114,7 @@ func (m *DownloadPartMessage) Deserialize(r Reader) error {
 type AchievementListMessage struct {
 	FinishedAchievementsIds []uint16
 
-	RewardableAchievements []*AchievementRewardable
+	RewardableAchievements []AchievementRewardable
 }
 
 func (m *AchievementListMessage) ID() uint16 {
@@ -2175,7 +2175,7 @@ func (m *AchievementListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.RewardableAchievements = make([]*AchievementRewardable, lrewardableAchievementsLen)
+	m.RewardableAchievements = make([]AchievementRewardable, lrewardableAchievementsLen)
 
 	for i := range m.RewardableAchievements {
 
@@ -2183,7 +2183,7 @@ func (m *AchievementListMessage) Deserialize(r Reader) error {
 
 		lrewardableAchievements.Deserialize(r)
 
-		m.RewardableAchievements[i] = &lrewardableAchievements
+		m.RewardableAchievements[i] = lrewardableAchievements
 
 	}
 
@@ -2381,7 +2381,7 @@ func (m *IdentificationFailedMessage) Deserialize(r Reader) error {
 type IdentificationFailedForBadVersionMessage struct {
 	IdentificationFailedMessage
 
-	RequiredVersion *Version
+	RequiredVersion Version
 }
 
 func (m *IdentificationFailedForBadVersionMessage) ID() uint16 {
@@ -2411,7 +2411,7 @@ func (m *IdentificationFailedForBadVersionMessage) Deserialize(r Reader) error {
 
 	lrequiredVersion.Deserialize(r)
 
-	m.RequiredVersion = &lrequiredVersion
+	m.RequiredVersion = lrequiredVersion
 
 	return nil
 }
@@ -2719,7 +2719,7 @@ func (m *IdentificationSuccessWithLoginTokenMessage) Deserialize(r Reader) error
 }
 
 type IdentificationMessage struct {
-	Version *VersionExtended
+	Version VersionExtended
 
 	Lang string
 
@@ -2816,7 +2816,7 @@ func (m *IdentificationMessage) Deserialize(r Reader) error {
 
 	lversion.Deserialize(r)
 
-	m.Version = &lversion
+	m.Version = lversion
 
 	llang, err := r.ReadString()
 	if err != nil {
@@ -3561,7 +3561,7 @@ func (m *PartyStopFollowRequestMessage) Deserialize(r Reader) error {
 type PartyLocateMembersMessage struct {
 	AbstractPartyMessage
 
-	Geopositions []*PartyMemberGeoPosition
+	Geopositions []PartyMemberGeoPosition
 }
 
 func (m *PartyLocateMembersMessage) ID() uint16 {
@@ -3600,7 +3600,7 @@ func (m *PartyLocateMembersMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Geopositions = make([]*PartyMemberGeoPosition, lgeopositionsLen)
+	m.Geopositions = make([]PartyMemberGeoPosition, lgeopositionsLen)
 
 	for i := range m.Geopositions {
 
@@ -3608,7 +3608,7 @@ func (m *PartyLocateMembersMessage) Deserialize(r Reader) error {
 
 		lgeopositions.Deserialize(r)
 
-		m.Geopositions[i] = &lgeopositions
+		m.Geopositions[i] = lgeopositions
 
 	}
 
@@ -3907,9 +3907,9 @@ type PartyJoinMessage struct {
 
 	MaxParticipants uint8
 
-	Members []*PartyMemberInformations
+	Members []PartyMemberInformations
 
-	Guests []*PartyGuestInformations
+	Guests []PartyGuestInformations
 
 	Restricted bool
 
@@ -4009,7 +4009,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Members = make([]*PartyMemberInformations, lmembersLen)
+	m.Members = make([]PartyMemberInformations, lmembersLen)
 
 	for i := range m.Members {
 
@@ -4024,7 +4024,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 
 		lmembers.Deserialize(r)
 
-		m.Members[i] = lmembers.(*PartyMemberInformations)
+		m.Members[i] = *lmembers.(*PartyMemberInformations)
 
 	}
 
@@ -4033,7 +4033,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Guests = make([]*PartyGuestInformations, lguestsLen)
+	m.Guests = make([]PartyGuestInformations, lguestsLen)
 
 	for i := range m.Guests {
 
@@ -4041,7 +4041,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 
 		lguests.Deserialize(r)
 
-		m.Guests[i] = &lguests
+		m.Guests[i] = lguests
 
 	}
 
@@ -4063,7 +4063,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 }
 
 type GameRolePlayArenaUpdatePlayerInfosMessage struct {
-	Solo *ArenaRankInfos
+	Solo ArenaRankInfos
 }
 
 func (m *GameRolePlayArenaUpdatePlayerInfosMessage) ID() uint16 {
@@ -4085,7 +4085,7 @@ func (m *GameRolePlayArenaUpdatePlayerInfosMessage) Deserialize(r Reader) error 
 
 	lsolo.Deserialize(r)
 
-	m.Solo = &lsolo
+	m.Solo = lsolo
 
 	return nil
 }
@@ -4148,7 +4148,7 @@ func (m *TeleportToBuddyOfferMessage) Deserialize(r Reader) error {
 type GameRolePlayArenaUpdatePlayerInfosWithTeamMessage struct {
 	GameRolePlayArenaUpdatePlayerInfosMessage
 
-	Team *ArenaRankInfos
+	Team ArenaRankInfos
 }
 
 func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) ID() uint16 {
@@ -4178,7 +4178,7 @@ func (m *GameRolePlayArenaUpdatePlayerInfosWithTeamMessage) Deserialize(r Reader
 
 	lteam.Deserialize(r)
 
-	m.Team = &lteam
+	m.Team = lteam
 
 	return nil
 }
@@ -4421,7 +4421,7 @@ func (m *GameFightJoinMessage) Deserialize(r Reader) error {
 type GameFightSpectatorJoinMessage struct {
 	GameFightJoinMessage
 
-	NamedPartyTeams []*NamedPartyTeam
+	NamedPartyTeams []NamedPartyTeam
 }
 
 func (m *GameFightSpectatorJoinMessage) ID() uint16 {
@@ -4460,7 +4460,7 @@ func (m *GameFightSpectatorJoinMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.NamedPartyTeams = make([]*NamedPartyTeam, lnamedPartyTeamsLen)
+	m.NamedPartyTeams = make([]NamedPartyTeam, lnamedPartyTeamsLen)
 
 	for i := range m.NamedPartyTeams {
 
@@ -4468,7 +4468,7 @@ func (m *GameFightSpectatorJoinMessage) Deserialize(r Reader) error {
 
 		lnamedPartyTeams.Deserialize(r)
 
-		m.NamedPartyTeams[i] = &lnamedPartyTeams
+		m.NamedPartyTeams[i] = lnamedPartyTeams
 
 	}
 
@@ -4495,7 +4495,7 @@ func (m *DungeonPartyFinderAvailableDungeonsRequestMessage) Deserialize(r Reader
 type DungeonPartyFinderRoomContentMessage struct {
 	DungeonId uint16
 
-	Players []*DungeonPartyFinderPlayer
+	Players []DungeonPartyFinderPlayer
 }
 
 func (m *DungeonPartyFinderRoomContentMessage) ID() uint16 {
@@ -4537,7 +4537,7 @@ func (m *DungeonPartyFinderRoomContentMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Players = make([]*DungeonPartyFinderPlayer, lplayersLen)
+	m.Players = make([]DungeonPartyFinderPlayer, lplayersLen)
 
 	for i := range m.Players {
 
@@ -4545,7 +4545,7 @@ func (m *DungeonPartyFinderRoomContentMessage) Deserialize(r Reader) error {
 
 		lplayers.Deserialize(r)
 
-		m.Players[i] = &lplayers
+		m.Players[i] = lplayers
 
 	}
 
@@ -4611,9 +4611,9 @@ type PartyInvitationDetailsMessage struct {
 
 	LeaderId int64
 
-	Members []*PartyInvitationMemberInformations
+	Members []PartyInvitationMemberInformations
 
-	Guests []*PartyGuestInformations
+	Guests []PartyGuestInformations
 }
 
 func (m *PartyInvitationDetailsMessage) ID() uint16 {
@@ -4719,7 +4719,7 @@ func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Members = make([]*PartyInvitationMemberInformations, lmembersLen)
+	m.Members = make([]PartyInvitationMemberInformations, lmembersLen)
 
 	for i := range m.Members {
 
@@ -4727,7 +4727,7 @@ func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 
 		lmembers.Deserialize(r)
 
-		m.Members[i] = &lmembers
+		m.Members[i] = lmembers
 
 	}
 
@@ -4736,7 +4736,7 @@ func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Guests = make([]*PartyGuestInformations, lguestsLen)
+	m.Guests = make([]PartyGuestInformations, lguestsLen)
 
 	for i := range m.Guests {
 
@@ -4744,7 +4744,7 @@ func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 
 		lguests.Deserialize(r)
 
-		m.Guests[i] = &lguests
+		m.Guests[i] = lguests
 
 	}
 
@@ -4754,7 +4754,7 @@ func (m *PartyInvitationDetailsMessage) Deserialize(r Reader) error {
 type PartyNewGuestMessage struct {
 	AbstractPartyEventMessage
 
-	Guest *PartyGuestInformations
+	Guest PartyGuestInformations
 }
 
 func (m *PartyNewGuestMessage) ID() uint16 {
@@ -4784,7 +4784,7 @@ func (m *PartyNewGuestMessage) Deserialize(r Reader) error {
 
 	lguest.Deserialize(r)
 
-	m.Guest = &lguest
+	m.Guest = lguest
 
 	return nil
 }
@@ -5088,7 +5088,7 @@ type PartyMemberInFightMessage struct {
 
 	FightId int32
 
-	FightMap *MapCoordinatesExtended
+	FightMap MapCoordinatesExtended
 
 	TimeBeforeFightStart int16
 }
@@ -5179,7 +5179,7 @@ func (m *PartyMemberInFightMessage) Deserialize(r Reader) error {
 
 	lfightMap.Deserialize(r)
 
-	m.FightMap = &lfightMap
+	m.FightMap = lfightMap
 
 	ltimeBeforeFightStart, err := r.ReadVarInt16()
 	if err != nil {
@@ -5275,7 +5275,7 @@ func (m *TeleportToBuddyCloseMessage) Deserialize(r Reader) error {
 type DungeonPartyFinderRoomContentUpdateMessage struct {
 	DungeonId uint16
 
-	AddedPlayers []*DungeonPartyFinderPlayer
+	AddedPlayers []DungeonPartyFinderPlayer
 
 	RemovedPlayersIds []int64
 }
@@ -5331,7 +5331,7 @@ func (m *DungeonPartyFinderRoomContentUpdateMessage) Deserialize(r Reader) error
 		return err
 	}
 
-	m.AddedPlayers = make([]*DungeonPartyFinderPlayer, laddedPlayersLen)
+	m.AddedPlayers = make([]DungeonPartyFinderPlayer, laddedPlayersLen)
 
 	for i := range m.AddedPlayers {
 
@@ -5339,7 +5339,7 @@ func (m *DungeonPartyFinderRoomContentUpdateMessage) Deserialize(r Reader) error
 
 		laddedPlayers.Deserialize(r)
 
-		m.AddedPlayers[i] = &laddedPlayers
+		m.AddedPlayers[i] = laddedPlayers
 
 	}
 
@@ -5846,7 +5846,7 @@ func (m *PartyInvitationDungeonDetailsMessage) Deserialize(r Reader) error {
 type PartyUpdateMessage struct {
 	AbstractPartyEventMessage
 
-	MemberInformations *PartyMemberInformations
+	MemberInformations PartyMemberInformations
 }
 
 func (m *PartyUpdateMessage) ID() uint16 {
@@ -5887,7 +5887,7 @@ func (m *PartyUpdateMessage) Deserialize(r Reader) error {
 
 	lmemberInformations.Deserialize(r)
 
-	m.MemberInformations = lmemberInformations.(*PartyMemberInformations)
+	m.MemberInformations = *lmemberInformations.(*PartyMemberInformations)
 
 	return nil
 }
@@ -6163,21 +6163,21 @@ type MapComplementaryInformationsDataMessage struct {
 
 	MapId uint32
 
-	Houses []*HouseInformations
+	Houses []HouseInformations
 
-	Actors []*GameRolePlayActorInformations
+	Actors []GameRolePlayActorInformations
 
-	InteractiveElements []*InteractiveElement
+	InteractiveElements []InteractiveElement
 
-	StatedElements []*StatedElement
+	StatedElements []StatedElement
 
-	Obstacles []*MapObstacle
+	Obstacles []MapObstacle
 
-	Fights []*FightCommonInformations
+	Fights []FightCommonInformations
 
 	HasAggressiveMonsters bool
 
-	FightStartPositions *FightStartingPositions
+	FightStartPositions FightStartingPositions
 }
 
 func (m *MapComplementaryInformationsDataMessage) ID() uint16 {
@@ -6310,7 +6310,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Houses = make([]*HouseInformations, lhousesLen)
+	m.Houses = make([]HouseInformations, lhousesLen)
 
 	for i := range m.Houses {
 
@@ -6325,7 +6325,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lhouses.Deserialize(r)
 
-		m.Houses[i] = lhouses.(*HouseInformations)
+		m.Houses[i] = *lhouses.(*HouseInformations)
 
 	}
 
@@ -6334,7 +6334,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Actors = make([]*GameRolePlayActorInformations, lactorsLen)
+	m.Actors = make([]GameRolePlayActorInformations, lactorsLen)
 
 	for i := range m.Actors {
 
@@ -6349,7 +6349,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lactors.Deserialize(r)
 
-		m.Actors[i] = lactors.(*GameRolePlayActorInformations)
+		m.Actors[i] = *lactors.(*GameRolePlayActorInformations)
 
 	}
 
@@ -6358,7 +6358,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.InteractiveElements = make([]*InteractiveElement, linteractiveElementsLen)
+	m.InteractiveElements = make([]InteractiveElement, linteractiveElementsLen)
 
 	for i := range m.InteractiveElements {
 
@@ -6373,7 +6373,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		linteractiveElements.Deserialize(r)
 
-		m.InteractiveElements[i] = linteractiveElements.(*InteractiveElement)
+		m.InteractiveElements[i] = *linteractiveElements.(*InteractiveElement)
 
 	}
 
@@ -6382,7 +6382,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.StatedElements = make([]*StatedElement, lstatedElementsLen)
+	m.StatedElements = make([]StatedElement, lstatedElementsLen)
 
 	for i := range m.StatedElements {
 
@@ -6390,7 +6390,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lstatedElements.Deserialize(r)
 
-		m.StatedElements[i] = &lstatedElements
+		m.StatedElements[i] = lstatedElements
 
 	}
 
@@ -6399,7 +6399,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Obstacles = make([]*MapObstacle, lobstaclesLen)
+	m.Obstacles = make([]MapObstacle, lobstaclesLen)
 
 	for i := range m.Obstacles {
 
@@ -6407,7 +6407,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lobstacles.Deserialize(r)
 
-		m.Obstacles[i] = &lobstacles
+		m.Obstacles[i] = lobstacles
 
 	}
 
@@ -6416,7 +6416,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Fights = make([]*FightCommonInformations, lfightsLen)
+	m.Fights = make([]FightCommonInformations, lfightsLen)
 
 	for i := range m.Fights {
 
@@ -6424,7 +6424,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lfights.Deserialize(r)
 
-		m.Fights[i] = &lfights
+		m.Fights[i] = lfights
 
 	}
 
@@ -6439,7 +6439,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 	lfightStartPositions.Deserialize(r)
 
-	m.FightStartPositions = &lfightStartPositions
+	m.FightStartPositions = lfightStartPositions
 
 	return nil
 }
@@ -6591,7 +6591,7 @@ func (m *PartyNewMemberMessage) Deserialize(r Reader) error {
 }
 
 type SpouseInformationsMessage struct {
-	Spouse *FriendSpouseInformations
+	Spouse FriendSpouseInformations
 }
 
 func (m *SpouseInformationsMessage) ID() uint16 {
@@ -6624,7 +6624,7 @@ func (m *SpouseInformationsMessage) Deserialize(r Reader) error {
 
 	lspouse.Deserialize(r)
 
-	m.Spouse = lspouse.(*FriendSpouseInformations)
+	m.Spouse = *lspouse.(*FriendSpouseInformations)
 
 	return nil
 }
@@ -6818,7 +6818,7 @@ type ContactLookMessage struct {
 
 	PlayerId int64
 
-	Look *EntityLook
+	Look EntityLook
 }
 
 func (m *ContactLookMessage) ID() uint16 {
@@ -6873,7 +6873,7 @@ func (m *ContactLookMessage) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	return nil
 }
@@ -7045,7 +7045,7 @@ func (m *FriendSetWarnOnLevelGainMessage) Deserialize(r Reader) error {
 }
 
 type TaxCollectorDialogQuestionBasicMessage struct {
-	GuildInfo *BasicGuildInformations
+	GuildInfo BasicGuildInformations
 }
 
 func (m *TaxCollectorDialogQuestionBasicMessage) ID() uint16 {
@@ -7067,7 +7067,7 @@ func (m *TaxCollectorDialogQuestionBasicMessage) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	return nil
 }
@@ -7218,7 +7218,7 @@ func (m *TaxCollectorDialogQuestionExtendedMessage) Deserialize(r Reader) error 
 type GuildInformationsPaddocksMessage struct {
 	NbPaddockMax uint8
 
-	PaddocksInformations []*PaddockContentInformations
+	PaddocksInformations []PaddockContentInformations
 }
 
 func (m *GuildInformationsPaddocksMessage) ID() uint16 {
@@ -7260,7 +7260,7 @@ func (m *GuildInformationsPaddocksMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PaddocksInformations = make([]*PaddockContentInformations, lpaddocksInformationsLen)
+	m.PaddocksInformations = make([]PaddockContentInformations, lpaddocksInformationsLen)
 
 	for i := range m.PaddocksInformations {
 
@@ -7268,7 +7268,7 @@ func (m *GuildInformationsPaddocksMessage) Deserialize(r Reader) error {
 
 		lpaddocksInformations.Deserialize(r)
 
-		m.PaddocksInformations[i] = &lpaddocksInformations
+		m.PaddocksInformations[i] = lpaddocksInformations
 
 	}
 
@@ -7540,7 +7540,7 @@ func (m *IgnoredAddFailureMessage) Deserialize(r Reader) error {
 type AllianceTaxCollectorDialogQuestionExtendedMessage struct {
 	TaxCollectorDialogQuestionExtendedMessage
 
-	Alliance *BasicNamedAllianceInformations
+	Alliance BasicNamedAllianceInformations
 }
 
 func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) ID() uint16 {
@@ -7570,7 +7570,7 @@ func (m *AllianceTaxCollectorDialogQuestionExtendedMessage) Deserialize(r Reader
 
 	lalliance.Deserialize(r)
 
-	m.Alliance = &lalliance
+	m.Alliance = lalliance
 
 	return nil
 }
@@ -7615,7 +7615,7 @@ func (m *GuildMotdSetRequestMessage) Deserialize(r Reader) error {
 }
 
 type FriendAddedMessage struct {
-	FriendAdded *FriendInformations
+	FriendAdded FriendInformations
 }
 
 func (m *FriendAddedMessage) ID() uint16 {
@@ -7648,7 +7648,7 @@ func (m *FriendAddedMessage) Deserialize(r Reader) error {
 
 	lfriendAdded.Deserialize(r)
 
-	m.FriendAdded = lfriendAdded.(*FriendInformations)
+	m.FriendAdded = *lfriendAdded.(*FriendInformations)
 
 	return nil
 }
@@ -7748,7 +7748,7 @@ func (m *ChatMessageReportMessage) Deserialize(r Reader) error {
 }
 
 type TaxCollectorMovementsOfflineMessage struct {
-	Movements []*TaxCollectorMovement
+	Movements []TaxCollectorMovement
 }
 
 func (m *TaxCollectorMovementsOfflineMessage) ID() uint16 {
@@ -7779,7 +7779,7 @@ func (m *TaxCollectorMovementsOfflineMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Movements = make([]*TaxCollectorMovement, lmovementsLen)
+	m.Movements = make([]TaxCollectorMovement, lmovementsLen)
 
 	for i := range m.Movements {
 
@@ -7787,7 +7787,7 @@ func (m *TaxCollectorMovementsOfflineMessage) Deserialize(r Reader) error {
 
 		lmovements.Deserialize(r)
 
-		m.Movements[i] = &lmovements
+		m.Movements[i] = lmovements
 
 	}
 
@@ -7866,7 +7866,7 @@ func (m *TaxCollectorStateUpdateMessage) Deserialize(r Reader) error {
 }
 
 type FriendsListMessage struct {
-	FriendsList []*FriendInformations
+	FriendsList []FriendInformations
 }
 
 func (m *FriendsListMessage) ID() uint16 {
@@ -7901,7 +7901,7 @@ func (m *FriendsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FriendsList = make([]*FriendInformations, lfriendsListLen)
+	m.FriendsList = make([]FriendInformations, lfriendsListLen)
 
 	for i := range m.FriendsList {
 
@@ -7916,7 +7916,7 @@ func (m *FriendsListMessage) Deserialize(r Reader) error {
 
 		lfriendsList.Deserialize(r)
 
-		m.FriendsList[i] = lfriendsList.(*FriendInformations)
+		m.FriendsList[i] = *lfriendsList.(*FriendInformations)
 
 	}
 
@@ -7966,7 +7966,7 @@ func (m *GuildFightLeaveRequestMessage) Deserialize(r Reader) error {
 }
 
 type GuildHouseUpdateInformationMessage struct {
-	HousesInformations *HouseInformationsForGuild
+	HousesInformations HouseInformationsForGuild
 }
 
 func (m *GuildHouseUpdateInformationMessage) ID() uint16 {
@@ -7988,7 +7988,7 @@ func (m *GuildHouseUpdateInformationMessage) Deserialize(r Reader) error {
 
 	lhousesInformations.Deserialize(r)
 
-	m.HousesInformations = &lhousesInformations
+	m.HousesInformations = lhousesInformations
 
 	return nil
 }
@@ -8064,7 +8064,7 @@ type TaxCollectorAttackedMessage struct {
 
 	SubAreaId uint16
 
-	Guild *BasicGuildInformations
+	Guild BasicGuildInformations
 }
 
 func (m *TaxCollectorAttackedMessage) ID() uint16 {
@@ -8152,7 +8152,7 @@ func (m *TaxCollectorAttackedMessage) Deserialize(r Reader) error {
 
 	lguild.Deserialize(r)
 
-	m.Guild = &lguild
+	m.Guild = lguild
 
 	return nil
 }
@@ -8160,7 +8160,7 @@ func (m *TaxCollectorAttackedMessage) Deserialize(r Reader) error {
 type GuildFightPlayersEnemiesListMessage struct {
 	FightId uint32
 
-	PlayerInfo []*CharacterMinimalPlusLookInformations
+	PlayerInfo []CharacterMinimalPlusLookInformations
 }
 
 func (m *GuildFightPlayersEnemiesListMessage) ID() uint16 {
@@ -8202,7 +8202,7 @@ func (m *GuildFightPlayersEnemiesListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PlayerInfo = make([]*CharacterMinimalPlusLookInformations, lplayerInfoLen)
+	m.PlayerInfo = make([]CharacterMinimalPlusLookInformations, lplayerInfoLen)
 
 	for i := range m.PlayerInfo {
 
@@ -8210,7 +8210,7 @@ func (m *GuildFightPlayersEnemiesListMessage) Deserialize(r Reader) error {
 
 		lplayerInfo.Deserialize(r)
 
-		m.PlayerInfo[i] = &lplayerInfo
+		m.PlayerInfo[i] = lplayerInfo
 
 	}
 
@@ -8249,9 +8249,9 @@ func (m *FriendJoinRequestMessage) Deserialize(r Reader) error {
 type TaxCollectorAttackedResultMessage struct {
 	DeadOrAlive bool
 
-	BasicInfos *TaxCollectorBasicInformations
+	BasicInfos TaxCollectorBasicInformations
 
-	Guild *BasicGuildInformations
+	Guild BasicGuildInformations
 }
 
 func (m *TaxCollectorAttackedResultMessage) ID() uint16 {
@@ -8288,13 +8288,13 @@ func (m *TaxCollectorAttackedResultMessage) Deserialize(r Reader) error {
 
 	lbasicInfos.Deserialize(r)
 
-	m.BasicInfos = &lbasicInfos
+	m.BasicInfos = lbasicInfos
 
 	var lguild BasicGuildInformations
 
 	lguild.Deserialize(r)
 
-	m.Guild = &lguild
+	m.Guild = lguild
 
 	return nil
 }
@@ -8329,7 +8329,7 @@ func (m *FriendDeleteRequestMessage) Deserialize(r Reader) error {
 }
 
 type GuildInformationsMemberUpdateMessage struct {
-	Member *GuildMember
+	Member GuildMember
 }
 
 func (m *GuildInformationsMemberUpdateMessage) ID() uint16 {
@@ -8351,7 +8351,7 @@ func (m *GuildInformationsMemberUpdateMessage) Deserialize(r Reader) error {
 
 	lmember.Deserialize(r)
 
-	m.Member = &lmember
+	m.Member = lmember
 
 	return nil
 }
@@ -8674,7 +8674,7 @@ type ExchangeGuildTaxCollectorGetMessage struct {
 
 	Pods uint16
 
-	ObjectsInfos []*ObjectItemGenericQuantity
+	ObjectsInfos []ObjectItemGenericQuantity
 }
 
 func (m *ExchangeGuildTaxCollectorGetMessage) ID() uint16 {
@@ -8815,7 +8815,7 @@ func (m *ExchangeGuildTaxCollectorGetMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItemGenericQuantity, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItemGenericQuantity, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -8823,7 +8823,7 @@ func (m *ExchangeGuildTaxCollectorGetMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -8831,7 +8831,7 @@ func (m *ExchangeGuildTaxCollectorGetMessage) Deserialize(r Reader) error {
 }
 
 type TaxCollectorMovementAddMessage struct {
-	Informations *TaxCollectorInformations
+	Informations TaxCollectorInformations
 }
 
 func (m *TaxCollectorMovementAddMessage) ID() uint16 {
@@ -8864,13 +8864,13 @@ func (m *TaxCollectorMovementAddMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = linformations.(*TaxCollectorInformations)
+	m.Informations = *linformations.(*TaxCollectorInformations)
 
 	return nil
 }
 
 type GuildPaddockBoughtMessage struct {
-	PaddockInfo *PaddockContentInformations
+	PaddockInfo PaddockContentInformations
 }
 
 func (m *GuildPaddockBoughtMessage) ID() uint16 {
@@ -8892,7 +8892,7 @@ func (m *GuildPaddockBoughtMessage) Deserialize(r Reader) error {
 
 	lpaddockInfo.Deserialize(r)
 
-	m.PaddockInfo = &lpaddockInfo
+	m.PaddockInfo = lpaddockInfo
 
 	return nil
 }
@@ -8944,7 +8944,7 @@ func (m *FriendsGetListMessage) Deserialize(r Reader) error {
 }
 
 type IgnoredListMessage struct {
-	IgnoredList []*IgnoredInformations
+	IgnoredList []IgnoredInformations
 }
 
 func (m *IgnoredListMessage) ID() uint16 {
@@ -8979,7 +8979,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.IgnoredList = make([]*IgnoredInformations, lignoredListLen)
+	m.IgnoredList = make([]IgnoredInformations, lignoredListLen)
 
 	for i := range m.IgnoredList {
 
@@ -8994,7 +8994,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 
 		lignoredList.Deserialize(r)
 
-		m.IgnoredList[i] = lignoredList.(*IgnoredInformations)
+		m.IgnoredList[i] = *lignoredList.(*IgnoredInformations)
 
 	}
 
@@ -9002,7 +9002,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 }
 
 type IgnoredAddedMessage struct {
-	IgnoreAdded *IgnoredInformations
+	IgnoreAdded IgnoredInformations
 
 	Session bool
 }
@@ -9041,7 +9041,7 @@ func (m *IgnoredAddedMessage) Deserialize(r Reader) error {
 
 	lignoreAdded.Deserialize(r)
 
-	m.IgnoreAdded = lignoreAdded.(*IgnoredInformations)
+	m.IgnoreAdded = *lignoreAdded.(*IgnoredInformations)
 
 	lsession, err := r.ReadBoolean()
 	if err != nil {
@@ -9183,7 +9183,7 @@ func (m *GuildInvitationStateRecruterMessage) Deserialize(r Reader) error {
 }
 
 type PlayerStatusUpdateRequestMessage struct {
-	Status *PlayerStatus
+	Status PlayerStatus
 }
 
 func (m *PlayerStatusUpdateRequestMessage) ID() uint16 {
@@ -9216,7 +9216,7 @@ func (m *PlayerStatusUpdateRequestMessage) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	return nil
 }
@@ -9342,7 +9342,7 @@ func (m *GuildLeftMessage) Deserialize(r Reader) error {
 type GuildFightPlayersHelpersJoinMessage struct {
 	FightId uint32
 
-	PlayerInfo *CharacterMinimalPlusLookInformations
+	PlayerInfo CharacterMinimalPlusLookInformations
 }
 
 func (m *GuildFightPlayersHelpersJoinMessage) ID() uint16 {
@@ -9375,13 +9375,13 @@ func (m *GuildFightPlayersHelpersJoinMessage) Deserialize(r Reader) error {
 
 	lplayerInfo.Deserialize(r)
 
-	m.PlayerInfo = &lplayerInfo
+	m.PlayerInfo = lplayerInfo
 
 	return nil
 }
 
 type GuildInformationsMembersMessage struct {
-	Members []*GuildMember
+	Members []GuildMember
 }
 
 func (m *GuildInformationsMembersMessage) ID() uint16 {
@@ -9412,7 +9412,7 @@ func (m *GuildInformationsMembersMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Members = make([]*GuildMember, lmembersLen)
+	m.Members = make([]GuildMember, lmembersLen)
 
 	for i := range m.Members {
 
@@ -9420,7 +9420,7 @@ func (m *GuildInformationsMembersMessage) Deserialize(r Reader) error {
 
 		lmembers.Deserialize(r)
 
-		m.Members[i] = &lmembers
+		m.Members[i] = lmembers
 
 	}
 
@@ -9544,7 +9544,7 @@ func (m *FriendSpouseFollowWithCompassRequestMessage) Deserialize(r Reader) erro
 }
 
 type FriendUpdateMessage struct {
-	FriendUpdated *FriendInformations
+	FriendUpdated FriendInformations
 }
 
 func (m *FriendUpdateMessage) ID() uint16 {
@@ -9577,7 +9577,7 @@ func (m *FriendUpdateMessage) Deserialize(r Reader) error {
 
 	lfriendUpdated.Deserialize(r)
 
-	m.FriendUpdated = lfriendUpdated.(*FriendInformations)
+	m.FriendUpdated = *lfriendUpdated.(*FriendInformations)
 
 	return nil
 }
@@ -9612,13 +9612,13 @@ func (m *GuildPaddockTeleportRequestMessage) Deserialize(r Reader) error {
 }
 
 type GuildFactsMessage struct {
-	Infos *GuildFactSheetInformations
+	Infos GuildFactSheetInformations
 
 	CreationDate uint32
 
 	NbTaxCollectors uint16
 
-	Members []*CharacterMinimalInformations
+	Members []CharacterMinimalInformations
 }
 
 func (m *GuildFactsMessage) ID() uint16 {
@@ -9671,7 +9671,7 @@ func (m *GuildFactsMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = linfos.(*GuildFactSheetInformations)
+	m.Infos = *linfos.(*GuildFactSheetInformations)
 
 	lcreationDate, err := r.ReadUInt32()
 	if err != nil {
@@ -9692,7 +9692,7 @@ func (m *GuildFactsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Members = make([]*CharacterMinimalInformations, lmembersLen)
+	m.Members = make([]CharacterMinimalInformations, lmembersLen)
 
 	for i := range m.Members {
 
@@ -9700,7 +9700,7 @@ func (m *GuildFactsMessage) Deserialize(r Reader) error {
 
 		lmembers.Deserialize(r)
 
-		m.Members[i] = &lmembers
+		m.Members[i] = lmembers
 
 	}
 
@@ -9710,7 +9710,7 @@ func (m *GuildFactsMessage) Deserialize(r Reader) error {
 type GuildInAllianceFactsMessage struct {
 	GuildFactsMessage
 
-	AllianceInfos *BasicNamedAllianceInformations
+	AllianceInfos BasicNamedAllianceInformations
 }
 
 func (m *GuildInAllianceFactsMessage) ID() uint16 {
@@ -9740,7 +9740,7 @@ func (m *GuildInAllianceFactsMessage) Deserialize(r Reader) error {
 
 	lallianceInfos.Deserialize(r)
 
-	m.AllianceInfos = &lallianceInfos
+	m.AllianceInfos = lallianceInfos
 
 	return nil
 }
@@ -9942,7 +9942,7 @@ func (m *IgnoredAddRequestMessage) Deserialize(r Reader) error {
 type TaxCollectorMovementMessage struct {
 	MovementType uint8
 
-	BasicInfos *TaxCollectorBasicInformations
+	BasicInfos TaxCollectorBasicInformations
 
 	PlayerId int64
 
@@ -9987,7 +9987,7 @@ func (m *TaxCollectorMovementMessage) Deserialize(r Reader) error {
 
 	lbasicInfos.Deserialize(r)
 
-	m.BasicInfos = &lbasicInfos
+	m.BasicInfos = lbasicInfos
 
 	lplayerId, err := r.ReadVarInt64()
 	if err != nil {
@@ -10036,7 +10036,7 @@ func (m *GuildInvitationMessage) Deserialize(r Reader) error {
 }
 
 type GuildHousesInformationMessage struct {
-	HousesInformations []*HouseInformationsForGuild
+	HousesInformations []HouseInformationsForGuild
 }
 
 func (m *GuildHousesInformationMessage) ID() uint16 {
@@ -10067,7 +10067,7 @@ func (m *GuildHousesInformationMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.HousesInformations = make([]*HouseInformationsForGuild, lhousesInformationsLen)
+	m.HousesInformations = make([]HouseInformationsForGuild, lhousesInformationsLen)
 
 	for i := range m.HousesInformations {
 
@@ -10075,7 +10075,7 @@ func (m *GuildHousesInformationMessage) Deserialize(r Reader) error {
 
 		lhousesInformations.Deserialize(r)
 
-		m.HousesInformations[i] = &lhousesInformations
+		m.HousesInformations[i] = lhousesInformations
 
 	}
 
@@ -10083,7 +10083,7 @@ func (m *GuildHousesInformationMessage) Deserialize(r Reader) error {
 }
 
 type GuildJoinedMessage struct {
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 
 	MemberRights uint32
 }
@@ -10111,7 +10111,7 @@ func (m *GuildJoinedMessage) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	lmemberRights, err := r.ReadVarUInt32()
 	if err != nil {
@@ -10225,7 +10225,7 @@ type PlayerStatusUpdateMessage struct {
 
 	PlayerId int64
 
-	Status *PlayerStatus
+	Status PlayerStatus
 }
 
 func (m *PlayerStatusUpdateMessage) ID() uint16 {
@@ -10280,7 +10280,7 @@ func (m *PlayerStatusUpdateMessage) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = lstatus.(*PlayerStatus)
+	m.Status = *lstatus.(*PlayerStatus)
 
 	return nil
 }
@@ -10475,7 +10475,7 @@ type GuildInvitedMessage struct {
 
 	RecruterName string
 
-	GuildInfo *BasicGuildInformations
+	GuildInfo BasicGuildInformations
 }
 
 func (m *GuildInvitedMessage) ID() uint16 {
@@ -10519,7 +10519,7 @@ func (m *GuildInvitedMessage) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	return nil
 }
@@ -10815,7 +10815,7 @@ func (m *SpouseGetInformationsMessage) Deserialize(r Reader) error {
 }
 
 type AbstractTaxCollectorListMessage struct {
-	Informations []*TaxCollectorInformations
+	Informations []TaxCollectorInformations
 }
 
 func (m *AbstractTaxCollectorListMessage) ID() uint16 {
@@ -10850,7 +10850,7 @@ func (m *AbstractTaxCollectorListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Informations = make([]*TaxCollectorInformations, linformationsLen)
+	m.Informations = make([]TaxCollectorInformations, linformationsLen)
 
 	for i := range m.Informations {
 
@@ -10865,7 +10865,7 @@ func (m *AbstractTaxCollectorListMessage) Deserialize(r Reader) error {
 
 		linformations.Deserialize(r)
 
-		m.Informations[i] = linformations.(*TaxCollectorInformations)
+		m.Informations[i] = *linformations.(*TaxCollectorInformations)
 
 	}
 
@@ -10877,7 +10877,7 @@ type TaxCollectorListMessage struct {
 
 	NbcollectorMax uint8
 
-	FightersInformations []*TaxCollectorFightersInformation
+	FightersInformations []TaxCollectorFightersInformation
 }
 
 func (m *TaxCollectorListMessage) ID() uint16 {
@@ -10927,7 +10927,7 @@ func (m *TaxCollectorListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FightersInformations = make([]*TaxCollectorFightersInformation, lfightersInformationsLen)
+	m.FightersInformations = make([]TaxCollectorFightersInformation, lfightersInformationsLen)
 
 	for i := range m.FightersInformations {
 
@@ -10935,7 +10935,7 @@ func (m *TaxCollectorListMessage) Deserialize(r Reader) error {
 
 		lfightersInformations.Deserialize(r)
 
-		m.FightersInformations[i] = &lfightersInformations
+		m.FightersInformations[i] = lfightersInformations
 
 	}
 
@@ -11213,7 +11213,7 @@ type PrismFightAttackerAddMessage struct {
 
 	FightId uint16
 
-	Attacker *CharacterMinimalPlusLookInformations
+	Attacker CharacterMinimalPlusLookInformations
 }
 
 func (m *PrismFightAttackerAddMessage) ID() uint16 {
@@ -11268,7 +11268,7 @@ func (m *PrismFightAttackerAddMessage) Deserialize(r Reader) error {
 
 	lattacker.Deserialize(r)
 
-	m.Attacker = lattacker.(*CharacterMinimalPlusLookInformations)
+	m.Attacker = *lattacker.(*CharacterMinimalPlusLookInformations)
 
 	return nil
 }
@@ -11491,11 +11491,11 @@ func (m *PrismFightAttackerRemoveMessage) Deserialize(r Reader) error {
 }
 
 type AllianceInsiderInfoMessage struct {
-	AllianceInfos *AllianceFactSheetInformations
+	AllianceInfos AllianceFactSheetInformations
 
-	Guilds []*GuildInsiderFactSheetInformations
+	Guilds []GuildInsiderFactSheetInformations
 
-	Prisms []*PrismSubareaEmptyInfo
+	Prisms []PrismSubareaEmptyInfo
 }
 
 func (m *AllianceInsiderInfoMessage) ID() uint16 {
@@ -11545,14 +11545,14 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 
 	lallianceInfos.Deserialize(r)
 
-	m.AllianceInfos = &lallianceInfos
+	m.AllianceInfos = lallianceInfos
 
 	lguildsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Guilds = make([]*GuildInsiderFactSheetInformations, lguildsLen)
+	m.Guilds = make([]GuildInsiderFactSheetInformations, lguildsLen)
 
 	for i := range m.Guilds {
 
@@ -11560,7 +11560,7 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 
 		lguilds.Deserialize(r)
 
-		m.Guilds[i] = &lguilds
+		m.Guilds[i] = lguilds
 
 	}
 
@@ -11569,7 +11569,7 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Prisms = make([]*PrismSubareaEmptyInfo, lprismsLen)
+	m.Prisms = make([]PrismSubareaEmptyInfo, lprismsLen)
 
 	for i := range m.Prisms {
 
@@ -11584,7 +11584,7 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 
 		lprisms.Deserialize(r)
 
-		m.Prisms[i] = lprisms.(*PrismSubareaEmptyInfo)
+		m.Prisms[i] = *lprisms.(*PrismSubareaEmptyInfo)
 
 	}
 
@@ -11703,7 +11703,7 @@ func (m *PrismFightRemovedMessage) Deserialize(r Reader) error {
 }
 
 type PrismFightAddedMessage struct {
-	Fight *PrismFightersInformation
+	Fight PrismFightersInformation
 }
 
 func (m *PrismFightAddedMessage) ID() uint16 {
@@ -11725,13 +11725,13 @@ func (m *PrismFightAddedMessage) Deserialize(r Reader) error {
 
 	lfight.Deserialize(r)
 
-	m.Fight = &lfight
+	m.Fight = lfight
 
 	return nil
 }
 
 type PrismsInfoValidMessage struct {
-	Fights []*PrismFightersInformation
+	Fights []PrismFightersInformation
 }
 
 func (m *PrismsInfoValidMessage) ID() uint16 {
@@ -11762,7 +11762,7 @@ func (m *PrismsInfoValidMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Fights = make([]*PrismFightersInformation, lfightsLen)
+	m.Fights = make([]PrismFightersInformation, lfightsLen)
 
 	for i := range m.Fights {
 
@@ -11770,7 +11770,7 @@ func (m *PrismsInfoValidMessage) Deserialize(r Reader) error {
 
 		lfights.Deserialize(r)
 
-		m.Fights[i] = &lfights
+		m.Fights[i] = lfights
 
 	}
 
@@ -11883,7 +11883,7 @@ type AllianceInvitedMessage struct {
 
 	RecruterName string
 
-	AllianceInfo *BasicNamedAllianceInformations
+	AllianceInfo BasicNamedAllianceInformations
 }
 
 func (m *AllianceInvitedMessage) ID() uint16 {
@@ -11927,13 +11927,13 @@ func (m *AllianceInvitedMessage) Deserialize(r Reader) error {
 
 	lallianceInfo.Deserialize(r)
 
-	m.AllianceInfo = &lallianceInfo
+	m.AllianceInfo = lallianceInfo
 
 	return nil
 }
 
 type AllianceJoinedMessage struct {
-	AllianceInfo *AllianceInformations
+	AllianceInfo AllianceInformations
 
 	Enabled bool
 
@@ -11967,7 +11967,7 @@ func (m *AllianceJoinedMessage) Deserialize(r Reader) error {
 
 	lallianceInfo.Deserialize(r)
 
-	m.AllianceInfo = &lallianceInfo
+	m.AllianceInfo = lallianceInfo
 
 	lenabled, err := r.ReadBoolean()
 	if err != nil {
@@ -12101,7 +12101,7 @@ func (m *PrismFightDefenderLeaveMessage) Deserialize(r Reader) error {
 }
 
 type PrismsListMessage struct {
-	Prisms []*PrismSubareaEmptyInfo
+	Prisms []PrismSubareaEmptyInfo
 }
 
 func (m *PrismsListMessage) ID() uint16 {
@@ -12136,7 +12136,7 @@ func (m *PrismsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Prisms = make([]*PrismSubareaEmptyInfo, lprismsLen)
+	m.Prisms = make([]PrismSubareaEmptyInfo, lprismsLen)
 
 	for i := range m.Prisms {
 
@@ -12151,7 +12151,7 @@ func (m *PrismsListMessage) Deserialize(r Reader) error {
 
 		lprisms.Deserialize(r)
 
-		m.Prisms[i] = lprisms.(*PrismSubareaEmptyInfo)
+		m.Prisms[i] = *lprisms.(*PrismSubareaEmptyInfo)
 
 	}
 
@@ -12244,9 +12244,9 @@ func (m *AlliancePrismDialogQuestionMessage) Deserialize(r Reader) error {
 }
 
 type AllianceFactsMessage struct {
-	Infos *AllianceFactSheetInformations
+	Infos AllianceFactSheetInformations
 
-	Guilds []*GuildInAllianceInformations
+	Guilds []GuildInAllianceInformations
 
 	ControlledSubareaIds []uint16
 
@@ -12317,14 +12317,14 @@ func (m *AllianceFactsMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = linfos.(*AllianceFactSheetInformations)
+	m.Infos = *linfos.(*AllianceFactSheetInformations)
 
 	lguildsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Guilds = make([]*GuildInAllianceInformations, lguildsLen)
+	m.Guilds = make([]GuildInAllianceInformations, lguildsLen)
 
 	for i := range m.Guilds {
 
@@ -12332,7 +12332,7 @@ func (m *AllianceFactsMessage) Deserialize(r Reader) error {
 
 		lguilds.Deserialize(r)
 
-		m.Guilds[i] = &lguilds
+		m.Guilds[i] = lguilds
 
 	}
 
@@ -12664,7 +12664,7 @@ func (m *AllianceInvitationStateRecruterMessage) Deserialize(r Reader) error {
 }
 
 type KohUpdateMessage struct {
-	Alliances []*AllianceInformations
+	Alliances []AllianceInformations
 
 	AllianceNbMembers []uint16
 
@@ -12672,7 +12672,7 @@ type KohUpdateMessage struct {
 
 	AllianceMatchScore []uint8
 
-	AllianceMapWinner *BasicAllianceInformations
+	AllianceMapWinner BasicAllianceInformations
 
 	AllianceMapWinnerScore uint32
 
@@ -12761,7 +12761,7 @@ func (m *KohUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Alliances = make([]*AllianceInformations, lalliancesLen)
+	m.Alliances = make([]AllianceInformations, lalliancesLen)
 
 	for i := range m.Alliances {
 
@@ -12769,7 +12769,7 @@ func (m *KohUpdateMessage) Deserialize(r Reader) error {
 
 		lalliances.Deserialize(r)
 
-		m.Alliances[i] = &lalliances
+		m.Alliances[i] = lalliances
 
 	}
 
@@ -12831,7 +12831,7 @@ func (m *KohUpdateMessage) Deserialize(r Reader) error {
 
 	lallianceMapWinner.Deserialize(r)
 
-	m.AllianceMapWinner = &lallianceMapWinner
+	m.AllianceMapWinner = lallianceMapWinner
 
 	lallianceMapWinnerScore, err := r.ReadVarUInt32()
 	if err != nil {
@@ -13091,7 +13091,7 @@ type PrismFightDefenderAddMessage struct {
 
 	FightId uint16
 
-	Defender *CharacterMinimalPlusLookInformations
+	Defender CharacterMinimalPlusLookInformations
 }
 
 func (m *PrismFightDefenderAddMessage) ID() uint16 {
@@ -13146,7 +13146,7 @@ func (m *PrismFightDefenderAddMessage) Deserialize(r Reader) error {
 
 	ldefender.Deserialize(r)
 
-	m.Defender = ldefender.(*CharacterMinimalPlusLookInformations)
+	m.Defender = *ldefender.(*CharacterMinimalPlusLookInformations)
 
 	return nil
 }
@@ -13645,7 +13645,7 @@ func (m *ChatClientPrivateMessage) Deserialize(r Reader) error {
 type ChatClientPrivateWithObjectMessage struct {
 	ChatClientPrivateMessage
 
-	Objects []*ObjectItem
+	Objects []ObjectItem
 }
 
 func (m *ChatClientPrivateWithObjectMessage) ID() uint16 {
@@ -13684,7 +13684,7 @@ func (m *ChatClientPrivateWithObjectMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -13692,7 +13692,7 @@ func (m *ChatClientPrivateWithObjectMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -13862,7 +13862,7 @@ func (m *ChatServerCopyMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeBidHouseUnsoldItemsMessage struct {
-	Items []*ObjectItemGenericQuantity
+	Items []ObjectItemGenericQuantity
 }
 
 func (m *ExchangeBidHouseUnsoldItemsMessage) ID() uint16 {
@@ -13893,7 +13893,7 @@ func (m *ExchangeBidHouseUnsoldItemsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Items = make([]*ObjectItemGenericQuantity, litemsLen)
+	m.Items = make([]ObjectItemGenericQuantity, litemsLen)
 
 	for i := range m.Items {
 
@@ -13901,7 +13901,7 @@ func (m *ExchangeBidHouseUnsoldItemsMessage) Deserialize(r Reader) error {
 
 		litems.Deserialize(r)
 
-		m.Items[i] = &litems
+		m.Items[i] = litems
 
 	}
 
@@ -13957,9 +13957,9 @@ func (m *ChatSmileyExtraPackListMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeOfflineSoldItemsMessage struct {
-	BidHouseItems []*ObjectItemGenericQuantityPrice
+	BidHouseItems []ObjectItemGenericQuantityPrice
 
-	MerchantItems []*ObjectItemGenericQuantityPrice
+	MerchantItems []ObjectItemGenericQuantityPrice
 }
 
 func (m *ExchangeOfflineSoldItemsMessage) ID() uint16 {
@@ -14002,7 +14002,7 @@ func (m *ExchangeOfflineSoldItemsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.BidHouseItems = make([]*ObjectItemGenericQuantityPrice, lbidHouseItemsLen)
+	m.BidHouseItems = make([]ObjectItemGenericQuantityPrice, lbidHouseItemsLen)
 
 	for i := range m.BidHouseItems {
 
@@ -14010,7 +14010,7 @@ func (m *ExchangeOfflineSoldItemsMessage) Deserialize(r Reader) error {
 
 		lbidHouseItems.Deserialize(r)
 
-		m.BidHouseItems[i] = &lbidHouseItems
+		m.BidHouseItems[i] = lbidHouseItems
 
 	}
 
@@ -14019,7 +14019,7 @@ func (m *ExchangeOfflineSoldItemsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.MerchantItems = make([]*ObjectItemGenericQuantityPrice, lmerchantItemsLen)
+	m.MerchantItems = make([]ObjectItemGenericQuantityPrice, lmerchantItemsLen)
 
 	for i := range m.MerchantItems {
 
@@ -14027,7 +14027,7 @@ func (m *ExchangeOfflineSoldItemsMessage) Deserialize(r Reader) error {
 
 		lmerchantItems.Deserialize(r)
 
-		m.MerchantItems[i] = &lmerchantItems
+		m.MerchantItems[i] = lmerchantItems
 
 	}
 
@@ -14079,7 +14079,7 @@ func (m *BasicTimeMessage) Deserialize(r Reader) error {
 type ChatClientMultiWithObjectMessage struct {
 	ChatClientMultiMessage
 
-	Objects []*ObjectItem
+	Objects []ObjectItem
 }
 
 func (m *ChatClientMultiWithObjectMessage) ID() uint16 {
@@ -14118,7 +14118,7 @@ func (m *ChatClientMultiWithObjectMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -14126,7 +14126,7 @@ func (m *ChatClientMultiWithObjectMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -14320,7 +14320,7 @@ type BasicWhoIsMessage struct {
 
 	OriginServerId int16
 
-	SocialGroups []*AbstractSocialGroupInfos
+	SocialGroups []AbstractSocialGroupInfos
 
 	Verbose bool
 
@@ -14470,7 +14470,7 @@ func (m *BasicWhoIsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SocialGroups = make([]*AbstractSocialGroupInfos, lsocialGroupsLen)
+	m.SocialGroups = make([]AbstractSocialGroupInfos, lsocialGroupsLen)
 
 	for i := range m.SocialGroups {
 
@@ -14485,7 +14485,7 @@ func (m *BasicWhoIsMessage) Deserialize(r Reader) error {
 
 		lsocialGroups.Deserialize(r)
 
-		m.SocialGroups[i] = lsocialGroups.(*AbstractSocialGroupInfos)
+		m.SocialGroups[i] = *lsocialGroups.(*AbstractSocialGroupInfos)
 
 	}
 
@@ -14834,7 +14834,7 @@ func (m *TextInformationMessage) Deserialize(r Reader) error {
 type ChatServerCopyWithObjectMessage struct {
 	ChatServerCopyMessage
 
-	Objects []*ObjectItem
+	Objects []ObjectItem
 }
 
 func (m *ChatServerCopyWithObjectMessage) ID() uint16 {
@@ -14873,7 +14873,7 @@ func (m *ChatServerCopyWithObjectMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -14881,7 +14881,7 @@ func (m *ChatServerCopyWithObjectMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -14962,7 +14962,7 @@ func (m *NumericWhoIsMessage) Deserialize(r Reader) error {
 type ChatServerWithObjectMessage struct {
 	ChatServerMessage
 
-	Objects []*ObjectItem
+	Objects []ObjectItem
 }
 
 func (m *ChatServerWithObjectMessage) ID() uint16 {
@@ -15001,7 +15001,7 @@ func (m *ChatServerWithObjectMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -15009,7 +15009,7 @@ func (m *ChatServerWithObjectMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -15214,7 +15214,7 @@ func (m *DownloadGetCurrentSpeedRequestMessage) Deserialize(r Reader) error {
 type RefreshCharacterStatsMessage struct {
 	FighterId float64
 
-	Stats *GameFightMinimalStats
+	Stats GameFightMinimalStats
 }
 
 func (m *RefreshCharacterStatsMessage) ID() uint16 {
@@ -15247,7 +15247,7 @@ func (m *RefreshCharacterStatsMessage) Deserialize(r Reader) error {
 
 	lstats.Deserialize(r)
 
-	m.Stats = &lstats
+	m.Stats = lstats
 
 	return nil
 }
@@ -15543,9 +15543,9 @@ type GameFightEndMessage struct {
 
 	LootShareLimitMalus int16
 
-	Results []*FightResultListEntry
+	Results []FightResultListEntry
 
-	NamedPartyTeamsOutcomes []*NamedPartyTeamWithOutcome
+	NamedPartyTeamsOutcomes []NamedPartyTeamWithOutcome
 }
 
 func (m *GameFightEndMessage) ID() uint16 {
@@ -15625,7 +15625,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Results = make([]*FightResultListEntry, lresultsLen)
+	m.Results = make([]FightResultListEntry, lresultsLen)
 
 	for i := range m.Results {
 
@@ -15640,7 +15640,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 
 		lresults.Deserialize(r)
 
-		m.Results[i] = lresults.(*FightResultListEntry)
+		m.Results[i] = *lresults.(*FightResultListEntry)
 
 	}
 
@@ -15649,7 +15649,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.NamedPartyTeamsOutcomes = make([]*NamedPartyTeamWithOutcome, lnamedPartyTeamsOutcomesLen)
+	m.NamedPartyTeamsOutcomes = make([]NamedPartyTeamWithOutcome, lnamedPartyTeamsOutcomesLen)
 
 	for i := range m.NamedPartyTeamsOutcomes {
 
@@ -15657,7 +15657,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 
 		lnamedPartyTeamsOutcomes.Deserialize(r)
 
-		m.NamedPartyTeamsOutcomes[i] = &lnamedPartyTeamsOutcomes
+		m.NamedPartyTeamsOutcomes[i] = lnamedPartyTeamsOutcomes
 
 	}
 
@@ -15665,7 +15665,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 }
 
 type FighterStatsListMessage struct {
-	Stats *CharacterCharacteristicsInformations
+	Stats CharacterCharacteristicsInformations
 }
 
 func (m *FighterStatsListMessage) ID() uint16 {
@@ -15687,7 +15687,7 @@ func (m *FighterStatsListMessage) Deserialize(r Reader) error {
 
 	lstats.Deserialize(r)
 
-	m.Stats = &lstats
+	m.Stats = lstats
 
 	return nil
 }
@@ -15780,7 +15780,7 @@ func (m *GameFightTurnEndMessage) Deserialize(r Reader) error {
 }
 
 type GameFightSynchronizeMessage struct {
-	Fighters []*GameFightFighterInformations
+	Fighters []GameFightFighterInformations
 }
 
 func (m *GameFightSynchronizeMessage) ID() uint16 {
@@ -15815,7 +15815,7 @@ func (m *GameFightSynchronizeMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Fighters = make([]*GameFightFighterInformations, lfightersLen)
+	m.Fighters = make([]GameFightFighterInformations, lfightersLen)
 
 	for i := range m.Fighters {
 
@@ -15830,7 +15830,7 @@ func (m *GameFightSynchronizeMessage) Deserialize(r Reader) error {
 
 		lfighters.Deserialize(r)
 
-		m.Fighters[i] = lfighters.(*GameFightFighterInformations)
+		m.Fighters[i] = *lfighters.(*GameFightFighterInformations)
 
 	}
 
@@ -16023,7 +16023,7 @@ func (m *GameFightTurnReadyMessage) Deserialize(r Reader) error {
 }
 
 type CharacterStatsListMessage struct {
-	Stats *CharacterCharacteristicsInformations
+	Stats CharacterCharacteristicsInformations
 }
 
 func (m *CharacterStatsListMessage) ID() uint16 {
@@ -16045,7 +16045,7 @@ func (m *CharacterStatsListMessage) Deserialize(r Reader) error {
 
 	lstats.Deserialize(r)
 
-	m.Stats = &lstats
+	m.Stats = lstats
 
 	return nil
 }
@@ -16114,11 +16114,11 @@ type SlaveSwitchContextMessage struct {
 
 	SlaveId float64
 
-	SlaveSpells []*SpellItem
+	SlaveSpells []SpellItem
 
-	SlaveStats *CharacterCharacteristicsInformations
+	SlaveStats CharacterCharacteristicsInformations
 
-	Shortcuts []*Shortcut
+	Shortcuts []Shortcut
 }
 
 func (m *SlaveSwitchContextMessage) ID() uint16 {
@@ -16191,7 +16191,7 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SlaveSpells = make([]*SpellItem, lslaveSpellsLen)
+	m.SlaveSpells = make([]SpellItem, lslaveSpellsLen)
 
 	for i := range m.SlaveSpells {
 
@@ -16199,7 +16199,7 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 
 		lslaveSpells.Deserialize(r)
 
-		m.SlaveSpells[i] = &lslaveSpells
+		m.SlaveSpells[i] = lslaveSpells
 
 	}
 
@@ -16207,14 +16207,14 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 
 	lslaveStats.Deserialize(r)
 
-	m.SlaveStats = &lslaveStats
+	m.SlaveStats = lslaveStats
 
 	lshortcutsLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.Shortcuts = make([]*Shortcut, lshortcutsLen)
+	m.Shortcuts = make([]Shortcut, lshortcutsLen)
 
 	for i := range m.Shortcuts {
 
@@ -16229,7 +16229,7 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 
 		lshortcuts.Deserialize(r)
 
-		m.Shortcuts[i] = lshortcuts.(*Shortcut)
+		m.Shortcuts[i] = *lshortcuts.(*Shortcut)
 
 	}
 
@@ -16279,7 +16279,7 @@ func (m *GameFightHumanReadyStateMessage) Deserialize(r Reader) error {
 }
 
 type GameFightShowFighterMessage struct {
-	Informations *GameFightFighterInformations
+	Informations GameFightFighterInformations
 }
 
 func (m *GameFightShowFighterMessage) ID() uint16 {
@@ -16312,7 +16312,7 @@ func (m *GameFightShowFighterMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = linformations.(*GameFightFighterInformations)
+	m.Informations = *linformations.(*GameFightFighterInformations)
 
 	return nil
 }
@@ -16344,7 +16344,7 @@ func (m *GameFightShowFighterRandomStaticPoseMessage) Deserialize(r Reader) erro
 }
 
 type GameEntitiesDispositionMessage struct {
-	Dispositions []*IdentifiedEntityDispositionInformations
+	Dispositions []IdentifiedEntityDispositionInformations
 }
 
 func (m *GameEntitiesDispositionMessage) ID() uint16 {
@@ -16375,7 +16375,7 @@ func (m *GameEntitiesDispositionMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Dispositions = make([]*IdentifiedEntityDispositionInformations, ldispositionsLen)
+	m.Dispositions = make([]IdentifiedEntityDispositionInformations, ldispositionsLen)
 
 	for i := range m.Dispositions {
 
@@ -16383,7 +16383,7 @@ func (m *GameEntitiesDispositionMessage) Deserialize(r Reader) error {
 
 		ldispositions.Deserialize(r)
 
-		m.Dispositions[i] = &ldispositions
+		m.Dispositions[i] = ldispositions
 
 	}
 
@@ -16391,7 +16391,7 @@ func (m *GameEntitiesDispositionMessage) Deserialize(r Reader) error {
 }
 
 type GameFightPlacementSwapPositionsMessage struct {
-	Dispositions []*IdentifiedEntityDispositionInformations
+	Dispositions []IdentifiedEntityDispositionInformations
 }
 
 func (m *GameFightPlacementSwapPositionsMessage) ID() uint16 {
@@ -16413,7 +16413,7 @@ func (m *GameFightPlacementSwapPositionsMessage) Serialize(w Writer) error {
 
 func (m *GameFightPlacementSwapPositionsMessage) Deserialize(r Reader) error {
 
-	m.Dispositions = make([]*IdentifiedEntityDispositionInformations, 2)
+	m.Dispositions = make([]IdentifiedEntityDispositionInformations, 2)
 
 	for i := range m.Dispositions {
 
@@ -16421,7 +16421,7 @@ func (m *GameFightPlacementSwapPositionsMessage) Deserialize(r Reader) error {
 
 		ldispositions.Deserialize(r)
 
-		m.Dispositions[i] = &ldispositions
+		m.Dispositions[i] = ldispositions
 
 	}
 
@@ -16431,7 +16431,7 @@ func (m *GameFightPlacementSwapPositionsMessage) Deserialize(r Reader) error {
 type GameContextRefreshEntityLookMessage struct {
 	Id float64
 
-	Look *EntityLook
+	Look EntityLook
 }
 
 func (m *GameContextRefreshEntityLookMessage) ID() uint16 {
@@ -16464,7 +16464,7 @@ func (m *GameContextRefreshEntityLookMessage) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	return nil
 }
@@ -16616,7 +16616,7 @@ func (m *GameActionFightCarryCharacterMessage) Deserialize(r Reader) error {
 }
 
 type GameEntityDispositionMessage struct {
-	Disposition *IdentifiedEntityDispositionInformations
+	Disposition IdentifiedEntityDispositionInformations
 }
 
 func (m *GameEntityDispositionMessage) ID() uint16 {
@@ -16638,7 +16638,7 @@ func (m *GameEntityDispositionMessage) Deserialize(r Reader) error {
 
 	ldisposition.Deserialize(r)
 
-	m.Disposition = &ldisposition
+	m.Disposition = ldisposition
 
 	return nil
 }
@@ -16750,7 +16750,7 @@ func (m *GameActionFightThrowCharacterMessage) Deserialize(r Reader) error {
 type MapComplementaryInformationsDataInHouseMessage struct {
 	MapComplementaryInformationsDataMessage
 
-	CurrentHouse *HouseInformationsInside
+	CurrentHouse HouseInformationsInside
 }
 
 func (m *MapComplementaryInformationsDataInHouseMessage) ID() uint16 {
@@ -16780,7 +16780,7 @@ func (m *MapComplementaryInformationsDataInHouseMessage) Deserialize(r Reader) e
 
 	lcurrentHouse.Deserialize(r)
 
-	m.CurrentHouse = &lcurrentHouse
+	m.CurrentHouse = lcurrentHouse
 
 	return nil
 }
@@ -16825,7 +16825,7 @@ func (m *ShowCellSpectatorMessage) Deserialize(r Reader) error {
 }
 
 type GameFightRefreshFighterMessage struct {
-	Informations *GameContextActorInformations
+	Informations GameContextActorInformations
 }
 
 func (m *GameFightRefreshFighterMessage) ID() uint16 {
@@ -16858,7 +16858,7 @@ func (m *GameFightRefreshFighterMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = linformations.(*GameContextActorInformations)
+	m.Informations = *linformations.(*GameContextActorInformations)
 
 	return nil
 }
@@ -16912,7 +16912,7 @@ func (m *GameContextRemoveMultipleElementsMessage) Deserialize(r Reader) error {
 }
 
 type GameDataPaddockObjectAddMessage struct {
-	PaddockItemDescription *PaddockItem
+	PaddockItemDescription PaddockItem
 }
 
 func (m *GameDataPaddockObjectAddMessage) ID() uint16 {
@@ -16934,7 +16934,7 @@ func (m *GameDataPaddockObjectAddMessage) Deserialize(r Reader) error {
 
 	lpaddockItemDescription.Deserialize(r)
 
-	m.PaddockItemDescription = &lpaddockItemDescription
+	m.PaddockItemDescription = lpaddockItemDescription
 
 	return nil
 }
@@ -16969,7 +16969,7 @@ func (m *MapFightCountMessage) Deserialize(r Reader) error {
 }
 
 type GameRolePlayShowChallengeMessage struct {
-	CommonsInfos *FightCommonInformations
+	CommonsInfos FightCommonInformations
 }
 
 func (m *GameRolePlayShowChallengeMessage) ID() uint16 {
@@ -16991,13 +16991,13 @@ func (m *GameRolePlayShowChallengeMessage) Deserialize(r Reader) error {
 
 	lcommonsInfos.Deserialize(r)
 
-	m.CommonsInfos = &lcommonsInfos
+	m.CommonsInfos = lcommonsInfos
 
 	return nil
 }
 
 type GameRolePlayShowMultipleActorsMessage struct {
-	InformationsList []*GameRolePlayActorInformations
+	InformationsList []GameRolePlayActorInformations
 }
 
 func (m *GameRolePlayShowMultipleActorsMessage) ID() uint16 {
@@ -17028,7 +17028,7 @@ func (m *GameRolePlayShowMultipleActorsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.InformationsList = make([]*GameRolePlayActorInformations, linformationsListLen)
+	m.InformationsList = make([]GameRolePlayActorInformations, linformationsListLen)
 
 	for i := range m.InformationsList {
 
@@ -17036,7 +17036,7 @@ func (m *GameRolePlayShowMultipleActorsMessage) Deserialize(r Reader) error {
 
 		linformationsList.Deserialize(r)
 
-		m.InformationsList[i] = &linformationsList
+		m.InformationsList[i] = linformationsList
 
 	}
 
@@ -17044,7 +17044,7 @@ func (m *GameRolePlayShowMultipleActorsMessage) Deserialize(r Reader) error {
 }
 
 type GameMapChangeOrientationMessage struct {
-	Orientation *ActorOrientation
+	Orientation ActorOrientation
 }
 
 func (m *GameMapChangeOrientationMessage) ID() uint16 {
@@ -17066,7 +17066,7 @@ func (m *GameMapChangeOrientationMessage) Deserialize(r Reader) error {
 
 	lorientation.Deserialize(r)
 
-	m.Orientation = &lorientation
+	m.Orientation = lorientation
 
 	return nil
 }
@@ -17076,7 +17076,7 @@ type MapNpcsQuestStatusUpdateMessage struct {
 
 	NpcsIdsWithQuest []int32
 
-	QuestFlags []*GameRolePlayNpcQuestFlag
+	QuestFlags []GameRolePlayNpcQuestFlag
 
 	NpcsIdsWithoutQuest []int32
 }
@@ -17162,7 +17162,7 @@ func (m *MapNpcsQuestStatusUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.QuestFlags = make([]*GameRolePlayNpcQuestFlag, lquestFlagsLen)
+	m.QuestFlags = make([]GameRolePlayNpcQuestFlag, lquestFlagsLen)
 
 	for i := range m.QuestFlags {
 
@@ -17170,7 +17170,7 @@ func (m *MapNpcsQuestStatusUpdateMessage) Deserialize(r Reader) error {
 
 		lquestFlags.Deserialize(r)
 
-		m.QuestFlags[i] = &lquestFlags
+		m.QuestFlags[i] = lquestFlags
 
 	}
 
@@ -17267,7 +17267,7 @@ func (m *EmotePlayRequestMessage) Deserialize(r Reader) error {
 }
 
 type GameMapChangeOrientationsMessage struct {
-	Orientations []*ActorOrientation
+	Orientations []ActorOrientation
 }
 
 func (m *GameMapChangeOrientationsMessage) ID() uint16 {
@@ -17298,7 +17298,7 @@ func (m *GameMapChangeOrientationsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Orientations = make([]*ActorOrientation, lorientationsLen)
+	m.Orientations = make([]ActorOrientation, lorientationsLen)
 
 	for i := range m.Orientations {
 
@@ -17306,7 +17306,7 @@ func (m *GameMapChangeOrientationsMessage) Deserialize(r Reader) error {
 
 		lorientations.Deserialize(r)
 
-		m.Orientations[i] = &lorientations
+		m.Orientations[i] = lorientations
 
 	}
 
@@ -17343,7 +17343,7 @@ func (m *PaddockRemoveItemRequestMessage) Deserialize(r Reader) error {
 }
 
 type StatedMapUpdateMessage struct {
-	StatedElements []*StatedElement
+	StatedElements []StatedElement
 }
 
 func (m *StatedMapUpdateMessage) ID() uint16 {
@@ -17374,7 +17374,7 @@ func (m *StatedMapUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.StatedElements = make([]*StatedElement, lstatedElementsLen)
+	m.StatedElements = make([]StatedElement, lstatedElementsLen)
 
 	for i := range m.StatedElements {
 
@@ -17382,7 +17382,7 @@ func (m *StatedMapUpdateMessage) Deserialize(r Reader) error {
 
 		lstatedElements.Deserialize(r)
 
-		m.StatedElements[i] = &lstatedElements
+		m.StatedElements[i] = lstatedElements
 
 	}
 
@@ -17421,7 +17421,7 @@ func (m *ObjectGroundRemovedMessage) Deserialize(r Reader) error {
 type MapComplementaryInformationsDataInHavenBagMessage struct {
 	MapComplementaryInformationsDataMessage
 
-	OwnerInformations *CharacterMinimalInformations
+	OwnerInformations CharacterMinimalInformations
 
 	Theme int8
 
@@ -17469,7 +17469,7 @@ func (m *MapComplementaryInformationsDataInHavenBagMessage) Deserialize(r Reader
 
 	lownerInformations.Deserialize(r)
 
-	m.OwnerInformations = &lownerInformations
+	m.OwnerInformations = lownerInformations
 
 	ltheme, err := r.ReadInt8()
 	if err != nil {
@@ -17578,7 +17578,7 @@ func (m *ObjectGroundListAddedMessage) Deserialize(r Reader) error {
 type GameFightUpdateTeamMessage struct {
 	FightId uint16
 
-	Team *FightTeamInformations
+	Team FightTeamInformations
 }
 
 func (m *GameFightUpdateTeamMessage) ID() uint16 {
@@ -17611,7 +17611,7 @@ func (m *GameFightUpdateTeamMessage) Deserialize(r Reader) error {
 
 	lteam.Deserialize(r)
 
-	m.Team = &lteam
+	m.Team = lteam
 
 	return nil
 }
@@ -17676,7 +17676,7 @@ type HousePropertiesMessage struct {
 
 	DoorsOnMap []uint32
 
-	Properties *HouseInstanceInformations
+	Properties HouseInstanceInformations
 }
 
 func (m *HousePropertiesMessage) ID() uint16 {
@@ -17750,7 +17750,7 @@ func (m *HousePropertiesMessage) Deserialize(r Reader) error {
 
 	lproperties.Deserialize(r)
 
-	m.Properties = lproperties.(*HouseInstanceInformations)
+	m.Properties = *lproperties.(*HouseInstanceInformations)
 
 	return nil
 }
@@ -17901,7 +17901,7 @@ func (m *GameFightOptionStateUpdateMessage) Deserialize(r Reader) error {
 }
 
 type InteractiveMapUpdateMessage struct {
-	InteractiveElements []*InteractiveElement
+	InteractiveElements []InteractiveElement
 }
 
 func (m *InteractiveMapUpdateMessage) ID() uint16 {
@@ -17936,7 +17936,7 @@ func (m *InteractiveMapUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.InteractiveElements = make([]*InteractiveElement, linteractiveElementsLen)
+	m.InteractiveElements = make([]InteractiveElement, linteractiveElementsLen)
 
 	for i := range m.InteractiveElements {
 
@@ -17951,7 +17951,7 @@ func (m *InteractiveMapUpdateMessage) Deserialize(r Reader) error {
 
 		linteractiveElements.Deserialize(r)
 
-		m.InteractiveElements[i] = linteractiveElements.(*InteractiveElement)
+		m.InteractiveElements[i] = *linteractiveElements.(*InteractiveElement)
 
 	}
 
@@ -17959,7 +17959,7 @@ func (m *InteractiveMapUpdateMessage) Deserialize(r Reader) error {
 }
 
 type GameDataPaddockObjectListAddMessage struct {
-	PaddockItemDescription []*PaddockItem
+	PaddockItemDescription []PaddockItem
 }
 
 func (m *GameDataPaddockObjectListAddMessage) ID() uint16 {
@@ -17990,7 +17990,7 @@ func (m *GameDataPaddockObjectListAddMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PaddockItemDescription = make([]*PaddockItem, lpaddockItemDescriptionLen)
+	m.PaddockItemDescription = make([]PaddockItem, lpaddockItemDescriptionLen)
 
 	for i := range m.PaddockItemDescription {
 
@@ -17998,7 +17998,7 @@ func (m *GameDataPaddockObjectListAddMessage) Deserialize(r Reader) error {
 
 		lpaddockItemDescription.Deserialize(r)
 
-		m.PaddockItemDescription[i] = &lpaddockItemDescription
+		m.PaddockItemDescription[i] = lpaddockItemDescription
 
 	}
 
@@ -18163,7 +18163,7 @@ func (m *MapInformationsRequestMessage) Deserialize(r Reader) error {
 }
 
 type GameRolePlayShowActorMessage struct {
-	Informations *GameRolePlayActorInformations
+	Informations GameRolePlayActorInformations
 }
 
 func (m *GameRolePlayShowActorMessage) ID() uint16 {
@@ -18196,7 +18196,7 @@ func (m *GameRolePlayShowActorMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = linformations.(*GameRolePlayActorInformations)
+	m.Informations = *linformations.(*GameRolePlayActorInformations)
 
 	return nil
 }
@@ -19080,7 +19080,7 @@ func (m *BasicAckMessage) Deserialize(r Reader) error {
 }
 
 type ServersListMessage struct {
-	Servers []*GameServerInformations
+	Servers []GameServerInformations
 
 	AlreadyConnectedToServerId uint16
 
@@ -19123,7 +19123,7 @@ func (m *ServersListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Servers = make([]*GameServerInformations, lserversLen)
+	m.Servers = make([]GameServerInformations, lserversLen)
 
 	for i := range m.Servers {
 
@@ -19131,7 +19131,7 @@ func (m *ServersListMessage) Deserialize(r Reader) error {
 
 		lservers.Deserialize(r)
 
-		m.Servers[i] = &lservers
+		m.Servers[i] = lservers
 
 	}
 
@@ -20126,7 +20126,7 @@ func (m *GameActionFightDispellSpellMessage) Deserialize(r Reader) error {
 type GameActionFightMarkCellsMessage struct {
 	AbstractGameActionMessage
 
-	Mark *GameActionMark
+	Mark GameActionMark
 }
 
 func (m *GameActionFightMarkCellsMessage) ID() uint16 {
@@ -20156,7 +20156,7 @@ func (m *GameActionFightMarkCellsMessage) Deserialize(r Reader) error {
 
 	lmark.Deserialize(r)
 
-	m.Mark = &lmark
+	m.Mark = lmark
 
 	return nil
 }
@@ -20476,7 +20476,7 @@ func (m *GameActionFightUnmarkCellsMessage) Deserialize(r Reader) error {
 type GameActionFightSummonMessage struct {
 	AbstractGameActionMessage
 
-	Summons []*GameFightFighterInformations
+	Summons []GameFightFighterInformations
 }
 
 func (m *GameActionFightSummonMessage) ID() uint16 {
@@ -20519,7 +20519,7 @@ func (m *GameActionFightSummonMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Summons = make([]*GameFightFighterInformations, lsummonsLen)
+	m.Summons = make([]GameFightFighterInformations, lsummonsLen)
 
 	for i := range m.Summons {
 
@@ -20534,7 +20534,7 @@ func (m *GameActionFightSummonMessage) Deserialize(r Reader) error {
 
 		lsummons.Deserialize(r)
 
-		m.Summons[i] = lsummons.(*GameFightFighterInformations)
+		m.Summons[i] = *lsummons.(*GameFightFighterInformations)
 
 	}
 
@@ -20724,7 +20724,7 @@ type GameActionFightChangeLookMessage struct {
 
 	TargetId float64
 
-	EntityLook *EntityLook
+	EntityLook EntityLook
 }
 
 func (m *GameActionFightChangeLookMessage) ID() uint16 {
@@ -20765,7 +20765,7 @@ func (m *GameActionFightChangeLookMessage) Deserialize(r Reader) error {
 
 	lentityLook.Deserialize(r)
 
-	m.EntityLook = &lentityLook
+	m.EntityLook = lentityLook
 
 	return nil
 }
@@ -20825,7 +20825,7 @@ func (m *GameActionFightActivateGlyphTrapMessage) Deserialize(r Reader) error {
 type GameActionFightDispellableEffectMessage struct {
 	AbstractGameActionMessage
 
-	Effect *AbstractFightDispellableEffect
+	Effect AbstractFightDispellableEffect
 }
 
 func (m *GameActionFightDispellableEffectMessage) ID() uint16 {
@@ -20866,7 +20866,7 @@ func (m *GameActionFightDispellableEffectMessage) Deserialize(r Reader) error {
 
 	leffect.Deserialize(r)
 
-	m.Effect = leffect.(*AbstractFightDispellableEffect)
+	m.Effect = *leffect.(*AbstractFightDispellableEffect)
 
 	return nil
 }
@@ -20976,15 +20976,15 @@ func (m *GameActionFightInvisibilityMessage) Deserialize(r Reader) error {
 }
 
 type GameFightSpectateMessage struct {
-	Effects []*FightDispellableEffectExtendedInformations
+	Effects []FightDispellableEffectExtendedInformations
 
-	Marks []*GameActionMark
+	Marks []GameActionMark
 
 	GameTurn uint16
 
 	FightStart uint32
 
-	Idols []*Idol
+	Idols []Idol
 }
 
 func (m *GameFightSpectateMessage) ID() uint16 {
@@ -21047,7 +21047,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*FightDispellableEffectExtendedInformations, leffectsLen)
+	m.Effects = make([]FightDispellableEffectExtendedInformations, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -21055,7 +21055,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = &leffects
+		m.Effects[i] = leffects
 
 	}
 
@@ -21064,7 +21064,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Marks = make([]*GameActionMark, lmarksLen)
+	m.Marks = make([]GameActionMark, lmarksLen)
 
 	for i := range m.Marks {
 
@@ -21072,7 +21072,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 
 		lmarks.Deserialize(r)
 
-		m.Marks[i] = &lmarks
+		m.Marks[i] = lmarks
 
 	}
 
@@ -21095,7 +21095,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Idols = make([]*Idol, lidolsLen)
+	m.Idols = make([]Idol, lidolsLen)
 
 	for i := range m.Idols {
 
@@ -21103,7 +21103,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 
 		lidols.Deserialize(r)
 
-		m.Idols[i] = &lidols
+		m.Idols[i] = lidols
 
 	}
 
@@ -21113,7 +21113,7 @@ func (m *GameFightSpectateMessage) Deserialize(r Reader) error {
 type GameFightResumeMessage struct {
 	GameFightSpectateMessage
 
-	SpellCooldowns []*GameFightSpellCooldown
+	SpellCooldowns []GameFightSpellCooldown
 
 	SummonCount uint8
 
@@ -21164,7 +21164,7 @@ func (m *GameFightResumeMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SpellCooldowns = make([]*GameFightSpellCooldown, lspellCooldownsLen)
+	m.SpellCooldowns = make([]GameFightSpellCooldown, lspellCooldownsLen)
 
 	for i := range m.SpellCooldowns {
 
@@ -21172,7 +21172,7 @@ func (m *GameFightResumeMessage) Deserialize(r Reader) error {
 
 		lspellCooldowns.Deserialize(r)
 
-		m.SpellCooldowns[i] = &lspellCooldowns
+		m.SpellCooldowns[i] = lspellCooldowns
 
 	}
 
@@ -21194,7 +21194,7 @@ func (m *GameFightResumeMessage) Deserialize(r Reader) error {
 }
 
 type MapObstacleUpdateMessage struct {
-	Obstacles []*MapObstacle
+	Obstacles []MapObstacle
 }
 
 func (m *MapObstacleUpdateMessage) ID() uint16 {
@@ -21225,7 +21225,7 @@ func (m *MapObstacleUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Obstacles = make([]*MapObstacle, lobstaclesLen)
+	m.Obstacles = make([]MapObstacle, lobstaclesLen)
 
 	for i := range m.Obstacles {
 
@@ -21233,7 +21233,7 @@ func (m *MapObstacleUpdateMessage) Deserialize(r Reader) error {
 
 		lobstacles.Deserialize(r)
 
-		m.Obstacles[i] = &lobstacles
+		m.Obstacles[i] = lobstacles
 
 	}
 
@@ -21433,7 +21433,7 @@ func (m *ChallengeTargetUpdateMessage) Deserialize(r Reader) error {
 type GameFightResumeWithSlavesMessage struct {
 	GameFightResumeMessage
 
-	SlavesInfo []*GameFightResumeSlaveInfo
+	SlavesInfo []GameFightResumeSlaveInfo
 }
 
 func (m *GameFightResumeWithSlavesMessage) ID() uint16 {
@@ -21472,7 +21472,7 @@ func (m *GameFightResumeWithSlavesMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SlavesInfo = make([]*GameFightResumeSlaveInfo, lslavesInfoLen)
+	m.SlavesInfo = make([]GameFightResumeSlaveInfo, lslavesInfoLen)
 
 	for i := range m.SlavesInfo {
 
@@ -21480,7 +21480,7 @@ func (m *GameFightResumeWithSlavesMessage) Deserialize(r Reader) error {
 
 		lslavesInfo.Deserialize(r)
 
-		m.SlavesInfo[i] = &lslavesInfo
+		m.SlavesInfo[i] = lslavesInfo
 
 	}
 
@@ -21546,7 +21546,7 @@ func (m *ChallengeTargetsListRequestMessage) Deserialize(r Reader) error {
 }
 
 type GameFightStartMessage struct {
-	Idols []*Idol
+	Idols []Idol
 }
 
 func (m *GameFightStartMessage) ID() uint16 {
@@ -21577,7 +21577,7 @@ func (m *GameFightStartMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Idols = make([]*Idol, lidolsLen)
+	m.Idols = make([]Idol, lidolsLen)
 
 	for i := range m.Idols {
 
@@ -21585,7 +21585,7 @@ func (m *GameFightStartMessage) Deserialize(r Reader) error {
 
 		lidols.Deserialize(r)
 
-		m.Idols[i] = &lidols
+		m.Idols[i] = lidols
 
 	}
 
@@ -21622,7 +21622,7 @@ func (m *GameContextReadyMessage) Deserialize(r Reader) error {
 }
 
 type ArenaFighterLeaveMessage struct {
-	Leaver *CharacterBasicMinimalInformations
+	Leaver CharacterBasicMinimalInformations
 }
 
 func (m *ArenaFighterLeaveMessage) ID() uint16 {
@@ -21644,7 +21644,7 @@ func (m *ArenaFighterLeaveMessage) Deserialize(r Reader) error {
 
 	lleaver.Deserialize(r)
 
-	m.Leaver = &lleaver
+	m.Leaver = lleaver
 
 	return nil
 }
@@ -21831,7 +21831,7 @@ func (m *ExchangeCraftResultMessage) Deserialize(r Reader) error {
 }
 
 type InviteInHavenBagOfferMessage struct {
-	HostInformations *CharacterMinimalInformations
+	HostInformations CharacterMinimalInformations
 
 	TimeLeftBeforeCancel int32
 }
@@ -21859,7 +21859,7 @@ func (m *InviteInHavenBagOfferMessage) Deserialize(r Reader) error {
 
 	lhostInformations.Deserialize(r)
 
-	m.HostInformations = &lhostInformations
+	m.HostInformations = lhostInformations
 
 	ltimeLeftBeforeCancel, err := r.ReadVarInt32()
 	if err != nil {
@@ -22232,9 +22232,9 @@ func (m *ExchangeSellOkMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeStartedBidSellerMessage struct {
-	SellerDescriptor *SellerBuyerDescriptor
+	SellerDescriptor SellerBuyerDescriptor
 
-	ObjectsInfos []*ObjectItemToSellInBid
+	ObjectsInfos []ObjectItemToSellInBid
 }
 
 func (m *ExchangeStartedBidSellerMessage) ID() uint16 {
@@ -22268,14 +22268,14 @@ func (m *ExchangeStartedBidSellerMessage) Deserialize(r Reader) error {
 
 	lsellerDescriptor.Deserialize(r)
 
-	m.SellerDescriptor = &lsellerDescriptor
+	m.SellerDescriptor = lsellerDescriptor
 
 	lobjectsInfosLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItemToSellInBid, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItemToSellInBid, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -22283,7 +22283,7 @@ func (m *ExchangeStartedBidSellerMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -22322,7 +22322,7 @@ func (m *ExchangeStartOkNpcTradeMessage) Deserialize(r Reader) error {
 type ExchangeStartOkHumanVendorMessage struct {
 	SellerId float64
 
-	ObjectsInfos []*ObjectItemToSellInHumanVendorShop
+	ObjectsInfos []ObjectItemToSellInHumanVendorShop
 }
 
 func (m *ExchangeStartOkHumanVendorMessage) ID() uint16 {
@@ -22364,7 +22364,7 @@ func (m *ExchangeStartOkHumanVendorMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItemToSellInHumanVendorShop, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItemToSellInHumanVendorShop, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -22372,7 +22372,7 @@ func (m *ExchangeStartOkHumanVendorMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -22468,7 +22468,7 @@ func (m *ExchangeStartedMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeStartedMountStockMessage struct {
-	ObjectsInfos []*ObjectItem
+	ObjectsInfos []ObjectItem
 }
 
 func (m *ExchangeStartedMountStockMessage) ID() uint16 {
@@ -22499,7 +22499,7 @@ func (m *ExchangeStartedMountStockMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItem, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItem, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -22507,7 +22507,7 @@ func (m *ExchangeStartedMountStockMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -22544,7 +22544,7 @@ func (m *JobAllowMultiCraftRequestMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeStartedTaxCollectorShopMessage struct {
-	Objects []*ObjectItem
+	Objects []ObjectItem
 
 	Kamas int64
 }
@@ -22581,7 +22581,7 @@ func (m *ExchangeStartedTaxCollectorShopMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -22589,7 +22589,7 @@ func (m *ExchangeStartedTaxCollectorShopMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -22791,7 +22791,7 @@ func (m *ExchangeStartOkCraftWithInformationMessage) Deserialize(r Reader) error
 }
 
 type PaddockPropertiesMessage struct {
-	Properties *PaddockInstancesInformations
+	Properties PaddockInstancesInformations
 }
 
 func (m *PaddockPropertiesMessage) ID() uint16 {
@@ -22813,7 +22813,7 @@ func (m *PaddockPropertiesMessage) Deserialize(r Reader) error {
 
 	lproperties.Deserialize(r)
 
-	m.Properties = &lproperties
+	m.Properties = lproperties
 
 	return nil
 }
@@ -23082,7 +23082,7 @@ type ExchangeStartOkNpcShopMessage struct {
 
 	TokenId uint16
 
-	ObjectsInfos []*ObjectItemToSellInNpcShop
+	ObjectsInfos []ObjectItemToSellInNpcShop
 }
 
 func (m *ExchangeStartOkNpcShopMessage) ID() uint16 {
@@ -23135,7 +23135,7 @@ func (m *ExchangeStartOkNpcShopMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItemToSellInNpcShop, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItemToSellInNpcShop, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -23143,7 +23143,7 @@ func (m *ExchangeStartOkNpcShopMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -23235,7 +23235,7 @@ func (m *GameRolePlayFightRequestCanceledMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeStartedBidBuyerMessage struct {
-	BuyerDescriptor *SellerBuyerDescriptor
+	BuyerDescriptor SellerBuyerDescriptor
 }
 
 func (m *ExchangeStartedBidBuyerMessage) ID() uint16 {
@@ -23257,7 +23257,7 @@ func (m *ExchangeStartedBidBuyerMessage) Deserialize(r Reader) error {
 
 	lbuyerDescriptor.Deserialize(r)
 
-	m.BuyerDescriptor = &lbuyerDescriptor
+	m.BuyerDescriptor = lbuyerDescriptor
 
 	return nil
 }
@@ -23671,7 +23671,7 @@ func (m *EnterHavenBagRequestMessage) Deserialize(r Reader) error {
 }
 
 type InviteInHavenBagMessage struct {
-	GuestInformations *CharacterMinimalInformations
+	GuestInformations CharacterMinimalInformations
 
 	Accept bool
 }
@@ -23699,7 +23699,7 @@ func (m *InviteInHavenBagMessage) Deserialize(r Reader) error {
 
 	lguestInformations.Deserialize(r)
 
-	m.GuestInformations = &lguestInformations
+	m.GuestInformations = lguestInformations
 
 	laccept, err := r.ReadBoolean()
 	if err != nil {
@@ -23712,7 +23712,7 @@ func (m *InviteInHavenBagMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeShopStockStartedMessage struct {
-	ObjectsInfos []*ObjectItemToSell
+	ObjectsInfos []ObjectItemToSell
 }
 
 func (m *ExchangeShopStockStartedMessage) ID() uint16 {
@@ -23743,7 +23743,7 @@ func (m *ExchangeShopStockStartedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsInfos = make([]*ObjectItemToSell, lobjectsInfosLen)
+	m.ObjectsInfos = make([]ObjectItemToSell, lobjectsInfosLen)
 
 	for i := range m.ObjectsInfos {
 
@@ -23751,7 +23751,7 @@ func (m *ExchangeShopStockStartedMessage) Deserialize(r Reader) error {
 
 		lobjectsInfos.Deserialize(r)
 
-		m.ObjectsInfos[i] = &lobjectsInfos
+		m.ObjectsInfos[i] = lobjectsInfos
 
 	}
 
@@ -23814,7 +23814,7 @@ func (m *DisplayNumericalValuePaddockMessage) Deserialize(r Reader) error {
 }
 
 type InviteInHavenBagClosedMessage struct {
-	HostInformations *CharacterMinimalInformations
+	HostInformations CharacterMinimalInformations
 }
 
 func (m *InviteInHavenBagClosedMessage) ID() uint16 {
@@ -23836,7 +23836,7 @@ func (m *InviteInHavenBagClosedMessage) Deserialize(r Reader) error {
 
 	lhostInformations.Deserialize(r)
 
-	m.HostInformations = &lhostInformations
+	m.HostInformations = lhostInformations
 
 	return nil
 }
@@ -24788,7 +24788,7 @@ type HouseToSellListMessage struct {
 
 	TotalPage uint16
 
-	HouseList []*HouseInformationsForSell
+	HouseList []HouseInformationsForSell
 }
 
 func (m *HouseToSellListMessage) ID() uint16 {
@@ -24841,7 +24841,7 @@ func (m *HouseToSellListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.HouseList = make([]*HouseInformationsForSell, lhouseListLen)
+	m.HouseList = make([]HouseInformationsForSell, lhouseListLen)
 
 	for i := range m.HouseList {
 
@@ -24849,7 +24849,7 @@ func (m *HouseToSellListMessage) Deserialize(r Reader) error {
 
 		lhouseList.Deserialize(r)
 
-		m.HouseList[i] = &lhouseList
+		m.HouseList[i] = lhouseList
 
 	}
 
@@ -24942,7 +24942,7 @@ type PaddockToSellListMessage struct {
 
 	TotalPage uint16
 
-	PaddockList []*PaddockInformationsForSell
+	PaddockList []PaddockInformationsForSell
 }
 
 func (m *PaddockToSellListMessage) ID() uint16 {
@@ -24995,7 +24995,7 @@ func (m *PaddockToSellListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PaddockList = make([]*PaddockInformationsForSell, lpaddockListLen)
+	m.PaddockList = make([]PaddockInformationsForSell, lpaddockListLen)
 
 	for i := range m.PaddockList {
 
@@ -25003,7 +25003,7 @@ func (m *PaddockToSellListMessage) Deserialize(r Reader) error {
 
 		lpaddockList.Deserialize(r)
 
-		m.PaddockList[i] = &lpaddockList
+		m.PaddockList[i] = lpaddockList
 
 	}
 
@@ -25126,7 +25126,7 @@ func (m *GameActionFightCastRequestMessage) Deserialize(r Reader) error {
 type IdolFightPreparationUpdateMessage struct {
 	IdolSource uint8
 
-	Idols []*Idol
+	Idols []Idol
 }
 
 func (m *IdolFightPreparationUpdateMessage) ID() uint16 {
@@ -25172,7 +25172,7 @@ func (m *IdolFightPreparationUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Idols = make([]*Idol, lidolsLen)
+	m.Idols = make([]Idol, lidolsLen)
 
 	for i := range m.Idols {
 
@@ -25187,7 +25187,7 @@ func (m *IdolFightPreparationUpdateMessage) Deserialize(r Reader) error {
 
 		lidols.Deserialize(r)
 
-		m.Idols[i] = lidols.(*Idol)
+		m.Idols[i] = *lidols.(*Idol)
 
 	}
 
@@ -25689,7 +25689,7 @@ func (m *AlmanachCalendarDateMessage) Deserialize(r Reader) error {
 type SetCharacterRestrictionsMessage struct {
 	ActorId float64
 
-	Restrictions *ActorRestrictionsInformations
+	Restrictions ActorRestrictionsInformations
 }
 
 func (m *SetCharacterRestrictionsMessage) ID() uint16 {
@@ -25722,7 +25722,7 @@ func (m *SetCharacterRestrictionsMessage) Deserialize(r Reader) error {
 
 	lrestrictions.Deserialize(r)
 
-	m.Restrictions = &lrestrictions
+	m.Restrictions = lrestrictions
 
 	return nil
 }
@@ -25770,7 +25770,7 @@ func (m *StartupActionsObjetAttributionMessage) Deserialize(r Reader) error {
 }
 
 type StartupActionAddMessage struct {
-	NewAction *StartupActionAddObject
+	NewAction StartupActionAddObject
 }
 
 func (m *StartupActionAddMessage) ID() uint16 {
@@ -25792,7 +25792,7 @@ func (m *StartupActionAddMessage) Deserialize(r Reader) error {
 
 	lnewAction.Deserialize(r)
 
-	m.NewAction = &lnewAction
+	m.NewAction = lnewAction
 
 	return nil
 }
@@ -25881,7 +25881,7 @@ func (m *StartupActionsAllAttributionMessage) Deserialize(r Reader) error {
 type CompassUpdateMessage struct {
 	Type uint8
 
-	Coords *MapCoordinates
+	Coords MapCoordinates
 }
 
 func (m *CompassUpdateMessage) ID() uint16 {
@@ -25925,7 +25925,7 @@ func (m *CompassUpdateMessage) Deserialize(r Reader) error {
 
 	lcoords.Deserialize(r)
 
-	m.Coords = lcoords.(*MapCoordinates)
+	m.Coords = *lcoords.(*MapCoordinates)
 
 	return nil
 }
@@ -26174,7 +26174,7 @@ func (m *SpellModifyRequestMessage) Deserialize(r Reader) error {
 }
 
 type StartupActionsListMessage struct {
-	Actions []*StartupActionAddObject
+	Actions []StartupActionAddObject
 }
 
 func (m *StartupActionsListMessage) ID() uint16 {
@@ -26205,7 +26205,7 @@ func (m *StartupActionsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Actions = make([]*StartupActionAddObject, lactionsLen)
+	m.Actions = make([]StartupActionAddObject, lactionsLen)
 
 	for i := range m.Actions {
 
@@ -26213,7 +26213,7 @@ func (m *StartupActionsListMessage) Deserialize(r Reader) error {
 
 		lactions.Deserialize(r)
 
-		m.Actions[i] = &lactions
+		m.Actions[i] = lactions
 
 	}
 
@@ -26408,7 +26408,7 @@ type SetUpdateMessage struct {
 
 	SetObjects []uint16
 
-	SetEffects []*ObjectEffect
+	SetEffects []ObjectEffect
 }
 
 func (m *SetUpdateMessage) ID() uint16 {
@@ -26484,7 +26484,7 @@ func (m *SetUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SetEffects = make([]*ObjectEffect, lsetEffectsLen)
+	m.SetEffects = make([]ObjectEffect, lsetEffectsLen)
 
 	for i := range m.SetEffects {
 
@@ -26499,7 +26499,7 @@ func (m *SetUpdateMessage) Deserialize(r Reader) error {
 
 		lsetEffects.Deserialize(r)
 
-		m.SetEffects[i] = lsetEffects.(*ObjectEffect)
+		m.SetEffects[i] = *lsetEffects.(*ObjectEffect)
 
 	}
 
@@ -26704,7 +26704,7 @@ func (m *GameRolePlayPlayerLifeStatusMessage) Deserialize(r Reader) error {
 }
 
 type DareCreatedMessage struct {
-	DareInfos *DareInformations
+	DareInfos DareInformations
 
 	NeedNotifications bool
 }
@@ -26732,7 +26732,7 @@ func (m *DareCreatedMessage) Deserialize(r Reader) error {
 
 	ldareInfos.Deserialize(r)
 
-	m.DareInfos = &ldareInfos
+	m.DareInfos = ldareInfos
 
 	lneedNotifications, err := r.ReadBoolean()
 	if err != nil {
@@ -26887,9 +26887,9 @@ func (m *DareRewardConsumeRequestMessage) Deserialize(r Reader) error {
 }
 
 type DareInformationsMessage struct {
-	DareFixedInfos *DareInformations
+	DareFixedInfos DareInformations
 
-	DareVersatilesInfos *DareVersatileInformations
+	DareVersatilesInfos DareVersatileInformations
 }
 
 func (m *DareInformationsMessage) ID() uint16 {
@@ -26915,13 +26915,13 @@ func (m *DareInformationsMessage) Deserialize(r Reader) error {
 
 	ldareFixedInfos.Deserialize(r)
 
-	m.DareFixedInfos = &ldareFixedInfos
+	m.DareFixedInfos = ldareFixedInfos
 
 	var ldareVersatilesInfos DareVersatileInformations
 
 	ldareVersatilesInfos.Deserialize(r)
 
-	m.DareVersatilesInfos = &ldareVersatilesInfos
+	m.DareVersatilesInfos = ldareVersatilesInfos
 
 	return nil
 }
@@ -26975,9 +26975,9 @@ func (m *DareWonListMessage) Deserialize(r Reader) error {
 }
 
 type DareCreatedListMessage struct {
-	DaresFixedInfos []*DareInformations
+	DaresFixedInfos []DareInformations
 
-	DaresVersatilesInfos []*DareVersatileInformations
+	DaresVersatilesInfos []DareVersatileInformations
 }
 
 func (m *DareCreatedListMessage) ID() uint16 {
@@ -27020,7 +27020,7 @@ func (m *DareCreatedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DaresFixedInfos = make([]*DareInformations, ldaresFixedInfosLen)
+	m.DaresFixedInfos = make([]DareInformations, ldaresFixedInfosLen)
 
 	for i := range m.DaresFixedInfos {
 
@@ -27028,7 +27028,7 @@ func (m *DareCreatedListMessage) Deserialize(r Reader) error {
 
 		ldaresFixedInfos.Deserialize(r)
 
-		m.DaresFixedInfos[i] = &ldaresFixedInfos
+		m.DaresFixedInfos[i] = ldaresFixedInfos
 
 	}
 
@@ -27037,7 +27037,7 @@ func (m *DareCreatedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DaresVersatilesInfos = make([]*DareVersatileInformations, ldaresVersatilesInfosLen)
+	m.DaresVersatilesInfos = make([]DareVersatileInformations, ldaresVersatilesInfosLen)
 
 	for i := range m.DaresVersatilesInfos {
 
@@ -27045,7 +27045,7 @@ func (m *DareCreatedListMessage) Deserialize(r Reader) error {
 
 		ldaresVersatilesInfos.Deserialize(r)
 
-		m.DaresVersatilesInfos[i] = &ldaresVersatilesInfos
+		m.DaresVersatilesInfos[i] = ldaresVersatilesInfos
 
 	}
 
@@ -27082,7 +27082,7 @@ func (m *DareCanceledMessage) Deserialize(r Reader) error {
 }
 
 type DareRewardsListMessage struct {
-	Rewards []*DareReward
+	Rewards []DareReward
 }
 
 func (m *DareRewardsListMessage) ID() uint16 {
@@ -27113,7 +27113,7 @@ func (m *DareRewardsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Rewards = make([]*DareReward, lrewardsLen)
+	m.Rewards = make([]DareReward, lrewardsLen)
 
 	for i := range m.Rewards {
 
@@ -27121,7 +27121,7 @@ func (m *DareRewardsListMessage) Deserialize(r Reader) error {
 
 		lrewards.Deserialize(r)
 
-		m.Rewards[i] = &lrewards
+		m.Rewards[i] = lrewards
 
 	}
 
@@ -27129,7 +27129,7 @@ func (m *DareRewardsListMessage) Deserialize(r Reader) error {
 }
 
 type DareRewardWonMessage struct {
-	Reward *DareReward
+	Reward DareReward
 }
 
 func (m *DareRewardWonMessage) ID() uint16 {
@@ -27151,7 +27151,7 @@ func (m *DareRewardWonMessage) Deserialize(r Reader) error {
 
 	lreward.Deserialize(r)
 
-	m.Reward = &lreward
+	m.Reward = lreward
 
 	return nil
 }
@@ -27175,7 +27175,7 @@ type DareCreationRequestMessage struct {
 
 	NeedNotifications bool
 
-	Criterions []*DareCriteria
+	Criterions []DareCriteria
 }
 
 func (m *DareCreationRequestMessage) ID() uint16 {
@@ -27288,7 +27288,7 @@ func (m *DareCreationRequestMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Criterions = make([]*DareCriteria, lcriterionsLen)
+	m.Criterions = make([]DareCriteria, lcriterionsLen)
 
 	for i := range m.Criterions {
 
@@ -27296,7 +27296,7 @@ func (m *DareCreationRequestMessage) Deserialize(r Reader) error {
 
 		lcriterions.Deserialize(r)
 
-		m.Criterions[i] = &lcriterions
+		m.Criterions[i] = lcriterions
 
 	}
 
@@ -27310,7 +27310,7 @@ type DareSubscribedMessage struct {
 
 	Subscribe bool
 
-	DareVersatilesInfos *DareVersatileInformations
+	DareVersatilesInfos DareVersatileInformations
 }
 
 func (m *DareSubscribedMessage) ID() uint16 {
@@ -27362,7 +27362,7 @@ func (m *DareSubscribedMessage) Deserialize(r Reader) error {
 
 	ldareVersatilesInfos.Deserialize(r)
 
-	m.DareVersatilesInfos = &ldareVersatilesInfos
+	m.DareVersatilesInfos = ldareVersatilesInfos
 
 	return nil
 }
@@ -27439,7 +27439,7 @@ func (m *DareWonMessage) Deserialize(r Reader) error {
 }
 
 type DareListMessage struct {
-	Dares []*DareInformations
+	Dares []DareInformations
 }
 
 func (m *DareListMessage) ID() uint16 {
@@ -27470,7 +27470,7 @@ func (m *DareListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Dares = make([]*DareInformations, ldaresLen)
+	m.Dares = make([]DareInformations, ldaresLen)
 
 	for i := range m.Dares {
 
@@ -27478,7 +27478,7 @@ func (m *DareListMessage) Deserialize(r Reader) error {
 
 		ldares.Deserialize(r)
 
-		m.Dares[i] = &ldares
+		m.Dares[i] = ldares
 
 	}
 
@@ -27515,9 +27515,9 @@ func (m *DareInformationsRequestMessage) Deserialize(r Reader) error {
 }
 
 type DareSubscribedListMessage struct {
-	DaresFixedInfos []*DareInformations
+	DaresFixedInfos []DareInformations
 
-	DaresVersatilesInfos []*DareVersatileInformations
+	DaresVersatilesInfos []DareVersatileInformations
 }
 
 func (m *DareSubscribedListMessage) ID() uint16 {
@@ -27560,7 +27560,7 @@ func (m *DareSubscribedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DaresFixedInfos = make([]*DareInformations, ldaresFixedInfosLen)
+	m.DaresFixedInfos = make([]DareInformations, ldaresFixedInfosLen)
 
 	for i := range m.DaresFixedInfos {
 
@@ -27568,7 +27568,7 @@ func (m *DareSubscribedListMessage) Deserialize(r Reader) error {
 
 		ldaresFixedInfos.Deserialize(r)
 
-		m.DaresFixedInfos[i] = &ldaresFixedInfos
+		m.DaresFixedInfos[i] = ldaresFixedInfos
 
 	}
 
@@ -27577,7 +27577,7 @@ func (m *DareSubscribedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DaresVersatilesInfos = make([]*DareVersatileInformations, ldaresVersatilesInfosLen)
+	m.DaresVersatilesInfos = make([]DareVersatileInformations, ldaresVersatilesInfosLen)
 
 	for i := range m.DaresVersatilesInfos {
 
@@ -27585,7 +27585,7 @@ func (m *DareSubscribedListMessage) Deserialize(r Reader) error {
 
 		ldaresVersatilesInfos.Deserialize(r)
 
-		m.DaresVersatilesInfos[i] = &ldaresVersatilesInfos
+		m.DaresVersatilesInfos[i] = ldaresVersatilesInfos
 
 	}
 
@@ -27593,7 +27593,7 @@ func (m *DareSubscribedListMessage) Deserialize(r Reader) error {
 }
 
 type DareVersatileListMessage struct {
-	Dares []*DareVersatileInformations
+	Dares []DareVersatileInformations
 }
 
 func (m *DareVersatileListMessage) ID() uint16 {
@@ -27624,7 +27624,7 @@ func (m *DareVersatileListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Dares = make([]*DareVersatileInformations, ldaresLen)
+	m.Dares = make([]DareVersatileInformations, ldaresLen)
 
 	for i := range m.Dares {
 
@@ -27632,7 +27632,7 @@ func (m *DareVersatileListMessage) Deserialize(r Reader) error {
 
 		ldares.Deserialize(r)
 
-		m.Dares[i] = &ldares
+		m.Dares[i] = ldares
 
 	}
 
@@ -27740,7 +27740,7 @@ func (m *InventoryPresetItemUpdateErrorMessage) Deserialize(r Reader) error {
 }
 
 type InventoryPresetUpdateMessage struct {
-	Preset *Preset
+	Preset Preset
 }
 
 func (m *InventoryPresetUpdateMessage) ID() uint16 {
@@ -27762,7 +27762,7 @@ func (m *InventoryPresetUpdateMessage) Deserialize(r Reader) error {
 
 	lpreset.Deserialize(r)
 
-	m.Preset = &lpreset
+	m.Preset = lpreset
 
 	return nil
 }
@@ -27884,7 +27884,7 @@ func (m *ObjectUseOnCellMessage) Deserialize(r Reader) error {
 }
 
 type ObjectsQuantityMessage struct {
-	ObjectsUIDAndQty []*ObjectItemQuantity
+	ObjectsUIDAndQty []ObjectItemQuantity
 }
 
 func (m *ObjectsQuantityMessage) ID() uint16 {
@@ -27915,7 +27915,7 @@ func (m *ObjectsQuantityMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectsUIDAndQty = make([]*ObjectItemQuantity, lobjectsUIDAndQtyLen)
+	m.ObjectsUIDAndQty = make([]ObjectItemQuantity, lobjectsUIDAndQtyLen)
 
 	for i := range m.ObjectsUIDAndQty {
 
@@ -27923,7 +27923,7 @@ func (m *ObjectsQuantityMessage) Deserialize(r Reader) error {
 
 		lobjectsUIDAndQty.Deserialize(r)
 
-		m.ObjectsUIDAndQty[i] = &lobjectsUIDAndQty
+		m.ObjectsUIDAndQty[i] = lobjectsUIDAndQty
 
 	}
 
@@ -28017,7 +28017,7 @@ func (m *InventoryPresetSaveMessage) Deserialize(r Reader) error {
 type ShortcutBarAddRequestMessage struct {
 	BarType uint8
 
-	Shortcut *Shortcut
+	Shortcut Shortcut
 }
 
 func (m *ShortcutBarAddRequestMessage) ID() uint16 {
@@ -28061,13 +28061,13 @@ func (m *ShortcutBarAddRequestMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = lshortcut.(*Shortcut)
+	m.Shortcut = *lshortcut.(*Shortcut)
 
 	return nil
 }
 
 type ObjectModifiedMessage struct {
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ObjectModifiedMessage) ID() uint16 {
@@ -28089,7 +28089,7 @@ func (m *ObjectModifiedMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
@@ -28097,7 +28097,7 @@ func (m *ObjectModifiedMessage) Deserialize(r Reader) error {
 type InventoryPresetItemUpdateMessage struct {
 	PresetId uint8
 
-	PresetItem *PresetItem
+	PresetItem PresetItem
 }
 
 func (m *InventoryPresetItemUpdateMessage) ID() uint16 {
@@ -28130,7 +28130,7 @@ func (m *InventoryPresetItemUpdateMessage) Deserialize(r Reader) error {
 
 	lpresetItem.Deserialize(r)
 
-	m.PresetItem = &lpresetItem
+	m.PresetItem = lpresetItem
 
 	return nil
 }
@@ -28275,7 +28275,7 @@ func (m *ObjectQuantityMessage) Deserialize(r Reader) error {
 }
 
 type ObjectsAddedMessage struct {
-	Object []*ObjectItem
+	Object []ObjectItem
 }
 
 func (m *ObjectsAddedMessage) ID() uint16 {
@@ -28306,7 +28306,7 @@ func (m *ObjectsAddedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Object = make([]*ObjectItem, lobjectLen)
+	m.Object = make([]ObjectItem, lobjectLen)
 
 	for i := range m.Object {
 
@@ -28314,7 +28314,7 @@ func (m *ObjectsAddedMessage) Deserialize(r Reader) error {
 
 		lobject.Deserialize(r)
 
-		m.Object[i] = &lobject
+		m.Object[i] = lobject
 
 	}
 
@@ -28403,7 +28403,7 @@ func (m *ObjectDropMessage) Deserialize(r Reader) error {
 }
 
 type DecraftResultMessage struct {
-	Results []*DecraftedItemStackInfo
+	Results []DecraftedItemStackInfo
 }
 
 func (m *DecraftResultMessage) ID() uint16 {
@@ -28434,7 +28434,7 @@ func (m *DecraftResultMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Results = make([]*DecraftedItemStackInfo, lresultsLen)
+	m.Results = make([]DecraftedItemStackInfo, lresultsLen)
 
 	for i := range m.Results {
 
@@ -28442,7 +28442,7 @@ func (m *DecraftResultMessage) Deserialize(r Reader) error {
 
 		lresults.Deserialize(r)
 
-		m.Results[i] = &lresults
+		m.Results[i] = lresults
 
 	}
 
@@ -28500,7 +28500,7 @@ func (m *AccessoryPreviewRequestMessage) Deserialize(r Reader) error {
 type ShortcutBarRefreshMessage struct {
 	BarType uint8
 
-	Shortcut *Shortcut
+	Shortcut Shortcut
 }
 
 func (m *ShortcutBarRefreshMessage) ID() uint16 {
@@ -28544,7 +28544,7 @@ func (m *ShortcutBarRefreshMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = lshortcut.(*Shortcut)
+	m.Shortcut = *lshortcut.(*Shortcut)
 
 	return nil
 }
@@ -28730,7 +28730,7 @@ func (m *InventoryPresetUseResultMessage) Deserialize(r Reader) error {
 }
 
 type InventoryContentMessage struct {
-	Objects []*ObjectItem
+	Objects []ObjectItem
 
 	Kamas int64
 }
@@ -28767,7 +28767,7 @@ func (m *InventoryContentMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objects = make([]*ObjectItem, lobjectsLen)
+	m.Objects = make([]ObjectItem, lobjectsLen)
 
 	for i := range m.Objects {
 
@@ -28775,7 +28775,7 @@ func (m *InventoryContentMessage) Deserialize(r Reader) error {
 
 		lobjects.Deserialize(r)
 
-		m.Objects[i] = &lobjects
+		m.Objects[i] = lobjects
 
 	}
 
@@ -28792,9 +28792,9 @@ func (m *InventoryContentMessage) Deserialize(r Reader) error {
 type InventoryContentAndPresetMessage struct {
 	InventoryContentMessage
 
-	Presets []*Preset
+	Presets []Preset
 
-	IdolsPresets []*IdolsPreset
+	IdolsPresets []IdolsPreset
 }
 
 func (m *InventoryContentAndPresetMessage) ID() uint16 {
@@ -28845,7 +28845,7 @@ func (m *InventoryContentAndPresetMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Presets = make([]*Preset, lpresetsLen)
+	m.Presets = make([]Preset, lpresetsLen)
 
 	for i := range m.Presets {
 
@@ -28853,7 +28853,7 @@ func (m *InventoryContentAndPresetMessage) Deserialize(r Reader) error {
 
 		lpresets.Deserialize(r)
 
-		m.Presets[i] = &lpresets
+		m.Presets[i] = lpresets
 
 	}
 
@@ -28862,7 +28862,7 @@ func (m *InventoryContentAndPresetMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.IdolsPresets = make([]*IdolsPreset, lidolsPresetsLen)
+	m.IdolsPresets = make([]IdolsPreset, lidolsPresetsLen)
 
 	for i := range m.IdolsPresets {
 
@@ -28870,7 +28870,7 @@ func (m *InventoryContentAndPresetMessage) Deserialize(r Reader) error {
 
 		lidolsPresets.Deserialize(r)
 
-		m.IdolsPresets[i] = &lidolsPresets
+		m.IdolsPresets[i] = lidolsPresets
 
 	}
 
@@ -29077,7 +29077,7 @@ func (m *ObjectMovementMessage) Deserialize(r Reader) error {
 type ShortcutBarReplacedMessage struct {
 	BarType uint8
 
-	Shortcut *Shortcut
+	Shortcut Shortcut
 }
 
 func (m *ShortcutBarReplacedMessage) ID() uint16 {
@@ -29121,7 +29121,7 @@ func (m *ShortcutBarReplacedMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = lshortcut.(*Shortcut)
+	m.Shortcut = *lshortcut.(*Shortcut)
 
 	return nil
 }
@@ -29295,7 +29295,7 @@ func (m *InventoryPresetUseMessage) Deserialize(r Reader) error {
 }
 
 type AccessoryPreviewMessage struct {
-	Look *EntityLook
+	Look EntityLook
 }
 
 func (m *AccessoryPreviewMessage) ID() uint16 {
@@ -29317,7 +29317,7 @@ func (m *AccessoryPreviewMessage) Deserialize(r Reader) error {
 
 	llook.Deserialize(r)
 
-	m.Look = &llook
+	m.Look = llook
 
 	return nil
 }
@@ -29365,7 +29365,7 @@ func (m *ShortcutBarRemoveRequestMessage) Deserialize(r Reader) error {
 }
 
 type ObjectAddedMessage struct {
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ObjectAddedMessage) ID() uint16 {
@@ -29387,7 +29387,7 @@ func (m *ObjectAddedMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
@@ -29395,7 +29395,7 @@ func (m *ObjectAddedMessage) Deserialize(r Reader) error {
 type ShortcutBarContentMessage struct {
 	BarType uint8
 
-	Shortcuts []*Shortcut
+	Shortcuts []Shortcut
 }
 
 func (m *ShortcutBarContentMessage) ID() uint16 {
@@ -29441,7 +29441,7 @@ func (m *ShortcutBarContentMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Shortcuts = make([]*Shortcut, lshortcutsLen)
+	m.Shortcuts = make([]Shortcut, lshortcutsLen)
 
 	for i := range m.Shortcuts {
 
@@ -29456,7 +29456,7 @@ func (m *ShortcutBarContentMessage) Deserialize(r Reader) error {
 
 		lshortcuts.Deserialize(r)
 
-		m.Shortcuts[i] = lshortcuts.(*Shortcut)
+		m.Shortcuts[i] = *lshortcuts.(*Shortcut)
 
 	}
 
@@ -29578,7 +29578,7 @@ func (m *MountSterilizedMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeMountsStableAddMessage struct {
-	MountDescription []*MountClientData
+	MountDescription []MountClientData
 }
 
 func (m *ExchangeMountsStableAddMessage) ID() uint16 {
@@ -29609,7 +29609,7 @@ func (m *ExchangeMountsStableAddMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.MountDescription = make([]*MountClientData, lmountDescriptionLen)
+	m.MountDescription = make([]MountClientData, lmountDescriptionLen)
 
 	for i := range m.MountDescription {
 
@@ -29617,7 +29617,7 @@ func (m *ExchangeMountsStableAddMessage) Deserialize(r Reader) error {
 
 		lmountDescription.Deserialize(r)
 
-		m.MountDescription[i] = &lmountDescription
+		m.MountDescription[i] = lmountDescription
 
 	}
 
@@ -29625,7 +29625,7 @@ func (m *ExchangeMountsStableAddMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeMountsPaddockAddMessage struct {
-	MountDescription []*MountClientData
+	MountDescription []MountClientData
 }
 
 func (m *ExchangeMountsPaddockAddMessage) ID() uint16 {
@@ -29656,7 +29656,7 @@ func (m *ExchangeMountsPaddockAddMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.MountDescription = make([]*MountClientData, lmountDescriptionLen)
+	m.MountDescription = make([]MountClientData, lmountDescriptionLen)
 
 	for i := range m.MountDescription {
 
@@ -29664,7 +29664,7 @@ func (m *ExchangeMountsPaddockAddMessage) Deserialize(r Reader) error {
 
 		lmountDescription.Deserialize(r)
 
-		m.MountDescription[i] = &lmountDescription
+		m.MountDescription[i] = lmountDescription
 
 	}
 
@@ -29773,7 +29773,7 @@ func (m *MountEmoteIconUsedOkMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeStartOkMountWithOutPaddockMessage struct {
-	StabledMountsDescription []*MountClientData
+	StabledMountsDescription []MountClientData
 }
 
 func (m *ExchangeStartOkMountWithOutPaddockMessage) ID() uint16 {
@@ -29804,7 +29804,7 @@ func (m *ExchangeStartOkMountWithOutPaddockMessage) Deserialize(r Reader) error 
 		return err
 	}
 
-	m.StabledMountsDescription = make([]*MountClientData, lstabledMountsDescriptionLen)
+	m.StabledMountsDescription = make([]MountClientData, lstabledMountsDescriptionLen)
 
 	for i := range m.StabledMountsDescription {
 
@@ -29812,7 +29812,7 @@ func (m *ExchangeStartOkMountWithOutPaddockMessage) Deserialize(r Reader) error 
 
 		lstabledMountsDescription.Deserialize(r)
 
-		m.StabledMountsDescription[i] = &lstabledMountsDescription
+		m.StabledMountsDescription[i] = lstabledMountsDescription
 
 	}
 
@@ -29822,7 +29822,7 @@ func (m *ExchangeStartOkMountWithOutPaddockMessage) Deserialize(r Reader) error 
 type ExchangeStartOkMountMessage struct {
 	ExchangeStartOkMountWithOutPaddockMessage
 
-	PaddockedMountsDescription []*MountClientData
+	PaddockedMountsDescription []MountClientData
 }
 
 func (m *ExchangeStartOkMountMessage) ID() uint16 {
@@ -29861,7 +29861,7 @@ func (m *ExchangeStartOkMountMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PaddockedMountsDescription = make([]*MountClientData, lpaddockedMountsDescriptionLen)
+	m.PaddockedMountsDescription = make([]MountClientData, lpaddockedMountsDescriptionLen)
 
 	for i := range m.PaddockedMountsDescription {
 
@@ -29869,7 +29869,7 @@ func (m *ExchangeStartOkMountMessage) Deserialize(r Reader) error {
 
 		lpaddockedMountsDescription.Deserialize(r)
 
-		m.PaddockedMountsDescription[i] = &lpaddockedMountsDescription
+		m.PaddockedMountsDescription[i] = lpaddockedMountsDescription
 
 	}
 
@@ -30416,7 +30416,7 @@ func (m *ExchangeMountsPaddockRemoveMessage) Deserialize(r Reader) error {
 }
 
 type MountDataMessage struct {
-	MountData *MountClientData
+	MountData MountClientData
 }
 
 func (m *MountDataMessage) ID() uint16 {
@@ -30438,7 +30438,7 @@ func (m *MountDataMessage) Deserialize(r Reader) error {
 
 	lmountData.Deserialize(r)
 
-	m.MountData = &lmountData
+	m.MountData = lmountData
 
 	return nil
 }
@@ -30492,7 +30492,7 @@ func (m *ExchangeMountsStableRemoveMessage) Deserialize(r Reader) error {
 }
 
 type MountSetMessage struct {
-	MountData *MountClientData
+	MountData MountClientData
 }
 
 func (m *MountSetMessage) ID() uint16 {
@@ -30514,7 +30514,7 @@ func (m *MountSetMessage) Deserialize(r Reader) error {
 
 	lmountData.Deserialize(r)
 
-	m.MountData = &lmountData
+	m.MountData = lmountData
 
 	return nil
 }
@@ -30522,7 +30522,7 @@ func (m *MountSetMessage) Deserialize(r Reader) error {
 type UpdateMountBoostMessage struct {
 	RideId int32
 
-	BoostToUpdateList []*UpdateMountBoost
+	BoostToUpdateList []UpdateMountBoost
 }
 
 func (m *UpdateMountBoostMessage) ID() uint16 {
@@ -30568,7 +30568,7 @@ func (m *UpdateMountBoostMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.BoostToUpdateList = make([]*UpdateMountBoost, lboostToUpdateListLen)
+	m.BoostToUpdateList = make([]UpdateMountBoost, lboostToUpdateListLen)
 
 	for i := range m.BoostToUpdateList {
 
@@ -30583,7 +30583,7 @@ func (m *UpdateMountBoostMessage) Deserialize(r Reader) error {
 
 		lboostToUpdateList.Deserialize(r)
 
-		m.BoostToUpdateList[i] = lboostToUpdateList.(*UpdateMountBoost)
+		m.BoostToUpdateList[i] = *lboostToUpdateList.(*UpdateMountBoost)
 
 	}
 
@@ -31142,7 +31142,7 @@ func (m *QuestStepValidatedMessage) Deserialize(r Reader) error {
 }
 
 type AchievementDetailsMessage struct {
-	Achievement *Achievement
+	Achievement Achievement
 }
 
 func (m *AchievementDetailsMessage) ID() uint16 {
@@ -31164,7 +31164,7 @@ func (m *AchievementDetailsMessage) Deserialize(r Reader) error {
 
 	lachievement.Deserialize(r)
 
-	m.Achievement = &lachievement
+	m.Achievement = lachievement
 
 	return nil
 }
@@ -31212,7 +31212,7 @@ func (m *TreasureHuntFlagRemoveRequestMessage) Deserialize(r Reader) error {
 }
 
 type QuestStepInfoMessage struct {
-	Infos *QuestActiveInformations
+	Infos QuestActiveInformations
 }
 
 func (m *QuestStepInfoMessage) ID() uint16 {
@@ -31245,7 +31245,7 @@ func (m *QuestStepInfoMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = linfos.(*QuestActiveInformations)
+	m.Infos = *linfos.(*QuestActiveInformations)
 
 	return nil
 }
@@ -31420,7 +31420,7 @@ type TreasureHuntMessage struct {
 
 	StartMapId int32
 
-	KnownStepsList []*TreasureHuntStep
+	KnownStepsList []TreasureHuntStep
 
 	TotalStepCount uint8
 
@@ -31430,7 +31430,7 @@ type TreasureHuntMessage struct {
 
 	AvailableRetryCount int32
 
-	Flags []*TreasureHuntFlag
+	Flags []TreasureHuntFlag
 }
 
 func (m *TreasureHuntMessage) ID() uint16 {
@@ -31515,7 +31515,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.KnownStepsList = make([]*TreasureHuntStep, lknownStepsListLen)
+	m.KnownStepsList = make([]TreasureHuntStep, lknownStepsListLen)
 
 	for i := range m.KnownStepsList {
 
@@ -31530,7 +31530,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 
 		lknownStepsList.Deserialize(r)
 
-		m.KnownStepsList[i] = lknownStepsList.(*TreasureHuntStep)
+		m.KnownStepsList[i] = *lknownStepsList.(*TreasureHuntStep)
 
 	}
 
@@ -31567,7 +31567,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Flags = make([]*TreasureHuntFlag, lflagsLen)
+	m.Flags = make([]TreasureHuntFlag, lflagsLen)
 
 	for i := range m.Flags {
 
@@ -31575,7 +31575,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 
 		lflags.Deserialize(r)
 
-		m.Flags[i] = &lflags
+		m.Flags[i] = lflags
 
 	}
 
@@ -31796,9 +31796,9 @@ func (m *TreasureHuntAvailableRetryCountUpdateMessage) Deserialize(r Reader) err
 }
 
 type AchievementDetailedListMessage struct {
-	StartedAchievements []*Achievement
+	StartedAchievements []Achievement
 
-	FinishedAchievements []*Achievement
+	FinishedAchievements []Achievement
 }
 
 func (m *AchievementDetailedListMessage) ID() uint16 {
@@ -31841,7 +31841,7 @@ func (m *AchievementDetailedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.StartedAchievements = make([]*Achievement, lstartedAchievementsLen)
+	m.StartedAchievements = make([]Achievement, lstartedAchievementsLen)
 
 	for i := range m.StartedAchievements {
 
@@ -31849,7 +31849,7 @@ func (m *AchievementDetailedListMessage) Deserialize(r Reader) error {
 
 		lstartedAchievements.Deserialize(r)
 
-		m.StartedAchievements[i] = &lstartedAchievements
+		m.StartedAchievements[i] = lstartedAchievements
 
 	}
 
@@ -31858,7 +31858,7 @@ func (m *AchievementDetailedListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FinishedAchievements = make([]*Achievement, lfinishedAchievementsLen)
+	m.FinishedAchievements = make([]Achievement, lfinishedAchievementsLen)
 
 	for i := range m.FinishedAchievements {
 
@@ -31866,7 +31866,7 @@ func (m *AchievementDetailedListMessage) Deserialize(r Reader) error {
 
 		lfinishedAchievements.Deserialize(r)
 
-		m.FinishedAchievements[i] = &lfinishedAchievements
+		m.FinishedAchievements[i] = lfinishedAchievements
 
 	}
 
@@ -32150,7 +32150,7 @@ type QuestListMessage struct {
 
 	FinishedQuestsCounts []uint16
 
-	ActiveQuests []*QuestActiveInformations
+	ActiveQuests []QuestActiveInformations
 
 	ReinitDoneQuestsIds []uint16
 }
@@ -32259,7 +32259,7 @@ func (m *QuestListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ActiveQuests = make([]*QuestActiveInformations, lactiveQuestsLen)
+	m.ActiveQuests = make([]QuestActiveInformations, lactiveQuestsLen)
 
 	for i := range m.ActiveQuests {
 
@@ -32274,7 +32274,7 @@ func (m *QuestListMessage) Deserialize(r Reader) error {
 
 		lactiveQuests.Deserialize(r)
 
-		m.ActiveQuests[i] = lactiveQuests.(*QuestActiveInformations)
+		m.ActiveQuests[i] = *lactiveQuests.(*QuestActiveInformations)
 
 	}
 
@@ -32551,7 +32551,7 @@ func (m *JobBookSubscribeRequestMessage) Deserialize(r Reader) error {
 type JobLevelUpMessage struct {
 	NewLevel uint8
 
-	JobsDescription *JobDescription
+	JobsDescription JobDescription
 }
 
 func (m *JobLevelUpMessage) ID() uint16 {
@@ -32584,7 +32584,7 @@ func (m *JobLevelUpMessage) Deserialize(r Reader) error {
 
 	ljobsDescription.Deserialize(r)
 
-	m.JobsDescription = &ljobsDescription
+	m.JobsDescription = ljobsDescription
 
 	return nil
 }
@@ -32619,7 +32619,7 @@ func (m *JobCrafterDirectoryListRequestMessage) Deserialize(r Reader) error {
 }
 
 type JobExperienceMultiUpdateMessage struct {
-	ExperiencesUpdate []*JobExperience
+	ExperiencesUpdate []JobExperience
 }
 
 func (m *JobExperienceMultiUpdateMessage) ID() uint16 {
@@ -32650,7 +32650,7 @@ func (m *JobExperienceMultiUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ExperiencesUpdate = make([]*JobExperience, lexperiencesUpdateLen)
+	m.ExperiencesUpdate = make([]JobExperience, lexperiencesUpdateLen)
 
 	for i := range m.ExperiencesUpdate {
 
@@ -32658,7 +32658,7 @@ func (m *JobExperienceMultiUpdateMessage) Deserialize(r Reader) error {
 
 		lexperiencesUpdate.Deserialize(r)
 
-		m.ExperiencesUpdate[i] = &lexperiencesUpdate
+		m.ExperiencesUpdate[i] = lexperiencesUpdate
 
 	}
 
@@ -32695,7 +32695,7 @@ func (m *JobCrafterDirectoryEntryRequestMessage) Deserialize(r Reader) error {
 }
 
 type JobBookSubscriptionMessage struct {
-	Subscriptions []*JobBookSubscription
+	Subscriptions []JobBookSubscription
 }
 
 func (m *JobBookSubscriptionMessage) ID() uint16 {
@@ -32726,7 +32726,7 @@ func (m *JobBookSubscriptionMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Subscriptions = make([]*JobBookSubscription, lsubscriptionsLen)
+	m.Subscriptions = make([]JobBookSubscription, lsubscriptionsLen)
 
 	for i := range m.Subscriptions {
 
@@ -32734,7 +32734,7 @@ func (m *JobBookSubscriptionMessage) Deserialize(r Reader) error {
 
 		lsubscriptions.Deserialize(r)
 
-		m.Subscriptions[i] = &lsubscriptions
+		m.Subscriptions[i] = lsubscriptions
 
 	}
 
@@ -32790,7 +32790,7 @@ func (m *ExchangeStartOkJobIndexMessage) Deserialize(r Reader) error {
 }
 
 type JobCrafterDirectorySettingsMessage struct {
-	CraftersSettings []*JobCrafterDirectorySettings
+	CraftersSettings []JobCrafterDirectorySettings
 }
 
 func (m *JobCrafterDirectorySettingsMessage) ID() uint16 {
@@ -32821,7 +32821,7 @@ func (m *JobCrafterDirectorySettingsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.CraftersSettings = make([]*JobCrafterDirectorySettings, lcraftersSettingsLen)
+	m.CraftersSettings = make([]JobCrafterDirectorySettings, lcraftersSettingsLen)
 
 	for i := range m.CraftersSettings {
 
@@ -32829,7 +32829,7 @@ func (m *JobCrafterDirectorySettingsMessage) Deserialize(r Reader) error {
 
 		lcraftersSettings.Deserialize(r)
 
-		m.CraftersSettings[i] = &lcraftersSettings
+		m.CraftersSettings[i] = lcraftersSettings
 
 	}
 
@@ -32837,7 +32837,7 @@ func (m *JobCrafterDirectorySettingsMessage) Deserialize(r Reader) error {
 }
 
 type JobDescriptionMessage struct {
-	JobsDescription []*JobDescription
+	JobsDescription []JobDescription
 }
 
 func (m *JobDescriptionMessage) ID() uint16 {
@@ -32868,7 +32868,7 @@ func (m *JobDescriptionMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.JobsDescription = make([]*JobDescription, ljobsDescriptionLen)
+	m.JobsDescription = make([]JobDescription, ljobsDescriptionLen)
 
 	for i := range m.JobsDescription {
 
@@ -32876,7 +32876,7 @@ func (m *JobDescriptionMessage) Deserialize(r Reader) error {
 
 		ljobsDescription.Deserialize(r)
 
-		m.JobsDescription[i] = &ljobsDescription
+		m.JobsDescription[i] = ljobsDescription
 
 	}
 
@@ -32884,7 +32884,7 @@ func (m *JobDescriptionMessage) Deserialize(r Reader) error {
 }
 
 type JobExperienceUpdateMessage struct {
-	ExperiencesUpdate *JobExperience
+	ExperiencesUpdate JobExperience
 }
 
 func (m *JobExperienceUpdateMessage) ID() uint16 {
@@ -32906,7 +32906,7 @@ func (m *JobExperienceUpdateMessage) Deserialize(r Reader) error {
 
 	lexperiencesUpdate.Deserialize(r)
 
-	m.ExperiencesUpdate = &lexperiencesUpdate
+	m.ExperiencesUpdate = lexperiencesUpdate
 
 	return nil
 }
@@ -32951,7 +32951,7 @@ func (m *JobExperienceOtherPlayerUpdateMessage) Deserialize(r Reader) error {
 }
 
 type JobCrafterDirectoryDefineSettingsMessage struct {
-	Settings *JobCrafterDirectorySettings
+	Settings JobCrafterDirectorySettings
 }
 
 func (m *JobCrafterDirectoryDefineSettingsMessage) ID() uint16 {
@@ -32973,7 +32973,7 @@ func (m *JobCrafterDirectoryDefineSettingsMessage) Deserialize(r Reader) error {
 
 	lsettings.Deserialize(r)
 
-	m.Settings = &lsettings
+	m.Settings = lsettings
 
 	return nil
 }
@@ -33021,7 +33021,7 @@ func (m *CheckFileRequestMessage) Deserialize(r Reader) error {
 }
 
 type ServerSessionConstantsMessage struct {
-	Variables []*ServerSessionConstant
+	Variables []ServerSessionConstant
 }
 
 func (m *ServerSessionConstantsMessage) ID() uint16 {
@@ -33056,7 +33056,7 @@ func (m *ServerSessionConstantsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Variables = make([]*ServerSessionConstant, lvariablesLen)
+	m.Variables = make([]ServerSessionConstant, lvariablesLen)
 
 	for i := range m.Variables {
 
@@ -33071,7 +33071,7 @@ func (m *ServerSessionConstantsMessage) Deserialize(r Reader) error {
 
 		lvariables.Deserialize(r)
 
-		m.Variables[i] = lvariables.(*ServerSessionConstant)
+		m.Variables[i] = *lvariables.(*ServerSessionConstant)
 
 	}
 
@@ -33231,7 +33231,7 @@ func (m *CheckFileMessage) Deserialize(r Reader) error {
 }
 
 type AccountHouseMessage struct {
-	Houses []*AccountHouseInformations
+	Houses []AccountHouseInformations
 }
 
 func (m *AccountHouseMessage) ID() uint16 {
@@ -33262,7 +33262,7 @@ func (m *AccountHouseMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Houses = make([]*AccountHouseInformations, lhousesLen)
+	m.Houses = make([]AccountHouseInformations, lhousesLen)
 
 	for i := range m.Houses {
 
@@ -33270,7 +33270,7 @@ func (m *AccountHouseMessage) Deserialize(r Reader) error {
 
 		lhouses.Deserialize(r)
 
-		m.Houses[i] = &lhouses
+		m.Houses[i] = lhouses
 
 	}
 
@@ -33849,7 +33849,7 @@ func (m *EditHavenBagStartMessage) Deserialize(r Reader) error {
 }
 
 type HavenBagFurnituresMessage struct {
-	FurnituresInfos []*HavenBagFurnitureInformation
+	FurnituresInfos []HavenBagFurnitureInformation
 }
 
 func (m *HavenBagFurnituresMessage) ID() uint16 {
@@ -33880,7 +33880,7 @@ func (m *HavenBagFurnituresMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FurnituresInfos = make([]*HavenBagFurnitureInformation, lfurnituresInfosLen)
+	m.FurnituresInfos = make([]HavenBagFurnitureInformation, lfurnituresInfosLen)
 
 	for i := range m.FurnituresInfos {
 
@@ -33888,7 +33888,7 @@ func (m *HavenBagFurnituresMessage) Deserialize(r Reader) error {
 
 		lfurnituresInfos.Deserialize(r)
 
-		m.FurnituresInfos[i] = &lfurnituresInfos
+		m.FurnituresInfos[i] = lfurnituresInfos
 
 	}
 
@@ -34398,7 +34398,7 @@ func (m *CharacterReplayRequestMessage) Deserialize(r Reader) error {
 type CharacterReplayWithRemodelRequestMessage struct {
 	CharacterReplayRequestMessage
 
-	Remodel *RemodelingInformation
+	Remodel RemodelingInformation
 }
 
 func (m *CharacterReplayWithRemodelRequestMessage) ID() uint16 {
@@ -34428,7 +34428,7 @@ func (m *CharacterReplayWithRemodelRequestMessage) Deserialize(r Reader) error {
 
 	lremodel.Deserialize(r)
 
-	m.Remodel = &lremodel
+	m.Remodel = lremodel
 
 	return nil
 }
@@ -34586,7 +34586,7 @@ func (m *GameContextCreateRequestMessage) Deserialize(r Reader) error {
 }
 
 type CharacterSelectedSuccessMessage struct {
-	Infos *CharacterBaseInformations
+	Infos CharacterBaseInformations
 
 	IsCollectingStats bool
 }
@@ -34614,7 +34614,7 @@ func (m *CharacterSelectedSuccessMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = &linfos
+	m.Infos = linfos
 
 	lisCollectingStats, err := r.ReadBoolean()
 	if err != nil {
@@ -34627,7 +34627,7 @@ func (m *CharacterSelectedSuccessMessage) Deserialize(r Reader) error {
 }
 
 type BasicCharactersListMessage struct {
-	Characters []*CharacterBaseInformations
+	Characters []CharacterBaseInformations
 }
 
 func (m *BasicCharactersListMessage) ID() uint16 {
@@ -34662,7 +34662,7 @@ func (m *BasicCharactersListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Characters = make([]*CharacterBaseInformations, lcharactersLen)
+	m.Characters = make([]CharacterBaseInformations, lcharactersLen)
 
 	for i := range m.Characters {
 
@@ -34677,7 +34677,7 @@ func (m *BasicCharactersListMessage) Deserialize(r Reader) error {
 
 		lcharacters.Deserialize(r)
 
-		m.Characters[i] = lcharacters.(*CharacterBaseInformations)
+		m.Characters[i] = *lcharacters.(*CharacterBaseInformations)
 
 	}
 
@@ -34726,7 +34726,7 @@ func (m *CharactersListMessage) Deserialize(r Reader) error {
 type CharactersListWithRemodelingMessage struct {
 	CharactersListMessage
 
-	CharactersToRemodel []*CharacterToRemodelInformations
+	CharactersToRemodel []CharacterToRemodelInformations
 }
 
 func (m *CharactersListWithRemodelingMessage) ID() uint16 {
@@ -34765,7 +34765,7 @@ func (m *CharactersListWithRemodelingMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.CharactersToRemodel = make([]*CharacterToRemodelInformations, lcharactersToRemodelLen)
+	m.CharactersToRemodel = make([]CharacterToRemodelInformations, lcharactersToRemodelLen)
 
 	for i := range m.CharactersToRemodel {
 
@@ -34773,7 +34773,7 @@ func (m *CharactersListWithRemodelingMessage) Deserialize(r Reader) error {
 
 		lcharactersToRemodel.Deserialize(r)
 
-		m.CharactersToRemodel[i] = &lcharactersToRemodel
+		m.CharactersToRemodel[i] = lcharactersToRemodel
 
 	}
 
@@ -34942,7 +34942,7 @@ func (m *CharacterFirstSelectionMessage) Deserialize(r Reader) error {
 type CharacterSelectionWithRemodelMessage struct {
 	CharacterSelectionMessage
 
-	Remodel *RemodelingInformation
+	Remodel RemodelingInformation
 }
 
 func (m *CharacterSelectionWithRemodelMessage) ID() uint16 {
@@ -34972,7 +34972,7 @@ func (m *CharacterSelectionWithRemodelMessage) Deserialize(r Reader) error {
 
 	lremodel.Deserialize(r)
 
-	m.Remodel = &lremodel
+	m.Remodel = lremodel
 
 	return nil
 }
@@ -35569,7 +35569,7 @@ func (m *AcquaintanceSearchErrorMessage) Deserialize(r Reader) error {
 }
 
 type ServerStatusUpdateMessage struct {
-	Server *GameServerInformations
+	Server GameServerInformations
 }
 
 func (m *ServerStatusUpdateMessage) ID() uint16 {
@@ -35591,7 +35591,7 @@ func (m *ServerStatusUpdateMessage) Deserialize(r Reader) error {
 
 	lserver.Deserialize(r)
 
-	m.Server = &lserver
+	m.Server = lserver
 
 	return nil
 }
@@ -35962,7 +35962,7 @@ func (m *KrosmasterInventoryErrorMessage) Deserialize(r Reader) error {
 }
 
 type KrosmasterInventoryMessage struct {
-	Figures []*KrosmasterFigure
+	Figures []KrosmasterFigure
 }
 
 func (m *KrosmasterInventoryMessage) ID() uint16 {
@@ -35993,7 +35993,7 @@ func (m *KrosmasterInventoryMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Figures = make([]*KrosmasterFigure, lfiguresLen)
+	m.Figures = make([]KrosmasterFigure, lfiguresLen)
 
 	for i := range m.Figures {
 
@@ -36001,7 +36001,7 @@ func (m *KrosmasterInventoryMessage) Deserialize(r Reader) error {
 
 		lfigures.Deserialize(r)
 
-		m.Figures[i] = &lfigures
+		m.Figures[i] = lfigures
 
 	}
 
@@ -36245,7 +36245,7 @@ func (m *InteractiveUseErrorMessage) Deserialize(r Reader) error {
 }
 
 type InteractiveElementUpdatedMessage struct {
-	InteractiveElement *InteractiveElement
+	InteractiveElement InteractiveElement
 }
 
 func (m *InteractiveElementUpdatedMessage) ID() uint16 {
@@ -36267,13 +36267,13 @@ func (m *InteractiveElementUpdatedMessage) Deserialize(r Reader) error {
 
 	linteractiveElement.Deserialize(r)
 
-	m.InteractiveElement = &linteractiveElement
+	m.InteractiveElement = linteractiveElement
 
 	return nil
 }
 
 type StatedElementUpdatedMessage struct {
-	StatedElement *StatedElement
+	StatedElement StatedElement
 }
 
 func (m *StatedElementUpdatedMessage) ID() uint16 {
@@ -36295,15 +36295,15 @@ func (m *StatedElementUpdatedMessage) Deserialize(r Reader) error {
 
 	lstatedElement.Deserialize(r)
 
-	m.StatedElement = &lstatedElement
+	m.StatedElement = lstatedElement
 
 	return nil
 }
 
 type GameRefreshMonsterBoostsMessage struct {
-	MonsterBoosts []*MonsterBoosts
+	MonsterBoosts []MonsterBoosts
 
-	FamilyBoosts []*MonsterBoosts
+	FamilyBoosts []MonsterBoosts
 }
 
 func (m *GameRefreshMonsterBoostsMessage) ID() uint16 {
@@ -36346,7 +36346,7 @@ func (m *GameRefreshMonsterBoostsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.MonsterBoosts = make([]*MonsterBoosts, lmonsterBoostsLen)
+	m.MonsterBoosts = make([]MonsterBoosts, lmonsterBoostsLen)
 
 	for i := range m.MonsterBoosts {
 
@@ -36354,7 +36354,7 @@ func (m *GameRefreshMonsterBoostsMessage) Deserialize(r Reader) error {
 
 		lmonsterBoosts.Deserialize(r)
 
-		m.MonsterBoosts[i] = &lmonsterBoosts
+		m.MonsterBoosts[i] = lmonsterBoosts
 
 	}
 
@@ -36363,7 +36363,7 @@ func (m *GameRefreshMonsterBoostsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FamilyBoosts = make([]*MonsterBoosts, lfamilyBoostsLen)
+	m.FamilyBoosts = make([]MonsterBoosts, lfamilyBoostsLen)
 
 	for i := range m.FamilyBoosts {
 
@@ -36371,7 +36371,7 @@ func (m *GameRefreshMonsterBoostsMessage) Deserialize(r Reader) error {
 
 		lfamilyBoosts.Deserialize(r)
 
-		m.FamilyBoosts[i] = &lfamilyBoosts
+		m.FamilyBoosts[i] = lfamilyBoosts
 
 	}
 
@@ -36931,7 +36931,7 @@ func (m *FinishMoveListRequestMessage) Deserialize(r Reader) error {
 type SpellListMessage struct {
 	SpellPrevisualization bool
 
-	Spells []*SpellItem
+	Spells []SpellItem
 }
 
 func (m *SpellListMessage) ID() uint16 {
@@ -36973,7 +36973,7 @@ func (m *SpellListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Spells = make([]*SpellItem, lspellsLen)
+	m.Spells = make([]SpellItem, lspellsLen)
 
 	for i := range m.Spells {
 
@@ -36981,7 +36981,7 @@ func (m *SpellListMessage) Deserialize(r Reader) error {
 
 		lspells.Deserialize(r)
 
-		m.Spells[i] = &lspells
+		m.Spells[i] = lspells
 
 	}
 
@@ -36989,7 +36989,7 @@ func (m *SpellListMessage) Deserialize(r Reader) error {
 }
 
 type FinishMoveListMessage struct {
-	FinishMoves []*FinishMoveInformations
+	FinishMoves []FinishMoveInformations
 }
 
 func (m *FinishMoveListMessage) ID() uint16 {
@@ -37020,7 +37020,7 @@ func (m *FinishMoveListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FinishMoves = make([]*FinishMoveInformations, lfinishMovesLen)
+	m.FinishMoves = make([]FinishMoveInformations, lfinishMovesLen)
 
 	for i := range m.FinishMoves {
 
@@ -37028,7 +37028,7 @@ func (m *FinishMoveListMessage) Deserialize(r Reader) error {
 
 		lfinishMoves.Deserialize(r)
 
-		m.FinishMoves[i] = &lfinishMoves
+		m.FinishMoves[i] = lfinishMoves
 
 	}
 
@@ -37289,7 +37289,7 @@ func (m *GuildModificationNameValidMessage) Deserialize(r Reader) error {
 type GuildModificationValidMessage struct {
 	GuildName string
 
-	GuildEmblem *GuildEmblem
+	GuildEmblem GuildEmblem
 }
 
 func (m *GuildModificationValidMessage) ID() uint16 {
@@ -37322,13 +37322,13 @@ func (m *GuildModificationValidMessage) Deserialize(r Reader) error {
 
 	lguildEmblem.Deserialize(r)
 
-	m.GuildEmblem = &lguildEmblem
+	m.GuildEmblem = lguildEmblem
 
 	return nil
 }
 
 type GuildModificationEmblemValidMessage struct {
-	GuildEmblem *GuildEmblem
+	GuildEmblem GuildEmblem
 }
 
 func (m *GuildModificationEmblemValidMessage) ID() uint16 {
@@ -37350,7 +37350,7 @@ func (m *GuildModificationEmblemValidMessage) Deserialize(r Reader) error {
 
 	lguildEmblem.Deserialize(r)
 
-	m.GuildEmblem = &lguildEmblem
+	m.GuildEmblem = lguildEmblem
 
 	return nil
 }
@@ -37358,7 +37358,7 @@ func (m *GuildModificationEmblemValidMessage) Deserialize(r Reader) error {
 type GuildCreationValidMessage struct {
 	GuildName string
 
-	GuildEmblem *GuildEmblem
+	GuildEmblem GuildEmblem
 }
 
 func (m *GuildCreationValidMessage) ID() uint16 {
@@ -37391,13 +37391,13 @@ func (m *GuildCreationValidMessage) Deserialize(r Reader) error {
 
 	lguildEmblem.Deserialize(r)
 
-	m.GuildEmblem = &lguildEmblem
+	m.GuildEmblem = lguildEmblem
 
 	return nil
 }
 
 type AllianceListMessage struct {
-	Alliances []*AllianceFactSheetInformations
+	Alliances []AllianceFactSheetInformations
 }
 
 func (m *AllianceListMessage) ID() uint16 {
@@ -37428,7 +37428,7 @@ func (m *AllianceListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Alliances = make([]*AllianceFactSheetInformations, lalliancesLen)
+	m.Alliances = make([]AllianceFactSheetInformations, lalliancesLen)
 
 	for i := range m.Alliances {
 
@@ -37436,7 +37436,7 @@ func (m *AllianceListMessage) Deserialize(r Reader) error {
 
 		lalliances.Deserialize(r)
 
-		m.Alliances[i] = &lalliances
+		m.Alliances[i] = lalliances
 
 	}
 
@@ -37444,7 +37444,7 @@ func (m *AllianceListMessage) Deserialize(r Reader) error {
 }
 
 type GuildListMessage struct {
-	Guilds []*GuildInformations
+	Guilds []GuildInformations
 }
 
 func (m *GuildListMessage) ID() uint16 {
@@ -37475,7 +37475,7 @@ func (m *GuildListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Guilds = make([]*GuildInformations, lguildsLen)
+	m.Guilds = make([]GuildInformations, lguildsLen)
 
 	for i := range m.Guilds {
 
@@ -37483,7 +37483,7 @@ func (m *GuildListMessage) Deserialize(r Reader) error {
 
 		lguilds.Deserialize(r)
 
-		m.Guilds[i] = &lguilds
+		m.Guilds[i] = lguilds
 
 	}
 
@@ -37491,7 +37491,7 @@ func (m *GuildListMessage) Deserialize(r Reader) error {
 }
 
 type GuildVersatileInfoListMessage struct {
-	Guilds []*GuildVersatileInformations
+	Guilds []GuildVersatileInformations
 }
 
 func (m *GuildVersatileInfoListMessage) ID() uint16 {
@@ -37526,7 +37526,7 @@ func (m *GuildVersatileInfoListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Guilds = make([]*GuildVersatileInformations, lguildsLen)
+	m.Guilds = make([]GuildVersatileInformations, lguildsLen)
 
 	for i := range m.Guilds {
 
@@ -37541,7 +37541,7 @@ func (m *GuildVersatileInfoListMessage) Deserialize(r Reader) error {
 
 		lguilds.Deserialize(r)
 
-		m.Guilds[i] = lguilds.(*GuildVersatileInformations)
+		m.Guilds[i] = *lguilds.(*GuildVersatileInformations)
 
 	}
 
@@ -37549,7 +37549,7 @@ func (m *GuildVersatileInfoListMessage) Deserialize(r Reader) error {
 }
 
 type AllianceVersatileInfoListMessage struct {
-	Alliances []*AllianceVersatileInformations
+	Alliances []AllianceVersatileInformations
 }
 
 func (m *AllianceVersatileInfoListMessage) ID() uint16 {
@@ -37580,7 +37580,7 @@ func (m *AllianceVersatileInfoListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Alliances = make([]*AllianceVersatileInformations, lalliancesLen)
+	m.Alliances = make([]AllianceVersatileInformations, lalliancesLen)
 
 	for i := range m.Alliances {
 
@@ -37588,7 +37588,7 @@ func (m *AllianceVersatileInfoListMessage) Deserialize(r Reader) error {
 
 		lalliances.Deserialize(r)
 
-		m.Alliances[i] = &lalliances
+		m.Alliances[i] = lalliances
 
 	}
 
@@ -37600,7 +37600,7 @@ type AllianceModificationValidMessage struct {
 
 	AllianceTag string
 
-	Alliancemblem *GuildEmblem
+	Alliancemblem GuildEmblem
 }
 
 func (m *AllianceModificationValidMessage) ID() uint16 {
@@ -37644,13 +37644,13 @@ func (m *AllianceModificationValidMessage) Deserialize(r Reader) error {
 
 	lAlliancemblem.Deserialize(r)
 
-	m.Alliancemblem = &lAlliancemblem
+	m.Alliancemblem = lAlliancemblem
 
 	return nil
 }
 
 type AllianceModificationEmblemValidMessage struct {
-	Alliancemblem *GuildEmblem
+	Alliancemblem GuildEmblem
 }
 
 func (m *AllianceModificationEmblemValidMessage) ID() uint16 {
@@ -37672,7 +37672,7 @@ func (m *AllianceModificationEmblemValidMessage) Deserialize(r Reader) error {
 
 	lAlliancemblem.Deserialize(r)
 
-	m.Alliancemblem = &lAlliancemblem
+	m.Alliancemblem = lAlliancemblem
 
 	return nil
 }
@@ -37753,7 +37753,7 @@ type AllianceCreationValidMessage struct {
 
 	AllianceTag string
 
-	AllianceEmblem *GuildEmblem
+	AllianceEmblem GuildEmblem
 }
 
 func (m *AllianceCreationValidMessage) ID() uint16 {
@@ -37797,7 +37797,7 @@ func (m *AllianceCreationValidMessage) Deserialize(r Reader) error {
 
 	lallianceEmblem.Deserialize(r)
 
-	m.AllianceEmblem = &lallianceEmblem
+	m.AllianceEmblem = lallianceEmblem
 
 	return nil
 }
@@ -37887,7 +37887,7 @@ func (m *DownloadErrorMessage) Deserialize(r Reader) error {
 }
 
 type PartsListMessage struct {
-	Parts []*ContentPart
+	Parts []ContentPart
 }
 
 func (m *PartsListMessage) ID() uint16 {
@@ -37918,7 +37918,7 @@ func (m *PartsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Parts = make([]*ContentPart, lpartsLen)
+	m.Parts = make([]ContentPart, lpartsLen)
 
 	for i := range m.Parts {
 
@@ -37926,7 +37926,7 @@ func (m *PartsListMessage) Deserialize(r Reader) error {
 
 		lparts.Deserialize(r)
 
-		m.Parts[i] = &lparts
+		m.Parts[i] = lparts
 
 	}
 
@@ -37963,7 +37963,7 @@ func (m *DownloadCurrentSpeedMessage) Deserialize(r Reader) error {
 }
 
 type PartInfoMessage struct {
-	Part *ContentPart
+	Part ContentPart
 
 	InstallationPercent float32
 }
@@ -37991,7 +37991,7 @@ func (m *PartInfoMessage) Deserialize(r Reader) error {
 
 	lpart.Deserialize(r)
 
-	m.Part = &lpart
+	m.Part = lpart
 
 	linstallationPercent, err := r.ReadFloat()
 	if err != nil {
@@ -38008,7 +38008,7 @@ type IdolListMessage struct {
 
 	PartyChosenIdols []uint16
 
-	PartyIdols []*PartyIdol
+	PartyIdols []PartyIdol
 }
 
 func (m *IdolListMessage) ID() uint16 {
@@ -38103,7 +38103,7 @@ func (m *IdolListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PartyIdols = make([]*PartyIdol, lpartyIdolsLen)
+	m.PartyIdols = make([]PartyIdol, lpartyIdolsLen)
 
 	for i := range m.PartyIdols {
 
@@ -38118,7 +38118,7 @@ func (m *IdolListMessage) Deserialize(r Reader) error {
 
 		lpartyIdols.Deserialize(r)
 
-		m.PartyIdols[i] = lpartyIdols.(*PartyIdol)
+		m.PartyIdols[i] = *lpartyIdols.(*PartyIdol)
 
 	}
 
@@ -38210,7 +38210,7 @@ func (m *PaddockBuyResultMessage) Deserialize(r Reader) error {
 }
 
 type JobCrafterDirectoryListMessage struct {
-	ListEntries []*JobCrafterDirectoryListEntry
+	ListEntries []JobCrafterDirectoryListEntry
 }
 
 func (m *JobCrafterDirectoryListMessage) ID() uint16 {
@@ -38241,7 +38241,7 @@ func (m *JobCrafterDirectoryListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ListEntries = make([]*JobCrafterDirectoryListEntry, llistEntriesLen)
+	m.ListEntries = make([]JobCrafterDirectoryListEntry, llistEntriesLen)
 
 	for i := range m.ListEntries {
 
@@ -38249,7 +38249,7 @@ func (m *JobCrafterDirectoryListMessage) Deserialize(r Reader) error {
 
 		llistEntries.Deserialize(r)
 
-		m.ListEntries[i] = &llistEntries
+		m.ListEntries[i] = llistEntries
 
 	}
 
@@ -38402,9 +38402,9 @@ func (m *MountDataErrorMessage) Deserialize(r Reader) error {
 type MapRunningFightDetailsMessage struct {
 	FightId uint32
 
-	Attackers []*GameFightFighterLightInformations
+	Attackers []GameFightFighterLightInformations
 
-	Defenders []*GameFightFighterLightInformations
+	Defenders []GameFightFighterLightInformations
 }
 
 func (m *MapRunningFightDetailsMessage) ID() uint16 {
@@ -38466,7 +38466,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Attackers = make([]*GameFightFighterLightInformations, lattackersLen)
+	m.Attackers = make([]GameFightFighterLightInformations, lattackersLen)
 
 	for i := range m.Attackers {
 
@@ -38481,7 +38481,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 
 		lattackers.Deserialize(r)
 
-		m.Attackers[i] = lattackers.(*GameFightFighterLightInformations)
+		m.Attackers[i] = *lattackers.(*GameFightFighterLightInformations)
 
 	}
 
@@ -38490,7 +38490,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Defenders = make([]*GameFightFighterLightInformations, ldefendersLen)
+	m.Defenders = make([]GameFightFighterLightInformations, ldefendersLen)
 
 	for i := range m.Defenders {
 
@@ -38505,7 +38505,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 
 		ldefenders.Deserialize(r)
 
-		m.Defenders[i] = ldefenders.(*GameFightFighterLightInformations)
+		m.Defenders[i] = *ldefenders.(*GameFightFighterLightInformations)
 
 	}
 
@@ -38515,7 +38515,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 type MapRunningFightDetailsExtendedMessage struct {
 	MapRunningFightDetailsMessage
 
-	NamedPartyTeams []*NamedPartyTeam
+	NamedPartyTeams []NamedPartyTeam
 }
 
 func (m *MapRunningFightDetailsExtendedMessage) ID() uint16 {
@@ -38554,7 +38554,7 @@ func (m *MapRunningFightDetailsExtendedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.NamedPartyTeams = make([]*NamedPartyTeam, lnamedPartyTeamsLen)
+	m.NamedPartyTeams = make([]NamedPartyTeam, lnamedPartyTeamsLen)
 
 	for i := range m.NamedPartyTeams {
 
@@ -38562,7 +38562,7 @@ func (m *MapRunningFightDetailsExtendedMessage) Deserialize(r Reader) error {
 
 		lnamedPartyTeams.Deserialize(r)
 
-		m.NamedPartyTeams[i] = &lnamedPartyTeams
+		m.NamedPartyTeams[i] = lnamedPartyTeams
 
 	}
 
@@ -38641,7 +38641,7 @@ func (m *GuestModeMessage) Deserialize(r Reader) error {
 }
 
 type FollowedQuestsMessage struct {
-	Quests []*QuestActiveDetailedInformations
+	Quests []QuestActiveDetailedInformations
 }
 
 func (m *FollowedQuestsMessage) ID() uint16 {
@@ -38672,7 +38672,7 @@ func (m *FollowedQuestsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Quests = make([]*QuestActiveDetailedInformations, lquestsLen)
+	m.Quests = make([]QuestActiveDetailedInformations, lquestsLen)
 
 	for i := range m.Quests {
 
@@ -38680,7 +38680,7 @@ func (m *FollowedQuestsMessage) Deserialize(r Reader) error {
 
 		lquests.Deserialize(r)
 
-		m.Quests[i] = &lquests
+		m.Quests[i] = lquests
 
 	}
 
@@ -38769,7 +38769,7 @@ func (m *LockableStateUpdateStorageMessage) Deserialize(r Reader) error {
 }
 
 type GameContextMoveMultipleElementsMessage struct {
-	Movements []*EntityMovementInformations
+	Movements []EntityMovementInformations
 }
 
 func (m *GameContextMoveMultipleElementsMessage) ID() uint16 {
@@ -38800,7 +38800,7 @@ func (m *GameContextMoveMultipleElementsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Movements = make([]*EntityMovementInformations, lmovementsLen)
+	m.Movements = make([]EntityMovementInformations, lmovementsLen)
 
 	for i := range m.Movements {
 
@@ -38808,7 +38808,7 @@ func (m *GameContextMoveMultipleElementsMessage) Deserialize(r Reader) error {
 
 		lmovements.Deserialize(r)
 
-		m.Movements[i] = &lmovements
+		m.Movements[i] = lmovements
 
 	}
 
@@ -39451,7 +39451,7 @@ func (m *ExchangeObjectRemovedMessage) Deserialize(r Reader) error {
 type ExchangeObjectsModifiedMessage struct {
 	ExchangeObjectMessage
 
-	Object []*ObjectItem
+	Object []ObjectItem
 }
 
 func (m *ExchangeObjectsModifiedMessage) ID() uint16 {
@@ -39490,7 +39490,7 @@ func (m *ExchangeObjectsModifiedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Object = make([]*ObjectItem, lobjectLen)
+	m.Object = make([]ObjectItem, lobjectLen)
 
 	for i := range m.Object {
 
@@ -39498,7 +39498,7 @@ func (m *ExchangeObjectsModifiedMessage) Deserialize(r Reader) error {
 
 		lobject.Deserialize(r)
 
-		m.Object[i] = &lobject
+		m.Object[i] = lobject
 
 	}
 
@@ -39508,7 +39508,7 @@ func (m *ExchangeObjectsModifiedMessage) Deserialize(r Reader) error {
 type ExchangeObjectPutInBagMessage struct {
 	ExchangeObjectMessage
 
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ExchangeObjectPutInBagMessage) ID() uint16 {
@@ -39538,7 +39538,7 @@ func (m *ExchangeObjectPutInBagMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
@@ -39575,7 +39575,7 @@ func (m *ExchangeBidHouseItemRemoveOkMessage) Deserialize(r Reader) error {
 type ExchangeCraftResultWithObjectDescMessage struct {
 	ExchangeCraftResultMessage
 
-	ObjectInfo *ObjectItemNotInContainer
+	ObjectInfo ObjectItemNotInContainer
 }
 
 func (m *ExchangeCraftResultWithObjectDescMessage) ID() uint16 {
@@ -39605,7 +39605,7 @@ func (m *ExchangeCraftResultWithObjectDescMessage) Deserialize(r Reader) error {
 
 	lobjectInfo.Deserialize(r)
 
-	m.ObjectInfo = &lobjectInfo
+	m.ObjectInfo = lobjectInfo
 
 	return nil
 }
@@ -39640,7 +39640,7 @@ func (m *StorageObjectRemoveMessage) Deserialize(r Reader) error {
 }
 
 type JobCrafterDirectoryAddMessage struct {
-	ListEntry *JobCrafterDirectoryListEntry
+	ListEntry JobCrafterDirectoryListEntry
 }
 
 func (m *JobCrafterDirectoryAddMessage) ID() uint16 {
@@ -39662,7 +39662,7 @@ func (m *JobCrafterDirectoryAddMessage) Deserialize(r Reader) error {
 
 	llistEntry.Deserialize(r)
 
-	m.ListEntry = &llistEntry
+	m.ListEntry = llistEntry
 
 	return nil
 }
@@ -40167,7 +40167,7 @@ type HouseGuildRightsMessage struct {
 
 	SecondHand bool
 
-	GuildInfo *GuildInformations
+	GuildInfo GuildInformations
 
 	Rights uint32
 }
@@ -40228,7 +40228,7 @@ func (m *HouseGuildRightsMessage) Deserialize(r Reader) error {
 
 	lguildInfo.Deserialize(r)
 
-	m.GuildInfo = &lguildInfo
+	m.GuildInfo = lguildInfo
 
 	lrights, err := r.ReadVarUInt32()
 	if err != nil {
@@ -40390,7 +40390,7 @@ func (m *SubscriptionZoneMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeBidHouseItemAddOkMessage struct {
-	ItemInfo *ObjectItemToSellInBid
+	ItemInfo ObjectItemToSellInBid
 }
 
 func (m *ExchangeBidHouseItemAddOkMessage) ID() uint16 {
@@ -40412,7 +40412,7 @@ func (m *ExchangeBidHouseItemAddOkMessage) Deserialize(r Reader) error {
 
 	litemInfo.Deserialize(r)
 
-	m.ItemInfo = &litemInfo
+	m.ItemInfo = litemInfo
 
 	return nil
 }
@@ -40420,7 +40420,7 @@ func (m *ExchangeBidHouseItemAddOkMessage) Deserialize(r Reader) error {
 type ExchangeObjectsAddedMessage struct {
 	ExchangeObjectMessage
 
-	Object []*ObjectItem
+	Object []ObjectItem
 }
 
 func (m *ExchangeObjectsAddedMessage) ID() uint16 {
@@ -40459,7 +40459,7 @@ func (m *ExchangeObjectsAddedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Object = make([]*ObjectItem, lobjectLen)
+	m.Object = make([]ObjectItem, lobjectLen)
 
 	for i := range m.Object {
 
@@ -40467,7 +40467,7 @@ func (m *ExchangeObjectsAddedMessage) Deserialize(r Reader) error {
 
 		lobject.Deserialize(r)
 
-		m.Object[i] = &lobject
+		m.Object[i] = lobject
 
 	}
 
@@ -40643,7 +40643,7 @@ func (m *LockableCodeResultMessage) Deserialize(r Reader) error {
 }
 
 type StorageObjectsUpdateMessage struct {
-	ObjectList []*ObjectItem
+	ObjectList []ObjectItem
 }
 
 func (m *StorageObjectsUpdateMessage) ID() uint16 {
@@ -40674,7 +40674,7 @@ func (m *StorageObjectsUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ObjectList = make([]*ObjectItem, lobjectListLen)
+	m.ObjectList = make([]ObjectItem, lobjectListLen)
 
 	for i := range m.ObjectList {
 
@@ -40682,7 +40682,7 @@ func (m *StorageObjectsUpdateMessage) Deserialize(r Reader) error {
 
 		lobjectList.Deserialize(r)
 
-		m.ObjectList[i] = &lobjectList
+		m.ObjectList[i] = lobjectList
 
 	}
 
@@ -40738,7 +40738,7 @@ func (m *ExchangeTypesExchangerDescriptionForUserMessage) Deserialize(r Reader) 
 }
 
 type MimicryObjectPreviewMessage struct {
-	Result *ObjectItem
+	Result ObjectItem
 }
 
 func (m *MimicryObjectPreviewMessage) ID() uint16 {
@@ -40760,7 +40760,7 @@ func (m *MimicryObjectPreviewMessage) Deserialize(r Reader) error {
 
 	lresult.Deserialize(r)
 
-	m.Result = &lresult
+	m.Result = lresult
 
 	return nil
 }
@@ -40799,7 +40799,7 @@ type ExchangeBidHouseInListAddedMessage struct {
 
 	ObjGenericId int32
 
-	Effects []*ObjectEffect
+	Effects []ObjectEffect
 
 	Prices []int64
 }
@@ -40870,7 +40870,7 @@ func (m *ExchangeBidHouseInListAddedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]*ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffect, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -40885,7 +40885,7 @@ func (m *ExchangeBidHouseInListAddedMessage) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = leffects.(*ObjectEffect)
+		m.Effects[i] = *leffects.(*ObjectEffect)
 
 	}
 
@@ -41508,7 +41508,7 @@ func (m *WrapperObjectErrorMessage) Deserialize(r Reader) error {
 }
 
 type MapRunningFightListMessage struct {
-	Fights []*FightExternalInformations
+	Fights []FightExternalInformations
 }
 
 func (m *MapRunningFightListMessage) ID() uint16 {
@@ -41539,7 +41539,7 @@ func (m *MapRunningFightListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Fights = make([]*FightExternalInformations, lfightsLen)
+	m.Fights = make([]FightExternalInformations, lfightsLen)
 
 	for i := range m.Fights {
 
@@ -41547,7 +41547,7 @@ func (m *MapRunningFightListMessage) Deserialize(r Reader) error {
 
 		lfights.Deserialize(r)
 
-		m.Fights[i] = &lfights
+		m.Fights[i] = lfights
 
 	}
 
@@ -41768,7 +41768,7 @@ func (m *IdolsPresetUseResultMessage) Deserialize(r Reader) error {
 }
 
 type IdolPartyRefreshMessage struct {
-	PartyIdol *PartyIdol
+	PartyIdol PartyIdol
 }
 
 func (m *IdolPartyRefreshMessage) ID() uint16 {
@@ -41790,7 +41790,7 @@ func (m *IdolPartyRefreshMessage) Deserialize(r Reader) error {
 
 	lpartyIdol.Deserialize(r)
 
-	m.PartyIdol = &lpartyIdol
+	m.PartyIdol = lpartyIdol
 
 	return nil
 }
@@ -42102,7 +42102,7 @@ func (m *IdolSelectedMessage) Deserialize(r Reader) error {
 }
 
 type GameContextMoveElementMessage struct {
-	Movement *EntityMovementInformations
+	Movement EntityMovementInformations
 }
 
 func (m *GameContextMoveElementMessage) ID() uint16 {
@@ -42124,7 +42124,7 @@ func (m *GameContextMoveElementMessage) Deserialize(r Reader) error {
 
 	lmovement.Deserialize(r)
 
-	m.Movement = &lmovement
+	m.Movement = lmovement
 
 	return nil
 }
@@ -42156,7 +42156,7 @@ func (m *AlliancePartialListMessage) Deserialize(r Reader) error {
 }
 
 type GoldAddedMessage struct {
-	Gold *GoldItem
+	Gold GoldItem
 }
 
 func (m *GoldAddedMessage) ID() uint16 {
@@ -42178,7 +42178,7 @@ func (m *GoldAddedMessage) Deserialize(r Reader) error {
 
 	lgold.Deserialize(r)
 
-	m.Gold = &lgold
+	m.Gold = lgold
 
 	return nil
 }
@@ -42228,7 +42228,7 @@ func (m *IdolsPresetDeleteResultMessage) Deserialize(r Reader) error {
 type MapFightStartPositionsUpdateMessage struct {
 	MapId uint32
 
-	FightStartPositions *FightStartingPositions
+	FightStartPositions FightStartingPositions
 }
 
 func (m *MapFightStartPositionsUpdateMessage) ID() uint16 {
@@ -42261,7 +42261,7 @@ func (m *MapFightStartPositionsUpdateMessage) Deserialize(r Reader) error {
 
 	lfightStartPositions.Deserialize(r)
 
-	m.FightStartPositions = &lfightStartPositions
+	m.FightStartPositions = lfightStartPositions
 
 	return nil
 }
@@ -42433,7 +42433,7 @@ func (m *ExchangeObjectsRemovedMessage) Deserialize(r Reader) error {
 type ExchangeObjectModifiedInBagMessage struct {
 	ExchangeObjectMessage
 
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ExchangeObjectModifiedInBagMessage) ID() uint16 {
@@ -42463,13 +42463,13 @@ func (m *ExchangeObjectModifiedInBagMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
 
 type ExchangeShopStockMovementUpdatedMessage struct {
-	ObjectInfo *ObjectItemToSell
+	ObjectInfo ObjectItemToSell
 }
 
 func (m *ExchangeShopStockMovementUpdatedMessage) ID() uint16 {
@@ -42491,7 +42491,7 @@ func (m *ExchangeShopStockMovementUpdatedMessage) Deserialize(r Reader) error {
 
 	lobjectInfo.Deserialize(r)
 
-	m.ObjectInfo = &lobjectInfo
+	m.ObjectInfo = lobjectInfo
 
 	return nil
 }
@@ -42541,7 +42541,7 @@ func (m *JobCrafterDirectoryRemoveMessage) Deserialize(r Reader) error {
 type ExchangeObjectModifiedMessage struct {
 	ExchangeObjectMessage
 
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ExchangeObjectModifiedMessage) ID() uint16 {
@@ -42571,7 +42571,7 @@ func (m *ExchangeObjectModifiedMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
@@ -42664,7 +42664,7 @@ func (m *StorageObjectsRemoveMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeShopStockMultiMovementUpdatedMessage struct {
-	ObjectInfoList []*ObjectItemToSell
+	ObjectInfoList []ObjectItemToSell
 }
 
 func (m *ExchangeShopStockMultiMovementUpdatedMessage) ID() uint16 {
@@ -42695,7 +42695,7 @@ func (m *ExchangeShopStockMultiMovementUpdatedMessage) Deserialize(r Reader) err
 		return err
 	}
 
-	m.ObjectInfoList = make([]*ObjectItemToSell, lobjectInfoListLen)
+	m.ObjectInfoList = make([]ObjectItemToSell, lobjectInfoListLen)
 
 	for i := range m.ObjectInfoList {
 
@@ -42703,7 +42703,7 @@ func (m *ExchangeShopStockMultiMovementUpdatedMessage) Deserialize(r Reader) err
 
 		lobjectInfoList.Deserialize(r)
 
-		m.ObjectInfoList[i] = &lobjectInfoList
+		m.ObjectInfoList[i] = lobjectInfoList
 
 	}
 
@@ -42750,7 +42750,7 @@ func (m *MimicryObjectErrorMessage) Deserialize(r Reader) error {
 }
 
 type ExchangeTypesItemsExchangerDescriptionForUserMessage struct {
-	ItemTypeDescriptions []*BidExchangerObjectInfo
+	ItemTypeDescriptions []BidExchangerObjectInfo
 }
 
 func (m *ExchangeTypesItemsExchangerDescriptionForUserMessage) ID() uint16 {
@@ -42781,7 +42781,7 @@ func (m *ExchangeTypesItemsExchangerDescriptionForUserMessage) Deserialize(r Rea
 		return err
 	}
 
-	m.ItemTypeDescriptions = make([]*BidExchangerObjectInfo, litemTypeDescriptionsLen)
+	m.ItemTypeDescriptions = make([]BidExchangerObjectInfo, litemTypeDescriptionsLen)
 
 	for i := range m.ItemTypeDescriptions {
 
@@ -42789,7 +42789,7 @@ func (m *ExchangeTypesItemsExchangerDescriptionForUserMessage) Deserialize(r Rea
 
 		litemTypeDescriptions.Deserialize(r)
 
-		m.ItemTypeDescriptions[i] = &litemTypeDescriptions
+		m.ItemTypeDescriptions[i] = litemTypeDescriptions
 
 	}
 
@@ -43199,13 +43199,13 @@ func (m *AbstractGameActionWithAckMessage) Deserialize(r Reader) error {
 type CharactersListWithModificationsMessage struct {
 	CharactersListMessage
 
-	CharactersToRecolor []*CharacterToRecolorInformation
+	CharactersToRecolor []CharacterToRecolorInformation
 
 	CharactersToRename []int32
 
 	UnusableCharacters []int32
 
-	CharactersToRelook []*CharacterToRelookInformation
+	CharactersToRelook []CharacterToRelookInformation
 }
 
 func (m *CharactersListWithModificationsMessage) ID() uint16 {
@@ -43280,7 +43280,7 @@ func (m *CharactersListWithModificationsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.CharactersToRecolor = make([]*CharacterToRecolorInformation, lcharactersToRecolorLen)
+	m.CharactersToRecolor = make([]CharacterToRecolorInformation, lcharactersToRecolorLen)
 
 	for i := range m.CharactersToRecolor {
 
@@ -43288,7 +43288,7 @@ func (m *CharactersListWithModificationsMessage) Deserialize(r Reader) error {
 
 		lcharactersToRecolor.Deserialize(r)
 
-		m.CharactersToRecolor[i] = &lcharactersToRecolor
+		m.CharactersToRecolor[i] = lcharactersToRecolor
 
 	}
 
@@ -43333,7 +43333,7 @@ func (m *CharactersListWithModificationsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.CharactersToRelook = make([]*CharacterToRelookInformation, lcharactersToRelookLen)
+	m.CharactersToRelook = make([]CharacterToRelookInformation, lcharactersToRelookLen)
 
 	for i := range m.CharactersToRelook {
 
@@ -43341,7 +43341,7 @@ func (m *CharactersListWithModificationsMessage) Deserialize(r Reader) error {
 
 		lcharactersToRelook.Deserialize(r)
 
-		m.CharactersToRelook[i] = &lcharactersToRelook
+		m.CharactersToRelook[i] = lcharactersToRelook
 
 	}
 
@@ -43430,7 +43430,7 @@ func (m *GameRolePlayDelayedObjectUseMessage) Deserialize(r Reader) error {
 }
 
 type StorageObjectUpdateMessage struct {
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *StorageObjectUpdateMessage) ID() uint16 {
@@ -43452,17 +43452,17 @@ func (m *StorageObjectUpdateMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
 
 type JobCrafterDirectoryEntryMessage struct {
-	PlayerInfo *JobCrafterDirectoryEntryPlayerInfo
+	PlayerInfo JobCrafterDirectoryEntryPlayerInfo
 
-	JobInfoList []*JobCrafterDirectoryEntryJobInfo
+	JobInfoList []JobCrafterDirectoryEntryJobInfo
 
-	PlayerLook *EntityLook
+	PlayerLook EntityLook
 }
 
 func (m *JobCrafterDirectoryEntryMessage) ID() uint16 {
@@ -43500,14 +43500,14 @@ func (m *JobCrafterDirectoryEntryMessage) Deserialize(r Reader) error {
 
 	lplayerInfo.Deserialize(r)
 
-	m.PlayerInfo = &lplayerInfo
+	m.PlayerInfo = lplayerInfo
 
 	ljobInfoListLen, err := r.ReadInt16()
 	if err != nil {
 		return err
 	}
 
-	m.JobInfoList = make([]*JobCrafterDirectoryEntryJobInfo, ljobInfoListLen)
+	m.JobInfoList = make([]JobCrafterDirectoryEntryJobInfo, ljobInfoListLen)
 
 	for i := range m.JobInfoList {
 
@@ -43515,7 +43515,7 @@ func (m *JobCrafterDirectoryEntryMessage) Deserialize(r Reader) error {
 
 		ljobInfoList.Deserialize(r)
 
-		m.JobInfoList[i] = &ljobInfoList
+		m.JobInfoList[i] = ljobInfoList
 
 	}
 
@@ -43523,7 +43523,7 @@ func (m *JobCrafterDirectoryEntryMessage) Deserialize(r Reader) error {
 
 	lplayerLook.Deserialize(r)
 
-	m.PlayerLook = &lplayerLook
+	m.PlayerLook = lplayerLook
 
 	return nil
 }
@@ -43558,7 +43558,7 @@ func (m *ExchangeItemAutoCraftStopedMessage) Deserialize(r Reader) error {
 }
 
 type IdolsPresetUpdateMessage struct {
-	IdolsPreset *IdolsPreset
+	IdolsPreset IdolsPreset
 }
 
 func (m *IdolsPresetUpdateMessage) ID() uint16 {
@@ -43580,7 +43580,7 @@ func (m *IdolsPresetUpdateMessage) Deserialize(r Reader) error {
 
 	lidolsPreset.Deserialize(r)
 
-	m.IdolsPreset = &lidolsPreset
+	m.IdolsPreset = lidolsPreset
 
 	return nil
 }
@@ -43630,7 +43630,7 @@ func (m *RecycleResultMessage) Deserialize(r Reader) error {
 type ExchangeObjectAddedMessage struct {
 	ExchangeObjectMessage
 
-	Object *ObjectItem
+	Object ObjectItem
 }
 
 func (m *ExchangeObjectAddedMessage) ID() uint16 {
@@ -43660,7 +43660,7 @@ func (m *ExchangeObjectAddedMessage) Deserialize(r Reader) error {
 
 	lobject.Deserialize(r)
 
-	m.Object = &lobject
+	m.Object = lobject
 
 	return nil
 }
@@ -43712,7 +43712,7 @@ func (m *ExchangeBidHouseInListRemovedMessage) Deserialize(r Reader) error {
 }
 
 type AtlasPointInformationsMessage struct {
-	Type *AtlasPointsInformations
+	Type AtlasPointsInformations
 }
 
 func (m *AtlasPointInformationsMessage) ID() uint16 {
@@ -43734,7 +43734,7 @@ func (m *AtlasPointInformationsMessage) Deserialize(r Reader) error {
 
 	ltype.Deserialize(r)
 
-	m.Type = &ltype
+	m.Type = ltype
 
 	return nil
 }
@@ -44046,7 +44046,7 @@ func (m *BasicStatMessage) Deserialize(r Reader) error {
 type BasicStatWithDataMessage struct {
 	BasicStatMessage
 
-	Datas []*StatisticData
+	Datas []StatisticData
 }
 
 func (m *BasicStatWithDataMessage) ID() uint16 {
@@ -44089,7 +44089,7 @@ func (m *BasicStatWithDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Datas = make([]*StatisticData, ldatasLen)
+	m.Datas = make([]StatisticData, ldatasLen)
 
 	for i := range m.Datas {
 
@@ -44104,7 +44104,7 @@ func (m *BasicStatWithDataMessage) Deserialize(r Reader) error {
 
 		ldatas.Deserialize(r)
 
-		m.Datas[i] = ldatas.(*StatisticData)
+		m.Datas[i] = *ldatas.(*StatisticData)
 
 	}
 
@@ -44143,7 +44143,7 @@ func (m *AggregateStatMessage) Deserialize(r Reader) error {
 type AggregateStatWithDataMessage struct {
 	AggregateStatMessage
 
-	Datas []*StatisticData
+	Datas []StatisticData
 }
 
 func (m *AggregateStatWithDataMessage) ID() uint16 {
@@ -44186,7 +44186,7 @@ func (m *AggregateStatWithDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Datas = make([]*StatisticData, ldatasLen)
+	m.Datas = make([]StatisticData, ldatasLen)
 
 	for i := range m.Datas {
 
@@ -44201,7 +44201,7 @@ func (m *AggregateStatWithDataMessage) Deserialize(r Reader) error {
 
 		ldatas.Deserialize(r)
 
-		m.Datas[i] = ldatas.(*StatisticData)
+		m.Datas[i] = *ldatas.(*StatisticData)
 
 	}
 

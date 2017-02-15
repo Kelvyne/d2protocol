@@ -1,0 +1,22 @@
+package d2protocol
+
+{{ range . }}
+
+type {{.Name | ToInterfaceName}} interface {
+    Type
+
+    {{ range .Fields }}
+        {{.Name | ToFieldName | ToGetterName }}() {{if .IsVector}}[]{{end}}{{ EffectiveType .}}
+    {{ end }}
+}
+
+{{ $name := .Name }}
+{{ range .Fields }}
+
+func (m *{{$name}}) {{.Name | ToFieldName | ToGetterName}}() {{if .IsVector}}[]{{end}}{{ EffectiveType .}} {
+    return m.{{.Name | ToFieldName}}
+}
+
+{{ end }}
+
+{{ end }}

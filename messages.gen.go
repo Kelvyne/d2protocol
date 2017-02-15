@@ -3907,7 +3907,7 @@ type PartyJoinMessage struct {
 
 	MaxParticipants uint8
 
-	Members []PartyMemberInformations
+	Members []PartyMemberInformationsIntrf
 
 	Guests []PartyGuestInformations
 
@@ -4009,7 +4009,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Members = make([]PartyMemberInformations, lmembersLen)
+	m.Members = make([]PartyMemberInformationsIntrf, lmembersLen)
 
 	for i := range m.Members {
 
@@ -4024,7 +4024,7 @@ func (m *PartyJoinMessage) Deserialize(r Reader) error {
 
 		lmembers.Deserialize(r)
 
-		m.Members[i] = *lmembers.(*PartyMemberInformations)
+		m.Members[i] = lmembers.(PartyMemberInformationsIntrf)
 
 	}
 
@@ -5846,7 +5846,7 @@ func (m *PartyInvitationDungeonDetailsMessage) Deserialize(r Reader) error {
 type PartyUpdateMessage struct {
 	AbstractPartyEventMessage
 
-	MemberInformations PartyMemberInformations
+	MemberInformations PartyMemberInformationsIntrf
 }
 
 func (m *PartyUpdateMessage) ID() uint16 {
@@ -5887,7 +5887,7 @@ func (m *PartyUpdateMessage) Deserialize(r Reader) error {
 
 	lmemberInformations.Deserialize(r)
 
-	m.MemberInformations = *lmemberInformations.(*PartyMemberInformations)
+	m.MemberInformations = lmemberInformations.(PartyMemberInformationsIntrf)
 
 	return nil
 }
@@ -6163,11 +6163,11 @@ type MapComplementaryInformationsDataMessage struct {
 
 	MapId uint32
 
-	Houses []HouseInformations
+	Houses []HouseInformationsIntrf
 
-	Actors []GameRolePlayActorInformations
+	Actors []GameRolePlayActorInformationsIntrf
 
-	InteractiveElements []InteractiveElement
+	InteractiveElements []InteractiveElementIntrf
 
 	StatedElements []StatedElement
 
@@ -6310,7 +6310,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Houses = make([]HouseInformations, lhousesLen)
+	m.Houses = make([]HouseInformationsIntrf, lhousesLen)
 
 	for i := range m.Houses {
 
@@ -6325,7 +6325,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lhouses.Deserialize(r)
 
-		m.Houses[i] = *lhouses.(*HouseInformations)
+		m.Houses[i] = lhouses.(HouseInformationsIntrf)
 
 	}
 
@@ -6334,7 +6334,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Actors = make([]GameRolePlayActorInformations, lactorsLen)
+	m.Actors = make([]GameRolePlayActorInformationsIntrf, lactorsLen)
 
 	for i := range m.Actors {
 
@@ -6349,7 +6349,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		lactors.Deserialize(r)
 
-		m.Actors[i] = *lactors.(*GameRolePlayActorInformations)
+		m.Actors[i] = lactors.(GameRolePlayActorInformationsIntrf)
 
 	}
 
@@ -6358,7 +6358,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.InteractiveElements = make([]InteractiveElement, linteractiveElementsLen)
+	m.InteractiveElements = make([]InteractiveElementIntrf, linteractiveElementsLen)
 
 	for i := range m.InteractiveElements {
 
@@ -6373,7 +6373,7 @@ func (m *MapComplementaryInformationsDataMessage) Deserialize(r Reader) error {
 
 		linteractiveElements.Deserialize(r)
 
-		m.InteractiveElements[i] = *linteractiveElements.(*InteractiveElement)
+		m.InteractiveElements[i] = linteractiveElements.(InteractiveElementIntrf)
 
 	}
 
@@ -6591,7 +6591,7 @@ func (m *PartyNewMemberMessage) Deserialize(r Reader) error {
 }
 
 type SpouseInformationsMessage struct {
-	Spouse FriendSpouseInformations
+	Spouse FriendSpouseInformationsIntrf
 }
 
 func (m *SpouseInformationsMessage) ID() uint16 {
@@ -6624,7 +6624,7 @@ func (m *SpouseInformationsMessage) Deserialize(r Reader) error {
 
 	lspouse.Deserialize(r)
 
-	m.Spouse = *lspouse.(*FriendSpouseInformations)
+	m.Spouse = lspouse.(FriendSpouseInformationsIntrf)
 
 	return nil
 }
@@ -7615,7 +7615,7 @@ func (m *GuildMotdSetRequestMessage) Deserialize(r Reader) error {
 }
 
 type FriendAddedMessage struct {
-	FriendAdded FriendInformations
+	FriendAdded FriendInformationsIntrf
 }
 
 func (m *FriendAddedMessage) ID() uint16 {
@@ -7648,7 +7648,7 @@ func (m *FriendAddedMessage) Deserialize(r Reader) error {
 
 	lfriendAdded.Deserialize(r)
 
-	m.FriendAdded = *lfriendAdded.(*FriendInformations)
+	m.FriendAdded = lfriendAdded.(FriendInformationsIntrf)
 
 	return nil
 }
@@ -7866,7 +7866,7 @@ func (m *TaxCollectorStateUpdateMessage) Deserialize(r Reader) error {
 }
 
 type FriendsListMessage struct {
-	FriendsList []FriendInformations
+	FriendsList []FriendInformationsIntrf
 }
 
 func (m *FriendsListMessage) ID() uint16 {
@@ -7901,7 +7901,7 @@ func (m *FriendsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FriendsList = make([]FriendInformations, lfriendsListLen)
+	m.FriendsList = make([]FriendInformationsIntrf, lfriendsListLen)
 
 	for i := range m.FriendsList {
 
@@ -7916,7 +7916,7 @@ func (m *FriendsListMessage) Deserialize(r Reader) error {
 
 		lfriendsList.Deserialize(r)
 
-		m.FriendsList[i] = *lfriendsList.(*FriendInformations)
+		m.FriendsList[i] = lfriendsList.(FriendInformationsIntrf)
 
 	}
 
@@ -8831,7 +8831,7 @@ func (m *ExchangeGuildTaxCollectorGetMessage) Deserialize(r Reader) error {
 }
 
 type TaxCollectorMovementAddMessage struct {
-	Informations TaxCollectorInformations
+	Informations TaxCollectorInformationsIntrf
 }
 
 func (m *TaxCollectorMovementAddMessage) ID() uint16 {
@@ -8864,7 +8864,7 @@ func (m *TaxCollectorMovementAddMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = *linformations.(*TaxCollectorInformations)
+	m.Informations = linformations.(TaxCollectorInformationsIntrf)
 
 	return nil
 }
@@ -8944,7 +8944,7 @@ func (m *FriendsGetListMessage) Deserialize(r Reader) error {
 }
 
 type IgnoredListMessage struct {
-	IgnoredList []IgnoredInformations
+	IgnoredList []IgnoredInformationsIntrf
 }
 
 func (m *IgnoredListMessage) ID() uint16 {
@@ -8979,7 +8979,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.IgnoredList = make([]IgnoredInformations, lignoredListLen)
+	m.IgnoredList = make([]IgnoredInformationsIntrf, lignoredListLen)
 
 	for i := range m.IgnoredList {
 
@@ -8994,7 +8994,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 
 		lignoredList.Deserialize(r)
 
-		m.IgnoredList[i] = *lignoredList.(*IgnoredInformations)
+		m.IgnoredList[i] = lignoredList.(IgnoredInformationsIntrf)
 
 	}
 
@@ -9002,7 +9002,7 @@ func (m *IgnoredListMessage) Deserialize(r Reader) error {
 }
 
 type IgnoredAddedMessage struct {
-	IgnoreAdded IgnoredInformations
+	IgnoreAdded IgnoredInformationsIntrf
 
 	Session bool
 }
@@ -9041,7 +9041,7 @@ func (m *IgnoredAddedMessage) Deserialize(r Reader) error {
 
 	lignoreAdded.Deserialize(r)
 
-	m.IgnoreAdded = *lignoreAdded.(*IgnoredInformations)
+	m.IgnoreAdded = lignoreAdded.(IgnoredInformationsIntrf)
 
 	lsession, err := r.ReadBoolean()
 	if err != nil {
@@ -9183,7 +9183,7 @@ func (m *GuildInvitationStateRecruterMessage) Deserialize(r Reader) error {
 }
 
 type PlayerStatusUpdateRequestMessage struct {
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 }
 
 func (m *PlayerStatusUpdateRequestMessage) ID() uint16 {
@@ -9216,7 +9216,7 @@ func (m *PlayerStatusUpdateRequestMessage) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	return nil
 }
@@ -9544,7 +9544,7 @@ func (m *FriendSpouseFollowWithCompassRequestMessage) Deserialize(r Reader) erro
 }
 
 type FriendUpdateMessage struct {
-	FriendUpdated FriendInformations
+	FriendUpdated FriendInformationsIntrf
 }
 
 func (m *FriendUpdateMessage) ID() uint16 {
@@ -9577,7 +9577,7 @@ func (m *FriendUpdateMessage) Deserialize(r Reader) error {
 
 	lfriendUpdated.Deserialize(r)
 
-	m.FriendUpdated = *lfriendUpdated.(*FriendInformations)
+	m.FriendUpdated = lfriendUpdated.(FriendInformationsIntrf)
 
 	return nil
 }
@@ -9612,7 +9612,7 @@ func (m *GuildPaddockTeleportRequestMessage) Deserialize(r Reader) error {
 }
 
 type GuildFactsMessage struct {
-	Infos GuildFactSheetInformations
+	Infos GuildFactSheetInformationsIntrf
 
 	CreationDate uint32
 
@@ -9671,7 +9671,7 @@ func (m *GuildFactsMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = *linfos.(*GuildFactSheetInformations)
+	m.Infos = linfos.(GuildFactSheetInformationsIntrf)
 
 	lcreationDate, err := r.ReadUInt32()
 	if err != nil {
@@ -10225,7 +10225,7 @@ type PlayerStatusUpdateMessage struct {
 
 	PlayerId int64
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 }
 
 func (m *PlayerStatusUpdateMessage) ID() uint16 {
@@ -10280,7 +10280,7 @@ func (m *PlayerStatusUpdateMessage) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	return nil
 }
@@ -10815,7 +10815,7 @@ func (m *SpouseGetInformationsMessage) Deserialize(r Reader) error {
 }
 
 type AbstractTaxCollectorListMessage struct {
-	Informations []TaxCollectorInformations
+	Informations []TaxCollectorInformationsIntrf
 }
 
 func (m *AbstractTaxCollectorListMessage) ID() uint16 {
@@ -10850,7 +10850,7 @@ func (m *AbstractTaxCollectorListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Informations = make([]TaxCollectorInformations, linformationsLen)
+	m.Informations = make([]TaxCollectorInformationsIntrf, linformationsLen)
 
 	for i := range m.Informations {
 
@@ -10865,7 +10865,7 @@ func (m *AbstractTaxCollectorListMessage) Deserialize(r Reader) error {
 
 		linformations.Deserialize(r)
 
-		m.Informations[i] = *linformations.(*TaxCollectorInformations)
+		m.Informations[i] = linformations.(TaxCollectorInformationsIntrf)
 
 	}
 
@@ -11213,7 +11213,7 @@ type PrismFightAttackerAddMessage struct {
 
 	FightId uint16
 
-	Attacker CharacterMinimalPlusLookInformations
+	Attacker CharacterMinimalPlusLookInformationsIntrf
 }
 
 func (m *PrismFightAttackerAddMessage) ID() uint16 {
@@ -11268,7 +11268,7 @@ func (m *PrismFightAttackerAddMessage) Deserialize(r Reader) error {
 
 	lattacker.Deserialize(r)
 
-	m.Attacker = *lattacker.(*CharacterMinimalPlusLookInformations)
+	m.Attacker = lattacker.(CharacterMinimalPlusLookInformationsIntrf)
 
 	return nil
 }
@@ -11495,7 +11495,7 @@ type AllianceInsiderInfoMessage struct {
 
 	Guilds []GuildInsiderFactSheetInformations
 
-	Prisms []PrismSubareaEmptyInfo
+	Prisms []PrismSubareaEmptyInfoIntrf
 }
 
 func (m *AllianceInsiderInfoMessage) ID() uint16 {
@@ -11569,7 +11569,7 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Prisms = make([]PrismSubareaEmptyInfo, lprismsLen)
+	m.Prisms = make([]PrismSubareaEmptyInfoIntrf, lprismsLen)
 
 	for i := range m.Prisms {
 
@@ -11584,7 +11584,7 @@ func (m *AllianceInsiderInfoMessage) Deserialize(r Reader) error {
 
 		lprisms.Deserialize(r)
 
-		m.Prisms[i] = *lprisms.(*PrismSubareaEmptyInfo)
+		m.Prisms[i] = lprisms.(PrismSubareaEmptyInfoIntrf)
 
 	}
 
@@ -12101,7 +12101,7 @@ func (m *PrismFightDefenderLeaveMessage) Deserialize(r Reader) error {
 }
 
 type PrismsListMessage struct {
-	Prisms []PrismSubareaEmptyInfo
+	Prisms []PrismSubareaEmptyInfoIntrf
 }
 
 func (m *PrismsListMessage) ID() uint16 {
@@ -12136,7 +12136,7 @@ func (m *PrismsListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Prisms = make([]PrismSubareaEmptyInfo, lprismsLen)
+	m.Prisms = make([]PrismSubareaEmptyInfoIntrf, lprismsLen)
 
 	for i := range m.Prisms {
 
@@ -12151,7 +12151,7 @@ func (m *PrismsListMessage) Deserialize(r Reader) error {
 
 		lprisms.Deserialize(r)
 
-		m.Prisms[i] = *lprisms.(*PrismSubareaEmptyInfo)
+		m.Prisms[i] = lprisms.(PrismSubareaEmptyInfoIntrf)
 
 	}
 
@@ -12244,7 +12244,7 @@ func (m *AlliancePrismDialogQuestionMessage) Deserialize(r Reader) error {
 }
 
 type AllianceFactsMessage struct {
-	Infos AllianceFactSheetInformations
+	Infos AllianceFactSheetInformationsIntrf
 
 	Guilds []GuildInAllianceInformations
 
@@ -12317,7 +12317,7 @@ func (m *AllianceFactsMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = *linfos.(*AllianceFactSheetInformations)
+	m.Infos = linfos.(AllianceFactSheetInformationsIntrf)
 
 	lguildsLen, err := r.ReadInt16()
 	if err != nil {
@@ -13091,7 +13091,7 @@ type PrismFightDefenderAddMessage struct {
 
 	FightId uint16
 
-	Defender CharacterMinimalPlusLookInformations
+	Defender CharacterMinimalPlusLookInformationsIntrf
 }
 
 func (m *PrismFightDefenderAddMessage) ID() uint16 {
@@ -13146,7 +13146,7 @@ func (m *PrismFightDefenderAddMessage) Deserialize(r Reader) error {
 
 	ldefender.Deserialize(r)
 
-	m.Defender = *ldefender.(*CharacterMinimalPlusLookInformations)
+	m.Defender = ldefender.(CharacterMinimalPlusLookInformationsIntrf)
 
 	return nil
 }
@@ -14320,7 +14320,7 @@ type BasicWhoIsMessage struct {
 
 	OriginServerId int16
 
-	SocialGroups []AbstractSocialGroupInfos
+	SocialGroups []AbstractSocialGroupInfosIntrf
 
 	Verbose bool
 
@@ -14470,7 +14470,7 @@ func (m *BasicWhoIsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SocialGroups = make([]AbstractSocialGroupInfos, lsocialGroupsLen)
+	m.SocialGroups = make([]AbstractSocialGroupInfosIntrf, lsocialGroupsLen)
 
 	for i := range m.SocialGroups {
 
@@ -14485,7 +14485,7 @@ func (m *BasicWhoIsMessage) Deserialize(r Reader) error {
 
 		lsocialGroups.Deserialize(r)
 
-		m.SocialGroups[i] = *lsocialGroups.(*AbstractSocialGroupInfos)
+		m.SocialGroups[i] = lsocialGroups.(AbstractSocialGroupInfosIntrf)
 
 	}
 
@@ -15543,7 +15543,7 @@ type GameFightEndMessage struct {
 
 	LootShareLimitMalus int16
 
-	Results []FightResultListEntry
+	Results []FightResultListEntryIntrf
 
 	NamedPartyTeamsOutcomes []NamedPartyTeamWithOutcome
 }
@@ -15625,7 +15625,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Results = make([]FightResultListEntry, lresultsLen)
+	m.Results = make([]FightResultListEntryIntrf, lresultsLen)
 
 	for i := range m.Results {
 
@@ -15640,7 +15640,7 @@ func (m *GameFightEndMessage) Deserialize(r Reader) error {
 
 		lresults.Deserialize(r)
 
-		m.Results[i] = *lresults.(*FightResultListEntry)
+		m.Results[i] = lresults.(FightResultListEntryIntrf)
 
 	}
 
@@ -15780,7 +15780,7 @@ func (m *GameFightTurnEndMessage) Deserialize(r Reader) error {
 }
 
 type GameFightSynchronizeMessage struct {
-	Fighters []GameFightFighterInformations
+	Fighters []GameFightFighterInformationsIntrf
 }
 
 func (m *GameFightSynchronizeMessage) ID() uint16 {
@@ -15815,7 +15815,7 @@ func (m *GameFightSynchronizeMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Fighters = make([]GameFightFighterInformations, lfightersLen)
+	m.Fighters = make([]GameFightFighterInformationsIntrf, lfightersLen)
 
 	for i := range m.Fighters {
 
@@ -15830,7 +15830,7 @@ func (m *GameFightSynchronizeMessage) Deserialize(r Reader) error {
 
 		lfighters.Deserialize(r)
 
-		m.Fighters[i] = *lfighters.(*GameFightFighterInformations)
+		m.Fighters[i] = lfighters.(GameFightFighterInformationsIntrf)
 
 	}
 
@@ -16118,7 +16118,7 @@ type SlaveSwitchContextMessage struct {
 
 	SlaveStats CharacterCharacteristicsInformations
 
-	Shortcuts []Shortcut
+	Shortcuts []ShortcutIntrf
 }
 
 func (m *SlaveSwitchContextMessage) ID() uint16 {
@@ -16214,7 +16214,7 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Shortcuts = make([]Shortcut, lshortcutsLen)
+	m.Shortcuts = make([]ShortcutIntrf, lshortcutsLen)
 
 	for i := range m.Shortcuts {
 
@@ -16229,7 +16229,7 @@ func (m *SlaveSwitchContextMessage) Deserialize(r Reader) error {
 
 		lshortcuts.Deserialize(r)
 
-		m.Shortcuts[i] = *lshortcuts.(*Shortcut)
+		m.Shortcuts[i] = lshortcuts.(ShortcutIntrf)
 
 	}
 
@@ -16279,7 +16279,7 @@ func (m *GameFightHumanReadyStateMessage) Deserialize(r Reader) error {
 }
 
 type GameFightShowFighterMessage struct {
-	Informations GameFightFighterInformations
+	Informations GameFightFighterInformationsIntrf
 }
 
 func (m *GameFightShowFighterMessage) ID() uint16 {
@@ -16312,7 +16312,7 @@ func (m *GameFightShowFighterMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = *linformations.(*GameFightFighterInformations)
+	m.Informations = linformations.(GameFightFighterInformationsIntrf)
 
 	return nil
 }
@@ -16825,7 +16825,7 @@ func (m *ShowCellSpectatorMessage) Deserialize(r Reader) error {
 }
 
 type GameFightRefreshFighterMessage struct {
-	Informations GameContextActorInformations
+	Informations GameContextActorInformationsIntrf
 }
 
 func (m *GameFightRefreshFighterMessage) ID() uint16 {
@@ -16858,7 +16858,7 @@ func (m *GameFightRefreshFighterMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = *linformations.(*GameContextActorInformations)
+	m.Informations = linformations.(GameContextActorInformationsIntrf)
 
 	return nil
 }
@@ -17676,7 +17676,7 @@ type HousePropertiesMessage struct {
 
 	DoorsOnMap []uint32
 
-	Properties HouseInstanceInformations
+	Properties HouseInstanceInformationsIntrf
 }
 
 func (m *HousePropertiesMessage) ID() uint16 {
@@ -17750,7 +17750,7 @@ func (m *HousePropertiesMessage) Deserialize(r Reader) error {
 
 	lproperties.Deserialize(r)
 
-	m.Properties = *lproperties.(*HouseInstanceInformations)
+	m.Properties = lproperties.(HouseInstanceInformationsIntrf)
 
 	return nil
 }
@@ -17901,7 +17901,7 @@ func (m *GameFightOptionStateUpdateMessage) Deserialize(r Reader) error {
 }
 
 type InteractiveMapUpdateMessage struct {
-	InteractiveElements []InteractiveElement
+	InteractiveElements []InteractiveElementIntrf
 }
 
 func (m *InteractiveMapUpdateMessage) ID() uint16 {
@@ -17936,7 +17936,7 @@ func (m *InteractiveMapUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.InteractiveElements = make([]InteractiveElement, linteractiveElementsLen)
+	m.InteractiveElements = make([]InteractiveElementIntrf, linteractiveElementsLen)
 
 	for i := range m.InteractiveElements {
 
@@ -17951,7 +17951,7 @@ func (m *InteractiveMapUpdateMessage) Deserialize(r Reader) error {
 
 		linteractiveElements.Deserialize(r)
 
-		m.InteractiveElements[i] = *linteractiveElements.(*InteractiveElement)
+		m.InteractiveElements[i] = linteractiveElements.(InteractiveElementIntrf)
 
 	}
 
@@ -18163,7 +18163,7 @@ func (m *MapInformationsRequestMessage) Deserialize(r Reader) error {
 }
 
 type GameRolePlayShowActorMessage struct {
-	Informations GameRolePlayActorInformations
+	Informations GameRolePlayActorInformationsIntrf
 }
 
 func (m *GameRolePlayShowActorMessage) ID() uint16 {
@@ -18196,7 +18196,7 @@ func (m *GameRolePlayShowActorMessage) Deserialize(r Reader) error {
 
 	linformations.Deserialize(r)
 
-	m.Informations = *linformations.(*GameRolePlayActorInformations)
+	m.Informations = linformations.(GameRolePlayActorInformationsIntrf)
 
 	return nil
 }
@@ -20476,7 +20476,7 @@ func (m *GameActionFightUnmarkCellsMessage) Deserialize(r Reader) error {
 type GameActionFightSummonMessage struct {
 	AbstractGameActionMessage
 
-	Summons []GameFightFighterInformations
+	Summons []GameFightFighterInformationsIntrf
 }
 
 func (m *GameActionFightSummonMessage) ID() uint16 {
@@ -20519,7 +20519,7 @@ func (m *GameActionFightSummonMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Summons = make([]GameFightFighterInformations, lsummonsLen)
+	m.Summons = make([]GameFightFighterInformationsIntrf, lsummonsLen)
 
 	for i := range m.Summons {
 
@@ -20534,7 +20534,7 @@ func (m *GameActionFightSummonMessage) Deserialize(r Reader) error {
 
 		lsummons.Deserialize(r)
 
-		m.Summons[i] = *lsummons.(*GameFightFighterInformations)
+		m.Summons[i] = lsummons.(GameFightFighterInformationsIntrf)
 
 	}
 
@@ -20825,7 +20825,7 @@ func (m *GameActionFightActivateGlyphTrapMessage) Deserialize(r Reader) error {
 type GameActionFightDispellableEffectMessage struct {
 	AbstractGameActionMessage
 
-	Effect AbstractFightDispellableEffect
+	Effect AbstractFightDispellableEffectIntrf
 }
 
 func (m *GameActionFightDispellableEffectMessage) ID() uint16 {
@@ -20866,7 +20866,7 @@ func (m *GameActionFightDispellableEffectMessage) Deserialize(r Reader) error {
 
 	leffect.Deserialize(r)
 
-	m.Effect = *leffect.(*AbstractFightDispellableEffect)
+	m.Effect = leffect.(AbstractFightDispellableEffectIntrf)
 
 	return nil
 }
@@ -25126,7 +25126,7 @@ func (m *GameActionFightCastRequestMessage) Deserialize(r Reader) error {
 type IdolFightPreparationUpdateMessage struct {
 	IdolSource uint8
 
-	Idols []Idol
+	Idols []IdolIntrf
 }
 
 func (m *IdolFightPreparationUpdateMessage) ID() uint16 {
@@ -25172,7 +25172,7 @@ func (m *IdolFightPreparationUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Idols = make([]Idol, lidolsLen)
+	m.Idols = make([]IdolIntrf, lidolsLen)
 
 	for i := range m.Idols {
 
@@ -25187,7 +25187,7 @@ func (m *IdolFightPreparationUpdateMessage) Deserialize(r Reader) error {
 
 		lidols.Deserialize(r)
 
-		m.Idols[i] = *lidols.(*Idol)
+		m.Idols[i] = lidols.(IdolIntrf)
 
 	}
 
@@ -25881,7 +25881,7 @@ func (m *StartupActionsAllAttributionMessage) Deserialize(r Reader) error {
 type CompassUpdateMessage struct {
 	Type uint8
 
-	Coords MapCoordinates
+	Coords MapCoordinatesIntrf
 }
 
 func (m *CompassUpdateMessage) ID() uint16 {
@@ -25925,7 +25925,7 @@ func (m *CompassUpdateMessage) Deserialize(r Reader) error {
 
 	lcoords.Deserialize(r)
 
-	m.Coords = *lcoords.(*MapCoordinates)
+	m.Coords = lcoords.(MapCoordinatesIntrf)
 
 	return nil
 }
@@ -26408,7 +26408,7 @@ type SetUpdateMessage struct {
 
 	SetObjects []uint16
 
-	SetEffects []ObjectEffect
+	SetEffects []ObjectEffectIntrf
 }
 
 func (m *SetUpdateMessage) ID() uint16 {
@@ -26484,7 +26484,7 @@ func (m *SetUpdateMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.SetEffects = make([]ObjectEffect, lsetEffectsLen)
+	m.SetEffects = make([]ObjectEffectIntrf, lsetEffectsLen)
 
 	for i := range m.SetEffects {
 
@@ -26499,7 +26499,7 @@ func (m *SetUpdateMessage) Deserialize(r Reader) error {
 
 		lsetEffects.Deserialize(r)
 
-		m.SetEffects[i] = *lsetEffects.(*ObjectEffect)
+		m.SetEffects[i] = lsetEffects.(ObjectEffectIntrf)
 
 	}
 
@@ -28017,7 +28017,7 @@ func (m *InventoryPresetSaveMessage) Deserialize(r Reader) error {
 type ShortcutBarAddRequestMessage struct {
 	BarType uint8
 
-	Shortcut Shortcut
+	Shortcut ShortcutIntrf
 }
 
 func (m *ShortcutBarAddRequestMessage) ID() uint16 {
@@ -28061,7 +28061,7 @@ func (m *ShortcutBarAddRequestMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = *lshortcut.(*Shortcut)
+	m.Shortcut = lshortcut.(ShortcutIntrf)
 
 	return nil
 }
@@ -28500,7 +28500,7 @@ func (m *AccessoryPreviewRequestMessage) Deserialize(r Reader) error {
 type ShortcutBarRefreshMessage struct {
 	BarType uint8
 
-	Shortcut Shortcut
+	Shortcut ShortcutIntrf
 }
 
 func (m *ShortcutBarRefreshMessage) ID() uint16 {
@@ -28544,7 +28544,7 @@ func (m *ShortcutBarRefreshMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = *lshortcut.(*Shortcut)
+	m.Shortcut = lshortcut.(ShortcutIntrf)
 
 	return nil
 }
@@ -29077,7 +29077,7 @@ func (m *ObjectMovementMessage) Deserialize(r Reader) error {
 type ShortcutBarReplacedMessage struct {
 	BarType uint8
 
-	Shortcut Shortcut
+	Shortcut ShortcutIntrf
 }
 
 func (m *ShortcutBarReplacedMessage) ID() uint16 {
@@ -29121,7 +29121,7 @@ func (m *ShortcutBarReplacedMessage) Deserialize(r Reader) error {
 
 	lshortcut.Deserialize(r)
 
-	m.Shortcut = *lshortcut.(*Shortcut)
+	m.Shortcut = lshortcut.(ShortcutIntrf)
 
 	return nil
 }
@@ -29395,7 +29395,7 @@ func (m *ObjectAddedMessage) Deserialize(r Reader) error {
 type ShortcutBarContentMessage struct {
 	BarType uint8
 
-	Shortcuts []Shortcut
+	Shortcuts []ShortcutIntrf
 }
 
 func (m *ShortcutBarContentMessage) ID() uint16 {
@@ -29441,7 +29441,7 @@ func (m *ShortcutBarContentMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Shortcuts = make([]Shortcut, lshortcutsLen)
+	m.Shortcuts = make([]ShortcutIntrf, lshortcutsLen)
 
 	for i := range m.Shortcuts {
 
@@ -29456,7 +29456,7 @@ func (m *ShortcutBarContentMessage) Deserialize(r Reader) error {
 
 		lshortcuts.Deserialize(r)
 
-		m.Shortcuts[i] = *lshortcuts.(*Shortcut)
+		m.Shortcuts[i] = lshortcuts.(ShortcutIntrf)
 
 	}
 
@@ -30522,7 +30522,7 @@ func (m *MountSetMessage) Deserialize(r Reader) error {
 type UpdateMountBoostMessage struct {
 	RideId int32
 
-	BoostToUpdateList []UpdateMountBoost
+	BoostToUpdateList []UpdateMountBoostIntrf
 }
 
 func (m *UpdateMountBoostMessage) ID() uint16 {
@@ -30568,7 +30568,7 @@ func (m *UpdateMountBoostMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.BoostToUpdateList = make([]UpdateMountBoost, lboostToUpdateListLen)
+	m.BoostToUpdateList = make([]UpdateMountBoostIntrf, lboostToUpdateListLen)
 
 	for i := range m.BoostToUpdateList {
 
@@ -30583,7 +30583,7 @@ func (m *UpdateMountBoostMessage) Deserialize(r Reader) error {
 
 		lboostToUpdateList.Deserialize(r)
 
-		m.BoostToUpdateList[i] = *lboostToUpdateList.(*UpdateMountBoost)
+		m.BoostToUpdateList[i] = lboostToUpdateList.(UpdateMountBoostIntrf)
 
 	}
 
@@ -31212,7 +31212,7 @@ func (m *TreasureHuntFlagRemoveRequestMessage) Deserialize(r Reader) error {
 }
 
 type QuestStepInfoMessage struct {
-	Infos QuestActiveInformations
+	Infos QuestActiveInformationsIntrf
 }
 
 func (m *QuestStepInfoMessage) ID() uint16 {
@@ -31245,7 +31245,7 @@ func (m *QuestStepInfoMessage) Deserialize(r Reader) error {
 
 	linfos.Deserialize(r)
 
-	m.Infos = *linfos.(*QuestActiveInformations)
+	m.Infos = linfos.(QuestActiveInformationsIntrf)
 
 	return nil
 }
@@ -31420,7 +31420,7 @@ type TreasureHuntMessage struct {
 
 	StartMapId int32
 
-	KnownStepsList []TreasureHuntStep
+	KnownStepsList []TreasureHuntStepIntrf
 
 	TotalStepCount uint8
 
@@ -31515,7 +31515,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.KnownStepsList = make([]TreasureHuntStep, lknownStepsListLen)
+	m.KnownStepsList = make([]TreasureHuntStepIntrf, lknownStepsListLen)
 
 	for i := range m.KnownStepsList {
 
@@ -31530,7 +31530,7 @@ func (m *TreasureHuntMessage) Deserialize(r Reader) error {
 
 		lknownStepsList.Deserialize(r)
 
-		m.KnownStepsList[i] = *lknownStepsList.(*TreasureHuntStep)
+		m.KnownStepsList[i] = lknownStepsList.(TreasureHuntStepIntrf)
 
 	}
 
@@ -32150,7 +32150,7 @@ type QuestListMessage struct {
 
 	FinishedQuestsCounts []uint16
 
-	ActiveQuests []QuestActiveInformations
+	ActiveQuests []QuestActiveInformationsIntrf
 
 	ReinitDoneQuestsIds []uint16
 }
@@ -32259,7 +32259,7 @@ func (m *QuestListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.ActiveQuests = make([]QuestActiveInformations, lactiveQuestsLen)
+	m.ActiveQuests = make([]QuestActiveInformationsIntrf, lactiveQuestsLen)
 
 	for i := range m.ActiveQuests {
 
@@ -32274,7 +32274,7 @@ func (m *QuestListMessage) Deserialize(r Reader) error {
 
 		lactiveQuests.Deserialize(r)
 
-		m.ActiveQuests[i] = *lactiveQuests.(*QuestActiveInformations)
+		m.ActiveQuests[i] = lactiveQuests.(QuestActiveInformationsIntrf)
 
 	}
 
@@ -33021,7 +33021,7 @@ func (m *CheckFileRequestMessage) Deserialize(r Reader) error {
 }
 
 type ServerSessionConstantsMessage struct {
-	Variables []ServerSessionConstant
+	Variables []ServerSessionConstantIntrf
 }
 
 func (m *ServerSessionConstantsMessage) ID() uint16 {
@@ -33056,7 +33056,7 @@ func (m *ServerSessionConstantsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Variables = make([]ServerSessionConstant, lvariablesLen)
+	m.Variables = make([]ServerSessionConstantIntrf, lvariablesLen)
 
 	for i := range m.Variables {
 
@@ -33071,7 +33071,7 @@ func (m *ServerSessionConstantsMessage) Deserialize(r Reader) error {
 
 		lvariables.Deserialize(r)
 
-		m.Variables[i] = *lvariables.(*ServerSessionConstant)
+		m.Variables[i] = lvariables.(ServerSessionConstantIntrf)
 
 	}
 
@@ -34627,7 +34627,7 @@ func (m *CharacterSelectedSuccessMessage) Deserialize(r Reader) error {
 }
 
 type BasicCharactersListMessage struct {
-	Characters []CharacterBaseInformations
+	Characters []CharacterBaseInformationsIntrf
 }
 
 func (m *BasicCharactersListMessage) ID() uint16 {
@@ -34662,7 +34662,7 @@ func (m *BasicCharactersListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Characters = make([]CharacterBaseInformations, lcharactersLen)
+	m.Characters = make([]CharacterBaseInformationsIntrf, lcharactersLen)
 
 	for i := range m.Characters {
 
@@ -34677,7 +34677,7 @@ func (m *BasicCharactersListMessage) Deserialize(r Reader) error {
 
 		lcharacters.Deserialize(r)
 
-		m.Characters[i] = *lcharacters.(*CharacterBaseInformations)
+		m.Characters[i] = lcharacters.(CharacterBaseInformationsIntrf)
 
 	}
 
@@ -37491,7 +37491,7 @@ func (m *GuildListMessage) Deserialize(r Reader) error {
 }
 
 type GuildVersatileInfoListMessage struct {
-	Guilds []GuildVersatileInformations
+	Guilds []GuildVersatileInformationsIntrf
 }
 
 func (m *GuildVersatileInfoListMessage) ID() uint16 {
@@ -37526,7 +37526,7 @@ func (m *GuildVersatileInfoListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Guilds = make([]GuildVersatileInformations, lguildsLen)
+	m.Guilds = make([]GuildVersatileInformationsIntrf, lguildsLen)
 
 	for i := range m.Guilds {
 
@@ -37541,7 +37541,7 @@ func (m *GuildVersatileInfoListMessage) Deserialize(r Reader) error {
 
 		lguilds.Deserialize(r)
 
-		m.Guilds[i] = *lguilds.(*GuildVersatileInformations)
+		m.Guilds[i] = lguilds.(GuildVersatileInformationsIntrf)
 
 	}
 
@@ -38008,7 +38008,7 @@ type IdolListMessage struct {
 
 	PartyChosenIdols []uint16
 
-	PartyIdols []PartyIdol
+	PartyIdols []PartyIdolIntrf
 }
 
 func (m *IdolListMessage) ID() uint16 {
@@ -38103,7 +38103,7 @@ func (m *IdolListMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.PartyIdols = make([]PartyIdol, lpartyIdolsLen)
+	m.PartyIdols = make([]PartyIdolIntrf, lpartyIdolsLen)
 
 	for i := range m.PartyIdols {
 
@@ -38118,7 +38118,7 @@ func (m *IdolListMessage) Deserialize(r Reader) error {
 
 		lpartyIdols.Deserialize(r)
 
-		m.PartyIdols[i] = *lpartyIdols.(*PartyIdol)
+		m.PartyIdols[i] = lpartyIdols.(PartyIdolIntrf)
 
 	}
 
@@ -38402,9 +38402,9 @@ func (m *MountDataErrorMessage) Deserialize(r Reader) error {
 type MapRunningFightDetailsMessage struct {
 	FightId uint32
 
-	Attackers []GameFightFighterLightInformations
+	Attackers []GameFightFighterLightInformationsIntrf
 
-	Defenders []GameFightFighterLightInformations
+	Defenders []GameFightFighterLightInformationsIntrf
 }
 
 func (m *MapRunningFightDetailsMessage) ID() uint16 {
@@ -38466,7 +38466,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Attackers = make([]GameFightFighterLightInformations, lattackersLen)
+	m.Attackers = make([]GameFightFighterLightInformationsIntrf, lattackersLen)
 
 	for i := range m.Attackers {
 
@@ -38481,7 +38481,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 
 		lattackers.Deserialize(r)
 
-		m.Attackers[i] = *lattackers.(*GameFightFighterLightInformations)
+		m.Attackers[i] = lattackers.(GameFightFighterLightInformationsIntrf)
 
 	}
 
@@ -38490,7 +38490,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Defenders = make([]GameFightFighterLightInformations, ldefendersLen)
+	m.Defenders = make([]GameFightFighterLightInformationsIntrf, ldefendersLen)
 
 	for i := range m.Defenders {
 
@@ -38505,7 +38505,7 @@ func (m *MapRunningFightDetailsMessage) Deserialize(r Reader) error {
 
 		ldefenders.Deserialize(r)
 
-		m.Defenders[i] = *ldefenders.(*GameFightFighterLightInformations)
+		m.Defenders[i] = ldefenders.(GameFightFighterLightInformationsIntrf)
 
 	}
 
@@ -40799,7 +40799,7 @@ type ExchangeBidHouseInListAddedMessage struct {
 
 	ObjGenericId int32
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	Prices []int64
 }
@@ -40870,7 +40870,7 @@ func (m *ExchangeBidHouseInListAddedMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -40885,7 +40885,7 @@ func (m *ExchangeBidHouseInListAddedMessage) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -44046,7 +44046,7 @@ func (m *BasicStatMessage) Deserialize(r Reader) error {
 type BasicStatWithDataMessage struct {
 	BasicStatMessage
 
-	Datas []StatisticData
+	Datas []StatisticDataIntrf
 }
 
 func (m *BasicStatWithDataMessage) ID() uint16 {
@@ -44089,7 +44089,7 @@ func (m *BasicStatWithDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Datas = make([]StatisticData, ldatasLen)
+	m.Datas = make([]StatisticDataIntrf, ldatasLen)
 
 	for i := range m.Datas {
 
@@ -44104,7 +44104,7 @@ func (m *BasicStatWithDataMessage) Deserialize(r Reader) error {
 
 		ldatas.Deserialize(r)
 
-		m.Datas[i] = *ldatas.(*StatisticData)
+		m.Datas[i] = ldatas.(StatisticDataIntrf)
 
 	}
 
@@ -44143,7 +44143,7 @@ func (m *AggregateStatMessage) Deserialize(r Reader) error {
 type AggregateStatWithDataMessage struct {
 	AggregateStatMessage
 
-	Datas []StatisticData
+	Datas []StatisticDataIntrf
 }
 
 func (m *AggregateStatWithDataMessage) ID() uint16 {
@@ -44186,7 +44186,7 @@ func (m *AggregateStatWithDataMessage) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Datas = make([]StatisticData, ldatasLen)
+	m.Datas = make([]StatisticDataIntrf, ldatasLen)
 
 	for i := range m.Datas {
 
@@ -44201,7 +44201,7 @@ func (m *AggregateStatWithDataMessage) Deserialize(r Reader) error {
 
 		ldatas.Deserialize(r)
 
-		m.Datas[i] = *ldatas.(*StatisticData)
+		m.Datas[i] = ldatas.(StatisticDataIntrf)
 
 	}
 

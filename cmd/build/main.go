@@ -47,11 +47,54 @@ func main() {
 		os.Exit(4)
 	}
 
+	interfacesWriter := openFile("../../interfaces.gen.go")
+	if err = exportInterfaces(interfacesWriter, p.Types, p.Messages); err != nil {
+		fmt.Fprintf(os.Stderr, "interfaces: %v\n", err)
+		os.Exit(4)
+	}
+
 	protocolWriter := openFile("../../protocol.gen.go")
 	if err = exportProtocol(protocolWriter, p); err != nil {
 		fmt.Fprintf(os.Stderr, "protocol: %v\n", err)
 		os.Exit(4)
 	}
+}
+
+func exportInterfaces(w io.Writer, types []d2protocolparser.Class, messages []d2protocolparser.Class) error {
+	needingIntrf := map[string]bool{}
+	for _, t := range types {
+		for _, field := range t.Fields {
+			if field.UseTypeManager {
+				needingIntrf[field.Type] = true
+			}
+		}
+	}
+	for _, t := range messages {
+		for _, field := range t.Fields {
+			if field.UseTypeManager {
+				needingIntrf[field.Type] = true
+			}
+		}
+	}
+	interfaces := []d2protocolparser.Class{}
+	for _, t := range types {
+		if f, _ := needingIntrf[t.Name]; f {
+			interfaces = append(interfaces, t)
+		}
+	}
+
+	funcMap := template.FuncMap{
+		"ToFieldName":     strings.Title,
+		"ToInterfaceName": toInterfaceName,
+		"ToGetterName":    toGetterName,
+		"EffectiveType":   getEffectiveType,
+	}
+	const interfacesTemplateFile = "./interfaces.template"
+	tem := template.Must(template.New("interfaces.template").Funcs(funcMap).ParseFiles(interfacesTemplateFile))
+	if err := tem.Execute(w, interfaces); err != nil {
+		return err
+	}
+	return nil
 }
 
 func exportProtocol(w io.Writer, p *d2protocolparser.Protocol) error {
@@ -87,6 +130,14 @@ func exportClasses(w io.Writer, name string, types []d2protocolparser.Class) err
 	return nil
 }
 
+func toGetterName(field string) string {
+	return "Get" + field
+}
+
+func toInterfaceName(name string) string {
+	return name + "Intrf"
+}
+
 func toGolangType(t string) string {
 	return t
 }
@@ -98,6 +149,8 @@ func typeHasParent(t d2protocolparser.Class) bool {
 func getEffectiveType(t d2protocolparser.Field) string {
 	if isNativeType(t) {
 		return t.Type
+	} else if t.UseTypeManager {
+		return toInterfaceName(t.Type)
 	}
 	return t.Type
 }

@@ -630,7 +630,7 @@ type GameContextActorInformations struct {
 
 	Look EntityLook
 
-	Disposition EntityDispositionInformations
+	Disposition EntityDispositionInformationsIntrf
 }
 
 func (m *GameContextActorInformations) ID() uint16 {
@@ -684,7 +684,7 @@ func (m *GameContextActorInformations) Deserialize(r Reader) error {
 
 	ldisposition.Deserialize(r)
 
-	m.Disposition = *ldisposition.(*EntityDispositionInformations)
+	m.Disposition = ldisposition.(EntityDispositionInformationsIntrf)
 
 	return nil
 }
@@ -698,7 +698,7 @@ type GameFightFighterInformations struct {
 
 	Alive bool
 
-	Stats GameFightMinimalStats
+	Stats GameFightMinimalStatsIntrf
 
 	PreviousPositions []uint16
 }
@@ -786,7 +786,7 @@ func (m *GameFightFighterInformations) Deserialize(r Reader) error {
 
 	lstats.Deserialize(r)
 
-	m.Stats = *lstats.(*GameFightMinimalStats)
+	m.Stats = lstats.(GameFightMinimalStatsIntrf)
 
 	lpreviousPositionsLen, err := r.ReadInt16()
 	if err != nil {
@@ -1009,9 +1009,9 @@ type InteractiveElement struct {
 
 	ElementTypeId int32
 
-	EnabledSkills []InteractiveElementSkill
+	EnabledSkills []InteractiveElementSkillIntrf
 
-	DisabledSkills []InteractiveElementSkill
+	DisabledSkills []InteractiveElementSkillIntrf
 
 	OnCurrentMap bool
 }
@@ -1090,7 +1090,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnabledSkills = make([]InteractiveElementSkill, lenabledSkillsLen)
+	m.EnabledSkills = make([]InteractiveElementSkillIntrf, lenabledSkillsLen)
 
 	for i := range m.EnabledSkills {
 
@@ -1105,7 +1105,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 
 		lenabledSkills.Deserialize(r)
 
-		m.EnabledSkills[i] = *lenabledSkills.(*InteractiveElementSkill)
+		m.EnabledSkills[i] = lenabledSkills.(InteractiveElementSkillIntrf)
 
 	}
 
@@ -1114,7 +1114,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.DisabledSkills = make([]InteractiveElementSkill, ldisabledSkillsLen)
+	m.DisabledSkills = make([]InteractiveElementSkillIntrf, ldisabledSkillsLen)
 
 	for i := range m.DisabledSkills {
 
@@ -1129,7 +1129,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 
 		ldisabledSkills.Deserialize(r)
 
-		m.DisabledSkills[i] = *ldisabledSkills.(*InteractiveElementSkill)
+		m.DisabledSkills[i] = ldisabledSkills.(InteractiveElementSkillIntrf)
 
 	}
 
@@ -1146,7 +1146,7 @@ func (m *InteractiveElement) Deserialize(r Reader) error {
 type GameRolePlayPortalInformations struct {
 	GameRolePlayActorInformations
 
-	Portal PortalInformation
+	Portal PortalInformationIntrf
 }
 
 func (m *GameRolePlayPortalInformations) ID() uint16 {
@@ -1187,7 +1187,7 @@ func (m *GameRolePlayPortalInformations) Deserialize(r Reader) error {
 
 	lportal.Deserialize(r)
 
-	m.Portal = *lportal.(*PortalInformation)
+	m.Portal = lportal.(PortalInformationIntrf)
 
 	return nil
 }
@@ -1195,7 +1195,7 @@ func (m *GameRolePlayPortalInformations) Deserialize(r Reader) error {
 type GameRolePlayGroupMonsterInformations struct {
 	GameRolePlayActorInformations
 
-	StaticInfos GroupMonsterStaticInformations
+	StaticInfos GroupMonsterStaticInformationsIntrf
 
 	CreationTime float64
 
@@ -1289,7 +1289,7 @@ func (m *GameRolePlayGroupMonsterInformations) Deserialize(r Reader) error {
 
 	lstaticInfos.Deserialize(r)
 
-	m.StaticInfos = *lstaticInfos.(*GroupMonsterStaticInformations)
+	m.StaticInfos = lstaticInfos.(GroupMonsterStaticInformationsIntrf)
 
 	lcreationTime, err := r.ReadDouble()
 	if err != nil {
@@ -1327,7 +1327,7 @@ type GameRolePlayGroupMonsterWaveInformations struct {
 
 	NbWaves uint8
 
-	Alternatives []GroupMonsterStaticInformations
+	Alternatives []GroupMonsterStaticInformationsIntrf
 }
 
 func (m *GameRolePlayGroupMonsterWaveInformations) ID() uint16 {
@@ -1381,7 +1381,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Alternatives = make([]GroupMonsterStaticInformations, lalternativesLen)
+	m.Alternatives = make([]GroupMonsterStaticInformationsIntrf, lalternativesLen)
 
 	for i := range m.Alternatives {
 
@@ -1396,7 +1396,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 
 		lalternatives.Deserialize(r)
 
-		m.Alternatives[i] = *lalternatives.(*GroupMonsterStaticInformations)
+		m.Alternatives[i] = lalternatives.(GroupMonsterStaticInformationsIntrf)
 
 	}
 
@@ -1406,7 +1406,7 @@ func (m *GameRolePlayGroupMonsterWaveInformations) Deserialize(r Reader) error {
 type GameRolePlayPrismInformations struct {
 	GameRolePlayActorInformations
 
-	Prism PrismInformation
+	Prism PrismInformationIntrf
 }
 
 func (m *GameRolePlayPrismInformations) ID() uint16 {
@@ -1447,7 +1447,7 @@ func (m *GameRolePlayPrismInformations) Deserialize(r Reader) error {
 
 	lprism.Deserialize(r)
 
-	m.Prism = *lprism.(*PrismInformation)
+	m.Prism = lprism.(PrismInformationIntrf)
 
 	return nil
 }
@@ -1585,7 +1585,7 @@ func (m *GameRolePlayNpcInformations) Deserialize(r Reader) error {
 type GameRolePlayTaxCollectorInformations struct {
 	GameRolePlayActorInformations
 
-	Identification TaxCollectorStaticInformations
+	Identification TaxCollectorStaticInformationsIntrf
 
 	GuildLevel uint8
 
@@ -1638,7 +1638,7 @@ func (m *GameRolePlayTaxCollectorInformations) Deserialize(r Reader) error {
 
 	lidentification.Deserialize(r)
 
-	m.Identification = *lidentification.(*TaxCollectorStaticInformations)
+	m.Identification = lidentification.(TaxCollectorStaticInformationsIntrf)
 
 	lguildLevel, err := r.ReadUInt8()
 	if err != nil {
@@ -1853,7 +1853,7 @@ func (m *GameFightCompanionInformations) Deserialize(r Reader) error {
 type GameRolePlayHumanoidInformations struct {
 	GameRolePlayNamedActorInformations
 
-	HumanoidInfo HumanInformations
+	HumanoidInfo HumanInformationsIntrf
 
 	AccountId uint32
 }
@@ -1900,7 +1900,7 @@ func (m *GameRolePlayHumanoidInformations) Deserialize(r Reader) error {
 
 	lhumanoidInfo.Deserialize(r)
 
-	m.HumanoidInfo = *lhumanoidInfo.(*HumanInformations)
+	m.HumanoidInfo = lhumanoidInfo.(HumanInformationsIntrf)
 
 	laccountId, err := r.ReadUInt32()
 	if err != nil {
@@ -1993,7 +1993,7 @@ type GameRolePlayMerchantInformations struct {
 
 	SellType uint8
 
-	Options []HumanOption
+	Options []HumanOptionIntrf
 }
 
 func (m *GameRolePlayMerchantInformations) ID() uint16 {
@@ -2047,7 +2047,7 @@ func (m *GameRolePlayMerchantInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Options = make([]HumanOption, loptionsLen)
+	m.Options = make([]HumanOptionIntrf, loptionsLen)
 
 	for i := range m.Options {
 
@@ -2062,7 +2062,7 @@ func (m *GameRolePlayMerchantInformations) Deserialize(r Reader) error {
 
 		loptions.Deserialize(r)
 
-		m.Options[i] = *loptions.(*HumanOption)
+		m.Options[i] = loptions.(HumanOptionIntrf)
 
 	}
 
@@ -3736,7 +3736,7 @@ type GuildMember struct {
 
 	AchievementPoints int32
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 
 	HavenBagShared bool
 }
@@ -3919,7 +3919,7 @@ func (m *GuildMember) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	return nil
 }
@@ -4774,7 +4774,7 @@ func (m *QuestActiveInformations) Deserialize(r Reader) error {
 type JobDescription struct {
 	JobId uint8
 
-	Skills []SkillActionDescription
+	Skills []SkillActionDescriptionIntrf
 }
 
 func (m *JobDescription) ID() uint16 {
@@ -4820,7 +4820,7 @@ func (m *JobDescription) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Skills = make([]SkillActionDescription, lskillsLen)
+	m.Skills = make([]SkillActionDescriptionIntrf, lskillsLen)
 
 	for i := range m.Skills {
 
@@ -4835,7 +4835,7 @@ func (m *JobDescription) Deserialize(r Reader) error {
 
 		lskills.Deserialize(r)
 
-		m.Skills[i] = *lskills.(*SkillActionDescription)
+		m.Skills[i] = lskills.(SkillActionDescriptionIntrf)
 
 	}
 
@@ -5973,7 +5973,7 @@ type HumanInformations struct {
 
 	Sex bool
 
-	Options []HumanOption
+	Options []HumanOptionIntrf
 }
 
 func (m *HumanInformations) ID() uint16 {
@@ -6029,7 +6029,7 @@ func (m *HumanInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Options = make([]HumanOption, loptionsLen)
+	m.Options = make([]HumanOptionIntrf, loptionsLen)
 
 	for i := range m.Options {
 
@@ -6044,7 +6044,7 @@ func (m *HumanInformations) Deserialize(r Reader) error {
 
 		loptions.Deserialize(r)
 
-		m.Options[i] = *loptions.(*HumanOption)
+		m.Options[i] = loptions.(HumanOptionIntrf)
 
 	}
 
@@ -6293,7 +6293,7 @@ func (m *PaddockInformations) Deserialize(r Reader) error {
 type PaddockInstancesInformations struct {
 	PaddockInformations
 
-	Paddocks []PaddockBuyableInformations
+	Paddocks []PaddockBuyableInformationsIntrf
 }
 
 func (m *PaddockInstancesInformations) ID() uint16 {
@@ -6336,7 +6336,7 @@ func (m *PaddockInstancesInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Paddocks = make([]PaddockBuyableInformations, lpaddocksLen)
+	m.Paddocks = make([]PaddockBuyableInformationsIntrf, lpaddocksLen)
 
 	for i := range m.Paddocks {
 
@@ -6351,7 +6351,7 @@ func (m *PaddockInstancesInformations) Deserialize(r Reader) error {
 
 		lpaddocks.Deserialize(r)
 
-		m.Paddocks[i] = *lpaddocks.(*PaddockBuyableInformations)
+		m.Paddocks[i] = lpaddocks.(PaddockBuyableInformationsIntrf)
 
 	}
 
@@ -6935,7 +6935,7 @@ func (m *AbstractFightTeamInformations) Deserialize(r Reader) error {
 type FightTeamInformations struct {
 	AbstractFightTeamInformations
 
-	TeamMembers []FightTeamMemberInformations
+	TeamMembers []FightTeamMemberInformationsIntrf
 }
 
 func (m *FightTeamInformations) ID() uint16 {
@@ -6978,7 +6978,7 @@ func (m *FightTeamInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.TeamMembers = make([]FightTeamMemberInformations, lteamMembersLen)
+	m.TeamMembers = make([]FightTeamMemberInformationsIntrf, lteamMembersLen)
 
 	for i := range m.TeamMembers {
 
@@ -6993,7 +6993,7 @@ func (m *FightTeamInformations) Deserialize(r Reader) error {
 
 		lteamMembers.Deserialize(r)
 
-		m.TeamMembers[i] = *lteamMembers.(*FightTeamMemberInformations)
+		m.TeamMembers[i] = lteamMembers.(FightTeamMemberInformationsIntrf)
 
 	}
 
@@ -7132,7 +7132,7 @@ type PartyMemberInformations struct {
 
 	SubAreaId uint16
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 
 	Companions []PartyCompanionMemberInformations
 }
@@ -7297,7 +7297,7 @@ func (m *PartyMemberInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	lcompanionsLen, err := r.ReadInt16()
 	if err != nil {
@@ -7415,7 +7415,7 @@ type PartyGuestInformations struct {
 
 	Sex bool
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 
 	Companions []PartyCompanionBaseInformations
 }
@@ -7527,7 +7527,7 @@ func (m *PartyGuestInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	lcompanionsLen, err := r.ReadInt16()
 	if err != nil {
@@ -7645,7 +7645,7 @@ type FightCommonInformations struct {
 
 	FightType uint8
 
-	FightTeams []FightTeamInformations
+	FightTeams []FightTeamInformationsIntrf
 
 	FightTeamsPositions []uint16
 
@@ -7730,7 +7730,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.FightTeams = make([]FightTeamInformations, lfightTeamsLen)
+	m.FightTeams = make([]FightTeamInformationsIntrf, lfightTeamsLen)
 
 	for i := range m.FightTeams {
 
@@ -7745,7 +7745,7 @@ func (m *FightCommonInformations) Deserialize(r Reader) error {
 
 		lfightTeams.Deserialize(r)
 
-		m.FightTeams[i] = *lfightTeams.(*FightTeamInformations)
+		m.FightTeams[i] = lfightTeams.(FightTeamInformationsIntrf)
 
 	}
 
@@ -8287,7 +8287,7 @@ type FriendOnlineInformations struct {
 
 	MoodSmileyId uint16
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 
 	HavenBagShared bool
 }
@@ -8425,7 +8425,7 @@ func (m *FriendOnlineInformations) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	return nil
 }
@@ -8651,7 +8651,7 @@ type TaxCollectorInformations struct {
 
 	Look EntityLook
 
-	Complements []TaxCollectorComplementaryInformations
+	Complements []TaxCollectorComplementaryInformationsIntrf
 }
 
 func (m *TaxCollectorInformations) ID() uint16 {
@@ -8783,7 +8783,7 @@ func (m *TaxCollectorInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Complements = make([]TaxCollectorComplementaryInformations, lcomplementsLen)
+	m.Complements = make([]TaxCollectorComplementaryInformationsIntrf, lcomplementsLen)
 
 	for i := range m.Complements {
 
@@ -8798,7 +8798,7 @@ func (m *TaxCollectorInformations) Deserialize(r Reader) error {
 
 		lcomplements.Deserialize(r)
 
-		m.Complements[i] = *lcomplements.(*TaxCollectorComplementaryInformations)
+		m.Complements[i] = lcomplements.(TaxCollectorComplementaryInformationsIntrf)
 
 	}
 
@@ -9145,7 +9145,7 @@ type PrismGeolocalizedInformation struct {
 
 	MapId int32
 
-	Prism PrismInformation
+	Prism PrismInformationIntrf
 }
 
 func (m *PrismGeolocalizedInformation) ID() uint16 {
@@ -9219,7 +9219,7 @@ func (m *PrismGeolocalizedInformation) Deserialize(r Reader) error {
 
 	lprism.Deserialize(r)
 
-	m.Prism = *lprism.(*PrismInformation)
+	m.Prism = lprism.(PrismInformationIntrf)
 
 	return nil
 }
@@ -9309,7 +9309,7 @@ type ObjectItem struct {
 
 	ObjectGID uint16
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	ObjectUID uint32
 
@@ -9386,7 +9386,7 @@ func (m *ObjectItem) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -9401,7 +9401,7 @@ func (m *ObjectItem) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -10563,7 +10563,7 @@ type FightDispellableEffectExtendedInformations struct {
 
 	SourceId float64
 
-	Effect AbstractFightDispellableEffect
+	Effect AbstractFightDispellableEffectIntrf
 }
 
 func (m *FightDispellableEffectExtendedInformations) ID() uint16 {
@@ -10618,7 +10618,7 @@ func (m *FightDispellableEffectExtendedInformations) Deserialize(r Reader) error
 
 	leffect.Deserialize(r)
 
-	m.Effect = *leffect.(*AbstractFightDispellableEffect)
+	m.Effect = leffect.(AbstractFightDispellableEffectIntrf)
 
 	return nil
 }
@@ -10628,7 +10628,7 @@ type FightResultPlayerListEntry struct {
 
 	Level uint8
 
-	Additional []FightResultAdditionalData
+	Additional []FightResultAdditionalDataIntrf
 }
 
 func (m *FightResultPlayerListEntry) ID() uint16 {
@@ -10682,7 +10682,7 @@ func (m *FightResultPlayerListEntry) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Additional = make([]FightResultAdditionalData, ladditionalLen)
+	m.Additional = make([]FightResultAdditionalDataIntrf, ladditionalLen)
 
 	for i := range m.Additional {
 
@@ -10697,7 +10697,7 @@ func (m *FightResultPlayerListEntry) Deserialize(r Reader) error {
 
 		ladditional.Deserialize(r)
 
-		m.Additional[i] = *ladditional.(*FightResultAdditionalData)
+		m.Additional[i] = ladditional.(FightResultAdditionalDataIntrf)
 
 	}
 
@@ -11810,9 +11810,9 @@ type PrismFightersInformation struct {
 
 	WaitingForHelpInfo ProtectedEntityWaitingForHelpInfo
 
-	AllyCharactersInformations []CharacterMinimalPlusLookInformations
+	AllyCharactersInformations []CharacterMinimalPlusLookInformationsIntrf
 
-	EnemyCharactersInformations []CharacterMinimalPlusLookInformations
+	EnemyCharactersInformations []CharacterMinimalPlusLookInformationsIntrf
 }
 
 func (m *PrismFightersInformation) ID() uint16 {
@@ -11884,7 +11884,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
+	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformationsIntrf, lallyCharactersInformationsLen)
 
 	for i := range m.AllyCharactersInformations {
 
@@ -11899,7 +11899,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 
 		lallyCharactersInformations.Deserialize(r)
 
-		m.AllyCharactersInformations[i] = *lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.AllyCharactersInformations[i] = lallyCharactersInformations.(CharacterMinimalPlusLookInformationsIntrf)
 
 	}
 
@@ -11908,7 +11908,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
+	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformationsIntrf, lenemyCharactersInformationsLen)
 
 	for i := range m.EnemyCharactersInformations {
 
@@ -11923,7 +11923,7 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 
 		lenemyCharactersInformations.Deserialize(r)
 
-		m.EnemyCharactersInformations[i] = *lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.EnemyCharactersInformations[i] = lenemyCharactersInformations.(CharacterMinimalPlusLookInformationsIntrf)
 
 	}
 
@@ -11933,9 +11933,9 @@ func (m *PrismFightersInformation) Deserialize(r Reader) error {
 type TaxCollectorFightersInformation struct {
 	CollectorId int32
 
-	AllyCharactersInformations []CharacterMinimalPlusLookInformations
+	AllyCharactersInformations []CharacterMinimalPlusLookInformationsIntrf
 
-	EnemyCharactersInformations []CharacterMinimalPlusLookInformations
+	EnemyCharactersInformations []CharacterMinimalPlusLookInformationsIntrf
 }
 
 func (m *TaxCollectorFightersInformation) ID() uint16 {
@@ -11997,7 +11997,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lallyCharactersInformationsLen)
+	m.AllyCharactersInformations = make([]CharacterMinimalPlusLookInformationsIntrf, lallyCharactersInformationsLen)
 
 	for i := range m.AllyCharactersInformations {
 
@@ -12012,7 +12012,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 
 		lallyCharactersInformations.Deserialize(r)
 
-		m.AllyCharactersInformations[i] = *lallyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.AllyCharactersInformations[i] = lallyCharactersInformations.(CharacterMinimalPlusLookInformationsIntrf)
 
 	}
 
@@ -12021,7 +12021,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformations, lenemyCharactersInformationsLen)
+	m.EnemyCharactersInformations = make([]CharacterMinimalPlusLookInformationsIntrf, lenemyCharactersInformationsLen)
 
 	for i := range m.EnemyCharactersInformations {
 
@@ -12036,7 +12036,7 @@ func (m *TaxCollectorFightersInformation) Deserialize(r Reader) error {
 
 		lenemyCharactersInformations.Deserialize(r)
 
-		m.EnemyCharactersInformations[i] = *lenemyCharactersInformations.(*CharacterMinimalPlusLookInformations)
+		m.EnemyCharactersInformations[i] = lenemyCharactersInformations.(CharacterMinimalPlusLookInformationsIntrf)
 
 	}
 
@@ -12048,7 +12048,7 @@ type ObjectItemMinimalInformation struct {
 
 	ObjectGID uint16
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 }
 
 func (m *ObjectItemMinimalInformation) ID() uint16 {
@@ -12102,7 +12102,7 @@ func (m *ObjectItemMinimalInformation) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -12117,7 +12117,7 @@ func (m *ObjectItemMinimalInformation) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -14950,7 +14950,7 @@ type QuestActiveDetailedInformations struct {
 
 	StepId uint16
 
-	Objectives []QuestObjectiveInformations
+	Objectives []QuestObjectiveInformationsIntrf
 }
 
 func (m *QuestActiveDetailedInformations) ID() uint16 {
@@ -15004,7 +15004,7 @@ func (m *QuestActiveDetailedInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Objectives = make([]QuestObjectiveInformations, lobjectivesLen)
+	m.Objectives = make([]QuestObjectiveInformationsIntrf, lobjectivesLen)
 
 	for i := range m.Objectives {
 
@@ -15019,7 +15019,7 @@ func (m *QuestActiveDetailedInformations) Deserialize(r Reader) error {
 
 		lobjectives.Deserialize(r)
 
-		m.Objectives[i] = *lobjectives.(*QuestObjectiveInformations)
+		m.Objectives[i] = lobjectives.(QuestObjectiveInformationsIntrf)
 
 	}
 
@@ -18632,7 +18632,7 @@ type ObjectItemToSell struct {
 
 	ObjectGID uint16
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	ObjectUID uint32
 
@@ -18704,7 +18704,7 @@ func (m *ObjectItemToSell) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18719,7 +18719,7 @@ func (m *ObjectItemToSell) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -18752,7 +18752,7 @@ type ObjectItemToSellInHumanVendorShop struct {
 
 	ObjectGID uint16
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	ObjectUID uint32
 
@@ -18830,7 +18830,7 @@ func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18845,7 +18845,7 @@ func (m *ObjectItemToSellInHumanVendorShop) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -18922,7 +18922,7 @@ func (m *ObjectItemToSellInBid) Deserialize(r Reader) error {
 type BidExchangerObjectInfo struct {
 	ObjectUID uint32
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	Prices []int64
 }
@@ -18982,7 +18982,7 @@ func (m *BidExchangerObjectInfo) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -18997,7 +18997,7 @@ func (m *BidExchangerObjectInfo) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -19838,7 +19838,7 @@ type ObjectItemNotInContainer struct {
 
 	ObjectGID uint16
 
-	Effects []ObjectEffect
+	Effects []ObjectEffectIntrf
 
 	ObjectUID uint32
 
@@ -19904,7 +19904,7 @@ func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 		return err
 	}
 
-	m.Effects = make([]ObjectEffect, leffectsLen)
+	m.Effects = make([]ObjectEffectIntrf, leffectsLen)
 
 	for i := range m.Effects {
 
@@ -19919,7 +19919,7 @@ func (m *ObjectItemNotInContainer) Deserialize(r Reader) error {
 
 		leffects.Deserialize(r)
 
-		m.Effects[i] = *leffects.(*ObjectEffect)
+		m.Effects[i] = leffects.(ObjectEffectIntrf)
 
 	}
 
@@ -20191,7 +20191,7 @@ type JobCrafterDirectoryEntryPlayerInfo struct {
 
 	SubAreaId uint16
 
-	Status PlayerStatus
+	Status PlayerStatusIntrf
 }
 
 func (m *JobCrafterDirectoryEntryPlayerInfo) ID() uint16 {
@@ -20334,7 +20334,7 @@ func (m *JobCrafterDirectoryEntryPlayerInfo) Deserialize(r Reader) error {
 
 	lstatus.Deserialize(r)
 
-	m.Status = *lstatus.(*PlayerStatus)
+	m.Status = lstatus.(PlayerStatusIntrf)
 
 	return nil
 }

@@ -17,7 +17,7 @@ type {{.Name | ToInterfaceName}} interface {
 {{ $name := .Name }}
 
 {{ if TypeHasParent . }}
-    
+
 func (m *{{$name}}) {{.Parent | ToGetterName}}() {{ .Parent }} {
     return m.{{ .Parent }}
 }

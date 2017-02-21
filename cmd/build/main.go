@@ -153,7 +153,7 @@ func toGolangType(t string) string {
 }
 
 func typeHasParent(t d2protocolparser.Class) bool {
-	return t.Parent != "" && t.Parent != "NetworkMessage"
+	return t.Parent != ""
 }
 
 func getEffectiveType(t d2protocolparser.Field) string {

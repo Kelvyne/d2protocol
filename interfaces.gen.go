@@ -102,6 +102,14 @@ type GameFightMinimalStatsIntrf interface {
 	GetFixedDamageReflection() int16
 
 	GetInvisibilityState() uint8
+
+	GetMeleeDamageReceivedPercent() uint16
+
+	GetRangedDamageReceivedPercent() uint16
+
+	GetWeaponDamageReceivedPercent() uint16
+
+	GetSpellDamageReceivedPercent() uint16
 }
 
 func (m *GameFightMinimalStats) GetLifePoints() uint32 {
@@ -258,6 +266,22 @@ func (m *GameFightMinimalStats) GetFixedDamageReflection() int16 {
 
 func (m *GameFightMinimalStats) GetInvisibilityState() uint8 {
 	return m.InvisibilityState
+}
+
+func (m *GameFightMinimalStats) GetMeleeDamageReceivedPercent() uint16 {
+	return m.MeleeDamageReceivedPercent
+}
+
+func (m *GameFightMinimalStats) GetRangedDamageReceivedPercent() uint16 {
+	return m.RangedDamageReceivedPercent
+}
+
+func (m *GameFightMinimalStats) GetWeaponDamageReceivedPercent() uint16 {
+	return m.WeaponDamageReceivedPercent
+}
+
+func (m *GameFightMinimalStats) GetSpellDamageReceivedPercent() uint16 {
+	return m.SpellDamageReceivedPercent
 }
 
 type FightTeamInformationsIntrf interface {

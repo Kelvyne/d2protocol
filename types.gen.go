@@ -936,6 +936,22 @@ type CharacterCharacteristicsInformations struct {
 
 	PvpFireElementReduction CharacterBaseCharacteristic
 
+	MeleeDamageDonePercent CharacterBaseCharacteristic
+
+	MeleeDamageReceivedPercent CharacterBaseCharacteristic
+
+	RangedDamageDonePercent CharacterBaseCharacteristic
+
+	RangedDamageReceivedPercent CharacterBaseCharacteristic
+
+	WeaponDamageDonePercent CharacterBaseCharacteristic
+
+	WeaponDamageReceivedPercent CharacterBaseCharacteristic
+
+	SpellDamageDonePercent CharacterBaseCharacteristic
+
+	SpellDamageReceivedPercent CharacterBaseCharacteristic
+
 	SpellModifications []CharacterSpellModification
 
 	ProbationTime uint32
@@ -1244,6 +1260,38 @@ func (m *CharacterCharacteristicsInformations) Serialize(w Writer) error {
 	}
 
 	if err := m.PvpFireElementReduction.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.MeleeDamageDonePercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.MeleeDamageReceivedPercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.RangedDamageDonePercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.RangedDamageReceivedPercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.WeaponDamageDonePercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.WeaponDamageReceivedPercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.SpellDamageDonePercent.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := m.SpellDamageReceivedPercent.Serialize(w); err != nil {
 		return err
 	}
 
@@ -1732,6 +1780,54 @@ func (m *CharacterCharacteristicsInformations) Deserialize(r Reader) error {
 	lpvpFireElementReduction.Deserialize(r)
 
 	m.PvpFireElementReduction = lpvpFireElementReduction
+
+	var lmeleeDamageDonePercent CharacterBaseCharacteristic
+
+	lmeleeDamageDonePercent.Deserialize(r)
+
+	m.MeleeDamageDonePercent = lmeleeDamageDonePercent
+
+	var lmeleeDamageReceivedPercent CharacterBaseCharacteristic
+
+	lmeleeDamageReceivedPercent.Deserialize(r)
+
+	m.MeleeDamageReceivedPercent = lmeleeDamageReceivedPercent
+
+	var lrangedDamageDonePercent CharacterBaseCharacteristic
+
+	lrangedDamageDonePercent.Deserialize(r)
+
+	m.RangedDamageDonePercent = lrangedDamageDonePercent
+
+	var lrangedDamageReceivedPercent CharacterBaseCharacteristic
+
+	lrangedDamageReceivedPercent.Deserialize(r)
+
+	m.RangedDamageReceivedPercent = lrangedDamageReceivedPercent
+
+	var lweaponDamageDonePercent CharacterBaseCharacteristic
+
+	lweaponDamageDonePercent.Deserialize(r)
+
+	m.WeaponDamageDonePercent = lweaponDamageDonePercent
+
+	var lweaponDamageReceivedPercent CharacterBaseCharacteristic
+
+	lweaponDamageReceivedPercent.Deserialize(r)
+
+	m.WeaponDamageReceivedPercent = lweaponDamageReceivedPercent
+
+	var lspellDamageDonePercent CharacterBaseCharacteristic
+
+	lspellDamageDonePercent.Deserialize(r)
+
+	m.SpellDamageDonePercent = lspellDamageDonePercent
+
+	var lspellDamageReceivedPercent CharacterBaseCharacteristic
+
+	lspellDamageReceivedPercent.Deserialize(r)
+
+	m.SpellDamageReceivedPercent = lspellDamageReceivedPercent
 
 	lspellModificationsLen, err := r.ReadInt16()
 	if err != nil {
@@ -2342,6 +2438,14 @@ type GameFightMinimalStats struct {
 	FixedDamageReflection int16
 
 	InvisibilityState uint8
+
+	MeleeDamageReceivedPercent uint16
+
+	RangedDamageReceivedPercent uint16
+
+	WeaponDamageReceivedPercent uint16
+
+	SpellDamageReceivedPercent uint16
 }
 
 func (m *GameFightMinimalStats) ID() uint16 {
@@ -2503,6 +2607,22 @@ func (m *GameFightMinimalStats) Serialize(w Writer) error {
 	}
 
 	if err := w.WriteUInt8(m.InvisibilityState); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarUInt16(m.MeleeDamageReceivedPercent); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarUInt16(m.RangedDamageReceivedPercent); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarUInt16(m.WeaponDamageReceivedPercent); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarUInt16(m.SpellDamageReceivedPercent); err != nil {
 		return err
 	}
 
@@ -2783,6 +2903,34 @@ func (m *GameFightMinimalStats) Deserialize(r Reader) error {
 	}
 
 	m.InvisibilityState = linvisibilityState
+
+	lmeleeDamageReceivedPercent, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.MeleeDamageReceivedPercent = lmeleeDamageReceivedPercent
+
+	lrangedDamageReceivedPercent, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.RangedDamageReceivedPercent = lrangedDamageReceivedPercent
+
+	lweaponDamageReceivedPercent, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.WeaponDamageReceivedPercent = lweaponDamageReceivedPercent
+
+	lspellDamageReceivedPercent, err := r.ReadVarUInt16()
+	if err != nil {
+		return err
+	}
+
+	m.SpellDamageReceivedPercent = lspellDamageReceivedPercent
 
 	return nil
 }
@@ -11894,13 +12042,13 @@ type HouseInformationsInside struct {
 
 	OwnerName string
 
-	WorldX int16
-
-	WorldY int16
-
 	Price int64
 
 	IsLocked bool
+
+	WorldX int16
+
+	WorldY int16
 }
 
 func (m *HouseInformationsInside) ID() uint16 {
@@ -11929,19 +12077,19 @@ func (m *HouseInformationsInside) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteInt16(m.WorldX); err != nil {
-		return err
-	}
-
-	if err := w.WriteInt16(m.WorldY); err != nil {
-		return err
-	}
-
 	if err := w.WriteVarInt64(m.Price); err != nil {
 		return err
 	}
 
 	if err := w.WriteBoolean(m.IsLocked); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(m.WorldX); err != nil {
+		return err
+	}
+
+	if err := w.WriteInt16(m.WorldY); err != nil {
 		return err
 	}
 
@@ -11982,20 +12130,6 @@ func (m *HouseInformationsInside) Deserialize(r Reader) error {
 
 	m.OwnerName = lownerName
 
-	lworldX, err := r.ReadInt16()
-	if err != nil {
-		return err
-	}
-
-	m.WorldX = lworldX
-
-	lworldY, err := r.ReadInt16()
-	if err != nil {
-		return err
-	}
-
-	m.WorldY = lworldY
-
 	lprice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
@@ -12009,6 +12143,20 @@ func (m *HouseInformationsInside) Deserialize(r Reader) error {
 	}
 
 	m.IsLocked = lisLocked
+
+	lworldX, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.WorldX = lworldX
+
+	lworldY, err := r.ReadInt16()
+	if err != nil {
+		return err
+	}
+
+	m.WorldY = lworldY
 
 	return nil
 }
@@ -14593,9 +14741,11 @@ func (m *ShortcutEmote) Deserialize(r Reader) error {
 type AccountHouseInformations struct {
 	HouseInformations
 
-	InstanceId uint32
+	HouseInfos HouseInstanceInformationsIntrf
 
-	SecondHand bool
+	RealPrice int64
+
+	IsLocked bool
 
 	WorldX int16
 
@@ -14616,11 +14766,19 @@ func (m *AccountHouseInformations) Serialize(w Writer) error {
 		return err
 	}
 
-	if err := w.WriteUInt32(m.InstanceId); err != nil {
+	if err := w.WriteUInt16(m.HouseInfos.ID()); err != nil {
 		return err
 	}
 
-	if err := w.WriteBoolean(m.SecondHand); err != nil {
+	if err := m.HouseInfos.Serialize(w); err != nil {
+		return err
+	}
+
+	if err := w.WriteVarInt64(m.RealPrice); err != nil {
+		return err
+	}
+
+	if err := w.WriteBoolean(m.IsLocked); err != nil {
 		return err
 	}
 
@@ -14649,19 +14807,32 @@ func (m *AccountHouseInformations) Deserialize(r Reader) error {
 		return err
 	}
 
-	linstanceId, err := r.ReadUInt32()
+	typehouseInfosID, err := r.ReadUInt16()
+	if err != nil {
+		return err
+	}
+	lhouseInfos, err := GetType(typehouseInfosID)
 	if err != nil {
 		return err
 	}
 
-	m.InstanceId = linstanceId
+	lhouseInfos.Deserialize(r)
 
-	lsecondHand, err := r.ReadBoolean()
+	m.HouseInfos = lhouseInfos.(HouseInstanceInformationsIntrf)
+
+	lrealPrice, err := r.ReadVarInt64()
 	if err != nil {
 		return err
 	}
 
-	m.SecondHand = lsecondHand
+	m.RealPrice = lrealPrice
+
+	lisLocked, err := r.ReadBoolean()
+	if err != nil {
+		return err
+	}
+
+	m.IsLocked = lisLocked
 
 	lworldX, err := r.ReadInt16()
 	if err != nil {
